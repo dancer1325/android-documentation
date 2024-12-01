@@ -28,6 +28,7 @@
   * [Latest updates](latest-updates.md)
     * TODO:
   * [JetPack](jetpack.md)
+    * [JetPack Compose](compose.md)
     * TODO:
   * [Privacy Sandbox](privacy-sandbox.md)
     * TODO:
