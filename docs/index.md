@@ -38,7 +38,20 @@
     * TODO:
 * [Develop](develop.md)
   * [Guides](guide.md)
-    * TODO:
+    * App basics
+      * TODO:
+    * Devices
+      * TODO:
+    * [App architecture](topic.architecture.intro.md)
+      * TODO:
+    * Google Play
+      * TODO:
+    * Core areas
+      * TODO:
+    * Build for enterprise
+      * TODO:
+    * Best practices
+      * TODO:
   * [Reference](reference.md)
     * TODO:
   * [Samples](samples.md)
