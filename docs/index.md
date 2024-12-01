@@ -34,7 +34,26 @@
     * TODO:
 * [Design & Plan](design.md)
   * TODO:
+  * [Quality](quality.md)
+    * TODO:
 * [Develop](develop.md)
-  * TODO:
+  * [Guides](guide.md)
+    * TODO:
+  * [Reference](reference.md)
+    * TODO:
+  * [Samples](samples.md)
+    * TODO:
+  * [Quick guides](quick-guides.md)
+    * TODO:
+  * [Develop UI for Android](develop.ui.md)
+    * TODO:
+  * [Background work](develop.background-work.md)
+    * TODO:
+  * [Android Studio](studio.md)
+    * TODO:
+  * [Build](build.md)
+    * TODO:
+  * [Tools](tools.md)
+    * TODO:
 * [Google Play](distribute.md)
   * TODO:
