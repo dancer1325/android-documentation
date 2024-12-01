@@ -31,7 +31,6 @@
     * TODO:
   * [Privacy Sandbox](privacy-sandbox.md)
     * TODO:
-  * TODO:
 * [Design & Plan](design.md)
   * TODO:
 * [Develop](develop.md)
