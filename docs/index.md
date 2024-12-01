@@ -39,7 +39,11 @@
 * [Develop](develop.md)
   * [Guides](guide.md)
     * App basics
-      * TODO:
+      * [App fundamentals](guide.components.fundamentals.md)
+      * [App resources](guide.topics.resourcesproviding-resources.md)
+        * TODO:
+      * [App manifest file](guide.topics.manifest.manifest-intro.md)
+        * TODO:
     * Devices
       * TODO:
     * [App architecture](topic.architecture.intro.md)
