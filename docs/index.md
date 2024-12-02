@@ -66,7 +66,24 @@
       * [Permissions](guide.topics.permissions.overview.md)
         * TODO:
       * [App data and files](guide.topics.data.md)
-        * TODO:
+        * [About storage](training.data-storage.md)
+        * [Access app-specific files](training.data-storage.app-specific.md)
+        * [Shared storage](training.data-storage.shared.md)
+          * TODO:
+        * [Manage all files on a storage device](training.data-storage.manage-all-files.md)
+        * [Save simple data with SharedPreferences](training.data-storage.shared-preferences.md)
+        * [Save data in a local database](training.data-storage.room.md)
+          * TODO:
+        * [Android storage use cases and best practices](training.data-storage.use-cases.md)
+        * [Sharing data](training.sharing.md)
+          * TODO:
+        * [Sharing files](training.secure-file-sharing.md)
+          * TODO:
+        * [Printing files](training.printing.md)
+          * TODO:
+        * [Content providers](guide.topics.providers.content-providers.md)
+          * TODO:
+        * [App install location](guide.topics.data.install-location.md)
       * [User data and identity](guide.user-data.md)
         * TODO:
       * [Android app bundles](guide.app-bundle.md)
