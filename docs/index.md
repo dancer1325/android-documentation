@@ -147,7 +147,27 @@
   * [Android Studio](studio.md)
     * TODO:
   * [Build](build.md)
-    * TODO:
+    * What's new?
+      * TODO:
+    * Overview
+      * TODO:
+    * Manage your build
+      * TODO:
+    * Manage dependencies
+      * TODO:
+    * Run your build
+      * TODO:
+    * Optimize your build
+      * TODO:
+    * Extend your build
+      * TODO:
+    * [Publish your library](build.publish-library.md)
+      * TODO:
+    * Migrate your build
+      * TODO:
+    * [Troubleshoot](build.troubleshoot.md)
+      * TODO:
+    * [Android Gradle plugin API reference](https://developer.android.com/reference/tools/gradle-api)
   * [Tools](tools.md)
     * TODO:
 * [Google Play](distribute.md)
