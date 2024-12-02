@@ -149,8 +149,10 @@
   * [Build](build.md)
     * What's new?
       * TODO:
-    * Overview
-      * TODO:
+    * [Android build overview](build.gradle-build-overview.md)
+      * [Android build structure](build.android-build-structure.md)
+      * [Tool and library interdependencies](build.tool-and-library-dependencies.md)
+      * [Gradle dependency resolution](build.gradle-dependency-resolution.md)
     * Manage your build
       * TODO:
     * Manage dependencies
