@@ -47,7 +47,19 @@
     * Devices
       * TODO:
     * [App architecture](topic.architecture.intro.md)
-      * TODO:
+      * [Guide to app architecture](topic.architecture.md)
+        * TODO:
+      * [Modularization](topic.modularization.md)
+        * TODO:
+      * Architecture components
+        * TODO:
+      * App entry points
+        * TODO:
+      * App navigation
+        * TODO:
+      * [Dependency Injection](training.dependency-injection.md)
+        * TODO:
+      * [App Startup](topic.libraries.app-startup.md)
     * Google Play
       * TODO:
     * Core areas
