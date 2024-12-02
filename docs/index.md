@@ -63,7 +63,14 @@
     * Google Play
       * TODO:
     * Core areas
-      * TODO:
+      * [Permissions](guide.topics.permissions.overview.md)
+        * TODO:
+      * [App data and files](guide.topics.data.md)
+        * TODO:
+      * [User data and identity](guide.user-data.md)
+        * TODO:
+      * [Android app bundles](guide.app-bundle.md)
+        * TODO:
     * Build for enterprise
       * TODO:
     * Best practices
