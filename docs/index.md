@@ -77,7 +77,12 @@
   * [Develop UI for Android](develop.ui.md)
     * TODO:
   * [Background work](develop.background-work.md)
-    * TODO:
+    * [Services](develop.background-work.services.md)
+      * TODO:
+    * Background tasks
+      * TODO:
+    * Alarms
+      * TODO:
   * [Android Studio](studio.md)
     * TODO:
   * [Build](build.md)
