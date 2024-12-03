@@ -105,7 +105,9 @@
     * Build for enterprise
       * TODO:
     * Best practices
-      * TODO:
+      * [Testing](training.testing.md)
+        * TODO:
+      * [SDKs](guide.practices.sdk-best-practices.md)
   * [Reference](reference.md)
     * TODO:
   * [Samples](samples.md)
