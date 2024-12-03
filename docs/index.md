@@ -3,6 +3,7 @@
   * [overview](get-started.overview.md)
   * [courses](courses.md)
     * TODO:
+    * [Jetpack Compose for Android Developers](courses.jetpack-compose.course.md)
   * [tutorials](get-started.codelabs.md)
     * TODO:
   * [multidevice](multidevice.md)
@@ -105,7 +106,11 @@
     * [guides](develop.ui.compose.documentation.md)
       * Introduction
         * TODO:
+        * [Quick start](develop.ui.compose.setup.md)
         * [Thinking in Compose](develop.ui.compose.mental-model.md)
+        * TODO:
+        * [BOM](develop.ui.compose.bom.md)
+          * TODO:
         * TODO:
       * UI architecture
         * [Lifecycle](develop.ui.compose.lifecycle.md)
@@ -118,12 +123,29 @@
         * [CompositionLocal](develop.ui.compose.compositionlocal.md)
         * [Navigation](develop.ui.compose.navigation.md)
       * [App layout](develop.ui.compose.layouts.md)
-        * TODO:
+        * [Compose layout basics](develop.ui.compose.layouts.basics.md)
         * [Modifiers](develop.ui.compose.modifiers.md)
         * TODO:
+        * [Custom layouts](develop.ui.compose.layouts.custom.md)
+        * [Adaptive layouts](develop.ui.compose.layouts.adaptive.md)
+          * TODO:
+          * [Support different screen sizes](develop.ui.compose.layouts.adaptive.support-different-screen-sizes.md)
+          * TODO:
+        * [Alignment lines](develop.ui.compose.layouts.alignment-lines.md)
+        * [Intrinsic measurements](develop.ui.compose.layouts.intrinsic-measurements.md)
+        * [`ConstraintLayout`](develop.ui.compose.layouts.constraintlayout.md)
       * [Components](develop.ui.compose.components.md)
         * TODO:
+        * [Lists and grids](develop.ui.compose.lists.md)
+        * TODO:
+        * [Resources](develop.ui.compose.resources.md)
+        * TODO:
       * [Theming](develop.ui.compose.designsystems.md)
+        * [Material Design 3](develop.ui.compose.designsystems.material3.md)
+        * [Migrate Material 2 to Material3](develop.ui.compose.designsystems.material2-material3.md)
+        * [Material Design 2](develop.ui.compose.designsystems.material.md)
+        * [Custom theming](develop.ui.compose.designsystems.custom.md)
+        * [Anatomy of a theme](develop.ui.compose.designsystems.anatomy.md)
         * TODO:
       * [Text and typography](develop.ui.compose.text.md)
         * TODO:
@@ -136,15 +158,29 @@
         * [Semantics](develop.ui.compose.accessibility.semantics.md)
         * TODO:
       * [Touch and Input](develop.ui.compose.touch-input.md)
+        * [Pointer input](develop.ui.compose.touch-input.pointer-input.md)
+          * TODO:
+        * TODO:
+        * [User Interactions](develop.ui.compose.touch-input.user-interactions.handling-interactions.md)
+          * TODO:
         * TODO:
       * [Performance](develop.ui.compose.performance.md)
         * TODO:
       * Style guidelines
         * TODO:
+        * [Kotlin for Compose](develop.ui.compose.kotlin.md) 
       * [UI testing](develop.ui.compose.testing.md)
+        * [Cheatsheet](develop.ui.compose.testing.testing-cheatsheet.md)
         * TODO:
       * [Migrate to Compose](develop.ui.compose.migrate.md)
+        * [Migration Strategy](develop.ui.compose.migrate.strategy.md)
+        * [Interoperability APIs](develop.ui.compose.migrate.interoperability-apis.md)
+          * TODO:
         * TODO:
+        * [Other considerations](develop.ui.compose.migrate.other-considerations.md)
+        * TODO:
+        * [Compose and other libraries](develop.ui.compose.libraries.md)
+        * [Compare Compose & View metrics](develop.ui.compose.migrate.compare-metrics.md)
       * [Tools](develop.ui.compose.tooling.md)
         * TODO:
       * Leverage system capabilities
@@ -153,6 +189,8 @@
         * TODO:
     * Views approach
       * [Develop your app's layout](develop.ui.views.layout.declaring-layout.md)
+        * TODO:
+        * [Build responsive navigation](develop.ui.views.layout.build-responsive-navigation.md)
         * TODO:
       * [Apply themes](develop.ui.views.theming.themes.md)
         * TODO:
