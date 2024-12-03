@@ -216,12 +216,12 @@ https://developer.android.com/guide/components/fundamentals
     ```
 
 * see 
-  * <a href="/guide/topics/manifest/application-element">&lt;application&gt;</a> element
-  * <a href="/guide/topics/manifest/activity-element">&lt;activity&gt;</a> element
+  * [`<application>`](https://developer.android.com/guide/topics/manifest/application-element)
+  * [`<activity>`](https://developer.android.com/guide/topics/manifest/activity-element)
   * see [App manifest overview](guide.topics.manifest.manifest-intro.md)
 
 * elements -- to declare -- ALL app components
-  * <a href="/guide/topics/manifest/activity-element">&lt;activity&gt;</a>elements
+  * <a href="https://developer.android.com/guide/topics/manifest/application-element">&lt;activity&gt;</a>elements
     * for activities
   * <a href="/guide/topics/manifest/service-element">&lt;service&gt;</a>elements
     * for services
