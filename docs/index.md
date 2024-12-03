@@ -40,7 +40,7 @@
   * [Guides](guide.md)
     * App basics
       * [App fundamentals](guide.components.fundamentals.md)
-      * [App resources](guide.topics.resourcesproviding-resources.md)
+      * [App resources](guide.topics.resources.providing-resources.md)
         * TODO:
       * [App manifest file](guide.topics.manifest.manifest-intro.md)
         * TODO:
@@ -136,6 +136,29 @@
       * Leverage system capabilities
         * TODO:
       * [Create widgets](develop.ui.compose.glance.md)
+        * TODO:
+    * views
+      * [Develop your app's layout](develop.ui.views.layout.declaring-layout.md)
+        * TODO:
+      * [Apply themes](develop.ui.views.theming.themes.md)
+        * TODO:
+      * Add components
+        * TODO:
+      * Work with text and emoji
+        * TODO:
+      * Display graphics & videos
+        * TODO:
+      * [Work with animations & transitions](develop.ui.views.animations.md)
+        * TODO:
+      * [Add support for touch & input](develop.ui.views.touch-and-input.input.md)
+        * TODO:
+      * [Add notifications | your app](develop.ui.views.notifications.md)
+        * TODO:
+      * Customize app launch
+        * TODO:
+      * Add app component | home screen or launcher
+        * TODO:
+      * [Create backward-compatible UIs](training.backward-compatible-ui.md)
         * TODO:
   * [Background work](develop.background-work.md)
     * [Services](develop.background-work.services.md)
