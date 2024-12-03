@@ -192,11 +192,11 @@ https://developer.android.com/guide/components/fundamentals
           * registered them -- via -- <a href="/reference/android/content/Context#registerReceiver(android.content.BroadcastReceiver, android.content.IntentFilter)">registerReceiver()</a>
     * identifies any user permissions -- required by the -- app
       * _Example:_ internet access, read-access to the user's contacts
-    * Declares the minimum API level / required by the app
+    * declares the minimum API level / required by the app
       * -- based on the -- APIs used by the app
-    * Declares hardware and software features / used or required -- by the -- app
+    * declares hardware and software features / used or required -- by the -- app
       * _Example:_ camera, Bluetooth services, multitouch screen
-    * Declares API libraries / app -- needs to be -- linked against != Android framework APIs
+    * declares API libraries / app -- needs to be -- linked against != Android framework APIs
       * _Example:_ <a href="http://code.google.com/android/add-ons/google-apis/maps-overview.html"> Google Maps library</a>
 
 ## Declare components

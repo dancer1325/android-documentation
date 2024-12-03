@@ -56,7 +56,20 @@
         * TODO:
       * App entry points
         * TODO:
-      * App navigation
+      * [App navigation](guide.navigation.principles.md)
+        * TODO:
+        * [Interact with other apps](training.basics.intents.md)
+          * [Intents and intent filters](guide.components.intents-filters.md)
+          * TODO:
+          * [Sending the user to another app](training.basics.intents.sending.md)
+          * [Get a result from an activity](training.basics.intents.result.md)
+          * [Let other apps start your activity](training.basics.intents.filters.md)
+          * TODO:
+          * [Limit loading in on-device Android containers](training.basics.intents.limit-play-loading.md)
+          * [Package visibility filtering](training.package-visibility.md)
+            * TODO:
+            * [Fulfill common use cases](training.package-visibility.use-cases.md)
+            * TODO:
         * TODO:
       * [Dependency Injection](training.dependency-injection.md)
         * TODO:
