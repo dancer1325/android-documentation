@@ -105,9 +105,21 @@
     * [guides](develop.ui.compose.documentation.md)
       * Introduction
         * TODO:
-      * UI architecture
+        * [Thinking in Compose](develop.ui.compose.mental-model.md)
         * TODO:
+      * UI architecture
+        * [Lifecycle](develop.ui.compose.lifecycle.md)
+        * [Side-effects in Compose](develop.ui.compose.side-effects.md)
+        * [Phases](develop.ui.compose.phases.md)
+        * [Managing state](develop.ui.compose.state.md)
+          * TODO:
+        * [Architecture](develop.ui.compose.architecture.md)
+        * [Jetpack Compose architectural layering](develop.ui.compose.layering.md)
+        * [CompositionLocal](develop.ui.compose.compositionlocal.md)
+        * [Navigation](develop.ui.compose.navigation.md)
       * [App layout](develop.ui.compose.layouts.md)
+        * TODO:
+        * [Modifiers](develop.ui.compose.modifiers.md)
         * TODO:
       * [Components](develop.ui.compose.components.md)
         * TODO:
@@ -120,6 +132,8 @@
       * [Animation](develop.ui.compose.animation.introduction.md)
         * TODO:
       * [Accessibility](develop.ui.compose.accessibility.md)
+        * TODO:
+        * [Semantics](develop.ui.compose.accessibility.semantics.md)
         * TODO:
       * [Touch and Input](develop.ui.compose.touch-input.md)
         * TODO:
@@ -137,7 +151,7 @@
         * TODO:
       * [Create widgets](develop.ui.compose.glance.md)
         * TODO:
-    * views
+    * Views approach
       * [Develop your app's layout](develop.ui.views.layout.declaring-layout.md)
         * TODO:
       * [Apply themes](develop.ui.views.theming.themes.md)
