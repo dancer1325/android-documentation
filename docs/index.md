@@ -120,7 +120,7 @@
       * TODO:
     * [guides](develop.ui.compose.documentation.md)
       * Introduction
-        * TODO:
+        * [Why Compose?](develop.ui.compose.why-adopt.md)
         * [Quick start](develop.ui.compose.setup.md)
         * [Thinking in Compose](develop.ui.compose.mental-model.md)
         * TODO:
