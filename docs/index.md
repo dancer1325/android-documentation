@@ -2,8 +2,9 @@
 * [Essentials](get-started.md)
   * [overview](get-started.overview.md)
   * [courses](courses.md)
-    * TODO:
+    * [Android Basics with Compose](courses.android-basics-compose.course.md)
     * [Jetpack Compose for Android Developers](courses.jetpack-compose.course.md)
+    * TODO:
   * [tutorials](get-started.codelabs.md)
     * TODO:
   * [multidevice](multidevice.md)
@@ -235,6 +236,14 @@
     * Alarms
       * TODO:
   * [Android Studio](studio.md)
+    * TODO:
+    * [Write your code](studio.write.md)
+      * TODO:
+      * Use tools to develop UI
+        * TODO:
+        * [Manage UI resources](studio.write.resource-manager.md)
+        * TODO:
+      * TODO:
     * TODO:
   * [Build](build.md)
     * What's new?
