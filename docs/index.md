@@ -162,7 +162,7 @@
         * [Material Design 2](develop.ui.compose.designsystems.material.md)
         * [Custom theming](develop.ui.compose.designsystems.custom.md)
         * [Anatomy of a theme](develop.ui.compose.designsystems.anatomy.md)
-        * TODO:
+        * [Migrate XML themes to Compose](develop.ui.compose.designsystems.views-to-compose.md)
       * [Text and typography](develop.ui.compose.text.md)
         * TODO:
       * [Images and graphics](develop.ui.compose.graphics.md)
