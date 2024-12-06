@@ -198,6 +198,9 @@
         * [Compose and other libraries](develop.ui.compose.libraries.md)
         * [Compare Compose & View metrics](develop.ui.compose.migrate.compare-metrics.md)
       * [Tools](develop.ui.compose.tooling.md)
+        * Design
+          * [Preview your UI](develop.ui.compose.tooling.previews.md)
+          * TODO:
         * TODO:
       * Leverage system capabilities
         * TODO:
