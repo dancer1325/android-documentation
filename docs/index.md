@@ -191,6 +191,7 @@
       * [Migrate to Compose](develop.ui.compose.migrate.md)
         * [Migration Strategy](develop.ui.compose.migrate.strategy.md)
         * [Interoperability APIs](develop.ui.compose.migrate.interoperability-apis.md)
+          * [Using Compose in Views](develop.ui.compose.migrate.interoperability-apis.compose-in-views.md)
           * TODO:
         * TODO:
         * [Other considerations](develop.ui.compose.migrate.other-considerations.md)
