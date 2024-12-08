@@ -64,7 +64,12 @@
       * [Modularization](topic.modularization.md)
         * TODO:
       * Architecture components
-        * TODO:
+        * UI layer libraries
+          * TODO:
+        * Data layer libraries
+          * [DataStore](topic.libraries.architecture.datastore.md)
+          * [WorkManager](topic.libraries.architecture.workmanager.md)
+            * TODO:
       * App entry points
         * TODO:
       * [App navigation](guide.navigation.principles.md)
