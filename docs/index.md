@@ -166,7 +166,12 @@
       * [Text and typography](develop.ui.compose.text.md)
         * TODO:
       * [Images and graphics](develop.ui.compose.graphics.md)
-        * TODO:
+        * [Images](develop.ui.compose.graphics.images.md)
+          * TODO:
+          * [Customize an image](develop.ui.compose.graphics.images.customize.md)
+          * TODO:
+        * [Graphics](develop.ui.compose.graphics.draw.overview.md)
+          * TODO:
       * [Animation](develop.ui.compose.animation.introduction.md)
         * TODO:
       * [Accessibility](develop.ui.compose.accessibility.md)
