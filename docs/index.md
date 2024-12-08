@@ -16,7 +16,11 @@
     * [multidevice development](multi-device-development.md)
     * [Google Assistant for Android Developers](assistant.md)
   * [kotlin](kotlin.md)
-    * TODO:
+    * [Build better apps](kotlin.build-better-apps.md)
+    * [Samples](kotlin.samples.md)
+    * [Guides](kotlin.first.md)
+      * TODO:
+    * [Developer Stories](https://developer.android.com/kotlin/stories)
   * [Games dev center](games.md)
     * TODO:
   * [Camera & media dev center](media.md)
