@@ -297,3 +297,9 @@
     * TODO:
 * [Google Play](distribute.md)
   * TODO:
+* Series
+  * [Now in Android](series.now-in-android.md)
+    * Blog
+      * TODO:
+    * Videos
+      * TODO:
