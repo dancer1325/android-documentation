@@ -50,7 +50,13 @@
       * TODO:
     * [App architecture](topic.architecture.intro.md)
       * [Guide to app architecture](topic.architecture.md)
-        * TODO:
+        * [UI layer](topic.architecture.ui-layer.md)
+          * TODO:
+        * [Domain layer](topic.architecture.domain-layer.md)
+        * [Data layer](topic.architecture.data-layer.md)
+          * [Offline-first app](topic.architecture.data-layer.offline-first.md)
+        * [Architecture recommendations](topic.architecture.recommendations.md)
+        * [Learning pathway](courses.pathways.android-architecture.md)
       * [Modularization](topic.modularization.md)
         * TODO:
       * Architecture components
