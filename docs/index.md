@@ -295,6 +295,8 @@
     * [Android Gradle plugin API reference](https://developer.android.com/reference/tools/gradle-api)
   * [Tools](tools.md)
     * TODO:
+    * [Android Debug Bridge (adb)](tools.adb.md)
+    * TODO:
     * [Environment variables](tools.variables.md)
 * [Google Play](distribute.md)
   * TODO:
