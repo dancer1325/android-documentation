@@ -295,6 +295,7 @@
     * [Android Gradle plugin API reference](https://developer.android.com/reference/tools/gradle-api)
   * [Tools](tools.md)
     * TODO:
+    * [Environment variables](tools.variables.md)
 * [Google Play](distribute.md)
   * TODO:
 * Series
