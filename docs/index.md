@@ -297,6 +297,8 @@
     * TODO:
     * [Android Debug Bridge (adb)](tools.adb.md)
     * TODO:
+    * [`sdkmanager`](tools.sdkmanager.md)
+    * TODO:
     * [Environment variables](tools.variables.md)
 * [Google Play](distribute.md)
   * TODO:
