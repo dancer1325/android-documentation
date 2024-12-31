@@ -31,3 +31,7 @@ https://developer.android.com/build/android-build-structure
         * `res/`
           * == [Android resources files](guide.topics.resources.providing-resources.md)
         * [`AndroidManifest.xml`](guide.topics.manifest.manifest-intro.md)
+      * `src/androidTest/`
+        * see [testing](training.testing.md)
+        * ALL sources | `src/main/` can be tested here
+      * TODO:
