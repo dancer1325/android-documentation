@@ -21,6 +21,35 @@ https://developer.android.com/tools/adb
         * runs -- as a -- background process | your development machine
   * 👀included | Android SDK Platform Tools package 👀
     * see | `$ANDROID_HOME/platform-tools/`
+  * if you are using Android Studio -> 
+    * Android Studio handles the
+      * packaging
+      * installation of the app
+    * ⚠️you do NOT need to use directly adb ⚠️
 
 # How adb works?
+* TODO:
+
+# Install an app 
+* allows
+  * installing an APK |
+    * emulator or
+    * connected devices
+
+* 
+    ```
+    adb install path_to_apk
+    ```
+  * `-t`
+    * uses
+      * install a test APK
+  * `install-multiple`
+    * uses
+      * install MULTIPLE APKs
+    * use cases
+      * you download ALL the APKs -- for a -- specific device / your app -- from the -- Play Console &
+      * want to install them | emulator or physical device
+
+
+# Set up port forwarding
 * TODO:
