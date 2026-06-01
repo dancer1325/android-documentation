@@ -1,0 +1,149 @@
+# Android Mobile App Developer Tools - Android Developers
+
+**Source:** [https://developer.android.com](https://developer.android.com)
+
+---
+
+  * [ Android Developers ](https://developer.android.com/)
+
+
+
+Stay organized with collections  Save and categorize content based on your preferences. 
+
+![](https://developer.android.com/static/images/io-26/io-android.png)
+
+![](https://developer.android.com/static/images/io-26/google-io.svg)
+
+###  Tune in to Google I/O May 19-20 
+
+Learn about the latest Android innovations and what we're doing to help you transform your work. 
+
+[Register Now](https://io.google/2026/?utm_source=android&utm_medium=embedded_marketing&utm_campaign=svd&utm_content=)
+
+  * [ ![](/static/images/logos/android.svg) Download Android Studio get_app ](/studio)
+  * [ ![](/static/images/picto-icons/game-console.svg) Launch Play Console launch ](https://play.google.com/apps/publish)
+  * [ ![](/static/images/picto-icons/stars.svg) View Latest Updates ](/latest-updates)
+
+
+
+[ ![](https://developer.android.com/static/images/home/promo-ecosystem-blog.png) ](https://security.googleblog.com/2026/02/keeping-google-play-android-app-ecosystem-safe-2025.html)
+
+Featured
+
+###  [ Keeping Google Play & Android app ecosystems safe in 2025 ](https://security.googleblog.com/2026/02/keeping-google-play-android-app-ecosystem-safe-2025.html)
+
+Safety is at the heart of everything we do. We want developers to thrive and users to feel confident downloading apps. By investing in world-class defenses, we're stopping threats before they reach our digital world and providing stronger protections for your business. 
+
+[Read more](https://security.googleblog.com/2026/02/keeping-google-play-android-app-ecosystem-safe-2025.html)
+
+[ ![](https://developer.android.com/static/images/home/google-play-level-up.svg) ](https://play.google.com/console/about/levelup)
+
+Featured
+
+###  [ Accelerate your games success with Google Play Games Level Up ](https://play.google.com/console/about/levelup)
+
+Re-engage players, maximize reach, unlock deeper insights with Google Play Games Level Up. Check out all the benefits available today with the Level Up Program and stay tuned for the latest announcements during GDC Festival of Gaming week. 
+
+[Learn more](https://play.google.com/console/about/levelup)
+
+##  Developer centers 
+
+[ ![](https://developer.android.com/static/images/home/productivity.svg) ](https://developer.android.com/productivity)
+
+New
+
+###  [ Productivity apps ](https://developer.android.com/productivity)
+
+Level up your productivity app with media, adaptive layouts, and more. 
+
+[Learn more](https://developer.android.com/productivity)
+
+[ ![](https://developer.android.com/static/images/home/social-messaging-hero.svg) ](https://developer.android.com/social-and-messaging)
+
+Featured
+
+###  [ Social & messaging apps ](https://developer.android.com/social-and-messaging)
+
+Use Android's unique capabilities to supercharge your app's social and messaging features. 
+
+[Learn more](https://developer.android.com/social-and-messaging)
+
+[ ![](https://developer.android.com/static/images/cluster-illustrations/enhance-media-16-9.svg) ](https://developer.android.com/media)
+
+Featured
+
+###  [ Camera & media apps ](https://developer.android.com/media)
+
+Learn how to build and extend engaging media experiences to users across Android's multidevice ecosystem. 
+
+[Learn more](https://developer.android.com/media)
+
+[ ![](https://developer.android.com/static/images/picto-icons/health-premium-experience.svg) ](https://developer.android.com/health-and-fitness)
+
+Featured
+
+###  [ Health & fitness apps ](https://developer.android.com/health-and-fitness)
+
+Take your health and fitness app to the next level using Health Services with Health Connect. 
+
+[Learn more](https://developer.android.com/health-and-fitness)
+
+![](https://developer.android.com/static/images/logos/android.svg)
+
+##  Platform updates 
+
+Keep up to date with what's going on with the Android platform. 
+
+[Go to Android Platform](https://developer.android.com/about)
+
+![](https://developer.android.com/static/images/spot-icons/tools-update.svg)
+
+##  Tools updates 
+
+The latest on tools that help you build the highest quality Android apps for every Android device. 
+
+[Go to Android Studio](https://developer.android.com/studio)
+
+##  Explore more 
+
+[ ![](https://developer.android.com/static/images/cluster-illustrations/developer-guidance.svg) ](https://developer.android.com/guide)
+
+###  [ Developer guides ](https://developer.android.com/guide)
+
+Find training classes that describe how to accomplish a specific task with code samples you can re-use in your app. 
+
+[ ![](https://developer.android.com/static/images/cluster-illustrations/samples.svg) ](https://developer.android.com/samples)
+
+###  [ Sample code ](https://developer.android.com/samples)
+
+Jump-start your development using these sample projects. 
+
+[ ![](https://developer.android.com/static/images/cluster-illustrations/quality-guidelines.svg) ](https://developer.android.com/quality)
+
+###  [ Quality guidelines ](https://developer.android.com/quality)
+
+Build a high quality app with these design and behavior guidelines. 
+
+[ ![](https://developer.android.com/static/images/cluster-illustrations/launch-app.svg) ](https://developer.android.com/distribute)
+
+###  [ Distribute your app ](https://developer.android.com/distribute)
+
+Learn how to launch and distribute your apps and games successfully. 
+
+![](https://developer.android.com/static/images/picto-icons/lightbulb.svg)
+
+##  Latest news 
+
+Keep up to date with what's going on in Android. 
+
+[View all news](https://developer.android.com/news)
+
+![](https://developer.android.com/static/images/picto-icons/eye.svg)
+
+##  Latest videos 
+
+Get the latest Android news, best practices, live videos, demonstrations, tutorials. 
+
+[View all videos](https://www.youtube.com/user/androiddevelopers/)
+
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]] 
