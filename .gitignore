@@ -1,1 +1,14 @@
 .idea
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# Scraped content (opcional: comenta si quieres versionar el contenido)
+# docsMirror/
