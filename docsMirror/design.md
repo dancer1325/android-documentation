@@ -41,13 +41,13 @@ Create an app that follows privacy and security best practices. Build a high qua
 
 [Optimize for quality](https://developer.android.com/quality)
 
-[ ![](https://developer.android.com/static/images/hero-illustrations/better-together-hero.svg) ](https://developer.android.com/develop/ui/compose/layouts/adaptive)
+[ ![](https://developer.android.com/static/images/hero-illustrations/better-together-hero.svg) ](https://developer.android.com/develop/adaptive-apps)
 
-###  [ Create adaptive layouts ](https://developer.android.com/develop/ui/compose/layouts/adaptive)
+###  [ Create adaptive layouts ](https://developer.android.com/develop/adaptive-apps)
 
 Android apps can run on a wide variety of form factors, including phones, tablets, foldables, ChromeOS devices, car displays, and XR—and in various windowing modes like multi‑window and desktop windowing. Create adaptive layouts to provide an optimal user experience on displays of all sizes. 
 
-[Learn about adaptive layouts](https://developer.android.com/develop/ui/compose/layouts/adaptive)
+[Learn about adaptive layouts](https://developer.android.com/develop/adaptive-apps)
 
 [ ![](https://developer.android.com/static/images/cluster-illustrations/billions-16-9.svg) ](https://developer.android.com/build-for-billions)
 

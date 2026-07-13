@@ -39,7 +39,7 @@ These are the API packages. See all [API classes](/reference/classes).
 [android.annotation](/reference/android/annotation/package-summary) |   
 [android.app](/reference/android/app/package-summary) | Contains high-level classes encapsulating the overall Android application model.  
 [android.app.admin](/reference/android/app/admin/package-summary) | Provides device administration features at the system level, allowing you to create security-aware applications that are useful in enterprise settings, in which IT professionals require rich control over employee devices. For more information, see the [Device Administration](/guide/topics/admin/device-admin) guide.  
-[android.app.appfunctions](/reference/android/app/appfunctions/package-summary) |   
+[android.app.appfunctions](/reference/android/app/appfunctions/package-summary) | Android App Functions provides APIs for applications to expose functionality to the system for cross-app orchestration, and for system-privileged agents to discover and execute this functionality.  
 [android.app.appsearch](/reference/android/app/appsearch/package-summary) |   
 [android.app.appsearch.exceptions](/reference/android/app/appsearch/exceptions/package-summary) |   
 [android.app.appsearch.observer](/reference/android/app/appsearch/observer/package-summary) |   
@@ -50,11 +50,14 @@ These are the API packages. See all [API classes](/reference/classes).
 [android.app.jank](/reference/android/app/jank/package-summary) |   
 [android.app.job](/reference/android/app/job/package-summary) |   
 [android.app.people](/reference/android/app/people/package-summary) |   
+[android.app.permissionui](/reference/android/app/permissionui/package-summary) |   
+[android.app.privatecompute](/reference/android/app/privatecompute/package-summary) |   
 [android.app.role](/reference/android/app/role/package-summary) |   
 [android.app.sdksandbox](/reference/android/app/sdksandbox/package-summary) |   
 [android.app.sdksandbox.sdkprovider](/reference/android/app/sdksandbox/sdkprovider/package-summary) |   
 [android.app.slice](/reference/android/app/slice/package-summary) |   
 [android.app.usage](/reference/android/app/usage/package-summary) |   
+[android.app.voiceinteraction](/reference/android/app/voiceinteraction/package-summary) |   
 [android.app.wallpaper](/reference/android/app/wallpaper/package-summary) |   
 [android.appwidget](/reference/android/appwidget/package-summary) | Contains the components necessary to create "app widgets", which users can embed in other applications (such as the home screen) to quickly access application data and services without launching a new activity. For more information, see the [App Widgets](/guide/topics/appwidgets) guide.  
 [android.bluetooth](/reference/android/bluetooth/package-summary) |   
@@ -65,6 +68,7 @@ These are the API packages. See all [API classes](/reference/classes).
 [android.content.om](/reference/android/content/om/package-summary) |   
 [android.content.pm](/reference/android/content/pm/package-summary) | Contains classes for accessing information about an application package, including information about its activities, permissions, services, signatures, and providers.  
 [android.content.pm.verify.domain](/reference/android/content/pm/verify/domain/package-summary) |   
+[android.content.pm.webapp](/reference/android/content/pm/webapp/package-summary) |   
 [android.content.res](/reference/android/content/res/package-summary) | Contains classes for accessing application resources, such as raw asset files, colors, drawables, media, or other files in the package, plus important device configuration details (orientation, input types, etc.) that affect how the application may behave. For more information, see the [Application Resources](/guide/topics/resources) guide.  
 [android.content.res.loader](/reference/android/content/res/loader/package-summary) |   
 [android.credentials](/reference/android/credentials/package-summary) |   
@@ -89,8 +93,10 @@ These are the API packages. See all [API classes](/reference/classes).
 [android.hardware.camera2](/reference/android/hardware/camera2/package-summary) | The android.hardware.camera2 package provides an interface to individual camera devices connected to an Android device.  
 [android.hardware.camera2.params](/reference/android/hardware/camera2/params/package-summary) |   
 [android.hardware.display](/reference/android/hardware/display/package-summary) |   
+[android.hardware.hid](/reference/android/hardware/hid/package-summary) |   
 [android.hardware.input](/reference/android/hardware/input/package-summary) |   
 [android.hardware.lights](/reference/android/hardware/lights/package-summary) |   
+[android.hardware.serial](/reference/android/hardware/serial/package-summary) |   
 [android.hardware.usb](/reference/android/hardware/usb/package-summary) | Provides support to communicate with USB hardware peripherals that are connected to Android-powered devices. For more information, see the [USB](/guide/topics/connectivity/usb) guide.  
 [android.health.connect](/reference/android/health/connect/package-summary) |   
 [android.health.connect.changelog](/reference/android/health/connect/changelog/package-summary) |   
@@ -119,6 +125,7 @@ These are the API packages. See all [API classes](/reference/classes).
 [android.media.tv.interactive](/reference/android/media/tv/interactive/package-summary) |   
 [android.mtp](/reference/android/mtp/package-summary) | Provides APIs that let you interact directly with connected cameras and other devices, using the PTP (Picture Transfer Protocol) subset of the MTP (Media Transfer Protocol) specification.  
 [android.net](/reference/android/net/package-summary) | Classes that help with network access, beyond the normal java.net.* APIs.  
+[android.net.dns](/reference/android/net/dns/package-summary) |   
 [android.net.eap](/reference/android/net/eap/package-summary) |   
 [android.net.http](/reference/android/net/http/package-summary) |   
 [android.net.ipsec.ike](/reference/android/net/ipsec/ike/package-summary) |   
@@ -145,6 +152,9 @@ These are the API packages. See all [API classes](/reference/classes).
 [android.os.flagging](/reference/android/os/flagging/package-summary) |   
 [android.os.health](/reference/android/os/health/package-summary) | The android.os.health package contains a set of classes to provide data to track the system resources of applications.  
 [android.os.storage](/reference/android/os/storage/package-summary) |  Contains classes for the system storage service, which manages binary asset filesystems known as Opaque Binary Blobs (OBBs).  
+[android.os.storage.operations](/reference/android/os/storage/operations/package-summary) |   
+[android.os.storage.operations.sources](/reference/android/os/storage/operations/sources/package-summary) |   
+[android.os.storage.operations.targets](/reference/android/os/storage/operations/targets/package-summary) |   
 [android.os.strictmode](/reference/android/os/strictmode/package-summary) |   
 [android.os.vibrator](/reference/android/os/vibrator/package-summary) |   
 [android.preference](/reference/android/preference/package-summary) | These classes are deprecated.  
@@ -157,11 +167,13 @@ Provides classes for implementing print support in applications and also contain
 [android.printservice](/reference/android/printservice/package-summary) |  Provides classes for implementing print services.  
 [android.provider](/reference/android/provider/package-summary) | Provides convenience classes to access the content providers supplied by Android.  
 [android.ranging](/reference/android/ranging/package-summary) |   
+[android.ranging.ble](/reference/android/ranging/ble/package-summary) |   
 [android.ranging.ble.cs](/reference/android/ranging/ble/cs/package-summary) |   
 [android.ranging.ble.rssi](/reference/android/ranging/ble/rssi/package-summary) |   
 [android.ranging.oob](/reference/android/ranging/oob/package-summary) |   
 [android.ranging.raw](/reference/android/ranging/raw/package-summary) |   
 [android.ranging.uwb](/reference/android/ranging/uwb/package-summary) |   
+[android.ranging.wifi.pd](/reference/android/ranging/wifi/pd/package-summary) |   
 [android.ranging.wifi.rtt](/reference/android/ranging/wifi/rtt/package-summary) |   
 [android.renderscript](/reference/android/renderscript/package-summary) | Renderscript is deprecated since API level 31. Please refer to the [migration guide](https://developer.android.com/guide/topics/renderscript/migration-guide) for alternatives.   
 [android.sax](/reference/android/sax/package-summary) | A framework that makes it easy to write efficient and robust SAX handlers.  
@@ -180,6 +192,7 @@ Provides classes for implementing print support in applications and also contain
 [android.service.credentials](/reference/android/service/credentials/package-summary) |   
 [android.service.dreams](/reference/android/service/dreams/package-summary) |   
 [android.service.media](/reference/android/service/media/package-summary) |   
+[android.service.messaging](/reference/android/service/messaging/package-summary) |   
 [android.service.notification](/reference/android/service/notification/package-summary) |   
 [android.service.persistentdata](/reference/android/service/persistentdata/package-summary) |   
 [android.service.quickaccesswallet](/reference/android/service/quickaccesswallet/package-summary) |   
@@ -319,6 +332,6 @@ Provides classes for implementing print support in applications and also contain
   
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-02-13 UTC.
+Last updated 2026-06-23 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-02-13 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-23 UTC."],[],[]] 

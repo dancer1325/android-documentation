@@ -24,15 +24,25 @@ Get everything you need to develop and deliver games on Android: tools, download
 
 ##  What's new 
 
-[ ![](https://developer.android.com/static/images/cluster-illustrations/controllers.svg) ](https://developer.android.com/games/google-at-gdc)
+[ ![](https://developer.android.com/static/images/spot-icons/Level_Up_Logo_Light_Mode.svg) ](https://play.google.com/console/about/levelup/)
 
-Event
+Blog
 
-###  [ Google at GDC ](https://developer.android.com/games/google-at-gdc)
+###  [ Introducing the Revamped Google Play Games Level Up program ](https://play.google.com/console/about/levelup/)
 
-Explore upcoming conference sessions that allow you to build interactive agents with Gemini, supercharge your Android game with powerful APIs, and expand your PC gamer audience with Play's growth tools. 
+Revamped Google Play Games Level Up, a new way we're elevating the player experience and unlocking greater success for your business. 
 
-[Read More](https://developer.android.com/games/google-at-gdc)
+[Read More](https://play.google.com/console/about/levelup/)
+
+##  2026 GDC Highlights 
+
+[ ![](https://developer.android.com/static/images/games/gaming-thumbnail-26.png) ](https://www.youtube.com/watch?v=BcyBAzXfItk)
+
+###  [ Maximize Performance: Porting, Profiling, and 16KB Page Size Innovations for Android Games ](https://www.youtube.com/watch?v=BcyBAzXfItk)
+
+**Optimize for Performance.** Join Google's Android team and Emil Kjæhr (Funday Games) to master porting PC titles like Deep Rock Galactic: Survivor to mobile. Get an exclusive first look at our new System and GPU Profiler, explore the state of Vulkan, and learn how 16 KB page size support boosts performance across diverse architectures. Whether you're navigating Unity or Unreal, gain the practical strategies needed to supercharge your high-performance game on Android. 
+
+[See our latest videos](https://www.youtube.com/playlist?list=PLWz5rJ2EKKc8Qh14aWnL5dy8UAnTp8AGV)
 
 ##  Priority workstreams 
 

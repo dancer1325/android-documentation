@@ -6,7 +6,7 @@
 
   * [ Android Developers ](https://developer.android.com/)
   * [ Multidevice ](https://developer.android.com/multidevice)
-  * [ ChromeOS devices ](https://developer.android.com/chrome-os)
+  * [ ChromeOS ](https://developer.android.com/chrome-os)
 
 
 

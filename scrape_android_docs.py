@@ -41,9 +41,14 @@ class AndroidDocsScraper:
         })
 
     def is_valid_android_url(self, url):
-        """Verifica si la URL pertenece a developer.android.com"""
+        """Verifica si la URL pertenece a developer.android.com y está en inglés"""
         parsed = urlparse(url)
-        return parsed.netloc == "developer.android.com"
+        if parsed.netloc != "developer.android.com":
+            return False
+        # Skip non-English pages
+        if 'hl=' in url and 'hl=en' not in url:
+            return False
+        return True
 
     def get_file_path(self, url):
         """Convierte URL a ruta de archivo .md"""
