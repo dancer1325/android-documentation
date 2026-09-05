@@ -1,0 +1,91 @@
+# Android 17 features and changes list  |  Android Developers
+
+**Source:** [https://developer.android.com/about/versions/17/summary](https://developer.android.com/about/versions/17/summary)
+
+---
+
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Essentials ](https://developer.android.com/get-started)
+  * [ Releases ](https://developer.android.com/about/versions)
+
+Android 17 features and changes list Stay organized with collections  Save and categorize content based on your preferences.  The following table lists all documented features and behavior changes that might affect app developers. Use this list to find changes that affect you, and then click the corresponding link to read the documentation. Accessibility Connectivity Core functionality Graphics Human input Device form factors Media Privacy Security User experience and system UI New features and APIs Change (all apps) Change (apps targeting 17+) Category | Type | Name  
+---|---|---  
+Security | Change (all apps) |  [ Block cross profile loopback traffic](/about/versions/17/behavior-changes-all#block-cross-profile-loopback)  
+Cross-profile loopback traffic is no longer permitted by default.  
+Security | Change (all apps) |  [ Per-app keystore limits](/about/versions/17/behavior-changes-all#per-app-keystore-limits)  
+Apps have a limit on the number of keystore keys they can create, depending on their target API level; creating more keys causes an exception.  
+Security | Change (all apps) |  [ Restrict implicit URI grants](/about/versions/17/behavior-changes-all#restrict-implicit-uri-grants)  
+If Android apps initiate intents with URIs, we recommend that they explicitly preallocate all necessary URI permissions instead of relying on the system to automatically grant them.  
+Security | Change (apps targeting 17+) |  [ Enable CT by default](/about/versions/17/behavior-changes-17#ct-default)  
+In Android 16 we allowed apps to opt-in to the Certificate Transparency feature. For Android 17, we are planning to enable Certificate Transparency for all TLS connections performed by the device.  
+Security | Change (apps targeting 17+) |  [ Safer Native DCL—C](/about/versions/17/behavior-changes-17#safer-dcl)  
+Apps must ensure DCL modules cannot be overwritten without being detected.  
+Security | Change (apps targeting 17+) |  [ Restrict PII fields in CP2 data view](/about/versions/17/behavior-changes-17#restrict-pii-fields-cp2-data-view)  
+Apps that target Android 17 or higher can't access certain PII fields in the CP2 data view.  
+Security | Change (apps targeting 17+) |  [ Enforce strict SQL checks in CP2](/about/versions/17/behavior-changes-17#enforce-strict-sql-checks)  
+For apps targeting Android 17 or higher, Contacts Provider 2 enforces strict SQL query validation when the ContactsContract.Data table is accessed without READ_CONTACTS permission.  
+Security | New features and APIs |  [ Android Advanced Protection Mode (AAPM)](/about/versions/17/features#advanced-protection-mode)  
+Offers Android users a powerful new set of security features.  
+Security | New features and APIs |  [ PQC APK Signing](/about/versions/17/features#pqc-apk-signing)  
+Adds support for APKs to be signed with a new post-quantum crypto (PQC) signing key.  
+Core functionality | Change (all apps) |  [ App memory limits](/about/versions/17/behavior-changes-all#app-memory-limits)  
+Android 17 introduces new app memory limits based on the device's total RAM.  
+Core functionality | Change (all apps) |  [ App memory runtime limits](/about/versions/17/behavior-changes-all#app-memory-runtime-limits)  
+The system will be more rigorous in enforcing app memory limits. Exceeding these limits can cause apps to crash.  
+Core functionality | Change (all apps) |  [ usesClearTraffic deprecation plan](/about/versions/17/behavior-changes-all#uses-clear-traffic-deprecation)  
+We plan to deprecate usesClearTraffic in a future release. Apps that need to make HTTP connections should migrate to using network security configuration files instead.  
+Core functionality | Change (apps targeting 17+) |  [ New NPU feature flag](/about/versions/17/behavior-changes-17#npu-feature-flag)  
+Apps that target Android 17 must declare the android.hardware.npu feature if they need to access NPUs.  
+Core functionality | Change (apps targeting 17+) |  [ Memory restrictions for notification custom views](/about/versions/17/behavior-changes-17#memory-protection-notifications)  
+Android 17 (API level 37) introduces stricter memory usage checks for notifications using custom views  
+Core functionality | Change (apps targeting 17+) |  [ Static final fields are now unmodifiable](/about/versions/17/behavior-changes-17#static-final-fields)  
+Apps that target Android 17 or higher cannot modify static final fields. Attempting to do so causes an exception.  
+Core functionality | Change (apps targeting 17+) |  [ New lock-free implementation of MessageQueue](/about/versions/17/behavior-changes-17#lock-free-messagequeue)  
+Apps targeting Android 17 or higher get a new lock-free implementation of MessageQueue.  
+Core functionality | New features and APIs |  [ New ProfilingManager triggers](/about/versions/17/features#profilingmanager-new-triggers)  
+Android 17 several new system triggers to ProfilingManager to help you collect in-depth data to debug performance issues.  
+Core functionality | New features and APIs |  [ JobDebugInfo APIs](/about/versions/17/features#job-debug-info)  
+New `JobDebugInfo` APIs to help developers debug their JobScheduler jobs.  
+Privacy | Change (all apps) |  [ Restricted message access](/about/versions/17/behavior-changes-all#restricted-message-access)  
+Most apps now cannot access end-to-end encrypted messages.  
+Privacy | Change (apps targeting 17+) |  [ OTP protection for standard SMS messages](/about/versions/17/behavior-changes-17#sms-otp-protection)  
+Non-priority apps do not have immediate access to one-time passwords (OTP) even if users have granted them SMS permission.  
+Privacy | Change (apps targeting 17+) |  [ Local network permission required for apps targeting Android 17](/about/versions/17/behavior-changes-17#local-network-protection-permission)  
+Apps that target Android 17 cannot access local devices unless they have an appropriate permission in the nearby devices group. This requirement was opt-in in Android 16.  
+Privacy | Change (apps targeting 17+) |  [ ECH (Encrypted Client Hello) enabled](/about/versions/17/behavior-changes-17#ech-by-default)  
+For apps targeting Android 17 or higher, ECH is enabled for TLS connections.  
+Privacy | Change (apps targeting 17+) |  [ Hiding passwords from physical devices](/about/versions/17/behavior-changes-17#hide-pwd-kbd)  
+Device no longer shows last-typed password entered from a physical device.  
+Privacy | New features and APIs |  [ Android contacts picker](/about/versions/17/features#contact-picker)  
+Android 17 introduces a new contacts picker as a permission-free way to give apps access to the user's contacts.  
+Human input | Change (all apps) |  [ Touchpads deliver relative events by default during pointer capture](/about/versions/17/behavior-changes-all#touchpad-pointer-capture)  
+Beginning with Android 17, touchpads deliver relative pointer events (like with mouse events), instead of absolute events.  
+User experience and system UI | Change (all apps) |  [ Restoring default IME visibility after rotation](/about/versions/17/behavior-changes-all#ime-rotate)  
+When the device is rotated or the configuration is changed, the system uses the default visibility mode to determine whether to show the IME.  
+User experience and system UI | Change (apps targeting 17+) |  [ User-agent reduction for WebView](/about/versions/17/behavior-changes-17#user-agent-reduction-webview)  
+Beginning with Android 17, the default user-agent string for WebView is shorter.  
+User experience and system UI | New features and APIs |  [ Dedicated Assistant volume stream](/about/versions/17/features#assistant-volume)  
+Android 17 introduces a dedicated Assistant volume stream for Assistant apps, enabling independent control from media volume. Assistant apps with access to the new MODE_ASSISTANT_CONVERSATION can enable further volume improvements - control outside of an active playback or via Bluetooth peripherals.  
+User experience and system UI | New features and APIs |  [ MetricStyle template](/about/versions/17/features#metric-style)  
+Android 17 introduces the MetricStyle template to support health and fitness, timers, stopwatch, and travel use cases.  
+User experience and system UI | New features and APIs |  [ Live Update - Semantic color API](/about/versions/17/features#live-update)  
+Live Updates introduces a Semantic color API to support colors with strong associations with safety, danger, and caution.  
+User experience and system UI | New features and APIs |  [ Handoff](/about/versions/17/features#handoff)  
+Handoff allows the user to begin a task on one device then continue it onanother device.  
+Media | Change (all apps) |  [ Background audio hardening](/about/versions/17/behavior-changes-all#bg-audio)  
+Apps cannot play audio or use other disruptive audio APIs unless they are visible or have a foreground service.  
+Media | New features and APIs |  [ New BYPASS_CONCURRENT_RECORD_AUDIO_RESTRICTION permission to capture sensitive audio](/about/versions/17/features#concurrent-audio-capture)  
+Introduces new BYPASS_CONCURRENT_RECORD_AUDIO_RESTRICTION permission for concurrent audio capture during calls and other sensitive audio use cases.  
+Connectivity | Change (all apps) |  [ Autonomous re-pairing for Bluetooth bond losses](/about/versions/17/behavior-changes-all#autonomous-repairing)  
+The system will automatically re-establish Bluetooth bonds in the background after a bond loss occurs, eliminating the need for users to manually unpair and re-pair devices in Settings  
+Connectivity | Change (apps targeting 17+) |  [ Consistent BluetoothSocket read() behavior for RFCOMM](/about/versions/17/behavior-changes-17#bluetooth-rfcomm-socket-change)  
+Apps targeting Android 17 or higher will have the BluetoothSocket RFCOMM implementation align with the standard Java InputStream behavior.  
+Connectivity | New features and APIs |  [ Constrained satellite networks](/about/versions/17/features#satellite)  
+Focuses on enabling Android apps to function effectively over low-bandwidth satellite networks.  
+Accessibility | Change (apps targeting 17+) |  [ Accessibility support of complex IME physical keyboard typing](/about/versions/17/behavior-changes-17#a11y-ime-pk)  
+By allowing IMEs to convey more text-change information through the editor to accessibility service, this feature helps screen readers deliver more consistent, natural, and reliable feedback for complex IMEs.  
+Device form factors | Change (apps targeting 17+) |  [ Platform API changes to ignore orientation, resizability and aspect ratio constraints on large screens (sw>=600dp)](/about/versions/17/behavior-changes-17#large-screen-ignore-constraints)  
+Android 16 introduced platform API changes to ignore orientation, resizability, and aspect ratio constraints on large screens (sw >= 600dp). Apps that target Android 17 will no longer be able to opt out of these changes.  
+Graphics | New features and APIs |  [ WebGPU on Android ](/about/versions/17/features#webgpu-android)  
+WebGPU offers idiomatic Kotlin and Java graphics and compute APIs that provide access to Vulkan, part of Android's transition to Vulkan as the primary low-level GPU API.  
+Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates. Last updated 2026-06-19 UTC. [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-19 UTC."],[],[]] 

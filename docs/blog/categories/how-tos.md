@@ -1,0 +1,140 @@
+# How-tos  |  Android Developers' Blog
+
+**Source:** [https://developer.android.com/blog/categories/how-tos](https://developer.android.com/blog/categories/how-tos)
+
+---
+
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Android Developers' Blog ](https://developer.android.com/)
+  * [ Blog ](https://developer.android.com/blog)
+
+
+
+Stay organized with collections  Save and categorize content based on your preferences. 
+
+![](/static/blog/assets/how_tos_droid_c6d92904ea_f980e65f04_1vYn1P.webp)
+
+# How-tos
+
+From quick tips to deep-dive tutorials, these step-by-step guides are designed to help you work smarter and faster.
+
+  * 3 Authors
+
+02 Jun 2026
+
+02 Jun 2026
+
+![](/static/blog/assets/Engineering_Memory_Blog_Strapi_3_bfd74f43e5_Z2i8kF7.webp)
+
+##  [ Prioritizing Memory Efficiency: Essential Steps for Android 17 ](/blog/posts/prioritizing-memory-efficiency-essential-steps-for-android-17)
+
+[ arrow_forward  ](/blog/posts/prioritizing-memory-efficiency-essential-steps-for-android-17)
+
+While app performance is often equated with a smooth UI and fast start times, memory serves as the silent foundation upon which these visible metrics are built. It's no secret that we're seeing a shift where device memory is more important than ever.
+
+[Alice Yuan](/blog/authors/alice-yuan), [Ajesh Pai](/blog/authors/ajesh-pai), [Fung Lam](/blog/authors/fung-lam) • 10 min read 
+    * [ #Memory ](/blog/topics/memory)
+    * [ #Android ](/blog/topics/android)
+    * [ #Performance ](/blog/topics/performance)
+    * +1 ↩
+
+  * [ ![View Niharika Arora's profile](/static/blog/assets/niharika_2910f6d612_C99s1.webp) ](/blog/authors/niharika-arora)[ ![View Jean-Pierre Pralle's profile](/static/blog/assets/Jean_Pierre_Pralle_2bf889a65a_2buQLX.webp) ](/blog/authors/jean-pierre-pralle)
+
+22 Apr 2026
+
+22 Apr 2026
+
+![](/static/blog/assets/Streamline_user_animation_V02_Strapi_abd12985d7_SvAX9.webp)
+
+##  [ Streamline User Journeys with Verified Email via Credential Manager ](/blog/posts/streamline-user-journeys-with-verified-email-via-credential-manager)
+
+[ arrow_forward  ](/blog/posts/streamline-user-journeys-with-verified-email-via-credential-manager)
+
+Today, we're excited to announce a new verified email credential issued by Google, which developers can now retrieve directly from Android’s Credential Manager Digital Credential API.
+
+[Niharika Arora](/blog/authors/niharika-arora), [Jean-Pierre Pralle](/blog/authors/jean-pierre-pralle) • 3 min read 
+
+  * [ ![View Adarsh Fernando's profile](/static/blog/assets/Adarsh_profile_picture_8e88f2831a_1Ut9s6.webp) ](/blog/authors/adarsh-fernando)[ ![View Esteban de la Canal's profile](/static/blog/assets/estebandlc_profile_800x800_1d536f02a7_Z2cAv7x.webp) ](/blog/authors/esteban-de-la-canal)
+
+16 Apr 2026
+
+16 Apr 2026
+
+![](/static/blog/assets/hours_CLI_Dark_Strapi_2x_427f20cc78_Z1oqB1M.webp)
+
+##  [ Android CLI and skills: Build Android apps 3x faster using any agent ](/blog/posts/android-cli-build-android-apps-3x-faster-using-any-agent)
+
+[ arrow_forward  ](/blog/posts/android-cli-build-android-apps-3x-faster-using-any-agent)
+
+Whether you are using Gemini in Android Studio, Gemini CLI, Antigravity, or third-party agents like Claude Code or Codex, our mission is to ensure that high-quality Android development is possible everywhere.
+
+[Adarsh Fernando](/blog/authors/adarsh-fernando), [Esteban de la Canal](/blog/authors/esteban-de-la-canal) • 4 min read 
+
+  * [ ![View Alice Yuan's profile](/static/blog/assets/Alice_Yuan_552a4dd4ee_ZlDEgJ.webp) ](/blog/authors/alice-yuan)
+
+04 Mar 2026
+
+04 Mar 2026
+
+![](/static/blog/assets/battery_Performance_08d6713f94_Z1IAO0P.webp)
+
+##  [ Battery Technical Quality Enforcement is Here: How to Optimize Common Wake Lock Use Cases ](/blog/posts/battery-technical-quality-enforcement-is-here-how-to-optimize-common-wake-lock-use-cases)
+
+[ arrow_forward  ](/blog/posts/battery-technical-quality-enforcement-is-here-how-to-optimize-common-wake-lock-use-cases)
+
+In recognition that excessive battery drain is top of mind for Android users, Google has been taking significant steps to help developers build more power-efficient apps.
+
+[Alice Yuan](/blog/authors/alice-yuan) • 8 min read 
+
+  * [ ![View Thomas Ezan's profile](/static/blog/assets/thomas_ezan_d29c7508d0_l9O72.webp) ](/blog/authors/thomas-ezan)[ ![View Ivy Knight's profile](/static/blog/assets/Ivy_Knight_3071ce592d_2j4ER1.webp) ](/blog/authors/ivy-knight)
+
+02 Dec 2025
+
+02 Dec 2025
+
+![](/static/blog/assets/sample_readme_bazel_9348d9f325_Z57CJe.webp)
+
+##  [ Explore AI on Android with Our Sample Catalog App ](/blog/posts/explore-ai-on-android-with-our-sample-catalog-app)
+
+[ arrow_forward  ](/blog/posts/explore-ai-on-android-with-our-sample-catalog-app)
+
+We wanted to provide you with examples of AI-enabled features using both on-device and Cloud models and inspire you to create delightful experiences for your users.
+
+[Thomas Ezan](/blog/authors/thomas-ezan), [Ivy Knight](/blog/authors/ivy-knight) • 2 min read 
+
+  * [ ![View Alice Yuan's profile](/static/blog/assets/Alice_Yuan_552a4dd4ee_ZlDEgJ.webp) ](/blog/authors/alice-yuan)
+
+20 Nov 2025
+
+20 Nov 2025
+
+![](/static/blog/assets/performance_Week8_4d6efcacbe_ZI6a5e.webp)
+
+##  [ Leveling Guide for your Performance Journey ](/blog/posts/leveling-guide-for-your-performance-journey)
+
+[ arrow_forward  ](/blog/posts/leveling-guide-for-your-performance-journey)
+
+The performance leveling guide features 5 levels. We'll start with level 1, which introduces minimal adoption effort performance tooling, and we'll go up to level 5, ideal for apps that have the resourcing to maintain a bespoke performance framework.
+
+[Alice Yuan](/blog/authors/alice-yuan) • 9 min read 
+
+
+
+
+arrow_back 
+
+#### Page 1
+
+###### of 3
+
+[ arrow_forward  ](/blog/categories/how-tos/2)
+
+Stay in the loop
+
+Get the latest Android development insights delivered to your inbox weekly. 
+
+[ mail  Subscribe ](/subscribe)
+
+![A 3D illustration of the Android mascot, wearing a jetpack that's emitting a large cloud of bubbles](/static/blog/assets/rocket-android.CVJQZOf1_1PnraM.webp)
+
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]] 

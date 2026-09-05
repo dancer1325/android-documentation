@@ -1,9 +1,12 @@
 # Android Documentation
+
 Personal notes of [Android Documentation](https://developer.android.com/?hl=en)
 
-## Scraper
+## documentation
 
-Script to create a local Markdown mirror of Android Developer Documentation pages.
+* [here](docs)
+
+## Scraper
 
 > ⚠️ For educational and personal use only. Respect Google's terms of service and the Creative Commons Attribution 2.5 license.
 
