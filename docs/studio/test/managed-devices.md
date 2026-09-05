@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Scale your tests with build-managed devices Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Scale your tests with build-managed devices
 Build-managed devices improve consistency, performance, and reliability for your automated instrumented tests. This feature, available for API levels 27 and higher, lets you configure virtual or remote physical test devices in your project's Gradle files. The Android Gradle plugin uses the configurations to fully manage—that is, create, deploy, and tear down—those devices when executing your automated tests.
 
 This feature grants the Android Gradle plugin visibility into not only the tests you're running, but also the lifecycle of the devices, thus improving the quality of your testing experience in the following ways:
@@ -21,8 +13,6 @@ This feature grants the Android Gradle plugin visibility into not only the tests
   * For virtual devices, uses emulator snapshots to improve device startup time and memory usage and restore devices to a clean state between tests
   * Caches test results and reruns only tests that are likely to provide different results
   * Provides a consistent environment for running your tests between local and remote test runs
-
-
 
 ## Create a virtual build-managed device
 
@@ -358,9 +348,6 @@ In the [Google Developers Console API Library page](https://console.developers.g
              ...
              id 'com.google.firebase.testlab'
             }
-
-
-
 
 ### Specify a Test Lab device
 

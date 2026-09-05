@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/blog/categories/product-news](https://developer.android.com/blog/categories/product-news)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Android Developers' Blog ](https://developer.android.com/)
-  * [ Blog ](https://developer.android.com/blog)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](/static/blog/assets/product_news_droid_599a11ad69_d4ee764ece_Z1EpVf1.webp)
 
 # Product News
@@ -122,9 +113,6 @@ At Google I/O ‘26, we showcased how the latest advancements in the Android eco
     * [ #Wear OS ](/blog/topics/wear-os)
     * [ #Automotive OS ](/blog/topics/automotive-os)
     * +3 ↩
-
-
-
 
 arrow_back 
 

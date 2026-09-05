@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/samples](https://developer.android.com/samples)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Samples ](https://developer.android.com/samples)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ###  Samples 
 
 A selection of code samples and templates for you to use to accelerate your app development. Browse samples to learn how to build different components for your applications. 

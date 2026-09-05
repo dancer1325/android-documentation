@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Android vitals Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Android vitals
 ![](/static/topic/performance/vitals/images/android-vitals.png)
 
 Android vitals helps Google improve the quality of Android apps on Google Play. When a user allows it, their Android-powered device tracks app quality metrics such as stability, performance, battery use, and permission issues. Google Play collects this data, which can be accessed through the [Android vitals dashboard](https://support.google.com/googleplay/android-developer/answer/9844486?visit_id=637804734146240317-4134883661&rd=1) in the [Play Console](https://play.google.com/console/about/), and through the [Google Play Developer Reporting API](https://developers.google.com/play/developer/reporting).
@@ -64,7 +56,6 @@ The following resources resources are provided to help you diagnose and fix tech
 [Excessive battery usage](/topic/performance/vitals/excessive-battery-usage)  
 [Excessive partial wake locks](/topic/performance/vitals/excessive-wakelock)  
 
-
 ##### All other vitals:
 
 [Excessive wakeups](/topic/performance/vitals/wakeup)  
@@ -74,11 +65,9 @@ The following resources resources are provided to help you diagnose and fix tech
 [App startup time](/topic/performance/vitals/launch-time)  
 [Slow rendering](/topic/performance/vitals/render)  
 
-
 [Slow Sessions](/topic/performance/vitals/slow-session)  
 [Low memory killers (LMKs)](/topic/performance/vitals/lmk)  
 [Permission denials](/topic/performance/vitals/permissions)  
-
 
 #### I don't want to be surprised by bad behaviors or store listing warnings. How can I get ahead of this?
 
@@ -87,8 +76,6 @@ Play uses the last 28 days of data to assess your app's quality. Android vitals 
   * Regularly check the UI or use the reporting API to integrate data into your workflow.
   * Set up email alerts in the Play Console for issues.
   * Android vitals flags "emerging issues"—problems affecting devices for over 7 days for crashes and ANRs. This gives you 21 days to address them.
-
-
 
 #### I have a lot of devices with bad behaviors. How do I make sense of the list?
 
@@ -116,8 +103,6 @@ Android vitals is Play's main source for technical app quality. The number of is
   * To protect user privacy, we only show data if we have enough to make anonymous reports.
   * Issue rates may be calculated differently. Android vitals shows issues per daily active user. 
     * For example, Crashlytics counts the number of issues per app session. If a user played a game three times in one day and experienced one crash, Android vitals would show a 100% crash rate while Crashlytics would show a 33% crash rate.
-
-
 
 For more information on how data is collected, see the [Play Console Help Center](https://support.google.com/googleplay/android-developer/answer/7385505).
 

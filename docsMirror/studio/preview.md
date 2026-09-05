@@ -8,16 +8,6 @@
 Sign up to participate in user research studies and influence how we evolve tools, APIs, and guidance for millions worldwide. Get rewarded if selected. 
 
 [ Sign up ](https://google.qualtrics.com/jfe/form/SV_ezBhaM4WC0T7g8d?Q_Language=en&utm_campaign=Q3&campaignDate=July2025&referral_code=UXRZtOZ2325116)
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Android Studio preview ](https://developer.android.com/studio/preview)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ###  Preview release ![](/static/studio/images/android-studio-canary.svg)
 
 Get early access to the latest features and improvements in Android Studio. 

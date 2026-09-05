@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Define custom events Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Define custom events
 System tracing shows you information about processes only at the system level, so it's sometimes difficult to know which of your app or game's methods are executing at a given time relative to system events.
 
 Jetpack provides a tracing API that you can use to label a particular section of code. This information is then reported in traces captured on the device. [Macrobenchmark](/topic/performance/benchmarking/macrobenchmark-overview) captures traces with custom trace points automatically.
@@ -80,8 +72,6 @@ You can also use an NDK API for custom trace events. To learn about using this A
   * Note: link text is displayed when JavaScript is off
   * [App startup time](/topic/performance/vitals/launch-time)
   * [Slow rendering](/topic/performance/vitals/render)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

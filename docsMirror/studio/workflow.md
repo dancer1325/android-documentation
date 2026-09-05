@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Developer workflow basics Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Developer workflow basics
 The workflow to develop an app for Android is conceptually the same as for other app platforms. However, to efficiently build a well-designed app for Android, you need some specialized tools.
 
 This page provides an overview of the process to build an Android app and includes links to more information about Android Studio tools for each phase of development.
@@ -46,9 +38,6 @@ To view and analyze various performance metrics such as memory usage, network tr
   5. **Publish**
 
 To prepare your app for release to users, you will need to build an [Android App Bundle](/guide/app-bundle), sign it with a security key, and get ready to publish to the Google Play Store. For more information, see the [Publish your app](/studio/publish).
-
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

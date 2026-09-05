@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Add keep rules Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Add keep rules
 At a high level, a keep rule specifies a class (or subclass or implementation), and then members—methods, constructors, or fields—within that class to preserve.
 
 The general syntax for a keep rule is as follows:
@@ -91,8 +83,6 @@ The following example shows how you should specify the `MaterialButton` class:
 
   * Correct: `com.google.android.material.button.MaterialButton`
   * Incorrect: `MaterialButton`
-
-
 
 Class specifications also [specify the members](/topic/performance/app-optimization/add-keep-rules#member-spec) within a class that should be kept. For example, the following rule keeps the `MyClass` class and the `someSpecificMethod()` method:
     
@@ -228,9 +218,6 @@ An example using `...` is as follows:
           public java.lang.Object fetchUser(...);
         }
         
-
-
-
 
 ## Member specification
 
@@ -463,8 +450,6 @@ Specify an array type by appending `[]` to the component type for each dimension
   * One-dimensional class array: `java.lang.String[]`
   * Two-dimensional primitive array: `int[][]`
 
-
-
 For example, if you have the following code:
     
     
@@ -622,9 +607,6 @@ The following keep rule keeps all of the classes:
         -keepclasseswithmembers class ** { public static void main(java.lang.String[];) }
         
 
-
-
-
 ## Conditional keep rules
 
 In addition to standard keep rules, you can use conditional keep rules, which only apply if a specific condition is met. You can specify conditional rules using the `-if` flag. The keep rule that follows an `-if` flag is only active if the class specification in the `-if` flag has a match.
@@ -699,8 +681,6 @@ When writing keep rules, you must specify classes and other reference types usin
 
   * [APK Analyzer](/studio/debug/apk-analyzer#show_bytecode_find_usages_and_generate_keep_rule)
   * With the Kotlin source file open, inspect the bytecode by going to **Tools > Kotlin > Show Kotlin Bytecode > Decompile**.
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

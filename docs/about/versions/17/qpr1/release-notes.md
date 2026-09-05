@@ -4,11 +4,8 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Essentials ](https://developer.android.com/get-started)
-  * [ Releases ](https://developer.android.com/about/versions)
-
-Release notes Stay organized with collections  Save and categorize content based on your preferences.  Beta 6 **Release date** | July 1, 2026  
+Release notes
+Beta 6 **Release date** | July 1, 2026  
 ---|---  
 **Builds** | CP31.260618.005  
 **Emulator support** | x86 (64-bit), ARM (v8-A)  

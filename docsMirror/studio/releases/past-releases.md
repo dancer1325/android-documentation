@@ -4,14 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ IDE guides ](https://developer.android.com/studio/releases/past-releases)
-
-
-
-#  Android Studio Panda 4 (April 2026) Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Android Studio Panda 4 (April 2026)
 The following are the release notes for Android Studio Panda 4.
 
 ## Patch releases
@@ -35,8 +28,6 @@ Key Features:
   * **No API Key Management** : Eliminates the need to manually provision, embed, or rotate API keys within your client-side code, reducing security risks and setup time.
   * **Automated Firebase Integration** : Seamlessly connects your Android Studio project to Firebase services. The template handles the backend plumbing required to communicate with Gemini models securely.
   * **Production-Ready Architecture** : Built on top of Firebase’s managed infrastructure, ensuring that your AI features can scale from a local prototype to a production environment without architectural changes.
-
-
 
 To get started, go to **File** > **New** > **New Project** and select the **Gemini API Starter** template from the list of available project types.
 

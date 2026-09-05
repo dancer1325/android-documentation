@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Slow Sessions (games only) Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Slow Sessions (games only)
 A slow session is a session in which more than 25% of the frames are slow. A frame is slow if it is not presented less than 50ms after the previous frame (equivalent to 20 FPS). Android vitals also reports a second Slow Sessions metric with a target of 34ms (equivalent to 30FPS). Using Slow Sessions, you can understand the frame-rate performance of your game, which impacts how smooth and fluid your game feels to users.
 
 In due course, Play will start steering users away from games that cannot achieve 20 FPS on their phones. Note that Android vitals only begins monitoring frame rate after your game has been running for one minute.
@@ -69,9 +61,6 @@ Average FPS of each layer is also shown in the dump:
          adb shell dumpsys SurfaceFlinger --timestats -disable
          
 
-
-
-
 ## Slow frame causes and solutions
 
 There are many reasons a frame might present or render longer on the screen than the developer's target. The game could be **CPU/GPU bound**. Or the device is **overheating and activates a throttled thermal state**. Or there's **a mismatch in the game's framerate and the device's display refresh rate**.
@@ -88,8 +77,6 @@ Frame pacing is the synchronization of a game's logic and rendering loop with an
   * Detects late frame submissions
   * Repeats the display of past frames when late frames are detected
 
-
-
 Learn how [Mir 2 used Swappy to reduce their slow session rate from 40% to 10%](/stories/games/swappy).
 
 #### How to use Swappy in native projects
@@ -98,8 +85,6 @@ See the following guides to integrate the Android Frame Pacing library into your
 
   * [Integrate Android Frame Pacing into your OpenGL renderer](/games/sdk/frame-pacing/opengl)
   * [Integrate Android Frame Pacing into your Vulkan renderer](/games/sdk/frame-pacing/vulkan)
-
-
 
 ### How to use Swappy in Unity game engine
 
@@ -122,8 +107,6 @@ Vulkan offers the following advantages over OpenGL ES:
   * A more efficient architecture with lower CPU overhead in the graphics driver
   * New optimization strategies to improve CPU performance
   * New graphics features not available in OpenGL ES, such as bindless APIs and ray tracing
-
-
 
 ### How to use Vulkan in native Android projects
 
@@ -163,8 +146,6 @@ Here are the main ADPF features:
   * [Fixed Performance Mode](/games/optimize/adpf/fixed-performance-mode): Enable fixed-performance mode on a device during benchmarking to get measurements that aren't altered by dynamic CPU clocking.
   * [Power Efficiency Mode](/reference/android/os/PerformanceHintManager.Session#setPreferPowerEfficiency\(boolean\)): Tells the session that the threads in Performance Hint Session can be safely scheduled to prefer power efficiency over performance. Available in Android 15 (API leve 35).
 
-
-
 ### How to use ADPF in native Android projects
 
 The [Integrating Adaptability Features Into Your Native Game](/adaptability-codelab) codelab guides you to integrate ADPF features into your game with steps that you can follow at your own pace. At the end of the codelab, you will have integrated the following features:
@@ -173,8 +154,6 @@ The [Integrating Adaptability Features Into Your Native Game](/adaptability-code
   * [Game Mode API](/games/optimize/adpf/gamemode/about-API-and-interventions): Understand player optimization preferences (maximize performance or preserve battery) and adjust accordingly.
   * [Game State API](/reference/android/app/GameState): Let the system know the state of your game (loading, playing, UI, etc.), and the system can adjust resources accordingly (boost I/O, or CPU, GPU, etc.).
   * [Performance Hint API](/reference/android/os/PerformanceHintManager): Let the system know your threading model and workload so that the system can allocate resources accordingly.
-
-
 
 ### How to use ADPF in Unity game engine
 
@@ -193,8 +172,6 @@ The [Integrating Adaptability Features Into Your Native Game](/adaptability-code
   3. Enable the ADPF Unreal Engine plugin in the Unreal editor
   4. Relaunch Unreal editor
   5. [Build and cook](https://dev.epicgames.com/documentation/en-us/unreal-engine/cooking-content-in-unreal-engine?application_version=5.0) the game
-
-
 
 The [Android Dynamic Performance Framework](/games/optimize/adpf)(ADPF) plugin for [Unreal Engine](https://www.unrealengine.com/en-US) provides stable performance and prevents thermal throttling. [Download the plugin](https://github.com/android/adpf-unreal-plugin) from GitHub. This plugin changes features by setting [Unreal console values](https://docs.unrealengine.com/4.26/en-US/ProductionPipelines/DevelopmentSetup/Tools/ConsoleManager/).
 

@@ -4,22 +4,12 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Profiling limitations Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Profiling limitations
 There are multiple situations where the profile collection might not go as expected:
 
   * The profile collection fails due to an internal error. If this happens, the [`ProfilingResult`](/reference/android/os/ProfilingResult) API tells you about the errors.
   * The profile collection fails due to rate limiting. For more information, see How rate limiting works
   * The profile collection succeeds, but the app isn't immediately notified. This can happen if the app crashes during long profile collections. If the app closes, the system automatically stops and saves the profile. The app is informed about the collected profile when it restarts and registers a general listener with `ProfilingManager`.
-
-
 
 ## How rate limiting works
 
@@ -36,8 +26,6 @@ The rate limiter uses three time periods:
   * **Per Hour:** There's a maximum cost allowed per hour.
   * **Per Day:** There's a maximum cost allowed per day.
   * **Per Week:** There's a maximum cost allowed per week.
-
-
 
 The rate limiter sets a total cost that can be used within each of these periods. For example, an app might be allowed to record X profiles per hour, Y per day, and Z per week. If your app reaches its limit in any of these periods, future profile requests will result in an `ERROR_FAILED_RATE_LIMIT_PROCESS` error.
 

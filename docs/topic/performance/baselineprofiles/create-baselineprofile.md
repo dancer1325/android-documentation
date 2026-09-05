@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Create Baseline Profiles Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Create Baseline Profiles
 Automatically generate profiles for every app release using the [Jetpack Macrobenchmark library](/macrobenchmark) and [`BaselineProfileRule`](/reference/kotlin/androidx/benchmark/macro/junit4/BaselineProfileRule). We recommend that you use `com.android.tools.build:gradle:8.0.0` or higher, which comes with build improvements when using Baseline Profiles.
 
 **Important:** To keep installation turnaround during development low, Baseline Profiles are only installed for release builds.
@@ -23,8 +15,6 @@ These are the general steps to create a new Baseline Profile:
   2. Define the JUnit test that helps generate Baseline Profiles.
   3. Add the Critical User Journeys (CUJs) that you want to optimize.
   4. Generate the Baseline Profile.
-
-
 
 After you generate the Baseline Profile, benchmark it using a physical device to measure the speed improvements.
 
@@ -50,8 +40,6 @@ The fields in the template are the following:
      * **Build configuration language** : whether you want to use Kotlin Script (KTS) or Groovy for your build configuration scripts.
      * **Use Gradle-managed device** : if you're using [Gradle-managed devices](/studio/test/gradle-managed-devices) to test your app.
   3. Click **Finish** and the new module is created. If you are using source control, you might be prompted to add the newly created module files to source control.
-
-
 
 ### Define the Baseline Profile generator
 
@@ -104,9 +92,6 @@ Run the generator as an instrumented test on a rooted physical device, emulator,
 **Note:** When using Jetpack Macrobenchmark 1.2.0-alpha06 and higher, you can generate the Baseline Profile on devices running Android 13 (API 33) and higher without root access. 
 
 At the end of the generation task, the Baseline Profile is copied to `app/src/variant/generated/baselineProfiles`.
-
-
-
 
 ### Create a new Baseline Profile without templates
 
@@ -279,9 +264,6 @@ Here's how to create a Baseline Profile using the Baseline Profile Gradle plugin
 
   6. At the end of the generation task, the Baseline Profile is copied to `app/src/variant/generated/baselineProfiles`.
 
-
-
-
 ## Create a new Baseline Profile with AGP 7.3-7.4
 
 It's possible to generate Baseline Profiles with AGP 7.3-7.4, but we strongly recommend upgrading to at least AGP 8.1 so you can use the Baseline Profile Gradle plugin and its latest features.
@@ -291,8 +273,6 @@ If you need to create Baseline Profiles with AGP 7.3-7.4, the steps are the same
   * Don't add the Baseline Profile Gradle plugin.
   * To generate the Baseline Profiles, execute the Gradle task `./gradlew [emulator name][flavor][build type]AndroidTest`. For example, `./gradlew :benchmark:pixel6Api31BenchmarkAndroidTest`.
   * You must manually apply the generated Baseline Profile rules to your code.
-
-
 
 ### Manually apply generated rules
 
@@ -313,9 +293,6 @@ Profiles follow the `[class name]-[test method name]-baseline-prof.txt` naming p
          
 
   4. Build the production version of your app while the applied HRF rules are compiled into binary form and included in the APK or AAB. Then distribute your app as usual.
-
-
-
 
 ## Benchmark the Baseline Profile
 
@@ -350,16 +327,12 @@ If your app uses [Jetpack Compose](/jetpack/compose), use the following APIs to 
   * [`ReportDrawnWhen`](/reference/kotlin/androidx/activity/compose/ReportDrawnWhen.composable#ReportDrawnWhen\(kotlin.Function0\)) takes a predicate, such as `list.count > 0`, to indicate when your composable is ready for interaction.
   * [`ReportDrawnAfter`](/reference/kotlin/androidx/activity/compose/ReportDrawnAfter.composable#ReportDrawnAfter\(kotlin.coroutines.SuspendFunction0\)) takes a suspending method that, when it completes, indicates that your composable is ready for interaction.
 
-
-
 ## Recommended for you
 
   * Note: link text is displayed when JavaScript is off
   * [Capture Macrobenchmark metrics](/topic/performance/benchmarking/macrobenchmark-metrics)
   * [Write a Macrobenchmark](/topic/performance/benchmarking/macrobenchmark-overview)
   * [JankStats library](/topic/performance/jankstats)
-
-
 
 [ Previous arrow_back  Overview  ](/topic/performance/baselineprofiles/overview)
 

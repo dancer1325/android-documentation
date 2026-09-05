@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Monitor performance Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Monitor performance
 You can track and analyze performance of your app for valuable insight about a user's overall experience. You can monitor performance to identify potential issues and optimize for those paths before they impact more users.
 
 ## Android vitals

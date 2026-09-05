@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  In-process tracing (Experimental) Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  In-process tracing (Experimental)
 The new [`androidx.tracing:tracing:2.0.0-alpha04`](/jetpack/androidx/releases/tracing) library is a low-overhead Kotlin API that allows capturing in-process trace events. These events can capture time slices and their context. The library additionally supports context propagation for Kotlin Coroutines.
 
 The library uses the same [Perfetto](https://perfetto.dev) trace packet format that Android developers are familiar with. Also, Tracing `2.0` (unlike the `1.0.0-*` APIs) supports the notion of **pluggable tracing backends** and **sinks** , so other tracing libraries can **customize** the output tracing format, and how context propagation works in their implementation.

@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Snapshots Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Snapshots
 A _snapshot_ is a stored image of an Android Virtual Device (AVD) that preserves the entire state of the device at the time that it was saved – including OS settings, application state, and user data. You can return to a saved system state by loading a snapshot, saving you the time of waiting for the operating system and applications on the virtual device to restart, as well as saving you the effort of bringing your app back to the state at which you want to resume your testing. Starting a virtual device by loading a snapshot is much like waking a physical device from a sleep state, as opposed to booting it from a powered-off state.
 
 For each AVD, you can have one _Quick Boot_ snapshot and any number of general snapshots.
@@ -44,9 +36,6 @@ You can specify whether the emulator automatically saves a snapshot when you clo
 **Note:** When automatic Quick Boot snapshots are enabled, you can skip saving a Quick Boot snapshot by holding the `Shift` key down when you close the emulator.
      * **No** : Don't save an AVD snapshot when you close the emulator.
 
-
-
-
 Your selection applies only to the AVD that is open. You can't save snapshots while ADB is offline (such as while the AVD is still booting).
 
 ## Save general snapshots
@@ -77,8 +66,6 @@ If you want to disable Quick Boot so your AVD always performs a cold boot, do th
   2. Click **Show Advanced Settings** and scroll down to **Emulated Performance**.
   3. Select **Cold boot**.
 
-
-
 ## Cold boot once
 
 Instead of disabling Quick Boot completely, you can cold boot by clicking **Cold Boot** from the AVD's menu in the **Device Manager**.
@@ -92,8 +79,6 @@ Instead of disabling Quick Boot completely, you can cold boot by clicking **Cold
   * If the emulator fails to boot from a snapshot, select **Cold Boot** for the AVD in the Device Manager and [submit a bug report](/studio/report-bugs).
   * Snapshots are not reliable when software rendering is enabled. If snapshots don't work, click **Edit this AVD** ![](/static/studio/images/buttons/avd-edit.png) in the **Device Manager** and change **Graphics** to either **Hardware** or **Automatic**.
   * Loading or saving a snapshot is a memory-intensive operation. If you don't have enough RAM free when a load or save operation begins, the operating system may swap the contents of RAM to the hard disk, which can greatly slow the operation. If you experience very slow snapshot loads or saves, you may be able to speed these operations by freeing RAM. Closing applications that are not essential for your work is a good way to free RAM.
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

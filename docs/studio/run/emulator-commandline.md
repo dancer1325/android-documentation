@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Start the emulator from the command line Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Start the emulator from the command line
 The Android SDK includes an Android device emulator—a virtual device that runs on your computer. The Android Emulator lets you develop and test Android apps without using a physical device.
 
 This page describes command-line features that you can use with the Android Emulator. For information about using the Android Emulator UI, see [Run apps on the Android Emulator](/studio/run/emulator). 
@@ -65,8 +57,6 @@ To use `adb` to install, run, and test your app, follow these general steps:
   4. Run and test your app on the emulator.  
 While the emulator is running, you can use the [Emulator console](/studio/run/emulator-console) to issue commands as needed.
 
-
-
 To uninstall an app, do so as you would on an Android device.
 
 The virtual device preserves the app and its state data across restarts in a user data disk partition (`userdata-qemu.img`). To clear this data, start the emulator with the `-wipe-data` option or wipe the data in the AVD Manager. For more information about the user data partition and other storage, see the following section.
@@ -86,15 +76,11 @@ The system directory contains the Android system images that the emulator uses t
   * macOS and Linux - `~/Library/Android/sdk/system-images/android-apiLevel/variant/arch/`
   * Windows - `C:\Users\user\Library\Android\sdk\system-images\android-apiLevel\variant\arch\`
 
-
-
 Where: 
 
   * `apiLevel` is a numeric API level or a letter for preview releases. For example, `android-V` indicates the Android VanillaIceCream preview. On release, it became API level 35, designated by `android-35`. 
   * `variant` is a name corresponding to specific features implemented by the system image. For example, `google_apis` or `android-wear`. 
   * `arch` is the target CPU architecture. For example, `x86`.
-
-
 
 Use the `-sysdir` option to specify a different system directory for the AVD. 
 
@@ -118,8 +104,6 @@ The default location is the following, where `name` is the AVD name:
 
   * macOS and Linux - `~/.android/avd/name.avd/`
   * Windows 10, and higher - `C:\Users\user\.android\name.avd\`
-
-
 
 Use the `-datadir` option to specify a different AVD data directory. 
 
@@ -149,9 +133,6 @@ You can discover where files are located in two ways:
         
           See '-help-disk-images' for more information about disk image files.
         
-
-
-
 
 ## Command-line startup options
 
@@ -708,8 +689,6 @@ The following command-line options are deprecated:
   * `-skindir`
   * `-trace`
   * `-useaudio `
-
-
 
 ## Get help about command-line options
 

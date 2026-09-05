@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Query ProfilingManager profiles Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Query ProfilingManager profiles
 Querying `ProfilingManager` profiles is similar to querying regular Perfetto profiles. Therefore, review [Getting Started with PerfettoSQL](https://perfetto.dev/docs/analysis/perfetto-sql-getting-started) for a guide on how to query profiles.
 
 An important distinction between regular Perfetto traces and `ProfilingManager` traces is that `ProfilingManager` traces pass through a trace redactor. This redactor removes information about other processes unrelated to your app for privacy reasons.

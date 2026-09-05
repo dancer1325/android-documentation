@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Reduce your app size Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Reduce your app size
 Users often avoid downloading apps that seem too large, particularly in emerging markets where devices connect to spotty 2G and 3G networks or work on plans with data limits. This page describes how to reduce your app's download size, which lets more users download your app.
 
 ## Upload your app with Android App Bundles
@@ -36,15 +28,11 @@ An APK contains the following directories:
   * `res/`: contains resources that aren't compiled into `resources.arsc`.
   * `lib/`: contains the compiled code that is specific to the software layer of a processor. This directory contains a subdirectory for each platform type, such as `armeabi`, `armeabi-v7a`, `arm64-v8a`, `x86`, `x86_64`, and `mips`.
 
-
-
 An APK also contains the following files. Only `AndroidManifest.xml` is mandatory:
 
   * `resources.arsc`: contains compiled resources. This file contains the XML content from all configurations of the `res/values/` folder. The packaging tool extracts this XML content, compiles it to binary form, and archives the content. This content includes language strings and styles, as well as paths to content that isn't included directly in the `resources.arsc` file, such as layout files and images.  **Note:** Don't compress this file in your APK. 
   * `classes.dex`: contains the classes compiled in the DEX file format understood by the Dalvik or ART virtual machine.
   * `AndroidManifest.xml`: contains the core Android manifest file. This file lists the name, version, access rights, and referenced library files of the app. The file uses Android's binary XML format.
-
-
 
 ## Reduce resource count and size
 
@@ -127,8 +115,6 @@ Android supports different screen densities, such as the following:
   * `xxhdpi`
   * `xxxhdpi`
 
-
-
 Although Android supports the preceding densities, you don't need to export your rasterized assets to each density.
 
 If you know that only a small percentage of your users have devices with specific densities, consider whether you need to bundle those densities into your app. If you don't include resources for a specific screen density, Android automatically scales existing resources originally designed for other screen densities.
@@ -180,9 +166,6 @@ The `aapt` has the following limitations:
     
     buildTypes.all { isCrunchPngs = false }
         
-
-
-
 
 ### Compress PNG and JPEG files
 

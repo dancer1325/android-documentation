@@ -4,14 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Google Play ](https://developer.android.com/distribute)
-  * [ Other Play guides ](https://developer.android.com/guide/app-bundle)
-
-
-
-#  Target texture compression formats in Android App Bundles Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Target texture compression formats in Android App Bundles
 _Textures_ are images that can be applied to the surface of a 3D model. Textures are also used by 2D renderers to draw elements such as sprites or backgrounds. This page describes popular texture compression formats used in games and how to target them in Android App Bundles. Read [About Android App Bundles](/guide/app-bundle) and [Play Asset Delivery](/guide/playcore/asset-delivery) before starting this guide.
 
 ## Background
@@ -22,8 +15,6 @@ The following are common texture compression formats on modern mobile hardware:
 
   * ASTC: Recent format designed to supersede prior formats. More flexible than previous formats due to support for various block sizes. Using this format is a good way to optimize the size of your game.
   * ETC2: Supported by all devices that support OpenGL ES 3.0 and higher. This includes nearly all active Android mobile devices.
-
-
 
 These formats are supported by the following approximate percentages of Android devices:
 
@@ -36,14 +27,10 @@ Desktop computer GPUs running Google Play Games for PC also support this format:
 
   * DDS or S3TC: Sometimes called BCn, DXTC or DXT _n_.
 
-
-
 Older, no longer recommended texture compression formats include:
 
   * ETC1: Supported on most devices. This format has no transparency support, but games can use a second texture file for the alpha component.
   * PVRTC: Popular with iOS games, and also supported on some Android devices.
-
-
 
 ETC1 support is only a requirement for games supporting very old legacy devices or select Android TV devices which don't support OpenGL ES 3.0 and higher.
 
@@ -125,8 +112,6 @@ level2/src/main/assets/textures#tcf_pvrtc/...
   7. In Android Studio, select **Build > Generate Signed Bundle / APK**, or launch the [Gradle task from the command line](/studio/build/building-cmdline) to generate your bundle.
 
 **Note:** When APKs (to be installed on a device) are generated from the app bundle, the suffixes (for example, `#tcf_xxx`) are removed from the directory names. Your game only has to read files from a well-known directory name (for example, `level1/assets/textures`). Some game engines can detect the format of a file, so your game can be indifferent about which format of game assets are installed.
-
-
 
 ### Use the Google Play Unity plugin
 
@@ -235,9 +220,6 @@ Make sure to set the **Delivery mode** for each AssetBundle.
 
 ![Unity AssetBundle Delivery ASTC format](/static/images/app-bundle/unity-asset-bundle-config-2.svg)
 
-
-
-
 #### Build
 
 Select **Google > Build Android App Bundle** to launch the Unity build of your game. It also packages the AssetBundles into multiple asset packs where each AssetBundle name is converted to a single asset pack.
@@ -317,9 +299,6 @@ Set `suffixStripping.enabled` to `true` to remove the suffix (for example, `#tcf
            --modules=level1.zip,level2.zip,common.zip,base.zip --output=MY_BUNDLE.aab
          
 
-
-
-
 ## Verify the contents of the app bundle
 
 If you haven't already, [download `bundletool`](https://github.com/google/bundletool/releases) from the GitHub repository.
@@ -376,9 +355,6 @@ To verify that the correct asset packs were installed, do any of the following:
 
   * Generate a test set of textures (for example, replace a texture with a single bright color for a given format). Run the game and verify that it is present.
 
-
-
-
 If your app contains `on-demand` or `fast-follow` asset packs, use the [local testing solution for asset delivery](/guide/playcore/asset-delivery/test).
 
 ## Supported suffixes for texture directory names
@@ -395,8 +371,6 @@ Google Play understands the following suffixes used in texture directory names:
   * `#tcf_etc2` for Ericsson texture compression 2 (ETC2)
   * `#tcf_s3tc` for S3 texture compression (S3TC)
   * `#tcf_3dc` for ATI 3Dc texture compression (3Dc)
-
-
 
 ## Google Play serving rules
 

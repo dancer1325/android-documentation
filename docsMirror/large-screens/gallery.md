@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/large-screens/gallery](https://developer.android.com/large-screens/gallery)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ UI Design ](https://developer.android.com/design/ui)
-  * [ Gallery ](https://developer.android.com/design/ui/gallery)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ##  Engage on all screen sizes 
 
 Get inspired with UX designs that look great on a variety of layout types and screen sizes. Build engaging and differentiated experiences across the portfolio of Android-powered form factors. 

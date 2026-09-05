@@ -4,14 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Essentials ](https://developer.android.com/get-started)
-  * [ Developer stories ](https://developer.android.com/stories)
-
-
-
-#  Gameloft reduces device power consumption by 70%, resulting in 35% longer play time with the Game Mode API Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Gameloft reduces device power consumption by 70%, resulting in 35% longer play time with the Game Mode API
 ## Background
 
 For more than 20 years, [Gameloft](https://play.google.com/store/apps/dev?id=4826827787946964969) has created innovative gaming experiences for digital platforms, from mobile games to cross-platform PC and console titles. In addition to its own established franchises, Gameloft develops games for popular brands like LEGO, Universal, and Hasbro. With a team of 3,600 people worldwide, their games reach 55 million unique players in over 100 countries every month.
@@ -28,8 +21,6 @@ Because users were already used to seeing Asphalt 9’s game options feature, Ga
   * [PERFORMANCE](/reference/android/app/GameManager#GAME_MODE_PERFORMANCE) (best quality but resource-intensive on high-end devices, 60FPS but lower quality on low-end devices), 
   * [BATTERY](/reference/android/app/GameManager#GAME_MODE_BATTERY) (30FPS to reduce battery use), or 
   * [UNSUPPORTED](/reference/android/app/GameManager#GAME_MODE_UNSUPPORTED) (visual settings stay in the options menu)
-
-
 
 In Battery mode, graphic fidelity of environmental details is reduced to lower power consumption. High computational tasks such as ray tracing calculations for the reflections on the car and depth of field for the environmental props are removed, and complex shaders for motion blur and weather effects are simplified. The frame rate is also capped at 30FPS to save on CPU and GPU workload.
 

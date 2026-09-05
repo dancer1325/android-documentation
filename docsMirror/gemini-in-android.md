@@ -3,16 +3,6 @@
 **Source:** [https://developer.android.com/gemini-in-android](https://developer.android.com/gemini-in-android)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gemini in Android Studio ](https://developer.android.com/gemini-in-android)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](https://developer.android.com/static/images/gemini-in-android/gias-hero-image.png)
 
 ###  Build better apps faster with Gemini in Android Studio 
@@ -102,9 +92,6 @@ Transform UI
 
 Unit test generation 
 
-
-
-
   * ![](https://developer.android.com/static/images/gemini-in-android/gemini-tick.svg)
 
 File attachment 
@@ -132,9 +119,6 @@ Compose preview generation
   * ![](https://developer.android.com/static/images/gemini-in-android/gemini-tick.svg)
 
 Analyze crashes from App Quality Insights 
-
-
-
 
 ##  Upgrade with Gemini Code Assist 
 
@@ -224,8 +208,6 @@ checkIntellectual property and compliance:
 
   * [IP indemnification](https://cloud.google.com/gemini/docs/discover/works#how-gemini-protects)
   * [VPC-SC and Private Google Access](https://developers.google.com/gemini-code-assist/docs/configure-vpc-service-controls)
-
-
 
 checkAccess to Gemini in Firebase - advanced features, Gemini in Colab Enterprise, and Gemini in Databases
 

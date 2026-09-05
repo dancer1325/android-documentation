@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Create Startup Profiles Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Create Startup Profiles
 Startup Profiles are a subset of Baseline Profiles. Startup Profiles are used by the build system to further optimize the classes and methods they contain by improving the layout of code in your APK's DEX files. With Startup Profiles, your app startup is usually between 15% and 30% faster than with Baseline Profiles alone.
 
 For more information, see [Overview of Startup Profiles](/topic/performance/startupprofiles/overview).
@@ -25,14 +17,10 @@ We recommend using Startup Profiles with the following tools:
   * Android Gradle Plugin (AGP) 8.2 or higher
   * Android Studio Iguana or higher
 
-
-
 In addition, you need the following settings in your app:
 
   * [R8](/build/shrink-code) enabled. For your release build, set `isMinifyEnabled = true`.
   * DEX layout optimizations enabled. This is available only starting from AGP 8.1, and is enabled by default since AGP 8.3. For AGP versions 8.1 to 8.2, in the `baselineProfile {}` block of the app module's build file, set `dexLayoutOptimization = true`.
-
-
 
 ## Create a Startup Profile
 
@@ -85,8 +73,6 @@ After the first use case has been covered, follow the user funnel for app startu
   2. Notifications that trigger app startup
   3. Optional launcher activities
 
-
-
 Work this list from the top and stop before `classes.dex` is full. To cover more journeys afterwards, move code out of the startup path and add more journeys. To move code out of the startup path, inspect Perfetto traces during app startup and look for long running operations. You can also use a [macrobenchmark](/topic/performance/benchmarking/macrobenchmark-overview) with [method tracing enabled](/topic/performance/benchmarking/macrobenchmark-instrumentation-args#profiling-mode) for an automatable and complete view of method calls during app startup.
 
 ## Recommended for you
@@ -95,8 +81,6 @@ Work this list from the top and stop before `classes.dex` is full. To cover more
   * [Create Baseline Profiles {:#creating-profile-rules}](/topic/performance/baselineprofiles/create-baselineprofile)
   * [Baseline Profiles {:#baseline-profiles}](/topic/performance/baselineprofiles/overview)
   * [Writing a Microbenchmark](/topic/performance/benchmarking/microbenchmark-write)
-
-
 
 [ Previous arrow_back  Overview  ](/topic/performance/startupprofiles/overview)
 

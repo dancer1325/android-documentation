@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Reduce overdraw Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Reduce overdraw
 This page explains what overdraw is, how to diagnose it, and ways to eliminate or mitigate it.
 
 When an app draws the same pixel more than once within a single frame, this is called _overdraw_. Overdraw is usually unnecessary, and it's best to eliminate it. Overdraw becomes a performance problem when it wastes GPU time to render pixels that don't contribute to what the user sees on the screen.
@@ -52,8 +44,6 @@ You can do the following to reduce or eliminate overdraw:
   * Remove unnecessary backgrounds in layouts.
   * Flatten the view hierarchy.
   * Reduce transparency.
-
-
 
 This section provides information about each of these approaches.
 

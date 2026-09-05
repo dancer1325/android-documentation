@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Migrate to built-in Kotlin Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Migrate to built-in Kotlin
 Android Gradle plugin 9.0 introduces built-in Kotlin support and enables it by default. That means you no longer have to apply the `org.jetbrains.kotlin.android` (or `kotlin-android`) plugin in your build files to compile Kotlin source files. With built-in Kotlin, your build files are simpler and you can avoid compatibility issues between AGP and the `kotlin-android` plugin.
 
 **Note:** Built-in Kotlin replaces the `kotlin-android` plugin only. If you are writing a Kotlin Multiplatform (KMP) library module, you still need to apply the `org.jetbrains.kotlin.multiplatform` plugin and the [`com.android.kotlin.multiplatform.library`](/kotlin/multiplatform/plugin) plugin. Also, using the `org.jetbrains.kotlin.multiplatform` plugin together with the `com.android.library` or `com.android.application` plugin is no longer allowed when built-in Kotlin is enabled.
@@ -49,8 +41,6 @@ This error occurs because built-in Kotlin requires some changes to your project.
   2. Migrate the `kotlin-kapt` plugin if necessary
   3. Migrate the `android.kotlinOptions{}` DSL if necessary
   4. Migrate the `kotlin.sourceSets{}` DSL if necessary
-
-
 
 ### 1\. Remove the `kotlin-android` plugin
 
@@ -331,9 +321,6 @@ If migrating all your modules at once is challenging, you can migrate one module
   3. Follow the previous migration steps to migrate this module to built-in Kotlin.
 
   4. Once you've migrated all your modules, remove the `android.builtInKotlin=false` setting in `gradle.properties` and the `com.android.built-in-kotlin` plugin in your build files.
-
-
-
 
 ## Option to selectively disable built-in Kotlin
 

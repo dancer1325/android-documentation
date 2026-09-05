@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Record a video Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Record a video
 ![Device Video](/static/images/tools/am-video.jpg)
 
 **Figure 1.** Record a video of your app.
@@ -34,8 +26,6 @@ To record a video of your app, do the following:
   8. Click **Stop Recording** to stop the recording. 
   9. In the **Save As** dialog, save the MP4 file. 
   10. In the **Screen Recorder** dialog, click one of the buttons to show the file location, open the recording in a player, or dismiss the dialog. 
-
-
 
 ## Record video with the emulator
 

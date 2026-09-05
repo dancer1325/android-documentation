@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Processes and threads overview Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Processes and threads overview
 When an application component starts and the application doesn't have any other components running, the Android system starts a new Linux process for the application with a single thread of execution. By default, all components of the same application run in the same process and thread, called the _main_ thread.
 
 If an application component starts and there is already a process for that application, because another component from the application already started, then the component starts within that process and uses the same thread of execution. However, you can arrange for different components in your application to run in separate processes, and you can create additional threads for any process.
@@ -52,8 +44,6 @@ Bear in mind that the Android UI toolkit is _not_ thread-safe. So, don't manipul
   1. Don't block the UI thread. 
   2. Don't access the Android UI toolkit from outside the UI thread. 
 
-
-
 ### Worker threads
 
 Because of this single-thread model, it's vital to the responsiveness of your application's UI that you don't block the UI thread. If you have operations to perform that aren't instantaneous, make sure to do them in separate _background_ or _worker_ threads. Just remember that you can't update the UI from any thread other than the UI, or main, thread. 
@@ -63,8 +53,6 @@ To help you follow these rules, Android offers several ways to access the UI thr
   * `[Activity.runOnUiThread(Runnable)](/reference/android/app/Activity#runOnUiThread\(java.lang.Runnable\))`
   * `[View.post(Runnable)](/reference/android/view/View#post\(java.lang.Runnable\))`
   * `[View.postDelayed(Runnable, long)](/reference/android/view/View#postDelayed\(java.lang.Runnable, long\))`
-
-
 
 The following example uses `View.post(Runnable)`:
 

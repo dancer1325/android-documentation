@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/developer-verification](https://developer.android.com/developer-verification)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Essentials ](https://developer.android.com/get-started)
-  * [ Android developer verification ](https://developer.android.com/developer-verification)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ##  Elevating Android security to keep it open and safe 
 
 By making Android safer, we're protecting the open environment that allows developers and users to confidently create and connect. Android's new developer verification is an extra layer of security that deters bad actors and makes it harder for them to repeatedly spread harm. Starting in September 2026, apps in select regions must be registered by a verified developer to be installed on [ certified Android devices](https://www.android.com/certified/partners/). 
@@ -32,8 +23,6 @@ Step 1
   * If you're registering as an organization, you'll also need to provide a D-U-N-S number and verify your organization's website. 
   * You may also need to upload official government ID. 
 
-
-
 ![](https://developer.android.com/static/images/cluster-illustrations/policy.svg)
 
 Step 2
@@ -41,8 +30,6 @@ Step 2
 ###  Register your package names 
 
   * Prove ownership of your apps by providing the APK signed with your private key to connect the APK with your developer account. 
-
-
 
 ##  What type of distribution do I need? 
 

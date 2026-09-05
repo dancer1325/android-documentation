@@ -4,14 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Google Play ](https://developer.android.com/distribute)
-  * [ Games dev center ](https://developer.android.com/games)
-
-
-
-Send feedback  Stay organized with collections  Save and categorize content based on your preferences. 
-
+Send feedback
 ![](https://developer.android.com/static/images/hero-illustrations/android-games-hero.svg)
 
 ![](https://developer.android.com/static/images/dev-center/icons/games.svg)Developer center 

@@ -3,16 +3,6 @@
 **Source:** [https://developer.android.com/develop/adaptive-apps](https://developer.android.com/develop/adaptive-apps)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Devices ](https://developer.android.com/develop/devices)
-  * [ Adaptive Apps ](https://developer.android.com/develop/adaptive-apps)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 [ ![](https://developer.android.com/static/develop/adaptive-apps/images/adaptive-apps-hub-hero.svg) ](https://developer.android.com/develop/adaptive-apps/guides/get-started-with-adaptive-apps)
 
 ###  [ Build adaptive apps ](https://developer.android.com/develop/adaptive-apps/guides/get-started-with-adaptive-apps)

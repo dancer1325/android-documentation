@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Java 8+ APIs available through desugaring Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Java 8+ APIs available through desugaring
 Android Studio now includes support for using a number of Java 8+ APIs without requiring a minimum API level for your app. Through a process called [API desugaring](/studio/write/java8-support#library-desugaring), the DEX compiler (D8) allows you to include more standard language APIs in apps that support older versions of Android.
 
 Below is a searchable table showing which Java 8+ libraries are available when using the latest version of the Android Gradle Plugin with the `coreLibraryDesugaring` dependency set to `com.android.tools:desugar_jdk_libs:1.1.8` in `build.gradle` (see [API desugaring](/studio/write/java8-support#library-desugaring) for more information).
@@ -4876,8 +4868,6 @@ The following is a summary of potentially behavior-changing modifications to `ja
     * `getStandardOffset()` doesn't work for time periods where a given timezone used a different offset from UTC. Because of that, `isDaylightSavings()` and `getDaylightSavings()` may also return wrong results in problematic time periods.
     * `nextTransition()` and `previousTransition()` are slow but appear accurate within available data.
     * `getTransitions()` and `getTransitionRules()` return empty lists. That's consistent with the spec but may be surprising; use `nextTransition()` or `previousTransition()` instead.
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Add build dependencies Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Add build dependencies
 **Note:** When adding dependencies, consider enabling [Dependency verification](/build/dependency-verification) to help ensure the dependencies you download and include in your project are what you expect.
 
 The Gradle build system in Android Studio lets you include external binaries or other library modules to your build as dependencies. The dependencies can be located on your machine or in a remote repository, and any transitive dependencies they declare are automatically included as well. This page describes how to use dependencies with your Android project, including details about behaviors and configurations that are specific to the Android Gradle plugin (AGP). For a deeper conceptual guide to Gradle dependencies, see the [Gradle guide for dependency management](https://docs.gradle.org/current/userguide/getting_started_dep_man.html), but remember that your Android project must use only the dependency configurations defined on this page.
@@ -85,9 +77,6 @@ Some libraries are available in a published Bill of Materials (BOM) that groups 
          }
 
 Plugin references include `plugins` after the catalog name, and version references include `versions` after the catalog name (version references are uncommon; see [Dependencies with same version numbers](https://docs.gradle.org/current/userguide/platforms.html#sec:common-version-numbers) for examples of version references.) Library references don't include a `libraries` qualifier, so you can't use `versions` or `plugins` at the start of a library alias.
-
-
-
 
 ## Configure dependencies
 
@@ -217,16 +206,12 @@ For example, if your project declares the following:
   * And `LIB_A` depends on `LIB_C` and `LIB_D` (in that order)
   * And `LIB_B` also depends on `LIB_C`
 
-
-
 Then, the flat dependency order will be as follows:
 
   1. `LIB_A`
   2. `LIB_D`
   3. `LIB_B`
   4. `LIB_C`
-
-
 
 This ensures that both `LIB_A` and `LIB_B` can override `LIB_C`; and `LIB_D` is still higher priority than `LIB_B` because `LIB_A` (which depends on it) has higher priority than `LIB_B`.
 
@@ -259,8 +244,6 @@ Android Studio shows lint warnings in the version catalog file and the **Project
   * The SDKs violate Play policies.
   * The SDKs have known security vulnerabilities.
   * The SDKs have been deprecated by their authors.
-
-
 
 The warnings are signals that you should update those dependencies, because using outdated versions could prevent you from publishing to the Google Play Console in the future.
 

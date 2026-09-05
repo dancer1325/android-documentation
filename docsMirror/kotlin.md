@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/kotlin](https://developer.android.com/kotlin)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Get started ](https://developer.android.com/get-started/overview)
-  * [ Kotlin ](https://developer.android.com/kotlin)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](https://developer.android.com/static/images/cluster-illustrations/kotlin-hero.svg)
 
 ###  Develop Android apps with Kotlin 
@@ -163,8 +154,6 @@ Many apps are already built with Kotlin—from the hottest startups to Fortune 5
   * [ ![Zola Sales](/static/images/kotlin/apps/zola-sales.png) ](https://play.google.com/store/apps/details?id=com.offgrid.electric.zola.sales)
   * [ ![Headspace](/static/images/kotlin/apps/headspace.png) ](https://play.google.com/store/apps/details?id=com.getsomeheadspace.android)
   * [ ![Adobe Acrobat Reader](/static/images/kotlin/apps/adobe-acrobat-reader.png) ](https://play.google.com/store/apps/details?id=com.adobe.reader)
-
-
 
 Developer story
 

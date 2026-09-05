@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Configure test fixtures for publication Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Configure test fixtures for publication
 While publishing test fixtures doesn't require any particular configuration of the publication, the [capability mechanism](https://docs.gradle.org/current/userguide/component_capabilities.html) used to handle fixtures does require an additional configuration.
 
 For a given artifact with coordinates `groupId:artifactId:version`, Gradle expects that the test fixtures artifact declares a capability with coordinates `groupId:artifactId-test-fixtures:version`. This is not currently done automatically by either the test fixture support or the Maven Publish Plugin, and therefore must be done manually.
@@ -25,8 +17,6 @@ There are two options for renaming your project:
 
   * Rename the folder of the project. This changes the project name, or the Gradle path of the project, so all dependencies on the project need to be updated. While keeping the project name and folder the same might create more reorganization work initially, it reduces confusion.
   * Rename the project in Gradle without renaming the folder of the project. This avoids the impact on source versioning, but it splits the project location and name.
-
-
 
 To rename the project in Gradle, insert the following code in the `settings.gradle` file:
 

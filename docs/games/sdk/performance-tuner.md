@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Google Play ](https://developer.android.com/distribute)
-  * [ Games dev center ](https://developer.android.com/games)
-  * [ Guides ](https://developer.android.com/games/guides)
-
-
-
-Send feedback  Stay organized with collections  Save and categorize content based on your preferences. 
-
+Send feedback
 # Android Performance Tuner (APT) Part of [Android Game Development Kit](/games/agdk/overview).
 
 Android Performance Tuner (APT) enables you to deliver the best possible experience to each of your users by helping you to measure and optimize frame rates, graphical fidelity, loading time and loading abandonment across many Android devices at scale.
@@ -50,8 +42,6 @@ Android Performance Tuner works with Android vitals.
   * Android Performance Tuner records and aggregates live frame time and loading information from your game or app, alongside game annotations and fidelity parameters that you provide.
   * When you publish a version of your game or app with Android Performance Tuner, this performance data is uploaded to Google Play and unlocks new performance insights in Android vitals.
 
-
-
 To get these performance insights, you must integrate Android Performance Tuner into your game or app and then publish it on Google Play:
 
 ![](/static/images/games/performance-tuner/performance-tuner-integration-paths.png)
@@ -67,16 +57,12 @@ For all developers:
   * Access to Android vitals
   * Product only available in the new Google Play Console
 
-
-
 Additional requirements for Unity developers:
 
   * Unity version 2017.4 or later and [.NET version 4.6](https://dotnet.microsoft.com/download/dotnet-framework/net46)
   * To use APK Expansion files, Unity 2018.2 is required
   * For improved frame pacing and GPU measurements, Unity version 2019.3.14 or later is required
   * For Addressables scenes support, Unity 2019.3 or later and [Addressables package 1.19.4](https://docs.unity3d.com/Packages/com.unity.addressables@0.8/manual/index.html) or later are required.
-
-
 
 ## Learn about Android Performance Tuner
 
@@ -85,14 +71,10 @@ We have codelabs to walk you through integrating Android Performance Tuner into 
   * [Codelab: Integrating Android Performance Tuner into your C/C++ Android game](https://codelabs.developers.google.com/codelabs/android-performance-tuner-native/)
   * [Codelab: Integrating Android Performance Tuner into your Unity game](https://codelabs.developers.google.com/codelabs/android-performance-tuner-unity/)
 
-
-
 References for the C/C++ and Unity Engine SDKs:
 
   * [Android Performance Tuner C/C++ reference](/games/sdk/reference/performance-tuner/custom-engine)
   * [Android Performance Tuner Unity reference](/games/sdk/reference/performance-tuner/unity)
-
-
 
 ## Additional resources
 

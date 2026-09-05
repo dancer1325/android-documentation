@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Customize which resources to keep Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Customize which resources to keep
 When you [enable app optimization](/topic/performance/app-optimization/enable-app-optimization), the `isShrinkResources = true` setting instructs the optimizer to remove resources that are unused, which helps reduce the size of your app. Resource shrinking works only in conjunction with code shrinking, so if you're optimizing resources, also set `isMinifyEnabled = true`, for example:
     
     
@@ -31,8 +23,6 @@ If you want to keep or discard specific resources, create an XML _keep_ file in 
   * `tools:keep` attribute — Accepts a comma-separated list of resource names that identify resources to keep
   * `tools:discard` attribute — Accepts a comma-separated list of resource names that identify resources to discard
 
-
-
 Use the asterisk character as a wildcard to reference multiple resources in the same folder, for example:
     
     
@@ -47,8 +37,6 @@ Use the asterisk character as a wildcard to reference multiple resources in the 
   * Keep files have global scope. Give your keep files unique filenames that include the file's package name. Unique filenames ensure keep files from different libraries won't conflict, causing potential issues with ignored rules or unneeded kept resources, when different libraries are linked together.
   * The build doesn't package the keep file into your app.
   * You should rarely need to keep resources. The use of [`getIdentifier()`](/reference/android/content/res/Resources#getIdentifier\(java.lang.String,%20java.lang.String,%20java.lang.String\)) is an exception; however, retrieving resources by identifier is more efficient than retrieving them by name with `getIdentifier()`.
-
-
 
 Specifying which resources to discard might seem superfluous when you could instead delete them, but discarding resources can be useful when using build variants.
 
@@ -101,8 +89,6 @@ AGP looks for duplicate resources in the following locations:
   * Main resources, associated with the main source set, generally located in `src/main/res/`
   * Variant overlays, from the build type and build flavors
   * Library project dependencies
-
-
 
 AGP merges duplicate resources in the following cascading priority order:
 

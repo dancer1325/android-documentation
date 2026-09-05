@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Add annotation processors Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Add annotation processors
 This page includes detailed guidance on how to add and configure annotation processors as project dependencies. To learn more about annotation processors, see the entry in [Configure dependencies](/build/dependencies#dependency_configurations).
 
 If you add annotation processors to your compile classpath, you'll see an error message similar to the following:

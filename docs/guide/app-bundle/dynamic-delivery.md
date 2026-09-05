@@ -4,14 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Google Play ](https://developer.android.com/distribute)
-  * [ Other Play guides ](https://developer.android.com/guide/app-bundle)
-
-
-
-#  Overview of Play Feature Delivery Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Overview of Play Feature Delivery
 Google Play’s app serving model uses [Android App Bundles](/guide/app-bundle) to generate and serve optimized APKs for each user’s device configuration, so users download only the code and resources they need to run your app.
 
 Play Feature Delivery uses advanced capabilities of app bundles, allowing certain features of your app to be delivered conditionally or downloaded on demand. To do that, first you need to separate these features from your base app into feature modules.
@@ -40,8 +33,6 @@ Because each feature module depends on the base module, it also inherits certain
   * **Signing configurations:** App bundles are signed using signing configurations that you specify in the base module.
   * **The`minifyEnabled` property:** You can [enable code shrinking](/studio/build/shrink-code#shrink-code) for your entire app project from only the base module’s build configuration. So, you should omit this property from feature modules. You can, however, specify additional ProGuard rules for each feature module.
   * **`versionCode` and `versionName`**: When building your app bundle, Gradle uses app version information that the base module provides. You should omit these properties from your feature module’s `build.gradle` file.
-
-
 
 ### Establish a relationship to the base module
 
@@ -96,8 +87,6 @@ If your app project includes one or more feature modules, you can choose which f
   3. Under **Dynamic features to deploy** in the **General** tab, check the box next to each feature module you want to include when deploying your app.
   4. Click **OK**.
 
-
-
 By default, Android Studio doesn't deploy your app using app bundles to deploy your app. Instead, the IDE builds and installs APKs to your device that are optimized for deployment speed, rather than APK size. To configure Android Studio to instead build and deploy APKs and instant experiences from an app bundle, [modify your run/debug configuration](/studio/run/rundebugconfig#android-application).
 
 ## Use feature modules for custom delivery
@@ -112,8 +101,6 @@ Consider an app that allows your users to buy and sell goods in an online market
   * Browsing the marketplace
   * Placing an item for sale
   * Processing payments
-
-
 
 The table below describes the different delivery options that feature modules support, and how they might be used to optimize the initial download size of the sample marketplace app.
 
@@ -161,8 +148,6 @@ As an example of how the URI is generated, suppose you have an app and feature m
   * App package name: `com.example.my_app_package`
   * Feature's resources package name: `com.example.my_app_package.my_dynamic_feature`
 
-
-
 If the `resId` in the code snippet above refers to a raw file resource named “my_video” in your feature module, then the `Uri.Builder()` code above would output the following:
     
     
@@ -185,8 +170,6 @@ With feature modules, you can improve build speed and engineering velocity and e
   * Enable [SplitCompat](/reference/com/google/android/play/core/splitcompat/SplitCompat), so that your app has access to downloaded feature modules that are delivered on demand.
   * Feature modules should not specify activities in their manifest with [`android:exported`](/guide/topics/manifest/activity-element#exported) set to `true`. That's because there's no guarantee that the device has downloaded the feature module when another app tries to launch the activity. Additionally, your app should confirm that a feature is downloaded before trying to access its code and resources. To learn more, read [Manage installed modules](/guide/playcore/feature-delivery/on-demand#manage_installed_modules).
   * Because Play Feature Delivery requires you to publish your app using an app bundle, make sure that you're aware of app bundle [known issues](/guide/app-bundle#known_issues).
-
-
 
 ## Feature module manifest reference
 
@@ -223,7 +206,6 @@ dist:title="@string/feature_name"> |  Specifies a user-facing title for the modu
            ...
          </application>
 
-
   
 ...  
 </manifest> |   
@@ -239,14 +221,10 @@ To learn more about using feature modules, try the following resources.
   * [The latest Android App Bundle updates including the additional languages API](https://android-developers.googleblog.com/2019/03/the-latest-android-app-bundle-updates.html)
   * [Patchwork Plaid — A modularization story](https://medium.com/androiddevelopers/a-patchwork-plaid-monolith-to-modularized-app-60235d9f212e)
 
-
-
 ### Videos
 
   * [Customizable Delivery with the App Bundle and Easy Sharing of Test Builds](https://www.youtube.com/watch?v=flhib2krW7U)
   * [New Tools to Optimize Your App's Size and Boost Installs on Google Play](https://www.youtube.com/watch?v=rEuwVWpYBOY)
-
-
 
 ## Terms of service and data safety
 

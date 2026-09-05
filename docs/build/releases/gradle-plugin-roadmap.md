@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Android Gradle Plugin DSL/API migration timeline Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Android Gradle Plugin DSL/API migration timeline
 The Android Gradle Plugin (AGP) is the supported build system for Android applications and includes support for compiling many different types of sources and linking them together into an application that you can run on a physical Android device or an emulator.
 
 The following section describes the planned evolution of the AGP's DSL and API. As new APIs are introduced in stable releases, old APIs will be marked as deprecated. Those deprecated APIs will then become unavailable in the next stable release. The following sections provide information about upcoming changes in each major AGP release.
@@ -125,8 +117,6 @@ To help make your upgrade to AGP 10.0 seamless and predictable, follow these mig
   4. **Audit third-party Gradle plugins:** Ensure third-party plugins are upgraded to AGP 10.0 compatible versions. Plugins still relying on legacy extension types will cause build failures such as `ClassCastException: ... cannot be cast to class BaseExtension`.
   5. **Use official migration recipes:** For complex, real-world migration examples and side-by-side comparisons, refer to the official [gradle-recipes GitHub repository](https://github.com/android/gradle-recipes).
 
-
-
 Here is a before-and-after comparison showing how to migrate from eagerly querying legacy variants to lazily configuring variants using `androidComponents {}`:
 
 **Before: Legacy Variant API (Removed in AGP 10.0)**
@@ -199,8 +189,6 @@ We want to ensure the new Variant API supports your required use cases. If you e
 
   1. **Check existing items:** First, check the [AGP 10.0 Variant API Global Tracking Bug](https://issuetracker.google.com/532056644) to see if your migration blocker is already known, and +1 the issue.
   2. **Report missing APIs:** If your use case is unique, [file a new feature request](https://issuetracker.google.com/issues/new?component=192708&template=840533) using our specific Variant API template so we can investigate and assist.
-
-
 
 ### (Tentative) Access to private internal AGP classes is removed
 

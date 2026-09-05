@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Retrieve and analyze profiling data Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Retrieve and analyze profiling data
 This page describes how to retrieve traces and visualize them in the Perfetto UI.
 
 ## Retrieve traces
@@ -70,8 +62,6 @@ trace](/static/topic/performance/images/tracing/redacted-trace-sections.png) **F
   4. **Process View** : Shows your app's process.
   5. **Threads View** : Displays threads running within your process and their thread states (Runnable (R), Running (R), Sleeping (S), Uninterruptible Sleep (D)), which map directly to Linux Process States.
   6. **Trace slices** : This section shows trace annotations added by app developers or the framework. These annotations encompass computations between [`Trace.beginSection`](/reference/androidx/tracing/Trace#beginSection\(kotlin.String\)) and [`Trace.endSection`](/reference/androidx/tracing/Trace#endSection\(\)).
-
-
 
 For more information on Perfetto UI and trace visualization, see the [Perfetto docs](https://perfetto.dev/docs/visualization/perfetto-ui).
 

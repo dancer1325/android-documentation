@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Debug pre-built APKs Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Debug pre-built APKs
 Android Studio 3.0 and higher lets you profile and debug APKs that have [debugging enabled](/studio/debug#enable-debug) without having to build them from an Android Studio project.
 
 To start debugging an APK, follow these steps:
@@ -24,9 +16,6 @@ If you already have a project open, click **File > Profile or Debug APK** from t
   2. In the dialog that opens, select the APK you want to import into Android Studio.
 
   3. Click **OK**.
-
-
-
 
 If this option does not show up, make sure you have the "Android APK Support" plugin enabled.
 
@@ -46,8 +35,6 @@ The **Android** view in the Project pane lets you inspect the following contents
   * **cpp:** If your app includes native code, this directory contains your APK’s native libraries (SO files).
   * **External Libraries:** Contains the Android SDK.
 
-
-
 You can [use the Android profiler](/studio/profile/android-profiler) to start testing your app's performance.
 
 To debug your app's Kotlin or Java code, you need to attach the Kotlin or Java sources and add breakpoints in the Kotlin or Java source files. Similarly, to debug your native code, you must attach the native debug symbols.
@@ -61,8 +48,6 @@ To attach Kotlin or Java sources, proceed as follows:
   1. Double click on a SMALI file from the **Project** pane in the **Android** view. After opening the file, the editor displays a banner asking you to select the Kotlin or Java sources: ![Attach sources banner](/static/studio/images/debug/warning-attach-sources.png)
   2. Click **Attach Kotlin/Java Sources...** from the banner in the editor window.
   3. Navigate to the directory with the app’s Kotlin or Java source files and click **Open**.
-
-
 
 In the **Project** window, Android Studio replaces SMALI files with their corresponding Kotlin or Java source files. Android Studio also includes inner classes automatically. You can now add breakpoints and [debug your app](/studio/debug).
 
@@ -81,9 +66,6 @@ The editor shows a table of all the ABIs your APK supports.
 
   4. Navigate to the directory that includes the debuggable native libraries you want to attach and click **OK**.
 
-
-
-
 If the APK and debuggable native libraries were built using a different workstation, you need to also specify paths to the local debug symbols by following these steps:
 
   1. Add local paths to missing debug symbols by editing the field under the **Local Paths** column in the **Path Mappings** section of the editor window, shown in figure 2.
@@ -91,9 +73,6 @@ If the APK and debuggable native libraries were built using a different workstat
 In most cases, you need only provide the path to a root folder, and Android Studio automatically inspects subdirectories to map additional sources. Android Studio also automatically maps paths to a remote NDK to your local NDK download.
 
   2. Click **Apply Changes** in the **Path Mappings** section of the editor window.
-
-
-
 
 ![Providing paths to local debug symbols](/static/studio/images/debug/mapping_paths-2X.png)
 

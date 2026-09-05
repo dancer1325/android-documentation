@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gemini in Android Studio ](https://developer.android.com/gemini-in-android)
-
-
-
-#  About Gemini in Android Studio Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  About Gemini in Android Studio
 **Note:** Gemini in Android Studio is only available in the latest stable channel version of Android Studio and major versions released in the previous 10 months. If you are using an older version of Android Studio, you will need to update to use Gemini. For more information, see [Android Studio and Cloud services compatibility](/studio/releases#service-compat).
 
 Gemini in Android Studio is your AI-powered coding companion for Android development. It helps you be more productive by answering your development queries, generating code, finding relevant resources, and encouraging best practices. Most importantly, Gemini in Android Studio is uniquely equipped to accelerate Android development—it can help you mock up and troubleshoot Compose UIs, fix Gradle build errors, analyze crashes through integrations with Logcat and App Quality Insights, and more.
@@ -29,7 +21,6 @@ Gemini in Android Studio is available for individual developers and businesses:
     * Enterprise
 
 Available through a subscription to [Gemini Code Assist](https://developers.google.com/gemini-code-assist/docs/overview) or membership in the [Google Developer Program](https://developers.google.com/program).
-
 
 **Note:** If you're interested in agent-driven development for Android using agents outside of Android Studio, use [Android CLI](/tools/agents/android-cli).
 
@@ -55,8 +46,6 @@ If you're a professional developer who works as part of a team, ask your admin t
   * Integration with tools such as Firebase, Colab Enterprise, BigQuery data insights, Cloud Run, and Database Studio.
   * Analytics to track your team's usage and productivity impact.
   * (Enterprise tier only) Customized code suggestions from your codebases in external tools such as GitHub.
-
-
 
 For more details about the different offerings, see [Feature comparison](/studio/gemini/feature-comparison).
 

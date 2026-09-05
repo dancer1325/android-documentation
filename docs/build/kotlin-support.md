@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  AGP, D8, and R8 versions required for Kotlin versions Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  AGP, D8, and R8 versions required for Kotlin versions
 The Android Gradle plugin (AGP) and the D8 and R8 compilers are compatible with class files from Kotlin version 1.3 and higher.
 
 The D8 and R8 compilers support class files from Kotlin version 1.3 starting from version 2.1.86 (included in AGP 4.1). For class files from Kotlin version 1.4 and higher there is a minimum required AGP, D8, and R8 version for each Kotlin version.
@@ -46,9 +38,6 @@ When using [Java 8+ API desugaring](/studio/build/library-desugaring) AGP versio
 * * *
 
   1. 9.x versions before 9.0.28 don't support Kotlin 2.3. ↩
-
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

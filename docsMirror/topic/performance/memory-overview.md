@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Overview of memory management Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Overview of memory management
 The Android Runtime (ART) and Dalvik virtual machine use [paging](https://en.wikipedia.org/wiki/Paging) and [memory-mapping](https://en.wikipedia.org/wiki/Memory-mapped_files) (mmapping) to manage memory. This means that any memory an app modifies—whether by allocating new objects or touching mapped pages—remains resident in RAM and cannot be paged out. The only way to release memory from an app is to release object references that the app holds, making the memory available to the garbage collector. That is with one exception: any files mmapped in without modification, such as code, can be paged out of RAM if the system wants to use that memory elsewhere. 
 
 This page explains how Android manages app processes and memory allocation. For more information about how to manage memory more efficiently in your app, see [Manage Your App's Memory](/training/articles/memory). 
@@ -38,8 +30,6 @@ In order to fit everything it needs in RAM, Android tries to share RAM pages acr
   * Each app process is forked from an existing process called Zygote. The Zygote process starts when the system boots and loads common framework code and resources (such as activity themes). To start a new app process, the system forks the Zygote process then loads and runs the app's code in the new process. This approach allows most of the RAM pages allocated for framework code and resources to be shared across all app processes. 
   * Most static data is mmapped into a process. This technique allows data to be shared between processes, and also allows it to be paged out when needed. Example static data include: Dalvik code (by placing it in a pre-linked `.odex` file for direct mmapping), app resources (by designing the resource table to be a structure that can be mmapped and by aligning the zip entries of the APK), and traditional project elements like native code in `.so` files. 
   * In many places, Android shares the same dynamic RAM across processes using explicitly allocated shared memory regions (either with ashmem or gralloc). For example, window surfaces use shared memory between the app and screen compositor, and cursor buffers use shared memory between the content provider and client. 
-
-
 
 Due to the extensive use of shared memory, determining how much memory your app is using requires care. Techniques to properly determine your app's memory use are discussed in [Investigating Your RAM Usage](/studio/profile/investigate-ram). 
 
@@ -87,8 +77,6 @@ See the [`stressapptest`](https://android.googlesource.com/platform/external/str
   * SIGABRT: This is a fatal, native crash for your process due to requesting allocations of size larger than free memory, while the system is already under memory pressure.
   * [`SIGQUIT`](https://www.gnu.org/software/libc/manual/html_node/Termination-Signals.html#index-SIGQUIT): Produces a core memory dump and terminates the process when detected by your instrumentation test.
   * [`TRIM_MEMORY_EVENTS`](/reference/android/content/ComponentCallbacks2#constants_1): These callbacks are available on Android 4.1 (API level 16) and higher, and provide detailed memory alerts for your process. 
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

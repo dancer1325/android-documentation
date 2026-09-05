@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Generate Trace Logs by Instrumenting Your App Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Generate Trace Logs by Instrumenting Your App
 To generate a method trace of your app's execution, you can instrument your app using the `[Debug](/reference/android/os/Debug)` class. Instrumenting your app this way gives you more control over exactly when the device starts and stops recording tracing information. The device also saves your trace logs using the names you specify, so you can easily identify each log later. You can then view each trace log using the Android Studio [CPU Profiler](/studio/profile/cpu-profiler).
 
 You can also [start and stop tracing in the CPU Profiler](/studio/profile/cpu-profiler#method_traces) without instrumenting your app's code.
@@ -100,9 +92,6 @@ After the system creates the trace log on your device, you can access the file i
   * Copy the file to your local machine using the `adb pull` command. The command below copies a trace log named `sample.trace` from the device to the `~/Documents/trace-logs/` directory of your local machine. 
         
         adb pull path-on-device/sample.trace ~/Documents/trace-logs/
-
-
-
 
 You can then [import the trace file](/studio/profile/import-traces) with the CPU Profiler.
 

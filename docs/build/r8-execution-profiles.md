@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Configure how R8 runs Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Configure how R8 runs
 The settings plugin lets you create execution profiles for the R8 tool, letting you configure how R8 runs so it doesn't slow down your build. Depending on the environment, you can use profiles to run R8 in a separate JVM process and set JVM arguments, such as maximum heap size.
 
 ### Declare an execution profile

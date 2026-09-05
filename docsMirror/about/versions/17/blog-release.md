@@ -52,9 +52,7 @@ _Posted by Matthew McCullough, VP of Product Management, Android Developer_
 
   
 
-
   
-
 
 Today we're releasing Android 17 and making it available on most supported Pixel devices. Look for new devices running Android 17 in the coming months.
 
@@ -116,8 +114,6 @@ Android 17 introduces powerful new windowing capabilities that redefine how user
   * **The Bubble Bar:** On large screens (tablets and foldables), the system taskbar now includes a dedicated Bubble Bar to organize, transition between, and dock these floating app bubbles.
   * **Desktop interactive PiP:** In desktop environments, Android 17 introduces interactive Picture-in-Picture (PiP). Unlike traditional PiP windows which are read-only, these pinned windows remain fully interactive while staying always-on-top of other application windows.
 
-
-
 [![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg12FRQ31sUiyMj_ZalamTRI4VyI2tMXYKEoRy6b-u0Het272IDbRhznXot7b8AvFJEX-ubw_-pNxyS5JTKPUTBj1CNXwIYkTE906vembUcHeyGzE4Lb72WRyGNF7dOP_aBssNeCplOjEnKAc3d3hkak81LOpG0g9Hlep0AvC11MjdJ1MkqAp7ViUCu2bw/s16000/Bubbles%20\(1\).gif)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg12FRQ31sUiyMj_ZalamTRI4VyI2tMXYKEoRy6b-u0Het272IDbRhznXot7b8AvFJEX-ubw_-pNxyS5JTKPUTBj1CNXwIYkTE906vembUcHeyGzE4Lb72WRyGNF7dOP_aBssNeCplOjEnKAc3d3hkak81LOpG0g9Hlep0AvC11MjdJ1MkqAp7ViUCu2bw/s1600/Bubbles%20\(1\).gif)
 
 _App Bubbles and Bubble Bar in action_
@@ -165,8 +161,6 @@ To help you adapt your apps to meet the new Android 17 requirements, we've launc
   * **Advanced non-touch input:** Leverage Compose 1.11's enhanced trackpad and mouse support, including native focus rings and new APIs (like TrackpadInjectionScope and performTrackpadInput) to easily test and deliver a true "laptop-class" experience on Googlebooks and Desktop Mode.
   * **Dynamic window states:** Leverage Compose's reactive state model to seamlessly adapt your UI when the app transitions from full screen to a floating App Bubble or an interactive Desktop PiP window, ensuring a premium experience even at minimal dimensions.
 
-
-
 ## Android is Compose-first
 
 Compose offers the easiest way to build adaptive apps, and that's just one of the [many reasons](https://developer.android.com/develop/ui/compose/first#why-compose-first) we believe that all Android UI should be built with Compose. To that end, [Android development is now Compose-first](https://developer.android.com/develop/ui/compose/first). All new Android APIs, libraries, tools, and developer guidance will be built exclusively for Jetpack Compose. Legacy View components (in the android.widget package) and View-based Jetpack libraries (like Fragments, RecyclerView, and ViewPager) are now in maintenance mode. They will receive only critical bug fixes, and no new features.
@@ -188,9 +182,6 @@ Starting in Android 17, the system will enforce strict app memory limits based o
 
 [![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQePgjeISaotpA-miDPKel-qgAYtepLjMMBaiKZQqTf_iYRTJurn_iAFdC7utLnKRKAh9OhSjF_D83skA2PPg7xts0ORX7aVxBkoax6b9uEPqTlGiY_sh8Xv7U1pr0h4Nm8FLo-h3IJD8FhTJc-gOtpBwyLCnDBUPRJAuaaBjsIOhvUmTXFSna0ykksak/s16000/R8%20Configuration%20Analyzer.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQePgjeISaotpA-miDPKel-qgAYtepLjMMBaiKZQqTf_iYRTJurn_iAFdC7utLnKRKAh9OhSjF_D83skA2PPg7xts0ORX7aVxBkoax6b9uEPqTlGiY_sh8Xv7U1pr0h4Nm8FLo-h3IJD8FhTJc-gOtpBwyLCnDBUPRJAuaaBjsIOhvUmTXFSna0ykksak/s2048/R8%20Configuration%20Analyzer.png)
 
-
-
-
 _  
 _
 
@@ -199,16 +190,13 @@ _
 
   
 
-
   
-
 
 The R8 Configuration Analyzer
 
   * **LeakCanary in Android Studio Panda:** The profiler now features native LeakCanary integration as a dedicated task, fully integrated with your IDE and source code.
   * **ApplicationExitInfo:** If your app is terminated by these limits, getDescription() from ApplicationExitInfo will return "MemoryLimiter:AnonSwap".
   * **On-Device Anomaly Detection:** Part of ProfilingManager, you can leverage trigger-based profiling using TRIGGER_TYPE_ANOMALY to automatically capture heap dumps when the memory limit is reached.
-
 
     
     
@@ -252,7 +240,6 @@ Historically, apps required broad, permanent permissions to access information l
   * **System-rendered Location Button:** A new system-rendered location button that you can embed in your app grants precise location access for the current session only.
   * **EyeDropper API:** A new system-level API, `ACTION_OPEN_EYE_DROPPER`, allows your app to create a system-powered eyedropper enabling the user to select color from any pixel on the display. This provides a secure, privacy-preserving color-picking experience that eliminates the need for broad, sensitive screen capture or media projection permissions.
 
-
     
     
     val eyeDropperLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
@@ -270,30 +257,21 @@ Historically, apps required broad, permanent permissions to access information l
 
 ###   
 
+###   
 
 ###   
 
+###   
 
 ###   
 
+###   
 
 ###   
 
-
 ###   
 
-
 ###   
-
-
-###   
-
-
-###   
-
-
-###   
-
 
 ### _Picking a color from anywhere on the screen with the system EyeDropper_
 
@@ -309,16 +287,12 @@ Android 17 expands SMS one-time-password (OTP) protection by delaying access to 
   * Standard SMS OTP: [Delayed for all apps targeting SDK 37+](https://developer.android.com/about/versions/17/behavior-changes-17#sms-otp-protection).
   * Exemptions: Default SMS, assistant, and connected companion apps are exempt. Apps are strongly encouraged to migrate to the [SMS Retriever](https://developer.android.com/identity/sms-retriever) or [SMS User Consent APIs](https://developers.google.com/identity/sms-retriever/user-consent/overview).
 
-
-
 ## Post-Quantum Cryptography (PQC)
 
 Android 17 is ready for the next generation of cryptographic security:
 
   * Keystore Integration: Supported devices can generate ML-DSA (Module-Lattice-Based Digital Signature Algorithm) keys in secure hardware to produce quantum-safe signatures, exposed via standard JCA APIs.
   * Hybrid APK Signing: Introducing the v3.2 APK Signature Scheme, which combines classical signatures with ML-DSA signatures to secure app delivery.
-
-
 
 ## Safer native dynamic code loading 
 
@@ -338,54 +312,37 @@ These enhanced privacy protections are automatically supported byAndroid's built
 
 ###   
 
+###   
 
 ###   
 
-
-###   
-
+  
 
   
 
+  
 
   
 
+  
 
   
 
+  
 
   
 
+  
 
   
 
+  
 
   
 
-
   
 
-
   
-
-
-  
-
-
-  
-
-
-  
-
-
-  
-
-
-  
-
-
-  
-
 
 _
 
@@ -394,7 +351,6 @@ _Smarter password protection for physical inputs_
 _
 
   
-
 
 ## Media and camera features that empower creators and delight users 
 
@@ -408,14 +364,10 @@ Android 17 introduces new [creator features](https://blog.google/products-and-pl
   * Camera device type: New APIs that query the underlying device type to identify if a camera is built-in hardware, an external USB webcam, or a virtual camera.
   * Constant Quality for Video Recording: [`SetVideoEncodingQuality`](https://developer.android.com/reference/android/media/MediaRecorder#setVideoEncodingQuality\(int\)) in [`MediaRecorder`](https://developer.android.com/reference/android/media/MediaRecorder) configures a constant quality (CQ) mode for video encoders to ensure uniform visual fidelity across the entire video.
 
-
-
 ## Better support for hearing aids
 
   * Bluetooth LE Audio hearing aid support: Android now includes a specific device category for Bluetooth Low Energy (BLE) Audio hearing aids with the new [`AudioDeviceInfo.TYPE_BLE_HEARING_AID`](https://developer.android.com/reference/android/media/AudioDeviceInfo#TYPE_BLE_HEARING_AID) constant, so your app can distinguish hearing aids from regular headsets to provide a tailored experience for users with assistive listening devices.
   * Granular audio routing for hearing aids: Android 17 allows users to independently manage where specific system sounds are played. They can choose to route notifications, ringtones, and alarms to connected hearing aids or the device's built-in speaker, helping to avoid unwanted in-ear interruptions while maintaining a Bluetooth connection for hearing aid management apps.
-
-
 
 ## CameraX and Media3
 
@@ -442,7 +394,6 @@ Get started with Android 17 Your Pixel device should get Android 17 shortly if y
   
 For the best development experience with Android 17, we recommend that you use the latest Canary build of [Android Studio Quail](https://developer.android.com/studio/preview). Once you're set up, here are some of the things you should do: Test your current app for compatibility, learn whether your app is [affected by changes in Android 17](https://developer.android.com/about/versions/17/behavior-changes-all), and install your app onto a device or [Android Emulator](https://developer.android.com/studio/run/emulator) running Android 17 and extensively test it. Thank you again to everyone who participated in our Android developer preview and beta program. We're looking forward to seeing how your apps take advantage of the updates in Android 17, and have plans to bring you updates in a fast-paced release cadence going forward. For complete information on Android 17 please visit the [Android 17 developer site](https://developer.android.com/about/versions/17).  
   
-
 
 * * *
 

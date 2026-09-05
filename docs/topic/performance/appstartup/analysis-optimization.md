@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  App startup analysis and optimization Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  App startup analysis and optimization
 During app startup, your app makes the first impression on users. App startup must be quick to load and display information the user needs to use your app. If your app takes too long to start up, users might exit your app because they are waiting too long.
 
 We recommend using the Macrobenchmark library to [measure startup](/topic/performance/benchmarking/macrobenchmark-metrics#startup-timing). The library provides an overview and detailed system traces to see exactly what's happening during startup.
@@ -24,8 +16,6 @@ To analyze your app startup, do the following:
   * [Set up an environment](/topic/performance/appstartup/setup-env) to record traces for app startup.
   * Understand [system traces](/topic/performance/tracing).
   * Navigate a trace report using [Android Studio Profilers](/studio/profile) or [Perfetto](https://perfetto.dev/docs/visualization/perfetto-ui).
-
-
 
 ## Steps to analyze and optimize startup
 
@@ -41,9 +31,6 @@ To make performance tradeoffs, consider the following:
 
   * Move long-running operations to the background, if possible. Background processes can still affect CPU usage during startup.
 
-
-
-
 After you fully investigate the operation, you can decide on the tradeoff between the time it takes to load and the necessity of including it in app startup. Remember to include the potential for regression or breaking changes when altering the workflow of your app.
 
 Optimize and re-measure until you're satisfied with the startup time for your app. For more information, see [Use metrics to detect and diagnose problems](/topic/performance/vitals/launch-time#ddp).
@@ -58,8 +45,6 @@ Look at the overall time spent during app startup to identify any operations tha
   * Block the main thread. For more information, see [Navigate a Systrace report](/topic/performance/tracing/navigate-report).
   * Don't need to run during startup.
   * Can wait until after your first frame is drawn.
-
-
 
 Investigate each of these traces further to find performance gaps.
 
@@ -145,8 +130,6 @@ After you identify an opportunity for optimization, explore possible solutions t
   * Create and add add a [startup profile](/topic/performance/baselineprofiles/overview#startup-profiles) to your app.
   * Use the Jetpack [App Startup library](/topic/libraries/app-startup) to streamline the initialization of components during app startup.
 
-
-
 ## Analyze UI performance
 
 App startup includes a splash screen and the loading time of your home page. To optimize app startup, inspect traces to understand the time taken for your UI to be drawn.
@@ -160,8 +143,6 @@ To optimize initialization, do the following:
   * Prioritize slow layout passes and pick these for improvements.
   * Investigate each warning from Perfetto and alert from Systrace by adding [custom trace events](/topic/performance/tracing/custom-events) to reduce expensive draws and delays.
 
-
-
 ### Measure frame data
 
 There are multiple ways to measure frame data. The five main collection methods are:
@@ -171,8 +152,6 @@ There are multiple ways to measure frame data. The five main collection methods 
   * **In tests using Macrobenchmark (Perfetto under the hood)**
   * **[Perfetto FrameTimeline](https://perfetto.dev/docs/data-sources/frametimeline):** On Android 12 (API level 31), you can collect [Frame timeline metrics](https://perfetto.dev/docs/data-sources/frametimeline) from a Perfetto trace to which work is causing the frame drop. This can be the first step to diagnosing why frames are dropped.
   * **Android Studio Profiler for[jank detection](/studio/profile/jank-detection)**
-
-
 
 ### Check main activity load time
 
@@ -184,8 +163,6 @@ Your app's main activity might contain a large amount of information that is loa
   * Identify layouts taking a long time to render or measure.
   * Identify assets taking a long time to load.
   * Identify unnecessary layouts that are inflated during startup.
-
-
 
 Consider these possible solutions to optimize main activity load time:
 
@@ -212,16 +189,11 @@ Load the composeables inside the conditional block by modifying `shouldLoad`:
 
 This triggers a recomposition that includes the code inside the conditional block in the first snippet.
 
-
-
-
 ## Recommended for you
 
   * Note: link text is displayed when JavaScript is off
   * [Capture Macrobenchmark metrics](/topic/performance/benchmarking/macrobenchmark-metrics)
   * [Overview of measuring app performance](/topic/performance/measuring-performance) * [Frozen frames](/topic/performance/vitals/frozen)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

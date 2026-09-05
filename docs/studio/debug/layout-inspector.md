@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Debug your layout with Layout Inspector Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Debug your layout with Layout Inspector
 The Layout Inspector in Android Studio lets you inspect and debug the layout inside a running app in an emulator or physical device. You can inspect the attributes of each component, compare your app layout with design mockups, and display a magnified view of your app.
 
 You can also use the Layout Inspector to check how often a composable is recomposed or skipped, which can help identify issues with your app. For example, some coding errors might force your UI to recompose excessively, which can cause poor performance. Some coding errors can prevent your UI from recomposing and, therefore, can prevent your UI changes from appearing on the screen.
@@ -36,8 +28,6 @@ inspect button](/static/studio/images/design/deep-inspect.png), then click the c
 inspect button](/static/studio/images/design/deep-inspect.png).
   * To inspect physical devices, enable [device mirroring](/studio/run/device#device-mirroring).
   * To enable live updates as you update your app's UI, check that [Live Edit](/develop/ui/compose/tooling/iterative-development#live-edit) is enabled.
-
-
 
 ## Select or isolate a component
 
@@ -72,8 +62,6 @@ To compare your app layout with a reference image, such as a UI mockup, you can 
   * To adjust the transparency of the overlay, use the **Overlay Alpha** slider.
   * To remove the overlay, click **Clear Overlay**. ![](/static/studio/images/buttons/live-layout-inspector-remove-overlay-icon.png)
 
-
-
 ## Standalone Layout Inspector
 
 For optimal performance, we recommend using the Layout Inspector in its default embedded mode. If you want to un-embed the Layout Inspector, go to **File** (**Android Studio** on macOS)> **Settings** > **Tools** > **Layout Inspector** and clear the **Enable embedded Layout Inspector** checkbox.
@@ -85,8 +73,6 @@ In standalone mode, enable live updates by clicking the **Live Updates** ![](/st
 ### Views content
 
   * [Debug your layout with Layout Inspector (Views)](/studio/views/layout-inspector-views)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

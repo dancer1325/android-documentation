@@ -4,14 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Google Play ](https://developer.android.com/distribute)
-  * [ Other Play guides ](https://developer.android.com/guide/app-bundle)
-
-
-
-#  About Android App Bundles Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  About Android App Bundles
 **Important:** From August 2021, new apps are required to publish with the [Android App Bundle](/guide/app-bundle) on Google Play. New apps larger than 200 MB are now supported by either [Play Feature Delivery](/guide/app-bundle/dynamic-delivery) or [Play Asset Delivery](/guide/app-bundle/asset-delivery). From June 2023, new and existing [TV apps are required to be published as App Bundles](/docs/quality-guidelines/tv-app-quality#SC-E1). 
 
 An _Android App Bundle_ is a publishing format that includes all your app's compiled code and resources, and defers APK generation and signing to Google Play.
@@ -39,8 +32,6 @@ Keep in mind, **Android App Bundles do not support APK expansion (`*.obb`) files
   * Follow best practices to further [reduce app size](/topic/performance/reduce-apk-size).
   * Consider converting features that are used by only some of your users into [feature modules](/studio/projects/dynamic-delivery#dynamic_feature_modules) that your app can download later, on demand. Keep in mind, this may require some refactoring of your app, so make sure to first try the other suggestions described.
 
-
-
 ## Other considerations
 
 The following are known issues when building or serving your app with Android App Bundles. If you experience issues that are not already described here, [report a bug](https://issuetracker.google.com/issues/new?component=398856&template=1084213).
@@ -49,9 +40,6 @@ The following are known issues when building or serving your app with Android Ap
   * If you use tools that dynamically modify resource tables, APKs generated from app bundles might behave unexpectedly. So, when building an app bundle, it is recommended that you disable such tools.
 
   * It is possible to configure properties in a feature module's build configuration that conflict with those from the base (or other) modules. For example, you can set `buildTypes.release.debuggable = true` in the base module and set it to `false` in a feature module. Such conflicts might cause build and runtime issues. Keep in mind, by default, feature modules inherit some build configurations from the base module. So, make sure you understand which configurations you should keep, and which ones you should omit, in your [feature module build configuration](/guide/app-bundle/configure#feature_build_config).
-
-
-
 
 ## Additional resources
 
@@ -67,8 +55,6 @@ To learn more about Android App Bundles, consult the following resources.
   * [Google Santa Tracker — Moving to an Android App Bundle](https://medium.com/androiddevelopers/google-santa-tracker-moving-to-an-android-app-bundle-dde180716096)
   * [Developer tools on Play Console](https://medium.com/androiddevelopers/developer-tools-on-play-store-85fb710ee33b)
 
-
-
 ### Videos
 
   * [Everything to know about Play App Signing](https://www.youtube.com/watch?v=odv_1fxt9BI)
@@ -76,8 +62,6 @@ To learn more about Android App Bundles, consult the following resources.
   * [App Bundles: Testing with Bundletool and the Play Console](https://www.youtube.com/watch?v=vAEAZPU7w-I)
   * [Customizable Delivery with the App Bundle and Easy Sharing of Test Builds](https://www.youtube.com/watch?v=flhib2krW7U)
   * [New Tools to Optimize Your App's Size and Boost Installs on Google Play](https://www.youtube.com/watch?v=rEuwVWpYBOY)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

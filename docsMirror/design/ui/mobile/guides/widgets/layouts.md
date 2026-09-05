@@ -4,16 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ UI Design ](https://developer.android.com/design/ui)
-  * [ Mobile ](https://developer.android.com/design/ui/mobile)
-  * [ Guides ](https://developer.android.com/design/ui/mobile/guides/foundations/accessibility)
-
-
-
-#  Canonical widget layouts Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Canonical widget layouts
 Craft effective widget layouts by first identifying your core content. Your layout dictates how information and interactive elements are organized within your widget. Android offers several prebuilt layouts for toolbars, text, list and grid-type widgets to streamline this process.
 
 **Note:** View detailed layout specs in our [Figma Widget Canonical Builder](https://goo.gle/widget-canonical), and find the code samples using Jetpack Glance in the [Android Platform Samples GitHub repository](https://github.com/android/platform-samples/tree/main/samples/user-interface/appwidgets).

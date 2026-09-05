@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Write Gradle plugins Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Write Gradle plugins
 The Android Gradle plugin (AGP) is the official build system for Android applications. It includes support for compiling many different types of sources and linking them together into an application that you can run on a physical Android device or an emulator.
 
 AGP contains extension points for plugins to control build inputs and extend its functionality through new steps that can be integrated with standard build tasks. Previous versions of AGP did not have official APIs clearly separated from internal implementations. Starting in version 7.0, AGP has a set of [official, stable APIs](/reference/tools/gradle-api) that you can rely on.
@@ -25,8 +17,6 @@ AGP follows the [Gradle feature lifecycle](https://docs.gradle.org/current/userg
   * **Incubating** : Available for public use but not final, which means that they may not be backward compatible in the final version
   * **Public** : Available for public use and stable
   * **Deprecated** : No longer supported, and replaced with new APIs
-
-
 
 ## Deprecation policy
 
@@ -53,13 +43,11 @@ Gradle offers a number of types that behave "lazily," or help defer heavy comput
   * [`flatMap()`](https://docs.gradle.org/current/javadoc/org/gradle/api/provider/Provider.html#flatMap-org.gradle.api.Transformer-): Also accepts a lambda and produces `Provider<S>`, but the lambda takes a value `T` and produces `Provider<S>` (instead of producing the value `S` directly). Use flatMap() when S cannot be determined at configuration time and you can obtain only `Provider<S>`. Practically speaking, if you used `map()` and ended up with a `Provider<Provider<S>>` result type, that probably means you should have used `flatMap()` instead.
   * [`zip()`](https://docs.gradle.org/current/javadoc/org/gradle/api/provider/Provider.html#zip-org.gradle.api.provider.Provider-java.util.function.BiFunction-): Lets you combine two `Provider` instances to produce a new `Provider`, with a value computed using a function that combines the values from the two input `Providers` instances.
 
-
 [`Property<T>`](https://docs.gradle.org/current/javadoc/org/gradle/api/provider/Property.html)
     Implements `Provider<T>`, so it also provides a value of type `T`. Unlike with `Provider<T>`, which is read-only, you can also set a value for the `Property<T>`. There are two ways to do so: 
 
   * Set a value of type `T` directly when it's available, without the need for deferred computations.
   * Set another `Provider<T>` as the source of the value of the `Property<T>`. In this case, the value `T` is materialized only when `Property.get()` is called.
-
 
 [`TaskProvider`](https://docs.gradle.org/current/javadoc/org/gradle/api/tasks/TaskProvider.html)
     Implements `Provider<Task>`. To generate a `TaskProvider`, use [`tasks.register()`](https://docs.gradle.org/current/javadoc/org/gradle/api/tasks/TaskContainer.html#register-java.lang.String-) and not [`tasks.create()`](https://docs.gradle.org/current/javadoc/org/gradle/api/tasks/TaskContainer.html#create-java.lang.String-), to ensure tasks are only instantiated lazily when they're needed. You can use `flatMap()` to access the outputs of a `Task` before the `Task` is created, which can be useful if you want to use the outputs as inputs to other `Task` instances.
@@ -141,9 +129,6 @@ AGP completes the following steps to create and execute its `Task` instances, wh
   7. **Variant locking** : Variant objects are now locked and changes are no longer possible.
 
   8. **Tasks created** : `Variant` objects and their `Property` values are used to create the `Task` instances that are necessary to perform the build.
-
-
-
 
 AGP introduces an [`AndroidComponentsExtension`](/reference/tools/gradle-api/7.0/com/android/build/api/extension/AndroidComponentsExtension) that lets you register callbacks for `finalizeDsl()`, `beforeVariants()` and `onVariants()`. The extension is available in build scripts through the `androidComponents` block:
     
@@ -252,8 +237,6 @@ Your plugin can contribute a few types of generated sources, such as:
   * [Java resources](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_project_layout) in the `resources` directory
   * [Android assets](/reference/android/content/res/AssetManager) in the `assets` directory
 
-
-
 For the full list of sources you can add, see the [Sources API](/reference/tools/gradle-api/7.4/com/android/build/api/variant/Sources).
 
 This code snippet shows how to add a custom source folder called `${variant.name}` to the Java source set using the `addStaticSourceDirectory()` function. The Android toolchain then processes this folder.
@@ -321,8 +304,6 @@ Every `Artifact` class can implement any of the following interfaces to indicate
   * [`Appendable`](/reference/tools/gradle-api/7.1/com/android/build/api/artifact/Artifact.Appendable): Applies only to artifacts that are subclasses of `Artifact.Multiple`. It means that the `Artifact` can be appended to, that is, a custom `Task` can create new instances of this `Artifact` type which will be added to the existing list.
   * [`Replaceable`](/reference/tools/gradle-api/4.1/com/android/build/api/artifact/Artifact.Replaceable): Applies only to artifacts that are subclasses of `Artifact.Single`. A replaceable `Artifact` can be replaced by an entirely new instance, produced as an output of a `Task`.
 
-
-
 In addition to the three artifact-modifying operations, every artifact supports a [`get()`](/reference/tools/gradle-api/7.0/com/android/build/api/artifact/Artifacts#get) (or [`getAll()`](/reference/tools/gradle-api/7.0/com/android/build/api/artifact/Artifacts#getall)) operation, which returns a `Provider` with the final version of the artifact (after all operations on it are finished).
 
 Multiple plugins can add any number of operations on artifacts into the pipeline from the `onVariants()` callback, and AGP will ensure they are chained properly so that all tasks run at the right time and artifacts are correctly produced and updated. This means that when an operation changes any outputs by appending, replacing, or transforming them, the next operation will see the updated version of these artifacts as inputs, and so on.
@@ -361,8 +342,6 @@ To learn more about extending AGP, we recommend reading the following sections f
   * [Developing Custom Gradle Task Types](https://docs.gradle.org/current/userguide/custom_tasks.html)
   * [Lazy Configuration](https://docs.gradle.org/current/userguide/lazy_configuration.html)
   * [Task Configuration Avoidance](https://docs.gradle.org/current/userguide/task_configuration_avoidance.html)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

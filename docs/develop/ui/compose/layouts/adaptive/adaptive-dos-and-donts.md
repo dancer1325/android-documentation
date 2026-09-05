@@ -4,16 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Core areas ](https://developer.android.com/develop/core-areas)
-  * [ UI ](https://developer.android.com/develop/ui)
-  * [ Docs ](https://developer.android.com/develop/ui/compose/documentation)
-
-
-
-#  Adaptive do's and don'ts Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Adaptive do's and don'ts
 **Note:** For apps that target Android 16 (API level 36), the system ignores screen orientation, aspect ratio, and app resizablility restrictions to improve the layout of apps on form factors with smallest width >= 600dp. See [App orientation, aspect ratio, and resizability](/develop/ui/compose/layouts/adaptive/app-orientation-aspect-ratio-resizability).
 
 Adaptive apps support displays of all sizes: the entire device screen, resizable windows in multi‑window mode, portrait and landscape orientations, folded and unfolded displays of foldable devices.
@@ -107,8 +98,6 @@ Don't use the following deprecated [`Display`](/reference/kotlin/android/view/Di
   * [`getRealSize()`](/reference/kotlin/android/view/Display#getrealsize): Deprecated in Android 12 (API level 31)
   * [`getRealMetrics()`](/reference/kotlin/android/view/Display#getrealmetrics): Deprecated in Android 12 (API level 31)
 
-
-
 ## Compose
 
 Jetpack Compose is designed for adaptive UI development. No XML, no layout files, no resource qualifiers. Just Kotlin‑based, stateless composables like [`Column`](/reference/kotlin/androidx/compose/foundation/layout/Column.composable#Column\(androidx.compose.ui.Modifier,androidx.compose.foundation.layout.Arrangement.Vertical,androidx.compose.ui.Alignment.Horizontal,kotlin.Function1\)), [`Row`](/reference/kotlin/androidx/compose/foundation/layout/Row.composable#Row\(androidx.compose.ui.Modifier,androidx.compose.foundation.layout.Arrangement.Horizontal,androidx.compose.ui.Alignment.Vertical,kotlin.Function1\)), and [`Box`](/reference/kotlin/androidx/compose/foundation/layout/Box.composable#Box\(androidx.compose.ui.Modifier,androidx.compose.ui.Alignment,kotlin.Boolean,kotlin.Function1\)) that describe your UI, and modifiers like [`offset`](/reference/kotlin/androidx/compose/foundation/layout/offset.modifier#\(androidx.compose.ui.Modifier\).offset\(kotlin.Function1\)), [`padding`](/reference/kotlin/androidx/compose/foundation/layout/padding.modifier#\(androidx.compose.ui.Modifier\).padding\(androidx.compose.ui.unit.Dp\)), and [`size`](/reference/kotlin/androidx/compose/foundation/layout/size.modifier#\(androidx.compose.ui.Modifier\).size\(androidx.compose.ui.unit.Dp\)) that add behavior to UI elements.
@@ -132,8 +121,6 @@ Use the following APIs to make your app adaptive:
   * [`NavigationSuiteScaffold`](/reference/kotlin/androidx/compose/material3/adaptive/navigationsuite/NavigationSuiteScaffold.composable): Switches between navigation bar and navigation rail depending on app window size class.
   * [`ListDetailPaneScaffold`](/reference/kotlin/androidx/compose/material3/adaptive/layout/ListDetailPaneScaffold.composable): Implements the list-detail canonical layout. Adapts the layout to the app window size.
   * [`SupportingPaneScaffold`](/reference/kotlin/androidx/compose/material3/adaptive/layout/SupportingPaneScaffold.composable): Implements the supporting pane canonical layout.
-
-
 
 ✗ Don't
 
@@ -185,8 +172,6 @@ Don't make alternative input methods impossible. Don't introduce accessibility i
   * Don't restrict aspect ratio
   * Support input other than touch
   * Avoid deprecated APIs
-
-
 
 ✓ Do what your users expect: optimize your app for the diversity of devices people rely on every day.
 

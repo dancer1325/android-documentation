@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Inspect traces Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Inspect traces
 The trace view in the CPU Profiler provides several ways to view information from recorded traces.
 
 For method traces and function traces, you can view the **Call Chart** directly in the **Threads** timeline and the **Flame Chart** , **Top Down** , **Bottom Up** , and **Events** tabs from the **Analysis** pane. For callstack frames, you can view the part of the code that has been executed, and why it was invoked. For system traces, you can view the **Trace Events** directly in the **Threads** timeline, and the **Flame Chart** , **Top Down** , **Bottom Up** , and **Events** tabs from the **Analysis** pane.
@@ -62,8 +54,6 @@ The **Top Down** tab provides the following information to help describe CPU tim
   * **Self:** the time the method or function call spent executing its own code and not that of its callees, as illustrated in Figure 1 for method D.
   * **Children:** the time the method or function call spent executing its callees and not its own code, as illustrated in Figure 1 for method D.
   * **Total:** the sum of the method’s **Self** and **Children** time. This represents the total time the app spent executing a call, as illustrated in Figure 1 for method D.
-
-
 
 ![](/static/studio/images/profile/top_down_tree-2X.png)
 

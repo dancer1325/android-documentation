@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Find the unresponsive thread Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Find the unresponsive thread
 This document shows how to identify the unresponsive thread in an ANR stack dump. The unresponsive thread varies by type of ANR, as shown in the following table.
 
 ANR type | Unresponsive thread  
@@ -35,8 +27,6 @@ Sometimes the thread is unresponsive due to a root cause in a different thread o
 
   * A lock held by a different thread.
   * A slow binder call to a different process.
-
-
 
 ## Common causes of unresponsive threads
 
@@ -106,8 +96,6 @@ Rendering too many things in a single frame can cause the main thread to be unre
 
   * Rendering many unnecessary off-screen items.
   * Using an inefficient algorithm, such as `O(n^2)`, when rendering many UI elements.
-
-
 
 ### Blocked by other component
 

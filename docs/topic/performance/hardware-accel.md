@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Hardware acceleration Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Hardware acceleration
 Beginning in Android 3.0 (API level 11), the Android 2D rendering pipeline supports hardware acceleration, meaning that all drawing operations that are performed on a `[View](/reference/android/view/View)`'s canvas use the GPU. Because of the increased resources required to enable hardware acceleration, your app will consume more RAM.
 
 Hardware acceleration is enabled by default if your Target API level is >=14, but can also be explicitly enabled. If your application uses only standard views and `[Drawable](/reference/android/graphics/drawable/Drawable)`s, turning it on globally should not cause any adverse drawing effects. However, because hardware acceleration is not supported for all of the 2D drawing operations, turning it on might affect some of your custom views or drawing calls. Problems usually manifest themselves as invisible elements, exceptions, or wrongly rendered pixels. To remedy this, Android gives you the option to enable or disable hardware acceleration at multiple levels. See Control hardware acceleration.
@@ -29,8 +21,6 @@ You can control hardware acceleration at the following levels:
   * Activity
   * Window
   * View
-
-
 
 #### Application level
 
@@ -95,8 +85,6 @@ There are two different ways to check whether the application is hardware accele
   * `[View.isHardwareAccelerated()](/reference/android/view/View#isHardwareAccelerated\(\))` returns `true` if the `[View](/reference/android/view/View)` is attached to a hardware accelerated window.
   * `[Canvas.isHardwareAccelerated()](/reference/android/graphics/Canvas#isHardwareAccelerated\(\))` returns `true` if the `[Canvas](/reference/android/graphics/Canvas)` is hardware accelerated
 
-
-
 If you must do this check in your drawing code, use `[Canvas.isHardwareAccelerated()](/reference/android/graphics/Canvas#isHardwareAccelerated\(\))` instead of `[View.isHardwareAccelerated()](/reference/android/view/View#isHardwareAccelerated\(\))` when possible. When a view is attached to a hardware accelerated window, it can still be drawn using a non-hardware accelerated Canvas. This happens, for instance, when drawing a view into a bitmap for caching purposes.
 
 ## Android drawing models
@@ -110,14 +98,10 @@ In the software drawing model, views are drawn with the following two steps:
   1. Invalidate the hierarchy
   2. Draw the hierarchy
 
-
-
 Whenever an application needs to update a part of its UI, it invokes `[invalidate()](/reference/android/view/View#invalidate\(\))` (or one of its variants) on any view that has changed content. The invalidation messages are propagated all the way up the view hierarchy to compute the regions of the screen that need to be redrawn (the dirty region). The Android system then draws any view in the hierarchy that intersects with the dirty region. Unfortunately, there are two drawbacks to this drawing model:
 
   * First, this model requires execution of a lot of code on every draw pass. For example, if your application calls `[invalidate()](/reference/android/view/View#invalidate\(\))` on a button and that button sits on top of another view, the Android system redraws the view even though it hasn't changed.
   * The second issue is that the drawing model can hide bugs in your application. Since the Android system redraws views when they intersect the dirty region, a view whose content you changed might be redrawn even though `[invalidate()](/reference/android/view/View#invalidate\(\))` was not called on it. When this happens, you are relying on another view being invalidated to obtain the proper behavior. This behavior can change every time you modify your application. Because of this, you should always call `[invalidate()](/reference/android/view/View#invalidate\(\))` on your custom views whenever you modify data or state that affects the view’s drawing code.
-
-
 
 **Note** : Android views automatically call `[invalidate()](/reference/android/view/View#invalidate\(\))` when their properties change, such as the background color or the text in a `[TextView](/reference/android/widget/TextView)`.
 
@@ -129,8 +113,6 @@ The Android system still uses `[invalidate()](/reference/android/view/View#inval
   2. Record and update display lists
   3. Draw the display lists
 
-
-
 With this model, you cannot rely on a view intersecting the dirty region to have its `[draw()](/reference/android/view/View#draw\(android.graphics.Canvas\))` method executed. To ensure that the Android system records a view’s display list, you must call `[invalidate()](/reference/android/view/View#invalidate\(\))`. Forgetting to do so causes a view to look the same even after it has been changed.
 
 Using display lists also benefits animation performance because setting specific properties, such as alpha or rotation, does not require invalidating the targeted view (it is done automatically). This optimization also applies to views with display lists (any view when your application is hardware accelerated.) For example, assume there is a `[LinearLayout](/reference/android/widget/LinearLayout)` that contains a `[ListView](/reference/android/widget/ListView)` above a `[Button](/reference/android/widget/Button)`. The display list for the `[LinearLayout](/reference/android/widget/LinearLayout)` looks like this:
@@ -138,16 +120,12 @@ Using display lists also benefits animation performance because setting specific
   * DrawDisplayList(ListView)
   * DrawDisplayList(Button)
 
-
-
 Assume now that you want to change the `[ListView](/reference/android/widget/ListView)`'s opacity. After invoking `setAlpha(0.5f)` on the `[ListView](/reference/android/widget/ListView)`, the display list now contains this:
 
   * SaveLayerAlpha(0.5)
   * DrawDisplayList(ListView)
   * Restore
   * DrawDisplayList(Button)
-
-
 
 The complex drawing code of `[ListView](/reference/android/widget/ListView)` was not executed. Instead, the system only updated the display list of the much simpler `[LinearLayout](/reference/android/widget/LinearLayout)`. In an application without hardware acceleration enabled, the drawing code of both the list and its parent are executed again.
 
@@ -222,15 +200,11 @@ Beginning in Android 3.0 (API level 11), you have more control on how and when t
   * `[LAYER_TYPE_HARDWARE](/reference/android/view/View#LAYER_TYPE_HARDWARE)`: The view is rendered in hardware into a hardware texture if the application is hardware accelerated. If the application is not hardware accelerated, this layer type behaves the same as `[LAYER_TYPE_SOFTWARE](/reference/android/view/View#LAYER_TYPE_SOFTWARE)`.
   * `[LAYER_TYPE_SOFTWARE](/reference/android/view/View#LAYER_TYPE_SOFTWARE)`: The view is rendered in software into a bitmap.
 
-
-
 The type of layer you use depends on your goal:
 
   * **Performance** : Use a hardware layer type to render a view into a hardware texture. Once a view is rendered into a layer, its drawing code does not have to be executed until the view calls `[invalidate()](/reference/android/view/View#invalidate\(\))`. Some animations, such as alpha animations, can then be applied directly onto the layer, which is very efficient for the GPU to do.
   * **Visual effects** : Use a hardware or software layer type and a `[Paint](/reference/android/graphics/Paint)` to apply special visual treatments to a view. For instance, you can draw a view in black and white using a `[ColorMatrixColorFilter](/reference/android/graphics/ColorMatrixColorFilter)`.
   * **Compatibility** : Use a software layer type to force a view to be rendered in software. If a view that is hardware accelerated (for instance, if your whole application is hardware acclerated), is having rendering problems, this is an easy way to work around limitations of the hardware rendering pipeline.
-
-
 
 ### View layers and animations
 
@@ -243,8 +217,6 @@ When a view is backed by a hardware layer, some of its properties are handled by
   * `scaleX`, `scaleY`: Changes the layer's size
   * `rotation`, `rotationX`, `rotationY`: Changes the layer's orientation in 3D space
   * `pivotX`, `pivotY`: Changes the layer's transformations origin
-
-
 
 These properties are the names used when animating a view with an `[ObjectAnimator](/reference/android/animation/ObjectAnimator)`. If you want to access these properties, call the appropriate setter or getter. For instance, to modify the alpha property, call `[setAlpha()](/reference/android/view/View#setAlpha\(float\))`. The following code snippet shows the most efficient way to rotate a viewiew in 3D around the Y-axis:
 

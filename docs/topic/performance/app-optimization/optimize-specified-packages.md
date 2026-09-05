@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Optimize specified packages with packageScope (Experimental) Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Optimize specified packages with packageScope (Experimental)
 You can optimize specific packages by using R8 with `packageScope`. This is designed as an optional first step for apps that don't yet use R8 and is not recommended for apps that already use R8.
 
 **Note:** `packageScope` is only compatible with R8 in [full mode](/topic/performance/app-optimization/full-mode), and not compatibility mode.
@@ -92,8 +84,6 @@ To maximize optimization benefits, you should aim to gradually transition from u
   3. **Verify behavior changes**. After adding each new package prefix, conduct comprehensive [testing](/topic/performance/app-optimization/test-the-optimization) to detect and resolve any regressions or unexpected behaviors.
   4. **Add app packages last**. If your app packages don't use a lot of reflection, include the app packages in `packageScope` and add keep rules incrementally as needed. If your app packages use a lot of reflection, include the packages in `packageScope` and add package-wide keep rules for the required packages. Iterate over the keep rules to refine them.
   5. **Move to using R8 in your entire app**. After the majority of your app's dependencies are included in the `packageScope` declaration and your app is stable, remove the `packageScope` to optimize your entire app in full mode.
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

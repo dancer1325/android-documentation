@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Publish multiple Android libraries as one with Fused Library Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Publish multiple Android libraries as one with Fused Library
 In projects with many modules, it can be challenging to distribute Android Libraries to your users while trying to maintain a clear project structure. In many cases, many more libraries need to be published than intended.
 
 The Fused Library plugin bundled with Android Gradle Plugin assists with packaging multiple Android Library modules into a single publishable Android Library. This lets you modularize your library's source code and resources within your build as you see fit, while avoiding exposure of your project's structure once distributed.
@@ -24,8 +16,6 @@ Distributing as a single library can have the following benefits:
   * **Simplified dependencies:** replaces multiple library dependencies with a single AAR, streamlining project setup and version management for your users
   * **Reduced library size:** may improve code shrinking, leading to smaller AARs
   * **Improved security:** can offer better control over the internal implementation details of published libraries
-
-
 
 ## Create a fused library
 
@@ -47,8 +37,6 @@ _In this example, the fused library module will be called`myFusedLibrary`._
   4. To create the `myFusedLibrary` module, create a new directory called `myFusedLibrary` (right-click 'My Application' > New > Directory).
   5. Create a `build.gradle.kts` file in the `myFusedLibrary` module (right-click the `myFusedLibrary` module > New > File).
   6. Paste the following into the `myFusedLibrary/build.gradle.kts` file:
-
-
 
 ### Kotlin
     
@@ -111,8 +99,6 @@ You should familiarize yourself with [publishing an Android library](/studio/pub
 
   * The Maven Publish Plugin must also be applied to any module that has the Fused Library plugin applied.
   * The publication must inherit from the `fusedLibraryComponent` because this provides the required dependencies needed to compile the fused library artifact.
-
-
 
 Here's an example of a publications configuration:
 
@@ -210,8 +196,6 @@ Combining Android libraries have intricacies that can make it challenging for th
   * Fused libraries can only be published as an Android library artifact AAR in order to be added as a dependency.
   * Fusing libraries that use data binding isn't supported.
   * You can't fuse multiple build types and product flavors within a single fused library. Create separate fused libraries for different variants.
-
-
 
 To balance the amount of configuration needed and ease of use, the plugin will either fail the build on ambiguous conflicts or use heuristics when fusing artifacts. The details of how artifacts are fused are found in the following table:
 

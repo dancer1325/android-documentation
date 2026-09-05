@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Analyze with Profile GPU Rendering Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Analyze with Profile GPU Rendering
 The [ Profile GPU Rendering](/studio/profile/dev-options-rendering) tool indicates the relative time that each stage of the rendering pipeline takes to render the previous frame. This knowledge can help you identify bottlenecks in the pipeline, so that you can know what to optimize to improve your app's rendering performance. 
 
 This page briefly explains what happens during each pipeline stage, and discusses issues that can cause bottlenecks there. Before reading this page, you should be familiar with the information presented in [Profile GPU rendering](/topic/performance/rendering/inspect-gpu-rendering#profile_rendering). In addition, to understand how all of the stages fit together, it may be helpful to review [ how the rendering pipeline works.](https://www.youtube.com/watch?v=we6poP0kw6E&index=64&list=PLWz5rJ2EKKc9CBxr3BVjPTPoDPLdPIFCE)
@@ -97,8 +89,6 @@ To shrink this bar, you can employ techniques such as:
 
   * Ensuring your bitmap resolutions are not much larger than the size at which they will be displayed. For example, your app should avoid displaying a 1024x1024 image as a 48x48 image. 
   * Taking advantage of `[prepareToDraw()](/reference/android/graphics/Bitmap#prepareToDraw\(\))` to asynchronously pre-upload a bitmap before the next sync phase. 
-
-
 
 ### Issue commands
 

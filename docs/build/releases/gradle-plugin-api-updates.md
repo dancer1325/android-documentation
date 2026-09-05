@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Android Gradle plugin API updates Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Android Gradle plugin API updates
 This page tracks Android Gradle plugin (AGP) API deprecation and removals, and provides info on how to update your code accordingly.
 
 ## API deprecations and removals tracker

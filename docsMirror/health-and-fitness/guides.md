@@ -4,16 +4,7 @@
 
 ---
 
-Google Fit APIs will be supported until the end of 2026. To learn about the recommended migration paths, see [Migration guide](/health-and-fitness/health-connect/migration/fit). 
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Essentials ](https://developer.android.com/get-started)
-  * [ Health & fitness dev center ](https://developer.android.com/health-and-fitness)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
+Google Fit APIs will be supported until the end of 2026. To learn about the recommended migration paths, see [Migration guide](/health-and-fitness/health-connect/migration/fit).
 ![](https://developer.android.com/static/images/health-and-fitness/hero-2.png)
 
 ![](https://developer.android.com/static/images/dev-center/icons/health-and-fitness.svg)Developer center 
@@ -33,8 +24,6 @@ with Health Connect ](/health-and-fitness/guides/health-connect)
   * [ ![](/static/images/picto-icons/health-services-logo.svg) Access Wear OS sensors  
 with Health Services ](/health-and-fitness/guides/health-services)
   * [ ![](/static/images/picto-icons/vitals.svg) Migrate from Google Fit ](/health-and-fitness/guides/health-connect/migrate/migration-guide)
-
-
 
 ![](https://developer.android.com/static/images/logos/android-jetpack.svg)
 

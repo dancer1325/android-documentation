@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/guide/playcore/asset-delivery](https://developer.android.com/guide/playcore/asset-delivery)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Google Play ](https://developer.android.com/distribute)
-  * [ Other Play guides ](https://developer.android.com/guide/app-bundle)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ###  Play Asset Delivery 
 
 _Play Asset Delivery (PAD)_ brings the benefits of app bundles to games. It allows games larger than 200MB to replace legacy expansion files (OBBs) by publishing a single artifact to Play containing all the resources the game needs. PAD offers flexible delivery modes, auto-updates, compression, and delta patching, and is free to use. Using PAD, all asset packs are hosted and served on Google Play removing the need to use a content delivery network (CDN) to get your game resources to players.
@@ -72,8 +63,6 @@ App updates for `fast-follow` and `on-demand` asset packs follow these steps:
   2. The app binary is updated; this includes any `install-time` asset packs.
   3. All previously-downloaded asset packs are invalidated.
   4. The patch for the assets is copied and applied to assets stored in the app's internal storage.
-
-
 
 In most cases when the user opens the game, the entire update has already completed and the user can start playing the updated version immediately. In rare cases, when the app is opened, the app binary may have already been updated while the process of applying the patch for the assets has not yet completed and thus assets are not ready to be accessed. You need to accommodate this scenario by providing an appropriate "Update in progress" user interface element around these assets, or build in logic to deal with invalidated assets that are not ready to be accessed. Since the app binary update takes place only after all asset pack types have been downloaded, applying the patch is a local, offline action that should complete quickly.
 

@@ -3,18 +3,6 @@
 **Source:** [https://developer.android.com/topic/libraries/view-binding](https://developer.android.com/topic/libraries/view-binding)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Core areas ](https://developer.android.com/develop/core-areas)
-  * [ UI ](https://developer.android.com/develop/ui)
-  * [ Views ](https://developer.android.com/develop/ui/views/layout/declaring-layout)
-  * [ Guides ](https://developer.android.com/topic/architecture/views/recommendations-views)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 # View binding Part of [Android Jetpack](/jetpack).
 
 _View binding_ is a feature that makes it easier to write code that interacts with views. Once view binding is enabled in a module, it generates a _binding class_ for each XML layout file present in that module. An instance of a binding class contains direct references to all views that have an ID in the corresponding layout.
@@ -83,8 +71,6 @@ To set up an instance of the binding class for use with an activity, perform the
   1. Call the static `inflate()` method included in the generated binding class. This creates an instance of the binding class for the activity to use.
   2. Get a reference to the root view by either calling the `getRoot()` method or using [Kotlin property syntax](https://kotlinlang.org/docs/reference/properties.html#declaring-properties).
   3. Pass the root view to [`setContentView()`](/reference/kotlin/android/app/Activity#setcontentview_1) to make it the active view on the screen.
-
-
 
 These steps are shown in the following example:
 
@@ -251,17 +237,12 @@ View binding can't validate the value of this attribute when generating code. To
 
   * The final type must resolve consistently across all configurations.
 
-
-
-
 ## Differences from findViewById
 
 View binding has important advantages over using `findViewById`:
 
   * **Null safety:** since view binding creates direct references to views, there's no risk of a null pointer exception due to an invalid view ID. Additionally, when a view is only present in some configurations of a layout, the field containing its reference in the binding class is marked with `@Nullable`.
   * **Type safety:** the fields in each binding class have types matching the views they reference in the XML file. This means there's no risk of a class cast exception.
-
-
 
 These differences mean incompatibilities between your layout and your code result in your build failing at compile time rather than at runtime.
 
@@ -272,14 +253,10 @@ View binding and [data binding](/topic/libraries/data-binding) both generate bin
   * **Faster compilation:** view binding requires no annotation processing, so compile times are faster.
   * **Ease of use:** view binding doesn't require specially tagged XML layout files, so it's faster to adopt in your apps. Once you enable view binding in a module, it applies to all of that module's layouts automatically.
 
-
-
 On the other hand, view binding has the following limitations compared to data binding:
 
   * View binding doesn't support [layout variables or layout expressions](/topic/libraries/data-binding/expressions), so it can't be used to declare dynamic UI content straight from XML layout files.
   * View binding doesn't support [two-way data binding](/topic/libraries/data-binding/two-way).
-
-
 
 Because of these considerations, in some cases it's best to use both view binding and data binding in a project. You can use data binding in layouts that require advanced features and use view binding in layouts that don't.
 
@@ -291,13 +268,9 @@ To learn more about view binding, see the following additional resources:
 
   * [Use view binding to replace findViewById](https://medium.com/androiddevelopers/use-view-binding-to-replace-findviewbyid-c83942471fc)
 
-
-
 ### Videos
 
   * [Android Jetpack: Replace findViewById with view binding](https://www.youtube.com/watch?v=W7uujFrljW0)
-
-
 
 ## Recommended for you
 
@@ -305,8 +278,6 @@ To learn more about view binding, see the following additional resources:
   * [Migrate from Kotlin synthetics to Jetpack view binding](/topic/libraries/view-binding/migration)
   * [Layouts and binding expressions](/topic/libraries/data-binding/expressions)
   * [App Architecture: UI Layer - Get Started - Android Developers](/topic/libraries/data-binding/start)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

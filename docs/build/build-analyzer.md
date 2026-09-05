@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Troubleshoot build performance with Build Analyzer Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Troubleshoot build performance with Build Analyzer
 Use the Build Analyzer to inspect the build performance of your project. For each build you perform, the Build Analyzer tries to present the most important information so that you can quickly identify and resolve regressions in your build performance.
 
 For additional strategies on improving build performance, read [Optimize your build speed](/studio/build/optimize-your-build).
@@ -30,8 +22,6 @@ To get started, proceed as follows:
      * To build an Android App Bundle or APK, click **Build > Build Bundle(s) / APK(s) > Build Bundle(s)** or **Build > Build Bundle(s) / APK(s) > Build APK(s)** from the menu bar.
   2. To open the **Build** window, select **View > Tool Windows > Build** from the menu bar.
   3. To view the build report in the **Build Analyzer** , click the **Build Analyzer** tab in the **Build** window.
-
-
 
 The data that the Build Analyzer presents might change across builds, so it's helpful to build your project multiple times and compare the data to identify patterns.
 
@@ -76,9 +66,6 @@ The Build Analyzer reports the following warning types:
   * **Configuration cache:** This warning is presented if [configuration caching](https://medium.com/androiddevelopers/configuration-caching-deep-dive-bcb304698070) is not enabled for your project. The Build Analyzer walks through a sequence of builds to check whether your project is compatible with configuration caching. If the compatibility checks are successful, you can turn configuration caching on from the Build Analyzer.
 
   * **Check Jetifier:** This warning is presented if the [`enableJetifier` flag is present](/jetpack/androidx/migrate) and enabled in your project; that is, if you have `android.enableJetifier=true` in your `gradle.properties` file. The Build Analyzer can perform a check to see whether the flag can be safely removed to enable your project to have better build performance and migrate away from the unmaintained Android Support libraries.
-
-
-
 
 ## Check download impact
 

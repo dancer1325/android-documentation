@@ -4,14 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App architecture ](https://developer.android.com/topic/architecture/intro)
-
-
-
-#  Principles of navigation Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Principles of navigation
 Navigation between different screens and apps is a core part of the user experience. The following principles set a baseline for a consistent and intuitive user experience across apps. The [Navigation component](/topic/libraries/architecture/navigation) is designed to implement these principles by default, ensuring that users can apply the same heuristics and patterns in navigation as they move between apps.
 
 **Note:** Even if you aren't using the Navigation component in your project, your app should follow these design principles.

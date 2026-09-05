@@ -4,14 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Essentials ](https://developer.android.com/get-started)
-  * [ Releases ](https://developer.android.com/about/versions)
-
-
-
-#  MessageQueue behavior change guidance Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  MessageQueue behavior change guidance
 Beginning with Android 17, apps targeting Android 17 (API level 37) or higher receive a new lock-free implementation of [`android.os.MessageQueue`](/reference/android/os/MessageQueue). The new implementation improves performance and reduces missed frames, but may break clients that reflect on `MessageQueue` private fields and methods.
 
 Android 17 introduces a significant overhaul to how [`Looper`](/reference/android/os/Looper) and [`Handler`](/reference/android/os/Handler) work, by rewriting the underlying [`MessageQueue`](/reference/android/os/MessageQueue) class. Since the first release of the Android operating system, `MessageQueue` relied on a single lock to manage the main thread's task queue. This design often caused lock contention; the main thread could be blocked by a background thread, leading to dropped frames and UI jank.
@@ -60,9 +53,6 @@ You can toggle the change using either of two options:
          
          adb am compat disable USE_NEW_MESSAGEQUEUE <your-package-name>
          
-
-
-
 
 This reverts your app to the legacy, lock-based implementation, allowing you to identify if the issue was a result of message queue behavior change.
 

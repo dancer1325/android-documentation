@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Add global options Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Add global options
 R8 provides global options that either modify R8's optimizations throughout the app or affect every keep rule. These options are maintained in the `proguard-rules.pro` file, along with keep rules. A few of these global options configure additional optimization, while others turn off certain aspects of the optimization.
 
 **Note:** For information about various keep rules , see [Add keep rules](/topic/performance/app-optimization/add-keep-rules), [Additional rule types](/topic/performance/app-optimization/additional-rule-types), and[Troubleshooting rules](/topic/performance/app-optimization/troubleshooting-rules).
@@ -34,7 +26,6 @@ The `level` values, ordered from the weakest to the strongest, have the followin
 By default R8 uses `remove_message`. Any specification of `-processkotlinnullchecks` overrides that. If specified multiple times the strongest value is used.
 
 `-processkotlinnullchecks` is supported from AGP 9.0.0.
-
 
 **Warning:** If you are a library author, you must never add any of the global options for additional optimizations in consumer keep rules. For more details about optimizing libraries, see [Optimization for library authors](/topic/performance/app-optimization/library-optimization).
 
@@ -67,8 +58,6 @@ Certain reflective operations require specific attributes to be kept for success
   * When accessing annotations using `getAnnotation()`, the attribute `RuntimeVisibleAnnotations` is needed.
 
 **Note:** When working on a keep rule for an annotation, make sure to keep the annotation and the classes that the annotation is applied to.
-
-
 
 #### Commonly required attributes
 

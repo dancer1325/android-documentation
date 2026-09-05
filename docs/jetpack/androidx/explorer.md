@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Get started ](https://developer.android.com/get-started/overview)
-  * [ Jetpack ](https://developer.android.com/jetpack)
-  * [ Libraries ](https://developer.android.com/jetpack/androidx/explorer)
-
-
-
-#  Explore the Jetpack libraries by type Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Explore the Jetpack libraries by type
 Select a category:
 
 All Popular Beyond phones Data Graphics   

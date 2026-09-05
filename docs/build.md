@@ -42,7 +42,6 @@ https://developer.android.com/build
         * _Example:_ build the debug version of your product flavors
   * TODO:
 
-
 * TODO:
 
 # Java versions in Android builds

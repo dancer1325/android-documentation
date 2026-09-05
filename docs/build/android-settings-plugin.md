@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Configure project-wide build properties with the settings plugin Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Configure project-wide build properties with the settings plugin
 The settings plugin lets you centralize common build properties that apply to all modules in one place so you don't need to copy and paste the configurations across multiple modules.
 
 ### Apply the settings plugin

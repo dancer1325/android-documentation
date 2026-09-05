@@ -4,14 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Test your app on Android ](https://developer.android.com/training/testing)
-
-
-
-#  Fundamentals of testing Android apps Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Fundamentals of testing Android apps
 This page outlines the core tenets of testing Android apps, including the central best practices and their benefits.
 
 ## Benefits of testing
@@ -34,8 +27,6 @@ For example, there are different types of tests depending on the _subject_ :
   * **Performance testing** : does it do it quickly and efficiently?
   * **Accessibility testing** : does it work well with accessibility services?
   * **Compatibility testing** : does it work well on every device and API level?
-
-
 
 ### Scope
 
@@ -62,8 +53,6 @@ Not all unit tests are local, and not all end-to-end tests run on a device. For 
 
   * **Big local test** : You can use an Android simulator that runs locally, such as [Robolectric](/training/testing/local-tests/robolectric).
   * **Small instrumented test** : You can verify that your code works well with a framework feature, such as a SQLite database. You might run this test on multiple devices to check the integration with multiple versions of SQLite.
-
-
 
 ### Examples
 
@@ -113,8 +102,6 @@ An architecture that is _not testable_ produces the following:
   * Bigger, slower, more flaky tests. Classes that can't be unit-tested might have to be covered by bigger integration tests or UI tests.
   * Fewer opportunities for testing different scenarios. Bigger tests are slower, so testing all possible states of an app might be unrealistic.
 
-
-
 To learn more about architecture guidelines, see the [guide to app architecture](/jetpack/guide).
 
 ### Approaches to decoupling
@@ -127,8 +114,6 @@ Common decoupling techniques include the following:
   * Avoid adding logic to entities that have large dependencies, such as activities and fragments. Use these classes as entry points to the framework and move _UI and business logic_ elsewhere, such as to a Composable, ViewModel, or domain layer.
   * Avoid direct _framework dependencies_ in classes containing business logic. For example, [don't use Android Contexts in ViewModels](https://medium.com/androiddevelopers/locale-changes-and-the-androidviewmodel-antipattern-84eb677660d9).
   * Make dependencies easy to _replace_. For example, use [interfaces](https://en.wikipedia.org/wiki/Interface_segregation_principle) instead of concrete implementations. Use [Dependency injection](/training/dependency-injection) even if you don't use a DI framework.
-
-
 
 ## Next steps
 

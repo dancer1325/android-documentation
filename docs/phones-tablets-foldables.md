@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/phones-tablets-foldables](https://developer.android.com/phones-tablets-foldables)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Multidevice ](https://developer.android.com/multidevice)
-  * [ Phones, tablets, and foldables ](https://developer.android.com/phones-tablets-foldables)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](https://developer.android.com/static/phones-tablets-foldables/images/phones-tablets-foldables.svg)
 
 ###  Phones, tablets, and foldables 

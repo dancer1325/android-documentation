@@ -4,16 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Core areas ](https://developer.android.com/develop/core-areas)
-  * [ Connectivity ](https://developer.android.com/develop/connectivity)
-  * [ Guides ](https://developer.android.com/develop/connectivity/overview)
-
-
-
-#  Monitor connectivity status and connection metering Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Monitor connectivity status and connection metering
 The [`ConnectivityManager`](/reference/android/net/ConnectivityManager) provides an API that enables you to request that the device connect to a network based on various conditions that include device capabilities and data transport options.
 
 The callback implementation provides information to your app about the device's connection status as well as the capabilities of the currently connected network. The API enables you to determine whether the device is currently connected to a network that satisfies your app’s requirements.
@@ -55,8 +46,6 @@ The most commonly implemented functions in the `NetworkCallback` include the fol
   * [`onAvailable()`](/reference/android/net/ConnectivityManager.NetworkCallback#onAvailable\(android.net.Network\)) indicates that the device is connected to a new network that satisfies the capabilities and transport type requirements specified in the `NetworkRequest`.
   * [`onLost()`](/reference/android/net/ConnectivityManager.NetworkCallback#onLost\(android.net.Network\)) indicates that the device has lost connection to the network.
   * [`onCapabilitiesChanged()`](/reference/android/net/ConnectivityManager.NetworkCallback#onCapabilitiesChanged\(android.net.Network,%20android.net.NetworkCapabilities\)) indicates that the capabilities of the network have changed. The [`NetworkCapabilities`](/reference/android/net/NetworkCapabilities) object provides information about the current capabilities of the network.
-
-
 
 ### Kotlin
     

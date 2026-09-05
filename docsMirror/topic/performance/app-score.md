@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Get your App Performance Score Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Get your App Performance Score
 Use the App Performance Score to calculate your overall performance score and discover opportunities for improvement. The App Performance Score provides a standardized framework to measure performance with minimal in-depth technical tasks.
 
 It guides engineering and product teams to assess technical performance of any given Android app. After the assessment is complete, an evaluation and recommended actions help to identify and prioritize the most important areas for performance improvement.
@@ -22,8 +14,6 @@ It guides engineering and product teams to assess technical performance of any g
   * Scoring, evaluation and recommendations are likely to change in the future.
   * Recommendations and guidance provided has curated with performance impact in mind.
   * Tools and guidance in the recommendations are stable and can help to improve app startup and rendering performance.
-
-
 
 * * *
 
@@ -125,8 +115,6 @@ Within each segment, the App Performance Score provides actionable steps to impr
   * [Create Startup Profiles](/topic/performance/baselineprofiles/dex-layout-optimizations)
   * [Overview of measuring app performance](/topic/performance/measuring-performance)
   * [Frozen frames](/topic/performance/vitals/frozen)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

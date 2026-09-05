@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/xr](https://developer.android.com/xr)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Multidevice ](https://developer.android.com/multidevice)
-  * [ Android XR ](https://developer.android.com/xr)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ##  Create endless possibilities with Android XR 
 
 Build experiences that push boundaries and transform how people create, explore, and enjoy entertainment, powered by Android XR. With trusted tools and incredible immersive and augmented capabilities, the only limit to what you can build is your imagination. 

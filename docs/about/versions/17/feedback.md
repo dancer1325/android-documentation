@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/about/versions/17/feedback](https://developer.android.com/about/versions/17/feedback)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Essentials ](https://developer.android.com/get-started)
-  * [ Releases ](https://developer.android.com/about/versions)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](https://developer.android.com/static/images/shared/preview-feedback-header.svg)
 
 ###  Feedback and issues 
@@ -57,14 +48,10 @@ To report a new issue, use the links below to go to the issue template that best
   * **[Platform](/about/versions/17/report-issue-platform)** : Issues with Android 17 system software or APIs (platform), NDK (platform), device hardware (Camera, Sensors, CPU, GPU), or Android Runtime (ART). 
   * **[App compatibility](/about/versions/17/report-issue-appcompat): ** Issues that occur with an app running on the latest build. 
 
-
-
 ### Related trackers
 
   * **[Security issue tracker](https://source.android.com/docs/security/overview/updates-resources#report-issues):** For all issues relating to Android security and security updates. 
   * **[Android Studio issue tracker](/studio/report-bugs):** For all issues relating to Android Studio, the Android Emulator, and other dev tools releases. 
-
-
 
 ## Android Beta Feedback app
 

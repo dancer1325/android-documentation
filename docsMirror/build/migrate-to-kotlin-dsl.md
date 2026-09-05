@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Migrate your build configuration from Groovy to Kotlin Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Migrate your build configuration from Groovy to Kotlin
 Android Gradle plugin 4.0 added support for using Kotlin in your Gradle build configuration as a replacement for Groovy, the programming language traditionally used in Gradle configuration files.
 
 Kotlin is preferred over the Groovy for writing Gradle scripts because Kotlin is more readable and offers better compile-time checking and IDE support.
@@ -39,8 +31,6 @@ Script file extension names are based on the language the build file is written 
 
   * Gradle build files written in Groovy use the `.gradle` file name extension.
   * Gradle build files written in Kotlin use the `.gradle.kts` file name extension.
-
-
 
 ## Convert the syntax
 
@@ -100,9 +90,6 @@ In Kotlin, however, the preceding code calls `toString()` on `project`, not on `
             
 
 To learn more, see [String templates](https://kotlinlang.org/docs/strings.html#string-templates) in the Kotlin documentation. 
-
-
-
 
 ### Rename file extensions
 
@@ -242,8 +229,6 @@ For most plugins, the plugin ID is the string used when you apply them using `ap
   * `com.android.lint`
   * `com.android.test`
 
-
-
 You can find the full plugin list in the [Google Maven repository](https://maven.google.com/web/index.html).
 
 Kotlin plugins can be referenced by multiple plugin IDs. We recommend using the namespaced plugin ID, and refactor from shorthand to namespaced plugin ID by the following table:
@@ -270,9 +255,6 @@ Once you know the IDs of the plugins you use, perform the following steps:
   4. Apply the plugins by adding them to the `plugins {}` block in the module-level `build.gradle` file. You only need to specify the plugin's ID here because the version is inherited from the root project.
 
   5. Remove the `apply plugin` call for the plugin from the module-level `build.gradle` file.
-
-
-
 
 For example, this setup uses the `buildscript {}` block:
     

@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/reference/packages](https://developer.android.com/reference/packages)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ API reference ](https://developer.android.com/reference)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 # Package Index
 
 * * *

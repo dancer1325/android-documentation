@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Trigger-based profiling Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Trigger-based profiling
 `ProfilingManager` supports capturing profiles based on system triggers. The system manages the recording process and provides the resulting profile to your app.
 
 Triggers are tied to performance-critical events. System-recorded profiles provide detailed debugging information for the critical user journeys (CUJs) associated with these triggers.
@@ -123,8 +115,6 @@ The code performs these steps:
   4. **Register listener** : Calls `registerForAllProfilingResults` to define the callback that handles the result. This callback receives the path of the saved profile through `getResultFilePath()`.
   5. **Add triggers** : Registers the trigger list with `ProfilingManager` using `addProfilingTriggers`.
   6. **Fire event** : Calls `reportFullyDrawn()`, which emits the `TRIGGER_TYPE_APP_FULLY_DRAWN` event to the system triggering a profile collection assuming a system background trace was running and there is rate limiter quota available. This optional step demonstrates an end-to-end flow because your app must call `reportFullyDrawn()` for this trigger.
-
-
 
 ## Retrieve the trace
 

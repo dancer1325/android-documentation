@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/about](https://developer.android.com/about)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Essentials ](https://developer.android.com/get-started)
-  * [ Platform ](https://developer.android.com/about)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](https://developer.android.com/static/courses/images/android-for-developers.svg)
 
 ###  Android platform 

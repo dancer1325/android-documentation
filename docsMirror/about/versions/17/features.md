@@ -4,11 +4,8 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Essentials ](https://developer.android.com/get-started)
-  * [ Releases ](https://developer.android.com/about/versions)
-
-Features and APIs Stay organized with collections  Save and categorize content based on your preferences.  Android 17 introduces great new features and APIs for developers. The following sections summarize these features to help you get started with the related APIs. For a detailed list of new, modified, and removed APIs, read the [API diff report](/sdk/api_diff/c-beta2/changes). For details on new APIs visit the [Android API reference](/reference) — new APIs are highlighted for visibility. You should also review areas where platform changes might affect your apps. For more information, see the following pages:
+Features and APIs
+Android 17 introduces great new features and APIs for developers. The following sections summarize these features to help you get started with the related APIs. For a detailed list of new, modified, and removed APIs, read the [API diff report](/sdk/api_diff/c-beta2/changes). For details on new APIs visit the [Android API reference](/reference) — new APIs are highlighted for visibility. You should also review areas where platform changes might affect your apps. For more information, see the following pages:
 
   * [Behavior changes that affect apps when they target Android 17](/about/versions/17/behavior-changes-17)
   * [Behavior changes that affect all apps regardless of `targetSdkVersion`](/about/versions/17/behavior-changes-all).

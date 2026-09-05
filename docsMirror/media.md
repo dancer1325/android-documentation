@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/media](https://developer.android.com/media)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Essentials ](https://developer.android.com/get-started)
-  * [ Camera & media dev center ](https://developer.android.com/media)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](https://developer.android.com/static/images/media/media-hero.svg)
 
 ![](https://developer.android.com/static/images/dev-center/icons/media.svg)Developer center 
@@ -139,8 +130,6 @@ Using older APIs like the standalone ExoPlayer library, MediaCompat, or Jetpack 
   * Updated ExoPlayer, MediaSession, & MediaController APIs
   * Editing with the new Transformer API
   * Backwards-compatible with MediaCompat APIs
-
-
 
 [See the Media3 Migration Guide](https://developer.android.com/guide/topics/media/media3/getting-started/migration-guide)
 

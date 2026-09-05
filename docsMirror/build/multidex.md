@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Enable multidex for apps with over 64K methods Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Enable multidex for apps with over 64K methods
 If your app has a  `minSdk` of API 20 or lower and your app and the libraries it references exceed 65,536 methods, you encounter the following build error that indicates your app has reached the limit of the Android build architecture: 
     
     
@@ -167,9 +159,6 @@ If your `minSdkVersion` is set to 20 or lower, then you must use the [multidex l
 
 **Caution:** Don't execute `MultiDex.install()` or any other code through reflection or JNI before `MultiDex.install()` is complete. Multidex tracing will not follow those calls, causing `ClassNotFoundException` or verify errors due to a bad class partition between DEX files.
 
-
-
-
 Now when you build your app, the Android build tools construct a primary DEX file (`classes.dex`) and supporting DEX files (`classes2.dex`, `classes3.dex`, and so on) as needed. The build system then packages all DEX files into your APK. 
 
 At runtime, instead of searching only in the main `classes.dex` file, the multidex APIs use a special class loader to search all of the available DEX files for your methods.
@@ -184,9 +173,6 @@ The multidex library has some known limitations. When you incorporate the librar
 On versions lower than Android 4.0, you might reach the linearalloc limit before reaching the DEX index limit. So if you are targeting API levels lower than 14, test thoroughly on those versions of the platform, because your app might have issues at startup or when particular groups of classes are loaded.
 
 [Code shrinking](/studio/build/shrink-code) can reduce or possibly eliminate these issues.
-
-
-
 
 ## Declare classes required in the primary DEX file
 

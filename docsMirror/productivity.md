@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/productivity](https://developer.android.com/productivity)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Essentials ](https://developer.android.com/get-started)
-  * [ Productivity Dev Center ](https://developer.android.com/productivity)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](https://developer.android.com/static/images/dev-center/heroes/productivity.svg)
 
 settingsDeveloper center

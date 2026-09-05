@@ -4,14 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Google Play ](https://developer.android.com/distribute)
-  * [ Other Play guides ](https://developer.android.com/guide/app-bundle)
-
-
-
-#  Google Play In-App Reviews API Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Google Play In-App Reviews API
 The Google Play In-App Review API lets you prompt users to submit Play Store ratings and reviews without the inconvenience of leaving your app or game.
 
 Generally, the in-app review flow (see figure 1) can be triggered at any time throughout the user journey of your app. During the flow, the user has the ability to rate your app using the 1 to 5 star system and to add an optional comment. Once submitted, the review is sent to the Play Store and eventually displayed.
@@ -29,8 +22,6 @@ In-app reviews only work on the following devices:
   * Android devices (phones, tablets, and TVs with Google TV) running Android 5.0 (API level 21) or higher that have the Google Play Store installed.
   * ChromeOS devices that have the Google Play Store installed.
 
-
-
 ## Play Core library requirements
 
 To integrate in-app reviews in your app, your app must use version 1.8.0 or higher of the [Play Core library](/guide/playcore).
@@ -43,8 +34,6 @@ Follow these guidelines to help you decide when to request in-app reviews from u
   * Don't prompt the user excessively for a review. This approach helps minimize user frustration and limit API usage (see the section on quotas).
   * Your app shouldn't ask the user any questions before or while presenting the rating button or card, including questions about their opinion (such as "Do you like the app?") or predictive questions (such as "Would you rate this app 5 stars").
 
-
-
 ## Design guidelines
 
 Follow these guidelines as you determine how to integrate in-app reviews in your app:
@@ -52,8 +41,6 @@ Follow these guidelines as you determine how to integrate in-app reviews in your
   * Surface the card as-is, without tampering or modifying the existing design in any way, including size, opacity, shape, or other properties.
   * Don't add any overlay on top of the card or around the card.
   * The card and the card's background should be on the topmost layer. Once the card has surfaced, don't programmatically remove the card. The card is removed automatically based on either the user's explicit action, or an internal Play Store mechanism.
-
-
 
 ## Quotas
 
@@ -71,8 +58,6 @@ Learn how to integrate in-app reviews in your app, depending on your development
   * [Native (C++)](/guide/playcore/in-app-review/native)
   * [Unity](/guide/playcore/in-app-review/unity)
   * [Unreal Engine](/guide/playcore/in-app-review/unreal-engine)
-
-
 
 ## Terms of service and data safety
 

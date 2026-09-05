@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Configure on-device developer options Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Configure on-device developer options
 The Settings app on Android includes a screen called **Developer options** where you can configure system behaviors that help you profile and debug your app performance. For example, you can enable debugging over USB, capture a bug report, enable visual feedback for taps, flash window surfaces when they update, use the GPU for 2D graphics rendering, and more. 
 
 ## Enable Developer options
@@ -37,9 +29,6 @@ OnePlus 5T and later |  **Settings** > **About phone** > **Build number**
 
   3. Return to the previous screen to find **Developer options** at the bottom.
 
-
-
-
 ![](/static/studio/images/run/dev-options-pixel_2x.png)
 
 **Figure 1.** On-device developer options.
@@ -57,14 +46,10 @@ Enable **USB debugging** in the device system settings under **Developer options
   * Android 8.0.0 (API level 26) and Android 8.1.0 (API level 27): **Settings > System > Developer Options > USB debugging**
   * Android 7.1 (API level 25) and lower: **Settings > Developer Options > USB debugging**
 
-
-
 Enable **Wi-Fi** debugging in the device system settings under **Developer options**. You can find this option in one of the following locations, depending on your Android version.
 
   * Android 16 (API level 36) and higher: **Settings > System > Developer options > Wireless debugging**
   * Wear OS 6 (API level 36) and higher: **Settings > Developer options > Wireless debugging**
-
-
 
 After you've enabled Wi-Fi debugging on the device, _pair_ your device to your development computer. See [Connect to a device over Wi-Fi](/tools/adb#connect-to-a-device-over-wi-fi).
 
@@ -87,8 +72,6 @@ Other general options include the following:
   * **Stay awake:** Sets your screen to stay on while the device is plugged in.
   * **Enable Bluetooth Host Controller Interface (HCI) snoop log:** Captures all Bluetooth HCI packets in a file stored at `/sdcard/btsnoop_hci.log`. You can retrieve the packets and use a program like Wireshark to analyze and troubleshoot the information. 
 
-
-
 ## Debugging
 
 ![](/static/studio/images/run/dev-options-debug_2x.png)
@@ -110,8 +93,6 @@ Other debugging options include the following:
 
   * **Enable view attribute inspection:** Saves view attribute information in the `mAttributes` member variable of a [`View`](/reference/android/view/View) instance so it can be used for debugging. You can access the attribute information through the [Layout Inspector](/studio/debug/layout-inspector) user interface, as shown in figure 4. Without this enabled, the **Attributes** item is not available.
   * **Enable GPU debug layers:** Available on devices running Android 9 (API level 28) and higher. Enable this option to allow Vulkan validation layers to be loaded from local device storage. To learn more, read [Vulkan validation layers on Android](/ndk/guides/graphics/validation-layer). 
-
-
 
 ## Networking
 
@@ -139,15 +120,11 @@ Additionally, to fine-tune audio playback on the device, tap and set the followi
   * **Bluetooth Audio Channel Mode:** Selects mono or stereo.
   * **Bluetooth Audio LDAC Codec:** Optimizes the sound to increase audio quality, balance audio and connection quality, increase connection quality, or use an adaptive bit rate to balance audio and connection quality. 
 
-
-
 The following list describes other ways to configure Wi-Fi and DHCP setup: 
 
   * **Wireless display certification** : Enables advanced configuration controls and settings for Wireless Display certification to the specifications set forth in the Wi-Fi Alliance Wi-Fi Display Specification. 
   * **Enable Wi-Fi verbose logging:** Increases the Wi-Fi logging level for each wireless network (SSID) you connect to according to its relative received signal strength (RSSI). For more information about logs, see [Write and view logs with Logcat](/studio/debug/am-logcat).
   * **Aggressive Wi-Fi to cellular handover:** When the signal is low, makes Wi-Fi more efficient in handing over the data connection to a cellular network.
-
-
 
 ## Input
 
@@ -175,8 +152,6 @@ Other drawing options include the following:
   * **Window animation scale:** Sets the window animation playback speed so you can check its performance at different speeds. A lower scale results in a faster speed.
   * **Transition animation scale:** Sets the transition animation playback speed so you can check its performance at different speeds. A lower scale results in a faster speed.
   * **Simulate secondary displays:** Creates a secondary display as an overlay on the device. This is useful when supporting additional displays with the [`Presentation`](/reference/android/app/Presentation) API. For more information, see [Secondary displays](/about/versions/android-4.2#SecondaryDisplays).
-
-
 
 ## Hardware-accelerated rendering
 
@@ -207,8 +182,6 @@ Some other ways to leverage hardware-based options are the following:
   * **Debug non-rectangular clip operations:** Turns off the clipping area on the canvas to create unusual (non-rectangular) canvas areas. Normally, the clipping area prevents drawing anything outside the bounds of the circular clipping area.
   * **Force 4x MSAA:** Enables multisample anti-aliasing (MSAA) in Open GL ES 2.0 apps.
   * **Disable HW overlays:** Disables the hardware overlay. Note that using the hardware overlay lets apps that display something on the screen use less processing power. Without the overlay, apps share the video memory and have to constantly check for collision and clipping to render a proper image. The checking uses a lot of processing power.
-
-
 
 ## Media
 

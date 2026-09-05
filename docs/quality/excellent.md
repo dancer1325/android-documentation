@@ -3,16 +3,6 @@
 **Source:** [https://developer.android.com/quality/excellent](https://developer.android.com/quality/excellent)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Excellent Experiences ](https://developer.android.com/quality/excellent)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ##  Build the best experiences for your best users 
 
 Deliver excellent experiences with delightful, intelligent, and adaptive apps — that are performant and safe. 

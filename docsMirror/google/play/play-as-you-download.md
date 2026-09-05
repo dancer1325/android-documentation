@@ -4,11 +4,8 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Google Play ](https://developer.android.com/distribute)
-  * [ Other Play guides ](https://developer.android.com/guide/app-bundle)
-
-Play as you Download Stay organized with collections  Save and categorize content based on your preferences.  Built into the core of Android 12+, Play as you Download allows your users to get into the experience quickly after a small download while remaining assets are fetched in the background. To make this happen, Google Play analyzes crowdsourced first use file system access patterns and automatically identifies assets to optimize. Prepare your app Even with the Play as you Download feature enabled, your users only receive the benefit once these prerequisites are met:
+Play as you Download
+Built into the core of Android 12+, Play as you Download allows your users to get into the experience quickly after a small download while remaining assets are fetched in the background. To make this happen, Google Play analyzes crowdsourced first use file system access patterns and automatically identifies assets to optimize. Prepare your app Even with the Play as you Download feature enabled, your users only receive the benefit once these prerequisites are met:
 
   * App is distributed using the Android App Bundle format
   * App has been updated to the current ads SDKs (if applicable)

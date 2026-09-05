@@ -4,17 +4,9 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Google Play ](https://developer.android.com/distribute)
-  * [ Games dev center ](https://developer.android.com/games)
-  * [ Guides ](https://developer.android.com/games/guides)
-
-
-
 Send feedback 
 
-#  Optimize thermal and CPU performance with the Android Dynamic Performance Framework Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Optimize thermal and CPU performance with the Android Dynamic Performance Framework
 This guide describes how to use the Android Dynamic Performance Framework (ADPF) to optimize games based on the dynamic thermal and CPU management features on Android. The focus is on games, but you can also use the features for other performance-intensive apps.
 
 ADPF is a set of APIs that allow games and performance-intensive apps to interact more directly with power and thermal systems of Android devices. With these APIs, you can monitor the dynamic behavior on Android systems and optimize game performance at a sustainable level that doesn't overheat devices.
@@ -27,8 +19,6 @@ Here are the main ADPF features:
   * **Game Mode API & Game State API**: Enable game play optimization by prioritizing performance or battery life characteristics, based on user's settings and game specific configurations.
   * **Fixed Performance Mode** : Enable fixed-performance mode on a device during benchmarking to get measurements that aren't altered by dynamic CPU clocking.
   * **Power Efficiency Mode** : Tells the session that the threads in Performance Hint Session can be safely scheduled to prefer power efficiency over performance. ([Available in Android 15](/reference/android/os/PerformanceHintManager.Session#setPreferPowerEfficiency\(boolean\)))
-
-
 
 Send feedback 
 

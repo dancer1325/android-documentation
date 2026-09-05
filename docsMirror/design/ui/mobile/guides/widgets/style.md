@@ -4,16 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ UI Design ](https://developer.android.com/design/ui)
-  * [ Mobile ](https://developer.android.com/design/ui/mobile)
-  * [ Guides ](https://developer.android.com/design/ui/mobile/guides/foundations/accessibility)
-
-
-
-#  Style Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Style
 Styling widgets effectively is crucial for achieving a visually appealing and consistent user experience. This section delves into the key concepts and techniques for defining the color and typography to create the most helpful and engaging Android widgets.
 
 ## Color

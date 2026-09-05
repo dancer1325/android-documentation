@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Find sample code Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Find sample code
 Android Studio provides a selection of code samples and templates for you to use to accelerate your app development. Browse sample code to learn how to build different components for your apps. Use templates to create new app modules, individual activities, or other specific Android project components. 
 
 This page describes how to access and use the high-quality, Google-provided Android code samples. For information about templates, see [Add code from a template](/studio/projects/templates). 

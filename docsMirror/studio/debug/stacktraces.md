@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Analyze a stack trace Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Analyze a stack trace
 Debugging an app often requires working with stack traces. A stack trace generates when your app crashes because of an error or an exception. You can also print a stack trace at any point in your app code using methods such as [`Thread.dumpStack()`](/reference/java/lang/Thread#dumpStack\(\)). 
 
 While your app is running in debug mode on a connected device, Android Studio prints and highlights stack traces in the **Logcat** view, as shown in figure 1. A stack trace shows a list of method calls that lead to the exception being thrown, together with the filenames and line numbers where the calls happened. 
@@ -39,8 +31,6 @@ Sometimes you want to analyze stack traces shared in a bug report instead of tho
 
   3. Paste the stack trace text into the **Analyze Stacktrace** window and click **OK**. 
 
-
-
 Android Studio opens a new **< Stacktrace>** tab, shown in figure 3, with the stack trace you pasted under the **Run** window. 
 
 ![Stacktrace window](/static/studio/images/debug/stacktrace-window_2x.png)
@@ -54,8 +44,6 @@ To improve your productivity if you frequently work with external stack traces, 
   1. Open the **Analyze Stacktrace** tool. 
   2. Select the **Automatically detect and analyze thread dumps copied to the clipboard outside of IntelliJ IDEA** checkbox. 
   3. Copy a stack trace in another application, such as a web browser, to the system clipboard. 
-
-
 
 When you return to the Android Studio window, the stack trace opens automatically under the **Run** window, so you don't have to paste it into the **Analyze Stacktrace** window.
 

@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Send emulator console commands Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Send emulator console commands
 Each running virtual device provides a console that lets you query and control the emulated device environment. For example, you can use the console to manage port redirection, network characteristics, and telephony events while your app is running on the emulator.
 
 The following commands require that you already have an emulator running. For more information about running an emulator, see [Run apps on the Android Emulator](/studio/run/emulator) and [Start the emulator from the command line](/studio/run/emulator-commandline).
@@ -42,8 +34,6 @@ If that file doesn't exist, the `telnet localhost console-port` command creates 
 Enter `help`, `help command`, or `help-verbose` to see a list of console commands and learn about specific commands.
 
   4. To exit the console session, enter `quit` or `exit`.
-
-
 
 Here's an example session:
     
@@ -378,9 +368,6 @@ To simulate and validate fingerprint authentication, follow these steps:
   4. Then, enter the `finger remove` command to simulate finger removal. 
 
 Your app should respond as if a user touched and then removed their finger from the fingerprint sensor. 
-
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

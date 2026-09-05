@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Update the IDE and SDK tools Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Update the IDE and SDK tools
 Once you install Android Studio, you can keep the Android Studio IDE and Android SDK tools up to date with automatic updates and the Android SDK Manager.
 
 ## Update your IDE using JetBrains Toolbox
@@ -40,8 +32,6 @@ Although these builds are subject to more bugs, they do get tested and are avail
   * **RC channel:** these are release candidates based on stable canary builds and are available for download on the [Preview release](/studio/preview) page. They are released to get feedback before being integrated into the stable channel. 
   * **Stable channel:** the official, stable release of [Android Studio](/studio).
 
-
-
 If you'd like to try one of the preview channels (canary or RC) while still using the stable build for your production projects, you can [install them side by side](/studio/preview/install-preview).
 
 ![](/static/studio/images/preferences-updates_2x.png)
@@ -64,8 +54,6 @@ When an update is available for a package you already have, a dash ![](/static/s
 
   * To update an item or install a new one, select the checkbox.
   * To uninstall a package, click to clear the checkbox.
-
-
 
 Pending updates are indicated in the left column with a download icon ![](/static/images/tools/studio-sdk-dwnld-icon.png). Pending removals are indicated with a red X: ![](/static/images/tools/studio-sdk-removal-icon.png).
 
@@ -126,8 +114,6 @@ If a carrier or device manufacturer has hosted an SDK add-on repository file on 
   4. Make sure the checkbox is selected in the **Enabled** column.
   5. Click **Apply** or **OK**.
 
-
-
 Any SDK packages available from the site now appear in the **SDK Platforms** or **SDK Tools** tabs, as appropriate.
 
 ###  Auto-download missing packages with Gradle 
@@ -146,8 +132,6 @@ To copy the licenses to another machine, follow these steps:
 If you don't see a `licenses/` directory, return to Android Studio, update your SDK tools, and accept the license agreements. When you return to the Android SDK home directory, you should see the directory.
 
   3. Copy the entire `licenses/` directory and paste it into the Android SDK home directory on the machine where you want to build your projects. 
-
-
 
 Gradle can now automatically download missing packages your project depends on. 
 

@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Analyze power use with Battery Historian Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Analyze power use with Battery Historian
 **Warning:** Battery Historian is no longer actively maintained; if possible, consider using [system tracing](/topic/performance/tracing), the [Macrobenchmark power metric](/topic/performance/benchmarking/macrobenchmark-metrics#power), or the [Power Profiler](/studio/profile/power-profiler) to get insights into battery performance.
 
 The Battery Historian tool provides insight into a device’s battery consumption over time. At a system-wide level, the tool visualizes power-related events from the system logs in an HTML representation. At an app-specific level, the tool provides a variety of data that can help you identify battery-draining app behavior.
@@ -48,8 +40,6 @@ In addition to the macro-level data provided by the system-wide view, Battery Hi
   * Services.
   * Process info.
 
-
-
 The tables provide two dimensions of data about your app. First, you can look up where your app’s power usage ranks compared to other apps. To do so, click _Device Power Estimates_ table under _Tables_. This example examines a fictional app called Pug Power.
 
 ![Investigating which apps consume the most power.](/static/topic/performance/images/app-rankings.png) **Figure 3.** Investigating which apps consume the most power. 
@@ -68,8 +58,6 @@ When you select a specific app, the following data visualization categories chan
   * Top app.
   * JobScheduler.
   * Activity Manager Proc.
-
-
 
 The SyncManager and JobScheduler visualizations immediately make it obvious if your app performs syncs and executes jobs more frequently than necessary. In doing so, they can quickly reveal an opportunity to optimize your app’s behavior for improved battery performance.
 
@@ -103,8 +91,6 @@ There are many other cases in which Battery Historian can help you diagnose oppo
   * Scheduling jobs every 30 seconds or less.
   * Scheduling syncs every 30 seconds or less.
   * Using the cellular radio more frequently than you expect.
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

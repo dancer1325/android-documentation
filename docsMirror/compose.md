@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/compose](https://developer.android.com/compose)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Get started ](https://developer.android.com/get-started/overview)
-  * [ Compose ](https://developer.android.com/compose)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ###  Build better apps faster with   
 Jetpack Compose 
 

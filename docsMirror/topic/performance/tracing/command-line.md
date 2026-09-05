@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Capture a system trace on the command line Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Capture a system trace on the command line
 **Note:** For best results capturing a system trace, we recommend using tooling assistants such as the [Android Studio Profilers](/studio/profile), the System Tracing utility on Android devices, or the [Perfetto](https://ui.perfetto.dev) web tool. For more information, see [Overview of system tracing](/topic/performance/tracing).
 
 The `systrace` command invokes the [Systrace tool](/topic/performance/tracing), which allows you to collect and inspect timing information across all processes running on your device at the system level.
@@ -25,8 +17,6 @@ In order to run `systrace`, complete the following steps:
   2. Install [Python](http://www.python.org/) and include it in your workstation's `PATH` environment variable.
   3. Add `android-sdk/platform-tools/` to your `PATH` environment variable. This directory contains the Android Debug Bridge binary (adb), which is called by the `systrace` program.
   4. Connect a device running Android 4.3 (API level 18) or higher to your development system using a [USB debugging connection](/tools/device#setting-up).
-
-
 
 The `systrace` command is provided in the Android SDK Tools package and is located in `android-sdk/platform-tools/systrace/`.
 
@@ -81,8 +71,6 @@ Commands and options | Description
 
   * Note: link text is displayed when JavaScript is off
   * [Capture a system trace on a device](/topic/performance/tracing/on-device)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

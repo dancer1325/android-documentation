@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Gradle tips and recipes Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Gradle tips and recipes
 Gradle and the Android plugin for Gradle provide a flexible way to compile, build, and package your Android app or library. This page collects some useful tips and configurations to help you get the most out of each build. If you want to learn about ways to make your builds faster, read [Optimize Your Build Speed](/studio/build/optimize-your-build). 
 
 If you are new to Gradle, learn the basics by reading [Configure Your Build](/studio/build). You can also inspect the Android plugin's [DSL reference documentation](/reference/tools/gradle-api) to learn more about the properties used in this page. 
@@ -928,8 +920,6 @@ By default, signing configurations are recorded in plain text to the module's `b
          ...
 
   4. Click **Sync Now** in the notification bar. 
-
-
 
 To learn more about app signing, read [Sign Your App](/studio/publish/app-signing). 
 

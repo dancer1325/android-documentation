@@ -3,16 +3,6 @@
 **Source:** [https://developer.android.com/tools/agents](https://developer.android.com/tools/agents)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Agent tools and resources ](https://developer.android.com/tools/agents)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ##  Build high quality Android apps anywhere with Android CLI 
 
 Android CLI makes it faster and easier to build Android apps using the agents and developer environments of your choice. 

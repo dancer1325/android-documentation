@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Low memory killers Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Low memory killers
 The Android platform runs on the premise that free memory is wasted memory. Android tries to use all available memory at all times. For example, the system keeps apps in memory after they've been closed so the user can quickly switch back to them. For this reason, Android devices often run with very little free memory (see [Android Memory allocation here](/topic/performance/memory-management)).
 
 The Android [low memory killer (LMK) daemon](https://source.android.com/docs/core/perf/lmkd) process monitors the memory state of a running Android system and reacts to high memory pressure by killing the least essential processes to keep the system performing at acceptable levels.
@@ -45,8 +37,6 @@ The following tools can help you find and diagnose memory issues in the followin
   * See how your app allocates memory over time. You can find a real-time graph of how much memory your app is using, the number of allocated Java objects, and when garbage collection occurs.
   * Initiate garbage collection events and take a snapshot of the Java heap while your app runs.
   * Record your app's memory allocations, inspect all allocated objects, and view the stack trace for each allocation.
-
-
 
 If your game is running on a native engine, use [HWAddress Sanitizer](/ndk/guides/hwasan) to debug native memory allocation.
 
@@ -95,13 +85,9 @@ Information, insights, and best practices to help you achieve better game memory
   * Use [`ApplicationExitInfo`](/reference/android/app/ApplicationExitInfo): This API returns the reason why the previous game run was killed by the Android system. Use `ApplicationExitInfo`to check for low memory as a reason for a previous process run [death](/reference/android/app/ApplicationExitInfo#REASON_LOW_MEMORY). Check whether the game was killed due to low memory so the game can be optimized to use less memory on that device.
   * Look at total [physical RAM](/reference/android/app/ActivityManager.MemoryInfo#totalMem): To prevent games from being killed when in the foreground and to match the device's capabilities, look at the total physical RAM per device for fine granularity to adjust game memory usage based on that. If the goal is to prevent apps from being killed shortly after moving to the background (to allow the player to multitask), use the [trim](/reference/android/content/ComponentCallbacks2#constants_1) callbacks ([`TRIM_MEMORY_UI_HIDDEN`](/reference/android/content/ComponentCallbacks2#TRIM_MEMORY_UI_HIDDEN) specifically) to reduce your game memory usage.
 
-
-
 ## Additional resources
 
   * [Overview of memory management](/topic/performance/memory-overview)
-
-
 
 [ Previous arrow_back  Slow Sessions  ](/topic/performance/vitals/slow-session)
 

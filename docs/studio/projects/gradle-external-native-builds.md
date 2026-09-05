@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Link Gradle to your native library Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Link Gradle to your native library
 To include your native library project as a Gradle build dependency, you need to provide Gradle with the path to your CMake or ndk-build script file. When you build your app, Gradle runs CMake or ndk-build, and packages shared libraries with your app. Gradle also uses the build script to know which files to pull into your Android Studio project, so you can access them from the **Project** window. If you don’t have a build script for your native sources, you need to [create a CMake build script](/studio/projects/configure-cmake) before you proceed. 
 
 Each module in your Android project can link to only one CMake or ndk-build script file. So, for example, if you want to build and package outputs from multiple CMake projects, you need to use one `CMakeLists.txt` file as your top-level CMake build script (which you then link Gradle to) and [ add other CMake projects](/studio/projects/configure-cmake#include-other-cmake-projects) as dependencies of that build script. Similarly, if you're using ndk-build, you can [include other Makefiles](https://www.gnu.org/software/make/manual/html_node/Include.html) in your top-level [`Android.mk`](/ndk/guides/android_mk) script file. 
@@ -35,8 +27,6 @@ You can link Gradle to an external CMake or ndk-build project using the Android 
 **Figure 4.** Linking an external C++ project using the Android Studio dialog. 
 
   4. Click **OK**. 
-
-
 
 ## Manually configure Gradle
 

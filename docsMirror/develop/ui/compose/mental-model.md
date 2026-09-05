@@ -4,16 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Core areas ](https://developer.android.com/develop/core-areas)
-  * [ UI ](https://developer.android.com/develop/ui)
-  * [ Docs ](https://developer.android.com/develop/ui/compose/documentation)
-
-
-
-#  Thinking in Compose Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Thinking in Compose
 Jetpack Compose is a modern declarative UI Toolkit for Android. Compose simplifies writing and maintaining your app UI by providing a _declarative API_ that lets you render your app UI without imperatively mutating frontend views. This terminology needs some explanation, but the implications are important for your app design.
 
 ## The declarative programming paradigm
@@ -45,9 +36,6 @@ A few noteworthy things about this function:
     * The function describes the UI without any side-effects, such as modifying properties or global variables.
 
 In general, all composable functions must be written with these properties, for reasons discussed in Recomposition.
-
-
-
 
 ## The declarative paradigm shift
 
@@ -107,8 +95,6 @@ Never depend on side-effects from executing composable functions, since a functi
   * Updating an observable in `ViewModel`
   * Updating shared preferences
 
-
-
 Composable functions might be re-executed as often as every frame, such as when an animation is being rendered. Composable functions should be fast to avoid jank during animations. If you need to do expensive operations, such as reading from shared preferences, do it in a background coroutine and pass the value result to the composable function as a parameter.
 
 As an example, this code creates a composable to update a value in `SharedPreferences`. The composable shouldn't read or write from shared preferences itself. Instead, this code moves the read and write to a `ViewModel` in a background coroutine. The app logic passes the current value with a callback to trigger an update.
@@ -135,8 +121,6 @@ This document discusses a number of things to be aware of when you use Compose:
   * A composable function might be run quite frequently, as often as every frame of an animation.
   * Composable functions can execute in parallel.
   * Composable functions can execute in any order.
-
-
 
 The following sections will cover how to build composable functions to support recomposition. In every case, the best practice is to keep your composable functions fast, idempotent, and side-effect free.
 
@@ -286,16 +270,12 @@ To learn more about how to think in Compose and composable functions, see the fo
 
   * [Composable functions - MAD Skills](https://www.youtube.com/watch?v=fFLBCgoHHys)
 
-
-
 ## Recommended for you
 
   * Note: link text is displayed when JavaScript is off
   * [Kotlin for Jetpack Compose](/develop/ui/compose/kotlin)
   * [State and Jetpack Compose](/develop/ui/compose/state)
   * [Jetpack Compose architectural layering](/develop/ui/compose/layering)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

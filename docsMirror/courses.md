@@ -3,16 +3,6 @@
 **Source:** [https://developer.android.com/courses](https://developer.android.com/courses)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Essentials ](https://developer.android.com/get-started)
-  * [ Get started ](https://developer.android.com/get-started/overview)
-  * [ Training ](https://developer.android.com/courses)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](https://developer.android.com/static/images/cluster-illustrations/play-webinar-16-9.svg)
 
 ###  Training courses 
@@ -28,7 +18,6 @@ course
 ###  [ Android Basics with Compose ](https://developer.android.com/courses/android-basics-compose/course)
 
 This is the **recommended** course to start learning Android! Build a series of apps using Jetpack Compose, the modern toolkit for creating beautiful user interfaces on Android. You will write these apps in the Kotlin programming language and learn best practices in Material Design, app architecture, data storage, fetching data from the network, testing, and more. No programming experience required.   
-
 
 stop _Training level:**Beginner**_
 
@@ -47,7 +36,6 @@ course
 Get started with Jetpack Compose, a modern toolkit for building Android UI.   
   
 
-
 stop _Training level:**Intermediate**_
 
 [Start course](https://developer.android.com/courses/jetpack-compose/course)
@@ -58,7 +46,6 @@ pathway
 
 Learn about best practices and recommended architecture for building robust, production-quality apps.   
   
-
 
 stop _Training level:**Intermediate**_
 
@@ -71,7 +58,6 @@ pathway
 Learn to make your Android apps usable by everyone, including people with accessibility needs.   
   
 
-
 stop _Training level:**Intermediate**_
 
 [Start pathway](https://developer.android.com/courses/pathways/make-your-android-app-accessible)
@@ -82,7 +68,6 @@ pathway
 
 Learn the basics of sharing code between Android and iOS apps with Kotlin Multiplatform.   
   
-
 
 stop _Training level:**Intermediate**_
 
@@ -102,7 +87,6 @@ Certification
 
 The Google Play Store List Certificate proves foundational knowledge of digital mobile marketing best practices for those building store listings in Google Play Console.   
   
-
 
 stop _Training level:**Intermediate**_
 

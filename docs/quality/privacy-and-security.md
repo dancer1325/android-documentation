@@ -3,16 +3,6 @@
 **Source:** [https://developer.android.com/quality/privacy-and-security](https://developer.android.com/quality/privacy-and-security)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Privacy & Security ](https://developer.android.com/quality/privacy-and-security)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](https://developer.android.com/static/images/quality/hero-images/privacy_security_highlighted.svg)
 
 ###  Design for Safety 
@@ -65,8 +55,6 @@ As threats to privacy evolve, the Android platform adds features and enhancement
   * Separate request for background location
   * Data access auditing
 
-
-
 [Learn more](https://developer.android.com/about/versions/11/privacy)
 
 ###  [ ![Android 12](/static/images/quality/privacy-and-security/Android12.svg) ](https://developer.android.com/about/versions/12/behavior-changes-all#security-privacy)
@@ -76,9 +64,6 @@ As threats to privacy evolve, the Android platform adds features and enhancement
   * Bluetooth permissions  
   
 
-
-
-
 [Learn more](https://developer.android.com/about/versions/12/behavior-changes-all#security-privacy)
 
 ###  [ ![Android 13](/static/images/quality/privacy-and-security/Android13.svg) ](https://developer.android.com/about/versions/13/features#privacy-security)
@@ -87,9 +72,6 @@ As threats to privacy evolve, the Android platform adds features and enhancement
   * Wi-Fi and storage permissions
   * Photo picker  
   
-
-
-
 
 [Learn more](https://developer.android.com/about/versions/13/features#privacy-security)
 

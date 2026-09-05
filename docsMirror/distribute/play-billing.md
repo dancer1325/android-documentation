@@ -6,14 +6,7 @@
 
 **Reminder:** By Aug 31, 2026, all new apps and updates to existing apps must use Billing Library version 8 or later. If you need more time to update your app, you can request an extension until Nov 1, 2026. Learn about [Play Billing Library version deprecation](/google/play/billing/deprecation-faq). 
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Google Play ](https://developer.android.com/distribute)
-  * [ Play Monetization ](https://developer.android.com/google/play/billing)
-
-
-
-Send feedback  Stay organized with collections  Save and categorize content based on your preferences. 
-
+Send feedback
 ![](https://developer.android.com/static/images/hero-illustrations/play-billing-hero.svg)
 
 ###  Google Play’s   

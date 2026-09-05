@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Configure your build Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Configure your build
 The Android build system compiles app resources and source code and packages them into APKs or Android App Bundles that you can test, deploy, sign, and distribute.
 
 In [Gradle build overview](/studio/build/gradle-build-overview) and [Android build structure](/studio/build/android-build-structure), we discussed build concepts and the structure of an Android app. Now it's time to configure the build.
@@ -272,8 +264,6 @@ The `targetSdk` serves two purposes:
   1. It sets runtime behavior of your application.
   2. It attests which version of Android you've tested against.
 
-
-
 If you run on a device that's using a higher version of Android than your `targetSdk`, Android runs your app in a compatibility mode that behaves similarly to the lower version indicated in your `targetSdk`. For example, when API 23 introduced the runtime permissions model, not all apps were ready to immediately adopt it. By setting `targetSdk` to 22, those apps could run on API 23 devices without using runtime permissions, and could use features included in the latest `compileSdk` version. Google Play distribution policy enforces [ additional policies on target API level](/google/play/requirements/target-sdk). 
 
 The value of `targetSdk` is not connected to the value of `compileSdk`. For example, you can have a value of `targetSdk` that is higher, the same, or lower than `compileSdk`. 
@@ -282,8 +272,6 @@ The value of `targetSdk` is not connected to the value of `compileSdk`. For exam
 
   * `compileSdk` gives you access to new APIs
   * `targetSdk` sets the runtime behavior of your app
-
-
 
 #### Sample app-module build script
 
@@ -600,7 +588,6 @@ Gradle also includes two properties files, located in your root project director
   * `cmake.dir` \- Path to CMake.
   * `ndk.symlinkdir` \- In Android Studio 3.5 and higher, creates a symlink to the NDK that can be shorter than the installed NDK path.
 
-
 **Caution:** The `local.properties` file is reserved for properties specific to the Android Gradle plugin. Putting your own values in this file can cause problems. If you need to define your own local properties, [create a separate properties file and manually load it](/studio/build/gradle-tips#remove-private-signing-information-from-your-project).
 
 ### Remap the NDK to a shorter path (Windows only)
@@ -641,8 +628,6 @@ For example, to generate the "fullDebug" version of your app, the build system m
   * `src/debug/` (the build type source set) 
   * `src/full/` (the product flavor source set) 
   * `src/main/` (the main source set) 
-
-
 
 **Note:** When you create a new file or directory in Android Studio, use the **File > New** menu options to create it for a specific source set. The source sets you can choose from are based on your build configurations, and Android Studio automatically creates the required directories if they don't already exist. 
 

@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Dependency verification Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Dependency verification
 Compromised Gradle dependencies pose a security risk. A malicious actor could potentially inject a modified dependency into the build process, for example, through a man-in-the-middle attack during dependency resolution.
 
 If a build dependency (a library) has been compromised, it can affect the way your application executes on a device. If a plugin dependency has been compromised, it can change the way your build works, or even run external commands on the build machine.
@@ -30,9 +22,6 @@ The downside is that, because checksums are calculated from the artifacts, they 
   * **Signatures** \- allows dependency users to specify a public key for a given artifact in order to validate that this artifact was built and signed by the library author who is the authenticated owner of that public key. This is more work for the library author, but as long as their private key itself has not been compromised, the signature tells you the library is legitimate.
 
 If the library author signs each version of an artifact with the same key, you don't need to update `gradle/verification-metadata.xml` when you upgrade them.
-
-
-
 
 ## Enable dependency verification
 
@@ -114,8 +103,6 @@ In the Android Studio editor, use **Edit > Find > Replace...** using regular exp
 
   * from: `<trusted-key(.*) version=\".*\"/>`
   * to: `<trusted-key$1/>`
-
-
 
 ## Android Studio synchronization
 

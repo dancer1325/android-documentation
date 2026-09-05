@@ -3,16 +3,6 @@
 **Source:** [https://developer.android.com/develop/connectivity](https://developer.android.com/develop/connectivity)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Core areas ](https://developer.android.com/develop/core-areas)
-  * [ Connectivity ](https://developer.android.com/develop/connectivity)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](https://developer.android.com/static/images/hero-illustrations/better-together-hero.svg)
 
 ###  Connectivity 

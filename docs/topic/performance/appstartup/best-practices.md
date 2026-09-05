@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Best practices for app optimization Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Best practices for app optimization
 The following best practices help optimize your app without sacrificing quality.
 
 ## Use Baseline Profiles
@@ -79,8 +71,6 @@ A [cold start](/topic/performance/vitals/launch-time#cold) refers to an app star
   * [App startup analysis and optimization](/topic/performance/appstartup/analysis-optimization)
   * [App startup time](/topic/performance/vitals/launch-time)
   * [Frozen frames](/topic/performance/vitals/frozen)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

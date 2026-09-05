@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Run the standalone profiler Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Run the standalone profiler
 The standalone Android Studio profiler lets you [profile your app](/studio/profile) without running the full Android Studio IDE.
 
 To run the standalone profiler, do the following:
@@ -25,8 +17,6 @@ To run the standalone profiler, do the following:
 **macOS** : The use of standalone profilers is not supported on macOS.
 
   3. Depending on your OS, run `profiler.exe` or `profiler.sh`. The Android Studio splash screen appears. After the splash screen disappears, a profiler window opens.
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Optimization for library authors Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Optimization for library authors
 As a library author, you must ensure that app developers can easily incorporate your library into their app while maintaining a high-quality end-user experience. This means your library must be compatible with Android optimization (R8) without requiring additional setup from the developer—or document that the library might be inappropriate for usage on Android. It is crucial that libraries intended for use on Android must not prevent important app optimizations and adhere to additional optimization requirements.
 
 This documentation is targeted at developers of published libraries, but might also be useful for developers of internal library modules in a large, modularized app.
@@ -25,8 +17,6 @@ There are two distinct types of keep rules that you can have in libraries:
 
   * **Consumer keep rules** must specify rules that keep whatever the library reflects on. If a library uses reflection or JNI to call into its code, or code defined by a client app, these rules need to describe what code needs to be kept. Libraries should package consumer keep rules, which use the same format as app keep rules. These rules are bundled into library artifacts (AARs or JARs) and get consumed automatically during Android app optimization when the library is used. These rules are maintained in the file specified with the `consumerProguardFiles` property in your `build.gradle.kts` (or `build.gradle`) file. To learn more, see [Write consumer keep rules](/topic/performance/app-optimization/library-optimization#write-consumer-rules).
   * **Library build keep rules** are applied when your library is built. They are only needed if you decide to partially optimize your library at build time. They must keep the library's public API from being removed, otherwise the public API won't be present in the library distribution, meaning app developers can't use the library. These rules are maintained in the file specified with the `proguardFiles` property in your `build.gradle.kts` (or `build.gradle`) file. To learn more, see [Optimize AAR library build](/topic/performance/app-optimization/library-optimization#optimize-aar).
-
-
 
 ## Optimization requirements and guidelines
 
@@ -52,9 +42,6 @@ Many modern libraries use codegen instead of reflection. See [KSP](https://githu
 
 **Note:** There are instances when it might be appropriate to use reflection. For more information, see When reflection is okay.
   * **Support R8 full mode:** Your library shouldn't crash when [R8 full mode](/topic/performance/app-optimization/full-mode) is enabled. R8's full mode is the recommended mode to use R8, and is the default since AGP 8.0, which was made stable in 2023. If your library crashes under R8, the solution is to identify the specific reflection or JNI entry point and add a targeted rule, not to keep the entire package.
-
-
-
 
 ### Additional recommendations
 
@@ -96,16 +83,12 @@ Apart from the optimization requirements, the following are additional recommend
     * `-classobfuscationdictionary`
     * `-packageobfuscationdictionary`
 
-
-
 ### When reflection is okay
 
 If you must use reflection, you should only reflect into either of the following:
 
   * Specific targeted types (specific interface implementers or subclasses)
   * Code using a specific runtime annotation
-
-
 
 Using reflection in this way limits the runtime cost, and enables writing targeted consumer keep rules.
 
@@ -120,9 +103,6 @@ A few common misconceptions might lead you to configure R8 incorrectly. These in
   * **Bypassing optimization of obfuscated libraries** : A common error is to omit a library from optimization, because the library was optimized or obfuscated when it was compiled to an AAR (Android Archive) or JAR (Java Archive). The optimizations during library build time are limited, and your app shouldn't disable the optimization of the library by including it in a keep rule. For more information, see [Optimize AAR library build](/topic/performance/app-optimization/enable-app-optimization#overview).
 
   * **Incorrect understanding of the`-keep` option** The `-keep` rule prevents R8 from running any of its [optimization passes](/topic/performance/app-optimization/enable-app-optimization#overview). For more information, see [Choose the right keep option](/topic/performance/app-optimization/add-keep-rules#choose-keep).
-
-
-
 
 ## Configure rule packaging
 
@@ -209,8 +189,6 @@ Note that the behavior of `proguardFiles` is very different from `consumerProgua
 
   * `proguardFiles` are used at build time, often together with `getDefaultProguardFile("proguard-android-optimize.txt")`, to define which part of your library should be kept during the library build. At a minimum, this is your public API.
   * `consumerProguardFiles` by contrast are packaged into the library to affect what optimizations happen later, during the build of an app that consumes your library.
-
-
 
 For example, if your library uses reflection to construct internal classes, you might need to define the keep rules both in `proguardFiles` and `consumerProguardFiles`.
 

@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Benchmark in Continuous Integration Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Benchmark in Continuous Integration
 You can run benchmarks in Continuous Integration (CI) to track performance over time and recognize performance regressions—or improvements—before your app even releases. This page provides basic information about benchmarking in CI.
 
 Before getting started with benchmarking in CI, consider how capturing and evaluating results differs from regular tests.
@@ -184,16 +176,12 @@ The benchmark libraries generate JSON files containing information about the dev
   * For guidance in how to detect performance regressions, see [Fighting Regressions with Benchmarks in CI](https://medium.com/androiddevelopers/fighting-regressions-with-benchmarks-in-ci-6ea9a14b5c71).
   * To see how to setup Github Actions with Firebase Test Lab, see [Setting up Jetpack Macrobenchmarks for CI](https://github.com/android/performance-samples/tree/main/MacrobenchmarkSample/ftl)
 
-
-
 ## Recommended for you
 
   * Note: link text is displayed when JavaScript is off
   * [Best practices for SQLite performance](/topic/performance/sqlite-performance-best-practices)
   * [Create and measure Baseline Profiles without Macrobenchmark](/topic/performance/baselineprofiles/manually-create-measure)
   * [Stuck partial wake locks](/topic/performance/vitals/wakelock)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

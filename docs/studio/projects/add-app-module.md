@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Add a module for a new device Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Add a module for a new device
 Modules provide a container for your app's source code, resource files, and app level settings, such as the module-level build file and Android manifest file. Each module can be independently built, tested, and debugged.
 
 Android Studio uses modules to make it easy to add new devices to your project. By following a few simple steps in Android Studio, you can create a module to contain code that's specific to a device type, such as Wear OS or Android TV. Android Studio automatically creates module directories, such as source and resource directories, and a default `build.gradle` file appropriate for the device type. Also, Android Studio creates device modules with recommended build configurations, such as using the Leanback library for Android TV modules.
@@ -43,8 +35,6 @@ Then click **Next**.
   4. Depending on which device module you selected, the following page displays a selection of appropriate code templates you can select to use as your main activity. Click an activity template with which you want to start, and then click **Next**. If you don't need an activity, click **Add No Activity** , click **Finish** , and then you're done.
   5. If you chose an activity template, enter the settings for your activity on the **Customize the Activity** page. Most templates ask for an **Activity Name** , **Layout Name** , **Title** , and **Source Language** , but each template has activity-specific settings. Click **Finish**. When you create an app module with an activity template, you can immediately run and test the module on your device.
 
-
-
 Android Studio creates all the necessary files for the new module and syncs the project with the new module gradle files. Adding a module for a new device also adds any required dependencies for the target device to the module's build file.
 
 Once the Gradle project sync completes, the new module appears in the **Project** window on the left. If you don't see the new module folder, make sure the window is displaying the [Android view](/studio/projects#ProjectFiles).
@@ -61,8 +51,6 @@ If your module(s) have other dependencies, they will be listed to import under *
   3. Type your desired module name(s) in the **Module name** field(s). 
   4. Click **Finish.**
 
-
-
 Once the module is imported, it appears in the [**Project** window](https://developer.android.com/studio/projects/index.html#ProjectFiles) on the left.
 
 ## Next steps
@@ -72,15 +60,11 @@ Once you've added a new module, you can modify the module code and resources, co
   * To learn about build settings for a module, see [The Module-level Build File](/studio/build#module-level).
   * To build and run a specific module, see [Select and build a different module](/studio/run#build-module).
 
-
-
 You'll also want to add code and resources to properly support the new device. For more information about how to develop app modules for different device types, see the corresponding documentation:
 
   * For Wear OS modules: [Creating and Running a Wearable App](https://developer.android.com/training/wearables/apps/creating.html)
   * For Android TV modules: [Get Started with TV Apps](https://developer.android.com/training/tv/start/start.html)
   * For Glass modules: [GDK Quick Start](https://developers.google.com/glass/develop/gdk/quick-start#for_android_experts)
-
-
 
 As you develop your new module, you might create device independent code that is already duplicated in a different app module. Instead of maintaining duplicate code, consider moving the shared code to a library module and adding the library as a dependency to your app modules. For more information on creating a library module and adding it as a dependency, see [Create an Android Library](/studio/projects/android-library).
 

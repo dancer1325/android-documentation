@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Write your app Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Write your app
 Android Studio includes tools for every stage of development, but what's most important is simply writing your app: writing the code, building layouts, creating images, and being productive along the way.
 
 That's what this section is all about: the tools that help you write your app and write it quickly.

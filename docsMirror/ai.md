@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/ai](https://developer.android.com/ai)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Overview ](https://developer.android.com/ai)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ##  Integrate your app with the Android intelligence system 
 
 Android is evolving into an intelligence system, powered by AI. Integrate your app through a self-service model, and become part of the next generation of intelligent experiences on Android. 

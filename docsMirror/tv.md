@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/tv](https://developer.android.com/tv)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Multidevice ](https://developer.android.com/multidevice)
-  * [ Android TV ](https://developer.android.com/tv)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ###  Android TV 
 
 Build apps that let users experience your app's immersive content on the big screen. Users can discover your content recommendations on the home screen. The Leanback library provides APIs to help you build a great user experience for a remote control. 

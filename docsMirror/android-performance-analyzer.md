@@ -3,16 +3,6 @@
 **Source:** [https://developer.android.com/android-performance-analyzer](https://developer.android.com/android-performance-analyzer)
 
 ---
-
-  * [ Home ](https://developer.android.com/)
-  * [ Android Performance Analyzer ](https://developer.android.com/apa-home)
-  * [ Google Play ](https://developer.android.com/distribute)
-  * [ Guides ](https://developer.android.com/games/guides)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 [ ![](https://developer.android.com/static/android-performance-analyzer/images/apa-logo.svg) ](https://developer.android.com/android-performance-analyzer/quickstart)
 
 ###  [ Android Performance Analyzer (APA) ](https://developer.android.com/android-performance-analyzer/quickstart)

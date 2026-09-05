@@ -4,23 +4,12 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Core areas ](https://developer.android.com/develop/core-areas)
-  * [ UI ](https://developer.android.com/develop/ui)
-  * [ Docs ](https://developer.android.com/develop/ui/compose/documentation)
-
-
-
-#  Testing APIs Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Testing APIs
 There are three main ways to interact with UI elements:
 
   * **Finders** let you select one or multiple elements (or _nodes_ in the semantics tree) to make assertions or perform actions on them.
   * **Assertions** are used to verify that the elements exist or have certain attributes.
   * **Actions** inject simulated user events on the elements, such as clicks or other gestures.
-
-
 
 Some of these APIs accept a [`SemanticsMatcher`](/reference/kotlin/androidx/compose/ui/test/SemanticsMatcher) to refer to one or more _nodes_ in the semantics tree.
 
@@ -207,8 +196,6 @@ You can browse the complete list in the [Compose Testing cheat sheet](/develop/u
   * **[Continuous integration](/training/testing/continuous-integration):** Continuous integration lets you integrate your tests into your deployment pipeline.
   * **[Test different screen sizes](/training/testing/different-screens):** With some many devices available to users, you should test for different screen sizes.
   * **[Espresso](/training/testing/espresso)** : While intended for View-based UIs, Espresso knowledge can still be helpful for some aspects of Compose testing.
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

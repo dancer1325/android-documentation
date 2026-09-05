@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/blog/categories/community](https://developer.android.com/blog/categories/community)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Android Developers' Blog ](https://developer.android.com/)
-  * [ Blog ](https://developer.android.com/blog)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](/static/blog/assets/community_droid_6e853eebb1_ee5eeddc02_1CWi4Q.webp)
 
 # Community
@@ -114,9 +105,6 @@ In our latest #WeArePlay film, which celebrates the people behind apps and games
 In our latest #WeArePlay stories, we meet the game creators who entertain, inspire and spark imagination in players around the world on Google Play.
 
 [Robbie McLachlan](/blog/authors/robbie-mclachlan) • 2 min read 
-
-
-
 
 arrow_back 
 

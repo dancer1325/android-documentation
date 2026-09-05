@@ -4,23 +4,13 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Advanced test setup Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Advanced test setup
 [Test in Android Studio](/studio/test/test-in-android-studio) and [Test from the command line](/studio/test/command-line) explain how to set up and run basic test configurations. However, when your app and its test requirements get more advanced, you may need to adapt your test configurations further. For example, you might need advanced test setup when you want to do the following:
 
   * Run instrumented tests only for a specific build variant or override its manifest settings.
   * Change the build type your tests run against or configure its Gradle options.
   * Extract your instrumented tests into their own test module.
   * Perform more advanced testing as part of your Continuous Integration setup.
-
-
 
 This page describes various ways to configure your tests when the default settings don't fit your needs.
 
@@ -40,8 +30,6 @@ To add a testing source set for your build variant in Android Studio, follow the
   4. Click **OK**.
   5. Right-click the new directory and select **New > Directory**.
   6. Enter "java" as the directory name, then click **OK**.
-
-
 
 Now you can add tests to this new source set by following the [steps to add a new test](/studio/test/test-in-android-studio#create-new-tests). When you reach the **Choose Destination Directory** dialog, select the new variant test source set.
 
@@ -242,8 +230,6 @@ To create a test module, proceed as follows:
   1. [Create a library module](/studio/projects/android-library#CreateLibrary).
   2. In the module-level `build.gradle` file, apply the `com.android.test` plugin instead of `com.android.library`.
   3. Click **Sync Project** ![](/static/studio/images/buttons/toolbar-sync-gradle.png).
-
-
 
 After you create your test module, you can include your test code in the main or variant source set (for example, `src/main/kotlin+java` or `src/**variant** /kotlin+java`). If your app module defines multiple product flavors, you can re-create those flavors in your test module. Using [variant-aware dependency management](/studio/build/build-variants#variant_aware), the test module attempts to test the matching flavor in the target module.
 

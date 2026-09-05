@@ -4,16 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Core areas ](https://developer.android.com/develop/core-areas)
-  * [ UI ](https://developer.android.com/develop/ui)
-  * [ Docs ](https://developer.android.com/develop/ui/compose/documentation)
-
-
-
-#  Preview your UI with composable previews Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Preview your UI with composable previews
 A composable is defined by a function and annotated with `@Composable`:
     
     
@@ -401,8 +392,6 @@ Because of the way previews are rendered within Android Studio, they are lightwe
   * No file access
   * Some `Context` APIs may not be fully available
 
-
-
 ### Previews and `ViewModels`
 
 Previews are limited when using [`ViewModel`](/viewmodel) within a composable. The previews system is not capable of constructing all of the parameters passed to a `ViewModel`, such as repositories, use cases, managers, or similar. Also, if your `ViewModel` participates in dependency injection (such as with [Hilt](/training/dependency-injection/hilt-android)), the previews system can't build the whole dependency graph to construct the `ViewModel`.
@@ -453,16 +442,12 @@ If you want to preview a composable that uses a `ViewModel`, you should create a
   * To read more about how Android Studio promotes `@Preview` ease of use, and learn more tooling tips, check out the blog [Compose Tooling](https://medium.com/androiddevelopers/compose-tooling-42621bd8719b).
   * For the legacy Views guidance, see [Develop a layout with Views](/studio/views/layout-editor).
 
-
-
 ## Recommended for you
 
   * Note: link text is displayed when JavaScript is off
   * [Locally scoped data with CompositionLocal](/develop/ui/compose/compositionlocal)
   * [Material Design 2 in Compose](/develop/ui/compose/designsystems/material)
   * [Using Views in Compose](/develop/ui/compose/migrate/interoperability-apis/views-in-compose)
-
-
 
 [ Next Preview and debug animations  arrow_forward  ](/develop/ui/compose/tooling/animation-preview)
 

@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Control your app from Macrobenchmark Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Control your app from Macrobenchmark
 Unlike most Android UI tests, Macrobenchmark tests run in a separate process from the app itself. This is necessary to enable things like stopping the app process and compiling from DEX bytecode to machine code.
 
 You can drive your app's state using the [UIAutomator library](/training/testing/ui-automator) or other mechanisms that can control the target app from the test process. You can't use [Espresso](/training/testing/espresso) or [`ActivityScenario`](/reference/androidx/test/core/app/ActivityScenario) for Macrobenchmark because they expect to run in a shared process with the app.
@@ -150,8 +142,6 @@ To manually navigate, change the code inside `setupBlock{}` to contain the effec
   * [Writing a Macrobenchmark](/topic/performance/benchmarking/macrobenchmark-overview)
   * [Capture Macrobenchmark metrics](/topic/performance/benchmarking/macrobenchmark-metrics)
   * [Microbenchmark](/topic/performance/benchmarking/microbenchmark-overview)
-
-
 
 [ Previous arrow_back  Capture the metrics  ](/topic/performance/benchmarking/macrobenchmark-metrics)
 

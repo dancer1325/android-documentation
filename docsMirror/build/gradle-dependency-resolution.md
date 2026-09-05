@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Gradle dependency resolution Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Gradle dependency resolution
 Your build files specify your _direct_ dependencies, but each of those dependencies can require others. These _transitive_ dependencies quickly grow your overall dependency graph, often with conflicting versions.
 
 **Note:** This page uses [semantic versioning](https://semver.org/) throughout and follows a `major.minor.patch` format. For example, in the version number 4.8.3, 4 is the `major` version, 8 is the `minor` version and 3 is the `patch` number. When the `major` part changes, the library might have breaking changes in API or behavior. This can impact your build or application behavior, so you should test your build and app thoroughly to ensure compatibility.

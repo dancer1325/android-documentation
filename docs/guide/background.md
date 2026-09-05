@@ -4,16 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Core areas ](https://developer.android.com/develop/core-areas)
-  * [ Background work ](https://developer.android.com/develop/background-work)
-  * [ Guides ](https://developer.android.com/develop/background-work/background-tasks)
-
-
-
-#  Background tasks overview Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Background tasks overview
 Apps frequently need to do more than one thing at a time. The Android APIs provide a lot of different ways to let you do this. Choosing the right option is very important; an option might be right for one situation but very wrong for another. Choosing the wrong APIs can hurt your app's performance or resource efficiency, which can drain the battery and degrade performance of the user's device as a whole. In some cases, choosing the wrong approach could prevent your app from being listed in the Play Store.
 
 This document explains the different options available to you, and helps you choose the right one for your situation.
@@ -40,8 +31,6 @@ There are two main scenarios to consider for background tasks:
 
   * The task initiated by the user while the app is visible
   * The task is initiated in response to an event, either internal or external
-
-
 
 These two scenarios have their own decision trees.
 
@@ -82,8 +71,6 @@ Some of the most common scenarios for using alternative APIs are:
   * Using the [companion device manager](/develop/connectivity/bluetooth/companion-device-pairing) for Bluetooth pairing and data transfer, instead of using a connected device foreground service
   * Using [picture-in-picture mode](/develop/ui/views/picture-in-picture) to play video, instead of creating a media-playback foreground service
 
-
-
 ## Tasks initiated by the user
 
 ![Flowchart showing how to choose the appropriate API. This chart
@@ -123,8 +110,6 @@ Sometimes an app needs to do background work in response to a trigger, such as:
   * [Broadcast messages](/guide/components/broadcasts)
   * [Firebase Cloud Messaging (FCM) messages](https://firebase.google.com/docs/cloud-messaging)
   * [Alarms](/training/scheduling) set by the app
-
-
 
 This might be an external trigger (like an FCM message), or it might be in response to an alarm set by the app itself. For example, a game might receive a FCM message telling it to update some assets.
 

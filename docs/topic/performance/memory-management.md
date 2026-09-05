@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Memory allocation among processes Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Memory allocation among processes
 The Android platform runs on the premise that free memory is wasted memory. It tries to use all of the available memory at all times. For example, the system keeps apps in memory after they've been closed so the user can quickly switch back to them. For this reason, Android devices often run with very little free memory. Memory management is vital to properly allocate memory among important system processes and many user applications.
 
 This page discusses the basics of how Android allocates memory for the system and for user applications. It also explains how the operating system reacts to low memory situations.
@@ -30,9 +22,6 @@ Android devices contain three different types of memory: RAM, zRAM, and storage.
   * zRAM is a partition of RAM used for swap space. Everything is compressed when placed into zRAM, and then decompressed when copied out of zRAM. This portion of RAM grows or shrinks in size as pages are moved into or taken out of zRAM. Device manufacturers can set the maximum size.
 
   * Storage contains all of the persistent data such as the file system and the included object code for all apps, libraries, and the platform. Storage has much more capacity than the other two types of memory. On Android, storage isn’t used for swap space like it is on other Linux implementations since frequent writing can cause wear on this memory, and shorten the life of the storage medium.
-
-
-
 
 ## Memory pages
 
@@ -106,9 +95,6 @@ These are descriptions for the various categories in the table above:
 
   * Native: Very low-level processes used by the system (for example, `kswapd`).
 
-
-
-
 Device manufacturers can change the behavior of LMK.
 
 ## Calculating memory footprint
@@ -131,8 +117,6 @@ To determine the memory footprint for an application, any of the following metri
   * Proportional Set Size (PSS): The number of non-shared pages used by the app and an even distribution of the shared pages (for example, if three processes are sharing 3MB, each process gets 1MB in PSS)
   * Unique Set Size (USS): The number of non-shared pages used by the app (shared pages are not included)
 
-
-
 PSS is useful for the operating system when it wants to know how much memory is used by all processes since pages don’t get counted multiple times. PSS takes a long time to calculate because the system needs to determine which pages are shared and by how many processes. RSS doesn't distinguish between shared and non-shared pages (making it faster to calculate) and is better for tracking changes in memory allocation.
 
 ## Additional resources
@@ -143,14 +127,10 @@ PSS is useful for the operating system when it wants to know how much memory is 
   * [Android Memory and Games - Google I/O presentation](https://www.youtube.com/watch?v=Do7oYWwOXTk&t=314s)
   * [Android low memory killer daemon](https://source.android.com/docs/core/perf/lmkd)
 
-
-
 ## Recommended for you
 
   * Note: link text is displayed when JavaScript is off
   * [App startup time](/topic/performance/vitals/launch-time)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

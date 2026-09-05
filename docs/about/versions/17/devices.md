@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/about/versions/17/devices](https://developer.android.com/about/versions/17/devices)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Essentials ](https://developer.android.com/get-started)
-  * [ Releases ](https://developer.android.com/about/versions)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](https://developer.android.com/static/about/versions/17/images/android-17-logo.svg)
 
 ###  Android 17 Beta devices 

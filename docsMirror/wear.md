@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/wear](https://developer.android.com/wear)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Multidevice ](https://developer.android.com/multidevice)
-  * [ Wear OS ](https://developer.android.com/wear)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ##  Build apps for the wrist with Wear OS 
 
 Write apps that help users live more present, healthy, and productive lives with Wear OS. With major improvements to the core experience and big changes to the platform, there’s a lot to be excited about. 

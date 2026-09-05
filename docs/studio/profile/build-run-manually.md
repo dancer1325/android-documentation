@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Build and run a profileable app manually Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Build and run a profileable app manually
 To build a [profileable](/studio/profile#requirements) application manually, you need to first build a release application and then update its manifest file, which turns the release application into a profileable application. After you configure the profileable application, launch the profiler and select a profileable process to analyze.
 
 ## Build a release app
@@ -30,9 +22,6 @@ To build a release application for profiling purposes, do the following:
 
   2. In Android Studio, select **Build** > **Select Build Variant...** and choose the release variant.
 
-
-
-
 ## Change release to profileable
 
 To convert your release app to a profileable app, do the following:
@@ -47,9 +36,6 @@ To convert your release app to a profileable app, do the following:
                  additionalParameters =["--warn-manifest-validation"]
                }
              
-
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

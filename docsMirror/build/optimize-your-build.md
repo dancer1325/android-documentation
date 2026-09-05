@@ -4,23 +4,13 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Optimize your build speed Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Optimize your build speed
 Long build times slow down your development process. This page provides some techniques to help resolve build speed bottlenecks. 
 
 The general process of improving your app's build speed is as follows:
 
   1. Optimize your build configuration by taking a few steps that immediately benefit most Android Studio projects. 
   2. [Profile your build](/studio/build/profile-your-build) to identify and diagnose some of the trickier bottlenecks that may be specific to your project or workstation. 
-
-
 
 When developing your app, deploy to a device running Android 7.0 (API level 24) or higher whenever possible. Newer versions of the Android platform implement better mechanics for pushing updates to your app, such as the [Android Runtime (ART)](https://source.android.com/devices/tech/dalvik/) and native support for [multiple DEX files](/studio/build/multidex). 
 
@@ -36,8 +26,6 @@ The Android tools receive build optimizations and new features with almost every
 
   * [Android Studio and SDK tools](/studio/intro/update)
   * [The Android Gradle plugin](/studio/releases/gradle-plugin)
-
-
 
 ###  Use KSP instead of kapt 
 
@@ -240,8 +228,6 @@ The [configuration cache](https://docs.gradle.org/current/userguide/configuratio
 To enable the configuration cache, follow these steps:
 
   1. Check that all project plugins are compatible.
-
-
 
 Use the [Build Analyzer](/studio/build/build-analyzer#warnings-types) to check whether your project is compatible with the configuration cache. The Build Analyzer runs a sequence of test builds to determine whether the feature can be turned on for the project. See [issue #13490](https://github.com/gradle/gradle/issues/13490) for a list of plugins that are supported. 
 * Add the following code to the `gradle.properties` file:

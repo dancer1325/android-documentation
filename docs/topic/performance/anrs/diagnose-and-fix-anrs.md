@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Diagnose and fix ANRs Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Diagnose and fix ANRs
 When the UI thread of an Android app is blocked for too long, the system sends an "Application Not Responding" (ANR) error. This page describes the different types of ANRs, how to diagnose them, and suggestions for fixing them. All the default timeout time ranges listed are for AOSP and Pixel devices; these times can vary by OEM.
 
 Keep in mind that when determining the cause of ANRs, it's helpful to distinguish between system and app issues.
@@ -22,15 +14,11 @@ When the system is in a bad state, the following issues can cause ANRs:
   * Transient issues in the system server cause usually fast binder calls to be slow.
   * Issues with the system server and high device load cause app threads to not be scheduled.
 
-
-
 If available to you, a good way to distinguish between system and app issues is to use [Perfetto traces](https://perfetto.dev/docs/):
 
   * See whether the app's main thread is scheduled by looking at the thread state track in Perfetto to see if it's running or runnable.
   * Look at the `system_server` threads for issues such as lock contention.
   * For slow binder calls, look at the reply thread, if present, to see why it's slow.
-
-
 
 ## Input dispatch timeout
 
@@ -45,8 +33,6 @@ To avoid input dispatch ANRs, following these best practices:
   * Don't perform blocking or long-running operations on the main thread. Consider using [`StrictMode`](/reference/android/os/StrictMode) to catch accidental activity on the main thread.
   * Minimize lock contention between main thread and other threads.
   * Minimize non-UI work on the main thread, such as when handling broadcasts or running services.
-
-
 
 ### Common causes
 
@@ -89,8 +75,6 @@ No-focused-window ANRs are usually caused by either of the following issues:
   * The app is doing too much work and is too slow to draw the first frame.
   * The main window is not focusable. If a window is flagged with [`FLAG_NOT_FOCUSABLE`](/reference/android/view/WindowManager.LayoutParams#FLAG_NOT_FOCUSABLE), the user can't send key or button events to it.
 
-
-
 ### Kotlin
     
     
@@ -120,16 +104,12 @@ Broadcast receiver ANRs often happen in these threads:
   * Thread running broadcast receiver, if the issue is slow `onReceive()` code.
   * Broadcast worker threads, if the issue is slow `goAsync()` broadcast code.
 
-
-
 To avoid broadcast receiver ANRs, follow these best practices:
 
   * Make sure that app startup is fast, since it's counted in the ANR timeout if the app is started to handle the broadcast.
   * If `goAsync()` is used, make sure `PendingResult.finish()` is called quickly. This is subject to the same ANR timeout as synchronous broadcast receivers.
   * If `goAsync()` is used, make sure the worker thread(s) aren't shared with other long-running or blocking operations.
   * Consider using [`registerReceiver()`](/reference/android/content/Context#registerReceiver\(android.content.BroadcastReceiver,%20android.content.IntentFilter,%20java.lang.String,%20android.os.Handler,%20int\)) to run broadcast receivers in a non-main thread, to avoid blocking UI code running in the main thread.
-
-
 
 ### Timeout periods
 
@@ -199,8 +179,6 @@ Google Play Console shows the receiver class and broadcast intent in the ANR sig
   * `cmp=<receiver class>`
   * `act=<broadcast_intent>`
 
-
-
 Here's an example of a broadcast receiver ANR signature:
     
     
@@ -256,8 +234,6 @@ There are several approaches to fix the issue:
   * Use a dedicated thread pool for `goAsync` worker tasks.
   * Use an unbounded thread pool instead of the bounded BG thread pool
 
-
-
 #### Example: slow app startup
 
 A slow app startup can cause several types of ANRs, especially broadcast receiver and execute service ANRs. The cause of an ANR is likely slow app startup if you see `ActivityThread.handleBindApplication` in the main thread stacks.
@@ -273,8 +249,6 @@ To avoid execute service ANRs, follow these general best practices:
   * Make sure that app startup is fast, since it's counted in the ANR timeout if the app is started to run the service component.
   * Make sure that the service's `onCreate()`, `onStartCommand()`, and `onBind()` methods are fast.
   * Avoid running any slow or blocking operations on the main thread from other components; these operations can prevent a service from starting quickly.
-
-
 
 ### Common causes
 
@@ -332,16 +306,11 @@ If you can't see any of the important function calls, there are a couple other p
      * A different app component is running, such as a broadcast receiver. In this case the main thread is likely blocked in this component, preventing the service from starting.
   3. If you do see a key function call and can determine where the ANR is happening generally, check the rest of the main thread stacks to find the slow operation and optimize it or move it off the critical path.
 
-
-
-
 For more information about services, see the following pages:
 
   * [Services overview](/guide/components/services)
   * [Foreground services](/guide/components/foreground-services)
   * [`Service`](/reference/android/app/Service)
-
-
 
 ## Content provider not responding
 
@@ -354,8 +323,6 @@ To avoid content provider ANRs, follow these best practices:
   * Make sure that app startup is fast, since it's counted in the ANR timeout if the app is started to run the content provider.
   * Make sure that the content provider queries are fast.
   * Don't perform lots of concurrent blocking binder calls that can block all the app's binder threads.
-
-
 
 ### Common causes
 
@@ -459,15 +426,12 @@ There are several reasons why the suspected unresponsive thread can be idle:
     * No focused window
   * **System-wide issue**. The process wasn't scheduled due to heavy system load or an issue in the system server.
 
-
-
 ### No stack frames
 
 Some ANR reports don't include the stacks with the ANR, which means that the stack dumping failed when generating the ANR report. There are a couple of possible reasons for missing stack frames:
 
   * Taking the stack takes too long and times out.
   * The process died or was killed before the stacks were taken.
-
 
     
     

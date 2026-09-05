@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gemini in Android Studio ](https://developer.android.com/gemini-in-android)
-
-
-
-#  Report a bug Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Report a bug
 Follow the steps on this page to complete a bug report. There are limited resources to fix bugs, so bugs that have complete information are prioritized. Incomplete bug reports are closed. If that happens, re-submit your bug with additional information.
 
 To help ensure that you are not reporting a bug that has already been fixed, make sure you are using the latest versions of the tools. You can also search for similar issues on the [Android Studio issue tracker](https://issuetracker.google.com/issues?q=componentid:192708&s=modified_time:descfirst) to see whether the issue you are experiencing has already been reported.
@@ -37,16 +29,11 @@ You can also [file your bug here](https://issuetracker.google.com/issues/new?com
 
   5. Choose a descriptive title for the bug report. Using a more descriptive title makes it easier to sort by issue.
 
-
-
-
 For certain bugs, we need additional information, as described in the following sections:
 
   * Details for Android Studio bugs
   * Details for build tools and Gradle bugs
   * Details for Android Emulator bugs
-
-
 
 ## Details for Android Studio bugs
 
@@ -77,9 +64,6 @@ Follow these steps to capture a CPU profile using the Android Studio Performance
 
 A balloon appears providing the CPU snapshot filename, which follows the format `snapshot-NNN`. Share that snapshot file in your bug report.
 
-
-
-
 ### If the IDE runs out of memory
 
 Memory problems in Android Studio are sometimes difficult to reproduce and report. To help solve this problem, Android Studio includes a memory usage report that you can send to the Android Studio team to help identify the source of the memory issues.
@@ -102,9 +86,6 @@ Before you send the report, you can review the information that's included:
   3. After you've finished your review, copy the contents of the report into a file and attach that file when you file your bug.
 
 Submitting the report information this way lets the Android Studio team communicate with you using the issue tracker while investigating your memory issues.
-
-
-
 
 ### If the IDE crashes or throws exceptions
 
@@ -170,8 +151,6 @@ If you can't share a project, indicate the versions of the tools you're using. (
     1. Select **Help > About**.
     2. Locate **Android Studio Version**.
 
-
-
 Additionally, include the following information where applicable:
 
   * If a behavior has changed unexpectedly from an earlier version to the current version, indicate both versions.
@@ -179,8 +158,6 @@ Additionally, include the following information where applicable:
   * If the build takes longer than expected, try one of the following: 
     * Run `./gradlew <task> --scan` and share the generated [Gradle build scan](https://scans.gradle.com) in your bug report.
     * Run `./gradlew <task> -Pandroid.enableProfileJson=true` and share the [Chrome-trace](https://www.chromium.org/developers/how-tos/trace-event-profiling-tool) files generated under the `<root-project>/build/android-profile` directory.
-
-
 
 ## Details for Android Emulator bugs
 
@@ -196,9 +173,6 @@ This opens a screen with bug report details such as a screenshot, the AVD config
 A window opens for you to save the bug report in a folder. Your browser also opens to create a report in the Google issue tracker with the necessary emulator details filled in.
 
   4. In the report, complete any remaining details, such as the steps to reproduce the bug, and attach the files saved when you created the bug report.
-
-
-
 
 Otherwise, manually enter the following details:
 
@@ -222,8 +196,6 @@ Otherwise, manually enter the following details:
     1. From the **AVD Manager** , click to open the menu in the **Actions** column for the device.
     2. Select **View Details** (or open the `$avdname.avd/config.ini` file).
     3. Find the entry for **hw.device.name**. For example: `hw.device.name=Nexus 5`.
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

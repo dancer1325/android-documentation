@@ -4,11 +4,8 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Essentials ](https://developer.android.com/get-started)
-  * [ Releases ](https://developer.android.com/about/versions)
-
-Get Android 17 QPR 1 Stay organized with collections  Save and categorize content based on your preferences.  ![Android logo below the word 'Android'](/static/images/lockups/android-stacked.svg) You can get Android 17 QPR 1 in any of the following ways:
+Get Android 17 QPR 1
+![Android logo below the word 'Android'](/static/images/lockups/android-stacked.svg) You can get Android 17 QPR 1 in any of the following ways:
 
   * Get Android 17 QPR 1 on a Google Pixel device
   * Set up the Android Emulator

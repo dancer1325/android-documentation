@@ -4,14 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Google Play ](https://developer.android.com/distribute)
-  * [ Branding & Marketing ](https://developer.android.com/distribute/marketing-tools)
-
-
-
-#  Brand guidelines Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Brand guidelines
 The "Android" name, the Android logo, the "Google Play" brand, and other Google trademarks, are property of Google LLC and not part of the assets available through the Android Open Source Project.
 
 These guidelines correspond to and complement the marketing materials on the [Partner Marketing Hub](http://partnermarketinghub.withgoogle.com) and [Google Brand Permissions](https://www.google.com/permissions/).

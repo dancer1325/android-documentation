@@ -3,16 +3,6 @@
 **Source:** [https://developer.android.com/design/ui/wear](https://developer.android.com/design/ui/wear)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ UI Design ](https://developer.android.com/design/ui)
-  * [ Wear ](https://developer.android.com/design/ui/wear)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](https://developer.android.com/static/wear/images/design/landing-hero.png)
 
 ###  Design for Wear OS 

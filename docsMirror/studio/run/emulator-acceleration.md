@@ -4,23 +4,13 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Configure hardware acceleration for the Android Emulator Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Configure hardware acceleration for the Android Emulator
 The emulator runs best if it can use your machine’s hardware, such as the CPU, GPU, and modem, rather than running as pure software. The ability to use your machine’s hardware to improve performance is called _hardware acceleration_.
 
 The emulator can use hardware acceleration to improve your experience in two main ways:
 
   * Graphics acceleration for improved screen rendering
   * Virtual machine (VM) acceleration for improved execution speed
-
-
 
 Hardware acceleration is enabled by default on most machines. If it isn't enabled on your machine, this page describes how you can configure graphics and virtual machine (VM) acceleration to get higher performance from the emulator.
 
@@ -39,8 +29,6 @@ To configure graphics acceleration for an AVD, follow these steps:
   3. In the [**Configuration**](/studio/run/managing-avds#verifyconfigpage) window, find the **Emulated Performance** section under the **Additional Settings** tab.
   4. Select a value for the **Graphics acceleration** option.
   5. Click **Finish**.
-
-
 
 ### Configure graphics acceleration from the command line
 
@@ -70,8 +58,6 @@ The following `mode` options are deprecated:
   * `swiftshader_indirect`: Deprecated in version 36.4.9.
   * `swangle_indirect`: Deprecated in version 36.4.9.
 
-
-
 ## Configure VM acceleration
 
 VM acceleration uses your computer's processor to significantly improve the execution speed of the emulator. A tool called a _hypervisor_ manages this interaction using virtualization extensions that your computer's processor provides. This section outlines the requirements for using VM acceleration and describes how to set up VM acceleration on each operating system.
@@ -93,8 +79,6 @@ X86_64 | x86 or x86_64 system images for Android 2.3.3 (API level 10) and higher
 ARM64 | arm64-v8a system images for Android 5.0 (API level 21) and higher  
 **Warning:** AVDs that don't follow the requirements, such as ARM- or MIPS-based system images on Intel or AMD CPUs, can't use the VM acceleration that is described on this page.
 
-
-
 #### Virtualization extension requirements
 
 In addition to the development environment requirements, your computer's processor must support virtualization extensions. Supported processors are:
@@ -102,8 +86,6 @@ In addition to the development environment requirements, your computer's process
   * Intel Processors with Intel Virtualization Technology (VT-x, vmx), such as Intel Core iX and Intel Core Ultra processors
   * AMD Processors with AMD-V (SVM), such as AMD Ryzen processors
   * Apple silicon
-
-
 
 Additional Requirements for Intel and AMD processors:
 
@@ -120,8 +102,6 @@ VM acceleration has the following restrictions:
   * You can't run a VM-accelerated emulator inside another VM, such as a VM hosted by VirtualBox, VMWare, or Docker. You must run a VM-accelerated emulator directly on your host computer.
   * Depending on your operating system and hypervisor, you may not run software that uses another virtualization technology at the same time that you run a VM-accelerated emulator. Examples of the such software include but are not limited to virtual machine solutions, certain antivirus programs and a few anti-cheat solutions. The situation is mostly observed on Windows with Hyper-V off. Most of such software can coexist with the android emulator without any problems. But when conflicts occur, it is recommended not to run the VM-accelerated emulator at the same time with such software.
 
-
-
 ### About hypervisors
 
 VM acceleration requires a _hypervisor_ , a tool that uses virtualization extensions provided by your computer's processor.
@@ -133,8 +113,6 @@ The hypervisor that works best for you depends on your computer's operating syst
   * Configure VM acceleration on Windows
   * Configure VM acceleration on macOS
   * Configure VM acceleration on Linux
-
-
 
 ### Check whether a hypervisor is installed
 
@@ -191,8 +169,6 @@ Before you can enable WHPX, your computer must meet the following requirements:
   * [Android Emulator version 27.3.8 or higher](/studio/intro/update#sdk-manager)
   * Windows 10 or higher
 
-
-
 To install WHPX on Windows, follow these steps:
 
   1. From the Windows desktop, click the Windows icon to open the Start Menu.
@@ -210,9 +186,6 @@ The **Turn Windows features on or off** control panel should appear, and be sele
 
   6. Once the installation has finished, restart your computer.
 
-
-
-
 #### Configure VM acceleration using Android Emulator hypervisor driver (AEHD) on Windows
 
 **Note:** Android Emulator hypervisor driver will be sunset on December 31, 2026. Android Emulator users on Windows will have until the end of 2026 to transition by enabling Windows Hypervisor Platform and performing the required system reboot.
@@ -227,9 +200,6 @@ Windows 8.1, Windows 8 and Windows 7 users can continue using AEHD 1.7 or lower.
   * Features which also use the Windows Hyper-V Hypervisor must be disabled in the Windows Features Dialog.
 
 Certain Windows components also activate and use the Windows Hyper-V Hypervisor, even when the Windows Hypervisor Platform is not selected in the Windows Features Dialog. These include security features such as **Hyper-V** , **Core Isolation** , and others. (Note that the **Hyper-V** feature is NOT the same as the Hyper-V Hypervisor.) If you need these features, use WHPX instead.
-
-
-
 
 On AMD Processors, the Android Emulator hypervisor driver can be installed via the [SDK Manager](/studio/intro/update#sdk-manager) in Android Studio 4.0 Canary 5 or later.
 
@@ -286,9 +256,6 @@ The following error message means either that virtualization extension is not en
                 ...
          
 
-
-
-
 The Android Emulator hypervisor driver can also be downloaded and installed from [GitHub](https://github.com/google/android-emulator-hypervisor-driver/releases). After unpacking the driver package, run `silent_install.bat` at a command line with administrator privileges.
 
 Uninstall Android Emulator hypervisor driver using the following commands at a command line with administrator privileges:
@@ -328,8 +295,6 @@ To use VM acceleration on Linux, your computer must also meet these requirements
   * For Intel processors: Support for Virtualization Technology (VT-x), Intel EM64T (Intel 64) features, and Execute Disable (XD) Bit functionality enabled.
   * For AMD processors: Support for AMD Virtualization (AMD-V).
 
-
-
 #### Check whether KVM is installed on Linux
 
 You can use the emulator `-accel-check` command-line option to check whether you have KVM installed. Alternatively, you can install the `cpu-checker` package containing the `kvm-ok` command.
@@ -360,9 +325,6 @@ If you get the following error, it means that you can still run virtual machines
          INFO: Your CPU does not support KVM extensions
          KVM acceleration can NOT be used
          
-
-
-
 
 #### Install KVM on Linux
 
@@ -443,9 +405,6 @@ The Intel HAXM uninstaller should run and report the result. If the uninstallati
   2. Delete Intel HAXM service by running 'sc delete intelhaxm'. You should see the following output. ![](/static/studio/images/run/HAXM/Uninstall_Manually_2.png)
 
   3. Go to **Delete Intel HAXM installer package**.
-
-
-
 
 #### Delete Intel HAXM installer package.
 

@@ -4,22 +4,12 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ SDK tools guides ](https://developer.android.com/tools)
-
-
-
-#  Android Debug Bridge (adb) Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Android Debug Bridge (adb)
 Android Debug Bridge (`adb`) is a versatile command-line tool that lets you communicate with a device. The `adb` command facilitates a variety of device actions, such as installing and debugging apps. `adb` provides access to a Unix shell that you can use to run a variety of commands on a device. It is a client-server program that includes three components: 
 
   * **A client** , which sends commands. The client runs on your development machine. You can invoke a client from a command-line terminal by issuing an `adb` command.
   * **A daemon (adbd)** , which runs commands on a device. The daemon runs as a background process on each device.
   * **A server** , which manages communication between the client and the daemon. The server runs as a background process on your development machine.
-
-
 
 `adb` is included in the Android SDK Platform Tools package. Download this package with the [SDK Manager](/studio/intro/update#sdk-manager), which installs it at `android_sdk/platform-tools/`. If you want the standalone Android SDK Platform Tools package, [download it here](/studio/releases/platform-tools). 
 
@@ -71,9 +61,6 @@ Before you begin using wireless debugging, do the following:
 
   * On your workstation, update to the latest version of the [SDK Platform Tools](/tools/releases/platform-tools).
 
-
-
-
 To use wireless debugging, you must pair your device to your workstation using a QR code or a pairing code. Your workstation and device must be connected to the same wireless network. To pair to your device, follow these steps:
 
 **Note:** You only need to pair your device to your workstation once. The device will remain paired with your workstation until you explicitly forget it or revoke adb debugging authorizations on your device. The device and the workstation will automatically connect when they are on the same network. 
@@ -119,9 +106,6 @@ To unpair your workstation, navigate to **Wireless debugging** on your device. T
 
 **Figure 4.** The **Quick settings developer tiles** setting lets you quickly turn wireless debugging on and off.
 
-
-
-
 ### Resolve wireless connection issues
 
 If you are having issues connecting to your device wirelessly, try the following troubleshooting steps to resolve the issue.
@@ -137,8 +121,6 @@ To verify that your ADB setup on your workstation is correct, open a terminal on
   * **`version: "37.0.0"` or higher:** If this is not the case, download the latest version of the [SDK Platform Tools](/tools/releases/platform-tools). 
   * **`mdns_enabled: true`** : If this is set to `false`, then adb won't be able to automatically discover devices on your network. To resolve this issue, you must set the `ADB_MDNS` environment variable to `1` and then restart the adb server by running `adb kill-server` and then `adb start-server`. 
   * **`mdns_backend: LIBADBMDNS`** : If this is not the case, then adb is using an obsolete library to automatically discover devices on your network. To resolve this issue, you must set the `ADB_MDNS_OPENSCREEN` environment variable to `0` and then restart the adb server by running `adb kill-server` and then `adb start-server`. 
-
-
 
 #### Check whether your network supports mDNS
 
@@ -167,9 +149,6 @@ adb relies on mDNS to automatically discover and connect to paired devices. To c
          }
                    
 
-
-
-
 #### Check whether your device supports ADB Wi-Fi 2.0
 
 **Note:** ADB Wi-Fi 2.0 is supported on Android 17 and higher. 
@@ -182,9 +161,6 @@ To check whether your device supports ADB Wi-Fi 2.0, do the following:
 
   3. Verify that the output contains `mdns_service_version: "2.0"` or higher. If this is not the case, then your device is not running Android 17 or higher and doesn't support ADB Wi-Fi 2.0. To update to Android 17 or higher, check whether your device has any pending system updates. [Check & update your Android version](https://support.google.com/android/answer/7680439). 
 
-
-
-
 #### Report a new issue
 
 If you are still having issues connecting to your device wirelessly, you can report [a new issue](https://issuetracker.google.com/issues/new?component=192795&template=1310483). Please ensure that you provide the following information in your report: 
@@ -195,8 +171,6 @@ If you are still having issues connecting to your device wirelessly, you can rep
     2. **Restart the adb server** by running `adb kill-server` and then `adb start-server`. 
     3. **Reproduce the issue.**
     4. **Locate the log files:** Run `adb server-status` and attach the log file referenced in the output `log_absolute_path`.
-
-
 
 ## Connect wirelessly with a device after an initial USB connection (only option available on Android 10 and lower)
 
@@ -230,9 +204,6 @@ If you are still having issues connecting to your device wirelessly, you can rep
          device_ip_address:5555 device
          
 
-
-
-
 Your device is now connected to `adb`. 
 
 If the `adb` connection to your device is lost: 
@@ -245,9 +216,6 @@ If the `adb` connection to your device is lost:
         
 
 Then start over from the beginning.
-
-
-
 
 ## Query for devices
 
@@ -265,8 +233,6 @@ In response, `adb` prints this status information for each device:
     * `device`: The device is connected to the `adb` server. Note that this state does not imply that the Android system is fully booted and operational, because the device connects to `adb` while the system is still booting. After boot-up, this is the normal operational state of a device.
     * `no device`: There is no device connected. 
   * **Description:** If you include the `-l` option, the `devices` command tells you what the device is. This information is helpful when you have multiple devices connected so that you can tell them apart.
-
-
 
 The following example shows the `devices` command and its output. There are three devices running. The first two lines in the list are emulators, and the third line is a hardware device that is attached to the computer.
     
@@ -286,8 +252,6 @@ The `adb devices` command has a corner-case command sequence that causes running
   * You use the `emulator` command with the `-port` or `-ports` option with an odd-numbered port value between 5554 and 5584.
   * The odd-numbered port you chose is not busy, so the port connection can be made at the specified port number — or, if it is busy, the emulator switches to another port that meets the requirements in 2.
   * You start the `adb` server after you start the emulator.
-
-
 
 One way to avoid this situation is to let the emulator choose its own ports and to run no more than 16 emulators at once. Another way is to always start the `adb` server before you use the `emulator` command, as explained in the following examples. 
 
@@ -329,8 +293,6 @@ If multiple devices are running, you must specify the target device when you iss
   2. Once you have the serial number, use the `-s` option with the `adb` commands to specify the serial number. 
      1. If you're going to issue a lot of `adb` commands, you can set the `$ANDROID_SERIAL` environment variable to contain the serial number instead.
      2. If you use both `-s` and `$ANDROID_SERIAL`, `-s` overrides `$ANDROID_SERIAL`.
-
-
 
 In the following example, the list of attached devices is obtained, and then the serial number of one of the devices is used to install the `helloWorld.apk` on that device: 
     
@@ -893,8 +855,6 @@ Limitations of the `screenrecord` utility:
   * Some devices might not be able to record at their native display resolution. If you encounter problems with screen recording, try using a lower screen resolution.
   * Rotation of the screen during recording is not supported. If the screen does rotate during recording, some of the screen is cut off in the recording.
 
-
-
 **Table 4.** `screenrecord` options
 
 Options | Description  
@@ -949,8 +909,6 @@ Additionally, to help make it easier and more secure to keep testing your app, u
   * Other: 
     * Disables preinstalled security apps.
 
-
-
 If your app needs to detect and adapt to the default settings of the `testharness` command, use the [ `ActivityManager.isRunningInUserTestHarness()`](/reference/android/app/ActivityManager#isRunningInUserTestHarness\(\)). 
 
 ### sqlite
@@ -990,8 +948,6 @@ Burst Mode is disabled by default. To enable the feature, do one of the followin
 
   * Set the environment variable `ADB_BURST_MODE` to `1`.
   * In Android Studio, go to the debugger settings at **File** (or **Android Studio** on macOS) **> Settings > Build, Execution, Deployment > Debugger** and set **ADB Server Burst Mode** to **Enabled**.
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

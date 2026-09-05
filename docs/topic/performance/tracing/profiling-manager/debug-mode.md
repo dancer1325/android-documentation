@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Debug commands for local profiling Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Debug commands for local profiling
 While the most useful way to use `ProfilingManager` is to collect profiles from your public users, you might first need to debug your setup or record local profiles for investigations. You might have noticed that profiles are sometimes not recorded, often due to rate limiting. For more information, see [How rate limiting works](/topic/performance/tracing/profiling-manager/will-my-profile-always-be-collected#how-rate-limiting-works).
 
 You can adjust specific debug settings on your local device using `adb` commands. The following settings are available to assist with local profiling.

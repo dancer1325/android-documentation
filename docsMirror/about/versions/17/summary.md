@@ -4,11 +4,8 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Essentials ](https://developer.android.com/get-started)
-  * [ Releases ](https://developer.android.com/about/versions)
-
-Android 17 features and changes list Stay organized with collections  Save and categorize content based on your preferences.  The following table lists all documented features and behavior changes that might affect app developers. Use this list to find changes that affect you, and then click the corresponding link to read the documentation. Accessibility Connectivity Core functionality Graphics Human input Device form factors Media Privacy Security User experience and system UI New features and APIs Change (all apps) Change (apps targeting 17+) Category | Type | Name  
+Android 17 features and changes list
+The following table lists all documented features and behavior changes that might affect app developers. Use this list to find changes that affect you, and then click the corresponding link to read the documentation. Accessibility Connectivity Core functionality Graphics Human input Device form factors Media Privacy Security User experience and system UI New features and APIs Change (all apps) Change (apps targeting 17+) Category | Type | Name  
 ---|---|---  
 Security | Change (all apps) |  [ Block cross profile loopback traffic](/about/versions/17/behavior-changes-all#block-cross-profile-loopback)  
 Cross-profile loopback traffic is no longer permitted by default.  

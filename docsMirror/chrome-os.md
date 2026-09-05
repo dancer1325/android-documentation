@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/chrome-os](https://developer.android.com/chrome-os)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Multidevice ](https://developer.android.com/multidevice)
-  * [ ChromeOS ](https://developer.android.com/chrome-os)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ###  [ ChromeOS devices ](https://developer.android.com/chrome-os/intro)
 
 ChromeOS is the speedy, simple, and secure operating system that powers every Chromebook. You can distribute your Android apps to Google ChromeOS devices through the Google Play app store. 

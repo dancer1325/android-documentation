@@ -3,14 +3,6 @@
 **Source:** [https://developer.android.com/distribute](https://developer.android.com/distribute)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Google Play ](https://developer.android.com/distribute)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](https://developer.android.com/static/distribute/images/heroes/google-play-hero.svg)
 
 ###  Google Play 

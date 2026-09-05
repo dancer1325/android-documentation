@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Install and add files Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Install and add files
 If you want to use an app that's not available in the Google Play Store on the Android Emulator, or if you want to install a specific APK, you can manually install the APK file by using a drag-and-drop.
 
 To install an APK file on the emulated device, drag an APK file onto the emulator screen. An APK Installer dialog appears. When the installation completes, you can view the app in your apps list.

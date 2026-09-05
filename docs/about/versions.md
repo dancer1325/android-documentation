@@ -3,16 +3,6 @@
 **Source:** [https://developer.android.com/about/versions](https://developer.android.com/about/versions)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Essentials ](https://developer.android.com/get-started)
-  * [ Platform ](https://developer.android.com/about)
-  * [ Releases ](https://developer.android.com/about/versions)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ###  [ ![Android 16](/static/images/about/versions/16/android-16-wordmark.png) ](https://developer.android.com/about/versions/16)
 
 Android 16 continues our mission of building a private and secure platform that helps improve your productivity while giving you new capabilities to produce beautiful apps, superior media and camera experiences, and an intuitive user experience, particularly on tablets and foldables.

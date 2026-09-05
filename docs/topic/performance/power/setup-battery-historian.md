@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Profile battery usage with Batterystats and Battery Historian Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Profile battery usage with Batterystats and Battery Historian
 **Warning:** Battery Historian is no longer actively maintained; if possible, consider using [system tracing](/topic/performance/tracing), the [Macrobenchmark power metric](/topic/performance/benchmarking/macrobenchmark-metrics#power), or the [Power Profiler](/studio/profile/power-profiler) to get insights into battery performance.
 
 This document shows the basic setup steps and workflow for the Batterystats tool and the Battery Historian script. To learn how to use Battery Historian to inspect battery consumption patterns, see [Analyze power use with Battery Historian](/topic/performance/power/battery-historian).
@@ -82,8 +74,6 @@ For Windows
 It then displays the Battery Historian start page, where you can upload and view battery statistics.
 
 ![The start page for Battery Historian](/static/topic/performance/images/batteryhistorian_startpage_2x.png) **Figure 1.** The start page for Battery Historian.
-
-
 
 ## Gather data with Batterystats
 
@@ -161,9 +151,6 @@ If it's not already running, run Battery Historian using the following command:
 
   13. Click **Submit**. Battery Historian opens a chart created from your Batterystats data.
 
-
-
-
 ## View data with Battery Historian charts
 
 The Battery Historian chart graphs power-relevant events over time.
@@ -175,8 +162,6 @@ Each row shows a colored bar segment when a system component is active and thus 
   1. Add additional metrics from the drop-down list.
   2. Hold the pointer over the metric name to see more information about each metric, including a key for the colors used in the chart.
   3. Hold the pointer over a bar to see more detailed information about that metric and the battery stats at a specific point on the timeline.
-
-
 
 ## Additional Batterystats output
 

@@ -4,11 +4,8 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Essentials ](https://developer.android.com/get-started)
-  * [ Releases ](https://developer.android.com/about/versions)
-
-Android 17 QPR 1 GSI binaries and release notes Stay organized with collections  Save and categorize content based on your preferences.  Android [Generic System Image (GSI)](/topic/generic-system-image) binaries are available to developers for app testing and validation purposes on [supported Treble-compliant devices](/topic/generic-system-image#device-compliance). Developers can use these images to address any compatibility issues with Android 17 QPR 1 as well as discover and report OS and framework issues until Android 17 QPR 1 is officially released. GSI binaries for Android 17 QPR 1 are built from the same AOSP and GMS sources as the [corresponding Google Pixel builds](/about/versions/17/download). These binaries contain the same API and SDK, have a similar CTS result, and have been validated on the following Pixel devices:
+Android 17 QPR 1 GSI binaries and release notes
+Android [Generic System Image (GSI)](/topic/generic-system-image) binaries are available to developers for app testing and validation purposes on [supported Treble-compliant devices](/topic/generic-system-image#device-compliance). Developers can use these images to address any compatibility issues with Android 17 QPR 1 as well as discover and report OS and framework issues until Android 17 QPR 1 is officially released. GSI binaries for Android 17 QPR 1 are built from the same AOSP and GMS sources as the [corresponding Google Pixel builds](/about/versions/17/download). These binaries contain the same API and SDK, have a similar CTS result, and have been validated on the following Pixel devices:
 
   * Pixel 6
   * Pixel 6 Pro

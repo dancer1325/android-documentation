@@ -4,11 +4,8 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Google Play ](https://developer.android.com/distribute)
-  * [ Other Play guides ](https://developer.android.com/guide/app-bundle)
-
-Integrate in-app reviews (Kotlin or Java) Stay organized with collections  Save and categorize content based on your preferences.  This guide describes how to integrate in-app reviews in your app using either Kotlin or Java. There are separate integration guides if you are using [native code](/guide/playcore/in-app-review/native), [Unity](/guide/playcore/in-app-review/unity) or [Unreal Engine](/guide/playcore/in-app-review/unreal-engine). Set up your development environment The Play In-App Review Library is a part of the [Google Play Core libraries](/guide/playcore). Include the following Gradle dependency to integrate the Play In-App Review Library. Groovy
+Integrate in-app reviews (Kotlin or Java)
+This guide describes how to integrate in-app reviews in your app using either Kotlin or Java. There are separate integration guides if you are using [native code](/guide/playcore/in-app-review/native), [Unity](/guide/playcore/in-app-review/unity) or [Unreal Engine](/guide/playcore/in-app-review/unreal-engine). Set up your development environment The Play In-App Review Library is a part of the [Google Play Core libraries](/guide/playcore). Include the following Gradle dependency to integrate the Play In-App Review Library. Groovy
     
     
     // In your app's build.gradle file:

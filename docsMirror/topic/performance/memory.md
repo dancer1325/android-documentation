@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Manage your app's memory Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Manage your app's memory
 This page explains how to proactively reduce memory usage within your app. For information about how the Android operating system manages memory, see [Overview of memory management](/topic/performance/memory-overview).
 
 Random-access memory (RAM) is a valuable resource for any software development environment, and it's even more valuable for a mobile operating system where physical memory is often constrained. Although both the Android Runtime (ART) and Dalvik virtual machine perform routine garbage collection, this doesn't mean you can ignore when and where your app allocates and releases memory. You still need to avoid introducing memory leaks—usually caused by holding onto object references in static member variables—and release any [`Reference`](/reference/java/lang/ref/Reference) objects at the appropriate time as defined by lifecycle callbacks.
@@ -40,9 +32,6 @@ Poorly written keep rules prevent R8 from optimizing large portions of your code
   * **Avoid package-wide wildcards:** Broad rules like `-keep class com.example.package.** { *; }` force R8 to preserve every class, field, and method in that package. This completely halts R8's ability to remove, optimize, or minify code in that package.
 
   * **Use the default R8 configuration file:** Always use `proguard-android-optimize.txt`.
-
-
-
 
 For more information about writing keep rules, see the [Keep rules overview](/topic/performance/app-optimization/keep-rules-overview). For specific patterns to use and avoid, see [Keep rules best practices](/topic/performance/app-optimization/keep-rules-best-practices).
 
@@ -84,16 +73,12 @@ You must find your app's memory usage problems before you can fix them. The Andr
   * Initiate garbage collection events and [take a snapshot of the Java heap](/studio/profile/capture-heap-dump) while your app runs.
   * [Record your app's memory allocations](/studio/profile/record-java-kotlin-allocations), inspect all allocated objects, view the stack trace for each allocation, and jump to the corresponding code in the Android Studio editor.
 
-
-
 The memory profiler also integrates with the [LeakCanary](https://square.github.io/leakcanary/) leak detection library. By using LeakCanary, you can move memory leak analysis from the test device to your development machine, which can significantly speed up your workflow. For more information, see the [Android Studio release notes](/studio/preview/features#leakcanary).
 
 There are other tools you can use to diagnose memory issues based on data from users running your production app:
 
   * Use Android Vitals to track low memory kill (LMK) events.
   * Use the Profiling Manager to track out of memory errors, as well as anomalous app behavior that might be caused by memory leaks.
-
-
 
 ### Release memory in response to events
 
@@ -104,9 +89,6 @@ Your implementation of `onTrimMemory()` should focus exclusively on the `TRIM_ME
   * `TRIM_MEMORY_UI_HIDDEN`: This signal indicates that your app's UI has transitioned out of the user's view. This transition provides an opportunity to release substantial memory allocations tied strictly to the UI, such as bitmaps, video playback buffers, or complex animation resources.
 
   * `TRIM_MEMORY_BACKGROUND`: This signal indicates that your process is residing in the background and is now a candidate for termination to satisfy the system's global memory needs. To extend the duration your process remains in the cached state, and reduce the number of app cold starts, you should aggressively release any resources that can be easily reconstructed once the user resumes their session.
-
-
-
 
 This code sample shows how to implement the `onTrimMemory()` callback to respond to different memory-related events:
 
@@ -233,8 +215,6 @@ Two new triggers [introduced with Android 17](/about/versions/17/features#profil
 
   * [`TRIGGER_TYPE_OOM`](/reference/android/os/ProfilingTrigger#TRIGGER_TYPE_OOM) indicates that the app has thrown an `OutOfMemoryError`. It triggers the next time the app starts _after_ the crash, when the app registers for profiling triggers.
   * [`TRIGGER_TYPE_ANOMALY`](/reference/android/os/ProfilingTrigger#TRIGGER_TYPE_ANOMALY) triggers when the system detects anomalous behavior from the app. Among other things, this can be triggered by excessive memory usage. It triggers after the app has exhibited excessive memory usage, and _before_ the system takes any action to stop the offending process. For example, if the app exceeds the [memory limits introduced in Android 17](/about/versions/17/behavior-changes-all#app-memory-limits), `TRIGGER_TYPE_ANOMALY` triggers before the system kills the app.
-
-
 
 For more information on using `ProfilingManager` to programmatically register and retrieve triggers, see the [trigger-based profiling](/topic/performance/tracing/profiling-manager/trigger-based-capture) documentation.
 

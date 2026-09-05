@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Add multi-density vector graphics Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Add multi-density vector graphics
 Android Studio includes a tool called Vector Asset Studio that helps you add Material icons and import Scalable Vector Graphic (SVG) and Adobe Photoshop Document (PSD) files into your project as vector drawable resources. Using vector drawables instead of bitmaps reduces the size of your APK because the same file can be resized for different screen densities without loss of image quality. For earlier versions of Android that don't support vector drawables, Vector Asset Studio can, at build time, turn your vector drawables into different bitmap sizes for each screen density.
 
 ## About Vector Asset Studio
@@ -68,8 +60,6 @@ For Android 5.0 (API level 21) and higher, Vector Asset Studio supports all of t
   * `android:viewportHeight`
   * `android:alpha`
 
-
-
 `<group>`
 
   * `android:rotation`
@@ -79,8 +69,6 @@ For Android 5.0 (API level 21) and higher, Vector Asset Studio supports all of t
   * `android:scaleY`
   * `android:translateX`
   * `android:translateY`
-
-
 
 `<path>`
 
@@ -93,8 +81,6 @@ For Android 5.0 (API level 21) and higher, Vector Asset Studio supports all of t
   * `android:strokeLineCap`
   * `android:strokeLineJoin`
   * `android:strokeMiterLimit`
-
-
 
 You can change the XML code that Vector Asset Studio generates, although it's not a best practice. Changing the values in the code shouldn't cause any issues, as long as they're valid and static. If you want to add XML elements, you need to make sure that they're supported based on your minimum API level.
 
@@ -164,17 +150,12 @@ Vector Asset Studio appears.
 
   5. Continue with Importing a Vector Graphic.
 
-
-
-
 ## Importing a vector graphic
 
 Vector Asset Studio helps you to import a vector graphics file into your app project. Follow one of the following procedures:
 
   * Adding a Material icon
   * Importing an SVG or PSD file
-
-
 
 ### Adding a Material icon
 
@@ -221,9 +202,6 @@ Vector Asset Studio adds an XML file defining the vector drawable to the project
 If the minimum API level is Android 4.4 (API level 20) and lower, and you haven't enabled the AndroidX technique, Vector Asset Studio generates PNG files. From the [Project Files view](/studio/projects#ProjectFiles) of the _Project_ window, you can view the generated PNG and XML files in the `app/build/generated/res/pngs/debug/` folder.
 
 You shouldn't edit these generated raster files, but instead work with the vector XML file. The build system regenerates the raster files automatically when needed so you don't need to maintain them.
-
-
-
 
 ### Importing an SVG or PSD file
 
@@ -274,9 +252,6 @@ Vector Asset Studio adds an XML file defining the vector drawable to the project
 If the minimum API level is Android 4.4 (API level 20) and lower, and you haven't enabled the AndroidX technique, Vector Asset Studio generates PNG files. From the [Project Files view](/studio/projects#ProjectFiles) of the _Project_ window, you can view the generated PNG and XML files in the `app/build/generated/res/pngs/debug/` folder.
 
 You shouldn't edit these generated raster files, but instead work with the vector XML file. The build system regenerates the raster files automatically when needed so you don't need to maintain them.
-
-
-
 
 ## Referencing a vector asset in Jetpack Compose
 
@@ -335,9 +310,6 @@ Remember that the generated PNGs could display differently in the _Preview_ wind
 
 **Figure 5**. A PNG image displayed in the left margin of the Code Editor.
 
-
-
-
 ## Deleting a vector drawable from a project
 
 To remove a vector drawable from a project:
@@ -354,9 +326,6 @@ Android Studio deletes the file from the project and the drive. However, if you 
 
 Any auto-generated PNG and XML files corresponding to the deleted vector drawable are removed from the project and the drive.
 
-
-
-
 ## Delivering an app containing vector drawables
 
 If you used the AndroidX technique or your minimum API level is Android 5.0 (API level 21) or higher, your APK will contain the vector drawables that you added with Vector Asset Studio. These APKs will be smaller than if the vector images were converted to PNGs.
@@ -365,8 +334,6 @@ When your minimum API level includes Android 4.4 (API level 20) or lower, and yo
 
   * Create one APK that includes both the vector drawables and the corresponding raster representations. This solution is the simplest to implement.
   * Create separate APKs for different API levels. When you don't include the corresponding raster images in the APK for Android 5.0 (API level 21) and higher, the APK can be much smaller in size. For more information, see [Multiple APK Support](/google/play/publishing/multiple-apks).
-
-
 
 ## Support and restrictions for PSD files
 
@@ -379,19 +346,13 @@ Supported:
   * A PSD color mode of bitmap, grayscale, indexed, RGB, Lab, or CMYK.
   * A color depth of 8, 16, or 32 bits.
 
-
-
 Conversion details:
 
   * PSD document dimensions become the vector drawable and viewport dimensions.
 
-
-
 Not supported:
 
   * A PSD color mode of duotone or multichannel.
-
-
 
 #### Shapes
 
@@ -399,8 +360,6 @@ Supported:
 
   * Clipping masks, if the clipping base is another shape.
   * Shape operations, including merge/add, intersect, subtract, and exclude.
-
-
 
 Not supported:
 
@@ -419,9 +378,6 @@ Not supported:
               android:pathData="M24,58 L24,167 L114,167 L114,66 M64,1 L64,96 L208,96 L208,8 M1,97 L146,139 L172,47"/>
         </vector>
 
-
-
-
 #### Strokes and fills
 
 Supported:
@@ -430,27 +386,19 @@ Supported:
   * Solid color fills and strokes.
   * Stroke and fill colors specified as RGB, Lab, or CMYK.
 
-
-
 Conversion details:
 
   * If a stroke is dashed, clipped using a clipping base, or uses an alignment different from center, Vector Asset Studio converts it into a fill shape in the vector drawable.
 
-
-
 Not supported:
 
   * Color fills and strokes other than solid, such as gradients.
-
-
 
 #### Opacity
 
 Supported:
 
   * Shape layers with an opacity of 0.
-
-
 
 Conversion details:
 
@@ -459,29 +407,21 @@ Conversion details:
   * The tool multiplies the stroke opacity with the layer opacity to compute the stroke alpha.
   * The tool multiplies the opacity of the clipping base (if there is a clipping base) with the stroke alpha to compute the final stroke alpha.
 
-
-
 #### Layers
 
 Supported:
 
   * Any _visible_ shape layer.
 
-
-
 Conversion details:
 
   * Vector Asset Studio preserves the names of the layers in the vector drawable file.
-
-
 
 Not supported:
 
   * Layer effects.
   * Adjustment and text layers.
   * Blending modes (ignored).
-
-
 
 ## Support and restrictions for SVG files
 
@@ -523,8 +463,6 @@ Any feature not listed in the earlier Supported features section is unsupported.
   * Text: conversion of text to shapes using other tools is recommended.
   * Pattern fills
 
-
-
 ## Additional resources
 
 For more information about vector graphics, see the following additional resources:
@@ -534,13 +472,9 @@ For more information about vector graphics, see the following additional resourc
   * [Animated vector images in Compose](/develop/ui/compose/animation/vectors)
   * [Working with images](/develop/ui/compose/graphics/images)
 
-
-
 ### Views content
 
   * [Add multi-density vector graphics (Views)](/studio/views/vector-asset-studio-views)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

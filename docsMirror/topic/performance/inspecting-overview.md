@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Inspect performance Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Inspect performance
 Inspect performance to help you understand what is happening in your app and ensure it meets your expectations.
 
 Android provides several tools you can use to inspect your app's performance. When getting started, we recommend you focus on one area at a time during inspection. These areas can include the following:
@@ -22,8 +14,6 @@ Android provides several tools you can use to inspect your app's performance. Wh
   * Screen transitions and navigation events
   * Long running work
   * Operations in the background, such as I/O and networking
-
-
 
 Alternatively, you can inspect critical user journeys of your app's workflow. This can help you gain a holistic understanding of where performance and expectations don't align.
 
@@ -52,22 +42,16 @@ There are multiple tools you can use to inspect and monitor performance to help 
   * The [Macrobenchmark library](/topic/performance/benchmarking/macrobenchmark-overview) helps you measure larger end-user interactions, such as startup, interacting with the UI, and animations.
   * The [Microbenchmark library](/topic/performance/benchmarking/microbenchmark-overview) helps analyze performance of more granular, app-specific situations.
 
-
-
 ### Understand performance in production
 
   * [Android vitals](/topic/performance/vitals) can help improve your app's performance by alerting you when various performance metrics exceed predetermined thresholds.
   * The [Firebase performance SDK](https://firebase.google.com/docs/perf-mon/get-started-android) collects various metrics about your app's performance. For example, you can use the SDK to measure the time between when the user opens the app and when the app becomes responsive, helping identify potential startup bottlenecks.
-
-
 
 ### Profile locally with Android Studio
 
   * Use [Android Studio](/studio/profile) to record and view system traces or stack sampling traces.
   * [Record traces](/studio/profile/record-traces) using Android Studio. For additional information, see the [Performance Debugging video series](https://www.youtube.com/playlist?list=PLWz5rJ2EKKc-xjSI-rWn9SViXivBhQUnp).
   * Use [Simpleperf](https://android.googlesource.com/platform/system/extras/+/master/simpleperf/doc/README.md), a native stack sampling tool for Android, to profile both Android apps and native processes running on Android. It can profile both Java and C++ code on Android.
-
-
 
 ### Advanced profiling tools: Perfetto tracing
 
@@ -76,16 +60,12 @@ There are multiple tools you can use to inspect and monitor performance to help 
   * [Recording a trace through the cmdline](https://perfetto.dev/docs/quickstart/android-tracing#recording-a-trace-through-the-cmdline): describes how to build and run the `perfetto` command-line tool to capture traces.
   * [Perfetto web-based trace viewer](https://perfetto.dev/docs/quickstart/android-tracing#recording-a-trace-through-the-perfetto-ui): opens Perfetto traces and displays a complete report. You can also open [Systrace](/topic/performance/tracing) traces in this viewer using the legacy UI option.
 
-
-
 ## Additional resources
 
   * [Performance debugging - MAD skills series](https://www.youtube.com/playlist?list=PLWz5rJ2EKKc-xjSI-rWn9SViXivBhQUnp)
   * [Profile your app performance](/studio/profile)
   * [Write a Macrobenchmark](/topic/performance/benchmarking/macrobenchmark-overview)
   * [Microbenchmark](/topic/performance/benchmarking/microbenchmark-overview)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

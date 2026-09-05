@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Examples of performance measurement and analysis Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Examples of performance measurement and analysis
 These examples show how to use system tracing with Macrobenchmark, along with memory profiling, to measure and improve certain kinds of performance problems.
 
 ## Debugging app startup using systrace
@@ -33,15 +25,11 @@ The stages of app startup are:
   * Inflate the layout
   * Draw the first frame
 
-
-
 Startup types have the following stages:
 
   * Cold start: This occurs when the application is being started for the first time since boot, or since the application process was killed, either by the user or by the system. Startup creates a new process with no [saved state](/reference/android/os/Bundle).
   * Warm start: This occurs when the application is already running in the background, but the activity must be recreated and brought to the foreground. The activity is either recreated while reusing the existing process, or the process is recreated with saved state. The Macrobenchmark testing library supports consistent warm startup testing using the first option.
   * Hot start: This occurs when the process and activity are still running and merely need to be brought to the foreground, possibly recreating some objects as necessary, as well as rendering the new foreground activity. This is the shortest startup scenario.
-
-
 
 We recommend capturing systraces [using the on-device system tracing app available in Developer Options](/topic/performance/tracing/on-device). If you'd like to use command-line tools, [Perfetto](http://perfetto.dev/docs) is available for use with Android 10 (API level 29) and higher, while devices on earlier versions should use [systrace](/topic/performance/vitals/launch-time).
 
@@ -131,15 +119,11 @@ The ultimate impact of memory improvements such as these is:
   * The app will be killed less often due to Out of Memory issues if the app does not constantly have memory pressure.
   * Having fewer GCs improves jank metrics. This is because GCs cause CPU contention, which can lead to rendering tasks being deferred while GC is happening.
 
-
-
 ## Recommended for you
 
   * Note: link text is displayed when JavaScript is off
   * [Capture Macrobenchmark metrics](/topic/performance/benchmarking/macrobenchmark-metrics)
   * [App startup analysis and optimization {:#app-startup-analysis-optimization}](/topic/performance/appstartup/analysis-optimization)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

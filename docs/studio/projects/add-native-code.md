@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Add C and C++ code to your project Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Add C and C++ code to your project
 Add C and C++ code to your Android project by placing the code into a `cpp` directory in your project module. When you build your project, this code is compiled into a native library that Gradle can package with your app. Your Java or Kotlin code can then call functions in your native library through the Java Native Interface (JNI). To learn more about using the JNI framework, read [JNI tips for Android](/training/articles/perf-jni).
 
 Android Studio supports CMake, which is useful for cross-platform projects. Android Studio also supports [`ndk-build`](/ndk/guides/ndk-build), which can be faster than CMake but only supports Android. Using both CMake and `ndk-build` in the same module is not currently supported.
@@ -29,8 +21,6 @@ If instead you want to add native code to an existing project, follow these step
      * If you have an existing native library that already has a `CMakeLists.txt` build script or uses `ndk-build` and includes an [`Android.mk`](/ndk/guides/android_mk) build script, skip this step. 
   3. [Configure Gradle](/studio/projects/gradle-external-native-builds) by providing a path to your CMake or `ndk-build` script file. Gradle uses the build script to import source code into your Android Studio project and package your native library into the app. 
 
-
-
 Once you configure your project, access your native functions from Java or Kotlin code using the [JNI framework](http://docs.oracle.com/javase/7/docs/technotes/guides/jni/spec/jniTOC.html). To build and run your app, click **Run** ![run then run app from the menu bar](/static/studio/images/buttons/toolbar-run.png). 
 
 **Note:** If your existing project uses the deprecated `ndkCompile` tool, migrate to using either CMake or `ndk-build`. 
@@ -42,8 +32,6 @@ To compile and debug native code for your app, you need the following components
   * [The Android Native Development Kit (NDK)](/ndk): a toolset that lets you use C and C++ code with Android. NDK provides platform libraries that let you manage native activities and access physical device components, such as sensors and touch input. 
   * [CMake](https://cmake.org/): an external build tool that works alongside Gradle to build your native library. You don't need this component if you only plan to use `ndk-build`. 
   * [LLDB](http://lldb.llvm.org/): the debugger in Android Studio that [debugs native code](/studio/debug). 
-
-
 
 For information on installing these components, see [Install and configure the NDK and CMake](/studio/projects/install-ndk). 
 
@@ -58,8 +46,6 @@ To create a new project with support for native code, the process is similar to 
   5. In the **Customize C++ Support** section of the wizard, you can customize your project with the **C++ Standard** field. 
      * Use the drop-down list to select which standardization of C++ you want to use. Selecting **Toolchain Default** uses the default CMake setting.
   6. Click **Finish**. 
-
-
 
 After Android Studio finishes creating your new project, open the **Project** pane from the left side of the IDE and select the **Android** view from the menu. As shown in figure 1, Android Studio adds the **cpp** group: 
 
@@ -82,8 +68,6 @@ When you click **Run** ![run then run app from the menu bar](/static/studio/imag
   3. During runtime, the app's `MainActivity` loads the native library using [ `System.loadLibrary()`](/reference/java/lang/System#loadLibrary\(java.lang.String\)). The library’s native function, `stringFromJNI()`, is now available to the app. 
   4. `MainActivity.onCreate()` calls `stringFromJNI()`, which returns `"Hello from C++"` and uses it to update the [`TextView`](/reference/android/widget/TextView). 
 
-
-
 To verify that Gradle packages the native library in the app, use the [APK Analyzer](/studio/debug/apk-analyzer): 
 
   1. Select **Build > Build Bundles(s) / APK(s) > Build APK(s)**. 
@@ -92,9 +76,6 @@ To verify that Gradle packages the native library in the app, use the [APK Analy
   4. As shown in figure 2, you can see `libnative-lib.so` in the APK Analyzer window under `lib/<ABI>/`. ![](/static/studio/images/projects/cpplib-apk-analyzer_2-2_2x.png)
 
 **Figure 2.** Locate a native library using the APK Analyzer. 
-
-
-
 
 **Tip:** If you want to experiment with other Android apps that use native code, click **File > New > Import Sample** and select a sample project from the **Ndk** list. 
 
@@ -119,9 +100,6 @@ To add new C/C++ source files to an existing project, proceed as follows:
 
   6. Click **OK**. 
 
-
-
-
 After you add new C/C++ files to you project, you still need to [configure CMake](/studio/projects/configure-cmake) to include the files in your native library.
 
 ## Additional resources
@@ -131,8 +109,6 @@ To learn more about supporting C/C++ code in your app, try the following resourc
 ### Codelabs
 
   * [Create Hello-CMake with Android Studio](https://codelabs.developers.google.com/codelabs/android-studio-cmake/) This codelab shows you how to use the Android Studio CMake template to start Android NDK project development.
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

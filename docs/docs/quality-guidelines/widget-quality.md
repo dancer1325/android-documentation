@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ User experience ](https://developer.android.com/quality/user-experience)
-
-
-
-#  Widget quality Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Widget quality
 Widgets are a critical component for customizing a user's home screen. Often, users can achieve a critical user journey for an app with a single tap using widgets or get a quick summary of important updates. Users can also customize widgets to tailor them to individual preferences.
 
 ## Widget compatibility checklists

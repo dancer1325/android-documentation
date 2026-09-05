@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Install Android Studio Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Install Android Studio
 **Note:** Service integrations, such as Gemini in Android Studio and Firebase Crashlytics, are only available in the latest stable channel version of Android Studio and major versions (including their patches) released in the previous 10 months. Currently, the oldest supported version is **Narwhal 4 Feature Drop**. If you are using an older version of Android Studio, you will need to update to access Cloud services. For more information, see [Android Studio and Cloud services compatibility](/studio/releases#service-compat).
 
 Set up Android Studio in just a few clicks. First, check the system requirements. Then [download the latest version of Android Studio](/studio).
@@ -32,7 +24,6 @@ The minimum requirements listed allow you to get started with Android Studio and
   * Creating a single Android Virtual Device (AVD).
 
   * Deploying an app to a single AVD, to a local physical device, or to [Android Device Streaming](/studio/run/android-device-streaming) devices. This doesn't include XR AVDs.
-
 
 **Note:** Some minimum requirements differ depending on whether you want to run Android Studio alone or Android Studio with the Android Emulator. In those cases, both requirements are listed and labelled accordingly with either **Studio** or **Studio & Emulator**.
 
@@ -88,8 +79,6 @@ To install Android Studio on Windows, follow these steps:
     4. Launch `studio64.exe` (for 64-bit machines) or `studio.exe` (for 32-bit machines).
     5. Follow the **Setup Wizard** in Android Studio and install any recommended SDK packages.
 
-
-
 The following video shows each step of the setup procedure for the recommended `.exe` download:
 
 Android Studio notifies you with a dialog when new tools and other APIs become available. To manually check for updates, click **Help > Check for Update**.
@@ -117,8 +106,6 @@ To install Android Studio on your Mac, follow these steps:
   2. Drag Android Studio into the Applications folder, then launch Android Studio.
   3. Choose whether to import previous Android Studio settings, then click **OK**.
   4. Complete the Android Studio **Setup Wizard** , which includes downloading the Android SDK components that are required for development.
-
-
 
 The following video shows each step of the recommended setup procedure:
 
@@ -156,8 +143,6 @@ For a 64-bit version of Linux, first install the required libraries for 64-bit m
   3. Select whether you want to import previous Android Studio settings, then click **OK**.
   4. Complete the Android Studio **Setup Wizard** , which includes downloading the Android SDK components that are required for development.
 
-
-
 **Tip:** To make Android Studio available in your list of applications, select **Tools > Create Desktop Entry** from the Android Studio menu bar.
 
 ###  Required libraries for 64-bit machines 
@@ -190,8 +175,6 @@ To install Android Studio on ChromeOS, follow these steps:
   4. In the ChromeOS Linux terminal, run `sudo apt install ./android-studio-panda2-cros.deb` (where the actual filename might differ based on the version of Android Studio you downloaded). 
      * If you have installed Android Studio before, select whether you want to import previous Android Studio settings, then click **OK**.
   5. Once the installation is complete, launch Android Studio from the Launcher or from the ChromeOS Linux terminal. In the default installation directory `/opt/android-studio/bin`, run `studio`.
-
-
 
 Android Studio notifies you with a dialog when new tools and other APIs become available. To manually check for updates, click **Help > Check for Update**.
 

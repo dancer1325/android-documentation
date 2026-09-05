@@ -4,14 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App architecture ](https://developer.android.com/topic/architecture/intro)
-
-
-
-#  Guide to Android app modularization Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Guide to Android app modularization
 A project with multiple Gradle modules is known as a multi-module project. This guide encompasses best practices and recommended patterns for developing multi-module Android apps.
 
 **Note:** This page assumes a basic familiarity with the [recommended app architecture](/topic/architecture).
@@ -56,8 +49,6 @@ Some common pitfalls are as follows:
   * **Too coarse-grained** : Conversely, if your modules are growing too large you might end up with yet another monolith and miss the benefits that modularity has to offer. For example, in a small project it’s ok to put the data layer inside a single module. But as it grows, it might be necessary to separate repositories and data sources into standalone modules.
   * **Too complex** : It doesn't always make sense to modularize your project. A dominating factor is the size of the codebase. If you don't expect your project to grow beyond a certain threshold, the scalability and build time gains won't apply.
 
-
-
 ## Is modularization the right technique for me?
 
 If you need the benefits of reusability, strict visibility control or to use the [Play Feature Delivery](/guide/playcore/feature-delivery), then modularization is a necessity for you. If you don't, but still want to benefit from improved scalability, ownership, encapsulation, or build times, then modularization is something worth considering.
@@ -66,8 +57,6 @@ If you need the benefits of reusability, strict visibility control or to use the
 
   * [Now in Android](https://github.com/android/nowinandroid) \- fully functional Android app featuring modularization.
   * [Multi module architecture sample](https://github.com/android/architecture-samples/tree/multimodule)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

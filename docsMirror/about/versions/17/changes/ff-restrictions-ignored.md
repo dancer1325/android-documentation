@@ -4,14 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Essentials ](https://developer.android.com/get-started)
-  * [ Releases ](https://developer.android.com/about/versions)
-
-
-
-#  Restrictions on orientation and resizability are ignored Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Restrictions on orientation and resizability are ignored
 With Android apps now running on a variety of devices (such as phones, tablets, foldables, desktops, cars, and TVs) and windowing modes on large screens (such as split screen and desktop windowing), developers should build Android apps that adapt to any screen and window size, regardless of device orientation. Paradigms like restricting orientation and resizability are too restrictive in today's multidevice world.
 
 ## Ignore orientation, resizability, and aspect ratio restrictions
@@ -43,8 +36,6 @@ The following manifest attributes and runtime APIs are ignored across large scre
   * [`setRequestedOrientation()`](/reference/android/app/Activity#setRequestedOrientation\(int\))
   * [`getRequestedOrientation()`](/reference/android/app/Activity#getRequestedOrientation\(\))
 
-
-
 The following values for `screenOrientation, setRequestedOrientation()`, and `getRequestedOrientation()` are ignored:
 
   * `portrait`
@@ -56,8 +47,6 @@ The following values for `screenOrientation, setRequestedOrientation()`, and `ge
   * `sensorLandscape`
   * `userLandscape`
 
-
-
 Regarding display resizability, `android:resizeableActivity="false", android:minAspectRatio`, and `android:maxAspectRatio` have no effect.
 
 ## Exceptions
@@ -67,8 +56,6 @@ The Android 17 orientation, resizability, and aspect ratio restrictions don't ap
   * Games (based on the [`android:appCategory`](/guide/topics/manifest/application-element#appCategory) flag)
   * Users explicitly opting in to the app's default behavior in the device's aspect ratio settings
   * Screens whose smallest width is smaller than `sw600dp`
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

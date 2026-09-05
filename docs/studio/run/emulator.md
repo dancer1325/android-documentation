@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Run apps on the Android Emulator Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Run apps on the Android Emulator
 The Android Emulator simulates Android devices on your computer so that you can test your application on a variety of devices and Android API levels without needing to have each physical device. The emulator offers these advantages:
 
   * **Flexibility** : In addition to being able to simulate a variety of devices and Android API levels, the emulator comes with predefined configurations for various Android phone, tablet, Wear OS, Android Automotive OS, and Android TV devices.
@@ -20,9 +12,6 @@ The Android Emulator simulates Android devices on your computer so that you can 
   * **High fidelity** : The emulator provides almost all the capabilities of a real Android device. You can simulate incoming phone calls and text messages, specify the location of the device, simulate different network speeds, simulate rotation and other hardware sensors, access the Google Play Store, and much more.
 
   * **Speed** : Testing your app on the emulator is in some ways faster and easier than doing so on a physical device. For example, you can transfer data faster to the emulator than to a device connected over USB.
-
-
-
 
 In most cases, the emulator is the best option for your testing needs. This page covers the core emulator functionalities and how to get started with it.
 
@@ -36,8 +25,6 @@ The Android Emulator lets you test your app on many different devices virtually.
   2. Create an Android Virtual Device (AVD).
   3. Run your app on the emulator.
   4. Navigate the emulator.
-
-
 
 This page covers the steps to set up and explore your virtual testing environment in more detail. If you already have your app running on the emulator and are ready to use more advanced features, see [Advanced emulator usage](/studio/run/advanced-emulator-usage).
 
@@ -69,9 +56,6 @@ After you have created an AVD, you can start the Android Emulator and run an app
 
 ![The target device menu](/static/studio/images/run/target-device-dropdown.png) **Figure 1.** The target device menu.
   2. Click **Run**. The emulator might take a minute or so to launch for the first time, but subsequent launches use a [snapshot](/studio/run/advanced-emulator-usage#snapshots) and should launch faster. If you experience issues, see the [troubleshooting guide](/studio/run/emulator-troubleshooting).
-
-
-
 
 Once your app is installed on your AVD, you can run it from the device as you would run any app on a device. Any time you want to deploy new changes, you need to click **Run** or **Apply Changes** again.
 

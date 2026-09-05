@@ -4,19 +4,10 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Analyze your build with the APK Analyzer Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Analyze your build with the APK Analyzer
 Android Studio includes an APK Analyzer that provides immediate insight into the composition of your APK or Android App Bundle after the build process completes. Using the APK Analyzer can reduce the time you spend debugging issues with DEX files and resources within your app and help reduce your APK size. The APK Analyzer is also available from the command line with [`apkanalyzer`](/studio/command-line/apkanalyzer).
 
   
-
 
 With the APK Analyzer, you can:
 
@@ -25,15 +16,11 @@ With the APK Analyzer, you can:
   * Quickly view the final versions of files in the app, such as the `AndroidManifest.xml` file.
   * Perform a side-by-side comparison of two APKs or app bundles.
 
-
-
 There are three ways to access the APK Analyzer when a project is open:
 
   * Drag an APK or app bundle into the **Editor** window of Android Studio.
   * Switch to the **Project** view in the **Project** window, then double-click the APK in the default `build/output/apks/` directory.
   * Select **Build > Analyze APK** in the menu bar, then select your APK or app bundle.
-
-
 
 ## View file and size information
 
@@ -82,9 +69,6 @@ To use the filters to display all methods and fields inside a class, do the foll
 
 In the tree view, italicized nodes are references that don't have a definition in the selected DEX file. A DEX file can reference methods and fields that are defined in a different a file. For example `System.out.println()` is a reference to the `println()` method in the Android framework.
 
-
-
-
 ## Load ProGuard mappings
 
 Next to the filtering icons are the ProGuard mapping icons. The ProGuard icons are grayed out until you load a set of ProGuard mapping files that add functionality to the DEX viewer, such as deobfuscating names (`mapping.txt`), showing nodes that were removed (`usage.txt`), and indicating nodes that can't be removed (`seeds.txt`).
@@ -102,9 +86,6 @@ The mapping files are normally in `project/app/build/outputs/mappings/release/`.
 
 First, the file picker checks for filenames that exactly match `mapping.txt`, `seeds.txt`, and `usage.txt`. Next, the file picker checks for filenames that contain the text `mapping`, `usage`, or `seeds` somewhere and end with `.txt`. For example `release-seeds-1.10.15.txt` is a match.
 
-
-
-
 The following list describes the mapping files:
 
   * `seeds.txt`: Nodes that the ProGuard configuration prevents from being removed during shrinking are shown in bold.
@@ -112,9 +93,6 @@ The following list describes the mapping files:
   * `usage.txt`: Enables **Show removed nodes** ![](/static/studio/images/buttons/apk-show-removed-nodes.png) so you can show classes, methods, and fields that were removed by R8 during shrinking. The restored nodes are shown in strikethrough.
 
 For more information about using R8 to obfuscate and minimize your code, see [Shrink, obfuscate, and optimize your app](/studio/build/shrink-code).
-
-
-
 
 ## Show bytecode, find usages, and generate Keep rule
 
@@ -155,9 +133,6 @@ Before you publish an updated app, do the following:
   3. In the selection dialog, find the artifact that was last published to your users and click **OK**.
 
 A dialog similar to the one in figure 11 appears to help you assess the impact the update might have on users.
-
-
-
 
 Figure 11 shows the difference between a particular app's debug and release builds. Different build options are in use between these build types, which alter the underlying entities differently.
 

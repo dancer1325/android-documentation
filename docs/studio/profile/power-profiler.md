@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Power Profiler Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Power Profiler
 Starting in Android Studio Hedgehog, the Power Profiler shows power consumption on devices. You can view this new data in the On Device Power Rails Monitor (ODPM). It segments the information by subsystems called "Power Rails". See Profileable power rails for a list of supported sub-systems.
 
 The [System Trace](/studio/profile/cpu-profiler) records and displays power consumption data. It is part of the CPU profiler This data helps you to visually correlate power consumption of the device with the actions occurring in your app. The Power Profiler enables visualizing this data.
@@ -67,8 +59,6 @@ Even though the preceding example is a simple way to measure power consumption i
   * ODPM measures power consumption at the device level—not specific to any app. You can correlate power consumption information from the ODPM to what's happening in your app foreground or background. As a result, you can expect noise in power consumption data based on how many apps are active in the device at the time of reading ODPM data.
   * Power Profiler reads power consumption data from the ODPM, which is only available on Pixel 6 and subsequent Pixel devices running Android 10 (API level 29) and higher.
   * Some power rails might only be available on some devices implementing ODPM.
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

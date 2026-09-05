@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Manage remote repositories Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Manage remote repositories
 When your dependency is something other than a local library or file tree, Gradle looks for the files in whichever online repositories are specified in the `dependencyResolutionManagement { repositories {...} }` block of your `settings.gradle` file. The order in which you list each repository determines the order in which Gradle searches the repositories for each project dependency. For example, if a dependency is available from both repository A and B, and you list A first, Gradle downloads the dependency from repository A.
 
 By default, new Android Studio projects specify Google's Maven repository, and the [Maven central repository](https://search.maven.org/) as repository locations in the project's `settings.gradle` file, as shown below:
@@ -115,8 +107,6 @@ The most recent versions of the following Android libraries are available from G
   * [Google Play services](https://developers.google.com/android/guides/setup)
   * [Google Play Billing Library](/google/play/billing)
   * [Firebase](https://firebase.google.com/docs/android/setup)
-
-
 
 You can see all available artifacts at [Google's Maven repository index](https://maven.google.com) (see below for programmatic access).
 

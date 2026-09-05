@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Macrobenchmark instrumentation arguments Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Macrobenchmark instrumentation arguments
 Configure the behavior of the library with the following instrumentation arguments. You can either add these to your Gradle configuration or apply them directly when running instrumentation from the command line. To set these arguments for all Android Studio and command line test runs, add them to `testInstrumentationRunnerArguments`:
     
     
@@ -29,8 +21,6 @@ You can also set up instrumentation arguments when running the benchmarks from A
   1. Edit the run configuration by clicking **Edit** and then clicking the configuration.  ![edit run configuration](/static/topic/performance/images/benchmark_images/bench_instr_arg_1.png) **Figure 1.** Edit the run configuration.
   2. Edit the instrumentation arguments by clicking more_horiz **More** by **Instrumentation arguments**.  ![edit the instrumentation arguments](/static/topic/performance/images/benchmark_images/bench_instr_arg_2.png) **Figure 2.** Edit the instrumentation arguments.
   3. Add the required instrumentation argument by clicking add **Add** under **Instrumentation Extra Params**.  ![add required instrumentation argument](/static/topic/performance/images/benchmark_images/bench_instr_arg_3.png) **Figure 3.** Add the required instrumentation argument.
-
-
 
 If you're running the macrobenchmark from the command line, use `-P android.testInstrumentationRunnerArguments.[name of the argument]`:
     
@@ -51,16 +41,12 @@ Lets you disable compilation between each iteration of the benchmark. By default
   * **Argument type:** boolean
   * **Defaults to:** `true`
 
-
-
 ## androidx.benchmark.dryRunMode.enable
 
 Lets you run benchmarks in a single loop to verify whether they work properly. You can use it with regular tests as part of verification.
 
   * **Argument type:** boolean
   * **Defaults to:** `false`
-
-
 
 ## androidx.benchmark.enabledRules
 
@@ -71,8 +57,6 @@ Allows filtering runs to just one type of test: Baseline Profile generation or M
     * `Macrobenchmark`
     * `BaselineProfile`
   * **Defaults to:** Not specified
-
-
 
 ## androidx.benchmark.fullTracing.enable
 
@@ -85,16 +69,12 @@ You need to set up your project to be able to capture composition tracing from b
   * **Argument type** : boolean
   * **Defaults to** : `false`
 
-
-
 ## androidx.benchmark.killExistingPerfettoRecordings
 
 Benchmark by default kills any existing Perfetto (System Trace) recordings when starting a new trace to reduce interference. To disable this behavior, pass `false`.
 
   * **Argument type:** boolean
   * **Defaults to:** `true`
-
-
 
 ## androidx.benchmark.profiling.mode
 
@@ -107,16 +87,12 @@ Allows capturing trace files while running the benchmarks. The available options
     * `None`
   * **Defaults to:** `None`
 
-
-
 ## androidx.benchmark.startupProfiles.enable
 
 Lets you disable the generation of startup profiles during benchmarking.
 
   * **Argument type** : boolean
   * **Defaults to:** `true`
-
-
 
 ## androidx.benchmark.suppressErrors
 
@@ -147,17 +123,12 @@ The Macrobenchmark run for the app being benchmarked has method tracing enabled.
 
   * **Defaults to** : an empty list
 
-
-
-
 ## additionalTestOutputDir
 
 Configures where JSON benchmark reports and profiling results are saved on device.
 
   * **Argument type:** path string
   * **Defaults to:** test APK's external directory
-
-
 
 ## listener
 
@@ -170,16 +141,12 @@ To disable background work during benchmarking set the `listener` instrumentatio
     * `androidx.benchmark.junit4.SideEffectRunListener`
   * **Defaults to:** not specified
 
-
-
 ## Recommended for you
 
   * Note: link text is displayed when JavaScript is off
   * [Microbenchmark Instrumentation Arguments](/topic/performance/benchmarking/microbenchmark-instrumentation-args)
   * [Create Baseline Profiles](/topic/performance/baselineprofiles/create-baselineprofile)
   * [JankStats Library](/topic/performance/jankstats)
-
-
 
 [ Previous arrow_back  Control your app  ](/topic/performance/benchmarking/macrobenchmark-control-app)
 

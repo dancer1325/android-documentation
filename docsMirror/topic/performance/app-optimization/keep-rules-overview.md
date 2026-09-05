@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  About keep rules Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  About keep rules
 When you [enable app optimization](/topic/performance/app-optimization/enable-app-optimization) with the default settings, R8 performs extensive optimizations in order to maximize your performance benefits. R8 makes substantial modifications to the code including renaming, moving, and removing classes, fields and methods. If you observe that these modifications cause errors, you need to specify which parts of the code R8 _shouldn't_ modify by declaring those in keep rules.
 
 **Note:** Keep rules that are narrowly scoped allow for maximum optimization. Use keep rules that are as specific as possible if rules are necessary, or consider a change in libraries if usage of a library is causing problems with R8 optimizations.
@@ -23,8 +15,6 @@ R8 identifies and preserves all direct calls in your code. However, R8 cannot se
 
   * Code accessed by reflection: R8 can't identify when classes, fields or methods are accessed with reflection. For example, R8 cannot identify a method looked up by its name using `Class.getDeclaredMethod()` or an annotation retrieved with `Class.getAnnotation()`. In these cases, R8 might rename these methods and annotations or remove them entirely, leading to a `ClassNotFoundException` or a `NoSuchMethodException` at runtime.
   * Code called from Java Native Interface (JNI): When native (C or C++) code calls a Java or Kotlin method, or Java or Kotlin code calls C++ code with JNI, the call is based on a dynamic string lookup of the method's name. R8 can't see the dynamic string-based method call, and so its optimizations might break your code.
-
-
 
 This is not an exhaustive list of scenarios that require keep rules, but these scenarios cover most of the cases where you might need keep rules.
 
@@ -93,7 +83,6 @@ When you add keep rules, you can include global options as well as define your o
   * **Global options** : Global options are general directives that affect how R8 operates on your entire codebase. To learn more, see [Global options](/topic/performance/app-optimization/global-options).
 
   * **Keep rules** : Keep rules need to be designed carefully, to make sure you get the right balance between maximizing code optimization without inadvertently breaking your app. To learn how to write keep rules, see [Add keep rules](/topic/performance/app-optimization/add-keep-rules).
-
 
 **Note:** Keep rules are additive-they are merged from all sources. You can see which rules are applied to confirm that the consolidated keep rules are having the intended effect. To learn more, see [Check which rules are applied](/topic/performance/app-optimization/test-and-troubleshoot-the-optimization#check-which-rules-are-applied).
 

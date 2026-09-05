@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Excessive Wi-Fi Scanning in the Background Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Excessive Wi-Fi Scanning in the Background
 When an app performs Wi-Fi scans in the background, it wakes up the CPU, causing rate of battery drain. When too many scans occur, the device’s battery life may be noticeably shortened. An app is considered to be running in the background if it is in the `PROCESS_STATE_BACKGROUND` or `PROCESS_STATE_CACHED` state.
 
 This document explains how to detect when your app is performing too many Wi-Fi scans in the background, and provides tips about diagnosing and addressing the problem.
@@ -29,8 +21,6 @@ The definition of _battery session_ depends on the platform version.
 
   * In Android 10, a battery session is the aggregation of all battery reports received within a given 24-hour period. A _battery report_ refers to the interval between two battery charges either from below 20% to above 80% or from any charge level to 100%.
   * In Android 11, a battery session is a fixed 24-hour period.
-
-
 
 For information on how Google Play collects Android vitals data, see the [Play Console](https://support.google.com/googleplay/android-developer/answer/7385505) documentation.
 
@@ -52,8 +42,6 @@ If your app cannot avoid performing Wi-Fi scans while the app is running in the 
 
   * Note: link text is displayed when JavaScript is off
   * [Excessive Mobile Network Usage in Background](/topic/performance/vitals/bg-network-usage)
-
-
 
 [ Previous arrow_back  Excessive Wakeups  ](/topic/performance/vitals/wakeup)
 

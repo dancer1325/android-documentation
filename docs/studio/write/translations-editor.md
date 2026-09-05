@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Localize the UI with Translations Editor Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Localize the UI with Translations Editor
 The Translations Editor provides a consolidated and editable view of all of your default and translated [string resources](/guide/topics/resources/string-resource).
 
 For an introduction to translating your app for different languages, read [Support different languages and cultures](/training/basics/supporting-devices/languages).
@@ -40,9 +32,6 @@ The Translations Editor displays the key and value pairs from the `strings.xml` 
 
 **Note:** When you have translated `strings.xml` files, your project has multiple corresponding **values** folders with suffixes that indicate the language, such as **values-es** for Spanish. Your default `strings.xml` file is always in the **values** (no suffix) folder. 
 
-
-
-
 Figure 1 shows the default app text (in this case, English) in the Translations Editor for a simple app before translation work has been done. The contents of translated `strings.xml` files will appear to the right of the **Untranslatable** column with one column per language, as shown in figure 2.
 
 ### Open from within strings.xml
@@ -52,8 +41,6 @@ You can access the **Translations Editor** from within any of your `strings.xml`
   1. In the **Project > Android** panel on the left, select **ModuleName > res > values**.
   2. Double-click **strings.xml** to open it for editing.
   3. In **strings.xml** , click the **Open editor** link in the upper-right corner.
-
-
 
 **Note:** If you click the **Hide notification** link, the **Open editor** link goes away. To bring it back, close and reopen the project.
 
@@ -83,8 +70,6 @@ To add a language, do the following:
   1. In the **Translations Editor** , click the globe icon ![](/static/studio/images/buttons/translations-edit-icon.png).
   2. From the drop-down list, select the language you want to add. The new language appears in the **Translations Editor** , and a **values-*** folder with a `strings.xml` file is added to the project. For example, **values-es** for Spanish. 
 
-
-
 To delete a language, do the following:
 
 You can delete a language in the **Translations Editor** by deleting every value in the column (see Edit, add, and delete text), or you can delete the project folder for that language, as follows:
@@ -92,8 +77,6 @@ You can delete a language in the **Translations Editor** by deleting every value
   1. In the **Project > Android** panel on the left, select **ModuleName > res**.
   2. Right-click the **values-*** folder for the language you want to delete. For example, **values-hi** for Hindi.
   3. From the list, select **Delete** to delete the folder and its **strings.xml** file.
-
-
 
 ## Edit, add, and delete text
 
@@ -111,15 +94,11 @@ To edit or add text, do the following:
   2. Do a keyboard copy-paste, or, if you have a keyboard that supports diacritic marks, type directly into the list view.
   3. **Tab** or move the cursor out of the field.
 
-
-
 To delete text, do the following:
 
   1. Double-click the cell you want to delete.
   2. In the list view, select the text and press **Delete**.
   3. **Tab** or move the cursor out of the field.
-
-
 
 #### Translation field
 
@@ -129,14 +108,10 @@ To edit or add text, do the following:
   2. In the **Translation** field, do a keyboard copy-paste, or, if you have a keyboard that supports diacritic marks, type directly into the **Translation** field.
   3. **Tab** or move the cursor out of the field.
 
-
-
 To delete text, do the following:
 
   1. Single-click the cell you want to delete.
   2. In the **Translation** field, select the text and press **Delete**.
-
-
 
 ## Add and delete keys
 
@@ -150,9 +125,6 @@ To add a key, do the following:
 ![](/static/studio/images/write/addkey_2x.png)
 
 **Figure 3.** Add a key
-
-
-
 
 To delete a key, do the following:
 
@@ -180,8 +152,6 @@ If there are no references (usages) to the deleted key, or if all references are
   6. In the **Find Safe Delete Conflicts** panel, select **Rerun Safe Delete** to make sure there are no other usages that need attention.
   7. When the usages are cleaned up, click **Do Refactor** to delete the key. 
 
-
-
 ## Correct errors
 
 Figure 7 shows the **Translations Editor** displaying the contents of the English, French, and Spanish `strings.xml` files. The red text indicates lines that have errors.
@@ -199,8 +169,6 @@ Example **Translations Editor** corrections:
   * Figure 7 shows that the **app_name** row has **Untranslatable** checked, but there is a Spanish translation provided. Delete the Spanish translation to correct the error.
   * Figure 7 shows that the **next_page** row is missing a French translation. Use your keyboard to copy **Page Suivante** into the cell to correct the error. A keyboard copy-paste operation copies the text with any diacritic marks into the cell.
 
-
-
 ## Manage and test localizable text
 
 The Android platform and Android Studio provide several features to help you manage and test your localizable app text. These features have options to help you target issues with right-to-left (RTL) scripts, such as Arabic or Hebrew. Testing your localizable text lets you make adjustments to the UI text and its layout before you commit your messages to the source repository to be sent for translation later.
@@ -215,7 +183,6 @@ To enable RTL support, do the following:
 
   1. Open your `AndroidManifest.xml` file.
   2. Add the `android:supportsRtl="true"` attribute to the `<application>` element:
-
 
     
     
@@ -241,8 +208,6 @@ Supported values include:
   * [`TextDirection.Ltr`](/reference/kotlin/androidx/compose/ui/text/style/TextDirection#Ltr\(\)): Forces left-to-right direction.
   * [`TextDirection.Rtl`](/reference/kotlin/androidx/compose/ui/text/style/TextDirection#Rtl\(\)): Forces right-to-left direction.
 
-
-
 To learn more about styling text and configuring manual text directions in Compose, see [Style text](/develop/ui/compose/text/style-text).
 
 ### Use localized strings in your app
@@ -262,8 +227,6 @@ For information about how to use pseudolocales, see [Test your app with pseudolo
 ### Views content
 
   * [Localize the UI with Translations Editor (Views)](/studio/views/translations-editor-views)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

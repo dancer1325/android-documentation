@@ -23,7 +23,6 @@ https://developer.android.com/guide/topics/resources/providing-resources
 
     ![](images/guide.topics.resources.providing-resources.3.png)
 
-
 # Group resource types
 * your project's `res/`
   * PLACE | store your resources / organized in subdirectories (👀specific names👀)

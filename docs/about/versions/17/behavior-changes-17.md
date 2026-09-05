@@ -4,14 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Essentials ](https://developer.android.com/get-started)
-  * [ Releases ](https://developer.android.com/about/versions)
-
-
-
-#  Behavior changes: Apps targeting Android 17 or higher Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Behavior changes: Apps targeting Android 17 or higher
 Like previous releases, Android 17 includes behavior changes that might affect your app. The following behavior changes apply exclusively to apps that are targeting Android 17 or higher. If your app is targeting Android 17 or higher, you should modify your app to support these behaviors, where applicable.
 
 Be sure to also review the list of [behavior changes that affect all apps running on Android 17](/about/versions/17/behavior-changes-all) regardless of your app's [`targetSdkVersion`](/guide/topics/manifest/uses-sdk-element#target).
@@ -47,9 +40,6 @@ This feature introduces new [`AccessibilityEvent`](/reference/android/view/acces
   * **Apps with Edit Fields:** Apps that maintain a custom `InputConnection` can retrieve candidate selection data by calling `TextAttribute.isTextSuggestionSelected()`. These apps should then call `AccessibilityEvent.setTextChangeTypes()` when dispatching `TYPE_VIEW_TEXT_CHANGED` events. Apps targeting Android 17 (API level 37) that use the standard `TextView` will have this feature enabled by default. (That is, `TextView` will handle retrieving data from the IME and setting text change types when sending events to accessibility services).
 
   * **Accessibility Services:** Accessibility services that process `TYPE_VIEW_TEXT_CHANGED` events can call `AccessibilityEvent.getTextChangeTypes()` to identify the nature of the modification and adjust their feedback strategies accordingly.
-
-
-
 
 ## Privacy
 
@@ -104,8 +94,6 @@ Key impacts for developers include:
   * **BAL hardening & improved opt-in:** We are refining Background Activity Launch (BAL) restrictions by extending protections to [`IntentSender`](/reference/android/content/IntentSender). Developers must migrate away from the legacy [`MODE_BACKGROUND_ACTIVITY_START_ALLOWED`](/reference/android/app/ActivityOptions#MODE_BACKGROUND_ACTIVITY_START_ALLOWED) constant. Instead, you should adopt granular controls like [`MODE_BACKGROUND_ACTIVITY_START_ALLOW_IF_VISIBLE`](/reference/android/app/ActivityOptions#MODE_BACKGROUND_ACTIVITY_START_ALLOW_IF_VISIBLE), which restricts activity starts to scenarios where the calling app is visible, significantly reducing the attack surface.
   * **Adoption tools:** Developers should utilize strict mode and updated lint checks to identify legacy patterns and ensure readiness for future target SDK requirements.
 
-
-
 ### Enable CT by default
 
 If an app targets Android 17 (API level 37) or higher, [certificate transparency (CT)](/privacy-and-security/security-config#CertificateTransparencySummary) is enabled by default. (On Android 16, CT is available but apps had to [opt in](/privacy-and-security/security-config#certificateTransparency).)
@@ -125,8 +113,6 @@ For apps targeting Android 17 (API level Android 17 (API level 37)) and higher, 
   * [`ACCOUNT_NAME`](/reference/android/provider/ContactsContract.SyncColumns#ACCOUNT_NAME)
   * [`ACCOUNT_TYPE`](/reference/android/provider/ContactsContract.SyncColumns#ACCOUNT_TYPE)
   * [`ACCOUNT_TYPE_AND_DATA_SET`](/reference/android/provider/ContactsContract.RawContactsColumns#ACCOUNT_TYPE_AND_DATA_SET)
-
-
 
 Apps that are using these columns from [`ContactsContract.Data`](/reference/android/provider/ContactsContract.Data) can extract them from [`ContactsContract.RawContacts`](/reference/android/provider/ContactsContract.RawContacts) instead, by joining with [`RAW_CONTACT_ID`](/reference/android/provider/ContactsContract.DataColumns#RAW_CONTACT_ID).
 
@@ -148,8 +134,6 @@ Some audio restrictions apply to all apps. However, the restrictions are more st
 
   * The foreground service must have while-in-use (WIU) capabilities.
   * The app must have the [exact alarm](/develop/background-work/services/alarms#exact) permission and be interacting with [`USAGE_ALARM`](/reference/android/media/AudioAttributes#USAGE_ALARM) audio streams.
-
-
 
 For more information, including mitigation strategies, see [Background audio hardening](/about/versions/17/changes/bg-audio).
 

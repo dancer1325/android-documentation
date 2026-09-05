@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Troubleshoot Android Studio Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Troubleshoot Android Studio
 This page contains guidance for troubleshooting common issues and configuration problems in Android Studio.
 
 ## High-density displays
@@ -46,16 +38,12 @@ If one or more elements of Android Studio's UI appear blurry or pixelated on you
   * On a multi-monitor setup running Windows 8.1 or later, when you move a window from one display to another display with a different resolution or DPI, you may experience font or image problems (see bug [186007](https://code.google.com/p/android/issues/detail?id=186007)). There is no known workaround at this time.
   * Older versions of the JRE 1.8 had an issue for blurry fonts (JRE 1.8.0_25-b18 amd64 in particular, see bug [192316](https://code.google.com/p/android/issues/detail?id=192316).) As of version 2.2, Android studio includes a bundled version of the latest supported JDK, which includes the JDE. To resolve this issue, update Android Studio to version 2.2 or higher and switch to use the bundled JDK by clicking **File > Project Structure > SDK Location** and checking the **Use embedded JDK** checkbox.
 
-
-
 ### Incorrectly-sized elements on high-density displays
 
 If the entire Android Studio UI is the wrong size on your high-density display, see Scaling factor settings. If some elements of the Android Studio UI are the wrong size on your high-density display, but others are correctly-sized, you may be experiencing one of the following issues: 
 
   * If you are using a custom editor scheme, the editor font may appear too small or too big compared to the rest of the UI elements on a high-density display. To fix this issue, click **File > Settings** then click **Editor > Colors and Fonts > Font** and change the size of the editor font. Note that when the default scheme is active, the editor font size is scaled automatically (see bug [186920](https://code.google.com/p/android/issues/detail?id=186920)). 
   * If some UI elements of Android Studio are the right size, but others are too small or too big, you may be experiencing issue [186923](https://code.google.com/p/android/issues/detail?id=186923). Please file a bug by clicking **Help > Submit Feedback**. Please include a screenshot and as much information as possible on your system configuration. 
-
-
 
 ## Project sync issues
 
@@ -74,8 +62,6 @@ Note that if you have already added other Gradle JVM arguments to your `gradle.p
 
   3. Restart Android Studio for your changes to take effect. 
   4. Click **Sync Project with Gradle Files**![](/static/studio/images/buttons/toolbar-sync-gradle.png) to sync your project. 
-
-
 
 ## Problems updating the IDE on Windows
 
@@ -109,12 +95,9 @@ The following directories are used by Android Studio to store settings, caches, 
   * System (idea.system.path): `%LOCALAPPDATA%\Google\AndroidStudioVERSION`
   * Logs (idea.log.path): `%LOCALAPPDATA%\Google\AndroidStudioVERSION\log`
 
-
-
 >   * `%APPDATA%` example: `C:\Users\YourUserName\AppData\Roaming`
 >   * `%LOCALAPPDATA%` example: `C:\Users\YourUserName\AppData\Local`
 > 
-
 
 ### macOS
 
@@ -123,8 +106,6 @@ The following directories are used by Android Studio to store settings, caches, 
   * System (idea.system.path): `~/Library/Caches/Google/AndroidStudioVERSION`
   * Logs (idea.log.path): `~/Library/Logs/Google/AndroidStudioVERSION`
 
-
-
 ### Linux
 
   * Configuration (idea.config.path): `~/.config/Google/AndroidStudioVERSION`
@@ -132,20 +113,14 @@ The following directories are used by Android Studio to store settings, caches, 
   * System (idea.system.path): `~/.cache/Google/AndroidStudioVERSION`
   * Logs (idea.log.path): `~/.cache/Google/AndroidStudioVERSION/log`
 
-
-
 Each directory is listed in the following format:
 
   * `<informal directory name>` ([`<IDE property>`](/studio/intro/studio-config#customize_ide)): `<default path>`.
-
-
 
 Replace:
 
   * `AndroidStudio` with the product name, which is `AndroidStudio` for Stable releases, or `AndroidStudioPreview` for RC and Canary releases.
   * `VERSION` with the version. For example: `2023.1` or `2023.3`.
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Choose libraries wisely Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Choose libraries wisely
 To enable app optimization, you must use libraries that are compatible with Android optimization. If a library isn't configured for Android optimization—for example, if it uses [reflection](https://en.wikipedia.org/wiki/Reflective_programming) without bundling associated keep rules—it might not be a good fit for an Android app. This page explains why some libraries are better suited for app optimization and provides general tips to help you choose.
 
 **Note:** For a complete list of requirements that libraries built for Android must adhere to, see [Optimization for library authors](/topic/performance/app-optimization/library-optimization).
@@ -41,9 +33,6 @@ You can tell if a library uses reflection by inspecting its code. If the library
         ?.invoke(myObject, data)
         
 
-
-
-
 ### Check for optimization issues
 
 When considering a new library, look through the library's issue tracker and online discussions to check if there are issues related to minification or configuring app optimization. If there are, you should try to look for alternatives to that library. Keep in mind the following:
@@ -53,8 +42,6 @@ When considering a new library, look through the library's issue tracker and onl
   * If possible, avoid libraries that include package-wide keep rules. Package-wide keep rules can help resolve errors, but broad keep rules should eventually be refined to keep only the code that is needed. For more information, see [Adopt optimizations incrementally](/topic/performance/app-optimization/adopt-optimizations-incrementally).
   * Before publishing an app that uses a third-party library, use the [R8 Configuration Analyzer](/topic/performance/app-optimization/r8-configuration-analyzer) to audit its provided keep rules. By reviewing the report, you can verify if the library's keep rules are overly broad, preventing R8 from performing critical optimizations on your codebase. This check ensures that the libraries you select align with your app's performance goals and don't introduce unnecessary configuration bloat.
   * Libraries shouldn't require you to copy and paste keep rules from documentation into a file in your project, especially not package-wide keep rules. These rules become a maintenance burden on the app developer in the long term, and are difficult to optimize and change over time.
-
-
 
 ## Enable optimization after adding a new library
 
@@ -92,7 +79,6 @@ Gson is a serialization library that often causes issues with app optimization b
 
   * App class implementing a library, or standard interface or class
   * Code generation plugin like [KSP](https://github.com/google/ksp)
-
 
     
     

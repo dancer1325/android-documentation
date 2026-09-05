@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/blog/categories/events-and-programs](https://developer.android.com/blog/categories/events-and-programs)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Android Developers' Blog ](https://developer.android.com/)
-  * [ Blog ](https://developer.android.com/blog)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](/static/blog/assets/events_and_programs_droid_1504f2ddaf_7c6edc9aef_ZS7rc9.webp)
 
 # Events & Programs
@@ -113,9 +104,6 @@ Today, during The Android Show | XR Edition, we shared a look at the expanding A
 Jetpack Navigation 3 is now stable, and using it can help you reduce tech debt, provide better separation of concerns, speed up feature development time, and support new form factors.
 
 [Don Turner](/blog/authors/don-turner) • 1 min read 
-
-
-
 
 arrow_back 
 

@@ -4,17 +4,9 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Google Play ](https://developer.android.com/distribute)
-  * [ Games dev center ](https://developer.android.com/games)
-  * [ Guides ](https://developer.android.com/games/guides)
-
-
-
 Send feedback 
 
-#  Google Play Games | Revamped Level Up guidelines Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Google Play Games | Revamped Level Up guidelines
 Google Play Games revamped Level Up is a program to recognize and reward great gaming experiences with program rate card benefits to drive business growth for your game. Participation in this program is voluntary and developers that choose not to participate will not have a change in benefits they are entitled through other programs.
 
 Our mission is to connect players with the best gaming experiences—ones that **provide a consistent gamer experience** , **reach across all screens** and **deliver stable and smoother gameplay sessions**.
@@ -47,8 +39,6 @@ The following sections outline the guidelines with three main themes:
     * Vulkan
   * Reference device list
 
-
-
 ## Provide a consistent gamer experience
 
 Our gaming platform introduces new mechanics and surfaces delivering an elevated, delightful, and consistent gaming experience for players. To deliver this, games should integrate the following user experience guidelines.
@@ -58,8 +48,6 @@ Our gaming platform introduces new mechanics and surfaces delivering an elevated
   * Using Play Games Platform authentication **does not require** using Google's identity system, or that you even have an in-game identity system. If you would like to use an identity system, you are free to use any identity provider (such as Sign in with Google, third party providers, or a custom backend) to manage proprietary in-game accounts. Games with in-game accounts can use the Play Games Recall API to sync accounts between devices to make sign-in easier.
   * **[Games that primarily target players aged under 13](https://support.google.com/googleplay/android-developer/answer/9867159)** are not required to initialize Play Games Services or deploy other features in this section (Achievements, GSAPI, Sidekick, Rewards, or Cloud Save) to meet Level Up guidelines.
 
-
-
 ### Play Games Sidekick
 
 Play Games Sidekick is an overlay that helps players stay in their game by delivering relevant content, functionality, and offers directly to them. Players expect Sidekick to be available on games on the Play Games platform.
@@ -68,16 +56,12 @@ Play Games Sidekick is an overlay that helps players stay in their game by deliv
 
   * [Add the Sidekick](/games/pgs/play-games-sidekick#add-sidekick-game) to your game. This can be done through enabling the feature in the Play Developer Console if your game is published in the App Bundle format. Alternatively, you can [compile the Sidekick SDK](/games/pgs/play-games-sidekick-sdk) directly into your game if you are using the legacy APK format for publishing, or you are using an incompatible DRM solution.
 
-
-
 #### Exemptions
 
 While Sidekick benefits all players, it is not available for every audience. We have the following exemptions for this guideline:
 
   * **[Games that primarily target players aged under 13.](https://support.google.com/googleplay/android-developer/answer/9867159)** Because Sidekick is disabled on children's accounts, games that are primarily designed for children under 13 are exempt.
   * If a game has encountered a blocking issue with Sidekick, and they have reported it and had it accepted by Google, then they may be granted an exemption for an appropriate period of time to find a work around or for the issue to be addressed.
-
-
 
 #### Additional resources
 
@@ -93,7 +77,6 @@ For more information, see [Sidekick](/games/pgs/play-games-sidekick).
 
   * **To be eligible for[Quests](https://support.google.com/googleplay/answer/11534416)**, a minimum of 4 achievements must be reasonably and reliably achievable within the first hour of gameplay by everyone who plays.
 
-
 ![Good achievements with unique names, icons, and descriptions.](/static/images/games/pgs/Goodachievements.png) Good achievements with unique names, icons, and descriptions.
 
 #### Exemptions
@@ -104,8 +87,6 @@ While achievements are available for all players, they may not make sense for ev
   * **Games are exempt from providing achievements** if they lack sufficient clear events, progression, or player accomplishment within them. Note that progression mechanisms like lifetime high scores, levels, area unlocking or discovery, enemy or challenger defeats, story stages, XP, completion percentages, or item collection can be used to create achievements.
 
 **Note:** Achievements can also be serendipitous, fun, or surprising, as well as based on base-play such as "never beaten", or "top 10% player".
-
-
 
 #### Additional resources
 
@@ -124,8 +105,6 @@ Unlock deeper player engagement and boost your game's visibility across the Goog
   * If you have a primary progression mechanic, submit **at least 1 additional player progression stat** to power the Game Stats feature stored against the player's gamer profile. 
     * Progression level needs to be a metric that represents the player's progress in the game.
 
-
-
 Player data for Game Stats should be submitted using Game Stats API through either client or server implementation. Each player progression or repetitive stat needs to be configured in Play provided tools. Raw data schema needs to be declared and mapped to a user facing Game Stats, including display string, unique icon and any aggregation rules.
 
 Most games should be able to provide appropriate signals. Examples are available to help you choose the correct data points that will enable the engagement mechanics.
@@ -136,8 +115,6 @@ The following exemptions apply to this guideline:
 
   * **[Games that primarily target players aged under 13](https://support.google.com/googleplay/android-developer/answer/9867159)** Game Stats is not enabled for players under 13 years of age.
   * **Games are exempt from providing player states only** if they lack clear progression mechanisms. If your game includes features such as lifetime high scores, levels, XP, completion percentages, or primary item collection, it does not qualify for this exemption as these can be used as a progression mechanism.
-
-
 
 #### Additional resources
 
@@ -152,16 +129,12 @@ Create [Play Games Reward offers](/games/rewards) that Play can distribute to pl
   * **September 30, 2026:** At least **2 single-use Play Games Reward offers** , such as specific characters, skins, or weapons. These Play Game rewards will be awarded to players after the successful completion of a Quest.
   * **March 1, 2027** : At least **1 repeatable Play Games Reward offer** , such as lives, temporary power-ups, daily reward items, in-game currency, or other consumables. These rewards will be awarded to players after successful completion of social challenges, with a maximum of 1 reward per week per player.
 
-
-
 #### Exemptions
 
 The following exemptions apply to this guideline:
 
   * **[Games that primarily target players aged under 13.](https://support.google.com/googleplay/android-developer/answer/9867159)** Reward items are used for features like quests and Social Challenges, which are generally unavailable to players under 13. If your game primarily targets this age group, you are exempt from providing reward items.
   * **Paid games.** Players expect to get the full game experience for paid games after their initial purchase. This applies to any game with a single purchase, whether upfront at install time or through an one-time in-game purchase. We won't reward additional in-game items for paid games.
-
-
 
 #### Additional resources
 
@@ -176,8 +149,6 @@ Players play on multiple devices and install their games on the same device mult
     * **Multiple accounts per user:** Handle instances where a single player interacts with the application using different accounts.
     * **State conflicts:** Resolve discrepancies that arise between the local game state and the cloud-saved game state.
 
-
-
 If you don't have an existing cloud save solution for your player progress, we recommend the Saved Games API as part of Play Games Services to provide this functionality. **You are free to use any solution provider** to meet this guideline.
 
 We believe that every game should provide the ability for players to resume their progress across installs of the game.
@@ -188,8 +159,6 @@ The following exemptions apply to this guideline:
 
   * Cloud save is not required for games that don't provide in-game accounts and only provide guest accounts or do not provide any saved game state across gaming sessions.
   * Games where the save files exceed the size limits of the Saved Games API (3 MB) and implementing an automated third-party cloud solution would be cost-prohibitive are exempt from the cloud save guidelines. However, we recommend developers provide an alternative solution, such as allowing players to manually download and upload their files.
-
-
 
 #### Additional resources
 
@@ -214,16 +183,11 @@ Players expect to play their games on any device form factor that the Google Pla
     * On a device with an aspect ratio that is not found on a flagship device or outside one of the anchor aspect ratios defined previously.
     * If the only game layout orientation (portrait or landscape) is different from the device's physical orientation.
 
-
-
 #### Additional resources
 
   * Refer to the Form factor distribution guideline for any form factor specific exemptions.
 
   * For more information on handling large screen resizability, see [Support large screen resizability](/games/develop/multiplatform/support-large-screen-resizability).
-
-
-
 
 ### Google Play Games on PC
 
@@ -232,8 +196,6 @@ Google Play Games on PC brings the best of Google Play by enabling players to ex
   * Your game **must be distributed on[Google Play Games on PC](https://play.google.com/googleplaygames)**. There are two ways to meet this distribution requirement: 
     * Your mobile game meets the **[playability requirements](/games/playgames/start#playability-requirements)** when played on the Android emulator [Google Play Games for PC](https://play.google.com/googleplaygames). Ensure all [unsupported Android features and permissions](/games/playgames/pc-compatibility#unsupported-android-features) are not marked as required to ensure proper distribution.
     * **OR,** Your game is part of the [Native PC Early Access Program (EAP)](/games/playgames/native-pc).
-
-
 
 #### Exemptions
 
@@ -246,8 +208,6 @@ There are some games where distribution on PCs is challenging. The following exe
   * **Platform-specific title-level IP-licensing limitation.** Some developers have licensed their mobile game's title-level IP from a third party licensor. These agreements may restrict the developer's license, prohibiting the publishing of the title on PCs without first acquiring additional licensed rights. Such licensed-IP games for which the license grant excludes publishing such games to PCs may be eligible for the exemption.
   * (_Paid Games Only_) **Mobile to PC price differential.** Paid games distributed through the Play store prior to September 30, 2026 with a pre-existing PC-to-mobile price differential.
 
-
-
 #### Additional resources
 
 For more information on distributing to PC with Google Play, see [Google Play Games on PC](/games/playgames/overview).
@@ -259,8 +219,6 @@ Supporting multiple form factors means supporting the device's natural input, an
 ![Desktop computer with keyboard and mouse. Game is on screen, showing touchscreen inputs for direction control and mouse.](/static/images/games/multiplatform/game_with_touchscreen_input.png) Keyboard, mouse, and touchscreen inputs. 
 
   * The game **must be fully playable** with a controller, keyboard, and mouse (K&M) across all devices the game supports through the Play Games platform where these modes of input are available. Fully playable means the game can be played entirely from the start, including all gameplay mechanics and settings menus, without the need to fall back to touch input.
-
-
 
 #### Exemptions
 
@@ -321,8 +279,6 @@ Games with mechanics requiring the user to physically rotate their entire body i
   * **Devices with technical specifications below the minimum Mobile hardware requirements.** Games are exempt from distribution on devices with hardware (RAM, CPU, storage, or GPU) or Android versions that fall below your minimum mobile phone requirements.
   * **Form factor availability.** Games are exempt from distribution on devices that are not available in any of the regions where the game is offered—meaning there is no overlap in regional availability between the device and the game.
 
-
-
 ### Title availability
 
 Players enjoy the flexibility of choosing their preferred devices while maintaining seamless access to their entire library of gaming experiences.
@@ -334,16 +290,12 @@ For titles to be eligible for the program rate card benefits those titles must b
   * **Android TV**
   * **Android Auto**
 
-
-
 Titles that do not meet this title availability guideline will become eligible for the Level Up program rate card benefits following a **6-month waiting period** , once all user experience guidelines are fully met.
 
 **Examples** :
 
   * If a title is applying to be in the Level Up program and such title is currently available on other comparable non-Android form factors, such title must be launched on all comparable Android form factors for at least 6 months prior to enrollment into Level Up otherwise they will not be eligible for the program benefits until 6 months after the launch of their title on the Android form factor. The 6 month waiting period does not apply if the title was launched on the non-Android form factor prior to September 30th, 2026.
   * If a title currently enrolled in the program launches a comparable non-Android form factor and does not launch on the comparable Android form factor simultaneously, they will become ineligible for program benefits for 6 months.
-
-
 
 #### Exemptions
 
@@ -354,8 +306,6 @@ The following exemptions apply to this guideline:
     * **Standard grace period.** Developers are granted a 15-day window to achieve "live" status on the Google Play Store.
     * **Extended grace period.** In exceptional circumstances where a developer can demonstrate that the delay was caused by a Google-side technical issue or an unusually long app review process, the grace period may be extended to 30 days upon manual review.
   * **EEA.** This guideline does not apply in the EEA. However, when distributing to the EEA, Android users should be able to access all new experiences and capabilities within the Android title provided by the developer. Developers are therefore required to fully optimize their titles for Android.
-
-
 
 ## Deliver stable and smoother gameplay sessions
 
@@ -391,8 +341,6 @@ On reference devices, target and render at 60 fps by default with stability duri
   * Low 10% (P90) FPS ≥ 50 FPS
   * Low 1% (P99) FPS ≥ 30 FPS
 
-
-
 #### Exemptions
 
 Mobile games have to make many difficult decisions about what high quality means for their specific experience – such as whether to favor graphical fidelity or battery life during a play session. The following exemptions apply to this guideline:
@@ -401,8 +349,6 @@ Mobile games have to make many difficult decisions about what high quality means
   * Games that **use HWUI or Composer** rather than rendering directly.
   * Games that **only push new frames on player interaction** , rather than on a continuously regular basis.
   * Games are not required to meet this on Tablet and Foldable devices due to their challenges in thermal design and computations to support high-resolution screens.
-
-
 
 #### Additional resources
 
@@ -429,17 +375,12 @@ On devices that have updated graphics drivers, where `DEQP`≥`20240301`:
         </application>
         
 
-
-
-
 Our default stance is that **all games should adopt Vulkan** because it offers considerable performance and battery benefits. The following exception recognizes that some games might not have a choice on graphics API.
 
   * Games that don't control their own rendering and render through **HWUI/SKIA** (similar to how apps render). These games have no control over their graphics pipeline, and will be moved to Vulkan automatically over the coming versions of Android.
   * If your game uses **WebGPU** as its rendering API. WebGPU is a new higher level language that uses Vulkan on newer devices and OpenGL ES on older devices. If for some reason WebGPU decides not to use Vulkan on a focus device, that is beyond the control of the developer. We're working on deploying the Vulkan backend on as many devices as possible as quickly as possible.
   * If a game has encountered a blocking issue with Vulkan, and they have reported it and had it accepted by the relevant code-maintainer (For example, a Game Engine, GPU-IP Vendor, or Google), then they may be granted an exemption for an appropriate period of time to find a work around or for the issue to be addressed.
   * A developer may be exempt from this requirement if they are able to reduce their CPU instruction count in a similar fashion to what Vulkan provides. Vulkan provides an approximate 30% reduction in CPU instruction count as compared to other solutions. If the developer can show a similar improvement with an alternative solution, then the use of Vulkan is not required.
-
-
 
 #### Additional resources
 

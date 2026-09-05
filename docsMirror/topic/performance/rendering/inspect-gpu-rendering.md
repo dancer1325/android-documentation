@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Inspect GPU rendering speed and overdraw Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Inspect GPU rendering speed and overdraw
 Android includes some on-device developer options that help you visualize where your app might be running into issues rendering its UI, such as performing more rendering work than necessary, or executing long thread and GPU operations. This page describes how to debug GPU overdraw and profile GPU rendering.
 
 To learn more about on-device developer options, including how to enable them, read [Configure on-device developer options](/studio/debug/dev-options).
@@ -36,8 +28,6 @@ Before you begin, make sure you're using a device running Android 4.1 (API level
   3. In the Profile GPU Rendering dialog, choose **On screen as bars** to overlay the graphs on the screen of your device.
   4. Open the app that you want to profile.
 
-
-
 ### Inspect the output
 
 In the enlarged image of the Profile GPU Rendering graph shown in figure 1, you can see the colored section, as displayed on Android 6.0 (API level 23).
@@ -53,8 +43,6 @@ The following are a few things to note about the output:
   * The horizontal green line represents 16.67 milliseconds. To achieve 60 frames per second, the vertical bar for each frame needs to stay below this line. Any time a bar surpasses this line, there may be pauses in the animations.
   * The tool highlights frames that exceed the 16.67 millisecond threshold by making the corresponding bar wider and less transparent. 
   * Each bar has colored components that map to a stage in the rendering pipeline. The number of components vary depending on the API level of the device.
-
-
 
 The following table provides descriptions of each segment of a vertical bar in the profiler output when using a device running Android 6.0 and higher.
 
@@ -95,8 +83,6 @@ If you haven't already done so, [enable developer options](/studio/debug/dev-opt
   2. Scroll down to the **Hardware accelerated rendering** section, and select **Debug GPU Overdraw**.
   3. In the **Debug GPU overdraw** dialog, select **Show overdraw areas**. 
 
-
-
 Android colors UI elements to identify the amount of overdraw as follows:
 
   * **True color:** No overdraw
@@ -104,8 +90,6 @@ Android colors UI elements to identify the amount of overdraw as follows:
   * ![](/static/topic/performance/images/gpu/overdraw-green.png) **Green:** Overdrawn 2 times
   * ![](/static/topic/performance/images/gpu/overdraw-pink.png) **Pink:** Overdrawn 3 times
   * ![](/static/topic/performance/images/gpu/overdraw-red.png) **Red:** Overdrawn 4 or more times
-
-
 
 ![](/static/topic/performance/images/gpu/gpu-overdraw-before_2x.png)
 

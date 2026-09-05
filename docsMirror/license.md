@@ -4,18 +4,11 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-
-
-
-#  Content License Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Content License
 For the purposes of licensing, the content of this web site is divided into two categories:
 
   * Documentation content, including both static documentation and content extracted from source code modules, as well as sample code, and 
   * All other site content
-
-
 
 Unless otherwise noted, the documentation on this site, including any code shown in it, is made available to you under the [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0), the preferred license for all parts of the of the Android Open Source Project.
 
@@ -37,8 +30,6 @@ We are pleased to license the Android documentation and sample code under terms 
   * Google's trademarks and other brand features (including the ![Android](/static/images/android-logo.png) stylized typeface logo) are not included in the license. Please see [Brand Guidelines](/distribute/tools/promote/brand) for information about this usage. 
   * In addition, content linked from a page on this site is not covered by the license unless specifically noted. For example, pages may link to videos or slide decks that are not covered.
   * The use of sample source code provided in the SDK or shown in this documentation is subject to the conditions detailed in the [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0).
-
-
 
 ## Attribution
 
@@ -135,8 +126,6 @@ The Android public API documentation incorporates text from the following OpenJD
   * [javax.xml.validation](/reference/javax/xml/validation/package-summary)
   * [javax.xml.xpath](/reference/javax/xml/xpath/package-summary)
 
-
-
 ### ICU License
 
 The Android public API documentation incorporates text from the following source code libraries under the [ICU License](/static/license/icu.txt):
@@ -146,15 +135,11 @@ The Android public API documentation incorporates text from the following source
   * [android.icu.text](/reference/android/icu/text/package-summary)
   * [android.icu.util](/reference/android/icu/util/package-summary)
 
-
-
 ### W3C Software and Document Notice and License
 
 The Android public API documentation incorporates text from the following source code libraries under the [W3C Software and Document Notice and License](/static/license/w3c.txt):
 
   * [org.w3c.dom](/reference/org/w3c/dom/package-summary)
   * [org.w3c.dom.ls](/reference/org/w3c/dom/ls/package-summary)
-
-
 
 [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]] 

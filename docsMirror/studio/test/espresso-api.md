@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Test against screen configuration changes with the Espresso Device API Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Test against screen configuration changes with the Espresso Device API
 Use the Espresso Device API to test your app when the device undergoes common configuration changes, such as rotation and screen unfolding. The Espresso Device API is the recommended tool for simulating device-level actions alongside your Jetpack Compose testing rules. If you're new to writing UI tests for Jetpack Compose, see [Testing your Compose layout](/develop/ui/compose/testing).
 
 The Espresso Device API lets you simulate configuration changes on a virtual device and executes your tests synchronously, so only one UI action or assertion happens at a time and your test results are more reliable. If you're new to writing UI tests with Espresso, see its [documentation](/training/testing/espresso).
@@ -23,8 +15,6 @@ To use the Espresso Device API, you need the following:
   * Android Gradle plugin 8.3 or higher
   * Android Emulator 33.1.10 or higher
   * Android virtual device that runs API level 24 or higher
-
-
 
 ## Set up your project for the Espresso Device API
 
@@ -74,9 +64,6 @@ To set up your project so it supports the Espresso Device API, do the following:
          dependencies {
            androidTestImplementation 'androidx.test.espresso:espresso-device:1.0.1'
          }
-
-
-
 
 ## Test against common configuration changes
 
@@ -133,9 +120,6 @@ Here's an example of how to test what happens to your app when the device screen
          }
          
 
-
-
-
 ### Test against screen unfolding
 
 Here's an example of how to test what happens to your app if it's on a foldable device and the screen unfolds:
@@ -162,9 +146,6 @@ Here's an example of how to test what happens to your app if it's on a foldable 
            composeTestRule.onNodeWithTag("BottomBar").assertDoesNotExist()
          }
          
-
-
-
 
 ## Specify what devices your tests need
 

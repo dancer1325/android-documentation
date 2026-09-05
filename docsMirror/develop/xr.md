@@ -4,17 +4,7 @@
 
 ---
 
-The Android XR SDK has [ reached Developer Preview 4](https://android-developers.googleblog.com/2026/05/android-xr-sdk-developer-preview-4-updates.html), and we want your feedback! Try things out, and visit our [support page](/develop/xr/support) to reach out. 
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Devices ](https://developer.android.com/develop/devices)
-  * [ Android XR ](https://developer.android.com/develop/xr)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
+The Android XR SDK has [ reached Developer Preview 4](https://android-developers.googleblog.com/2026/05/android-xr-sdk-developer-preview-4-updates.html), and we want your feedback! Try things out, and visit our [support page](/develop/xr/support) to reach out.
 [ ![](https://developer.android.com/static/images/develop/xr/develop-xr-all.svg) ](https://developer.android.com/develop/xr/get-started)
 
 ###  [ Develop with the Android XR SDK ](https://developer.android.com/develop/xr/get-started)

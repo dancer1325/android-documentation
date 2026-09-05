@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Java versions in Android builds Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Java versions in Android builds
 Whether your source code is written in Java, Kotlin, or both, there are several places you must choose a JDK or Java language version for your build.
 
 ![Overview of JDK relationships in a Gradle build](/static/images/build/jdks.svg) **Figure 1.** JDK relationships in a build 
@@ -25,7 +17,6 @@ _Java Development Kit (JDK)_
   * Tools, such as a compiler, profiler, and archive creator. These are used behind the scenes during your build to create your application. 
   * Libraries containing APIs that you can call from your Kotlin or Java source code. Note that not all functions are available on Android. 
   * The Java Virtual Machine (JVM), an interpreter that executes Java applications. You use the JVM to run the Android Studio IDE and the Gradle build tool. The JVM is not used on Android devices or emulators.
-
 
 _JetBrains Runtime (JBR)_
      The [JetBrains Runtime (JBR) ](https://github.com/JetBrains/JetBrainsRuntime) is an enhanced JDK, distributed with Android Studio. It includes several optimizations for use in Studio and related JetBrains products, but can also be used to run other Java applications. 
@@ -42,8 +33,6 @@ The startup scripts for Android Studio look for a JVM in the following order:
   4. `JDK_HOME` environment variable
   5. `JAVA_HOME` environment variable
   6. `java` executable in the `PATH` environment variable
-
-
 
 ## How do I choose which JDK runs my Gradle builds?
 
@@ -71,8 +60,6 @@ To modify the existing project's Gradle JDK configuration, open the Gradle setti
   * Adding a specific JDK
   * Locally detected JDKs from the operating system's default JDK installation directory
 
-
-
 The selected option is stored in the `gradleJvm` option in the project's `.idea/gradle.xml` file, and its JDK path resolution is used to run Gradle when started through Android Studio.
 
 ![](/static/images/tools/as-gradle-jdk.png) **Figure 2.** Gradle JDK settings in Android Studio. 
@@ -81,8 +68,6 @@ The macros enable dynamic project JDK path selection:
 
   * `JAVA_HOME`: uses the environment variable with the same name
   * `GRADLE_LOCAL_JAVA_HOME`: uses the `java.home` property in the `.gradle/config.properties` file which defaults to the JetBrains Runtime.
-
-
 
 The selected JDK is used to run your Gradle build and resolve JDK API references when editing your build scripts and source code. Note that the specified `compileSdk` will further restrict which Java symbols will be available when editing and building your source code.
 

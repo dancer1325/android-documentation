@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Profile a Microbenchmark Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Profile a Microbenchmark
 By default, Microbenchmarks give you information about the timing and allocations of the executed code. If you want to investigate why the measured code is running slowly, inspect the method trace—captured by default on supported OS versions—or select other profiling configurations.
 
 To select the profiler configuration, add the instrumentation runner argument `androidx.benchmark.profiling.mode` with one of `MethodTracing` (default), `StackSampling`, or `None` argument, as shown in the following snippet.
@@ -79,8 +71,6 @@ You can configure this profiling mode by adding another instrumentation argument
     * Argument type: boolean
     * Defaults to `true`
 
-
-
 ## None
 
 This argument doesn't capture a profiling file. Information about timing and allocations are still measured.
@@ -90,8 +80,6 @@ This argument doesn't capture a profiling file. Information about timing and all
   * Note: link text is displayed when JavaScript is off
   * [Microbenchmark Instrumentation Arguments](/topic/performance/benchmarking/microbenchmark-instrumentation-args)
   * [Run benchmarks in Continuous Integration](/topic/performance/benchmarking/benchmarking-in-ci)
-
-
 
 [ Previous arrow_back  Write a benchmark  ](/topic/performance/benchmarking/microbenchmark-write)
 

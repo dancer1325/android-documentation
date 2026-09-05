@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/blog/posts/goodbye-mobile-only-hello-adaptive](https://developer.android.com/blog/posts/goodbye-mobile-only-hello-adaptive)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Android Developers' Blog ](https://developer.android.com/)
-  * [ Blog ](https://developer.android.com/blog)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 [ Product News ](/blog/categories/product-news)
 
 #  Goodbye Mobile Only, Hello Adaptive: Three essential updates from 2025 for building adaptive apps 
@@ -79,8 +70,6 @@ The tools are ready, and the users are waiting. We can’t wait to see what you 
   * [ #Compose ](/blog/topics/compose)
   * [ #Android 16 ](/blog/topics/android-16)
 
-
-
 Written by: 
 
   * ##  [ Fahd Imtiaz ](/blog/authors/fahd-imtiaz)
@@ -92,9 +81,6 @@ Written by:
 ![View Fahd Imtiaz's profile](/static/blog/assets/Fahd_Imtiaz_259fcb7c47_Z15U8cx.webp)
 
 ![View Fahd Imtiaz's profile](/static/blog/assets/Fahd_Imtiaz_259fcb7c47_Z15U8cx.webp)
-
-
-
 
 Continue reading 
 
@@ -161,9 +147,6 @@ Jetpack Navigation 3 version 1.0 is stable!
 [Don Turner](/blog/authors/don-turner) • 3 min read 
     * [ #Nav3 ](/blog/topics/nav3)
     * [ #Jetpack Navigation ](/blog/topics/jetpack-navigation)
-
-
-
 
 Stay in the loop
 

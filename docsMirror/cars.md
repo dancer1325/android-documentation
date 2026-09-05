@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/cars](https://developer.android.com/cars)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Multidevice ](https://developer.android.com/multidevice)
-  * [ Android for Cars ](https://developer.android.com/cars)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ###  Android for Cars 
 
 Build apps that help users connect on the road through Android Automotive OS and Android Auto. Users who have a vehicle with Android Automotive OS can install your app onto their vehicle's infotainment system. Android Auto lets users connect their phone, Android 9 or higher, to a compatible vehicle to display a driver-optimized version of your app directly on the console. 

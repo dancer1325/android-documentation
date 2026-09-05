@@ -4,14 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Essentials ](https://developer.android.com/get-started)
-  * [ Releases ](https://developer.android.com/about/versions)
-
-
-
-#  Release notes Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Release notes
 ### Beta 4.1
 
 **Release date** | June 1, 2026  
@@ -69,8 +62,6 @@ This minor update to Android 17 Beta 4 includes the following fixes:
   * A Bluetooth audio routing issue that caused playback silence after system interruptions like timers. ([Issue #497181008](https://issuetracker.google.com/issues/497181008)) 
   * An issue causing hearing aids to be automatically forgotten from paired devices after inactivity or charging. ([Issue #504968772](https://issuetracker.google.com/issues/504968772), [Issue #504395613](https://issuetracker.google.com/issues/504395613), [Issue #493347800](https://issuetracker.google.com/issues/493347800), [Issue #504696777](https://issuetracker.google.com/issues/504696777)) 
 
-
-
 All eligible devices enrolled in the [Android Beta for Pixel program](https://g.co/androidbeta) will be offered an over-the-air (OTA) update to Beta 4.1.
 
 ### Android 17 Beta 4 (April 2026)
@@ -109,8 +100,6 @@ Beginning with Android 17, cross-profile loopback traffic is no longer permitted
   * _Notifications marked with setSilent(true) may unexpectedly play alert sounds on Android 16 when multiple notifications are present in the shade. ([**Issue #467164528**](https://issuetracker.google.com/issues/467164528))_
   * _Wi-Fi analyzer applications fail to detect any available Wi-Fi signals, preventing network scanning and signal monitoring. ([**Issue #488493098**](https://issuetracker.google.com/issues/488493098), [**Issue #488244938**](https://issuetracker.google.com/issues/488244938), [**Issue #491531212**](https://issuetracker.google.com/issues/491531212), [**Issue #490566133**](https://issuetracker.google.com/issues/490566133), [**Issue #488742605**](https://issuetracker.google.com/issues/488742605), [**Issue #488437847**](https://issuetracker.google.com/issues/488437847), [**Issue #489664292**](https://issuetracker.google.com/issues/489664292), [**Issue #492229996**](https://issuetracker.google.com/issues/492229996), [**Issue #492403933**](https://issuetracker.google.com/issues/492403933), [**Issue #492078596**](https://issuetracker.google.com/issues/492078596), [**Issue #493259320**](https://issuetracker.google.com/issues/493259320), [**Issue #490313462**](https://issuetracker.google.com/issues/490313462), [**Issue #494716049**](https://issuetracker.google.com/issues/494716049), [**Issue #495146669**](https://issuetracker.google.com/issues/495146669), [**Issue #490268954**](https://issuetracker.google.com/issues/490268954), [**Issue #496870370**](https://issuetracker.google.com/issues/496870370), [**Issue #497174811**](https://issuetracker.google.com/issues/497174811), [**Issue #496927303**](https://issuetracker.google.com/issues/496927303), [**Issue #497726865**](https://issuetracker.google.com/issues/497726865), [**Issue #498299558**](https://issuetracker.google.com/issues/498299558), [**Issue #496860223**](https://issuetracker.google.com/issues/496860223), [**Issue #498454519**](https://issuetracker.google.com/issues/498454519), [**Issue #499751486**](https://issuetracker.google.com/issues/499751486), [**Issue #491171326**](https://issuetracker.google.com/issues/491171326))_
 
-
-
 ### Android 17 Beta 3 (March 2026)
 
 [Android 17 has officially reached Platform Stability with Beta 3](https://android-developers.googleblog.com/2026/03/the-third-beta-of-android-17.html). The API surface is now locked, meaning it is time to perform final compatibility testing and publish your Android 17-targeted apps to the Google Play Store.
@@ -129,21 +118,15 @@ Following is a summary of new capabilities, behavior changes, and enhancements i
   * **Granular Hearing Aid Audio Routing:** Users can independently route system sounds (notifications, ringtones, alarms) to either connected hearing aids or the device speaker. This is handled at the system level and requires no API changes.
   * **Extended HE-AAC Software Encoder:** A new system-provided encoder (`c2.android.xheaac.encoder`) supports high and low bitrates for significantly better audio in low-bandwidth conditions, including mandatory support for loudness metadata to ensure consistent volume.
 
-
-
 #### Performance and Battery
 
   * **Reduced Wakelocks for Idle Alarms:** A new callback-based variant of `[AlarmManager.setExactAndAllowWhileIdle](/reference/android/app/AlarmManager#setExactAndAllowWhileIdle\(int,%20long,%20java.lang.String,%20java.util.concurrent.Executor,%20android.app.AlarmManager.OnAlarmListener\))` accepts an `[OnAlarmListener](/reference/android/app/AlarmManager.OnAlarmListener)` instead of a `[PendingIntent](/reference/android/app/PendingIntent)`. This reduces power consumption and long partial wakelocks for apps (like medical monitors or messaging sockets) that need precise callbacks during Doze or Battery Saver modes.
-
-
 
 #### Privacy and Security
 
   * **System-Provided Location Button:** You can embed a secure, system-rendered location button via Jetpack. Tapping it grants your app precise location access for the current session only, without triggering a system dialog. Requires the `[USE_LOCATION_BUTTON](/reference/android/Manifest.permission#USE_LOCATION_BUTTON)` permission.
   * **Discrete Password Visibility:** "Show passwords" settings are now split between touch inputs (briefly echoes the last character) and physical keyboards (hidden immediately by default). Standard framework components respect this automatically; custom fields should migrate to the `[ShowSecretsSetting](/reference/android/text/ShowSecretsSetting)` API.
   * **Post-Quantum Cryptography (PQC) Hybrid Signing:** Android introduces the v3.2 APK Signature Scheme, combining classical signatures (RSA/Elliptic Curve) with ML-DSA signatures. This prepares apps for NIST standards and quantum computing advancements.
-
-
 
 #### User Experience and System UI
 
@@ -153,16 +136,12 @@ Following is a summary of new capabilities, behavior changes, and enhancements i
   * **Redesigned Screen Recording:** A new floating toolbar improves recording controls and capture settings for creators. The UI is automatically excluded from the final video.
   * **Bubbles:** The windowing mode feature introduced in Beta 2 is now fully enabled.
 
-
-
 #### Core Functionality & Health
 
   * **VPN App Exclusion Settings:** VPN apps can use the `[ACTION_VPN_APP_EXCLUSION_SETTINGS](/reference/android/provider/Settings#ACTION_VPN_APP_EXCLUSION_SETTINGS)` intent to launch a system-managed screen where users can select specific apps to bypass the VPN tunnel (split-tunneling).
   * **Dynamic System Font Fallback:** Android now supports runtime updates to the font fallback chain, delivering updated emojis and typography without a full OS update.
   * **OpenJDK 21 & 25 Updates:** Integration of modern OpenJDK features, including updated Unicode support and enhanced SSL support for named groups in TLS.
   * **Health Connect Device Data Providers (DDPs):** Health Connect can now distinguish between data generated by apps and data originating directly from system-verified hardware (like Wear OS watches or the phone itself).
-
-
 
 ### Top Issues fixed in Beta 3
 
@@ -184,8 +163,6 @@ Following is a summary of new capabilities, behavior changes, and enhancements i
   * _A rendering issue causing visual artifacts during back-navigation transitions. (**[Issue #485316132](https://issuetracker.google.com/issues/485316132)**)_
   * _An issue where system status bar icons would randomly disappear, preventing users from seeing battery or network levels. (**[Issue #473447873](https://issuetracker.google.com/issues/473447873)** , **[Issue #484689844](https://issuetracker.google.com/issues/484689844)** , **[Issue #484382982](https://issuetracker.google.com/issues/484382982)** , **[Issue #472268834](https://issuetracker.google.com/issues/472268834)** , **[Issue #489158801](https://issuetracker.google.com/issues/489158801)** , **[Issue #484569035](https://issuetracker.google.com/issues/484569035)**)_
 
-
-
 ### Android 17 Beta 2 (February 2026)
 
 [Beta 2 is now available](https://android-developers.googleblog.com/2026/02/the-second-beta-of-android-17.html). Similar to beta 1, this release is suitable for development, testing, and general use. However, Android 17 is still in active development, so the Android system and apps running on it **might not always work as expected**.
@@ -200,8 +177,6 @@ Following is a summary of new capabilities, behavior changes, and enhancements i
   * **Touchpad Pointer Capture:** By default, captured touchpads now behave like mice, reporting relative movement and gestures instead of raw finger coordinates. Legacy absolute mode remains available via `POINTER_CAPTURE_MODE_ABSOLUTE`.
   * **Interactive Chooser:** Apps can use [`getInitialRestingBounds`](/reference/kotlin/android/service/chooser/ChooserSession#getinitialrestingbounds) on a [`ChooserSession`](/reference/android/service/chooser/ChooserSession) to identify the final UI position of the Chooser for better layout adjustments.
 
-
-
 #### **Connectivity & Cross-Device**
 
   * **Cross-device Handoff:** The new [Handoff API](/reference/kotlin/android/app/Activity#sethandoffenabled) enables state resumption across devices (e.g., phone to tablet) via [`CompanionDeviceManager`](/reference/android/companion/CompanionDeviceManager).
@@ -210,8 +185,6 @@ Following is a summary of new capabilities, behavior changes, and enhancements i
     * **Proximity Detection:** Implements WiFi Alliance specs for improved WiFi-based ranging.
   * **Data Plan Enhancements:** Apps can query carrier-allocated downlink/uplink max rates for streaming using [`getStreamingAppMaxDownlinkKbps`](/reference/kotlin/android/telephony/SubscriptionInfo#getstreamingappmaxdownlinkkbps) and [`getStreamingAppMaxUplinkKbps`](/reference/kotlin/android/telephony/SubscriptionInfo#getstreamingappmaxuplinkkbps).
 
-
-
 #### **Core Functionality, Privacy & Performance**
 
   * **Local Network Access:** Android 17 introduces the [`ACCESS_LOCAL_NETWORK`](/reference/kotlin/android/Manifest.permission#access_local_network) permission (part of the [`NEARBY_DEVICES`](/reference/android/Manifest.permission_group#NEARBY_DEVICES) group) to protect LAN communication.
@@ -219,8 +192,6 @@ Following is a summary of new capabilities, behavior changes, and enhancements i
   * **NPU Management:** Apps targeting Android 17 must declare the [FEATURE_NEURAL_PROCESSING_UNIT](/reference/kotlin/android/content/pm/PackageManager#feature_neural_processing_unit) hardware feature to directly access the NPU.
   * **ICU 78:** Updated internationalization libraries support [Unicode 17](https://blog.unicode.org/2025/10/icu-78-released.html).
   * **SMS OTP Protection:** To prevent hijacking, Android 17 delays programmatic access to OTP messages by three hours for most apps. Developers should transition to [SMS Retriever](/identity/sms-retriever) or [SMS User Consent](/identity/sms-retriever/user-consent/overview) APIs.
-
-
 
 ### Top Issues fixed in Beta 2
 
@@ -241,8 +212,6 @@ Following is a summary of new capabilities, behavior changes, and enhancements i
   * _A bug that caused redundant notifications to appear following a system update by improving the notification service logic to correctly clear stale alerts during the post-update initialization process. ([**Issue #454647834**](https://issuetracker.google.com/issues/454647834))_
   * _A GPU shader compiler optimization bug on Pixel 6 Pro that caused specific GLSL mathematical expressions to evaluate incorrectly as constants, resulting in visual rendering artifacts in apps. ([**Issue #473226715**](https://issuetracker.google.com/issues/473226715))_
 
-
-
 ### Android 17 Beta 1 (February 2026)
 
 [Beta 1 is now available](https://android-developers.googleblog.com/2026/02/the-first-beta-of-android-17.html), with the latest features and changes to try with your apps. This release is suitable for development, testing, and general use. However, Android 17 is still in active development, so the Android system and apps running on it **might not always work as expected**.
@@ -262,8 +231,6 @@ Apps targeting **Android 17 (API level 37)** running on large screens ([sw ≥ 6
   * **Ignored Attributes** : [`screenOrientation`](/guide/topics/manifest/activity-element#screen), [`resizeableActivity`](/guide/topics/manifest/activity-element#resizeableActivity), [`minAspectRatio`](/guide/topics/manifest/activity-element#minaspectratio), and [`maxAspectRatio`](/guide/topics/manifest/activity-element#maxaspectratio) are ignored on large screens.
   * **Exemptions** : Devices smaller than 600dp and apps categorized as Games (`android:appCategory`).
 
-
-
 ##### Optimized Configuration Changes
 
 To prevent state loss, the system **no longer restarts Activities** by default for specific configuration changes, including:
@@ -274,8 +241,6 @@ To prevent state loss, the system **no longer restarts Activities** by default f
   * [`CONFIG_COLOR_MODE`](/reference/android/content/pm/ActivityInfo#CONFIG_COLOR_MODE)
   * [`CONFIG_UI_MODE`](/reference/android/content/pm/ActivityInfo#CONFIG_UI_MODE) (only when the UI mode changes to [`UI_MODE_TYPE_DESK`](/reference/android/content/res/Configuration#UI_MODE_TYPE_DESK) or from [`UI_MODE_TYPE_DESK`](/reference/android/content/res/Configuration#UI_MODE_TYPE_DESK) to another type)
 
-
-
 **Action Required** : If your app relies on restarts to reload resources for these events, you must explicitly opt-in using the new android:recreateOnConfigChanges manifest attribute.
 
 #### Performance & Runtime
@@ -285,15 +250,11 @@ To prevent state loss, the system **no longer restarts Activities** by default f
   * **New Profiling Triggers** : [`ProfilingManager`](/reference/android/os/ProfilingManager) adds triggers for [`COLD_START`](/reference/android/os/ProfilingTrigger#TRIGGER_TYPE_COLD_START), [`OOM`](/reference/android/os/ProfilingTrigger#TRIGGER_TYPE_OOM), and [`KILL_EXCESSIVE_CPU_USAGE`](/reference/android/os/ProfilingTrigger#TRIGGER_TYPE_KILL_EXCESSIVE_CPU_USAGE).
   * **Notification Restrictions** : Strict size limits enforced on custom notification views to reduce memory usage.
 
-
-
 #### Media & Camera
 
 ##### Camera
 
   * **Dynamic Session Updates** : Use [`CameraCaptureSession.updateOutputConfigurations()`](/reference/android/hardware/camera2/CameraCaptureSession#updateOutputConfigurations\(java.util.List%3Candroid.hardware.camera2.params.OutputConfiguration%3E\)) to switch use cases (e.g., Photo to Video) without closing the session or causing glitches.
-
-
 
 ##### Audio & Video
 
@@ -301,22 +262,16 @@ To prevent state loss, the system **no longer restarts Activities** by default f
   * **Background Audio Hardening** : Audio playback, focus requests, and volume changes initiate silently (fail) if the app is not in a valid lifecycle state.
   * **VVC Support** : Added platform support for [Versatile Video Coding (H.266)](/guide/topics/media/media-formats#video-formats).
 
-
-
 #### Privacy & Security
 
   * **Cleartext Deprecation** : [`android:usesCleartextTraffic`](/guide/topics/manifest/application-element#usesCleartextTraffic) will be deprecated in a future release, gated on the future SDK level. Apps relying on this attribute will default to blocking cleartext; migrate to [**Network Security Configuration**](/training/articles/security-config).
   * **HPKE Hybrid Cryptography** : Introduced a public [Service Provider Interface](/reference/android/crypto/hpke/HpkeSpi) for an implementation of HPKE hybrid cryptography.
-
-
 
 #### Connectivity & Tools
 
   * [**Companion Device Manager**](/guide/topics/connectivity/companion-device-pairing): 
     * **New Profiles** : [Medical Devices](/reference/android/companion/AssociationRequest#DEVICE_PROFILE_MEDICAL) and [Fitness Trackers](/reference/android/companion/AssociationRequest#DEVICE_PROFILE_FITNESS_TRACKER).
     * **Unified Permission Dialog** : [`setExtraPermissions`](/reference/android/companion/AssociationRequest.Builder#setExtraPermissions\(java.util.Set%3Cjava.lang.String%3E\)) bundles nearby permissions into the association dialog.
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

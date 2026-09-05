@@ -4,14 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Essentials ](https://developer.android.com/get-started)
-  * [ Releases ](https://developer.android.com/about/versions)
-
-
-
-#  Contact picker Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Contact picker
 The Android Contact Picker is a standardized, browsable interface for users to share contacts with your app. Available on devices running Android 17 (API level 37) or higher, the picker offers a privacy-preserving alternative to the broad `READ_CONTACTS` permission. Instead of requesting access to the user's entire address book, your app specifies the data fields it needs, such as phone numbers or email addresses, and the user selects specific contacts to share. This grants your app read access to only the selected data, ensuring granular control while providing a consistent user experience with built-in search, profile switching, and multi-selection capabilities without having to build or maintain the UI.
 
 ## Integrate the Contact Picker
@@ -25,8 +18,6 @@ Common MIME types include:
   * `ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE`
   * `ContactsContract.CommonDataKinds.Email.CONTENT_ITEM_TYPE`
   * `ContactsContract.CommonDataKinds.StructuredPostal.CONTENT_ITEM_TYPE`
-
-
 
 ## Launch the picker
 
@@ -211,8 +202,6 @@ You can test the new picker behavior on devices running Android 17 and higher ev
   * **Managing multiple data entries per contact** : Individual contacts often contain various email addresses or phone numbers. To help ensure these are presented clearly and intuitively for the user, it is recommended to group them using `ContactsContract.Contacts.LOOKUP_KEY`. Furthermore, you can retrieve specific labels for each entry (such as work or personal) to offer more granular selection options within your app's interface.
   * **Persist data immediately** : The Session URI grants temporary read permission. If you need to access this contact information later (after your app process is killed), your app has to persist the contact data.
   * **Don't rely on Account Data** : To protect user privacy and prevent fingerprinting, account-specific metadata is stripped from the results.
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

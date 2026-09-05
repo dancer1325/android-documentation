@@ -4,14 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Essentials ](https://developer.android.com/get-started)
-  * [ Releases ](https://developer.android.com/about/versions)
-
-
-
-#  OTA images for Google Pixel Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  OTA images for Google Pixel
 OTA images are available for the following Pixel devices:
 
   * Pixel 6

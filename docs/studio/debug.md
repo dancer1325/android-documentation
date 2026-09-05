@@ -4,22 +4,12 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Debug your app Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Debug your app
 Android Studio provides a debugger that lets you do the following and more:
 
   * Select a device to debug your app on.
   * Set breakpoints in your Java, Kotlin, and C/C++ code.
   * Examine variables and evaluate expressions at runtime.
-
-
 
 This page includes instructions for basic debugger operations. For more documentation, also see the [IntelliJ IDEA debugging docs](https://www.jetbrains.com/help/idea/2026.1/debugging.html).
 
@@ -83,8 +73,6 @@ If you [add C and C++ code to your project](/studio/projects/add-native-code), A
 
   4. If the Debug window isn't open, select **View > Tool Windows > Debug**, or click **Debug** ![](/static/studio/images/buttons/toolbar-debug.png) in the tool window bar.
 
-
-
 ### Attach the debugger to a running app
 
 If your app is already running on your device, you can start debugging without restarting your app as follows: 
@@ -97,9 +85,6 @@ If your app is already running on your device, you can start debugging without r
   3. Click **OK**. 
 
 The Debug window appears.
-
-
-
 
 The **Processes** tab in the Device Explorer (**View > Tool Windows > Device Explorer**) also has a list of debuggable processes. From there you can select a process and perform a kill ![](/static/studio/images/device-explorer-kill.png), force-stop ![](/static/studio/images/device-explorer-force-stop.png), or attach the debugger to a given process ![](/static/studio/images/device-explorer-attach-debugger.png). 
 
@@ -114,8 +99,6 @@ The debug window is divided into
   3. Evaluation and watch expression entry. See Inspect variables.
   4. Stack display
   5. Variables pane. See Inspect variables.
-
-
 
 **Note:** The Android Studio debugger and garbage collector are loosely integrated. The Android virtual machine guarantees that any object the debugger is aware of is not garbage collected until after the debugger disconnects. This can result in a buildup of objects while the debugger is connected. For example, if the debugger sees a running thread, the associated `[Thread](/reference/java/lang/Thread)` object is not garbage collected until the debugger disconnects, even if the thread has terminated. 
 
@@ -153,8 +136,6 @@ To check whether `ptrace` is enabled, run the following command on the ADB shell
         
 
 If `ptrace` is enabled, the command will print the value `0` or an an `unknown key` error. If `ptrace` is not enabled, it will print a value other than `0`.
-
-
 
 Dual (Java + Native) - available only with C/C++ code
      Select this debug type if you want to switch between debugging both Java and native code. Android Studio attaches both the Java debugger and LLDB to your app process so you can inspect breakpoints in both your Java and native code without restarting your app or changing your debug configuration. 
@@ -280,8 +261,6 @@ To add a line breakpoint, proceed as follows:
   2. Click the left gutter along that line of code or place the caret on the line and press `Control+F8` (on macOS, `Command+F8`). 
   3. If your app is already running, click **Attach debugger to Android process** ![](/static/studio/images/buttons/toolbar-attach-debugger.png). Otherwise, to start debugging, click **Debug** ![](/static/studio/images/buttons/toolbar-debug.png). 
 
-
-
 A red dot appears next to the line when you set a breakpoint, as shown in figure 5.
 
 ![](/static/images/tools/as-breakpointline.png) **Figure 5.** A red dot appears next to the line when you set a breakpoint.
@@ -300,9 +279,6 @@ To identify the state of the app, use the tools in the Debugger tab:
 
   * To continue running the app normally, click **Resume Program** ![](/static/studio/images/debug/debugger_button_resume_2-0.png).
 
-
-
-
 If your project uses any native code, by default the Detect Automatically debug type attaches both the Java debugger and LLDB to your app as two separate processes. You can switch between inspecting Java and C/C++ breakpoints without restarting your app or changing settings. 
 
 **Note:** For Android Studio to detect breakpoints in your C or C++ code, you need to use a debug type that supports LLDB, such as Detect Automatically, Native, or Dual. You can change the debug type Android Studio uses by [editing your debug configuration](/studio/run/rundebugconfig). To learn more about the different debug types, read the section about using other debug types. 
@@ -312,8 +288,6 @@ When Android Studio deploys your app to your target device, the Debug window ope
 ![](/static/studio/images/debug/hybrid-debug-session_2-2_2x.png) **Figure 6.** Debugging native code using LLDB.
 
   1. Android Studio switches to the **< your-module>** tab when LLDB debugger encounters a breakpoint in your C/C++ code. The Frames, Variables, and Watches panes are also available and work exactly as they would if you were debugging Java code.
-
-
 
 Although the Threads pane is not available in the LLDB session view, you can access your app processes using the list in the Frames pane. Learn more about these panes in the sections about how to debug window frames and inspect variables. 
 
@@ -353,8 +327,6 @@ To add an expression to the object tree (while the application is being debugged
   1. Enter the expression to watch or display
   2. Click **Add to watches** or press Enter to evaluate the expression once.
 
-
-
 Alternatively, if the object tree contains the expression you want to watch, you can drag it to the top of the tree to add it as a watched expression.
 
 Watched expressions will update when breakpoints are hit or you step through your code.
@@ -380,8 +352,6 @@ To set a watchpoint, you must meet the following requirements:
 
   * You have assigned three or fewer watchpoints already. Android Studio only supports up to four watchpoints on x86 or x86_64 target devices. Other devices may support fewer watchpoints. 
 
-
-
 **Note:** When debugging your app with 32-bit ARM ABIs, adding a watchpoint or hovering over variables inside the code to investigate their values may cause a crash. As a workaround, debug using 64-bit ARM, x86, or x86_64 binaries. This issue will be fixed in an upcoming Android Studio release. 
 
 If you meet the requirements, you can add a watchpoint as follows: 
@@ -398,8 +368,6 @@ Configure your watchpoint with the following options:
      * **Suspend:** By default, the Android system suspends your app process when it accesses a block of memory you assign to a watchpoint. Deselect this option if you don’t want this behavior. This reveals additional options you can use to customize behavior when the system interacts with your watchpoint: **Log message to console** and **Remove when hit**. 
      * **Access Type:** Select whether your app should trigger your watchpoint when it tries to **Read** or **Write** to the block of memory the system allocates to the variable. To trigger your watchpoint on either a read or a write, select **Any**. 
   4. Click **Done**. 
-
-
 
 To view all your watchpoints and configure watchpoint settings, click **View Breakpoints** ![](/static/images/tools/as-viewbreakbutton.png) in the Debug window. The Breakpoints dialog appears, as shown in figure 10. 
 
@@ -432,16 +400,12 @@ The available formats depend on the data type of the resource you selected. You 
      * **Primitive:** Display as a numeric value using a primitive data type.
      * **Integer:** Display as a numeric value of type `Integer`.
 
-
-
 To create a custom format, do the following:
 
   1. Right-click the resource value.
   2. Select **View as**.
   3. Select **Create**.
   4. The **Java Data Type Renderers** dialog displays. Follow the instructions at [Java Data type renderers](https://www.jetbrains.com/help/idea/2026.1/java-type-renderers.html).
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

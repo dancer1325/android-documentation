@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/blog/authors](https://developer.android.com/blog/authors)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Android Developers' Blog ](https://developer.android.com/)
-  * [ Blog ](https://developer.android.com/blog)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 # Authors
 
   * ##  [ Adarsh Fernando ](/blog/authors/adarsh-fernando)
@@ -121,9 +112,6 @@ Stay organized with collections  Save and categorize content based on your prefe
 ![View Ash Nohe's profile](/static/blog/assets/ash_32bd9f9ed7_Zhh9o0.webp)
 
 ![View Ash Nohe's profile](/static/blog/assets/ash_32bd9f9ed7_Zhh9o0.webp)
-
-
-
 
 arrow_back 
 

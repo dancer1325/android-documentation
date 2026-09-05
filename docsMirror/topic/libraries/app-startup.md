@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/topic/libraries/app-startup](https://developer.android.com/topic/libraries/app-startup)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App architecture ](https://developer.android.com/topic/architecture/intro)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 # App Startup Part of [Android Jetpack](/jetpack).
 
 The App Startup library provides a straightforward, performant way to initialize components at application startup. Both library developers and app developers can use App Startup to streamline startup sequences and explicitly set the order of initialization.
@@ -48,8 +39,6 @@ You define each component initializer by creating a class that implements the [`
 
   * The `create()` method, which contains all of the necessary operations to initialize the component and returns an instance of `T`.
   * The `dependencies()` method, which returns a list of the other `Initializer<T>` objects that the initializer depends on. You can use this method to control the order in which the app runs the initializers at startup.
-
-
 
 For example, suppose that your app depends on [`WorkManager`](/reference/kotlin/androidx/work/WorkManager) and needs to initialize it at startup. Define a `WorkManagerInitializer` class that implements `Initializer<WorkManager>`:
 
@@ -146,8 +135,6 @@ This means that in order for a component initializer to be discoverable by App S
   * The component initializer has a corresponding `<meta-data>` entry under the `InitializationProvider` manifest entry.
   * The component initializer is listed in the `dependencies()` method from an initializer that is already discoverable.
 
-
-
 Consider again the example with `WorkManagerInitializer` and `ExampleLoggerInitializer`. To make sure App Startup can discover these initializers, add the following to the manifest file:
     
     
@@ -240,8 +227,6 @@ Share your feedback and ideas with us through these resources:
   * Note: link text is displayed when JavaScript is off
   * [App Architecture: Data Layer - Schedule Task with WorkManager - Android Developers](/topic/libraries/architecture/workmanager)
   * [App Architecture: Data Layer - DataStore - Android Developers](/topic/libraries/architecture/datastore)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

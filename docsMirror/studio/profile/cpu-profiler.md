@@ -4,22 +4,12 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Record a system trace Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Record a system trace
 A system trace shows you system-wide activities and resource usage, so you can see how your app processes are scheduled and run. The system trace view in the Android Studio Profiler is commonly used to investigate the following:
 
   * How app and system processes are distributed across device cores and threads.
   * How smoothly the UI renders.
   * Power usage at both the device and app level.
-
-
 
 This page provides an overview of the most commonly used visuals in the system trace view. See the [chart glossary](/studio/profile/chart-glossary/flame-chart) for more details about visualizations not described here. For more detailed examples of what to use a system trace for, see the other pages in this section.
 
@@ -48,9 +38,6 @@ After you [record a system trace](/studio/profile#start-profiling), you see the 
   * **Power Rails** : Appears when you profile on a physical device. For more info, see [Inspect power usage](/studio/profile/power-profiler).
 
   * **Battery** : Shows your app's battery usage.
-
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

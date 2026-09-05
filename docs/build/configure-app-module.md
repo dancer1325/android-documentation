@@ -4,21 +4,11 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Configure the app module Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Configure the app module
 This page describes useful app settings in the module-level `build.gradle.kts` file. In addition to giving an overview of important properties set in the `build.gradle.kts` file, learn how to:
 
   * Change the application ID for different build configurations.
   * Safely adjust the namespace independent of the application ID.
-
-
 
 ## Set the application ID
 
@@ -61,8 +51,6 @@ Although the application ID looks like a traditional Kotlin or Java package name
   * It must have at least two segments (one or more dots).
   * Each segment must start with a letter.
   * All characters must be alphanumeric or an underscore [a-zA-Z0-9_].
-
-
 
 When you [create a new project in Android Studio](/training/basics/firstapp/creating-project), the `applicationId` is automatically assigned the package name you chose during setup. You can technically toggle the two properties independently from then on, but it is not recommended.
 

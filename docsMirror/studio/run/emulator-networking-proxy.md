@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Set up Proxy with the Android Emulator Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Set up Proxy with the Android Emulator
 On the Android Emulator, you can use a proxy to debug application traffic or to access the internet from behind a corporate firewall. The emulator offers two distinct proxy mechanisms to support these different use cases: the Android System Proxy and the Emulator Proxy.
 
 ## Choosing the Right Proxy
@@ -50,8 +42,6 @@ You can configure the Android System Proxy in two ways:
   1. **Manual Configuration** : In the emulator, go to **Settings > Network & Internet > Wi-Fi**, select your network, and manually enter the proxy settings.
   2. **Automated Configuration** : You can programmatically configure the Android System Proxy. This is done by creating an instrumentation test that uses a UI automation framework, such as [UI Automator](/training/testing/other-components/ui-automator), to open the Android Settings app and apply the proxy configuration without manual intervention.
 
-
-
 ## Use Case 2: Bypassing Corporate Firewalls with Emulator Proxy
 
 On many corporate networks, direct connections to the internet are refused by network administrators and must instead pass through a specific proxy. To access external resources from within such a restricted network, you should use the **Emulator Proxy**.
@@ -81,8 +71,6 @@ or
 ![Set up Emulator Proxy](/static/studio/images/run/emulator-proxy-settings_2x.png)
 
 **Note:** After applying settings through the Extended Controls UI, you must restart the emulator for the changes to take effect. Additionally, the Emulator Proxy does not support a bypass mechanism for excluding specific hosts or domains (a "no-proxy-for" list).
-
-
 
 The Emulator Proxy operates at the network layer. It tunnels HTTPS traffic over TCP, but this traffic is forwarded without decryption, which prevents HTTPS inspection. The Emulator Proxy doesn't support UDP redirection.
 

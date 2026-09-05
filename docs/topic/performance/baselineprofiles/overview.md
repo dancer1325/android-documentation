@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Baseline Profiles overview Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Baseline Profiles overview
 Baseline Profiles improve code execution speed by about 30% from the first launch by avoiding interpretation and [just-in-time (JIT)](/about/versions/nougat/android-7.0#jit_aot) compilation steps for included code paths.
 
 By shipping a Baseline Profile in an app or library, [Android Runtime (ART)](https://source.android.com/docs/core/runtime) can optimize specified code paths through Ahead-of-Time (AOT) compilation, providing performance enhancements for every new user and every app update. This Profile Guided Optimization (PGO) lets apps optimize startup, reduce interaction jank, and improve overall runtime performance for users from the first launch.
@@ -56,8 +48,6 @@ The dependency chain provides stable and developmental release versions. To gene
   * Android Gradle plugin: `com.android.tools.build:8.0.0`
   * Macrobenchmark library: `androidx.benchmark:benchmark-macro-junit4:1.4.1`
   * Profile Installer: `androidx.profileinstaller:profileinstaller:1.4.1`
-
-
 
 We recommend using the latest version of AGP to create and manage Baseline Profiles. Here are the major functionalities that come with different versions of AGP:
 
@@ -149,7 +139,6 @@ While developing your app or library, consider defining Baseline Profiles to cov
 
   3. This flow cooperates with Cloud Profiles aggregation to fine-tune performance based on actual usage of the app over time.
 
-
 ![](/static/topic/performance/images/benchmark_images/baselineprofile_workflow.png) **Figure 1.** This diagram demonstrates the Baseline Profile workflow from upload through end-user delivery, and how that workflow relates to Cloud Profiles.
 
 ## Compare Baseline Profiles and Startup Profiles
@@ -206,15 +195,10 @@ The following are possible issues and solutions, or issues for which there are o
 
   * Battery optimizations on some devices, such as Huawei devices, can interfere with profile installation. To help ensure that your profiles are installed effectively, disable any battery optimizations in your benchmark devices.
 
-
-
-
 ## Additional resources
 
   * [DEX layout optimizations and startup profiles](/topic/performance/baselineprofiles/dex-layout-optimizations)
   * [Improve app performance with Baseline Profiles](https://codelabs.developers.google.com/android-baseline-profiles-improve)
-
-
 
 ## Recommended for you
 
@@ -222,8 +206,6 @@ The following are possible issues and solutions, or issues for which there are o
   * [Create Baseline Profiles {:#creating-profile-rules}](/topic/performance/baselineprofiles/create-baselineprofile)
   * [Create and measure Baseline Profiles without Macrobenchmark](/topic/performance/baselineprofiles/manually-create-measure)
   * [DEX layout optimizations and startup profiles](/topic/performance/baselineprofiles/dex-layout-optimizations)
-
-
 
 [ Next Create Baseline Profiles  arrow_forward  ](/topic/performance/baselineprofiles/create-baselineprofile)
 

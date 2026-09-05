@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Sample the callstack Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Sample the callstack
 Callstacks are useful for identifying _CPU hot spots_ , or sections of code that take a long time to execute. Callstacks help you understand which part of the code has been executed, and why it was invoked.
 
 **Note:** To sample the callstack, you must deploy your app to a device running Android 8.0 (API level 26) or higher.
@@ -28,16 +20,12 @@ To supplement the [**CPU Usage** and **Interactions** timelines](/studio/profile
   * Expand the thread of interest and use [keyboard shortcuts](/studio/profile/cpu-profiler#ui-shortcuts) to navigate the stack frames. Click a stack frame to get details about the event and related calls in the **Analysis** pane.
   * To filter to certain types of stack frames, click **Collapse frames** and check the frame types you want to hide. Collapsing frames removes them from both the **Threads** and **Analysis** sections. Depending on your investigation, you might want to collapse frames from the Java virtual machine (for example `android::AndroidRuntime::start` and `art::{...}`), and the system kernel (for example `[kernel.kallsyms]+{offset}`). Usually this corresponds to collapsing frames related to `[kernel.kallsyms]`, `/apex/`, and `/system/*`.
 
-
-
 ![](/static/studio/images/profiler-callstack-frame-menu.png)
 
 Because a Java/Kotlin program typically executes through a Java virtual machine, when Android Studio collects the callstack for a Java/Kotlin program, the callstack usually includes not just the Java/Kotlin code but also the native code required to run the program itself and for the program to talk with the system and hardware.
 
   * To jump to the source code associated with a stack frame, right-click the frame and click **Jump to source**.
   * To highlight the stack frame associated with an event in the event table, click the event.
-
-
 
 For information about the other visuals, see [Record a system trace](/studio/profile/cpu-profiler) and the [chart glossary](/studio/profile/chart-glossary/flame-chart).
 

@@ -4,11 +4,8 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Google Play ](https://developer.android.com/distribute)
-  * [ Other Play guides ](https://developer.android.com/guide/app-bundle)
-
-Engage SDK Sample Apps Stay organized with collections  Save and categorize content based on your preferences.  The Engage SDK includes a set of sample apps that demonstrate how to integrate the SDK in your app to publish different types of content. These apps are a great way to learn how to use the SDK, to get started with the integration in your own app, as well as some best practices. The [sample apps](https://github.com/googlesamples/engage-sdk-samples) are available in the following languages:
+Engage SDK Sample Apps
+The Engage SDK includes a set of sample apps that demonstrate how to integrate the SDK in your app to publish different types of content. These apps are a great way to learn how to use the SDK, to get started with the integration in your own app, as well as some best practices. The [sample apps](https://github.com/googlesamples/engage-sdk-samples) are available in the following languages:
 
   * Java
   * Kotlin

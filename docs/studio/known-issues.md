@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Known issues with Android Studio and Android Gradle Plugin Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Known issues with Android Studio and Android Gradle Plugin
 This page tracks known issues with Android Studio and the Android Gradle plugin. If you experience an issue not already included here, please [report a bug](/studio/report-bugs).
 
 **Upgrade to preview:** Each release of Android Studio and the Android Gradle plugin aims to improve stability and performance, and add new features. To experience the benefits of upcoming releases now, download and install [Android Studio Preview](/studio/preview). 
@@ -143,9 +135,6 @@ Example: `~/Library/Application Support/Google/AndroidStudio4.1`
   * **Linux:** `~/.config/Google/AndroidStudio<version>` and `~/.local/share/Google/AndroidStudio<version>`   
 Example: `~/.config/Google/AndroidStudio4.1` and `~/.local/share/Google/AndroidStudio4.1`
 
-
-
-
 For Android Studio 4.0 and earlier:
 
   * **Windows:** `%HOMEPATH%\.AndroidStudio<version>\config`   
@@ -156,9 +145,6 @@ Example: `~/Library/Preferences/AndroidStudio3.6`
 
   * **Linux:** `~/.AndroidStudio<version>/config`   
 Example: `~/.AndroidStudio3.6/config`
-
-
-
 
 Note that the configuration directory for Canary and Beta releases of Android Studio is `PreviewX.Y` instead of `X.Y` for the `<version>`. For example, Android Studio 4.1 Canary builds use `AndroidStudioPreview4.1`, instead of the `AndroidStudio4.1` directory that is used for Release Candidates and Stable releases.
 
@@ -184,8 +170,6 @@ On ChromeOS, text might appear much smaller than in previous releases. To work a
   6. Increase the font size.
   7. Click **OK**.
 
-
-
 ### Code editing
 
 This section describes known issues related to the code editor.
@@ -205,8 +189,6 @@ There are some known interactions between the iBus daemon on Linux and Android S
 This workaround only disables input methods for Android Studio, not any other applications you may be running. Note that if you restart the daemon while Android Studio is running (for example, by running `ibus-daemon -rd`), you effectively disable the input methods for all other applications and may also crash Android Studio's JVM with a segmentation fault.
   * **Workaround 3:** Double-check the shortcut bindings to make sure that the **Next input shortcut** is not set to Control+Space, since this is also the code completion shortcut in Android Studio. Ubuntu 14.04 (Trusty) makes Super+Space the default shortcut, but settings from previous versions may still be around. To check your shortcut bindings, run `ibus-setup` on the command line to open the IBus Preferences window. Under **Keyboard Shortcuts** , check the **Next input method**. If it is set to Control+Space, change it to Super+Space, or another shortcut of your choice.
 
-
-
 ### Project configuration
 
 This section describes known issues related to project configuration and Gradle sync.
@@ -221,8 +203,6 @@ The issue is that the Gradle daemon is trying to use IPv4 instead of IPv6.
 
   * Workaround 2: in Android Studio's [vmoptions file](https://sites.google.com/a/android.com/tools/tech-docs/configuration), change the line `-Djava.net.preferIPv4Addresses=true` to `-Djava.net.preferIPv6Addresses=true` For more information, see the [Networking IPv6 User Guide](http://docs.oracle.com/javase/1.5.0/docs/guide/net/ipv6_guide/).
 
-
-
 #### "peer not authenticated" errors from Gradle sync or SDK Manager
 
 The root cause of these errors is a missing certificate in `$JAVA_HOME/jre/lib/certificates/cacerts`. To resolve these errors, proceed as follows:
@@ -231,9 +211,6 @@ The root cause of these errors is a missing certificate in `$JAVA_HOME/jre/lib/c
   * Re-install a supported, unmodified JDK. There's a [known issue](https://bugs.launchpad.net/ubuntu/+source/ca-certificates-java/+bug/1396760) affecting Ubuntu users, which results in an empty `/etc/ssl/certs/java/cacerts`. To work around this issue, execute the following on the command line: 
         
         sudo /var/lib/dpkg/info/ca-certificates-java.postinst configure
-
-
-
 
 ### Deploying
 
@@ -254,9 +231,6 @@ The Android Emulator on macOS High Sierra (10.13) requires HAXM 6.2.1+ for best 
   3. If you see an alert that _System software from developer "Intel Corporation Apps" was blocked from loading_ , click **Allow** :
 
 ![](/static/studio/images/unblock-haxm-install-10-13.png)
-
-
-
 
 For more information and workarounds, see [ this Apple webpage](https://developer.apple.com/library/content/technotes/tn2459/_index.html) and [ issue 62395878](https://issuetracker.google.com/issues/62395878).
 
@@ -285,16 +259,12 @@ This issue occurs because as of IntelliJ 13, which requires that you only have a
   * Workaround 1: Run the Gradle `check` task from the IDE rather than running a unit test.
   * Workaround 2: Update your build script to manually copy resources into the build folder. See [comment #13](https://code.google.com/p/android/issues/detail?id=64887#c13) for more information.
 
-
-
 #### Running JUnit tests may compile the code twice
 
 When creating a new project, the template JUnit configuration might be created with two "Before launch" steps: Make and Gradle-aware Make. This configuration is then propagated to all created JUnit run configurations.
 
   * To fix the issue for the current project, click **Run > Edit Configurations** and change the default JUnit configuration to only include the Gradle-aware Make step.
   * To fix the issue for all future projects, click **File > Close Project**. You should see the welcome screen. Then click **Configure > Project Defaults > Run Configurations** and change the JUnit configuration to only include the Gradle-aware Make step.
-
-
 
 #### Some test run configurations don't work
 
@@ -348,8 +318,6 @@ When using Platform Tools 29.0.3, native debugging and the Android Studio Profil
 To upgrade the Platform Tools, do the following: 
 
   1. Open the SDK Manager from Android Studio by clicking **Tools > SDK Manager** or click **SDK Manager** ![](/static/studio/images/buttons/toolbar-sdk-manager.png) in the toolbar. 
-
-
 
 * Click the checkbox next to **Android SDK Platform-Tools** so it shows a checkmark. A download icon ![](/static/images/tools/studio-sdk-dwnld-icon.png) should appear in the left column. 
 
@@ -447,26 +415,18 @@ This section describes known issues that have been fixed in a recent release. If
   * **Missing lint output** : There is no lint text output printed to `stdout` when the lint task is `UP-TO-DATE` ([issue #191897708](https://issuetracker.google.com/issues/191897708)). Fixed in AGP 7.1.0-alpha05.
   * **Problems with unit testing an app project that uses the Hilt plugin** : The unit test classpath contains the non-instrumented app classes, which means Hilt does not instrument the app classes to handle dependency injection when running unit tests ([issue #213534628](https://issuetracker.google.com/issues/213534628)). Fixed in AGP 7.1.1.
 
-
-
 **Fixed in Android Studio 2020.3.1**
 
   * **Lint exceptions in Kotlin projects:** Kotlin projects that set `checkDependencies = true` may encounter null pointer exceptions or errors ([issue #158777858](http://issuetracker.google.com/158777858)).
-
-
 
 **Fixed in Android Studio 4.2**
 
   * **IDE freezes on macOS Big Sur:** Android Studio 4.1 might freeze when you open a dialog.
 
-
-
 **Fixed in Android Studio 4.1**
 
   * **Restart to apply memory settings from previous version of IDE:** After updating Android Studio, you need to restart Android Studio to apply any memory settings migrated from an earlier version of the IDE.
   * **Manifest class with custom permission strings is no longer generated by default:** If you want to generate the class, set `android.generateManifestClass = true`.
-
-
 
 **Fixed in Android Studio 3.6**
 
@@ -474,23 +434,15 @@ This section describes known issues that have been fixed in a recent release. If
 
 On Android Studio 3.6 Beta 1 and higher, the IDE handles this exception by performing a full app install when you deploy your app to LineageOS or CyanogenMod devices, which might result in longer deploy times.
 
-
-
-
 **Fixed in Android Studio 3.5.2**
 
   * **Broken XML code style** : When editing XML code, the IDE applied an incorrect code style when you selected **Code > Reformat Code** from the menu bar.
-
-
 
 **Fixed in Android Studio 3.3.1**
 
   * **Out of memory errors when scanning C++-based projects** : When Gradle scans a project that has C++ code in more than one location on the same drive, the scan includes all directories below the first common directory. Scanning a large number of directories and files may lead to out of memory errors.
 
 For more information on this issue, read the [bug](https://issuetracker.google.com/122874775) associated with the issue.
-
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

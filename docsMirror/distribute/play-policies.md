@@ -3,14 +3,6 @@
 **Source:** [https://developer.android.com/distribute/play-policies](https://developer.android.com/distribute/play-policies)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Google Play ](https://developer.android.com/distribute)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](https://developer.android.com/static/images/hero-illustrations/play-policies-hero.svg)
 
 ###  Upcoming Android and Google Play deadlines 

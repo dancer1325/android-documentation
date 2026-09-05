@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Microbenchmark instrumentation arguments Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Microbenchmark instrumentation arguments
 Configure the behavior of Microbenchmark with the following instrumentation arguments. You can either add these to your Gradle configuration or apply them directly when running instrumentation from the command line. To set these arguments for all Android Studio and command line test runs, add them to `testInstrumentationRunnerArguments`:
     
     
@@ -29,8 +21,6 @@ You can also set up instrumentation arguments when running the benchmarks from A
   1. Edit the run configuration by clicking **Edit** and selecting the configuration you want to edit.  ![](/static/topic/performance/images/benchmark_images/bench_instr_arg_1.png) **Figure 1.** Edit the run configuration.
   2. Edit instrumentation arguments by clicking more_horiz next to the **Instrumentation arguments** field.  ![](/static/topic/performance/images/benchmark_images/bench_instr_arg_2.png) **Figure 2.** Edit the instrumentation argument.
   3. Click add and add the required instrumentation argument.  ![](/static/topic/performance/images/benchmark_images/bench_instr_arg_3.png) **Figure 3.** Add the instrumentation argument.
-
-
 
 If you're running the benchmark from the command line, use `-P android.testInstrumentationRunnerArguments.[name of the argument]`:
     
@@ -51,8 +41,6 @@ Counts the CPU events specified in `androidx.benchmark.cpuEventCounter.events`. 
   * **Argument type:** boolean
   * **Defaults to:** false
 
-
-
 ## androidx.benchmark.cpuEventCounter.events (experimental)
 
 Specifies which types of CPU events to count. To use this argument `androidx.benchmark.cpuEventCounter.enable` must be set to `true`.
@@ -69,8 +57,6 @@ Specifies which types of CPU events to count. To use this argument `androidx.ben
     * `L1IMisses`
   * **Defaults to:** `Instructions`, `CpuCycles`, `BranchMisses`
 
-
-
 ## androidx.benchmark.dryRunMode.enable
 
 Lets you run benchmarks in a single loop to verify that they work properly.
@@ -81,14 +67,10 @@ This means:
   * Benchmark runs only a single loop, with no warmup
   * Measurements and traces aren't captured to reduce runtime
 
-
-
 This optimizes for test throughput and validating benchmark logic over build and measurement correctness.
 
   * **Argument type:** boolean
   * **Defaults to:** `false`
-
-
 
 ## androidx.benchmark.iterations
 
@@ -97,8 +79,6 @@ Configures how many measurements occur. This does not directly define the number
   * **Argument type:** integer
   * **Defaults to:** `50`
 
-
-
 ## androidx.benchmark.killExistingPerfettoRecordings
 
 By default, Microbenchmark kills any existing Perfetto (System Trace) recordings when starting a new trace to reduce interference. To disable this behavior, pass `false`.
@@ -106,16 +86,12 @@ By default, Microbenchmark kills any existing Perfetto (System Trace) recordings
   * **Argument type:** boolean
   * **Defaults to:** `true`
 
-
-
 ## androidx.benchmark.output.enable
 
 Enables writing the result JSON file to external storage.
 
   * **Argument type:** boolean
   * **Defaults to:** `true`
-
-
 
 ## androidx.benchmark.profiling.mode
 
@@ -129,8 +105,6 @@ Note that some Android OS versions don't support method tracing without subseque
     * `StackSampling`
     * `None`
   * **Defaults to:** Safe version of `MethodTracing` which only captures a method trace if the device can do so without affecting measurements.
-
-
 
 ## androidx.benchmark.suppressErrors
 
@@ -147,16 +121,12 @@ Accepts a comma-separated list of errors to turn into warnings.
     * `ACTIVITY-MISSING`
   * **Defaults to:** an empty list
 
-
-
 ## additionalTestOutputDir
 
 Configures where JSON benchmark reports and profiling results are saved on device.
 
   * **Argument type:** file path string
   * **Defaults to:** test APK's external directory
-
-
 
 ## listener
 
@@ -169,16 +139,12 @@ To disable background work during benchmarking set the `listener` instrumentatio
     * `androidx.benchmark.junit4.SideEffectRunListener`
   * **Defaults to:** not specified
 
-
-
 ## Recommended for you
 
   * Note: link text is displayed when JavaScript is off
   * [Macrobenchmark instrumentation arguments](/topic/performance/benchmarking/macrobenchmark-instrumentation-args)
   * [Profile a Microbenchmark](/topic/performance/benchmarking/microbenchmark-profile)
   * [Create Baseline Profiles {:#creating-profile-rules}](/topic/performance/baselineprofiles/create-baselineprofile)
-
-
 
 [ Previous arrow_back  Profile a benchmark  ](/topic/performance/benchmarking/microbenchmark-profile)
 

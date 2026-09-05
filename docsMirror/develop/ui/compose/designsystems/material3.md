@@ -4,16 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Core areas ](https://developer.android.com/develop/core-areas)
-  * [ UI ](https://developer.android.com/develop/ui)
-  * [ Docs ](https://developer.android.com/develop/ui/compose/documentation)
-
-
-
-#  Material Design 3 in Compose Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Material Design 3 in Compose
 Jetpack Compose offers an implementation of Material You and [Material 3 Expressive](https://m3.material.io/), the next evolution of Material Design. M3 Expressive is an expansion of Material Design 3, including research-backed updates to theming, components, motion, typography, and more — all designed to help you make engaging and desirable products that users love. It also supports Material You personalization features like dynamic color. M3 Expressive complements the Android 16 visual style and system UI.
 
 **Note:** The terms “Material Design 3”, “Material 3”, and “M3” are interchangeable.
@@ -81,7 +72,6 @@ While you can create a custom `ColorScheme` manually, it’s often easier to gen
 
   * `Color.kt` contains the colors of your theme with all the roles defined for both light and dark theme colors.
 
-
     
     
     val md_theme_light_primary = Color(0xFF476810)
@@ -99,7 +89,6 @@ While you can create a custom `ColorScheme` manually, it’s often easier to gen
     [Material3Snippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L96-L106)
 
   * `Theme.kt` contains a setup for light and dark color schemes and the app theme.
-
 
     
     
@@ -177,8 +166,6 @@ Each color role can be used in a variety of places depending on the component’
   * Primary is the base color, used for main components like prominent buttons, active states, and the tint of elevated surfaces.
   * The secondary key color is used for less prominent components in the UI, such as filter chips, and expands the opportunity for color expression.
   * The tertiary key color is used to derive the roles of contrasting accents that can be used to balance primary and secondary colors or bring enhanced attention to an element.
-
-
 
 The Reply sample app design uses on-primary-container color on top of primary-container to put emphasis on the selected item.
 
@@ -322,8 +309,6 @@ There are different sizes of shapes:
   * Large
   * Extra Large
 
-
-
 By default, each shape has a default value, but you can override those:
     
     
@@ -392,7 +377,6 @@ Emphasis in M3 is provided using variations of color and its on-color combinatio
 
   * Using different font weights for text. Above, you saw that you can provide custom weights to our type scale for providing different emphasis.
 
-
     
     
     bodyLarge = TextStyle(
@@ -446,7 +430,6 @@ M3 provides many versions of the same components to be used in different roles a
 
   * An extended floating action button for the highest emphasis action:
 
-
     
     
     ExtendedFloatingActionButton(
@@ -466,7 +449,6 @@ M3 provides many versions of the same components to be used in different roles a
 
   * A filled button for a high emphasis action:
 
-
     
     
     Button(onClick = { /*..*/ }) {
@@ -476,7 +458,6 @@ M3 provides many versions of the same components to be used in different roles a
     [Material3Snippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L351-L353)
 
   * A text button for a low emphasis action:
-
 
     
     
@@ -659,27 +640,19 @@ To learn more about Material Theming in Compose, check out the following resourc
 
   * [Reply M3 sample app](https://github.com/android/compose-samples/tree/main/Reply)
 
-
-
 ### Docs
 
   * [Migrating from Material 2 to Material 3 in Compose](/develop/ui/compose/designsystems/material2-material3)
   * [Material design guidelines](https://m3.material.io/)
-
-
 
 ### API reference and source code
 
   * [Compose Material 3 API reference](/reference/kotlin/androidx/compose/material3/package-summary)
   * [Compose Material 3 samples in source code](https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:compose/material3/material3/samples/src/main/java/androidx/compose/material3/samples/)
 
-
-
 ### Videos
 
   * [Material You in Jetpack Compose](https://www.youtube.com/watch?v=jrfuHyMlehc)
-
-
 
 ## Recommended for you
 
@@ -687,8 +660,6 @@ To learn more about Material Theming in Compose, check out the following resourc
   * [Migrate from Material 2 to Material 3 in Compose](/develop/ui/compose/designsystems/material2-material3)
   * [Material Design 2 in Compose](/develop/ui/compose/designsystems/material)
   * [Custom design systems in Compose](/develop/ui/compose/designsystems/custom)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

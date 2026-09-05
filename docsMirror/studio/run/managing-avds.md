@@ -4,28 +4,16 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Create and manage virtual devices Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Create and manage virtual devices
 An Android Virtual Device (AVD) is a configuration that defines the characteristics of an Android phone, tablet, Wear OS, Android TV, or Automotive OS device that you want to simulate in the [Android Emulator](/studio/run/emulator). The Device Manager is a tool you can launch from Android Studio that helps you create and manage AVDs.
 
 To open the new **Device Manager** , do one of the following:
 
   * From the Android Studio Welcome screen, select **More Actions > Virtual Device Manager**.
 
-
-
 ![Opening the Device Manager from the Welcome screen](/static/studio/images/run/device-manager-welcome-screen.png)
 
   * After opening a project, select **View > Tool Windows > Device Manager** from the main menu bar, then click the **+** , and then click **Create Virtual Device**.
-
-
 
 ![New Device Manager window](/static/studio/images/run/tools-new-device-manager.png)
 
@@ -132,9 +120,6 @@ Click **Show Advanced Settings** to show more settings, such as the skin.
 
 The new AVD appears in the **Virtual** tab of the Device Manager and the target device menu.
 
-
-
-
 To create an AVD starting with a copy:
 
   1. From the **Virtual** tab of the Device Manager, click **Menu** ![](/static/images/tools/studio-advmgr-actions-overflow-icon.png) and select **Duplicate**. 
@@ -145,9 +130,6 @@ The **Verify Configuration** window appears.
   3. Make any changes you need, and then click **Finish**. 
 
 The AVD appears in the **Virtual** tab of the Device Manager.
-
-
-
 
 ## Create a hardware profile
 
@@ -165,14 +147,9 @@ To create a new hardware profile from the beginning:
 
 Your new hardware profile appears in the **Select Hardware** window. You can create an AVD that uses the hardware profile by clicking **Next** or click **Cancel** to return to the **Virtual** tab or target device menu.
 
-
-
-
 To create a hardware profile using a copy as a starting point:
 
   1. In the **Select Hardware** window, select a hardware profile and click **Clone Device** or right-click a hardware profile and select **Clone**.
-
-
 
 * In the **Configure Hardware Profile** window, change the hardware profile properties as needed.
 
@@ -189,15 +166,11 @@ You can perform the following operations on an AVD from the Device Manager's **V
   * To show the associated AVD INI and IMG files on disk, click **Menu** ![](/static/images/tools/studio-advmgr-actions-overflow-icon.png) and select **Show on Disk**.
   * To view AVD configuration details that you can include in bug reports to the Android Studio team, click **Menu** ![](/static/images/tools/studio-advmgr-actions-overflow-icon.png) and select **View Details**.
 
-
-
 ## Edit existing hardware profiles
 
 You can't edit or delete the preloaded hardware profiles, but you can perform the following operations on other hardware profiles from the **Select Hardware** window:
 
   * To edit a hardware profile, select it and click **Edit Device**. You can also right-click a hardware profile and select **Edit**. Next, make your changes.
-
-
 
 * To delete a hardware profile, right-click it and select **Delete**. 
 
@@ -209,15 +182,11 @@ From the **Virtual** tab, you can perform the following operations on an emulato
   * To stop a running emulator, click **Menu** ![](/static/images/tools/studio-advmgr-actions-overflow-icon.png) and select **Stop**.
   * To clear the data for an emulator, click **Menu** ![](/static/images/tools/studio-advmgr-actions-overflow-icon.png) and select **Wipe Data**.
 
-
-
 ## Import and export hardware profiles
 
 From the **Select Hardware** window, you can import and export hardware profiles as follows:
 
   * To import a hardware profile, click **Import Hardware Profiles** and select the XML file on your computer containing the definition.
-
-
 
 * To export a hardware profile, right-click it and select **Export**. Specify the location where you want to store the XML file containing the definition.
 
@@ -343,13 +312,10 @@ Each emulator skin contains:
   * Layout files for supported orientations and physical configurations
   * Image files for display elements, such as background, keys, and buttons
 
-
-
 To create and use a custom skin:
 
   1. Create a directory where you can save your skin configuration files. 
   2. Define the visual appearance of the skin in a text file named `layout`. This file defines many characteristics of the skin, such as the size and image assets for specific buttons. For example:
-
 
     
     

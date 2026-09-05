@@ -4,22 +4,12 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Configure Baseline Profile generation Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Configure Baseline Profile generation
 The Baseline Profile Gradle plugin makes it easier to generate and maintain [Baseline Profiles](/topic/performance/baselineprofiles/overview). It helps you do the following tasks:
 
   * [Create new Baseline Profiles for your app](/topic/performance/baselineprofiles/create-baselineprofile#create-baselineprofile-plugin).
   * [Create new Baseline Profiles for your library](/topic/performance/baselineprofiles/create-baselineprofile-library).
   * Customize your Baseline Profile generation.
-
-
 
 This page explains how to use the Baseline Profile Gradle plugin to customize the generation of your Baseline Profiles.
 
@@ -27,8 +17,6 @@ This page explains how to use the Baseline Profile Gradle plugin to customize th
 
   * AGP 8.0 or higher
   * Dependency on the [latest Gradle plugin version](https://maven.google.com/web/index.html?q=benchmark#androidx.benchmark:benchmark-baseline-profile-gradle-plugin)
-
-
 
 ## Use a Gradle Managed Devices to generate Baseline Profiles
 
@@ -213,8 +201,6 @@ You can store Baseline Profiles in the source directory through the `saveInSrc` 
   * `true`: the Baseline Profile is stored in `src/<variant>/generated/baselineProfiles`. This lets you commit the latest generated profile with your sources.
   * `false`: the Baseline Profile is stored in the intermediate files in the build directory. This way, when committing your code, you don't save the latest generated profile.
 
-
-
 ### Kotlin
     
     
@@ -303,8 +289,6 @@ The filters specification can be any of the following:
   * Package name ending with double wildcards to match the specified package and all subpackages. For example, `com.example.**` matches `com.example.method` and `com.example.method.bar`.
   * Package name ending with wildcard to match specified package only. For example, `com.example.*` matches `com.example.method` but doesn't match `com.example.method.bar`.
   * Class names to match a specific class—for example, `com.example.MyClass`.
-
-
 
 The following examples show how to include and exclude specific packages:
 
@@ -514,9 +498,6 @@ When creating Baseline Profiles, here are some additional things to be aware of:
 
 **Tip:** In Android Studio Flamingo (2022.2.1) or later, verify the size in the [APK Analyzer](/studio/debug/apk-analyzer).
   * Broad rules that compile too much of the application can slow down startup due to increased disk access. If you're just starting with Baseline Profiles, don't worry about this. However, depending on your app and the size and number of journeys, adding a lot of journeys can result in suboptimal performance. Test the performance of your app by trying different profiles and verifying that the performance doesn't regress after the additions.
-
-
-
 
 ## Codelabs
 

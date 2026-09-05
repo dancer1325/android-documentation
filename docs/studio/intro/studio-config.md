@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Configure Android Studio Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Configure Android Studio
 Android Studio provides wizards and templates that verify your system requirements, such as the Java Development Kit (JDK) and available RAM, and configure default settings, such as an optimized default Android Virtual Device (AVD) emulation and updated system images. This document describes additional configuration settings to customize your use of Android Studio.
 
 Android Studio provides access to two configuration files through the **Help** menu:
@@ -20,15 +12,11 @@ Android Studio provides access to two configuration files through the **Help** m
   * `studio.vmoptions`: Customize options for Android Studio's Java Virtual Machine (JVM), such as heap size and cache size. Note that on Linux machines this file may be named `studio64.vmoptions`, depending on your version of Android Studio.
   * `idea.properties`: Customize Android Studio properties, such as the plugins folder path or maximum supported file size.
 
-
-
 For specific documentation about emulator and device setup and use, see the following topics:
 
   * [Create and manage virtual devices](/tools/devices)
   * [Run apps on a hardware device](/tools/device)
   * [Install OEM USB drivers](/tools/extras/oem-usb)
-
-
 
 ## Find your configuration files
 
@@ -41,8 +29,6 @@ You can use the following environment variables to point to specific override fi
   * `STUDIO_VM_OPTIONS`: set the name and location of the `.vmoptions` file.
   * `STUDIO_PROPERTIES`: set the name and location of the `.properties` file.
 
-
-
 You can configure which JDKs are used by visiting [Java versions in Android builds](/build/jdks).
 
 ## Customize your VM options
@@ -53,8 +39,6 @@ To create a new `studio.vmoptions` file or to open your existing one, follow the
 
   1. Click **Help** > **Edit Custom VM Options**. If you have never edited VM options for Android Studio before, the IDE prompts you to create a new `studio.vmoptions` file. Click **Create** to create the file.
   2. The `studio.vmoptions` file opens in Android Studio's editor window. Edit the file to add your customized VM options. For a full list of customizable JVM options, see Oracle's [Java HotSpot VM Options page](http://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html).
-
-
 
 The `studio.vmoptions` file you create is added to the default `studio.vmoptions` file, located in the `bin/` directory inside your Android Studio installation folder.
 
@@ -87,7 +71,6 @@ If you use a 64-bit system that has at least 5 GB of RAM, you can also adjust th
 
 If you change the heap size for the IDE, you must restart Android Studio before the new memory settings are applied.
 
-
 **Note:** Allocating too much memory can degrade performance.
 
 ## Export and import IDE settings
@@ -103,9 +86,6 @@ You can back up IDE settings to cloud storage to sync your settings, such as key
 
   4. Back on the **Backup and Sync** settings page, review the categories of app data that you want to sync to your account and make any necessary changes. To disable the feature entirely, uncheck **Enable backup and sync**.
 
-
-
-
 You can also directly export a `Settings.jar` file that contains all or a subset of your preferred IDE settings for a project by navigating to **File > Manage IDE Settings > Export Settings**. You can then import the JAR file into your other projects or make the JAR file available to your colleagues to import into their projects. To import a settings file, navigate to **File > Manage IDE Settings > Import Settings**.
 
 ## Customize your IDE properties
@@ -116,8 +96,6 @@ To create a new `idea.properties` file or to open your existing file, follow the
 
   1. Click **Help** > **Edit Custom Properties**. If you have never edited the IDE properties before, Android Studio prompts you to create a new `idea.properties` file. Click **Yes** to create the file.
   2. The `idea.properties` file opens in Android Studio's editor window. Edit the file to add your customized IDE properties.
-
-
 
 The following `idea.properties` file includes commonly customized IDE properties. For a complete list of properties, read about the [`idea.properties` file for IntelliJ IDEA](https://www.jetbrains.com/help/idea/2026.1/file-idea-properties.html).
     
@@ -222,8 +200,6 @@ If you are running Android Studio on a machine with less than the recommended sp
     3. Ensure that the **Compile independent modules in parallel** option is unchecked.
     4. If you have made a change, click **Apply** or **OK** for your change to take effect.
 
-
-
 ## Set proxy settings
 
 Proxies serve as intermediary connection points between HTTP clients and web servers that add security and privacy to internet connections.
@@ -242,8 +218,6 @@ Android Studio supports HTTP proxy settings so you can run Android Studio behind
   2. In the left pane, click **Appearance & Behavior > System Settings > HTTP Proxy**. The HTTP Proxy page appears.
   3. Select **Auto-detect proxy settings** to use an automatic proxy configuration URL for the proxy settings or **Manual proxy configuration** to enter each of the settings yourself. For a detailed explanation of these settings, see [HTTP Proxy](https://www.jetbrains.com/help/idea/2026.1/http-proxy.html).
   4. Click **Apply** or **OK** for your changes to take effect.
-
-
 
 ### Android plugin for Gradle HTTP proxy settings
 
@@ -344,8 +318,6 @@ Follow these steps to customize location:
 
 To avoid downloading the SDK again, copy the existing SDK directory, located at `%USERPROFILE%\AppData\Local\Android\SDK` by default, to the new location.
 
-
-
 Android Studio system files
     
 
@@ -359,9 +331,6 @@ Android Studio prompts you to create an `idea.properties` file if you don't alre
          
          idea.system.path=c:/workfolder/studio/caches/trunk-system
          
-
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

@@ -4,14 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Essentials ](https://developer.android.com/get-started)
-  * [ Releases ](https://developer.android.com/about/versions)
-
-
-
-#  OTA images for Google Pixel Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  OTA images for Google Pixel
 Applying an OTA image can help you recover a device that received an OTA update for an Android 17 Beta build but wouldn't start up after the update was installed. If you are trying to get Android 17 on your device but you aren't trying to recover from a failed OTA update, see [Get Android 17](/about/versions/17/get) instead.
 
 Building on the [initial release of Android 17](/about/versions/17), we continue to update the platform with fixes and improvements that are then rolled out to supported devices. These releases happen on a quarterly cadence through _Quarterly Platform Releases_ (QPRs), which are delivered both to AOSP and to Google Pixel devices as part of _Feature Drops_. 

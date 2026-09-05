@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/bench](https://developer.android.com/bench)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Bench ](https://developer.android.com/bench)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](https://developer.android.com/static/images/bench/hero.png)
 
 ###  Android Bench 
@@ -111,7 +102,6 @@ Archived models • Jul 8th
   * [ circle New updates • Jul 8th ![](/static/images/bench/icons/move_group.png) **We have migrated our benchmark framework to Harbor** ](http://android-developers.googleblog.com/2026/07/android-bench-llm-measurement.html)
   * [ circle New updates • Jul 8th ![](/static/images/bench/icons/news.png) **We've updated Android Bench** ](/bench/methodology)
 
-
   * circle
 
 New models • Jun 9th
@@ -138,11 +128,8 @@ Archived models • Jun 9th
 
   * [ circle New updates • Jun 9th ![](/static/images/bench/icons/news.png) **See our new Archive page** ](/bench/archive)
 
-
   * [ circle New updates • May 18th ![](/static/images/bench/icons/news.png) **New leaderboard dimensions: latency, tokens, and cost** ](/bench/methodology#new-leaderboard-dimensions)
   * [ circle New updates • May 18th ![](/static/images/bench/icons/news.png) **We added benchmarks for open-weight models** ](/bench/methodology#benchmarking-open-weight-models)
-
-
 
 ![](https://developer.android.com/static/images/picto-icons/badge.svg)
 

@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Improve performance Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Improve performance
 Users expect apps to be responsive and fast, from app startup and throughout the entire app experience. After you [inspect](/topic/performance/inspecting-overview) your app for performance problems, you can fix any issues and improve your app's performance.
 
 ## Tools and libraries
@@ -53,8 +45,6 @@ If the available tools or libraries don't resolve your performance issues, we re
   * [Battery and power](/training/monitoring-device-state/doze-standby)
   * [App size](/topic/performance/reduce-apk-size)
 
-
-
 ## Additional resources
 
   * [Use R8 to shrink, optimize, and fast-track your app](https://android-developers.googleblog.com/2025/11/use-r8-to-shrink-optimize-and-fast.html)
@@ -62,8 +52,6 @@ If the available tools or libraries don't resolve your performance issues, we re
   * [Performance class](/topic/performance/performance-class)
   * [App Standby Buckets](/topic/performance/appstandby)
   * [App hibernation](/topic/performance/app-hibernation)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

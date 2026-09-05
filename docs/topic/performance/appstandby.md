@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  App Standby Buckets Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  App Standby Buckets
 Android 9 (API level 28) and later support _App Standby Buckets_. App Standby Buckets help the system prioritize apps' requests for resources based on how recently and how frequently the apps are used. Based on app usage patterns, each app is placed in one of five priority _buckets_. The system limits the device resources available to each app based on which bucket the app is in.
 
 ## Priority buckets
@@ -31,8 +23,6 @@ The priority buckets are the following:
   * Rare: app isn't frequently used.
   * Restricted: app consumes a lot of system resources or might exhibit undesirable behavior.
 
-
-
 In addition to these priority buckets, there's a special **never** bucket for apps that are installed but never ran. The system imposes severe restrictions on these apps.
 
 **Note:** Apps that are on the [Doze exemption list](/training/monitoring-device-state/doze-standby#exemption-cases) are exempted from the App Standby Bucket-based restrictions.
@@ -47,13 +37,9 @@ An app is in the **active** bucket while it is used, is very recently used, or w
   * Runs a long running foreground service.
   * Is tapped by the user from a notification.
 
-
-
 If an app is in the active bucket, the system places minimal restrictions on the app's jobs or alarms:
 
   * Beginning with Android 16 (API level 36), background jobs have a generous runtime quota if they're started by an app in the active bucket. This includes jobs scheduled directly with [`JobScheduler`](/reference/android/app/job/JobScheduler), as well as jobs created by other libraries like [WorkManager](/develop/background-work/background-tasks/persistent) or [`DownloadManager`](/reference/android/app/DownloadManager).
-
-
 
 #### User interaction assigns apps as active
 
@@ -67,9 +53,6 @@ The following are examples of interactions that trigger this system behavior:
   * The user interacts with a foreground service in your app by tapping a [media button](/guide/topics/media-apps/mediabuttons).
 
   * The user connects to your app while interacting with [Android Automotive OS](/training/cars#automotive-os), where your app uses either a foreground service or [`CONNECTION_TYPE_PROJECTION`](/reference/androidx/car/app/connection/CarConnection#CONNECTION_TYPE_PROJECTION).
-
-
-
 
 ### Working set
 
@@ -100,9 +83,6 @@ On Android 13 (API level 33) and higher, unless your app qualifies for an exempt
 **Note:** Any duration that the device is off doesn't count towards the interactivity limit.
   * Your app invokes an excessive number of [broadcasts](/guide/components/broadcasts) or [bindings](/guide/components/bound-services) during a 24-hour period.
 
-
-
-
 If the system places your app in the restricted bucket, the following restrictions apply:
 
   * You can [run jobs](/topic/libraries/architecture/workmanager) once per day in a 10-minute batched session. During this session, the system groups your app's jobs with other apps' jobs. 
@@ -129,8 +109,6 @@ The following types of apps are exempt from entering the restricted bucket and b
     * [`USE_EXACT_ALARM`](/reference/android/Manifest.permission#USE_EXACT_ALARM)
     * [`ACCESS_BACKGROUND_LOCATION`](/reference/android/Manifest.permission#ACCESS_BACKGROUND_LOCATION)
 
-
-
 ## Evaluate the priority bucket
 
 To check which bucket your app is assigned to, do one of the following:
@@ -140,9 +118,6 @@ To check which bucket your app is assigned to, do one of the following:
   * Run the following command in a terminal window: 
         
         adb shell am get-standby-bucket PACKAGE_NAME
-
-
-
 
 The system throttles your app whenever it's placed in an App Standby Bucket whose value is greater than [`STANDBY_BUCKET_ACTIVE`](/reference/android/app/usage/UsageStatsManager#STANDBY_BUCKET_ACTIVE) (10).
 
@@ -158,9 +133,6 @@ If your app is following best practices for Doze and app standby, the later powe
 
 **Note:** If the user repeatedly dismisses a notification, the system gives the user the option to block that notification in the future. Don't spam the user with notifications to try to keep your app in the active bucket.
   * If apps are split across multiple packages, those packages might be in different buckets and have different access levels. Test these apps with the packages assigned to various buckets to make sure the app behaves properly.
-
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

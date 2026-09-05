@@ -4,13 +4,7 @@
 
 ---
 
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  App hibernation Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  App hibernation
 If your app targets Android 11 (API level 30) or higher, and the user doesn't interact with your app for a few months, the system places your app in a _hibernation_ state. The system optimizes for storage space instead of performance, and the system protects user data. This system behavior is similar to what occurs when the user manually force-stops your app from system settings.
 
 ## Effects of hibernation
@@ -37,9 +31,6 @@ The user must re-grant these permissions for your app.
 
 To support this workflow more easily, use [WorkManager](/topic/libraries/architecture/workmanager). You can also add rescheduling logic in the [`ACTION_BOOT_COMPLETED`](/reference/android/content/Intent#ACTION_BOOT_COMPLETED) broadcast receiver, which is invoked when your app leaves hibernation and after the device boots up.
 
-
-
-
 ## App usage
 
 The following sections provide examples of app usage, as well as examples of actions that the system doesn't consider to be app usage.
@@ -55,16 +46,12 @@ On Android 11 and higher, the following behaviors are also considered to be user
 
 **Note:** If the user dismisses the notification and doesn't otherwise interact with the notification, this doesn't count as app usage.
 
-
-
 It should be noted that app usage for hibernation doesn't explicitly require user interaction. As long as a component of the package is invoked, it is still considered app usage. Some examples of this include:
 
   * Apps that have a service or content provider bound by another app on the device or the OS. For example, Input Method Editors (IMEs) or password managers.
   * Broadcast receivers in the package receiving an explicit broadcast from an external package.
 
 **Note:** This excludes usage that would not occur if the app is force stopped. For example, running a job does not count as usage even though the job service component is invoked.
-
-
 
 ### Non-examples
 
@@ -73,8 +60,6 @@ If your app only ever exhibits the behaviors described in the following list, yo
   * Runs a scheduled job using [`JobScheduler`](/reference/android/app/job/JobScheduler).
   * Receives an implicit [broadcast](/guide/components/broadcasts).
   * [Schedules alarms](/reference/android/app/AlarmManager).
-
-
 
 ## System exemptions from hibernation
 
@@ -127,8 +112,6 @@ Runs Android 13 or higher | **App info** | **Pause app activity if unused**
 Runs Android 12 | **App info** | **Remove permissions and free up space**  
 Runs Android 11 | **App info > Permissions** | **Remove permissions if app isn't used**  
 Runs Android 6.0 to Android 10, inclusive, and is [powered by Google Play services](https://developers.google.com/android) | **Play app > Menu > Play Protect > Permissions for Unused Apps** | **Remove permissions if app isn't used**  
-
-
 
 ### API code example
 
@@ -183,8 +166,6 @@ If you need to continue using the API temporarily for compatibility purposes, th
   * To check if hibernation is disabled for your app: [`isAutoRevokeWhitelisted()`](/reference/android/content/pm/PackageManager#isAutoRevokeWhitelisted\(java.lang.String\))
   * To send the user to the hibernation settings page: create an Intent using [`ACTION_APPLICATION_DETAILS_SETTINGS`](/reference/android/provider/Settings#ACTION_APPLICATION_DETAILS_SETTINGS)
 
-
-
 ## Manually invoke hibernation behavior
 
 **Note:** If you test your app on a device that runs Android 11, you can skip several steps in this section. These steps are labeled "Android 12 and higher only".
@@ -234,9 +215,6 @@ When the broadcasts are finished, this command returns the message: `All broadca
          adb shell device_config put permissions \
            auto_revoke_unused_threshold_millis2 $threshold
          
-
-
-
 
 Except as otherwise noted, the content of this page is licensed under the [Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/), and code samples are licensed under the [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0). For details, see the [Google Developers Site Policies](https://developers.google.com/site-policies). Java is a registered trademark of Oracle and/or its affiliates.
 

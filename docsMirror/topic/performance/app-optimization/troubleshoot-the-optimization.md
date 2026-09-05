@@ -4,23 +4,13 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Fix optimization problems Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Fix optimization problems
 Since R8's optimizations update your app's code, it's important to strongly [test](/topic/performance/app-optimization/test-the-optimization) your app's behavior to make sure that your app is functioning as expected. In case of unexpected behavior, use this page as a guide to troubleshoot potential issues after optimization. For more information about rules that you can use to troubleshoot your optimization, see [Use rules to troubleshoot optimization](/topic/performance/app-optimization/troubleshooting-rules).
 
 While troubleshooting, focus on the following situations:
 
   * **Over optimization leading to app crashes** : Your app crashes because R8 optimized too much code.
   * **Unclear or insufficient optimization** : R8 did not optimize your app as much as you expected or you need further explanations for the optimizations.
-
-
 
 ## App crashes
 
@@ -30,8 +20,6 @@ If your app crashed after optimizing it with R8, it's typically due to broken re
   * You see code which references reflection with `import kotlin.reflect.*` or `import java.lang.reflect.*`.
   * You observe a class constructor being used as follows: `Something::class.constructors`.
   * You see `Class.forName(...)`.
-
-
 
 **Solution** : Add a [keep rule](/topic/performance/app-optimization/keep-rules-overview).
 
@@ -57,8 +45,6 @@ To use `retrace`, provide the command with the path to a mapping file and a stac
         
 
 **Note:** Android Studio saves the mapping file in the `/build/outputs/mapping/` directory. The mapping file is overwritten every time you build your project, so you must save a copy each time you publish a new release.
-
-
 
 ## Report bugs
 

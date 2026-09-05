@@ -4,17 +4,9 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Google Play ](https://developer.android.com/distribute)
-  * [ Games dev center ](https://developer.android.com/games)
-  * [ Guides ](https://developer.android.com/games/guides)
-
-
-
 Send feedback 
 
-#  Reduce game size Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Reduce game size
 This guide describes how to reduce the size of a game. Upon installation, a smaller game requires less time to download and less data. Both of these lead to higher install conversions. [Google research](https://medium.com/googleplaydev/shrinking-apks-growing-installs-5d3fcba23ce2) shows that a 6 MB increase in served APK size results in a 1% decrease in install rate. Many developers move assets out from the APK to a content delivery network (CDN), but then incur costs both in hosting the CDN and in developing and maintaining the asset management system.
 
 To reduce the size of a game, perform the following steps:
@@ -24,8 +16,6 @@ To reduce the size of a game, perform the following steps:
   3. Search for assets and other files that can be reduced in size.
   4. Inspect the graphics textures and identify opportunities for optimization.
   5. Follow the general recommendations for assets.
-
-
 
 ## Use optimized delivery methods such as Android App Bundles and Play Asset Delivery
 
@@ -43,9 +33,6 @@ PAD requires that games are packaged using the App Bundle format. PAD can also r
 
   * Google Play uses Android App Bundles to generate and serve optimized APKs for each user’s device configuration. These optimized APKs include a single set of texture assets, formatted with the optimal compression format for the device. Configure your app bundle to support different [texture compression formats](/guide/app-bundle/asset-delivery/texture-compression) to support the widest array of devices.
 
-
-
-
 ## Determine the baseline size of the game and understand its structure
 
 To familiarize yourself with the game, determine the amount of work required for any given optimization, and determine whether the game downloads additional assets, perform the following steps:
@@ -54,8 +41,6 @@ To familiarize yourself with the game, determine the amount of work required for
   2. Record the size of the binary file either as delivered by the developer or, if the game has been published, on the game's Play Store page. For APK size, the most important factor is the amount of data a user must download to run the actual game.
   3. Install the game on a device and run it to the initial game menu. At this point, check the install size of the game as reported by Android (under **Settings > Storage**). Some games have a small initial install size, as this is the key number to optimize, but download additional data after install. Some games download multiple gigabytes of data after install.
   4. Some games download data only after you start playing them. You should play the game for a bit to determine how much additional data the game downloads for a typical user playing the game for the first time.
-
-
 
 ## Search for assets and other files that can be reduced in size
 
@@ -78,9 +63,6 @@ To reduce the size of files packaged directly into the APK, perform the followin
 
   6. Review the Android manifest file for supported graphics formats. Determine whether there are multiple `<supports-gl-texture>` tags in the APK. If the game supports formats for multiple GPUs in one APK, then consider using [Binomial's Basis Universal](https://github.com/BinomialLLC/basis_universal). This GPU texture compression system creates texture files in an intermediate format that can be quickly transcoded to the GPU.
 
-
-
-
 ## Inspect the graphics textures and identify opportunities for optimization
 
 This section describes the tools and methods required to determine whether the graphics textures used in the game can be optimized.
@@ -97,9 +79,6 @@ Look for the following:
 
   * If you haven't already done so, review the Android manifest file for supported graphics formats. Determine whether there are multiple `<supports-gl-texture>` tags in the APK. If the game supports formats for multiple GPUs in one APK, then consider using [Binomial's Basis Universal](https://github.com/BinomialLLC/basis_universal). This GPU texture compression system creates texture files in an intermediate format that can be quickly transcoded to the GPU.
 
-
-
-
 ## General recommendations for assets
 
 Follow these recommendations for an APK's assets:
@@ -112,15 +91,11 @@ Follow these recommendations for an APK's assets:
     * [Unity documentation for platform-specific texture compression formats](https://docs.unity3d.com/Manual/class-TextureImporterOverride.html)
     * [Binomial's Basis Universal texture format](https://github.com/BinomialLLC/basis_universal) for in-game model textures
 
-
-
 ## Additional resources
 
   * [Recent Android App Bundle improvements and timeline for new apps on Google Play](https://android-developers.googleblog.com/2020/08/recent-android-app-bundle-improvements.html)
   * [Reduce APK size in Android instant games](/topic/google-play-instant/getting-started/game-instant-app#apk-size-reduction)
   * [GPU-decodable Supercompressed Textures (research paper)](http://gamma.cs.unc.edu/GST/gst.pdf)
-
-
 
 Send feedback 
 

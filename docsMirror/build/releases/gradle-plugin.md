@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Android Gradle plugin 9.2.0 (April 2026) Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Android Gradle plugin 9.2.0 (April 2026)
 Android Gradle plugin 9.2 is a minor release that includes a variety of new features and improvements.
 
 ## Compatibility

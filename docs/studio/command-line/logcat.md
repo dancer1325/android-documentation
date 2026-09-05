@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ SDK tools guides ](https://developer.android.com/tools)
-
-
-
-#  Logcat command-line tool Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Logcat command-line tool
 Logcat is a command-line tool that dumps a log of system messages including messages that you have written from your app with the `[Log](/reference/android/util/Log)` class.
 
 This page is about the command-line `logcat` tool, but you can also view log messages from the **Logcat** window in Android Studio. For information about viewing and filtering logs from Android Studio, see [View and write logs with Logcat](/studio/debug/am-logcat).
@@ -24,8 +16,6 @@ The Android logging system is a set of structured circular buffers maintained by
   * `main`: Stores most application logs.
   * `system`: Stores messages originating from the Android OS.
   * `crash`: Stores crash logs. Each log entry has a priority, a tag that identifies the origin of the log, and the actual log message.
-
-
 
 The primary C/C++ interface to the logging system is the shared library `liblog` and its header `<android/log.h>`. All language-specific logging facilities (including `[android.util.Log](/reference/android/util/Log)`) eventually call the function `__android_log_write`. By default, it calls the function `__android_log_logd_logger`, which sends the log entry to `logd` using a socket. Starting with API level 30, the logging function can be changed by calling `__android_set_log_writer`. More information is available in the [NDK documentation](https://developer.android.com/ndk/reference/group/logging). 
 
@@ -80,8 +70,6 @@ The priority is one of the following character values, ordered from lowest to hi
   * `F`: Fatal
   * `S`: Silent (highest priority, where nothing is ever printed)
 
-
-
 To obtain a list of tags used in the system with priorities, run `logcat` and observe the first two columns of each message, given as `<priority>/<tag>`.
 
 The following is an example of brief `logcat` output obtained with the `logcat -v brief output` command. The output shows that the message relates to priority level "I" and tag "ActivityManager": 
@@ -131,8 +119,6 @@ Log messages contain a number of metadata fields in addition to the tag and prio
   * `threadtime` (default): Displays the date, invocation time, priority, tag, PID, and TID of the thread issuing the message.
   * `time`: Displays the date, invocation time, priority, tag, and PID of the process issuing the message.
 
-
-
 When starting `logcat`, specify the output format you want by using the `-v` option:
     
     
@@ -166,8 +152,6 @@ Every Android log message has a tag and a priority associated with it. You can c
   * `threadtime`
   * `time`
 
-
-
 To format the following modifier details, enter `logcat -v --help` at the command line: 
 
   * `color`: Shows each priority level with a different color.
@@ -181,8 +165,6 @@ To format the following modifier details, enter `logcat -v --help` at the comman
   * `year`: Adds the year to the displayed time.
   * `zone`: Adds the local time zone to the displayed time.
 
-
-
 ## View alternative log buffers
 
 The Android logging system keeps multiple circular buffers for log messages, and not all of log messages are sent to the default circular buffer. To see additional log messages, run the `logcat` command with the `-b` option to request viewing of an alternate circular buffer. You can view any of these alternate buffers:
@@ -194,8 +176,6 @@ The Android logging system keeps multiple circular buffers for log messages, and
   * `crash`: Views the crash log buffer (default).
   * `all`: Views all buffers.
   * `default`: Reports `main`, `system`, and `crash` buffers. 
-
-
 
 The usage of the `-b` option is:
     
@@ -230,8 +210,6 @@ The `[Log](/reference/android/util/Log)` class lets you create log entries in yo
   * `[ Log.i(String, String)](/reference/android/util/Log#i\(java.lang.String, java.lang.String\))` (information)
   * `[ Log.w(String, String)](/reference/android/util/Log#w\(java.lang.String, java.lang.String\))` (warning)
   * `[ Log.e(String, String)](/reference/android/util/Log#e\(java.lang.String, java.lang.String\))` (error)
-
-
 
 For example, using the following call:
 

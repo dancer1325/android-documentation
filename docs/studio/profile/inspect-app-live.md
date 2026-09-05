@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Inspect your app live Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Inspect your app live
 Inspecting your app live gives you a high-level overview of the device's CPU usage, thread activity, and memory usage. If you don't know where to start with profiling your app, use live view to conduct an exploratory analysis, and then dig deeper with the specific profiling tasks when you see behavior that can be optimized.
 
 To start live view, [select the **View Live Telemetry** profiling task](/studio/profile#start-profiling). When the task starts, it starts displaying the following visualizations in real time:
@@ -25,8 +17,6 @@ To start live view, [select the **View Live Telemetry** profiling task](/studio/
     * Gray: The thread is sleeping and is not consuming any CPU time. This sometimes occurs when the thread requires access to a resource that is not yet available. Either the thread goes into voluntary sleep, or the kernel puts the thread to sleep until the required resource becomes available.
     * The CPU Profiler also reports CPU usage of threads that Android Studio and the Android platform add to your app process—such as `JDWP`, `Profile Saver`, `Studio:VMStats`, `Studio:Perfa`, and `Studio:Heartbeat` (although, the exact names displayed in the thread activity timeline might vary). Android Studio reports this data so that you can identify when thread activity and CPU usage are actually caused by your app's code.
   * Memory: Shows a stacked graph of how much memory is being used by each memory category, as indicated by the y-axis on the left and the color key at the top.
-
-
 
 ![](/static/studio/images/profiler-live-view.png)
 

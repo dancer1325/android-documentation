@@ -3,16 +3,6 @@
 **Source:** [https://developer.android.com/guide/topics/ui/accessibility](https://developer.android.com/guide/topics/ui/accessibility)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ User experience ](https://developer.android.com/quality/user-experience)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](https://developer.android.com/static/images/guide/topics/ui/accessibility/hero-accessibility.svg)
 
 ###  Build accessible apps 
@@ -85,8 +75,6 @@ Now in Android is a fully functional Android app built entirely with Kotlin and 
 
   * Android System
   * UI
-
-
 
 Intermediate 
 

@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Configure CMake Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Configure CMake
 A CMake build script is a plain text file that you must name `CMakeLists.txt` and includes commands CMake uses to build your C/C++ libraries. If your native sources don't already have a CMake build script, you need to create one yourself and include the appropriate CMake commands. To learn how to install CMake, see [Install and configure the NDK and CMake](/studio/projects/install-ndk).
 
 This section covers some basic commands you should include in your build script in order to tell CMake which sources to use when creating your native library. To learn more, read the official documentation about [CMake commands](https://cmake.org/cmake/help/latest/manual/cmake-commands.7.html). 
@@ -31,8 +23,6 @@ To create a plain text file that you can use as your CMake build script, proceed
 **Note:** You can create the build script in any location you want. However, when configuring the build script, paths to your native source files and libraries are relative to the location of the build script. 
 
   3. Enter "CMakeLists.txt" as the filename and click **OK**. 
-
-
 
 You can now configure your build script by adding CMake commands. To instruct CMake to create a native library from native source code, add the [`cmake_minimum_required()`](https://cmake.org/cmake/help/latest/command/cmake_minimum_required.html) and [`add_library()`](https://cmake.org/cmake/help/latest/command/add_library.html) commands to your build script: 
     

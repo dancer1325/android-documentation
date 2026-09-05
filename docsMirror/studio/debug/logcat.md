@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  View logs with Logcat Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  View logs with Logcat
 The **Logcat** window in Android Studio helps you debug your app by displaying logs from your device in real time—for example, messages that you added to your app with the [`Log`](/reference/android/util/Log) class, messages from services that run on Android, or system messages, such as when a garbage collection occurs. When an app throws an exception, Logcat shows a message followed by the associated stack trace containing links to the line of code.
 
 ## Get started with the Logcat window
@@ -21,8 +13,6 @@ To view the log messages for your app, do the following.
 
   1. In Android Studio, [build and run your app](/studio/run) on a physical device or emulator.
   2. Select **View > Tool Windows > Logcat** from the menu bar.
-
-
 
 By default, Logcat scrolls to the end. Clicking in the Logcat view or scrolling up using your mouse wheel turns this feature off. To turn it back on, click **Scroll to the End** ![Scroll to the End icon](/static/studio/images/buttons/logcat-scroll-end.png) from the toolbar. You can also use the toolbar to clear, pause, or restart Logcat.
 
@@ -80,8 +70,6 @@ The following are some examples of keys you can use in your query:
   * `message`: Matches against the message part of the log entry.
   * `level`: Matches the specified or higher severe log level–for example, `DEBUG`.
   * `age`: Matches if the entry timestamp is recent. Values are specified as a number followed by a letter specifying the time unit: `s` for seconds, `m` for minutes, `h` for hours and `d` for days. For example, `age: 5m` filters only messages that were logged in the last 5 minutes.
-
-
 
 ### Negation and regular expressions
 
@@ -148,8 +136,6 @@ The `age` query matches entries based on their timestamp, and is formatted as `a
   * `<number>` is an integer
   * `<unit>` is one of `s`, `m`, `h`, and `d` (seconds, minutes, hours, and days).
 
-
-
 Given the following list, the `age` query matches log messages that have a timestamp in the range described by the value. For example: the query `age:5m` matches entries with a timestamp no earlier than 5 minutes ago.
     
     
@@ -167,8 +153,6 @@ You can use the `is` key as follows:
 
   * `is:crash` matches log entries that represent an application crash (either native or Java).
   * `is:stacktrace` matches log entries that represent anything that looks like a Java stacktrace, regardless of the log level.
-
-
 
 **`name` key**
 

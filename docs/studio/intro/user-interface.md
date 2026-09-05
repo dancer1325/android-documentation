@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Get to know the Android Studio UI Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Get to know the Android Studio UI
 The Android Studio main window consists of several logical areas, shown in Figure 1.
 
 ![](/static/studio/images/intro/main-window_R2.png)
@@ -26,16 +18,12 @@ The Android Studio main window consists of several logical areas, shown in Figur
   5. **Tool windows:** Access specific tasks like project management, search, version control, and more. You can expand them and collapse them.
   6. **Status bar:** Display the status of your project and the IDE itself, as well as any warnings or messages.
 
-
-
 To organize the main window for more screen space, hide or move the toolbars and tool windows. You can also use [keyboard shortcuts](/studio/intro/keyboard-shortcuts) to access most IDE features.
 
 To search across your source code, databases, actions, elements of the user interface, and more, do one of the following:
 
   * Double-press the `Shift` key.
   * Click the magnifying glass in the upper right-hand corner of the Android Studio window.
-
-
 
 This can be very useful if, for example, you are trying to locate a particular IDE action that you have forgotten how to trigger.
 
@@ -49,8 +37,6 @@ Navigate the tool window using the following:
   * To return to the default layout of the current tool window, click **Window > Layouts > Default**. To customize your default layout, click **Window > Layouts > Save Current Layout as New**.
   * To show or hide all available tool windows, click the overflow icon ![](/static/studio/images/intro/window-icon_2-1_2x.png) on the left side of the Android Studio window.
   * To locate a specific tool window, select the overflow icon and select the tool window from the menu.
-
-
 
 You can also use [keyboard shortcuts](/studio/intro/keyboard-shortcuts) to open tool windows. Table 1 lists the shortcuts for the most common tool windows.
 
@@ -115,9 +101,6 @@ To bring up **Navigate to File** action, press `Control+Shift+N` (`Command+Shift
 To bring up the **Navigate to Symbol** action, press `Control+Shift+Alt+N` (`Command+Option+O` on macOS).
 
   * To find all the pieces of code referencing the class, method, field, parameter, or statement at the current cursor position, press `Alt+F7` (`Option+F7` on macOS).
-
-
-
 
 ## Style and formatting
 

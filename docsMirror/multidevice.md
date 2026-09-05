@@ -3,14 +3,6 @@
 **Source:** [https://developer.android.com/multidevice](https://developer.android.com/multidevice)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Multidevice ](https://developer.android.com/multidevice)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](https://developer.android.com/static/multidevice/images/android-everywhere.svg)
 
 ###  Android everywhere 

@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Create Baseline Profiles for a library Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Create Baseline Profiles for a library
 To create Baseline Profiles for a library, use the [Baseline Profile Gradle plugin](/topic/performance/baselineprofiles/configure-baselineprofiles).
 
 There are three modules involved in creating Baseline Profiles for a library:
@@ -20,8 +12,6 @@ There are three modules involved in creating Baseline Profiles for a library:
   * Sample app module: contains the sample app that uses your library.
   * Library module: the module you want to generate the profile for.
   * Baseline Profile module: the test module that generates the Baseline Profiles.
-
-
 
 To generate a Baseline Profile for a library, perform the following steps:
 
@@ -100,8 +90,6 @@ To generate a Baseline Profile for a library, perform the following steps:
          }
 
   6. Generate the profile by running the following code: `./gradlew :library:generateBaselineProfile`.
-
-
 
 At the end of the generation task, the Baseline Profile is stored at `library/src/main/generated/baselineProfiles`.
 

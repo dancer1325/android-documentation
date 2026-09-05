@@ -20,7 +20,6 @@
     * [Samples](kotlin.samples.md)
     * [Guides](kotlin.first.md)
       * TODO:
-    * [Developer Stories](https://developer.android.com/kotlin/stories)
   * [Games dev center](games.md)
     * TODO:
   * [Camera & media dev center](media.md)
@@ -292,7 +291,6 @@
       * TODO:
     * [Troubleshoot](build.troubleshoot.md)
       * TODO:
-    * [Android Gradle plugin API reference](https://developer.android.com/reference/tools/gradle-api)
   * [Tools](tools.md)
     * TODO:
     * [Android Debug Bridge (adb)](tools.adb.md)

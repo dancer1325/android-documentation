@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Create a project Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Create a project
 Android Studio makes it easy to create Android apps for various form factors, such as phones, tablets, TVs, and Wear devices. This page explains how to start a new Android app project or import an existing project.
 
 If you don't have a project opened, create a new project by clicking **New Project** on the Android Studio Welcome screen.
@@ -55,9 +47,6 @@ If you want to see more data to help you decide, click **Help me choose**. This 
 
   7. When you're ready to create your project, click **Finish**.
 
-
-
-
 Android Studio creates your new project with some basic code and resources to get you started. If you decide to add support for a different device form factor later, you can [add a module](/studio/projects/add-app-module) to your project. And if you want to share code and resources between modules, you can do so by creating an [Android library](/studio/projects/android-library).
 
 For more information about the Android project structure and module types, read the [Projects overview](/studio/projects). If you're new to Android development altogether, see [Get started with Android](/training).
@@ -69,8 +58,6 @@ To import an existing local project into Android Studio, proceed as follows:
   1. Click **File** > **New** > **Import Project**.
   2. In the window that appears, navigate to the root directory of the project you want to import.
   3. Click **OK**.
-
-
 
 Android Studio opens the project in a new IDE window and indexes its contents.
 

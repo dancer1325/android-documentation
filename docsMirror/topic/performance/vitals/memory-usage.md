@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Memory usage (anonymous RSS + swap) Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Memory usage (anonymous RSS + swap)
 Memory usage (anonymous RSS + swap) is a metric in Android vitals that reflects your app's memory usage.
 
 [Anonymous memory](/topic/performance/memory-management#memory_pages) is memory not backed by a file on storage, such as heap allocations and mmap-allocated memory. This captures your app's dynamic memory allocations, including the Java or Kotlin heap, unmanaged native heap allocations (where Bitmap pixel data lives on Android 8.0 (API level 26) and higher), and thread execution stacks. While the OS can drop file-backed memory under pressure, it can't drop anonymous memory.
@@ -35,8 +27,6 @@ Android vitals shares your app's memory usage broken down by the following [proc
   * **Foreground Service** : The app is running a [foreground service](/develop/background-work/services/fgs). Because these services are designed for long-running tasks, they're prime candidates for cumulative lifecycle leaks that aggressively inflate the P99 tail over time.
   * **Background** : The app is running a background service, or recently backgrounded, but not yet cached. This is where background processing leaks compound.
   * **Cached** : The app is in a cached state. This state is highly sensitive to system memory pressure such as LMKs. Because the OS can evict this process state at will, this state is provided only for debug purposes.
-
-
 
 To understand how these process states correlate with `onTrimMemory` callbacks, consult the guidance on [releasing memory in response to events](/topic/performance/memory#release).
 
@@ -63,8 +53,6 @@ We especially recommend testing the following user journeys:
   * Webviews and In-App Browser Sessions
   * Media-heavy infinite scrolling
   * Asset creation and editing flows
-
-
 
 To investigate potential memory leaks, first identify the highest-consuming processes using the **Process name** table in the Android vitals memory usage dashboard. Next, run the corresponding user journeys locally and collect heap dumps across different process states (visible, foreground service, and cached) to verify if the app releases memory after being backgrounded.
 
@@ -109,8 +97,6 @@ The following resources provide more information about interpreting heap dumps a
   * **AI-assisted analysis:** Leverage [Perfetto AI Skills](https://github.com/google/perfetto/tree/main/ai/skills) to run LLM-powered analysis to help detect memory leaks and excessive allocations in your traces.
   * **SQL-based analysis:** Use [Perfetto SQL and Trace Analysis Skills](https://github.com/android/skills/tree/main/profilers) to run structured queries and specialized scripts to analyze complex trace data.
 
-
-
 ### Improve memory usage
 
 Consult these sections to learn more about improving your app's memory usage:
@@ -118,8 +104,6 @@ Consult these sections to learn more about improving your app's memory usage:
   * [Reduce your app's code and resource footprint](/topic/performance/memory#reduce-footprint)
   * [Monitor available memory and memory usage](/topic/performance/memory#monitor)
   * [Use more memory-efficient code constructs](/topic/performance/memory#code)
-
-
 
 For detailed guidance on fixing memory issues, consult the [Manage your app's memory](/topic/performance/memory) guide.
 

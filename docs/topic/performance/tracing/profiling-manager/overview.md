@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Overview Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Overview
 The [`ProfilingManager`](/reference/android/os/ProfilingManager) Android API lets you collect real user performance profiles, such as [system traces](/topic/performance/tracing), programmatically. The `ProfilingManager` API supports two types of trace collections: traces that you explicitly start and event-based traces.
 
 This section focuses on traces that you explicitly start and covers the following topics:

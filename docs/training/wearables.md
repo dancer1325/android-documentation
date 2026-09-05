@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Devices ](https://developer.android.com/develop/devices)
-  * [ Wear OS ](https://developer.android.com/training/wearables)
-
-
-
-#  Create and run your first Wear OS app Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Create and run your first Wear OS app
 This page provides a guide for you to build your first app for Wear OS, using a template from Android Studio. The app showcases the different ways to view information at a glance on Wear OS devices, and introduces some best practices for developing apps on the platform.
 
 This guide builds upon some prior knowledge about the Android platform and the [Android Studio IDE](/studio). If you're completely new to Android, [create an app using this codelab](/codelabs/basic-android-kotlin-compose-first-app). To learn more about Android Studio's capabilities, visit the [Meet Android Studio](/studio/intro) page.
@@ -24,8 +16,6 @@ After you download and install the latest version of Android Studio, complete th
   1. Open Android Studio, and then go to **File > New > New Project**. The **New Project** window appears.
   2. In the **Templates** pane, select **Wear OS**. Then, in the main pane, select **Empty Wear App**.
   3. Name your project, and then click **Finish**. Android Studio downloads the necessary dependencies and builds your project.
-
-
 
 You're now ready to run your first app on Wear OS.
 
@@ -45,8 +35,6 @@ To configure an emulator in Android Studio, complete the following steps:
   4. In the **Category** pane, select **Wear OS** and choose a hardware profile, such as **Wear OS Small Round**. Click **Next**.
   5. Unless you need specific customizations, keep the default settings on this screen. Android Studio selects the latest API and system image by default. Click **Finish**.
 
-
-
 For more information about using emulators, see the guide about how to [run apps on the Android Emulator](/studio/run/emulator).
 
 ### Open the app in the emulator
@@ -54,8 +42,6 @@ For more information about using emulators, see the guide about how to [run apps
   1. In the main toolbar, find the [**Run Widget**](/studio/intro/new-ui#run-configs). From the device drop-down menu, select the emulator you created and click the **Run** !["Run
 button"](/static/studio/images/buttons/toolbar-run.png) button to launch the app.
   2. After a few moments, a "Hello..." message appears in the emulator.
-
-
 
 ## Run an app on a physical watch (optional)
 
@@ -74,8 +60,6 @@ To prepare your watch for testing, enable ADB debugging by completing the follow
   3. From the **Settings** menu, tap **Developer options**.
   4. Enable the **ADB debugging** option.
 
-
-
 For more information, see [Configure on-device developer options](/studio/debug/dev-options).
 
 ### Connect watch to development machine
@@ -88,8 +72,6 @@ Connect the watch using the following steps:
 
   1. Using a USB cable, connect the watch to your development machine.
   2. On the watch, enable **Always allow from this computer** , and then tap **OK**.
-
-
 
 #### Set up a wireless connection
 
@@ -116,8 +98,6 @@ Consider how much your app relies on a paired phone:
   * **Standalone:** Your app works completely on its own, without requiring a phone for core features. This is great for apps that can function offline or use their own internet connection. The "Empty Wear App" template creates a standalone app by default.
   * **Non-standalone:** Your app requires a phone for its core functionality.
 
-
-
 For more information and guidance on this choice, see [Standalone versus non-standalone Wear OS apps](/training/wearables/apps/standalone-apps).
 
 ### Build your user interface
@@ -137,16 +117,12 @@ How you manage data is a core architectural choice. For on-device persistence, y
   * **Store data on-device first:** Design your app to be [offline-first](/topic/architecture/data-layer/offline-first), storing necessary data directly on the watch so it remains functional without a phone connection.
   * **Sync data with the phone:** When you need to sync or stream data (like user settings or workout data) with a companion phone app, use the [Data Layer API](/training/wearables/data/overview). It provides a communication channel that works over Bluetooth and Wi-Fi.
 
-
-
 ### Manage long-running work
 
 Many core Wear OS experiences, like workouts or media playback, are long-running. It's crucial to manage this work correctly to help maintain reliability and preserve battery.
 
   * **For user-initiated, long-running tasks:** When a user starts a task that needs to continue even if they navigate away (like tracking a run), you must use a [foreground service](/develop/background-work/services/fgs). On Wear OS, pair this service with the [Ongoing Activity API](/training/wearables/notifications/ongoing-activity). This creates a persistent notification and a tappable icon on the watch face, which lets the user return to your app.
   * **For deferrable background tasks:** For work that doesn't need to happen immediately (like syncing data periodically), use **WorkManager**. It is battery-aware and respects system optimizations like Doze mode, making it a good choice for non-urgent background processing.
-
-
 
 ### Think beyond the app: Surfaces and power
 
@@ -155,16 +131,12 @@ Finally, remember that a Wear OS experience is more than just the main applicati
   * **Support other surfaces:** To create a high-quality, engaging app, plan to support other wrist-optimized surfaces. Consider creating a [tile](/training/wearables/tiles) for quick actions and information, and a [complication](/training/wearables/complications) to display important data directly on the user's watch face.
   * **Plan for power efficiency:** Battery life is critical on a wearable device. From the very beginning, design your app to be power-efficient. This means being thoughtful about how you fetch data, use sensors, and run background tasks. Deferring work until the watch is charging is often a good strategy. You can learn more in the guide to [conserving power](/training/wearables/apps/power).
 
-
-
 ## Recommended for you
 
   * Note: link text is displayed when JavaScript is off
   * [Connect a watch to a phone](/training/wearables/get-started/connect-phone)
   * [Use Jetpack Compose on Wear OS](/training/wearables/compose)
   * [Release notes](/training/wearables/versions/6/release-notes)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

@@ -4,16 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Core areas ](https://developer.android.com/develop/core-areas)
-  * [ UI ](https://developer.android.com/develop/ui)
-  * [ Docs ](https://developer.android.com/develop/ui/compose/documentation)
-
-
-
-#  Learn about foldables Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Learn about foldables
 Foldable devices provide an opportunity for innovative app development. Large and small screens on the same device offer complementary but distinct interactive experiences. Folding features such as tabletop posture and book posture enable imaginative layouts and unconventional user interfaces.
 
 ![](/static/develop/ui/compose/images/layouts/adaptive/foldables/foldable_multiple_postures.png) **Figure 1.** Foldable device in multiple postures: folded, open flat, open flat rotated to landscape, and half opened (tabletop). 
@@ -34,8 +25,6 @@ To learn more about responsive/adaptive design for foldables, see the following:
 
   * [Support different display sizes](/develop/ui/compose/layouts/adaptive/support-different-display-sizes)
   * Material Design — [Applying layout](https://m3.material.io/foundations/layout/applying-layout/window-size-classes)
-
-
 
 ## Foldable states and postures
 
@@ -64,8 +53,6 @@ An app stops and restarts as it transitions from one screen to another when a de
   * Restore the scroll position of scrollable fields
   * Resume media playback where it left off when the app was stopped
 
-
-
 The different screen layouts of a foldable device should also complement one another. For example, if the folded screen shows an image and description for a product from an online store, the unfolded screen should maintain continuity by showing the same image and description, but also include complementary content, such as product specifications or reviews.
 
 To learn more about managing app state and continuity, see [Save UI states](/topic/libraries/architecture/saving-states) and [Handle configuration changes](/guide/topics/resources/runtime-changes).
@@ -91,8 +78,6 @@ Drag and drop interactions create a productive and engaging user experience. Add
 ## Additional resources
 
   * [Test different screen and window sizes](/training/testing/different-screens)
-
-
 
 [ Previous arrow_back  Support camera on multiple form factors  ](/develop/ui/compose/layouts/adaptive/camera-form-factors-support)
 

@@ -3,14 +3,6 @@
 **Source:** [https://developer.android.com/latest-updates](https://developer.android.com/latest-updates)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Latest updates ](https://developer.android.com/latest-updates)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](https://developer.android.com/static/images/cluster-illustrations/android-basics-kotlin.svg)
 
 ###  Latest updates 
@@ -174,9 +166,6 @@ January 28, 2026
 
 November 19, 2025  
 2.10.0
-
-
-
 
 ##  ![](/static/images/logos/android-studio.svg) Android Studio 
 

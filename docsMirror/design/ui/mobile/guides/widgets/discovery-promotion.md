@@ -4,16 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ UI Design ](https://developer.android.com/design/ui)
-  * [ Mobile ](https://developer.android.com/design/ui/mobile)
-  * [ Guides ](https://developer.android.com/design/ui/mobile/guides/foundations/accessibility)
-
-
-
-#  Discovery and promotion Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Discovery and promotion
 App widgets allow your user to deliver key glanceable content and quick actions from your app on their home screens and similar surfaces. Improving your widget's discoverability ensures users are aware of these powerful extensions of your app.
 
 Users discover and add your widget through the widget picker, as shown from the **Widgets** menu that appears when they long-press on the home screen or on your app icon. On some devices, the widget picker displays a suggestions section that shows quality widgets. Additionally, you can promote your widget from within your app at relevant moments when the widget's functionality is most relevant. This guide describes how to to effectively promote your widgets.
@@ -93,8 +84,6 @@ You can proactively surface the option to pin relevant widgets at contextually a
   * Present the pin widget option when it makes the most sense based on the user's actions within the app. For example, after a user successfully completes a task that has a corresponding widget or When a user repeatedly accesses a feature that could be streamlined with a widget.
   * Use subtle visual hints such as an icon or a brief animation to draw attention to the option to pin a widget.
   * The widget pinning suggestion should never block or hinder the user's primary actions within your app.
-
-
 
 ![](/static/images/design/ui/mobile/widgets/03_WidgetPinning.gif)
 

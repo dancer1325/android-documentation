@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  New UI in Android Studio Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  New UI in Android Studio
 Android Studio Ladybug Feature Drop introduces the New UI from the [IntelliJ Platform 2024.2 update](https://blog.jetbrains.com/blog/2024/07/08/the-new-ui-becomes-the-default-in-2024-2/) as the default theme. The New UI brings a streamlined design and enhanced features, making it easier for both new and experienced developers to navigate their workflow more efficiently.
 
 ## Key design changes
@@ -47,7 +39,6 @@ The New UI features a decluttered main toolbar that prioritizes the most-used ac
 
   
 
-
 ![](/static/studio/images/new-ui/new-toolbar.png) **Figure 6.** The New UI, featuring a simplified main toolbar.
 
 Customize the main toolbar with your essential actions in **Settings > Appearance & Behavior > Menus and Toolbars**.
@@ -74,11 +65,9 @@ Run configurations and profiling actions are streamlined into a new **Run Widget
 
   
 
-
 ![](/static/studio/images/new-ui/classic-profiling-actions.png) **Figure 11.** Profiling actions in the Classic UI.
 
   
-
 
 ![](/static/studio/images/new-ui/run-widget.png) **Figure 12.** The location of the Run Widget in the New UI.
 
@@ -97,7 +86,6 @@ Split your workspace by dragging tool window icons. Drop them below the sidebar 
 Alas, your browser doesn't support HTML5 video. That's okay! You can still [download the video](/static/studio/images/new-ui/vertical-split.mp4) and watch it with a video player.  **Figure 14.** A vertical split.
 
   
-
 
 Alas, your browser doesn't support HTML5 video. That's okay! You can still [download the video](/static/studio/images/new-ui/horizontal-split.mp4) and watch it with a video player.  **Figure 15.** A horizontal split.
 
@@ -129,8 +117,6 @@ You can enable Compact Mode in either of the following ways:
 
   * Navigate to **View > Appearance > Compact Mode**.
   * Open the IDE settings, select **Appearance and Behavior > Appearance**, and enable the **Compact mode** option.
-
-
 
 ## Continued support for Classic UI
 

@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Test your app Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Test your app
 This page describes various tools that help you create, configure, and run your tests from Android Studio or the command line.
 
 If you want to learn more about the fundamentals of testing and how to write tests, see [Test apps on Android](/training/testing) and [Test your Compose layout](/develop/ui/compose/testing).
@@ -36,9 +28,6 @@ For more information, see [Test from the command line](/studio/test/command-line
 For advanced testing needs, you may want to override default settings, configure Gradle options, or refactor your code so that tests are separated in their own module. For more information about how to set up your test configurations for special use cases, see [Advanced test setup](/studio/test/advanced-test-setup).
 
 To test how your app behaves when users interact with it, Jetpack Compose provides its own dedicated testing APIs, like `ComposeTestRule`. For cross-app interactions, you can use tools like [UI Automator](/training/testing/other-components/ui-automator), or use [Monkey](/studio/test/other-testing-tools/monkey) for stress testing.
-
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

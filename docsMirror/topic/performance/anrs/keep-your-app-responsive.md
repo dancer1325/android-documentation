@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Keep your app responsive Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Keep your app responsive
 ![](/static/images/anr.png)
 
 **Figure 1.** An ANR dialog displayed to the user.
@@ -31,8 +23,6 @@ In Android, app responsiveness is monitored by the [`ActivityManager`](/referenc
 
   * No response to an input event—such as key press or screen tap events—within 5 seconds.
   * A [`BroadcastReceiver`](/reference/android/content/BroadcastReceiver) doesn't finish executing within 10 to 20 seconds, for foreground intents. For more information, see [Broadcast receiver timeout](/topic/performance/anrs/diagnose-and-fix-anrs#broadcast-receiver-anr).
-
-
 
 ## Avoid ANRs
 
@@ -55,8 +45,6 @@ The following are general tips to avoid ANRs. For more details about diagnosing 
 
     * If you use [`goAsync()`](/reference/android/content/BroadcastReceiver#goAsync\(\)), make sure [`PendingResult.finish`](/reference/kotlin/android/content/BroadcastReceiver.PendingResult?#finish) is called quickly before the ANR timeout.
 
-
-
 ## ANRs in BroadcastReceiver
 
 `BroadcastReceiver` execution time is constrained because broadcast receivers are meant to do small, discrete amounts of work in the background, such as saving a setting or registering a [`Notification`](/reference/android/app/Notification). So, as with other methods called in the UI thread, apps must avoid potentially long-running operations or calculations in a broadcast receiver. Instead of performing long-running tasks via the UI thread, perform them in the background for later execution. See [Background work overview](/guide/background) for more information about possible solutions.
@@ -76,9 +64,6 @@ Generally, 100 to 200ms is the threshold beyond which users perceive slowness in
   * If your app has a time-consuming initial setup phase, consider showing a [splash screen](/develop/ui/views/launch/splash-screen) or rendering the main view as quickly as possible. Indicate that loading is in progress and fill the information asynchronously. In either case, we recommend indicating somehow that progress is being made, so that the user doesn't perceive that the app is frozen.
 
   * Use performance tools such as [Perfetto](/topic/performance/tracing) and [CPU Profiler](/studio/profile/cpu-profiler) to determine bottlenecks in your app's responsiveness.
-
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

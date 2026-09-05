@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Overview of system tracing Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Overview of system tracing
 Recording device activity over a short period of time is known as _system tracing_. System tracing produces a trace file that you can use to generate a system report. This report helps you identify how best to improve your app or game's performance.
 
 For a comprehensive introduction to tracing and profiling, see the [Tracing 101](https://perfetto.dev/docs/tracing-101) page in the Perfetto documentation.
@@ -23,8 +15,6 @@ The Android platform provides several different options for capturing traces:
   * Perfetto command-line tool (Android 10 and higher)
   * System tracing utility
   * Systrace command-line tool
-
-
 
 The Android Studio CPU profiler inspects your app's CPU usage and thread activity in real time while you interact with your app. You can also inspect the details in recorded method traces, function traces, and system traces. The memory profiler gives an overview of memory usage in relation to touch events, [`Activity`](/reference/android/app/Activity) changes, and garbage collection events.
 

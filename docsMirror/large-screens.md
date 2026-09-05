@@ -3,14 +3,6 @@
 **Source:** [https://developer.android.com/large-screens](https://developer.android.com/large-screens)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Get started ](https://developer.android.com/adaptive-apps)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ##  Build adaptive apps 
 
 Unlock your app's full potential on phones, tablets, foldables, ChromeOS, cars, and XR.  

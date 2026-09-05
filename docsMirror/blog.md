@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/blog](https://developer.android.com/blog)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Android Developers' Blog ](https://developer.android.com/)
-  * [ Blog ](https://developer.android.com/blog)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 # The Android Developers' Blog
 
 Tools and resources to help you build faster and easier.
@@ -35,8 +26,6 @@ Google I/O '26 features 17 key announcements for Android developers focusing on 
 ######  [Matthew McCullough](/blog/authors/matthew-mccullough) • 8 min read 
 
   * [ #Google I/O ](/blog/topics/google-i-o)
-
-
 
 ## The Latest
 
@@ -134,9 +123,6 @@ Last year, we introduced Android developer verification to strengthen ecosystem 
 
 [Matthew Forsythe](/blog/authors/matthew-forsythe) • 2 min read 
 
-
-
-
 [ arrow_forward  See all latest posts ](/blog/latest)
 
 ![](/static/blog/assets/product_news_droid_599a11ad69_d4ee764ece_Z1EpVf1.webp)
@@ -166,9 +152,6 @@ Today, we’re announcing a suite of upgrades to the Google Play Console and bey
 Android 16 QPR2 is now released and available in AOSP
 
 ######  [Matthew McCullough](/blog/authors/matthew-mccullough) • 4 min read 
-
-
-
 
 [ arrow_forward  More ](/blog/categories/product-news)
 

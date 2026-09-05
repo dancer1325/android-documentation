@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  App startup time Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  App startup time
 Users expect apps to load fast and be responsive. An app with a slow start time doesn't meet this expectation and can disappoint users. This sort of poor experience can cause a user to rate your app poorly on the Play store or even abandon your app altogether.
 
 This page provides information to help optimize your app's launch time, including an overview of the internals of the launch process, how to profile startup performance, and some common start-time issues with tips on how to address them.
@@ -39,8 +31,6 @@ At the beginning of a cold start, the system has the three following tasks:
   2. Display a blank starting window for the app immediately after launch.
   3. Create the app [process](/guide/components/processes-and-threads#Processes).
 
-
-
 As soon as the system creates the app process, the app process is responsible for the next stages:
 
   1. Create the app object.
@@ -49,8 +39,6 @@ As soon as the system creates the app process, the app process is responsible fo
   4. Inflate views.
   5. Layout the screen.
   6. Perform the initial draw.
-
-
 
 When the app process completes the first draw, the system process swaps out the displayed background window, replacing it with the main activity. At this point, the user can start using the app.
 
@@ -76,8 +64,6 @@ After the app process creates your activity, the activity performs the following
   2. Calls constructors.
   3. Calls the callback method, such as [`Activity.onCreate()`](/reference/android/content/ComponentCallbacks2#onTrimMemory\(int\)), appropriate to the current lifecycle state of the activity.
 
-
-
 Typically, the [`onCreate()`](/reference/android/app/Activity#onCreate\(android.os.Bundle\)) method has the greatest impact on load time, because it performs the work with the highest overhead: loading and inflating views and initializing the objects needed for the activity to run.
 
 ### Warm start
@@ -87,9 +73,6 @@ A warm start encompasses a subset of the operations that take place during a col
   * The user backs out of your app but then re-launches it. The process might continue to run, but the app must recreate the activity from scratch using a call to `onCreate()`.
 
   * The system evicts your app from memory and then the user re-launches it. The process and the activity needs to restart, but the task can benefit somewhat from the saved instance state bundle passed into `onCreate()`.
-
-
-
 
 ### Hot start
 
@@ -119,9 +102,6 @@ To debug app startup issues, it's helpful to determine what exactly is included 
 ![](/static/topic/performance/images/app-startup-perfetto-zoomed.png) **Figure 4.** The Android App Startups derived metric slice next to the main thread of the app.
   6. The derived metrics slice makes it easier to see what exactly is included in the app startup, so you can continue to debug in more detail.
 
-
-
-
 ## Use metrics to inspect and improve startups
 
 To properly diagnose startup time performance, you can track metrics that show how long it takes your app to start. Android provides several means of showing you that your app has a problem and helps you diagnose it. Android vitals can alert you that a problem is occurring, and diagnostic tools can help you diagnose the problem.
@@ -142,8 +122,6 @@ Android vitals considers the following startup times for your app excessive:
   * Warm startup takes 2 seconds or longer.
   * Hot startup takes 1.5 seconds or longer.
 
-
-
 Android vitals uses the time to initial display (TTID) metric. For information about how Google Play collects Android vitals data, see the [Play Console documentation](https://support.google.com/googleplay/android-developer/answer/7385505).
 
 ### Time to initial display
@@ -157,8 +135,6 @@ TTID is measured as a time value that represents the total elapsed time that inc
   * Creating and initializing the activity.
   * Inflating the layout.
   * Drawing the app for the first time.
-
-
 
 #### Retrieve TTID
 
@@ -329,8 +305,6 @@ If your app uses Jetpack Compose, you can use the following APIs to indicate ful
   * [`ReportDrawnWhen`](/reference/kotlin/androidx/activity/compose/ReportDrawnWhen.composable#ReportDrawnWhen\(kotlin.Function0\)): takes a predicate, such as `list.count > 0`, to indicate when your composable is ready for interaction.
   * [`ReportDrawnAfter`](/reference/kotlin/androidx/activity/compose/ReportDrawnAfter.composable#ReportDrawnAfter\(kotlin.coroutines.SuspendFunction0\)): takes a suspending method that, once completed, indicates that your composable is ready for interaction.
 
-
-
 ##### Identify bottlenecks
 
 To look for bottlenecks, you can use the Android Studio CPU Profiler. For more information, see [Inspect CPU activity with CPU Profiler](/studio/profile/cpu-profiler).
@@ -365,8 +339,6 @@ Use inline tracing to investigate likely culprits, including the following:
   * Any global singleton objects your app initializes.
   * Any disk I/O, deserialization, or tight loops that might be occurring during the bottleneck.
 
-
-
 #### Solutions to the problem
 
 Whether the problem lies with unnecessary initializations or with disk I/O, the solution is lazy initialization. In other words, only initialize objects that are immediately needed. Instead of creating global static objects, move to a singleton pattern where the app initializes objects only the first time it needs them.
@@ -384,8 +356,6 @@ Activity creation often entails a lot of high-overhead work. Often, there are op
   * Loading and decoding bitmaps.
   * Rasterizing [`VectorDrawable`](/reference/android/graphics/drawable/VectorDrawable) objects.
   * Initialization of other subsystems of the activity.
-
-
 
 #### Diagnose the problem
 
@@ -405,8 +375,6 @@ Use inline tracing to investigate likely culprits, including the following:
   * Any global singleton objects it initializes.
   * Any disk I/O, deserialization, or tight loops that might be occurring during the bottleneck.
 
-
-
 #### Solutions to the problem
 
 There are many potential bottlenecks, but two common problems and remedies are as follows:
@@ -418,8 +386,6 @@ There are many potential bottlenecks, but two common problems and remedies are a
     * Move all resource initialization so that the app can perform it lazily on a different thread.
     * Let the app load and display your views, and then later update visual properties that are dependent on bitmaps and other resources.
 
-
-
 ### Custom splash screens
 
 You might see extra time added during startup if you previously used one of the following methods to implement a custom splash screen in Android 11 (API level 30) or earlier:
@@ -427,15 +393,11 @@ You might see extra time added during startup if you previously used one of the 
   * Using the [`windowDisablePreview`](/reference/android/R.attr#windowDisablePreview) theme attribute to turn off the initial blank screen drawn by the system during launch.
   * Using a dedicated `Activity`.
 
-
-
 Starting with Android 12, migrating to the [`SplashScreen`](/reference/android/window/SplashScreen) API is required. This API enables a faster startup time and lets you tweak your splash screen in the following ways:
 
   * [Set a theme](/guide/topics/ui/splash-screen#set-theme) to change the splash screen's appearance.
   * Control how long the splash screen is displayed with [`windowSplashScreenAnimationDuration`](/guide/topics/ui/splash-screen#suspend-drawing).
   * Customize the [splash screen animation](/develop/ui/views/launch/splash-screen#customize-animation), and gracefully handle the animation for dismissing the splash screen.
-
-
 
 Furthermore, the compat library backports the [`SplashScreen` API](/reference/kotlin/androidx/core/splashscreen/SplashScreen) to enable backward-compatibility and to create a consistent look and feel for splash screen display across all Android versions.
 
@@ -447,8 +409,6 @@ See the [Splash screen migration guide](/guide/topics/ui/splash-screen/migrate) 
   * [Slow rendering](/topic/performance/vitals/render)
   * [Capture Macrobenchmark metrics](/topic/performance/benchmarking/macrobenchmark-metrics)
   * [Create Baseline Profiles{:#creating-profile-rules}](/topic/performance/baselineprofiles/create-baselineprofile)
-
-
 
 [ Previous arrow_back  Permission Denials  ](/topic/performance/vitals/permissions)
 

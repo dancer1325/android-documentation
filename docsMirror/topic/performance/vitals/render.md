@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Slow rendering Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Slow rendering
 UI rendering is the act of generating a frame from your app and displaying it on the screen. To help ensure that a user's interaction with your app is smooth, your app must render frames in under 16ms to achieve 60 frames per second (fps). To understand why 60 fps is preferred, see [Android Performance Patterns: Why 60fps?](https://www.youtube.com/watch?v=CaMTIgxCSqU). If you are trying to achieve 90 fps, then this window drops to 11ms, and for 120 fps it's 8ms.
 
 If you overrun this window by 1ms, it doesn't mean that the frame is displayed 1ms late, but [`Choreographer`](/reference/android/view/Choreographer) drops the frame entirely. If your app suffers from slow UI rendering, then the system is forced to skip frames and the user perceives stuttering in your app. This is called _jank_. This page shows how to diagnose and fix jank.
@@ -31,8 +23,6 @@ Finding the code in your app that is causing jank can be difficult. This section
   * Systrace
   * Custom performance monitoring
 
-
-
 _Visual inspection_ lets you run through all the use cases in your app in a few minutes, but it doesn't provide as much detail as Systrace. _Systrace_ provides more details, but if you run Systrace for all the use cases in your app, you can be flooded with so much data that can be difficult to analyze. Both visual inspection and Systrace detect jank on your local device. If you can't reproduce jank on local devices, you can build _custom performance monitoring_ to measure specific parts of your app on devices running in the field.
 
 ### Visual inspection
@@ -46,8 +36,6 @@ Here are some tips for performing visual inspections:
   * Run through components that are common sources of jank, such as [`RecyclerView`](/reference/androidx/recyclerview/widget/RecyclerView).
   * Launch the app from a [cold start](/topic/performance/launch-time#cold).
   * Run your app on a slower device to exacerbate the problem.
-
-
 
 When you find use cases that produce jank, you might have a good idea of what is causing the jank in your app. If you need more information, you can use Systrace to look further into the cause.
 
@@ -64,8 +52,6 @@ The Systrace example in figure 1 contains the following information for identify
   1. Systrace shows when each frame is drawn and color codes each frame to highlight slow render times. This helps you find individual janky frames more accurately than visual inspection. For more information, see [Inspect UI frames and alerts](/topic/performance/tracing/navigate-report#frames-alerts).
   2. Systrace detects problems in your app and displays **alerts** both in individual frames and the [alerts](/topic/performance/tracing/navigate-report#frames-alerts) panel. It's best to follow the directions in the alert.
   3. Parts of the Android framework and libraries, such as `RecyclerView`, contain trace markers. So, the systrace timeline shows when those methods are executed on the UI thread and how long they take to execute.
-
-
 
 After you look at the Systrace output, there might be methods in your app that you suspect are causing jank. For example, if the timeline shows that a slow frame is caused by `RecyclerView` taking a long time, you can [add custom trace events](/topic/performance/tracing/custom-events) to the relevant code and re-run Systrace for more information. In the new Systrace, the timeline shows when your app's methods are called and how long they take to execute.
 
@@ -132,8 +118,6 @@ Keep the following best practices in mind when looking to resolve jank in your a
   * Identify and resolve the most easily reproducible instances of jank.
   * Prioritize ANRs. While slow or frozen frames might make an app appear sluggish, ANRs cause the app to stop responding.
   * Slow rendering is hard to reproduce, but you can start by killing 700ms frozen frames. This is most common while the app is starting up or changing screens.
-
-
 
 ## Fixing jank
 
@@ -304,8 +288,6 @@ Try avoiding `RelativeLayout` or the weight feature of`LinearLayout` in all but 
   * Reorganize your structural views.
   * Define custom layout logic. See [Optimize layout hierarchies](/develop/ui/views/layout/improving-layouts/optimizing-layouts) for a specific example. You can try converting to [`ConstraintLayout`](/training/constraint-layout), which provides similar features, without the performance drawbacks.
 
-
-
 #### Layout performance: Frequency
 
 Layout is expected to happen when new content comes on screen, for example when a new item scrolls into view in `RecyclerView`. If significant layout is happening on each frame, it's possible that you're animating layout, which is likely to cause dropped frames.
@@ -318,8 +300,6 @@ Generally, animations must run on drawing properties of `View`, such as the foll
   * [`setRotation()`](/reference/android/view/View#setRotation\(float\))
   * [`setAlpha()`](/reference/android/view/View#setAlpha\(float\))
 
-
-
 You can change all of these much more cheaply than layout properties, such as padding, or margins. Generally, it's also much cheaper to change drawing properties of a view by calling a setter which triggers an [`invalidate()`](/reference/android/view/View#invalidate\(\)), followed by [`draw(Canvas)`](/reference/android/view/View#draw\(android.graphics.Canvas\)) in the next frame. This re-records drawing operations for the view that is invalidated and is also generally much cheaper than layout.
 
 ### Rendering performance
@@ -328,8 +308,6 @@ Android UI works in two phases:
 
   * **Record View#draw** on the UI thread, which runs `draw(Canvas)` on every invalidated view, and can invoke calls into custom views or into your code.
   * **DrawFrame** on the `RenderThread`, which runs on the native `RenderThread` but operates based on work generated by the **Record View#draw** phase.
-
-
 
 #### Rendering performance: UI Thread
 
@@ -535,8 +513,6 @@ On recent versions of Android, GC generally runs on a background thread named **
   * [Benchmark your app](/topic/performance/benchmarking/benchmarking-overview)
   * [Overview of measuring app performance](/topic/performance/measuring-performance)
   * [Best practices for app optimization](/topic/performance/appstartup/best-practices)
-
-
 
 [ Previous arrow_back  Crashes  ](/topic/performance/vitals/crash)
 

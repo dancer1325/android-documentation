@@ -4,14 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ API reference ](https://developer.android.com/reference)
-
-
-
-#  Android API reference Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Android API reference
 Start building your Android app with the Android Platform APIs. They are available in [Kotlin](/reference/kotlin/packages) and [Java](/reference/packages).
 
 **Note:** Many Kotlin reference topics are derived from Java-based source code. This means that some Kotlin reference topics might contain Java code snippets. 

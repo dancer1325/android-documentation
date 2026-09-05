@@ -3,16 +3,6 @@
 **Source:** [https://developer.android.com/security/fraud-prevention](https://developer.android.com/security/fraud-prevention)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ Security ](https://developer.android.com/security)
-  * [ Fraud prevention ](https://developer.android.com/security/fraud-prevention)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](https://developer.android.com/static/images/security/fraud-prevention/fraud.svg)
 
 ###  Protect users from fraud 

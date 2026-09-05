@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  App-driven profiling Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  App-driven profiling
 This page shows how to record a system trace using the `ProfilingManager` API.
 
 `ProfilingManager` can also record other profile types. This process is similar to recording a system trace, but each type uses a different builder. The supported profiles and their builders are:
@@ -24,7 +16,6 @@ This page shows how to record a system trace using the `ProfilingManager` API.
   * **Heap profiles:** Recorded using [`HeapProfileRequestBuilder`](/reference/androidx/core/os/HeapProfileRequestBuilder), which are useful for memory optimization.
 
   * **Call stack profiles:** Recorded using [`StackSamplingRequestBuilder`](/reference/androidx/core/os/StackSamplingRequestBuilder), which are useful for understanding code execution and latency analysis.
-
 
 **Tip:** `ProfilingManager` contains a rate limiter that is set up to reduce the impact of repeated profiling requests on device performance. When you're using this tool locally, you want to see every request so we recommend keeping the [rate limiter disabled](/topic/performance/tracing/profiling-manager/debug-mode#disable-rate-limiter).
 
@@ -174,9 +165,6 @@ The sample code sets up and manages the profiling session by going through the f
 
 **Note:** If an error occurs during profiling, the `ProfilingResult` provides an error description through `profilingResult.getErrorMessage()` and an error code through `profilingResult.getErrorCode()`. A common reason for failure is if your app gets rate limited due to excessive requests.**Note:** If the app dies before this result is delivered, delivery will be attempted again once the app starts and registers a general listener.
   6. **Add custom trace points.** You can add custom trace points in your app's code. In the previous code example, a trace slice named `MyApp:HeavyOperation` is added using `Trace.beginSection()` and `Trace.endSection()`. This custom slice appears in the generated profile, highlighting specific operations within your app.
-
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

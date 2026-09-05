@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/quality](https://developer.android.com/quality)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](https://developer.android.com/static/images/quality/quality-hero.svg)
 
 ###  Build high-quality apps and games 

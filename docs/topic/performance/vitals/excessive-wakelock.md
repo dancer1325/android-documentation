@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Excessive partial wake locks Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Excessive partial wake locks
 Partial wake locks are a mechanism in the [`PowerManager`](/reference/android/os/PowerManager) API that lets developers keep the CPU running after a device's display turns off (whether due to system timeout or the user pressing the power button). Your app acquires a partial wake lock by calling [`acquire()`](/reference/android/os/PowerManager.WakeLock#acquire\(\)) with the [`PARTIAL_WAKE_LOCK`](/reference/android/os/PowerManager#PARTIAL_WAKE_LOCK) flag, or by using [other APIs that acquire wake locks](/develop/background-work/background-tasks/awake/wakelock/identify-wls). Excessive use of partial wake locks drains the device's battery because it prevents the device from entering lower power states. Partial wake locks should be used only when necessary and released as soon as no longer needed.
 
 If your app uses partial wake locks excessively, you can use the guidance in this page to diagnose and fix the problem.
@@ -51,16 +43,12 @@ After fixing the problem in code, you can verify your fixes by using [local wake
   * [Choose the right API to keep the device awake](/develop/background-work/background-tasks/awake)
   * [Wake lock documentation](/develop/background-work/background-tasks/awake/wakelock)
 
-
-
 ## Recommended for you
 
   * Note: link text is displayed when JavaScript is off
   * [Frozen frames](/topic/performance/vitals/render#frozen-frames)
   * [Run benchmarks in Continuous Integration](/topic/performance/benchmarking/benchmarking-in-ci)
   * [Create and measure Baseline Profiles without Macrobenchmark](/topic/performance/baselineprofiles/manually-create-measure)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

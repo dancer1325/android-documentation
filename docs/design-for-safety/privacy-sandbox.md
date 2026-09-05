@@ -12,10 +12,7 @@ See our [Update on Plans for Privacy Sandbox Technologies](https://privacysandbo
 
   * [ Privacy Sandbox ](https://privacysandbox.google.com/)
 
-
-
-Send feedback  Stay organized with collections  Save and categorize content based on your preferences. 
-
+Send feedback
 ![](https://privacysandbox.google.com/static/privacy-sandbox-logo.svg)
 
 ###  Privacy Sandbox 

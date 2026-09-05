@@ -3,13 +3,6 @@
 **Source:** [https://developer.android.com](https://developer.android.com)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![Elevating AI assistance with updated LLM benchmarking
 ](https://developer.android.com/static/images/home/billboard-26-bench.svg)
 
@@ -22,8 +15,6 @@ Learn more about which LLMs are most helpful for Android development through And
   * [ ![](/static/images/logos/android.svg) Download Android Studio get_app ](/studio)
   * [ ![](/static/images/picto-icons/game-console.svg) Launch Play Console launch ](https://play.google.com/apps/publish)
   * [ ![](/static/images/picto-icons/stars.svg) View Latest Updates ](/latest-updates)
-
-
 
 [ ![](https://developer.android.com/static/images/home/promo-xr-droid.png) ](http://android-developers.googleblog.com/2026/06/what-is-new-android-xr.html)
 

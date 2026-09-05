@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Benchmark your app Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Benchmark your app
 Benchmarking is a way to inspect and monitor the performance of your app. You can regularly run benchmarks to analyze and debug performance problems and help ensure that you don't introduce regressions in recent changes.
 
 Android offers two benchmarking libraries and approaches for analyzing and testing different kinds of situations in your app: Macrobenchmark and Microbenchmark.
@@ -50,8 +42,6 @@ Tracing  | Results come with system traces.  | Results come with a minimal syste
   * [Create Baseline Profiles {:#creating-profile-rules}](/topic/performance/baselineprofiles/create-baselineprofile)
   * [JankStats Library](/topic/performance/jankstats)
   * [Overview of measuring app performance](/topic/performance/measuring-performance)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

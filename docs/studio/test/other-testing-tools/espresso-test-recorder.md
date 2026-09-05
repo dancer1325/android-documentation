@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Create UI tests with Espresso Test Recorder Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Create UI tests with Espresso Test Recorder
 The Espresso Test Recorder tool lets you create UI tests for your app without writing any test code. By recording a test scenario, you can record your interactions with a device and add assertions to verify UI elements in particular snapshots of your app. Espresso Test Recorder then takes the saved recording and automatically generates a corresponding UI test that you can run to test your app.
 
 Espresso Test Recorder writes tests based on the [Espresso Testing framework](/training/testing/espresso), an API in AndroidX Test. The Espresso API encourages you to create concise and reliable UI tests based on user actions. By stating expectations, interactions, and assertions without directly accessing the underlying app’s activities and views, this structure prevents test flakiness and optimizes test run speed.
@@ -35,8 +27,6 @@ To start recording a test with Espresso Test Recorder, proceed as follows:
   2. In the **Select Deployment Target** window, choose the device on which you want to record the test. If necessary, [create a new Android Virtual Device](/studio/run/managing-avds). Click **OK**.
   3. Espresso Test Recorder triggers a build of your project, and the app must install and launch before Espresso Test Recorder allows you to interact with it. The **Record Your Test** window appears after the app launches, and since you have not interacted with the device yet, the main panel reads "No events recorded yet." Interact with your device to start logging events such as "tap" and "type" actions.
 
-
-
 **Note** : Before you can begin logging interactions, you may see a dialog on your device that says "Waiting for Debugger" or "Attaching Debugger." Espresso Test Recorder uses the debugger to log UI events. When the debugger attaches, the dialog will close automatically; do not hit **Force Close**.
 
 Recorded interactions will appear in the main panel in the **Record Your Test** window, as shown in figure 1 below. When you run the test, the Espresso test will try executing these actions in the same order.
@@ -53,8 +43,6 @@ Assertions verify the existence or contents of a [View](/reference/android/view/
   * **exists** : Checks that the View element is present in the current View hierarchy visible on the screen
   * **does not exist** : Checks that the View element is not present in the current View hierarchy
 
-
-
 To add an assertion to your test, proceed as follows:
 
   1. Click **Add Assertion**. A **Screen Capture** dialog appears while Espresso gets the UI hierarchy and other information about the current app state. The dialog closes automatically once Espresso has captured the screenshot.
@@ -62,8 +50,6 @@ To add an assertion to your test, proceed as follows:
   3. Select the assertion you want to use from the second drop-down menu in the **Edit assertion** box. Espresso populates the menu with valid assertions for the selected View element. 
      * If you choose the "text is" assertion, Espresso automatically inserts the text currently inside the selected View element. You can edit the text to match your desired assertion using the text field in the **Edit assertion** box.
   4. Click **Save and Add Another** to create another assertion or click **Save Assertion** to close the assertion panels.
-
-
 
 The screenshot in figure 2 shows a "text is" assertion being created to verify that the title of the note is "Happy Testing!":
 
@@ -83,8 +69,6 @@ Once you finish interacting with your app and adding assertions, use the followi
   3. The file automatically opens after Espresso Test Recorder generates it, and Android Studio shows the test class as selected in the **Project** window of the IDE. 
      * Where the test saves depends on the location of your [instrumentation test](/training/testing/unit-testing/instrumented-unit-tests) root, as well as the package name of the launched activity. For example, tests for the [Notes testing app](https://github.com/googlecodelabs/android-testing) save in the **src** > **androidTest** > **java** > **com.example.username.appname** folder of the app module on which you recorded the test.
 
-
-
 ## Run an Espresso test locally
 
 To run an Espresso test, use the **Project** ![](/static/studio/images/studio-icon.png) window on the left side of the Android Studio IDE: 
@@ -95,8 +79,6 @@ To run an Espresso test, use the **Project** ![](/static/studio/images/studio-ic
   2. Right-click on the test and click **Run ‘testName.’**
      * Alternatively, you can open the test file and right-click on the generated test class or method. Read more about how to run tests on the [Test Your App](/studio/test#run_a_test) page.
   3. In the **Select Deployment Target** window, choose the device on which you want to run the test. If necessary, [create a new Android Virtual Device](/studio/run/managing-avds). Click **OK**.
-
-
 
 Monitor the progress of your test in the **Run** window at the bottom of the IDE. Android Studio runs a full build of your project and opens a tab with the name of your test in the **Run** window, as shown in figure 3. You can check whether your test passes or fails in this tab, as well as how long the test took to run. When the test finishes, the tab will log "Tests ran to completion." 
 

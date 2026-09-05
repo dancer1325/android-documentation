@@ -4,23 +4,13 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Core areas ](https://developer.android.com/develop/core-areas)
-  * [ App data and files ](https://developer.android.com/training/data-storage)
-
-
-
-#  Data and file storage overview Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Data and file storage overview
 Android uses a file system that's similar to disk-based file systems on other platforms. The system provides several options for you to save your app data:
 
   * **App-specific storage:** Store files that are meant for your app's use only, either in dedicated directories within an internal storage volume or different dedicated directories within external storage. Use the directories within internal storage to save sensitive information that other apps shouldn't access.
   * **Shared storage:** Store files that your app intends to share with other apps, including media, documents, and other files.
   * **Preferences:** Store private, primitive data in key-value pairs.
   * **Databases:** Store structured data in a private database using the Room persistence library.
-
-
 
 The characteristics of these options are summarized in the following table:
 
@@ -62,8 +52,6 @@ Removable volumes, such as an SD card, appear in the file system as part of exte
   * The exact location of where your files can be saved might vary across devices. For this reason, don't use hard-coded file paths.
   * To avoid accidental disclosure of information, don't use predictable patterns to filenames in ways that could reveal the kinds of information found within a file.
 
-
-
 Apps themselves are stored within internal storage by default. If your APK size is very large, however, you can indicate a preference within your app's manifest file to install your app on external storage instead:
     
     
@@ -103,8 +91,6 @@ For more information about data storage, consult the following resources.
 ### Videos
 
   * [Preparing for Scoped Storage (Android Dev Summit '19)](https://www.youtube.com/watch?v=UnJ3amzJM94)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

@@ -3,14 +3,6 @@
 **Source:** [https://developer.android.com/large-screens/stories](https://developer.android.com/large-screens/stories)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Essentials ](https://developer.android.com/get-started)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ##  Increase your user base...  
 Optimize for all form factors 
 

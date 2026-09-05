@@ -4,22 +4,12 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Version your app Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Version your app
 Versioning is a critical component of your app upgrade and maintenance strategy. Versioning is important because:
 
   * Users need to have specific information about the app version that is installed on their devices and the upgrade versions available for installation. 
   * Other apps—including other apps that you publish as a suite—need to query the system for your app's version to determine compatibility and identify dependencies.
   * Services where you publish your app(s) may also need to query your app for its version so that they can display the version to users. A publishing service may also need to check the app version to determine compatibility and establish upgrade/downgrade relationships.
-
-
 
 The Android system uses your app's version information to protect against downgrades. The system doesn't use app version information to enforce restrictions on upgrades or compatibility of third-party apps. Your app must enforce any version restrictions and tell users about them.
 
@@ -167,9 +157,6 @@ It is not possible to specify that an app either targets or requires a minor SDK
     if (SDK_INT_FULL >= VERSION_CODES_FULL.[MAJOR or MINOR RELEASE]) {
       // Use APIs introduced in a major or minor SDK version
     }
-
-
-
 
 To specify default API level requirements in a `build.gradle` or `build.gradle.kts` file, add one or more of the API level settings to the `defaultConfig{}` block, nested inside the `android {}` block. You can also override these default values for different versions of your app by adding the settings to build types or product flavors.
 

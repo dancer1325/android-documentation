@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/design/ui](https://developer.android.com/design/ui)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ UI Design ](https://developer.android.com/design/ui)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ##  Design for Android 
 
 Design beautiful and modern Android apps that meet your user where they are, whether browsing their phone, reading on their tablet, glancing at their wrist, connected to a display, or watching TV. 

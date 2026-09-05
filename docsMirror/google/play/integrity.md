@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/google/play/integrity](https://developer.android.com/google/play/integrity)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Google Play ](https://developer.android.com/distribute)
-  * [ Play Integrity ](https://developer.android.com/google/play/integrity)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](https://developer.android.com/static/images/google/play/integrity/play-integrity-icon.svg)
 
 ###  Play integrity and signing services 

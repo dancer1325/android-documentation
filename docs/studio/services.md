@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Service integrations in Android Studio Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Service integrations in Android Studio
 Android Studio offers a set of service integrations to increase your productivity as you develop, release, and maintain Android apps. For example, you have access to Cloud services such as Firebase Device Streaming, Firebase Crashlytics, Play Vitals data, and Gemini in Android Studio.
 
 **Note:** Service integrations are only available in the latest stable channel version of Android Studio and major versions (including their patches) released in the previous 10 months. Currently, the oldest supported version is **Narwhal 4 Feature Drop**. If you are using an older version of Android Studio, you will need to update to access Cloud services. For more information, see [Android Studio and Cloud services compatibility](/studio/releases#service-compat).
@@ -22,8 +14,6 @@ Android Studio offers a set of service integrations to increase your productivit
 As an admin, you have the ability to control the Cloud services available to users in your organization. For some Cloud services, this can be done through the [Google Admin Console](https://support.google.com/a/answer/55955?ref_topic=2413312&sjid=9410998059586788964-EU):
 
   * [Google Cloud](https://support.google.com/a/answer/9197205?sjid=15762865756081758884-EU): If disabled, it would prevent developers in your organization from using services such as Firebase Device Streaming, Firebase Crashlytics, or Gemini Code Assist.
-
-
 
 Additionally, you can limit access to Cloud services through permissions. For example, you can limit which developers can access Play Vitals data through [developer account permissions](https://support.google.com/googleplay/android-developer/answer/9844686). Similarly, you can also configure [Google Cloud permissions](https://cloud.google.com/iam/docs/understanding-roles) to limit access to Cloud services and data in Google Cloud and Firebase projects.
 

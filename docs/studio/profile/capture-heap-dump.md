@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Capture a heap dump Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Capture a heap dump
 Capture a heap dump to see which objects in your app are using up memory at the time of the capture and identify _memory leaks_ , or memory allocation behavior that leads to stutter, freezes, and even app crashes. It's especially helpful to take heap dumps after an extended user session, when it could show objects still in memory that should no longer be there.
 
 This page describes the tooling that Android Studio provides to collect and analyze heap dumps. Alternatively, you can inspect your app memory from the command line with [`dumpsys`](/studio/command-line/dumpsys) and also [see garbage collection (GC) events in Logcat](/studio/debug/logcat).
@@ -41,23 +33,16 @@ The list of classes shows the following info:
 
   * **Retained Size** : Total size of memory being retained due to all instances of this class (in bytes).
 
-
-
-
 Use the heap menu to filter to certain heaps:
 
   * **App heap (default)** : The primary heap on which your app allocates memory.
   * **Image heap** : The system boot image, containing classes that are preloaded during boot time. Allocations here never move or go away.
   * **Zygote heap** : The copy-on-write heap where an app process is forked from in the Android system.
 
-
-
 Use the arrangement drop-down to choose how to arrange the allocations:
 
   * **Arrange by class (default)** : Groups all allocations based on class name.
   * **Arrange by package** : Groups all allocations based on package name.
-
-
 
 Use the class drop-down to filter to groups of classes:
 
@@ -65,16 +50,12 @@ Use the class drop-down to filter to groups of classes:
   * **Show activity/fragment leaks** : Shows classes that are causing memory leaks.
   * **Show project classes** : shows only classes defined by your project.
 
-
-
 Click a class name to open the **Instance** pane. Each instance listed includes the following:
 
   * **Depth** : The shortest number of hops from any GC root to the selected instance.
   * **Native Size** : Size of this instance in native memory. This column is visible only for Android 7.0 and higher.
   * **Shallow Size** : Size of this instance in Java memory.
   * **Retained Size** : Size of memory that this instance dominates (as per the [dominator tree](https://en.wikipedia.org/wiki/Dominator_\(graph_theory\)\)%7B:.external%7D))).
-
-
 
 Click an instance to show the **Instance Details** , including its **Fields** and **References**. Common field and reference types are structured types ![](/static/studio/images/profiler-structured-data-type.png), arrays ![](/static/studio/images/profiler-array-data-type.png), and primitive data types ![](/static/studio/images/profiler-primitive-data-type.png) in Java. Right-click on a field or reference to go to the associated instance or line in the source code.
 
@@ -112,8 +93,6 @@ To look for memory leaks more manually, browse the class and instance lists to f
   * Non-static inner classes, such as a [`Runnable`](/reference/java/lang/Runnable), that can hold an `Activity` instance.
   * Caches that hold objects longer than necessary.
 
-
-
 When you find potential memory leaks, use the **Fields** and **References** tabs in **Instance Details** to jump to the instance or source code line of interest.
 
 **Tip:** Beginning with Android Studio Panda, the Android Studio Profiler offers integration with [LeakCanary](https://square.github.io/leakcanary/) as a dedicated task. Using LeakCanary lets you move memory leak analysis from the test device to your development machine, resulting in significant performance improvement. For more information, see [LeakCanary in Android Studio Profiler](/studio/preview/features#leakcanary).
@@ -142,8 +121,6 @@ Alternatively, to use a different `.hprof` file analyzer like [jhat](https://doc
 ## Additional resources
 
   * [Capture a heap dump (Views)](/studio/views/capture-heap-dump-views)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

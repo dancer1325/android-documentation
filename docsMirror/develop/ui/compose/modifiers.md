@@ -4,24 +4,13 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Core areas ](https://developer.android.com/develop/core-areas)
-  * [ UI ](https://developer.android.com/develop/ui)
-  * [ Docs ](https://developer.android.com/develop/ui/compose/documentation)
-
-
-
-#  Compose modifiers Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Compose modifiers
 Modifiers allow you to decorate or augment a composable. Modifiers let you do these sorts of things:
 
   * Change the composable's size, layout, behavior, and appearance
   * Add information, like accessibility labels
   * Process user input
   * Add high-level interactions, like making an element clickable, scrollable, draggable, or zoomable
-
-
 
 Modifiers are standard Kotlin objects. Create a modifier by calling one of the [`Modifier`](/reference/kotlin/androidx/compose/ui/Modifier) class functions:
     
@@ -61,8 +50,6 @@ In the code above, notice different modifier functions used together.
 
   * `padding` puts space around an element.
   * `fillMaxWidth` makes the composable fill the maximum width given to it from its parent.
-
-
 
 It's a best practice to have _all_ of your composables accept a `modifier` parameter, and pass that modifier to its first child that emits UI. Doing so makes your code more reusable and makes its behavior more predictable and intuitive. For more information, see the Compose API guidelines, [Elements accept and respect a Modifier parameter](https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/docs/compose-api-guidelines.md#elements-accept-and-respect-a-modifier-parameter).
 
@@ -306,8 +293,6 @@ Sometimes it can be beneficial to reuse the same modifier chain instances in mul
   * Modifier chains could potentially be very long and complex, so reusing the same instance of a chain can alleviate the workload Compose runtime needs to do when comparing them
   * This extraction promotes code cleanliness, consistency and maintainability across the codebase
 
-
-
 ### Best practices for reusing modifiers
 
 Create your own `Modifier` chains and extract them to reuse them on multiple composable components. It is completely fine to just save a modifier, as they are data-like objects:
@@ -489,8 +474,6 @@ For more information on custom modifiers and how to create them, take a look at 
   * [Compose layout basics](/develop/ui/compose/layouts/basics)
   * [Editor actions {:#editor-actions}](/develop/ui/compose/tooling/editor-actions)
   * [Custom layouts {:#custom-layouts }](/develop/ui/compose/layouts/custom)
-
-
 
 [ Previous arrow_back  Layout basics  ](/develop/ui/compose/layouts/basics)
 

@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Upload your library Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Upload your library
 To grant access to your library, you need to choose a repository. This page guides you through the considerations related to choosing a repository type and shows how to create a publication using the [Maven Publish Plugin](https://docs.gradle.org/current/userguide/publishing_maven.html).
 
 Before uploading your library, make sure you have [prepared your library for release](/studio/publish-library/prep-lib-release) and configured any necessary [publication variants](/studio/publish-library/configure-pub-variants) or [test fixtures](/studio/publish-library/configure-test-fixtures).
@@ -30,8 +22,6 @@ There are multiple benefits to using a repository to publish your library:
   * The Android Gradle Plugin (AGP) can do more efficient desugaring if your library uses Java 8 or higher language features, reducing build times for your users.
   * Your library can use variant publishing and include features like test fixtures.
 
-
-
 Distributing the AAR directly doesn't provide your user with any information regarding the identity, version, or dependencies of your library. When publishing to a repository, distribution is handled by a separate file that is part of the repository mechanism. For Maven repositories, this is the [POM file](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html). Therefore, it is strongly recommended to publish libraries using repositories rather than manually distributing AAR files.
 
 ### Types of repositories
@@ -41,8 +31,6 @@ There are three types of repositories:
   * Free online repositories, like Maven Central, let anyone upload and download libraries.
   * Private repositories, with access via login, allow controlled distribution of private libraries.
   * Local, folder-based repositories allow distribution of libraries through manual download.
-
-
 
 Using local, folder-based repositories is very similar to providing your users with a manual download link to the AAR or sending the AAR by email. The main difference is that you are not sending just the AAR but also the additional information about identity, version, and dependencies.
 

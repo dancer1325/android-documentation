@@ -3,16 +3,6 @@
 **Source:** [https://developer.android.com/identity](https://developer.android.com/identity)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ Security ](https://developer.android.com/security)
-  * [ Identity ](https://developer.android.com/identity)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](https://developer.android.com/static/images/cluster-illustrations/identity.svg)
 
 ###  Identity 

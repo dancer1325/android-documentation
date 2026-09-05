@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Configure publication variants Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Configure publication variants
 Publication variants let you create a more customized experience for your users. Configuring publication variants lets you publish different build variants, each with its own attributes.
 
 Publishing multiple build variants of your library lets your user choose the appropriate features for their needs. For example, you can publish different artifacts for the [debug versus release](/studio/build/build-variants#build-types) build types. The debug publication artifact might have extra logging code and different dependencies to enable this extra logging.
@@ -29,8 +21,6 @@ The benefits of using GMM include:
   * Gradle automatically creates one variant for compilation and one for runtime, each with its own dependencies. You might publish one variant for compilation and one for runtime, so the consumer can choose based on when they are using your library. GMM lets consumers see different dependencies for compile and runtime, based on the published library's usage of `api`, `implementation`, or `compileOnly`/`runtimeOnly`. See [Dependency configurations](/studio/build/dependencies?agpversion=4.1&buildsystem=ndk-build#dependency_configurations) for a full list of dependencies. This is available even if you publish a single publication variant.
   * When using test fixtures, you can publish an additional variant with special metadata or [capabilities](https://docs.gradle.org/current/userguide/component_capabilities.html) that let the consumer select it. This is available even if you publish a single publication variant.
 
-
-
 ### Understand publication variants
 
 To understand how publication variants work, it is helpful to be familiar with Gradle's [basic publishing steps](https://docs.gradle.org/current/userguide/publishing_setup.html#sec:basic_publishing). Here are some publication key concepts:
@@ -42,14 +32,10 @@ To understand how publication variants work, it is helpful to be familiar with G
   * [**Software component**](https://docs.gradle.org/current/javadoc/org/gradle/api/component/SoftwareComponent.html): A Gradle object that can hold one or more publication variants and is published to a single set of Maven coordinates (`groupdId:artifactId:version`). It is exposed in Gradle's DSL through [`Project.getComponents()`](https://docs.gradle.org/current/javadoc/org/gradle/api/Project.html#getComponents--).
   * [**Publication**](https://docs.gradle.org/current/userguide/dependency_management_terminology.html#sub:terminology_publication): What gets published to the repository and consumers use. Publications consist of one software component and its metadata-for instance, its identity (`groupId:artifactId:version`).
 
-
-
 The [Android Gradle plugin](/studio/releases/gradle-plugin?buildsystem=cmake) (AGP) 7.1 introduces a domain-specific language (DSL) to control which build variants are used during publication and which are ignored. The DSL lets you create instances of `SoftwareComponent` that contain either of the following:
 
   * One publication variant from one build variant
   * Several publication variants from several build variants
-
-
 
 When creating a software component with multiple publication variants, AGP sets up attributes on each variant that let the consumer select the appropriate variant they need. These attributes come directly from the build type and flavors used to create the build variant. Creating a component with a single publication variant doesn't require attributes because there's no need to distinguish.
 

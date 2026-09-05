@@ -5,16 +5,6 @@
 ---
 
 **Android is now Compose-first.** [Learn more](/develop/ui/compose/first).
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Core areas ](https://developer.android.com/develop/core-areas)
-  * [ UI ](https://developer.android.com/develop/ui)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](https://developer.android.com/static/images/cluster-illustrations/compose-16-9.svg)
 
 ###  Develop UI 
@@ -96,8 +86,6 @@ Now in Android is an Android app built with Kotlin and Jetpack Compose. Now in A
   * Android System
   * UI
 
-
-
 Intermediate 
 
 [ ![](https://developer.android.com/static/images/cards/distribute/engage/card-games-services.png) ](https://github.com/android/platform-samples/tree/main/samples/user-interface/appwidgets)
@@ -107,8 +95,6 @@ Intermediate
 AppWidgets is a collection of samples that demonstrates how to build app widgets using Jetpack Glance—a framework built on top of Compose.
 
   * UI
-
-
 
 Intermediate 
 

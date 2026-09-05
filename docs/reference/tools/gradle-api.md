@@ -4,14 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ API reference ](https://developer.android.com/reference)
-
-
-
-#  Android Gradle plugin API reference Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Android Gradle plugin API reference
 Current Release |  [9.2.1](/reference/tools/gradle-api/9.2/classes)  
 ---|---  
 Preview Releases |  [9.3.0-rc02](/reference/tools/gradle-api/9.3/classes)  

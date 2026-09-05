@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Crashes Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Crashes
 An Android app crashes whenever there’s an unexpected exit caused by an unhandled exception or signal. An app that is written using Java or Kotlin crashes if it throws an unhandled exception, represented by the [`Throwable`](/reference/java/lang/Throwable) class. An app that is written using machine code or C++ crashes if there's an unhandled signal, such as `SIGSEGV`, during its execution.
 
 When an app crashes, Android terminates the app's process and displays a dialog to let the user know that the app has stopped, as shown in figure 1.
@@ -39,9 +31,6 @@ Android vitals can help you monitor and improve your app's crash rate. Android v
 **Note:** For Wear OS apps, user-perceived crash rates include both foreground and background crashes. Wear OS devices always have watch faces running in the background, and users frequently move Wear OS apps to the background, even during active usage, because of the small screen size.
   * **Multiple crash rate:** The percentage of your daily active users who experienced at least two crashes. 
 
-
-
-
 A _daily active user_ is a unique user who uses your app on a single day on a single device, potentially over multiple sessions. If a user uses your app on more than one device in a single day, each device will contribute to the number of active users for that day. If multiple users use the same device in a single day, this is counted as one active user.
 
 User-perceived crash rate is a _core vital_ meaning that it affects the discoverability of your app on Google Play. It is important because the crashes it counts always occur when the user is engaged with the app, causing the most disruption.
@@ -50,8 +39,6 @@ Play has defined two **bad behavior thresholds** on this metric:
 
   * **Overall bad behavior threshold:** At least 1.09% of daily active users experience a user-perceived crash, across all device models.
   * **Per-device bad behavior threshold:** At least 8% of daily active users experience a user-perceived crash, **for a single device model**.
-
-
 
 If your app exceeds the overall bad behavior threshold, it is likely to be less discoverable on all devices. If your app exceeds the per-device bad behavior threshold on some devices, it is likely to be less discoverable on those devices, and a warning may be shown on your store listing.
 
@@ -95,8 +82,6 @@ A stack trace shows two pieces of information that are critical to debugging a c
 
   * The type of exception thrown.
   * The section of code where the exception is thrown.
-
-
 
 The type of exception thrown is usually a very strong hint as to what went wrong. Look at whether it is an [`IOException`](/reference/java/io/IOException), an [`OutOfMemoryError`](/reference/java/lang/OutOfMemoryError), or something else, and find the documentation about the exception class.
 
@@ -225,16 +210,11 @@ This operator allows you to state "if the object is non-null, return the object;
         val length = string?.length ?: 0
         
 
-
-
-
 You can still get a `NullPointerException` in Kotlin. The following are the most common situations:
 
   * When you're explicitly throwing a `NullPointerException`.
   * When you're using the [null assertion `!!` operator](https://kotlinlang.org/docs/reference/null-safety.html#the--operator). This operator converts any value to a non-null type, throwing `NullPointerException` if the value is null.
   * When accessing a null reference of a platform type.
-
-
 
 ### Platform types
 

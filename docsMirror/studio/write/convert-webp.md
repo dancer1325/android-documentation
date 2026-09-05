@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Create WebP images Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Create WebP images
 [WebP](https://developers.google.com/speed/webp/) is an image file format from Google that provides lossy compression (like JPEG) as well as transparency (like PNG) but can provide better compression than either JPEG or PNG. Lossy WebP images are supported in Android 4.0 (API level 14) and higher, and lossless and transparent WebP images are supported in Android 4.3 (API level 18) and higher. This page shows how to convert images to WebP format and how to convert WebP images to PNG format.
 
 **Note:** Because support for lossless and transparent WebP images is only available in Android 4.3 and higher, your project must declare a `minSdkVersion` of 18 or higher to create lossless or transparent WebP images using Android Studio.
@@ -64,8 +56,6 @@ Select a quality setting for each image you review. If you are converting more t
 
   6. Click **Finish**. Your images are converted in their original location.
 
-
-
 ## Convert WebP images to PNG
 
 If you want to use a WebP image from your project for another purpose—for example, in a web page that needs to correctly display images in a browser without WebP support—you can use Android Studio to convert WebP images to PNG format.
@@ -76,9 +66,6 @@ To convert a WebP image to PNG, proceed as follows:
   2. A dialog appears, asking whether you would like to delete the original WebP file after conversion or keep the original WebP file as well as the new PNG file.
 
 Click **Yes** to delete the original WebP file or **No** to retain the WebP file in addition to the PNG file. Your image is converted immediately.
-
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

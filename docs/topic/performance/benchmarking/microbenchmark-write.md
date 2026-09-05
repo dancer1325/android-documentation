@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Write a Microbenchmark Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Write a Microbenchmark
 To learn how to use the Microbenchmark library by adding changes to your application code, see the Quickstart section. To learn how to complete a full setup with more complicated changes to your codebase, see the Full project setup section.
 
 ## Quickstart
@@ -118,9 +110,6 @@ The following code snippet shows how to add a benchmark to an Instrumented test:
              }
          }
 
-
-
-
 To learn how to write a benchmark, skip to Create a Microbenchmark class.
 
 ## Full project setup
@@ -146,7 +135,6 @@ To add a new Gradle module, you can use the module wizard in Android Studio. The
   4. Type "microbenchmark" for the module name.
 
   5. Click **Finish**.
-
 
 ![Configure new library module](/static/topic/performance/images/benchmark_images/microbenchmark_module_giraffe.png) **Figure 2.** Add a new Gradle module in Android Studio Bumblebee.
 
@@ -323,8 +311,6 @@ The library detects the following conditions to ensure your project and environm
   * Clocks are locked if the device is rooted.
   * Sufficient battery level on device of at least 25%.
 
-
-
 If any of the preceding checks fail, the benchmark reports an error to discourage inaccurate measurements.
 
 To suppress specific error types as warnings and prevent them from halting the benchmark, pass the error type in a comma-separated list to the instrumentation argument [`androidx.benchmark.suppressErrors`](/studio/profile/microbenchmark-instrumentation-args#suppresserrors).
@@ -365,8 +351,6 @@ Suppressing errors lets the benchmark run in an incorrectly configured state, an
   * [Write a Macrobenchmark](/topic/performance/benchmarking/macrobenchmark-overview)
   * [Build Microbenchmarks without Gradle](/topic/performance/benchmarking/microbenchmark-without-gradle)
   * [Create Baseline Profiles {:#creating-profile-rules}](/topic/performance/baselineprofiles/create-baselineprofile)
-
-
 
 [ Previous arrow_back  About Microbenchmark  ](/topic/performance/benchmarking/microbenchmark-overview)
 

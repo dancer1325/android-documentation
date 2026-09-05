@@ -3,16 +3,6 @@
 **Source:** [https://developer.android.com/kotlin/multiplatform](https://developer.android.com/kotlin/multiplatform)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Get started ](https://developer.android.com/get-started/overview)
-  * [ Kotlin ](https://developer.android.com/kotlin)
-  * [ Guides ](https://developer.android.com/kotlin/first)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](https://developer.android.com/static/images/picto-icons/kmp.svg)
 
 ###  Kotlin Multiplatform 
@@ -43,8 +33,6 @@ We recommend installing the Kotlin Multiplatform Android Studio Plugin developed
   * **Preflight checks** : Preflight checks help you configure your environment.
   * **Run configurations** : Run, debug, and test applications on both iOS and Android directly from the IDE.
   * **Basic Swift support in the IDE** : Get basic Swift support in the IDE, including cross-language debugging tools, navigation, and quick documentation.
-
-
 
 [Go to JetBrains Marketplace](https://plugins.jetbrains.com/plugin/14936-kotlin-multiplatform)
 
@@ -78,19 +66,16 @@ Many of our Jetpack libraries have already been migrated to be KMP-ready. The fo
 
 Library | Latest Release | Android | iOS | JVM | Web |  [ annotation ](/jetpack/androidx/releases/annotation) |  April 08, 2026   
 
-
   * [1.10.0](/jetpack/androidx/releases/annotation#1.10.0)
 
 | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg)  
 ---|---|---|---|---|---  
 [ collection ](/jetpack/androidx/releases/collection) |  March 11, 2026   
 
-
   * [1.6.0](/jetpack/androidx/releases/collection#1.6.0)
 
 | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg)  
 [ compose ](/jetpack/androidx/releases/compose-runtime) |  July 01, 2026   
-
 
   * [1.11.4](/jetpack/androidx/releases/compose-runtime#1.11.4)
   * [1.12.0-beta02](/jetpack/androidx/releases/compose-runtime#1.12.0-beta02)
@@ -100,7 +85,6 @@ Library | Latest Release | Android | iOS | JVM | Web |  [ annotation ](/jetpack/
   
 [ article Documentation ](/kotlin/multiplatform/datastore) |  May 06, 2026   
 
-
   * [1.2.1](/jetpack/androidx/releases/datastore#1.2.1)
   * [1.3.0-alpha09](/jetpack/androidx/releases/datastore#1.3.0-alpha09)
 
@@ -109,14 +93,12 @@ Library | Latest Release | Android | iOS | JVM | Web |  [ annotation ](/jetpack/
   
 [ article Documentation ](https://kotlinlang.org/docs/multiplatform/compose-lifecycle.html) |  June 17, 2026   
 
-
   * [2.11.0](/jetpack/androidx/releases/lifecycle#2.11.0)
 
 | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg)  
 [ viewModel ](/jetpack/androidx/releases/lifecycle)   
   
 [ article Documentation ](/kotlin/multiplatform/viewmodel) |  June 17, 2026   
-
 
   * [2.11.0](/jetpack/androidx/releases/lifecycle#2.11.0)
 
@@ -125,7 +107,6 @@ Library | Latest Release | Android | iOS | JVM | Web |  [ annotation ](/jetpack/
   
 [ article Documentation ](https://kotlinlang.org/docs/multiplatform/compose-viewmodel.html) |  June 17, 2026   
 
-
   * [2.11.0](/jetpack/androidx/releases/lifecycle#2.11.0)
 
 | ![](/static/images/logos/android.svg) | ![](/static/images/logos/jetbrains.svg) | ![](/static/images/logos/jetbrains.svg) | ![](/static/images/logos/jetbrains.svg)  
@@ -133,13 +114,11 @@ Library | Latest Release | Android | iOS | JVM | Web |  [ annotation ](/jetpack/
   
 [ article Documentation ](https://kotlinlang.org/docs/multiplatform/compose-navigation.html) |  July 01, 2026   
 
-
   * [2.9.8](/jetpack/androidx/releases/navigation#2.9.8)
   * [2.10.0-alpha06](/jetpack/androidx/releases/navigation#2.10.0-alpha06)
 
 | ![](/static/images/logos/android.svg) | ![](/static/images/logos/jetbrains.svg) | ![](/static/images/logos/jetbrains.svg) | ![](/static/images/logos/jetbrains.svg)  
 [ navigation3 ](/jetpack/androidx/releases/navigation3) |  July 01, 2026   
-
 
   * [1.1.4](/jetpack/androidx/releases/navigation3#1.1.4)
   * [1.2.0-alpha05](/jetpack/androidx/releases/navigation3#1.2.0-alpha05)
@@ -147,13 +126,11 @@ Library | Latest Release | Android | iOS | JVM | Web |  [ annotation ](/jetpack/
 | ![](/static/images/logos/android.svg) | ![](/static/images/logos/jetbrains.svg) | ![](/static/images/logos/jetbrains.svg) | ![](/static/images/logos/jetbrains.svg)  
 [ navigationevent ](/jetpack/androidx/releases/navigationevent) |  July 01, 2026   
 
-
   * [1.1.2](/jetpack/androidx/releases/navigationevent#1.1.2)
   * [1.2.0-alpha01](/jetpack/androidx/releases/navigationevent#1.2.0-alpha01)
 
 | ![](/static/images/logos/android.svg) | ![](/static/images/logos/jetbrains.svg) | ![](/static/images/logos/jetbrains.svg) | ![](/static/images/logos/jetbrains.svg)  
 [ paging ](/jetpack/androidx/releases/paging) |  May 06, 2026   
-
 
   * [3.5.0](/jetpack/androidx/releases/paging#3.5.0)
 
@@ -162,12 +139,10 @@ Library | Latest Release | Android | iOS | JVM | Web |  [ annotation ](/jetpack/
   
 [ article Documentation ](/kotlin/multiplatform/room) |  November 19, 2025   
 
-
   * [2.8.4](/jetpack/androidx/releases/room#2.8.4)
 
 | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg) |  device_unknown  
 [ savedstate ](/jetpack/androidx/releases/savedstate) |  May 19, 2026   
-
 
   * [1.5.0](/jetpack/androidx/releases/savedstate#1.5.0)
 
@@ -175,7 +150,6 @@ Library | Latest Release | Android | iOS | JVM | Web |  [ annotation ](/jetpack/
 [ sqlite ](/jetpack/androidx/releases/sqlite)   
   
 [ article Documentation ](/kotlin/multiplatform/sqlite) |  July 01, 2026   
-
 
   * [2.7.0](/jetpack/androidx/releases/sqlite#2.7.0)
 
@@ -269,8 +243,6 @@ Code is fully tested in CI; including both host-side and on-device tests. We're 
   * **JVM**
   * **iOS**
 
-
-
 looks_two 
 
 ###  Tier 2 
@@ -279,8 +251,6 @@ Code is partially tested on CI; limited to host-side tests. We don't track sourc
 
   * **macOS**
   * **Linux**
-
-
 
 looks_3 
 
@@ -293,8 +263,6 @@ Code is untested on CI. No source or binary compatibility tracking.
   * **Windows**
   * **JavaScript**
   * **WASM**
-
-
 
 ##  Additional resources 
 

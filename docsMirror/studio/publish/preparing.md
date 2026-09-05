@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Prepare your app for release Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Prepare your app for release
 Android developer verification is a new requirement designed to link individuals and organizations to their Android apps. Starting in 2026, Android will require all apps to be registered by verified developers in order to be installed by users on certified Android devices. To learn what you need to do, see [Android developer verification](https://developer.android.com/developer-verification/guides). 
 
 To prepare your app for release, you need to configure, build, and test a release version of your app. The configuration tasks involve basic code cleanup and code modification tasks that help optimize your app. The build process is similar to the debug build process and can be done using JDK and Android SDK tools.
@@ -143,8 +135,6 @@ Clean up your project and make sure it conforms to the directory structure descr
   * Check your `lib/` directory for test libraries and remove them if they are no longer being used by your app.
   * Review the contents of your `assets/` directory and your `res/raw/` directory for raw asset files and static files that you need to update or remove prior to release.
 
-
-
 ### Review and update your manifest and Gradle build settings
 
 Verify that the following manifest and build files items are set correctly:
@@ -160,9 +150,6 @@ You must specify values for these attributes, which are located in the `[<applic
   * `versionCode` and `versionName` properties 
 
 We recommend that you specify values for these properties, which are located in the app module-level `build.gradle` or `build.gradle.kts` file. For more information, see [Version your app](/tools/publishing/versioning).
-
-
-
 
 There are several additional build file elements that you can set if you are releasing your app on Google Play. For example, the `minSdk` and `targetSdk` attributes, which are located in the app module-level `build.gradle` or `build.gradle.kts` file. For more information about these and other Google Play settings, see [Filters on Google Play](/google/play/filters).
 

@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Use the Android Gradle plugin Upgrade Assistant Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Use the Android Gradle plugin Upgrade Assistant
 The Android Gradle plugin (AGP) Upgrade Assistant is a tool in Android Studio that helps you upgrade the version of AGP used by your project.
 
 **Important:** You can use an agent skill to help you upgrade your project to AGP version 9.x. If your app doesn't use Kotlin Multiplatform (KMP), try the AGP 9 upgrade skill from the [Android skills repository](https://github.com/android/skills). If your app uses KMP, try the skill from [JetBrains](https://github.com/Kotlin/kotlin-agent-skills/tree/main/skills/kotlin-tooling-agp9-migration).
@@ -30,9 +22,6 @@ The AGP Upgrade Assistant guides you through the changes needed to upgrade AGP v
   * **Compatibility requirements between AGP and Gradle** : The Upgrade Assistant is aware of the [compatibility requirements between AGP and Gradle](/studio/releases/gradle-plugin?buildsystem=ndk-build#updating-gradle) and helps ensure that you are using the version of Gradle required for your version of AGP.
 
   * **Compatibility requirements between AGP and third-party Gradle plugins** : The Upgrade Assistant is aware of the compatibility requirements between AGP and some third-party Gradle plugins and helps ensure that you are using the versions of third-party Gradle plugins that are required for your version of AGP.
-
-
-
 
 In general, the Upgrade Assistant makes it easier to update build files and understand related error messages after an AGP upgrade. The Upgrade Assistant also explains why the proposed changes are necessary.
 
@@ -53,8 +42,6 @@ To get the best use out of the AGP Upgrade Assistant, do the following:
 **Note:** The Upgrade Assistant does not support projects that refer to constants or variables defined in the `buildSrc` directory, projects that use Gradle Version Catalogs defined in settings files, or projects that refer to Gradle Version Catalogs for things other than dependencies and plugins. In general, we don't recommended using `buildSrc` to structure your project, because it can be inefficient. Any change to `buildSrc` constants and variables, no matter how minor, triggers a full rebuild of the project.
 
   * **Use the declarative build domain-specific language** : Gradle build files are expressed in Groovy or Kotlin. However, the more declarative the expression of the project configuration, the more likely that the Upgrade Assistant successfully finds all the places that need adjustment for an upgrade.
-
-
 
 Even if a project conforms to these limitations, the Upgrade Assistant might still fail to perform a clean upgrade. See Troubleshoot errors for guidance on how to resolve or report bugs.
 
@@ -86,9 +73,6 @@ The Upgrade Assistant changes the project build files and attempts to sync the n
 
   6. Once you have verified that your project is in a good state, commit the new version of your project to your version control system.
 
-
-
-
 ## Troubleshoot errors
 
 If the Upgrade Assistant suggests an upgrade but the upgrade fails, this is typically the result of making changes to the build files, resulting in a sync failure. Follow these steps to help isolate and fix the error:
@@ -97,9 +81,6 @@ If the Upgrade Assistant suggests an upgrade but the upgrade fails, this is typi
 
   * If the error message is not clear, or it's not obvious what is causing the problem, then return the project to its original state to break the upgrade down into smaller steps. Restore the original state from version control, or from backups, and make sure the project is in its original state and synced with Android Studio.
 
-
-
-
 Investigate the error by following two kinds of upgrade breakdowns:
 
   * **Upgrade to a different version of AGP that is not the latest version.** If the upgrade that went wrong was an upgrade of a large number of versions, the best way to isolate the problem is to do a series of smaller upgrades, from version to version, to find the first upgrade that triggers the problem.
@@ -107,9 +88,6 @@ Investigate the error by following two kinds of upgrade breakdowns:
   * **Within an upgrade, do individual steps one at a time.** Once you determine the upgrade that triggers the problem, it might be possible to turn individual steps in the upgrade off. If it's possible, try doing each step one at a time to find which of those steps is responsible for the error. If you can't find the step responsible, check the release notes of any other Gradle plugins you are using for compatibility issues with Gradle or AGP. Sometimes, a new release addresses the use of deprecated or internal APIs.
 
   * **[Report a bug](/studio/report-bugs).** Sometimes all the preparatory steps and sync succeed but the final upgrade step still fails. In this case, please report a bug. Even if you succeed in fixing the error yourself, [report the original failure](/studio/report-bugs) to the bug tracker, so that the problem can be addressed by the development team.
-
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

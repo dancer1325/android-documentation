@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  ANRs Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  ANRs
 When the UI thread of an Android app is blocked for too long, an "Application Not Responding" (ANR) error is triggered. If the app is in the foreground, the system displays a dialog to the user, as shown in figure 1. The ANR dialog gives the user the opportunity to force quit the app.
 
 ![Figure 1. ANR dialog displayed to the user](/static/topic/performance/images/anr-example-framed.png)
@@ -29,8 +21,6 @@ An ANR is triggered for your app when one of the following conditions occur:
   * **Broadcast of intent:** If a [`BroadcastReceiver`](/reference/android/content/BroadcastReceiver) hasn't finished executing within a set amount of time. If the app has any activity in the foreground, this timeout is 5 seconds.
   * **JobScheduler interactions:** If a [`JobService`](/reference/android/app/job/JobService) does not return from `JobService.onStartJob()` or `JobService.onStopJob()` within a few seconds, or if a [user-initiated job](/reference/android/app/job/JobParameters#isUserInitiatedJob\(\)) starts and your app doesn't call `JobService.setNotification()` within a few seconds after `JobService.onStartJob()` was called. For apps targeting Android 13 and below, the ANRs are silent and not reported to the app. For apps targeting Android 14 and above, the ANRs are explicit and are reported to the app.
 
-
-
 If your app is experiencing ANRs, you can use the guidance in this article to diagnose and fix the problem.
 
 ## Detect the problem
@@ -45,8 +35,6 @@ Android vitals can help you monitor and improve your app's ANR rate. Android vit
   * **User-perceived ANR rate:** The percentage of your daily active users who experienced at least one _user-perceived ANR_. Currently only ANRs of type `Input dispatching timed out` are considered user-perceived.
   * **Multiple ANR rate:** The percentage of your daily active users who experienced at least two ANRs.
 
-
-
 A _daily active user_ is a unique user who uses your app on a single day on a single device, potentially over multiple sessions. If a user uses your app on more than one device in a single day, each device will contribute to the number of active users for that day. If multiple users use the same device in a single day, this is counted as one active user.
 
 User-perceived ANR rate is a _core vital_ meaning that it affects the discoverability of your app on Google Play. It is important because the ANRs it counts always occur when the user is engaged with the app, causing the most disruption.
@@ -55,8 +43,6 @@ Play has defined two **bad behavior thresholds** on this metric:
 
   * **Overall bad behavior threshold:** At least 0.47% of daily active users experience a user-perceived ANR, across all device models.
   * **Per-device bad behavior threshold:** At least 8% of daily users experience a user-perceived ANR, **for a single device model**.
-
-
 
 If your app exceeds the overall bad behavior threshold, it is likely to be less discoverable on all devices. If your app exceeds the per-device bad behavior threshold on some devices, it is likely to be less discoverable on those devices, and a warning may be shown on your store listing.
 
@@ -73,8 +59,6 @@ There are some common patterns to look for when diagnosing ANRs:
   * The main thread is doing a synchronous binder call to another process, and that other process is taking a long time to return.
   * The main thread is blocked waiting for a synchronized block for a long operation that is happening on another thread.
   * The main thread is in a deadlock with another thread, either in your process or via a binder call. The main thread is not just waiting for a long operation to finish, but is in a deadlock situation. For more information, see [Deadlock](https://en.wikipedia.org/wiki/Deadlock) on Wikipedia.
-
-
 
 The following techniques can help you determine the cause of your ANRs.
 
@@ -324,8 +308,6 @@ An ANR occurs in the following cases:
   * A broadcast receiver hasn’t finished executing its [`onReceive()`](/reference/android/content/BroadcastReceiver#onReceive\(android.content.Context,%20android.content.Intent\)) method within a considerable amount of time.
   * A broadcast receiver calls [`goAsync()`](/reference/android/content/BroadcastReceiver#goAsync\(\)) and fails to call [`finish()`](/reference/android/content/BroadcastReceiver.PendingResult#finish\(\)) on the [`PendingResult`](/reference/android/content/BroadcastReceiver.PendingResult) object.
 
-
-
 Your app should only perform short operations in the [`onReceive()`](/reference/android/content/BroadcastReceiver#onReceive\(android.content.Context,%20android.content.Intent\)) method of a [`BroadcastReceiver`](/reference/android/content/BroadcastReceiver). However, if your app requires more complex processing as a result of a broadcast message you should defer the task to an [`IntentService`](/reference/android/app/IntentService).
 
 You can use tools like Traceview to identify if your broadcast receiver executes long-running operations on the app's main thread. For example, figure 6 shows the timeline of a broadcast receiver that processes a message on the main thread for approximately 100 seconds.
@@ -437,8 +419,6 @@ For more information about ANRs, see [Keeping your app responsive](/training/art
 
   * Note: link text is displayed when JavaScript is off
   * [Excessive wakeups](/topic/performance/vitals/wakeup)
-
-
 
 [ Next Crashes  arrow_forward  ](/topic/performance/vitals/crash)
 

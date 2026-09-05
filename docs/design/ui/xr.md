@@ -4,17 +4,7 @@
 
 ---
 
-The Android XR SDK is now available in Developer Preview. We want your feedback! Visit our [support page](/develop/xr/support) to reach out. 
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ UI Design ](https://developer.android.com/design/ui)
-  * [ XR Headsets & wired XR Glasses ](https://developer.android.com/design/ui/xr)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
+The Android XR SDK is now available in Developer Preview. We want your feedback! Visit our [support page](/develop/xr/support) to reach out.
 ![](https://developer.android.com/static/images/design/ui/xr/xr-design.png)
 
 ###  Design for Immersive Android XR 

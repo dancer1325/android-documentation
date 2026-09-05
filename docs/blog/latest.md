@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/blog/latest](https://developer.android.com/blog/latest)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Android Developers' Blog ](https://developer.android.com/)
-  * [ Blog ](https://developer.android.com/blog)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 # The Latest
 
 Stay up to date with the latest announcements, feature rollouts, and updates across Android tools, libraries, and platforms.
@@ -419,9 +410,6 @@ We are excited to introduce Wear OS 7, a major update that brings a new era of p
     * [ #Compose ](/blog/topics/compose)
     * +1 ↩
 
-
-
-
 arrow_back 
 
 #### Page 1
@@ -479,8 +467,6 @@ arrow_back
   * [ #Large Screens ](/blog/topics/large-screens)
   * [ #Layouts ](/blog/topics/layouts)
   * [ #Window Size Classes ](/blog/topics/blog-topic)
-
-
 
 Stay in the loop
 

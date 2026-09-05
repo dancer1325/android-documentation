@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Manage your app's UI resources with Resource Manager Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Manage your app's UI resources with Resource Manager
 Resource Manager is a tool window for importing, creating, managing, and using resources in your app. To open the tool window, select **View > Tool Windows > Resource Manager** from the menu or select **Resource Manager** in the left side bar.
 
 ![](/static/images/studio/write/resource-manager-2x.png)
@@ -28,14 +20,10 @@ Resource Manager is a tool window for importing, creating, managing, and using r
   7. Click these buttons to view your resources as either tiles or lists.
   8. Click these buttons to change the preview size of your resources.
 
-
-
 In addition to these features, the Resource Manager provides a way to bulk-import drawables into your project. To bulk-import, you can either:
 
   * Drag your image files—including SVG files—directly onto the Resource Manager.
   * Use the **Import Drawables** wizard.
-
-
 
 For more information, see the Import drawables into your project section.
 
@@ -79,9 +67,6 @@ For more information on resource qualifiers, see [Provide alternative resources]
 Once you've named your resources and added any necessary qualifiers, click **Next**.
 
   3. The next screen shows a summary of the resources you're importing. When you're ready to import, click **Import**.
-
-
-
 
 In the **Resource Manager** window, your resources are now ready for you to use in your project, as shown in figure 5.
 
@@ -129,8 +114,6 @@ When building with Jetpack Compose, you access resources directly from your Kotl
   * **Strings** : Use `stringResource(id = R.string.your_string)` to retrieve localized UI text.
   * **Colors** : Use `colorResource(id = R.color.your_color)` to apply theme-defined colors.
 
-
-
 The Resource Manager ensures these IDs are generated correctly, letting you seamlessly reference your assets from your Compose UI hierarchy.
 
 For information about advanced resource handling—including dynamic font loading, configuration-specific resources, and Compose-specific resource libraries—see the documentation on [Resources in Compose](/develop/ui/compose/resources).
@@ -140,8 +123,6 @@ For information about advanced resource handling—including dynamic font loadin
 ### Views content
 
   * [Manage your app's UI resources with Resource Manager (Views)](/studio/views/resource-manager-views)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

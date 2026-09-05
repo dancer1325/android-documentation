@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Create an Android library Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Create an Android library
 An Android library is structurally the same as an Android app module. It includes everything needed to build an app, including source code, resource files, and an Android manifest.
 
 However, instead of compiling into an APK that runs on a device, an Android library compiles into an Android Archive (AAR) file that you can use as a dependency for an Android app module. Unlike JAR files, AAR files offer the following functionality for Android apps:
@@ -20,14 +12,10 @@ However, instead of compiling into an APK that runs on a device, an Android libr
   * AAR files can contain Android resources and a manifest file, which lets you bundle in shared resources like layouts and drawables in addition to Kotlin or Java classes and methods.
   * AAR files can contain [C/C++ libraries](/studio/build/dependencies#using-native-dependencies) for use by the app module's C/C++ code.
 
-
-
 A library module is useful in the following situations:
 
   * When building multiple apps that use some of the same components, such as activities, services, or UI layouts
   * When building an app that exists in multiple APK variations, such as a free and paid version, that share core components
-
-
 
 In either case, move the files you want to reuse into a library module and then add the library as a dependency for each app module.
 
@@ -43,8 +31,6 @@ To create a new library module in your project, proceed as follows:
 There's also an option to create a Kotlin or Java library, which builds a traditional JAR file. While a JAR file is useful for many projects—especially when you want to share code with other platforms—it doesn't let you include Android resources or manifest files, which is very useful for code reuse in Android projects. This guide focuses on creating Android libraries.
 
   3. Give your library a name and select a minimum SDK version for the code in the library, then click **Finish**.  **Important:** Module package names must be globally unique. You can't have two modules with the same package name in the same project. 
-
-
 
 Once the Gradle project sync completes, the library module appears in the **Project** pane. If you don't see the new module folder, make sure the pane is displaying the [**Android** view](/studio/projects#ProjectFiles).
 
@@ -88,8 +74,6 @@ Change it to the following:
 
   4. Save the file and click **File > Sync Project with Gradle Files**. 
 
-
-
 The structure of the module remains the same, but it now operates as an Android library. The build creates an AAR file instead of an APK.
 
 When you want to build the AAR file, select the library module in the **Project** window and click **Build > Build APK**.
@@ -113,9 +97,6 @@ To use your new Android library's code in another app or library module within t
 Dialog](/static/studio/images/projects/psd-add-module-dependency.png)
 
   5. Select the configuration that requires this dependency or select **implementation** if it applies to all configurations, then click **OK**.
-
-
-
 
 Android Studio edits your module's `build.gradle` or `build.gradle.kts` file to add the dependency, in the following form:
 
@@ -149,9 +130,6 @@ To use your Android library's code in another app module in a different project,
 Dialog](/static/studio/images/projects/psd-add-library-dependency.png)
 
   4. Select the configuration that requires this dependency or select **implementation** if it applies to all configurations, then click **OK**.
-
-
-
 
 Check your app’s `build.gradle` or `build.gradle.kts` file to confirm that a declaration similar to the following appears (depending on the build configuration you've selected):
 
@@ -187,9 +165,6 @@ Check your app’s `build.gradle` or `build.gradle.kts` file to confirm that a d
 ### Kotlin
          
          implementation(files("my_path/my_lib.aar"))
-
-
-
 
 To import a dependency on the Gradle build running outside of Android Studio, add a path to the dependency in your app’s `build.gradle` or `build.gradle.kts` file. For example:
 
@@ -311,9 +286,6 @@ The main difference is that the library and its dependencies are automatically i
 
 When [merging multiple manifest files](/studio/build/manage-manifests#merge-manifests), Gradle follows the default priority order and merges the library's manifest into the test APK's main manifest. 
 
-
-
-
 ## Anatomy of an AAR file
 
 The file extension for an AAR file is `.aar`, and the Maven artifact type is `aar` as well. The file itself is a ZIP file. The only mandatory entry is `/AndroidManifest.xml`.
@@ -331,8 +303,6 @@ An AAR file can also include one or more of the following optional entries:
   * `/lint.jar`
   * `/api.jar`
   * `/prefab/` for [exporting native libraries](/studio/build/dependencies#native-dependencies-aars)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

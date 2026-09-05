@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Use R8 Configuration Analyzer Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Use R8 Configuration Analyzer
 R8 Configuration Analyzer is a tool designed to help you maximize R8's performance benefits by providing detailed insights into your app's configuration quality. It lets you track and improve R8 optimization by monitoring key metrics—specifically shrinking, optimization, and obfuscation scores—which indicate the percentage of your codebase available for optimization. By identifying broad or unnecessary keep rules, including those introduced by third-party libraries, the analyzer helps you refine your configuration to ensure R8 can effectively optimize as many of your classes, fields, and methods as possible.
 
 **Note:** To use the R8 Configuration Analyzer, you need R8 version 9.3.7-dev or later. This version comes pre-bundled with Android Gradle Plugin (AGP) 9.3.0-alpha05 and later. To update your R8 version without updating AGP follow the steps in [Replacing R8 in AGP](https://r8.googlesource.com/r8/+/refs/heads/main/README.md#replacing-r8-in-agp).
@@ -82,8 +74,6 @@ To refine your keep rules and unlock the full potential of R8 optimizations for 
   3. Reduce the optimization blocked by keep rules by targeting only necessary classes, fields, or methods by [choosing the right keep option](/topic/performance/app-optimization/add-keep-rules#choose-keep) and [following the best practices](/topic/performance/app-optimization/keep-rules-best-practices).
   4. Investigate and run tests that cover the affected classes, fields and methods of the keep rule and refine the keep rules.
 
-
-
 ## Inspect optimization of libraries
 
 When you integrate third-party libraries, they often include their own consumer keep rules to work with R8. Because the library author cannot predict your specific implementation, they sometimes write conservative, wide-reaching rules that prevent optimization in more classes, fields, and methods than necessary. This may prevent R8 from optimizing parts of your app that have nothing to do with the library's actual runtime execution. You can use R8 Configuration Analyzer to identify libraries introducing rules that negatively impact the optimization of your app.
@@ -122,8 +112,6 @@ The first keep rule which prevents optimization in the entire package is subsumi
      1. If the narrow rule is written precisely—only keeping the exact members or classes that are reflectively accessed– then remove the broader keep rule. This safely unlocks R8 optimizations for the rest of your package.
      2. If the broad rule is targeting the right classes, keep the broad rule and delete the narrow rule. The narrow rule is just redundant clutter. Make sure to refine the broad rule to target only classes, fields or methods that you have identified.
 
-
-
 **Verify and test your changes** : Re-run the configuration analyzer to ensure the conflict is fixed. Then, compile a release build and test your changes to ensure that the codebase works as expected.
 
 ## Remove unnecessary rules
@@ -132,8 +120,6 @@ Using the configuration analyzer, you can systematically audit your codebase to 
 
   * **Unused rules** : Rules that match zero classes, methods, or fields in your current build. They often persist after code refactoring, dependency removal, or from copy-paste configurations that are no longer relevant, adding unnecessary configuration complexity.
   * **Identical rules** : Identical keep rules means rules that target the same classes, fields, and methods or duplicate declarations of keep rule in same or across keep rule files.
-
-
 
 Both types of rules add clutter to your configuration, making it harder to maintain and debug. By identifying these, you can clean up your configuration.
 

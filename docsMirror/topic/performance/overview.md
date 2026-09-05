@@ -3,16 +3,6 @@
 **Source:** [https://developer.android.com/topic/performance/overview](https://developer.android.com/topic/performance/overview)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 # App performance guide
 
 This guide provides an overview of libraries, tools, and best practices you can use to inspect, improve, and monitor performance on Android. 

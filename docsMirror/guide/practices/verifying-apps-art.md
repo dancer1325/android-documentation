@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Verifying app behavior on the Android runtime (ART) Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Verifying app behavior on the Android runtime (ART)
 The Android runtime (ART) is the default runtime for devices running Android 5.0 (API level 21) and higher. This runtime offers a number of features that improve performance and smoothness of the Android platform and apps. You can find more information about ART's new features in [Introducing ART](https://source.android.com/devices/tech/dalvik/art.html). 
 
 However, some techniques that work on Dalvik do not work on ART. This document lets you know about things to watch for when migrating an existing app to be compatible with ART. Most apps should just work when running with ART. 
@@ -41,8 +33,6 @@ One area to watch for in particular is the use of `Get...ArrayElements()` and `R
     * If you made changes to the array, and do not need the reference any more, use code `0` (which updates the array object and frees the copy of the memory).
     * If you made changes to the array that you want to commit, and you want to keep the copy of the array, use `JNI_COMMIT` (which updates the underlying array object and retains the copy).
   * When you call `Release...ArrayElements()`, return the same pointer that was originally returned by `Get...ArrayElements()`. For example, it's not safe to increment the original pointer (to scan through the returned array elements) then pass the incremented pointer to `Release...ArrayElements()`. Passing this modified pointer can cause the wrong memory to be freed, resulting in memory corruption.
-
-
 
 ### Error handling
 
@@ -86,9 +76,6 @@ Dalvik had separate stacks for native and Java code, with a default Java stack s
         F/art: art/runtime/thread.cc:435]
             Attempt to attach a thread with a too-small stack (16384 bytes)
 
-
-
-
 ## Object model changes
 
 Dalvik incorrectly allowed subclasses to override package-private methods. ART issues a warning in such cases:
@@ -122,9 +109,6 @@ ART's Ahead-Of-Time (AOT) Java compilation should work for all standard Java cod
   * Some apps have dependencies on the installed `.odex` file format in `/system/framework`, `/data/dalvik-cache`, or in `[DexClassLoader](/reference/dalvik/system/DexClassLoader)`’s optimized output directory. These files are now ELF files and not an extended form of DEX files. While ART tries to follow the same naming and locking rules as Dalvik, apps should not depend on the file format; the format is subject to change without notice. 
 
 **Note:** In Android 8.0 (API level 26) and higher, the `[DexClassLoader](/reference/dalvik/system/DexClassLoader)` optimized output directory has been deprecated. For more information, see the documentation for the `[DexClassLoader()](/reference/dalvik/system/DexClassLoader#DexClassLoader\(java.lang.String, java.lang.String, java.lang.String, java.lang.ClassLoader\))` constructor.
-
-
-
 
 ## Reporting problems
 

@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Follow the best practices Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Follow the best practices
 While working with keep rules, it's important to reach the right amount of specificity to make sure you see benefits while maintaining your app's behaviour. See the following sections to learn about good patterns as well as things to avoid in keep rules.
 
 ## Good patterns in keep rules
@@ -64,9 +56,6 @@ We recommend naming your annotations such that they provide meaningful context f
 
   * Where possible, use `-assumenosideeffects` or `-convertchecknotnull` to optimize null checks because this can significantly reduce the size of your app's DEX. For more information, see [Additional rule types](/topic/performance/app-optimization/additional-rule-types).
 
-
-
-
 If you can't adhere to these guidelines, you can temporarily isolate the code that needs to be kept in a dedicated package and apply your keep rule to the package. However, this isn't a solution for the long term. To learn more, see [Adopt optimizations incrementally](/topic/performance/app-optimization/adopt-optimizations-incrementally#use-package-wide). To use a keep rule for a package define a keep rule as shown in the following example:
     
     
@@ -80,8 +69,6 @@ The keep rule syntax has many options, but for measurable sustainable performanc
   * Don't use package-wide keep rules such as `-keep class com.example.pkg.** { *; }` long-term. They can be used temporarily to work around issues when configuring R8. For more information, see [Limit the optimization scope](/topic/performance/app-optimization/adopt-optimizations-incrementally#limit-optimization). In general, be careful with wildcards— make sure that you are keeping only the code that you need to.
   * When possible, avoid libraries that suggest you copy and paste keep rules when you use them, especially package-wide keep rules. Libraries designed to perform well on Android should avoid reflection where possible and [embed consumer keep rules when necessary](/topic/performance/app-optimization/library-optimization#write-consumer-rules).
   * Avoid using the inversion operator `!` in keep rules because you could unintentionally apply a rule to almost every class in your application.
-
-
 
 If you're unable to follow these rules, you might be using a lot of open-ended reflection, and should either avoid the reflection or avoid the library using reflection (see the [Gson case study](/topic/performance/app-optimization/choose-libraries-wisely#gson-issues)).
 

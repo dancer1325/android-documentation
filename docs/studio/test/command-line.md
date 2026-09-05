@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Test from the command line Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Test from the command line
 This document describes how to run tests directly from the command line. This document assumes that you already know how to create an Android app and write tests for your app. For more information on how to build tests for your app, see [Test apps on Android](/training/testing).
 
 The command-line tools and Gradle tasks described on this page are UI-toolkit independent. If you want to write UI tests for Compose, see [Test your Compose layout](/develop/ui/compose/testing). After your tests are written, continue with this guide to run them from your terminal or your remote continuous integration environment.
@@ -76,7 +68,6 @@ The `test` and `connectedAndroidTest` tasks run tests on each [build variant](/s
         
         ./gradlew connected**VariantName** AndroidTest
 
-
 **Note:** To further restrict the tests that run, target a specific build variant within a specific module. For example, use `./gradlew **mylibrary** :connected**VariantName** UnitTest` to run all unit tests for the `VariantName` variant inside the `mylibrary` module.
 
 ### Run specific test methods or classes
@@ -110,9 +101,6 @@ Where `<test_package_name>` is the Android package name of your test application
 The Android test runner class is usually [`AndroidJUnitRunner`](/reference/kotlin/androidx/test/runner/AndroidJUnitRunner):
          
          adb shell am instrument -w com.android.example/androidx.test.runner.AndroidJUnitRunner
-
-
-
 
 Your test results appear in `STDOUT`.
 
@@ -176,8 +164,6 @@ The following sections provide examples of using `am instrument` to run tests. T
     * `TestClass2`, which contains test methods `testMethod2` and `testMethod3`.
   * The test runner is [`AndroidJUnitRunner`](/reference/kotlin/androidx/test/runner/AndroidJUnitRunner).
 
-
-
 #### Run the entire test package
 
 To run all of the test classes in the test package, enter:
@@ -214,8 +200,6 @@ The Android Gradle Plugin provides unified test report tasks, which generate HTM
 ### Prerequisites
 
   * Android Gradle Plugin 9.2.0-alpha07 or higher.
-
-
 
 To generate unified test reports, run one of the following tasks:
 

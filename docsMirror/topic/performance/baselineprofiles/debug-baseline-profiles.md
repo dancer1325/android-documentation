@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Debug Baseline Profiles Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Debug Baseline Profiles
 This document provides best practices and troubleshooting steps to help diagnose problems and make sure your Baseline Profiles work correctly to provide the most benefit.
 
 ## Build issues
@@ -58,8 +50,6 @@ To check that the APK or Android App Bundle (AAB) you're inspecting is from a bu
 The presence of this file is the first sign of a correct build configuration. If it's missing, it means the Android Runtime won't receive any pre-compilation instructions at install time.
 
 ![Check for a Baseline Profile using APK Analyzer in Android Studio](/static/topic/performance/images/studio/baseline-profile-in-apk.png) **Figure 2.** Check for a Baseline Profile using APK Analyzer in Android Studio.
-
-
 
 Baseline Profiles need to be compiled on the device running the app. When you install non-debuggable builds using Android Studio or the Gradle wrapper command-line tool, on-device compilation happens automatically. If you install the app from the Google Play Store, Baseline Profiles are compiled during background device updates rather than at install time. When the app is installed using other tools, the Jetpack [`ProfileInstaller`](/jetpack/androidx/releases/profileinstaller) library is responsible for enqueueing the profiles for compilation during the next background DEX optimization process.
 
@@ -249,9 +239,6 @@ For projects using Android Gradle Plugin (AGP) 8.8 or higher, you can verify whe
          ]
          
 
-
-
-
 ### Inspect DEX arrangement for all AGP versions
 
 If you're using an AGP version lower than 8.8, inspecting the DEX files is the primary way to verify that your Startup Profile has been correctly applied. You can also use this method if you are using AGP 8.8 or higher and want to manually check the DEX layout. For example, if you aren't seeing the expected performance improvements. To inspect the DEX arrangement, do the following:
@@ -259,8 +246,6 @@ If you're using an AGP version lower than 8.8, inspecting the DEX files is the p
   1. Open your AAB or APK using **Build > Analyze APK** in Android Studio.
   2. Navigate to the first DEX file. For example, `classes.dex`.
   3. Inspect the contents of this DEX file. You should be able to verify that the critical classes and methods defined in your Startup Profile file (`startup-prof.txt`) are present in this primary DEX file. A successful application means that these startup-critical components are prioritized for faster loading.
-
-
 
 ## Performance issues
 
@@ -399,9 +384,6 @@ Since Startup and Baseline Profiles are a compile-time optimization, directly A/
   * **Off-cycle release** : Upload an off-cycle release to a small percentage of your user base that only includes the profile change. This lets you gather real-world metrics on the performance difference.
 
   * **Local benchmarking** : Locally benchmark your app with and without the profile applied. However, be aware that local benchmarking shows you the best-case scenario for profiles, as it doesn't include the effects of [Cloud Profiles](/topic/performance/baselineprofiles/overview#cloud-profiles) from ART that are present in production devices.
-
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

@@ -3,23 +3,12 @@
 **Source:** [https://developer.android.com/jetpack/androidx/releases/compose](https://developer.android.com/jetpack/androidx/releases/compose)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Get started ](https://developer.android.com/get-started/overview)
-  * [ Jetpack ](https://developer.android.com/jetpack)
-  * [ Libraries ](https://developer.android.com/jetpack/androidx/explorer)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 # Compose
 
 [User Guide](/jetpack/compose/tutorial) [Code Sample](https://github.com/android/compose-samples)
 
 API Reference  
 [androidx.compose](/reference/kotlin/androidx/compose/animation/package-summary)  
-
 
 Define your UI programmatically with composable functions that describe its shape and data dependencies. 
 

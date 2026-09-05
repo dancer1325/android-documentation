@@ -4,22 +4,12 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Record Java/Kotlin allocations Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Record Java/Kotlin allocations
 Recording Java/Kotlin allocations helps you identify undesirable memory patterns that might be causing performance problems. The profiler can show you the following about object allocations:
 
   * What types of objects were allocated and how much space they use.
   * The stack trace of each allocation, including in which thread.
   * When the objects were deallocated.
-
-
 
 You should record memory allocations during normal and extreme user interaction to identify exactly where your code is either allocating too many objects in a short time or allocating objects that become leaked. [Learn more about why you should profile your app memory](/studio/profile/capture-heap-dump#why-profile-memory).
 
@@ -56,9 +46,6 @@ After you stop the recording, you see the following:
 
   * Use the arrangement drop-down to choose how to arrange the allocations. In addition to the [arrangements available when you capture a heap dump](/studio/profile/capture-heap-dump#heap-dump-overview), you can arrange by callstack.
 
-
-
-
 ## How memory is counted
 
 The numbers you see at the top of are based on all the private memory pages that your app has committed, according to the Android system. This count doesn't include pages shared with the system or other apps. The categories in the memory count are as follows:
@@ -91,8 +78,6 @@ To inspect the allocation record, follow these steps:
   1. Browse the class list in the **Table** tab to find objects that have unusually large **Allocations** or **Total Count** values (depending on what you're optimizing for) and that might be leaked.
   2. In the **Instance View** pane, click an instance. Depending on what's applicable to that instance, the **Fields** or **Allocation Call Stack** tab opens. Use the information in the **Fields** or **Allocation Call Stack** tabs to determine if instances are truly needed or unnecessary duplications.
 
-
-
 ![](/static/studio/images/profiler-jk-allocations-instance-details.png)
 
 Right-click any list entry to jump to the relevant source code.
@@ -104,8 +89,6 @@ _Java Native Interface (JNI)_ is a framework that lets Java code and native code
   * Java objects used by native code are kept alive for too long.
   * Some objects on the Java heap might become unreachable if a JNI reference is discarded without first being explicitly deleted.
   * The global JNI reference limit is exhausted.
-
-
 
 To troubleshoot such issues, select **View JNI heap** in the profiler to browse all global JNI references and filter them by Java types and native call stacks. Right-click on an instance field in the **Fields** tab and select **Go to instance** to see the relevant allocation call stack.
 

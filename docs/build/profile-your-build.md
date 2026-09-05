@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Profile your build Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Profile your build
 Larger projects, or those that implement a lot of custom build logic, may require you to take a deeper look into the build process to find bottlenecks. You can do that by profiling how long Gradle takes to execute each phase of the build lifecycle and each build task. For example, if your build profile shows that Gradle is spending too much time configuring your project, it may suggest that you need to [move custom build logic out of the configuration phase](/studio/build/optimize-your-build#optimize_configuration). Additionally, if the `mergeDevDebugResources` task consumes a large amount of the build time, it may indicate that you need to either [convert your images to WebP](/studio/build/optimize-your-build#use_webp) or [disable PNG crunching](/studio/build/optimize-your-build#disable_crunching).
 
 If you're using Android Studio 4.0 or higher, the best way to investigate build performance issues is by [using the Build Analyzer](/studio/build/build-analyzer).
@@ -22,9 +14,6 @@ In addition, there are two options for profiling your build outside of Android S
   1. The standalone `gradle-profiler` tool, a robust tool for deep analysis of your build.
 
   2. The Gradle `--profile` option, a convenient tool available from the Gradle command line.
-
-
-
 
 ## Using the standalone `gradle-profiler` tool
 
@@ -40,14 +29,10 @@ Some of the project setup configurations for benchmarking include:
   * Number of Gradle workers (`org.gradle.workers.max`)
   * Per-plugin options to further optimize performance
 
-
-
 ### Getting started
 
   * Install gradle-profiler by following [these instructions](https://github.com/gradle/gradle-profiler#installing)
   * Run: `gradle-profiler --benchmark --project-dir <root-project> :app:assembleDebug`
-
-
 
 This will benchmark a fully up-to-date build because `--benchmark` runs the task multiple times without changing the project in between. Then it will generate an HTML report under the `profile-out/` directory showing you the build times.
 
@@ -58,8 +43,6 @@ There are other scenarios that may be more useful to benchmark:
   * Layout edits to simulate iterating on UI work.
   * String edits to simulate dealing with translation work.
   * Clean builds to simulate changes to the build itself (e.g., Android Gradle plugin update, Gradle update, or edits to your own build code under `buildSrc`).
-
-
 
 In order to benchmark these use cases, you can create a scenario that will be used to drive the `gradle-profiler` execution and which applies appropriate changes to your sources. You can examine some of the common scenarios below.
 
@@ -245,9 +228,6 @@ After the build completes, use the **Project** window navigate to the `project-r
 ![](/static/studio/images/build/build-report-tasks_2X.png)
 
 **Figure 3.** Viewing task execution results. 
-
-
-
 
 Now that you have a build profile report, you can begin looking for optimization opportunities by inspecting the information in each tab of the report. Some build settings require experimentation because the benefits may differ between projects and workstations. For example, projects with a large codebase may benefit from [code shrinking](/studio/build/shrink-code) to remove unused code and shrink the app size. However, smaller projects may benefit more from disabling code shrinking altogether. Additionally, increasing the Gradle heap size (using [ `org.gradle.jvmargs`](https://docs.gradle.org/current/userguide/build_environment.html)) might negatively impact performance on low-memory machines. 
 

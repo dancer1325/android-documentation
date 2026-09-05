@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Benchmark Baseline Profiles with Macrobenchmark library Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Benchmark Baseline Profiles with Macrobenchmark library
 We recommend using [Jetpack Macrobenchmark](/topic/performance/benchmarking/macrobenchmark-overview) to test how an app performs when Baseline Profiles are enabled, and then compare those results to a benchmark with Baseline Profiles disabled. With this approach, you can measure app startup time—both time to initial and full display—or runtime rendering performance to see if the frames produced can cause jank.
 
 Macrobenchmarks let you control pre-measurement compilation using the [`CompilationMode`](/reference/androidx/benchmark/macro/CompilationMode) API. Use different `CompilationMode` values to compare performance with different compilation states. The following code snippet shows how to use the `CompilationMode` parameter to measure the benefit of Baseline Profiles:
@@ -91,8 +83,6 @@ For strategies on reporting when the app UI is fully drawn, see [Improve startup
   * [Capture Macrobenchmark metrics][12]
   * [Write automated tests with UI Automator](/training/testing/other-components/ui-automator)
   * [App startup analysis and optimization {:#app-startup-analysis-optimization}][14]
-
-
 
 [ Previous arrow_back  Configure Baseline Profile generation  ](/topic/performance/baselineprofiles/configure-baselineprofiles)
 

@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Improve code inspection with annotations Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Improve code inspection with annotations
 Using code inspections tools, such as [lint](/studio/write/lint), can help you find problems and improve your code, but inspection tools can only infer so much. Android resource IDs, for example, use an `int` to identify strings, graphics, colors, and other resource types, so inspection tools can't tell when you have specified a string resource where you should have specified a color. This situation means that your app may render incorrectly or fail to run at all, even if you use code inspection. 
 
 Annotations let you provide hints to code inspections tools, such as lint, to help detect these more subtle code problems. Annotations are added as metadata tags that you attach to variables, parameters, and return values to inspect method return values, passed parameters, local variables, and fields. When used with code inspection tools, annotations can help you detect problems such as null pointer exceptions and resource type conflicts. 
@@ -106,8 +98,6 @@ Android Studio supports running a nullability analysis to automatically infer an
   * Variables, such as fields, local variables, and parameters, that can be null. 
   * Variables, such as fields, local variables, and parameters, that can't hold a null value. 
 
-
-
 The analysis then automatically inserts the appropriate null annotations in the detected locations. 
 
 To run a nullability analysis in Android Studio, select **Analyze** > **Infer Nullity**. Android Studio inserts the Android `[@Nullable](/reference/androidx/annotation/Nullable)` and `[@NonNull](/reference/androidx/annotation/NonNull)` annotations in detected locations in your code. After running a null analysis, it's a good practice to verify the injected annotations. 
@@ -150,8 +140,6 @@ Thread annotations check whether a method is called from a specific type of [thr
   * `[@BinderThread](/reference/androidx/annotation/BinderThread)`
   * `[@AnyThread](/reference/androidx/annotation/AnyThread)`
 
-
-
 The build tools treat the `@MainThread` and `@UiThread` annotations as interchangeable, so you can call `@UiThread` methods from `@MainThread` methods and vice versa. However, it's possible for a UI thread to be different from the main thread, in the case of system apps with multiple views on different threads. Therefore, you should annotate methods associated with an app's view hierarchy with `@UiThread` and annotate only methods associated with an app's lifecycle with `@MainThread`.
 
 If all methods in a class share the same threading requirement, you can add a single thread annotation to the class to verify that all methods in the class are called from the same type of thread.
@@ -192,8 +180,6 @@ The `@Size` annotation checks the size of a collection or array or the length of
   * Maximum size, such as `@Size(max=2)`
   * Exact size, such as `@Size(2)`
   * A number that the size must be a multiple of, such as `@Size(multiple=2)`
-
-
 
 For example, `@Size(min=1)` checks whether a collection is not empty, and `@Size(3)` validates that an array contains exactly three values.
 

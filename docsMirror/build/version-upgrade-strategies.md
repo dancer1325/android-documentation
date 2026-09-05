@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Upgrade dependency versions Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Upgrade dependency versions
 **Note:** Before updating your dependencies, consider enabling [Dependency verification](/build/dependency-verification) to help verify the dependencies you download and include in your project.
 
 Upgrading your dependencies gives you access to their latest features, bug fixes, and improvements. To upgrade your dependencies, you need to understand how [Gradle resolves the versions you request](/build/gradle-dependency-resolution), the risks that are involved, and steps you can take to mitigate those risks.
@@ -152,8 +144,6 @@ Upgrading a dependency can introduce risks in the form of API and behavior chang
   * Add new permission checks?
   * Create additional tests or modify existing tests for behavior changes?
 
-
-
 Consider that the dependency you've upgraded has upgraded the versions of _its_ dependencies. This can quickly spider into a massive set of changes.
 
 If you use plugins or tools that help automate dependency upgrades, be aware that they don't do any analysis for you; they upgrade to the latest library versions. _Don't assume that everything will work properly after these types of automatic upgrades_.
@@ -163,8 +153,6 @@ The key to successful upgrades is upgrade analysis:
   1. Determine dependency differences from before and after your upgrades.
   2. Examine each change and determine the risks involved.
   3. Mitigate risks, or accept or reject changes.
-
-
 
 ## Determine dependency differences
 
@@ -196,9 +184,6 @@ to your `build.gradle.kts` in each module.
   * Kotlin compiler: Enable `-Werror` to treat all warnings as errors. See [How to define options](https://kotlinlang.org/docs/gradle-compiler-options.html#how-to-define-options).
 
   * Other tools: If you use other static analysis tools that support baseline tracking, set up their baselines.
-
-
-
 
 Warning baselines make it easier to see new warnings introduced as you upgrade your dependencies. You can see changes in dependencies and their versions using [Dependency Guard](https://github.com/dropbox/dependency-guard).
 
@@ -365,8 +350,6 @@ After determining upgrade risks, decide how you want to mitigate them:
     * Look at the source (if available) when something questionable is found.
     * Make required changes in your source or build.
 
-
-
 Document your decisions. If risks from an upgrade become issues when running your application, documentation of your risk analysis can reduce the necessary error analysis.
 
 ## Validate licenses
@@ -381,8 +364,6 @@ If a license is not compatible (or has changed to be no longer compatible), you 
   * Work with your legal team to determine if you can change your license to be compatible.
   * Find another library with a compatible license and modify your application as needed.
   * Fork the last compatible version of the library (if that license allows derivatives and the changes are not retroactive) and make your own changes.
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

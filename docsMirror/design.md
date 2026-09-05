@@ -3,14 +3,6 @@
 **Source:** [https://developer.android.com/design](https://developer.android.com/design)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](https://developer.android.com/static/images/cluster-illustrations/ui-guidelines.svg)
 
 ###  Design & Plan 

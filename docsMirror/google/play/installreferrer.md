@@ -4,14 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Google Play ](https://developer.android.com/distribute)
-  * [ Other Play guides ](https://developer.android.com/guide/app-bundle)
-
-
-
-#  Google Play Install Referrer Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Google Play Install Referrer
 You can use the Google Play Store's Install Referrer API to securely retrieve referral content from Google Play, such as:
 
   * The referrer URL of the installed package.
@@ -19,8 +12,6 @@ You can use the Google Play Store's Install Referrer API to securely retrieve re
   * The timestamp, in seconds, of when an installation began (both client- and server-side).
   * The app's version at the time when the app was first installed.
   * Whether the user has interacted with your app's [instant experience](/topic/google-play-instant/overview) in the past 7 days.
-
-
 
 ## Requirements
 
@@ -34,8 +25,6 @@ The Install Referrer API is implemented as an [Android Interface Definition Lang
 
   * If you are using the Kotlin programming language or the Java programming language, use the [Play Install Referrer Client Library](/google/play/installreferrer/library) to simplify your coding.
   * If you are using another programming language, use the [Play Install Referrer API](/google/play/installreferrer/igetinstallreferrerservice). 
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

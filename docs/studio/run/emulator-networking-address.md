@@ -4,22 +4,12 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Network address space Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Network address space
 The emulator provides versatile networking capabilities that you can use to set up complex modeling and testing environments for your app. This page introduces the emulator network architecture and capabilities.
 
 The virtual router for each instance manages the `10.0.2/24` network address space.
 
   * All addresses managed by the router are in the form of `10.0.2.xx`, where `xx` is a number.
-
-
 
 The following table shows how addresses within this space are pre-allocated by the emulator or router:
 
@@ -46,8 +36,6 @@ Android apps running on an emulator can connect to the network available on your
 
   * Communication with the emulated device might be blocked by a firewall program running on your machine.
   * Communication with the emulated device might be blocked by another (physical) firewall or router where your machine is connected.
-
-
 
 The emulator's virtual router can handle all outbound TCP and UDP connections and messages for the emulated device, provided your development machine's network environment allows these connections. There are no built-in limitations on port numbers or ranges, only those imposed by your host operating system and network.
 

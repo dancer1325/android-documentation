@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Android Studio Quail 1 Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Android Studio Quail 1
 Android Studio is the official IDE for Android development, and includes everything you need to build Android apps.
 
 This page lists new features and improvements in the latest version in the stable channel, Android Studio Quail 1. You can update to it inside Android Studio by clicking **Help** > **Check for updates** (**Android Studio** > **Check for updates** on macOS), or by downloading directly:

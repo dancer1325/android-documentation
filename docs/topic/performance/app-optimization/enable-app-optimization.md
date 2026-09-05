@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Enable app optimization with R8 Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Enable app optimization with R8
 For the best user experience, you should optimize your app to make it as small and fast as possible. Our app optimizer, called R8, streamlines your app by removing unused code and resources, rewriting code to optimize runtime performance, and more. To your users, this means:
 
   * Faster startup time
@@ -35,9 +27,6 @@ R8 uses a multi-phase process to optimize your app for size and speed. Key opera
     * **Class merging** : R8 combines sets of classes and interfaces into a single class. This reduces the number of classes in the app, lowering memory pressure and improving startup speed.
 
   * **Obfuscation (also known as minification)** : To reduce the size of the DEX file, R8 shortens the names of classes, fields, and methods (for example, `com.example.MyActivity` could become `a.b.a`).
-
-
-
 
 Since 8.12.0 version of Android Gradle Plugin (AGP), R8 also optimizes resources as part of its optimization phases. For more information, see Optimized resource shrinking.
 
@@ -100,8 +89,6 @@ The performance benefits of R8 are directly correlated to how much of your codeb
   * Enable resource shrinking and optimized resource shrinking
   * [Refine keep rules](/topic/performance/app-optimization/keep-rules-best-practices) to allow maximum optimization of classes, fields and methods.
 
-
-
 To help you refine keep rules, use the [R8 Configuration Analyzer](/topic/performance/app-optimization/r8-configuration-analyzer).
 
 The R8 Configuration Analyzer lets you do the following:
@@ -109,8 +96,6 @@ The R8 Configuration Analyzer lets you do the following:
   * Track and improve the overall R8 configuration quality by monitoring the metrics provided by the R8 Configuration Analyzer report.
   * Find the broadest keep rules - those which prevent the most optimization
   * and understand what optimization they prevent to refine them.
-
-
 
 The R8 Configuration Analyzer is available in AGP version 9.3.0-alpha05 or from R8 version 9.3.7-dev. For more information, see [Analyze R8 configuration](/topic/performance/app-optimization/r8-configuration-analyzer).
 

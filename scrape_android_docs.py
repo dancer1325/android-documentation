@@ -98,21 +98,88 @@ class AndroidDocsScraper:
 
         return links
 
+    # Selectores de elementos a eliminar antes de convertir a Markdown
+    NOISE_SELECTORS = [
+        # Breadcrumb de navegación (la lista "Android Developers > Develop > ...")
+        'devsite-breadcrumb',
+        'nav[aria-label="Breadcrumb"]',
+        'nav.devsite-breadcrumb-container',
+        '.devsite-breadcrumb',
+        # Banner "Stay organized with collections"
+        '.devsite-banner',
+        'devsite-banner',
+        # Headers / footers de la página
+        'header',
+        'footer',
+        # Barra lateral de navegación
+        'nav.devsite-nav',
+        '.devsite-nav',
+        'devsite-navigation',
+        # Feedback, ratings
+        '.devsite-feedback',
+        '.devsite-article-footer',
+        'devsite-feedback',
+        # "Last updated" y metadatos al pie
+        '.devsite-last-updated',
+        # Tabla de contenidos flotante
+        '.devsite-page-nav',
+        # Botón "Save and categorize"
+        '[data-bg-badge-anchor]',
+        # Cookies / consent banners
+        '#cookie-banner',
+        '.cookie-banner',
+    ]
+
     def html_to_markdown(self, html, url):
         """Convierte HTML a Markdown"""
         soup = BeautifulSoup(html, 'html.parser')
 
-        # Intentar extraer solo el contenido principal
-        main_content = soup.find('main') or soup.find('article') or soup.find('div', class_='devsite-article-body')
-
-        if main_content:
-            content_html = str(main_content)
-        else:
-            content_html = html
-
-        # Agregar metadatos
+        # Extraer título antes de manipular el DOM
         title = soup.find('title')
         title_text = title.text.strip() if title else "Android Documentation"
+
+        # Intentar extraer solo el contenido principal
+        main_content = (
+            soup.find('main')
+            or soup.find('article')
+            or soup.find('div', class_='devsite-article-body')
+        )
+
+        if not main_content:
+            main_content = soup
+
+        # Eliminar elementos de navegación y ruido
+        for selector in self.NOISE_SELECTORS:
+            for el in main_content.select(selector):
+                el.decompose()
+
+        # Eliminar listas de breadcrumb: detectar <ul>/<ol> donde todos los <li>
+        # contienen links a developer.android.com (patrón típico del breadcrumb inline)
+        for ul in main_content.find_all(['ul', 'ol']):
+            items = ul.find_all('li', recursive=False)
+            if not items:
+                continue
+            links = [li.find('a') for li in items]
+            # Si todos los items tienen link y todos apuntan a developer.android.com → breadcrumb
+            if all(links) and all(
+                a.get('href', '').startswith('https://developer.android.com')
+                or a.get('href', '').startswith('/')
+                for a in links
+            ):
+                # Solo eliminar si está en la parte alta del contenido (primeros 2000 chars)
+                html_so_far = str(main_content)
+                ul_str = str(ul)
+                pos = html_so_far.find(ul_str)
+                if pos != -1 and pos < 2000:
+                    ul.decompose()
+
+        # Eliminar párrafos con el texto "Stay organized with collections..."
+        for p in main_content.find_all(['p', 'div', 'span']):
+            text = p.get_text(strip=True)
+            if 'Stay organized with collections' in text:
+                p.decompose()
+
+        content_html = str(main_content)
 
         markdown = f"# {title_text}\n\n"
         markdown += f"**Source:** [{url}]({url})\n\n"

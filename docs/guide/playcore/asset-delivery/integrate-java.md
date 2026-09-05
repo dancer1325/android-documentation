@@ -4,11 +4,8 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Google Play ](https://developer.android.com/distribute)
-  * [ Other Play guides ](https://developer.android.com/guide/app-bundle)
-
-Integrate asset delivery (Kotlin and Java) Stay organized with collections  Save and categorize content based on your preferences.  Use the steps in this guide to access your app's asset packs from your Java code. Build for Kotlin and Java Use the following steps to build Play Asset Delivery into your project's Android App Bundle. You don't need to use Android Studio to perform these steps. **Note:** For a guided tutorial, see the [Using Play Asset Delivery in native games Codelab](https://codelabs.developers.google.com/codelabs/native-gamepad).
+Integrate asset delivery (Kotlin and Java)
+Use the steps in this guide to access your app's asset packs from your Java code. Build for Kotlin and Java Use the following steps to build Play Asset Delivery into your project's Android App Bundle. You don't need to use Android Studio to perform these steps. **Note:** For a guided tutorial, see the [Using Play Asset Delivery in native games Codelab](https://codelabs.developers.google.com/codelabs/native-gamepad).
 
   1. Update the version of the Android Gradle plugin in your project's `build.gradle` file to `4.0.0` or later.
   2. In the top-level directory of your project, create a directory for the asset pack. This directory name is used as the asset pack name. Asset pack names must start with a letter and can only contain letters, numbers, and underscores.

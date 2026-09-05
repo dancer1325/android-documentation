@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Set up a worker for profile uploading Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Set up a worker for profile uploading
 ProfilingManager saves traces locally on the device. While you can retrieve these files using ADB for local debugging, collecting field data requires uploading them to a server.
 
 Trace files can be large (often several MBs). To avoid negatively affecting the user experience or consuming mobile data, you should schedule uploads to occur in the background, preferably when the device is on an unmetered network (Wi-Fi), charging and idle.
@@ -141,9 +133,6 @@ The code does the following:
     * Pass data: Use `setInputData` to pass the trace path to the worker.
 
     * Enqueue: Submit the request to WorkManager by calling `WorkManager#enqueue`.
-
-
-
 
 ## Next Steps
 

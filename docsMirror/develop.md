@@ -8,21 +8,12 @@
 Sign up to participate in user research studies and influence how we evolve tools, APIs, and guidance for millions worldwide. Get rewarded if selected. 
 
 [ Sign up ](https://google.qualtrics.com/jfe/form/SV_ezBhaM4WC0T7g8d?Q_Language=en&utm_campaign=Q3&campaignDate=July2025&referral_code=UXRZtOZ2325116)
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 [ ![](https://developer.android.com/static/images/cluster-illustrations/build-apps.svg) ](https://developer.android.com/get-started/overview)
 
 ###  [ Develop for Android ](https://developer.android.com/get-started/overview)
 
 The code samples, guides, and API reference you need—whether you're building for phones, watches, tablets, laptops, foldables, TVs, cars, or XR. Take advantage of these resources to develop your app faster and with higher quality.  
   
-
 
 [I'm new to Android](https://developer.android.com/get-started/overview)
 

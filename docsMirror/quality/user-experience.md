@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ User experience ](https://developer.android.com/quality/user-experience)
-
-
-
-#  What a great user experience looks like Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  What a great user experience looks like
 ![](/static/images/quality/hero-images/ux_highlighted.svg)
 
 High-quality apps and games are intuitive and delightful to use, evoking positive sentiment through considered and differentiated design. High-quality apps stand out from the crowd by presenting a strong, unique identity and brand.
@@ -22,8 +14,6 @@ To build a high-quality app or game, follow the Android quality guidelines:
   * [Core app quality guidelines](/docs/quality-guidelines/core-app-quality): The minimum quality that all apps should meet
   * [Adaptive app quality guidelines](/docs/quality-guidelines/adaptive-app-quality): The requirements for a great user experience regardless of device form factor, display size, or device posture
   * Special cases: See the quality guidelines for [widgets](/docs/quality-guidelines/widget-quality), [Wear OS](/docs/quality-guidelines/wear-app-quality), [cars](/docs/quality-guidelines/car-app-quality), [TV](/docs/quality-guidelines/tv-app-quality), and [XR](/docs/quality-guidelines/android-xr)
-
-
 
 ## Usability
 

@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Best practices for SQLite performance Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Best practices for SQLite performance
 Android offers [built-in support for SQLite](/training/data-storage/sqlite), an efficient SQL database. Follow these best practices to optimize your app's performance, ensuring it remains fast and predictably fast as your data grows. By using these best practices, you also reduce the possibility of encountering performance issues that are difficult to reproduce and troubleshoot.
 
 To achieve faster performance, follow these performance principles:
@@ -22,9 +14,6 @@ To achieve faster performance, follow these performance principles:
   * **Push work to SQLite engine** : Perform computations, filtering, and sorting operations within the SQL queries. Using SQLite's query engine can significantly improve performance.
 
   * **Modify the database schema** : Design your database schema to help SQLite construct efficient query plans and data representations. Properly index tables and optimize table structures to enhance performance.
-
-
-
 
 Additionally, you can use the available troubleshooting tools to measure the performance of your SQLite database to help identify areas that require optimization.
 
@@ -503,8 +492,6 @@ Use [SQLite aggregate functions](https://www.sqlite.org/lang_aggfunc.html) in yo
   * `AVG`: finds the average numerical value.
   * `GROUP_CONCAT`: concatenates strings with an optional separator.
 
-
-
 ### Use `COUNT()` instead of `Cursor.getCount()`
 
 In the following example, the [`Cursor.getCount()`](/reference/android/database/Cursor#getCount\(\)) function reads all the rows from the database and returns all the row values:
@@ -974,15 +961,11 @@ Under `DATABASES` you'll find:
   * `cache size`: number of pages in the cache (count). To get the size in KB, multiply this number by `pgsz`.
   * `Dbname`: path to DB file. In our example some DBs have `(1)` or another number appended to their name, to indicate that there is more than one connection to the same underlying database. Stats are tracked per connection.
 
-
-
 Under `POOL STATS` you'll find:
 
   * `cache hits`: SQLite caches prepared statements and attempts to reuse them when running queries, to save some effort and memory in compiling SQL statements. This is the number of statement cache hits (count).
   * `cache misses`: number of statement cache misses (count).
   * `cache size`: starting with Android 17, this lists the total number of prepared statements in the cache. In earlier versions, this value is equivalent to the sum of hits and misses listed in the other two columns, and does not represent the cache size.
-
-
 
 ## Recommended for you
 
@@ -990,8 +973,6 @@ Under `POOL STATS` you'll find:
   * [Run benchmarks in Continuous Integration](/topic/performance/benchmarking/benchmarking-in-ci)
   * [Frozen frames](/topic/performance/vitals/frozen)
   * [Create and measure Baseline Profiles without Macrobenchmark](/topic/performance/baselineprofiles/manually-create-measure)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

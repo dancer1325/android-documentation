@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Migrate your build to version catalogs Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Migrate your build to version catalogs
 [Gradle version catalogs](https://docs.gradle.org/current/userguide/platforms.html) enable you to add and maintain dependencies and plugins in a scalable way. Using Gradle version catalogs makes managing dependencies and plugins easier when you have [multiple modules](/topic/modularization). Instead of hardcoding dependency names and versions in individual build files and updating each entry whenever you need to upgrade a dependency, you can create a central _version catalog_ of dependencies that various modules can reference in a type-safe way with Android Studio assistance.
 
 This page provides basic information about migrating your Android app to version catalogs. To learn more, see [Add build dependencies](/build/dependencies) and the Gradle documentation.
@@ -39,8 +31,6 @@ The sections are used as follows:
   * In the `libraries` block, define your dependencies.
   * In the `plugins` block, define your plugins.
 
-
-
 ## Migration steps
 
 We recommend you do the steps in the order listed. A build can consume dependencies and plugins from build scripts and catalogs simultaneously, so take your time to migrate your dependencies and plugins individually.
@@ -50,8 +40,6 @@ The migration process is:
   1. Add the new entry to the catalog.
   2. Sync your Android project.
   3. Replace the previous string declaration with the catalog type-safe accessor.
-
-
 
 ### Migrate dependencies
 
@@ -195,8 +183,6 @@ To learn about additional options for configuring your version catalog, see thes
 
   * [The version catalog TOML file format](https://docs.gradle.org/current/userguide/platforms.html#sub::toml-dependencies-format) documents additional options for configuring your catalog file.
   * [Now in Android](https://github.com/android/nowinandroid) is our sample app that uses version catalogs.
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

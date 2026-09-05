@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Include native symbols in your release build Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Include native symbols in your release build
 By default, native code libraries are stripped in release builds of your app. This stripping consists of removing the symbol table and debugging information contained in any native libraries used by your app. Stripping native code libraries results in significant size savings; however, it's impossible to diagnose crashes on the Google Play Console due to the missing information (such as class and function names). To debug crashes, you must include a debug symbols file with your app in Play Console.
 
 ## Upload a symbols file
@@ -75,7 +67,6 @@ As part of the build process, the Android Gradle plugin keeps a copy of the unst
          
 
   2. Manually [upload the `symbols.zip` file](https://support.google.com/googleplay/android-developer/answer/9848633#upload_file) to the Google Play Console.
-
 
 **Note:** If your file is too big, it's likely because your `.so` files contain a symbol table and also DWARF debugging info, which isn't needed to symbolicate your code. On AGP 4.0 or lower, you can remove the DWARF debugging info by running the following command:   
   

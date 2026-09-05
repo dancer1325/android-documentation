@@ -4,11 +4,8 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Essentials ](https://developer.android.com/get-started)
-  * [ Releases ](https://developer.android.com/about/versions)
-
-Set up the Android 17 SDK Stay organized with collections  Save and categorize content based on your preferences.  To develop with Android 17 APIs and test your app with the Android 17 behavior changes, you need to set up the Android 17 SDK. Follow the instructions on this page to set up the Android 17 SDK in Android Studio and build and run your app on Android 17. Get Android Studio The Android 17 SDK includes changes that are not compatible with some lower versions of Android Studio. For the best development experience with the Android 17 SDK, use Android Studio Meerkat | 2024.3.1 or higher. [Get Android Studio](/studio) Update your app's build configuration **Warning:** If your project does not use Android Gradle plugin 8.9.0-rc01 or higher, first run the [Android Gradle plugin Upgrade Assistant](/r/tools/upgrade-assistant/agp-upgrade-assistant) to upgrade to at least AGP 8.9.0-rc01. To access Android 17 APIs, open your app's `build.gradle` or `build.gradle.kts` file and update the `compileSdk` for Android 17 as follows: Groovy
+Set up the Android 17 SDK
+To develop with Android 17 APIs and test your app with the Android 17 behavior changes, you need to set up the Android 17 SDK. Follow the instructions on this page to set up the Android 17 SDK in Android Studio and build and run your app on Android 17. Get Android Studio The Android 17 SDK includes changes that are not compatible with some lower versions of Android Studio. For the best development experience with the Android 17 SDK, use Android Studio Meerkat | 2024.3.1 or higher. [Get Android Studio](/studio) Update your app's build configuration **Warning:** If your project does not use Android Gradle plugin 8.9.0-rc01 or higher, first run the [Android Gradle plugin Upgrade Assistant](/r/tools/upgrade-assistant/agp-upgrade-assistant) to upgrade to at least AGP 8.9.0-rc01. To access Android 17 APIs, open your app's `build.gradle` or `build.gradle.kts` file and update the `compileSdk` for Android 17 as follows: Groovy
     
     
     android {

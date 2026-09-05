@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Capture Macrobenchmark metrics Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Capture Macrobenchmark metrics
 Metrics are the main type of information extracted from your benchmarks. They are passed to the [`measureRepeated`](/reference/kotlin/androidx/benchmark/macro/junit4/MacrobenchmarkRule#measureRepeated\(kotlin.String,kotlin.collections.List,androidx.benchmark.macro.CompilationMode,androidx.benchmark.macro.StartupMode,kotlin.Int,kotlin.Function1,kotlin.Function1\)) function as a `List`, which lets you specify multiple measured metrics at once. At least one type of metric is required for the benchmark to run.
 
 The following code snippet captures frame timing and custom trace section metrics:
@@ -60,8 +52,6 @@ Benchmark results are output to Android Studio, as shown in figure 1. If multipl
   * `timeToInitialDisplayMs`: The amount of time from when the system receives a launch intent to when it renders the first frame of the destination [`Activity`](/reference/android/app/Activity).
   * `timeToFullDisplayMs`: The amount of time from when the system receives a launch intent to when the app reports fully drawn using the [`reportFullyDrawn()`](/reference/android/app/Activity#reportFullyDrawn\(\)) method. The measurement stops at the completion of rendering the first frame after—or containing—the `reportFullyDrawn()` call. This measurement might not be available on Android 10 (API level 29) and earlier.
 
-
-
 `StartupTimingMetric` outputs the min, median, and max values from the startup iterations. To assess startup improvement you should focus on median values, since they provide the best estimate of the typical startup time. For more information about what contributes to app startup time, see [App startup time](/topic/performance/vitals/launch-time).
 
 ![StartupTimingMetric results](/static/topic/performance/images/benchmark_images/macrobenchmark_results_fully_drawn_startup.png) **Figure 2.** `StartupTimingMetric` results.
@@ -72,8 +62,6 @@ Benchmark results are output to Android Studio, as shown in figure 1. If multipl
 
   * `frameOverrunMs`: the amount of time a given frame misses its deadline by. Positive numbers indicate a dropped frame and visible jank or stutter. Negative numbers indicate how much faster a frame is than the deadline. Note: This is available only on Android 12 (API level 31) and higher.
   * `frameDurationCpuMs`: the amount of time the frame takes to be produced on the CPU on both the UI thread and the `RenderThread`.
-
-
 
 These measurements are collected in a distribution of 50th, 90th, 95th, and 99th percentile.
 
@@ -102,8 +90,6 @@ These metrics measure system-wide consumption, not the consumption on a per-app 
   * `power<category>Uw`: the amount of power consumed over the duration of your test in this category.
   * `energy<category>Uws`: the amount of energy transferred per unit of time for the duration of your test in this category.
 
-
-
 Categories include the following:
 
   * `CPU`
@@ -115,8 +101,6 @@ Categories include the following:
   * `NETWORK`
   * `UNCATEGORIZED`
 
-
-
 With some categories, like `CPU`, it might be difficult to separate work done by other processes from work done by your own app. To minimize the interference, remove or restrict unnecessary apps and accounts.
 
 ![PowerMetric results](/static/topic/performance/images/benchmark_images/macrobenchmark_results_power.png) **Figure 5.** `PowerMetric` results.
@@ -127,8 +111,6 @@ With some categories, like `CPU`, it might be difficult to separate work done by
   * [Create Baseline Profiles {:#creating-profile-rules}](/topic/performance/baselineprofiles/create-baselineprofile)
   * [Writing a Macrobenchmark](/topic/performance/benchmarking/macrobenchmark-overview)
   * [App startup analysis and optimization {:#app-startup-analysis-optimization}](/topic/performance/appstartup/analysis-optimization)
-
-
 
 [ Previous arrow_back  Writing a benchmark  ](/topic/performance/benchmarking/macrobenchmark-overview)
 

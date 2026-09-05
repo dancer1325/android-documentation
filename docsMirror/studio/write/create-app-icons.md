@@ -4,22 +4,12 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Create app icons Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Create app icons
 Icons help your users identify your app and actions within it. Depending on the type of icon you are creating, you should use different tools and libraries:
 
   * **Custom launcher and notification icons** : Use Image Asset Studio to generate adaptive launcher icons and notification assets that meet specific system requirements.
   * **Standard UI icons** : Use clip art option in Image Asset Studio to add an image from the Material icons library.
   * **Custom UI icons** : Use [Vector Asset Studio](/studio/write/vector-asset-studio) to create scalable vector drawables for components like top app bars.
-
-
 
 ## About Image Asset Studio
 
@@ -29,8 +19,6 @@ Image Asset Studio helps you generate the following icon types:
 
   * Launcher icons
   * Notification icons
-
-
 
 To generate custom [app bar](/develop/ui/compose/components/app-bars) icons, use [Vector Asset Studio](/studio/write/vector-asset-studio). The following sections describe the icon types that you can create and the image and text inputs that you can use with Image Asset Studio.
 
@@ -42,8 +30,6 @@ A launcher icon is a graphic that represents your app to users. It can do the fo
   * Represent shortcuts into your app (for example, a contact shortcut icon that opens detail information for a contact).
   * Be used by launcher apps.
   * Help users find your app on Google Play.
-
-
 
 Adaptive launcher icons can display as a variety of shapes across different device models. Image Asset Studio generates previews of an adaptive icon in circle, squircle, rounded square, and square shapes, as well as a full bleed preview of the icon. Image Asset Studio also generates legacy, round, and Google Play Store previews of the icon.
 
@@ -68,8 +54,6 @@ A notification is a message that you can display to the user outside of the norm
   * Icons for Android 3 (API level 11) and higher are placed in `res/drawable-<density>-v11/` directories.
   * Icons for Android 2.3 to 2.3.7 (API level 9 to 10) are placed in `res/drawable-<density>-v9/` directories.
   * Icons for Android 2.2 (API level 8) and lower are placed in `res/drawable-<density>/` directories.
-
-
 
 If your app supports Android 2.3 to 2.3.7 (API level 9 to 10), Image Asset Studio generates a gray version of your icon. Later Android versions use the white icon that Image Asset Studio generates.
 
@@ -102,9 +86,6 @@ To start Image Asset Studio, follow these steps:
 
      * Create a notification icon.
 
-
-
-
 ## Create adaptive and legacy launcher icons
 
 After you open Image Asset Studio, you can add adaptive and legacy icons by following these steps:
@@ -125,8 +106,6 @@ After you open Image Asset Studio, you can add adaptive and legacy icons by foll
   7. Click **Next**.
   8. Optionally, change the resource directory: Select the resource source set where you want to add the image asset: **src/main/res** , **src/debug/res** , **src/release/res** , or a custom source set. The main source set applies to all build variants, including debug and release. The debug and release source sets override the main source set and apply to one version of a build. The debug source set is for debugging only. To define a new source set, select **File** > **Project Structure** > **app** > **Build Variants** > **Build Types**. For example, you can define a beta source set and create a version of an icon that includes the text "BETA" in the bottom right corner. For more information, see [Configure Build Variants](/studio/build/build-variants#workBuildVariants).
   9. Click **Finish**. Image Asset Studio adds the images to the **mipmap** folders for the different densities.
-
-
 
 ### Preview themed app icons
 
@@ -152,8 +131,6 @@ After you open Image Asset Studio, you can add a notification icon by following 
      * **Res Directory** \- Select the resource source set where you want to add the image asset: **src/main/res** , **src/debug/res** , **src/release/res** , or a user-defined source set. The main source set applies to all build variants, including debug and release. The debug and release source sets override the main source set and apply to one version of a build. The debug source set is for debugging only. To define a new source set, select **File** > **Project Structure** > **app** > **Build Types**. For example, you could define a beta source set and create a version of an icon that includes the text "BETA" in the bottom right corner. For more information, see [Configure Build Variants](/studio/build/build-variants#workBuildVariants).
   6. Click **Finish**. Image Asset Studio adds the images in the **drawable** folders for the different densities and versions.
 
-
-
 ## Refer to image resources
 
 For information about referring to icon resources, see [Resources in Compose](/develop/ui/compose/resources). For information about referring to full-color graphics or more complex images, see [Loading images](/develop/ui/compose/graphics/images/loading).
@@ -170,13 +147,9 @@ To remove an icon from a project:
   6. Select **Build** > **Clean Project**. Android Studio removes any generated image files corresponding to the deleted image resource. It removes them from the project and the drive.
   7. If needed, correct any remaining errors due to portions of the code that reference the resource. Android Studio highlights these errors in your code. When you've removed all references from your code, you can successfully build your project again.
 
-
-
 ## Additional resources
 
   * [Create app icons (Views)](/studio/views/create-app-icons-views)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

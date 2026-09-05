@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Gradle build overview Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Gradle build overview
 Android applications are typically built using the [Gradle](https://gradle.org/) build system. Before we dive into the details of how to configure your build, we'll explore the concepts behind the build so you can see the system as a whole.
 
 ## What is a build?
@@ -34,8 +26,6 @@ Gradle builds run in three phases. Each of these phases executes different parts
   * **Initialization** determines which projects and subprojects are included in the build, and sets up classpaths containing your build files and applied plugins. This phase focuses on a settings file where you declare projects to build and the locations from which to fetch plugins and libraries.
   * **Configuration** registers tasks for each project, and executes the build file to apply the user's build specification. It's important to understand that your configuration code won't have access to data or files produced during execution.
   * **Execution** performs the actual "building" of your application. The output of configuration is a [Directed Acyclic Graph](https://en.wikipedia.org/wiki/Directed_acyclic_graph) (DAG) of tasks, representing all required build steps that were requested by the user (the tasks provided on the command line or as defaults in the build files). This graph represents the relationship between tasks, either explicit in a task's declaration, or based on its inputs and outputs. If a task has an input that is the output of another task, then it must run after the other task. This phase runs out-of-date tasks in the order defined in the graph; if a task's inputs haven't changed since its last execution, Gradle will skip it.
-
-
 
 For more information see the Gradle [Build lifecycle](https://docs.gradle.org/current/userguide/build_lifecycle.html).
 
@@ -151,8 +141,6 @@ AGP creates variants for each combination of build type and product flavor. If y
   * `demoDebug`
   * `fullRelease`
   * `fullDebug`
-
-
 
 ## Next steps
 

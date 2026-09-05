@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Integrate custom C/C++ build systems using Ninja (experimental) Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Integrate custom C/C++ build systems using Ninja (experimental)
 If you do not use CMake or ndk-build but want full integration of the Android Gradle plugin (AGP) C/C++ build and Android Studio, you can create a custom C/C++ build system by making a shell script that writes build information in the [Ninja](https://ninja-build.org/) build file format.
 
 **Caution:** Experimental APIs can change in the future or may be removed entirely.
@@ -35,9 +27,6 @@ While CMake is directly supported by AGP, there are other project generators ava
 
   * Private custom built project generators
 
-
-
-
 These types of project generators either support Ninja as a backend representation of the C/C++ build or can be adapted to generate Ninja as a backend representation.
 
 When configured correctly, an AGP project with an integrated C/C++ project system generator enables users to:
@@ -47,7 +36,6 @@ When configured correctly, an AGP project with an integrated C/C++ project syste
   * Edit sources with full language service support (for example, go-to definition) in Android Studio.
 
   * Use Android Studio debuggers to debug native and mixed processes.
-
 
 **Note:** This feature requires the generation of a Ninja representation of the build. Other representations are not supported.
 
@@ -104,9 +92,6 @@ The properties are interpreted by AGP as follows:
 
   * `ninja.targets` is a list of the specific Ninja targets that should be built.
 
-
-
-
 ### Step 2: Create the configure script
 
 The minimum responsibility of the configure script (`configure-ninja.bat` in the earlier example) is to generate a `build.ninja` file that, when built with Ninja, will compile and link all the native outputs of the project. Usually these are `.o` (Object), `.a` (Archive), and `.so` (Shared Object) files.
@@ -117,9 +102,6 @@ The configure script can write the `build.ninja` file in two different places de
 
   * If the configure script needs to choose the location of the `build.ninja` file then it also writes a file named `build.ninja.txt` at the location set in the `${ndk.buildRoot}` macro. This file contains the full path to the `build.ninja` file that the configure script wrote.
 
-
-
-
 #### Structure of the `build.ninja` file
 
 Generally, most structures that accurately represent an Android C/C++ build will work. The key elements needed by AGP and Android Studio are:
@@ -127,9 +109,6 @@ Generally, most structures that accurately represent an Android C/C++ build will
   * The list of C/C++ source files along with flags needed by Clang to compile them.
 
   * The list of output libraries. These are typically `.so` (shared object) files but can also be `.a` (archive) or executable (no extension).
-
-
-
 
 If you need examples of how to generate a `build.ninja` file, you can look at the output of CMake when the `build.ninja` generator is used.
 
@@ -216,9 +195,6 @@ This feature is experimental, so feedback is greatly appreciated. You can give f
   * To report a bug, open Android Studio and click **Help > Submit Feedback**. Be sure to reference "Custom C/C++ Build Systems" to help direct the bug.
 
   * To report a bug if you don't have Android Studio installed, file a bug using [this template](https://issuetracker.google.com/issues/new?component=192708&template=840533&description=IMPORTANT:%20Please%20read%20https:%2F%2Fdeveloper.android.com%2Fstudio%2Freport-bugs.html%20carefully%20and%20supply%20all%20required%20information%0A%0ABug%20related%20to%20%27Android%20Gradle%20plugin%20Custom%20C%2FC%2B%2B%20Build%20System%27).
-
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

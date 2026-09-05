@@ -4,23 +4,13 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Permission Denials Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Permission Denials
 Most apps require that users grant them certain [app permissions](/guide/topics/permissions/overview) in order to function properly. However, in some cases, users might not grant the permissions
 
   * They think the permission isn’t needed for the app’s core functionality.
   * They don’t use the functionality associated with the permission.
   * They are concerned about the permission's impacting device performance.
   * They're simply uncomfortable, for example due to sensitivities regarding privacy.
-
-
 
 ## Use Android vitals to gauge user perceptions {#:android-vitals}
 

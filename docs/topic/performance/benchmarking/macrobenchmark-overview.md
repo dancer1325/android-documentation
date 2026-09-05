@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Write a Macrobenchmark Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Write a Macrobenchmark
 Use the Macrobenchmark library for testing larger use cases of your app, including app startup and complex UI manipulations, such as scrolling a [`RecyclerView`](/reference/androidx/recyclerview/widget/RecyclerView) or running animations. If you want to test smaller areas of your code, refer to [Microbenchmark library](/topic/performance/benchmarking/microbenchmark-overview). This page shows how to set up the Macrobenchmark library.
 
 The library outputs benchmarking results to both the Android Studio console and a JSON file with more detail. It also provides trace files that you can load and analyze in Android Studio.
@@ -38,9 +30,6 @@ To use the module template to create a new module, do the following:
   2. Select **Benchmark** from the **Templates** pane. You can customize the target app—meaning, the app to be benchmarked—as well as package and module name for the new Macrobenchmark module.
 
   3. Click **Finish**.
-
-
-
 
 ![Benchmark Module
 template](/static/topic/performance/images/benchmark_images/macrobenchmark_module_bumblebee.png)
@@ -95,8 +84,6 @@ To help ensure that running the benchmark both builds and tests the correct vari
   1. Perform a Gradle sync.
   2. Open the **Build Variants** panel.
   3. Select the benchmark variant of both the app and the Macrobenchmark module.
-
-
 
 ![Select benchmark
 variant](/static/topic/performance/images/benchmark_images/benchmark_variant.png)
@@ -403,8 +390,6 @@ Metrics are the main type of information extracted from your benchmarks. The fol
   * [`FrameTimingMetric`](/reference/kotlin/androidx/benchmark/macro/FrameTimingMetric)
   * [`TraceSectionMetric`](/reference/kotlin/androidx/benchmark/macro/TraceSectionMetric)
 
-
-
 For more information about metrics, see [Capture Macrobenchmark metrics](/topic/performance/benchmarking/macrobenchmark-metrics).
 
 ### Improve trace data with custom events
@@ -445,8 +430,6 @@ To report issues or submit feature requests for Jetpack Macrobenchmark, see the 
   * [Capture Macrobenchmark metrics](/topic/performance/benchmarking/macrobenchmark-metrics)
   * [Create Baseline Profiles {:#creating-profile-rules}](/topic/performance/baselineprofiles/create-baselineprofile)
   * [Automate measurement with the Macrobenchmark library {:#measuring-optimization}](/topic/performance/baselineprofiles/measure-baselineprofile)
-
-
 
 [ Next Capture the metrics  arrow_forward  ](/topic/performance/benchmarking/macrobenchmark-metrics)
 

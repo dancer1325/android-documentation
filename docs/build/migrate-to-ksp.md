@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Migrate from kapt to KSP Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Migrate from kapt to KSP
 **Note:** Kapt is now in maintenance mode, and we recommend that you migrate from kapt to KSP for all processors that support it. In most cases, this migration only requires changes to your project's build configuration.
 
 [Kapt (the Kotlin Annotation Processing Tool)](https://kotlinlang.org/docs/kapt.html) lets you use Java annotation processors with Kotlin code, even if those processors don't have specific support for Kotlin. This is done by generating Java stubs from your Kotlin files that the processors can then read. This stub generation is an expensive operation and has a significant impact on build speed.
@@ -29,8 +21,6 @@ Here's an overview of the migration steps:
   2. Add the KSP plugin to your project
   3. Replace annotation processors with KSP
   4. Remove the kapt plugin
-
-
 
 ## Check the libraries you use for KSP support
 
@@ -104,8 +94,6 @@ Some common issues to look out for:
   * KSP has more accurate Kotlin type information than kapt (for example, about nullability), which means that KSP processors can be more precise about type requirements. This might require some fixes in your source code as well, in addition to updating your build files.
   * If you were previously passing in arguments to the annotation processor, you'll likely need to pass in those arguments to KSP now. Note that the format of the arguments might differ between kapt and KSP. See the [KSP documentation](https://kotlinlang.org/docs/ksp-quickstart.html#pass-options-to-processors) and consult the documentation of the library you're using to learn more.
 
-
-
 ## Remove the kapt plugin
 
 When you have no dependencies included with `kapt` in your module anymore, remove the kapt plugin.
@@ -159,8 +147,6 @@ You should also remove any leftover configuration related to kapt, such as:
   * [KSP documentation on Kotlinlang.org](https://kotlinlang.org/docs/ksp-overview.html)
   * [KSP on GitHub](https://github.com/google/ksp)
   * [kapt on Kotlinlang.org](https://kotlinlang.org/docs/kapt.html)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

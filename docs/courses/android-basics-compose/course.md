@@ -5,9 +5,7 @@ https://developer.android.com/courses/android-basics-compose/course
     * best practices
     * -- via -- Jetpack Compose
 
-* [Introduction to programming in Kotlin](https://developer.android.com/courses/pathways/android-basics-compose-unit-1-pathway-1)
   * [quiz answers](https://medium.com/@iamalbertclaude/training-android-basics-with-compose-first-android-app-intro-to-kotlin-4c93cf7cc096)
-* [Setup Android Studio](https://developer.android.com/courses/pathways/android-basics-compose-unit-1-pathway-2)
   * Android emulator
     * uses
       * test DIFFERENT
@@ -23,7 +21,6 @@ https://developer.android.com/courses/android-basics-compose/course
       * wifi
         * enable wireless option
     * usb
-* [Build a basic layout](https://developer.android.com/courses/pathways/android-basics-compose-unit-1-pathway-3)
   * Kotlin
     * SAME language for building
       * UI

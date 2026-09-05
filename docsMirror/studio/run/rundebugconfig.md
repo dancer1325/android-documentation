@@ -4,22 +4,12 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Create and edit run/debug configurations Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Create and edit run/debug configurations
 When you run, debug, or test your code, Android Studio uses a run/debug configuration to determine how to perform the operation. Typically, the initially-created configuration is sufficient to run or debug an app. However, you can modify and create new configurations, and modify the configuration templates to suit your development process as described on this page. 
 
 For more information, also see the following IntelliJ documentation:
 
   * [Run/Debug Configurations](https://www.jetbrains.com/help/idea/2026.1/run-debug-configurations.html)
-
-
 
 ## About run/debug configurations
 
@@ -50,8 +40,6 @@ In this dialog, you can:
   * Edit configuration templates.
   * Sort and group configurations.
 
-
-
 ## Create a new run/debug configuration
 
 You can define new run/debug configurations from the **Run/Debug Configurations** dialog, the **Project** window, or the Code Editor. The new configuration must be based on a configuration template. 
@@ -78,8 +66,6 @@ Be sure to correct any errors displayed at the bottom of the dialog.
 
   6. Click **Apply** or **OK**.
 
-
-
 ### Start a configuration from a copy
 
 To define a run/debug configuration starting from a copy of another configuration, follow these steps: 
@@ -94,16 +80,12 @@ Be sure to correct any errors displayed at the bottom of the dialog.
 
   6. Click **Apply** or **OK**.
 
-
-
 ### Define a configuration for an item in the project
 
 Android Studio can create a run/debug configuration for some items displayed in the **Project** window. The configuration is based on a configuration template, as follows: 
 
   * Activity Java file: The Android App template. 
   * Package: Android Instrumented Tests or [Android JUnit](https://www.jetbrains.com/help/idea/2026.1/run-debug-configuration-junit.html) template, depending on your [source set](/studio/build/build-variants#sourcesets). If you select an [instrumented test](/training/testing/unit-testing), then it uses the Android Instrumented Tests template. If you select a [local unit test](/training/testing/unit-testing), then it uses the Android JUnit template. For a local unit test, you can optionally run with code coverage. For more information, see [Code Coverage](https://www.jetbrains.com/help/idea/2026.1/code-coverage.html).
-
-
 
 To create a run/debug configuration for an item in your project, follow these steps: 
 
@@ -114,9 +96,6 @@ To create a run/debug configuration for an item in your project, follow these st
 ![](/static/studio/images/run/rundebug-saveconfiguration_2x.png)
 
 **Figure 2**. Save the configuration 
-
-
-
 
 **Note:** If you right-click and run or debug the same item (but not an activity), Android Studio creates a new configuration. 
 
@@ -147,9 +126,6 @@ The new test appears in the **Project** window in the corresponding test source 
 
 **Figure 3**. Save the configuration 
 
-
-
-
 ## Run or debug an app using a saved configuration
 
 If you've saved a run/debug configuration, you can select it before you run or debug your app. 
@@ -164,9 +140,6 @@ The drop-down list is to the left of **Run** ![](/static/studio/images/buttons/t
 
 Alternatively, click **Run** ![](/static/studio/images/buttons/toolbar-run.png) or **Debug** ![](/static/studio/images/buttons/toolbar-debug.png).
 
-
-
-
 ## Edit a run/debug configuration
 
 To edit a run/debug configuration, follow these steps: 
@@ -178,8 +151,6 @@ To edit a run/debug configuration, follow these steps:
 Be sure to correct any errors displayed at the bottom of the dialog.
 
   4. Click **Apply** or **OK**.
-
-
 
 ## Edit a run/debug configuration template
 
@@ -198,8 +169,6 @@ Be sure to correct any errors displayed at the bottom of the dialog.
 
   5. Click **Apply** or **OK**.
 
-
-
 ## Sort and group configurations
 
 In the **Run/Debug Configurations** dialog, you can order your configurations to find them quickly. You can sort the items in the folder alphabetically, and create new folders to group configurations. 
@@ -211,8 +180,6 @@ To sort configurations alphabetically, follow these steps:
   3. Click **Sort Configurations** ![](/static/studio/images/rdc-isortconfig_2-1.png). 
   4. Click **OK** to close the dialog.
 
-
-
 To group configurations in folders, follow these steps: 
 
   1. Open the Run/Debug Configurations dialog. 
@@ -220,7 +187,6 @@ To group configurations in folders, follow these steps:
   3. Click **Create New Folder** ![](/static/studio/images/rdc-icreatenewfolder_2-1.png). 
   4. Type a name in the **Folder Name** field. 
   5. Click **Apply** to save the name.
-
 
 * Drag items from the same template category into the folder. 
 * Order the folders and configurations in the same template category by dragging them into position. 
@@ -245,23 +211,16 @@ This option is deselected by default.
 
 This option is selected by default. 
 
-
-
-
 To remove a task from the list, follow these steps: 
 
   1. Select a task. 
   2. Click **Remove** ![](/static/studio/images/rdc-iremove_2-1.png).
-
-
 
 To edit a task, follow these steps: 
 
   1. Select a task. 
   2. Click **Edit** ![](/static/studio/images/rdc-iedit_2-1.png). 
   3. Edit the task settings in the dialog that opens, and then click **OK**.
-
-
 
 The following table lists the available tasks you can add. 
 
@@ -286,8 +245,6 @@ Android Studio provides configuration templates to help you get started quickly.
   * App Engine DevAppServer
   * Wear OS Complication, Tile, and Watch Face
 
-
-
 **Note:** Android Studio 2.1._x_ and lower had a Native Application template, which newer versions don't have. If you have a Native Application template in a project, Android Studio converts it to Android App when you load the project. A **Convert Project** dialog guides you through the process.
 
 ### Unsupported templates
@@ -306,8 +263,6 @@ The following unsupported templates come from IntelliJ IDEA and aren't specific 
   * [Remote Debug](https://www.jetbrains.com/help/idea/2026.1/run-debug-configuration-remote.html)
   * [Shell Script](https://www.jetbrains.com/help/idea/2026.1/run-debug-configuration-shell-script.html)
   * [TestNG](https://www.jetbrains.com/help/idea/2026.1/run-debug-configuration-testng.html)
-
-
 
 ### Common configuration options
 
@@ -386,8 +341,6 @@ For C and C++ projects, you can add symbol directories, as well as LLDB startup 
   * **Remove** ![](/static/studio/images/rdc-iremove_2-1.png) \- Select a directory or command, and then click this button to remove the item. 
   * **Up** ![](/static/studio/images/rdc-imoveup_2-1.png) \- Select a directory or command, and then click this button to move the item up in the list. 
   * **Down** ![](/static/studio/images/rdc-imovedown_2-1.png) \- Select a directory or command, and then click this button to move the item down in the list.
-
-
 
 See [Debug Your App](/studio/debug) for more information about debugging in Android Studio. 
 
@@ -485,8 +438,6 @@ For C and C++ projects, you can add symbol directories, as well as LLDB startup 
   * **Up** ![](/static/studio/images/rdc-imoveup_2-1.png) \- Select a directory or command, and then click this button to move the item up in the list. 
   * **Down** ![](/static/studio/images/rdc-imovedown_2-1.png) \- Select a directory or command, and then click this button to move the item down in the list.
 
-
-
 See [Debug Your App](/studio/debug) for more information about debugging in Android Studio. 
 
 Field | Description  
@@ -551,8 +502,6 @@ The Wear OS Complication, Tile, and Watch Face templates let you run or debug We
   * For all Wear run/debug configurations, you have to select a specific complication data source, tile, or watch face (depending on the template) to apply the configuration to. Generally each of these entities corresponds to a class in your code. 
   * For the Wear OS Complication run/debug configuration, you must choose the **Slot** where you want to put the complication data provided by the complication data source. You can choose to put it at the top, right, bottom, left, or background of the watch face. 
   * For the Wear OS Complication run/debug configuration, you must also select the **Type** of the complication data provided by the complication data source. The types you can choose from are limited to those that are provided by the chosen complication data source _and_ supported by the chosen slot. For a list of complication data types, see [Types and fields](/training/wearables/watch-faces/adding-complications#types-fields). 
-
-
 
 Alternatively, you can also run these surfaces from the gutter icon that is located next to the declaration of the surface, as shown in the following image. If an error occurs, such as "Error while setting the tile," check that you've correctly configured the surface, including [declaring the surface in your manifest](/training/wearables/tiles/get_started#create). 
 

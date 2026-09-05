@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Devices ](https://developer.android.com/develop/devices)
-  * [ Android for Cars ](https://developer.android.com/training/cars)
-
-
-
-#  Android for Cars overview Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Android for Cars overview
 Bring your app to vehicles running either Android Auto or Android Automotive OS. Use one app architecture that works for both cases so every user can enjoy your app.
 
 ## Android Auto
@@ -63,9 +55,6 @@ You can build your own apps for use in vehicles that support [Android for Cars](
   * Google Assistant can launch any app that is installed in the vehicle with voice commands like _"Hey Google, open Example app."_
 
   * The [`PackageManager`](/reference/android/content/pm/PackageManager#getInstalledPackages\(android.content.pm.PackageManager.PackageInfoFlags\)) class lets you retrieve information about installed application packages on a device and then take further actions, such as getting the launchable intent for a package and launching that intent.
-
-
-
 
 To test your apps, use the testing tools to run Android Auto and Android Automotive OS on your development machine. See [Test Android Apps for Cars](/training/cars/testing) for details.
 

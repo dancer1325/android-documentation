@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Target a build variant Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Target a build variant
 If you have different versions of your app based on different build variants, create custom [keep rules](/topic/performance/app-optimization/add-keep-rules) for each variant. For example, if you have a free tier and a paid tier of your app with different features and dependencies, each tier should have its own keep rules.
 
 ## Create keep rules
@@ -77,8 +69,6 @@ To create keep rules that are specific to a build variant, add the `proguardFile
 ## Additional resources
 
   * [Customize which resources to keep](/topic/performance/app-optimization/customize-which-resources-to-keep) — Learn how to add keep rules for resources.
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

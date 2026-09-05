@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/blog/categories/how-tos](https://developer.android.com/blog/categories/how-tos)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Android Developers' Blog ](https://developer.android.com/)
-  * [ Blog ](https://developer.android.com/blog)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](/static/blog/assets/how_tos_droid_c6d92904ea_f980e65f04_1vYn1P.webp)
 
 # How-tos
@@ -117,9 +108,6 @@ We wanted to provide you with examples of AI-enabled features using both on-devi
 The performance leveling guide features 5 levels. We'll start with level 1, which introduces minimal adoption effort performance tooling, and we'll go up to level 5, ideal for apps that have the resourcing to maintain a bespoke performance framework.
 
 [Alice Yuan](/blog/authors/alice-yuan) • 9 min read 
-
-
-
 
 arrow_back 
 

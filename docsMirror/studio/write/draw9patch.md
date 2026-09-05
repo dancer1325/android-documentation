@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Create resizable bitmaps (9-patch files) Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Create resizable bitmaps (9-patch files)
 The Draw 9-patch tool is a WYSIWYG editor included in Android Studio. The tool lets you create bitmap images that automatically resize to accommodate the contents of the view and the size of the screen. You can scale selected parts of the image horizontally or vertically based on indicators drawn within the image. 
 
 For an introduction to NinePatch graphics and how they work, read [NinePatch drawables](/guide/topics/graphics/2d-graphics#nine-patch).
@@ -27,17 +19,13 @@ Follow these steps to create a NinePatch graphic using the Draw 9-patch tool in 
   2. Enter a filename for your NinePatch image and click **OK**. Your image will be created with the `.9.png` file extension. 
   3. Double-click your new NinePatch file to open it in Android Studio.  
 
-
 In the workspace that opens, the left pane is your drawing area, where you can edit the lines for the stretchable patches and content area. The right pane is the preview area, where you can preview your graphic when stretched.
 
   4. Click within the 1-pixel perimeter to draw the lines that define the stretchable patches and (optional) the content area.  
 
-
 Right-click to erase previously drawn lines (on Mac, hold Shift and click). 
 
   5. When done, click **File** > **Save** to save your changes. 
-
-
 
 To open an existing NinePatch file in Android Studio, double-click the file.
 
@@ -57,8 +45,6 @@ Optional controls include:
   * **Show patches** : Preview the pink stretchable patches in the drawing area. Pink indicates a stretchable patch, as shown in figure 2.
   * **Show content** : Highlight the content area in the preview images. Purple indicates the area where content is allowed, as shown in figure 2.
   * **Show bad patches** : Adds a red border around patch areas that may produce artifacts in the graphic when stretched, as shown in figure 2. If you eliminate all bad patches, you will maintain the visual coherence of your stretched image.
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

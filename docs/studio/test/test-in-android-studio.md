@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Test in Android Studio Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Test in Android Studio
 Android Studio is designed to make testing simple. It contains many features to simplify how you create, run, and analyze tests. You can set up tests that run on your local machine or instrumented tests that run on a device. You can easily run a single test or a specific group of tests on one or more devices. The test results are shown directly inside Android Studio.
 
 ![](/static/studio/images/test/test-results-in-android-studio.png)
@@ -49,16 +41,12 @@ You can add a new test for a specific class or method directly from its source c
   4. In the **Create Test** dialog, choose **JUnit4** , edit the fields and methods you want to generate, and then click **OK**.
   5. In the **Choose Destination Directory** dialog, click the source set corresponding to the type of test you want to create: **androidTest** for an instrumented test or **test** for a local unit test. Then click **OK**.
 
-
-
 Alternatively, you can create a generic test file in the appropriate test source set as follows:
 
   1. In the **Project** window on the left, click the drop-down menu and select the **Android** view.
   2. Right click on the **java** directory and select **New > Java Class** or **New > Kotlin Class/File**. Alternatively, you can select the **java** directory and use the `Control+N` (`Command+N` on macOS) shortcut.
   3. In the **Choose Destination Directory** dialog, click the source set corresponding to the type of test you want to create: **androidTest** for an instrumented test or **test** for a local unit test. Then click **OK**.
   4. Name the file and then click **OK**.
-
-
 
 If your app doesn't compile after adding a test, make sure you have the right test library dependencies set up. See [Build local tests](/training/testing/local-tests#dependencies) and [Build instrumented tests](/training/testing/unit-testing/instrumented-unit-tests#setup) for the correct dependencies.
 
@@ -75,8 +63,6 @@ Before running any tests, make sure your project is fully synchronized with Grad
     * Press the **Run test** icon ![](/static/studio/images/buttons/run-test-icon.png) in the [gutter](https://www.jetbrains.com/help/idea/settings-gutter-icons.html).
     * Right-click on the test class or method and click **Run** ![](/static/studio/images/buttons/toolbar-run.png).
     * Select the test class or method and use shortcut `Control+Shift+R`.
-
-
 
 Your instrumented tests will run on a physical device or emulator. To learn more about setting up physical devices, see [Run apps on a hardware device](/studio/run/device). To learn more about setting up emulators, see [Run apps on the Android Emulator](/studio/run/emulator).
 
@@ -128,9 +114,6 @@ Instrumented tests by default run on one physical device or emulator. If you wan
 
   5. You can click on a specific test to inspect the result in the output pane. You can also sort the tests by clicking the various columns.
 
-
-
-
 ### Run with Firebase Test Lab
 
 Using [Firebase Test Lab](https://firebase.google.com/docs/test-lab/), you can simultaneously test your app on many popular Android devices and device configurations (different combinations of locale, orientation, screen size, and platform version). These tests run on physical and virtual devices in remote Google data centers. Test results provide test logs and include the details of any app failures.
@@ -153,8 +136,6 @@ Android Studio provides integrated tools that allow you to configure how you wan
   7. Next to **Matrix configuration** , select one of the default configurations from the drop-down or create your own by pressing **Open Dialog** ![](/static/studio/images/buttons/open-dialog-icon.png). You can select one or more devices, Android versions, locales and screen orientations that you want to test your app with. Firebase Test Lab will test your app against every combination of your selections when generating test results.
   8. Click **OK** in the **Run/Debug Configurations** dialog to exit.
   9. Run your tests by clicking **Run** ![](/static/studio/images/buttons/toolbar-run.png).
-
-
 
 ![](/static/studio/images/test/firebase-run-debug-configurations.png)
 
@@ -196,8 +177,6 @@ The **Run** window displays the tests in a tree view on the left, and the result
   3. Click the **context menu** to track the running test, show inline statistics, scroll to the stack trace, open the source code at an exception, auto scroll to the source, and select the first failed test when the test run completes.
   4. **Test status icons** indicate whether a test has an error, was ignored, failed, is in progress, has passed, is paused, was terminated, or was not run.
   5. Right-click a line in the tree view to display a context menu that lets you run the tests in debug mode, open the test source code file, or jump to the line in the source code being tested.
-
-
 
 ### Analyze test failures
 

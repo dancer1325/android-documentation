@@ -3,13 +3,6 @@
 **Source:** [https://developer.android.com/news](https://developer.android.com/news)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 # News
 
 Keep up to date with what's going on in the Android universe: every source; one place.

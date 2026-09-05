@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Practical performance debugging example: ANR Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Practical performance debugging example: ANR
 This section shows how to debug an [Application Not Responding (ANR)](/topic/performance/anrs/keep-your-app-responsive) using `ProfilingManager` with an example trace.
 
 ## Set up app to collect ANRs

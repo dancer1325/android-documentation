@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Migrate to Android Studio Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Migrate to Android Studio
 Migrating your projects to Android Studio requires adapting to a new project structure, build system, and IDE functionality.
 
 If you are migrating from IntelliJ and your project already uses Gradle, you can open your existing project from Android Studio. If you are using IntelliJ but your project doesn't already use Gradle, you need to manually prepare your project before you can import it into Android Studio. For more information, see the Migrate from IntelliJ section.
@@ -40,8 +32,6 @@ Gradle-based projects offer significant features for Android development, includ
   * Easy [build configuration](/studio/build) and customization. For example, you can pull version names and version codes from Git tags as part of the build.
   * Gradle can be used from the IDE, from the [command line](/studio/build/building-cmdline), and from continuous integration servers like Jenkins, providing the same build everywhere, every time.
 
-
-
 For more information about using and configuring Gradle, see [Configure your build](/tools/building/plugin-for-gradle).
 
 ### Dependencies
@@ -59,15 +49,11 @@ If you are already using Gradle with your IntelliJ project, open it in Android S
   1. Click **File > New > Import Project**.
   2. Select your IntelliJ project directory and click **OK**. Your project opens in Android Studio.
 
-
-
 ### Import a non-Gradle IntelliJ project
 
 If your IntelliJ project doesn't already use the Gradle build system, you have two options for importing your project into Android Studio, which are described in the sections that follow: 
 
   * Create a new empty Android Studio project and copy your existing source code into the directories associated with the new project. For more information, see the section about migrating by creating a new empty project. 
-
-
 
 * Create a new Gradle build file for your project and then import the project and new build file into Android Studio. For more information, see the section about migrating by creating a custom Gradle build file. 
 
@@ -86,8 +72,6 @@ To migrate your project into Android Studio by creating a new empty project and 
   9. Click **Dependencies** and add any libraries your project depends on as Gradle dependencies. To add a new dependency, click **Add** ![](/static/studio/images/buttons/ic_plus.png), then select the type of dependency you would like to add and follow the prompts. 
   10. Click **OK** to save your modifications. 
   11. Click **Build > Make Project** to test building your project, and if necessary resolve any outstanding errors. 
-
-
 
 #### Migrate by creating a custom Gradle build file
 
@@ -202,8 +186,6 @@ For help determining the correct declaration statements for your libraries, sear
   6. Locate your project directory, select the `build.gradle` or `build.gradle.kts` file you created, and then click **OK** to import your project.
   7. Click **Build > Make Project** to test your build file by building your project, and address any errors you find.
 
-
-
 ## Next steps
 
 Once you have migrated your project to Android Studio, learn more about building with Gradle and running your app in Android Studio by reading [Build and run your app](/studio/run).
@@ -220,8 +202,6 @@ If your app is not under source control, you can configure it after importing yo
 
   1. From the Android Studio VCS menu, click **Enable Version Control Integration**.
   2. Select a version control system to associate with the project root from the menu, then click **OK**. The VCS menu now displays a number of version control options based on the system you selected.
-
-
 
 **Note:** You can also use the **File > Settings > Version Control** menu option to set up and modify the version control.
 

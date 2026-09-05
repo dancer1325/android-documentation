@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Inspect network traffic with the Network Inspector Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Inspect network traffic with the Network Inspector
 The Network Inspector displays real-time network activity on a timeline, showing data sent and received. The Network Inspector lets you examine how and when your app transfers data and optimize the underlying code appropriately.
 
 To open the Network Inspector, follow these steps:
@@ -20,8 +12,6 @@ To open the Network Inspector, follow these steps:
   1. From the Android Studio navigation bar, select **View >** **Tool Windows >** **App Inspection**. After the app inspection window automatically connects to an app process, select **Network Inspector** from the tabs. 
      * If the app inspection window doesn't connect to an app process automatically, you may need to select an app process manually.
   2. Select the device and app process you want to inspect from the **App Inspection** window.
-
-
 
 ## Network Inspector overview
 
@@ -40,8 +30,6 @@ In the pane below the timeline, select one of the following tabs for more detail
   * **Rules View** : Rules help test how your app behaves when encountering responses with different status codes, headers, and bodies. When you create a new rule, name your new rule and include information about the origin of the response you want to intercept under the **Origin** subsection. In the **Response** subsection, you can specify where and how to modify the response. For example, you can set the rule to execute on responses with a specific status code as well as modify that status code. In the **Header rules** and **Body rules** subsections, create sub-rules that add or modify response headers or bodies. Rules are applied in the order that they're listed. Choose which rule to enable or disable by checking the **Active** box next to the rule.
 
 ![Network Inspector Rules and Rule Details panes](/static/studio/images/debug/network-inspector-rules.png) **Figure 3.** Network Inspector **Rules** and **Rule Details** panes. 
-
-
 
 From either the **Connection View** or **Thread View** , click a request name to inspect detailed information about the data sent or received. Click the tabs to view the response header and body, request header and body, or call stack.
 

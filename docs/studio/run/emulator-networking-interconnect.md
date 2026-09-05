@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Interconnecting Emulator instances Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Interconnecting Emulator instances
 To test applications that involve multi-device interactions, you can connect multiple Android Emulator instances so they can communicate with each other. The method for establishing a connection depends on the version of the emulator you are using.
 
 ## Android Emulators Version 36.5 and Later
@@ -41,8 +33,6 @@ You can configure network redirection in two ways:
 
   1. _Emulator Console Commands_ : Use the built-in console to set up port mappings for the running emulator instance.
   2. _Android Debug Bridge (adb)_ : Use adb commands to configure the necessary port forwarding rules.
-
-
 
 ### Set up redirection through the emulator console
 
@@ -90,23 +80,17 @@ Assume that your environment is as follows:
   * B is your first emulator instance, running on A.
   * C is your second emulator instance, also running on A.
 
-
-
 If you want to run a server on B to which C will connect, set it up as follows:
 
   1. Set up the server on B, listening to `10.0.2.15:<serverPort>`.
   2. On the B console, set up a redirection from A: `localhost:<localPort>` to B: `10.0.2.15:<serverPort>`.
   3. On C, connect the client to `10.0.2.2:<localPort>`.
 
-
-
 For example, if you want to run an HTTP server, select `<serverPort>` as `80` and `<localPort>` as `8080`:
 
   * B listens on `10.0.2.15:80`.
   * On the B console, issue `redir add tcp:8080:80`.
   * C connects to `10.0.2.2:8080`.
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/studio](https://developer.android.com/studio)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](https://developer.android.com/static/images/studio/studio-hero-image.png)
 
 ###  Android Studio 

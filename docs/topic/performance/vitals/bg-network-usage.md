@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Excessive Mobile Network Usage in Background Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Excessive Mobile Network Usage in Background
 When an app connects to the mobile network in the background, the app wakes up the CPU and turns on the radio. Doing so repeatedly can run down a device's battery. An app is considered to be running in the background if it is in the `PROCESS_STATE_BACKGROUND` or `PROCESS_STATE_CACHED` state.
 
 This page explains how to determine why your app is excessively using the mobile network while running in the background, and what to do about it.
@@ -32,8 +24,6 @@ The definition of _battery session_ depends on the platform version.
   * In Android 10, a battery session is the aggregation of all battery reports received within a given 24-hour period. A _battery report_ refers to the interval between two battery charges either from below 20% to above 80% or from any charge level to 100%.
   * In Android 11, a battery session is a fixed 24-hour period.
 
-
-
 For information on how Google Play collects Android vitals data, see the [Play Console](https://support.google.com/googleplay/android-developer/answer/7385505) documentation.
 
 ## Investigate mobile-network-usage behavior
@@ -52,8 +42,6 @@ You can move your app’s mobile-network usage to the foreground, alerting the u
 
   * Note: link text is displayed when JavaScript is off
   * [Excessive Wi-Fi Scanning in the Background](/topic/performance/vitals/bg-wifi)
-
-
 
 [ Previous arrow_back  Excessive Background Wi-Fi Scans  ](/topic/performance/vitals/bg-wifi)
 

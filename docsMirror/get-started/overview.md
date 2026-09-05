@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/get-started/overview](https://developer.android.com/get-started/overview)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Essentials ](https://developer.android.com/get-started)
-  * [ Get started ](https://developer.android.com/get-started/overview)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](https://developer.android.com/static/images/logos/android.svg)
 
 ###  Get started with Android 

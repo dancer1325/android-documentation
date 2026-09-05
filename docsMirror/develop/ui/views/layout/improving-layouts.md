@@ -4,16 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Core areas ](https://developer.android.com/develop/core-areas)
-  * [ UI ](https://developer.android.com/develop/ui)
-  * [ Views ](https://developer.android.com/develop/ui/views/layout/declaring-layout)
-
-
-
-#  Improve layout performance Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Improve layout performance
 Try the Compose way 
 
 Jetpack Compose is the recommended UI toolkit for Android. Learn how to work with layouts in Compose. 

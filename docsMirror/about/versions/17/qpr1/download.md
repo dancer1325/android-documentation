@@ -4,14 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Essentials ](https://developer.android.com/get-started)
-  * [ Releases ](https://developer.android.com/about/versions)
-
-
-
-#  Factory images for Google Pixel Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Factory images for Google Pixel
 If you are a developer with a supported Google Pixel device, you can manually update that device to the latest build for testing and development. Flashing a factory image requires a full device reset, so make sure to [back up your data](https://support.google.com/pixelphone/answer/7179901) first. Builds are available for the following Pixel devices:
 
   * Pixel 6

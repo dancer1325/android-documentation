@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/blog/categories/case-studies](https://developer.android.com/blog/categories/case-studies)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Android Developers' Blog ](https://developer.android.com/)
-  * [ Blog ](https://developer.android.com/blog)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](/static/blog/assets/case_studies_droid_5b46649590_c28b947247_1fzKo8.webp)
 
 # Case Studies
@@ -119,9 +110,6 @@ Monzo is a UK digital bank with 15 million customers and growing. As the app sca
 TikTok is a global short-video platform known for its massive user base and innovative features.
 
 [Ben Trengrove](/blog/authors/ben-trengrove), [Ajesh Pai](/blog/authors/ajesh-pai) • 2 min read 
-
-
-
 
 arrow_back 
 

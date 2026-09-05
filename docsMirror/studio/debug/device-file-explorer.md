@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  View on-device files with Device Explorer Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  View on-device files with Device Explorer
 The Device Explorer lets you view, copy, and delete files on an Android device. It's useful when examining files your app creates or if you want to transfer files to and from a device.
 
 **Note:** Most device data is not visible unless you are using a rooted device or an emulator with a standard Android (AOSP) system image, not one of the Google APIs or Google Play system images. When using a connected device, be sure to [enable USB debugging](/studio/debug/dev-options#enable).
@@ -25,8 +17,6 @@ To work with a device's file system, proceed as follows:
      * Right-click a file or directory to create a new file or directory.
      * Save, upload, delete, or synchronize the selected file or directory to your machine.
      * Double-click a file to open it in Android Studio.
-
-
 
 ![](/static/studio/images/debug/device-explorer.png)
 

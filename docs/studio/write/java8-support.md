@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Use Java 8 language features and APIs Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Use Java 8 language features and APIs
 The Android Gradle plugin 3.0.0 and later supports all Java 7 language features and a subset of Java 8 language features that vary by platform version. When building your app using the Android Gradle plugin 4.0.0 and higher, you can use some Java 8 language APIs without requiring a minimum API level for your app.
 
 This page describes the Java 8 language features you can use, how to properly configure your project to use them, and any known issues you may encounter. See the following video for an overview of Java 8 language features.
@@ -30,8 +22,6 @@ To start using supported Java 8 language features:
 
   1. [Update the Android Gradle plugin](/studio/releases/gradle-plugin#updating-plugin) to 3.0.0 or higher.
   2. For each module that uses Java 8 language features (either in its source code or through dependencies), update the module's `build.gradle` or `build.gradle.kts` file as shown below:
-
-
 
 ### Kotlin
     
@@ -108,8 +98,6 @@ The following set of APIs are supported when building your app using Android Gra
   * Some additions to `java.util.concurrent.atomic` (new methods on `AtomicInteger`, `AtomicLong`, and `AtomicReference`)
   * `ConcurrentHashMap` (with bug fixes for Android 5.0)
 
-
-
 With Android Gradle plugin 7.4.0 or higher, additional Java 11 APIs are supported such as a subset of the `java.nio.file` package.
 
 For a complete list of supported APIs, visit [Java 8+ APIs available through desugaring](/studio/write/java8-support-table) and [Java 11+ APIs available through desugaring](/studio/write/java11-default-support-table).
@@ -120,8 +108,6 @@ To enable support for these language APIs on any version of the Android platform
 
   1. [Update the Android Gradle plugin](/studio/releases/gradle-plugin#updating-plugin) to 4.0.0 (or higher).
   2. Include the following in your **app module** ’s `build.gradle` or `build.gradle.kts` file:
-
-
 
 ### Kotlin
     
@@ -187,9 +173,6 @@ Note that you may also need to include the previous code snippet in a library mo
   * The library module's instrumented tests use these language APIs (either directly or through the library module or its dependencies). This is so that the missing APIs are provided for your instrumented test APK.
 
   * You want to run lint on the library module in isolation. This is to help lint recognize valid usages of the language APIs and avoid reporting false warnings.
-
-
-
 
 Also note that API desugaring can be combined with shrinking, but only when using the R8 shrinker.
 

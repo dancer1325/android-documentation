@@ -4,11 +4,8 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Google Play ](https://developer.android.com/distribute)
-  * [ Other Play guides ](https://developer.android.com/guide/app-bundle)
-
-Overview of the Google Play Core libraries Stay organized with collections  Save and categorize content based on your preferences.  This page describes the Google Play Core libraries and how to add them to your project. **Important:** The Google Play Core Java and Kotlin library have been split into multiple separate libraries, one for each feature. Update to the new libraries to benefit from new product additions. For more information, see the migration guide. The Google Play Core libraries are your app's runtime interface with the Google Play Store. Some of the things you can do include the following:
+Overview of the Google Play Core libraries
+This page describes the Google Play Core libraries and how to add them to your project. **Important:** The Google Play Core Java and Kotlin library have been split into multiple separate libraries, one for each feature. Update to the new libraries to benefit from new product additions. For more information, see the migration guide. The Google Play Core libraries are your app's runtime interface with the Google Play Store. Some of the things you can do include the following:
 
   * [Download additional language resources](/guide/playcore/feature-delivery/on-demand#lang_resources)
   * [Manage delivery of feature modules](/guide/playcore/feature-delivery)

@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Install OEM USB drivers Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Install OEM USB drivers
 If you are developing on Windows and want to connect a device for testing, then you need to install the appropriate USB driver. This page provides links to the web sites for several original equipment manufacturers (OEMs), where you can download the appropriate USB driver for your device.
 
 If you're developing on Mac OS X or Linux, then you shouldn't need a USB driver. Instead read [Using Hardware Devices](/tools/device).
@@ -40,8 +32,6 @@ To install the Android USB driver on Windows 10 for the first time, do the follo
   7. Click **Browse** and then locate the USB driver folder. For example, the Google USB Driver is located in `android_sdk\extras\google\usb_driver\`.
   8. Click **Next** to install the driver.
 
-
-
 ### Windows 8.1
 
 To install the Android USB driver on Windows 8.1 for the first time, do the following: 
@@ -57,8 +47,6 @@ Using a mouse: Point to the lower-right corner of the screen, move the mouse poi
   4. Double-click the device category, and then double-click the device you want.
   5. Click the **Driver** tab, click **Update Driver** , and follow the instructions.
 
-
-
 ### Windows 7
 
 To install the Android USB driver on Windows 7 for the first time, do the following:
@@ -72,8 +60,6 @@ To install the Android USB driver on Windows 7 for the first time, do the follow
   7. Click **Browse** and locate the USB driver folder. (The Google USB Driver is located in `android_sdk\extras\google\usb_driver\`.)
   8. Click **Next** to install the driver.
 
-
-
 Or, to _upgrade_ an existing Android USB driver on Windows 7 and higher with the new driver:
 
   1. Connect your Android device to your computer's USB port.
@@ -85,8 +71,6 @@ Or, to _upgrade_ an existing Android USB driver on Windows 7 and higher with the
   7. Select **Search for the best driver in these locations** ; uncheck **Search removable media** ; and check **Include this location in the search**.
   8. Click **Browse** and locate the USB driver folder. (The Google USB Driver is located in `android_sdk\extras\google\usb_driver\`.)
   9. Click **Next** to upgrade the driver.
-
-
 
 ## Get OEM drivers
 

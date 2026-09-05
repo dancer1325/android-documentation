@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Capture and read bug reports Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Capture and read bug reports
 A bug report contains device logs, stack traces, and other diagnostic information to help you find and fix bugs in your app. To capture a bug report from your device, use the **Take bug report** developer option on the device, the Android Emulator menu, or the `adb bugreport` command on your development machine.
 
 ![](/static/studio/images/run/dev-options-pixel_2x_cropped.png)
@@ -37,8 +29,6 @@ After a moment, you get a notification that the bug report is ready, as shown in
 
   4. To share the bug report, tap the notification.
 
-
-
 ## Capture a bug report from the Android Emulator
 
 From the Android Emulator, you can use the **File a bug** feature in the extended controls:
@@ -49,9 +39,6 @@ From the Android Emulator, you can use the **File a bug** feature in the extende
 This opens a screen where you can see the bug report details, such as the screenshot, the AVD configuration info, and the bug report log. You can also type a message with reproduction steps to save with the report.
 
   3. Wait for the bug report to finish collecting, then click **Save Report**.
-
-
-
 
 ## Capture a bug report using adb
 

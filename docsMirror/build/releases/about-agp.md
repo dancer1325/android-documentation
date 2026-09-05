@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  About Android Gradle plugin Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  About Android Gradle plugin
 **Important:** For a detailed log of Android Gradle plugin API deprecations and removals, see the [Android Gradle plugin API updates](/studio/releases/gradle-plugin-api-updates).
 
 The Android Studio build system is based on Gradle, and the Android Gradle plugin adds several features that are specific to build Android apps.
@@ -29,8 +21,6 @@ For details about how to configure your Android builds with Gradle, see the foll
   * [Android Gradle plugin DSL reference](/reference/tools/gradle-api)
   * [Gradle DSL reference](https://docs.gradle.org/current/dsl/)
   * [Gradle performance user guide](https://docs.gradle.org/current/userguide/performance.html)
-
-
 
 For more information about the Gradle build system, see the [Gradle user guide](https://docs.gradle.org/current/userguide/userguide.html).
 

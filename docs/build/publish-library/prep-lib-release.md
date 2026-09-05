@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Prepare your library for release Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Prepare your library for release
 This page describes the properties and options needed to prepare your [Android library](/studio/projects/android-library) project for publication using the [Android Gradle plugin (AGP)](/studio/releases/gradle-plugin). Even if you set some of these properties at the outset of creating your library, review the following guidance to optimize your settings.
 
 ## Choose a namespace
@@ -62,9 +54,6 @@ Because the manifest merger prevents app projects from including libraries with 
   * **Choosing a high`minSdkVersion` might be necessary in special cases where a library’s manifest includes a broadcast receiver or some other mechanism by which its code is triggered automatically.**
 
 In these cases, choosing a high `minSdkVersion` ensures that code can run. Alternatively, you can disable the automated behavior so that the app can opt in to executing the library after doing the right checks.
-
-
-
 
 To allow embedding in apps, use the [`RequiresApi`](/reference/androidx/annotation/RequiresApi) annotation in your library to indicate to its callers that they need to do runtime checks. Android Lint uses the `RequiresApi` information for its inspections. For more resources on using annotations to improve your API code and APIs, see [Improve code inspection with annotations](/studio/write/annotations).
 
@@ -125,9 +114,6 @@ If you set `minCompileSdk` in multiple places, Gradle prioritizes the settings l
   2. `productFlavors{}`
 
   3. `defaultConfig{}`
-
-
-
 
 In the preceding example, where `minCompileSdk` is defined in both `defaultConfig{}` and `productFlavors{}`, `productFlavors{}` is prioritized and `minCompileSdk` is set to 30.
 

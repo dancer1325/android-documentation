@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  UI jank detection Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  UI jank detection
 Android renders UI by generating a frame from your app and displaying it on the screen. If your app suffers from slow UI rendering, then the system is forced to skip frames. When this happens, the user perceives a recurring flicker on their screen, which is referred to as _jank_.
 
 When jank occurs, it's usually because of some deceleration or blocking async call on the UI thread (in most apps, it's the main thread). You can use system traces to identify where the problem is.
@@ -43,9 +35,6 @@ main threads](/static/studio/images/profile/jank_detection-janky_frames_detailed
   6. You can optionally see all frames or a breakdown of the rendering time by toggling the checkboxes **All Frames** and **Lifecycle** , respectively. ![Screenshot of Profiler as above but with All Frames and Lifecycle
 checkboxes checked](/static/studio/images/profile/jank_detection-allframes_lifecycle_checkboxed.png)
 
-
-
-
 ## Detect jank on Android 11
 
 For devices using Android 11 (API level 30), a captured trace is shown in the **Frame Lifecycle** section in the CPU Profiler.
@@ -60,8 +49,6 @@ The **Frame Lifecycle** section contains the layer name and four tracks. Each tr
   3. **Wait for GPU** : This track shows how long the buffer was owned by the GPU. This is the time from when the buffer is sent to the GPU to when the GPU finishes its work on the buffer. **This does not indicate that the GPU was working only on this buffer during this time.** For detailed info on what the GPU works on during a given time, you may want to use [Android GPU Inspector](/agi).
   4. **Composition** : This track shows the time starting from when SurfaceFlinger latches on to the buffer and sends it for composition, to when the buffer is sent to the display.
   5. **Frames on display** : This track shows how long the frame was on the screen.
-
-
 
 The **Frame Lifecycle** section illustrates how a frame buffer moves between different stages of the rendering pipeline. The frames are color coded by frame number so that it's easier to track a particular frame.
 
@@ -88,9 +75,6 @@ To detect and investigate jank on Android 11, follow these steps:
 
 ![Frame Lifecycle and Threads sections](/static/studio/images/profile/jank_detection-frame-lifecycle-threads.png)
 
-
-
-
 ## Detect jank on Android 10 and lower
 
 For devices using Android 10 (API level 29) and lower, relevant OS graphics pipeline information is displayed in a single section on the CPU Profiler system trace called **Display**.
@@ -101,8 +85,6 @@ For devices using Android 10 (API level 29) and lower, relevant OS graphics pipe
   * **SurfaceFlinger** : This section shows when the SurfaceFlinger processes the frame buffers. SurfaceFlinger is a system process that is responsible for sending buffers to display.
   * **VSYNC** : This section displays the VSYNC, a signal that synchronizes the display pipeline. The track displays the VSYNC-app signal, which shows when your app is starting too late. Typically, this occurs because the UI thread is busy. It causes a visible flicker to appear on your screen during an animation and adds extra input latency until the animation or scroll completes. This is especially important to view for high-refresh-rate displays, as they may occur more frequently than 60 times per second or at a variable rate.
   * **BufferQueue** : This section shows how many frame buffers are queued up and are waiting for SurfaceFlinger to consume. For apps deployed to devices running Android 9 (API level 28) or higher, this track shows the buffer count of the app's surface [BufferQueue](https://source.android.com/devices/graphics#bufferqueue) (`0`, `1`, or `2`). BufferQueue can help you understand the state of image buffers as they move between the Android graphics components. For example, a value of `2` means that the app is currently triple-buffered, which results in extra input latency.
-
-
 
 The **Display** section provides useful signals to detect potential jank—for example, when the UI thread or `RenderThread` takes longer than 16 ms. To investigate exact details of what caused the jank, you can probe the **Threads** section, which shows the threads relevant to UI rendering.
 
@@ -124,9 +106,6 @@ To detect jank on Android 10 or lower, follow these steps:
 In the figure above, `Choreographer#doFrame` shows when the UI thread calls [`Choreographer`](/reference/kotlin/android/view/Choreographer) to coordinate animation, view layout, image drawing, and related processes. `DrawFrames` shows when `RenderThread` forms and issues actual drawing commands to the GPU.
 
   3. If you see a particularly long trace event on the main thread, zoom in to see which UI component or composable function is delaying the frame.
-
-
-
 
 ## Advanced investigation with Perfetto
 

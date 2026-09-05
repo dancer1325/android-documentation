@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Add app resources Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Add app resources
 App resources, such as app icons, localized strings, and bitmaps, are organized into type-specific directories inside each module's `res/` directory. You can also add alternative versions of each file that are optimized for different device configurations, such as a high-res version of a bitmap for high-density screens.
 
 Android Studio helps you add new resources and alternative resources in several ways, depending on the type of resource you want to add. This page describes how to add basic resource files, how to change the location of your resources, and how resource merging works.
@@ -24,8 +16,6 @@ See the following pages for details about how to create specific resource types:
   * To add string files, see [Localize the UI with Translations Editor](/studio/write/translations-editor).
   * To add bitmaps, see [Create app icons](/studio/write/create-app-icons).
   * To add SVG files, see [Add multi-density vector graphics](/studio/write/vector-asset-studio).
-
-
 
 For information about how to reference the resources from your app code, see [App resources overview](/guide/topics/resources/providing-resources).
 
@@ -72,8 +62,6 @@ To add a new resource directory, follow these steps:
      * **Source set:** Select the source set where you want the directory.
      * **Available qualifiers:** Instead of manually including configuration qualifiers in your directory name, you can add them by selecting a qualifier from the list and clicking **Add** ![](/static/studio/images/buttons/ic_add-arrows.png).
   4. Once you've added all the qualifiers you want, click **OK**.
-
-
 
 ## Change your resource directory
 
@@ -145,8 +133,6 @@ Resources in your final app file can come from three sources:
   * [Build variant](/studio/build/build-variants) source sets
   * Android libraries (AARs)
 
-
-
 When all resources from each source set or library are unique, they're all added into the final app. A resource is considered unique if its filename is unique within both its [resource type](/guide/topics/resources/available-resources) directory and the [resource qualifier](/guide/topics/resources/providing-resources#AlternativeResources) (if defined).
 
 If there are two or more matching versions of the same resource, then only one version is included in the final app. The build tools select which version to keep based on the following priority order (highest priority on the left):
@@ -158,13 +144,9 @@ For example, if the main source set contains:
   * `res/values/strings.xml`
   * `res/values-es/strings.xml`
 
-
-
 And the debug build type contains:
 
   * `res/values/strings.xml`
-
-
 
 Then the final app includes `res/values/strings.xml` from the debug build type and `res/values-es/strings.xml` from the main source set.
 

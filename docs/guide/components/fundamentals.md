@@ -216,8 +216,6 @@ https://developer.android.com/guide/components/fundamentals
     ```
 
 * see 
-  * [`<application>`](https://developer.android.com/guide/topics/manifest/application-element)
-  * [`<activity>`](https://developer.android.com/guide/topics/manifest/activity-element)
   * see [App manifest overview](guide.topics.manifest.manifest-intro.md)
 
 * elements -- to declare -- ALL app components

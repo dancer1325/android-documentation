@@ -4,16 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Core areas ](https://developer.android.com/develop/core-areas)
-  * [ UI ](https://developer.android.com/develop/ui)
-  * [ Docs ](https://developer.android.com/develop/ui/compose/documentation)
-
-
-
-#  Get started with adaptive apps Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Get started with adaptive apps
 More than 300 million Android large screen devices, including tablets, foldables, ChromeOS devices, car displays, and TVs, are in use today, with more coming continually. To provide an optimal user experience on the growing number and diversity of large screen devices—as well as on standard phones—build adaptive apps.
 
 ## What are adaptive apps?
@@ -56,8 +47,6 @@ To create an adaptive app that supports all display sizes and configurations, do
   * Build with the Compose Material 3 Adaptive library
   * Support input beyond touch
   * Test on all device types
-
-
 
 ### Window size classes
 
@@ -111,9 +100,6 @@ Adapts the layout to the app window size. Presents a list and the detail of a li
 
 Presents the main content pane and a supporting pane on the expanded window size class, but just the main content pane on compact and medium window size classes.
 
-
-
-
 The Compose Material 3 Adaptive library is a key dependency for developing adaptive apps.
 
 ### Configuration and continuity
@@ -145,9 +131,6 @@ Adaptive apps support external input devices, but the Android framework does muc
   * Jetpack [`androidx.compose.material3`](/reference/kotlin/androidx/compose/material3/package-summary) library: Enables users to write into any [`TextField`](/reference/kotlin/androidx/compose/material/TextField.composable#TextField\(androidx.compose.ui.text.input.TextFieldValue,kotlin.Function1,androidx.compose.ui.Modifier,kotlin.Boolean,kotlin.Boolean,androidx.compose.ui.text.TextStyle,kotlin.Function0,kotlin.Function0,kotlin.Function0,kotlin.Function0,kotlin.Boolean,androidx.compose.ui.text.input.VisualTransformation,androidx.compose.foundation.text.KeyboardOptions,androidx.compose.foundation.text.KeyboardActions,kotlin.Boolean,kotlin.Int,kotlin.Int,androidx.compose.foundation.interaction.MutableInteractionSource,androidx.compose.ui.graphics.Shape,androidx.compose.material.TextFieldColors\)) component using a stylus.
 
   * [Keyboard Shortcuts Helper](/develop/ui/compose/touch-input/keyboard-input/keyboard-shortcuts-helper): Makes Android platform and app keyboard shortcuts discoverable by users. Publish your app's keyboard shortcuts in Keyboard Shortcuts Helper by overriding the [`onProvideKeyboardShortcuts()`](/reference/kotlin/android/view/Window.Callback#onprovidekeyboardshortcuts) window callback.
-
-
-
 
 To fully support form factors of all sizes, adaptive apps support input of all types.
 
@@ -188,8 +171,6 @@ Android Studio offers a variety of emulators for testing different layout sizes:
   * Pixel Tablet emulator: Emulates the Pixel Tablet large screen device
   * Desktop emulator: Lets you test free-form windowing, mouse hover, and keyboard shortcuts
 
-
-
 ### Remote device streaming
 
 Securely connect to remote Android devices hosted in Google data centers and run your app on the latest Pixel and Samsung devices. Install and debug apps, run ADB commands, and rotate and fold devices to verify that your app works well on a variety of real devices.
@@ -199,8 +180,6 @@ Remote device streaming is integrated into Android Studio. For more information,
 ## Additional resources
 
   * I/O presentation: [Building adaptive Android apps](https://io.google/2024/explore/d16737ba-e336-4b68-8928-24692a88e644/)
-
-
 
 [ Previous arrow_back  Set item behavior  ](/develop/ui/compose/layouts/adaptive/flexbox/item-behavior)
 

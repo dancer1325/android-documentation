@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  View code coverage reports Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  View code coverage reports
 The Android Gradle plugin can create code coverage reports that track the percentage of your code that your tests cover. This page describes how to enable coverage reporting and generate reports.
 
 You can generate coverage reports for each test type (unit and instrumentation) for each variant. You can also generate unified coverage reports across different test types, modules, and build variants.
@@ -95,8 +87,6 @@ You can generate unified code coverage reports using the `createCoverageReport` 
   * Android Gradle Plugin 9.3.0-alpha09 or higher
   * Enable code coverage
 
-
-
 To generate a unified report, run one of the following tasks from the command line:
 
 Coverage scope | Command | Description | Report location  
@@ -109,8 +99,6 @@ The generated HTML report landing page shows a high-level summary of all modules
   * Green: Covered lines.
   * Red: Uncovered lines.
   * Yellow: Partial coverage (some instructions or branches missed).
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

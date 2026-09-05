@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Configure build variants Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Configure build variants
 This page shows you how you can configure build variants to create different versions of your app from a single project and how to properly manage your dependencies and signing configurations. 
 
 Each _build variant_ represents a different version of your app that you can build. For example, you might want to build one version of your app that's free with a limited set of content, and another paid version that includes more. You can also build different versions of your app that target different devices, based on API level or other device variations. 
@@ -182,8 +174,6 @@ After you create and configure your product flavors, click **Sync Now** in the n
   * `demoRelease`
   * `fullDebug`
   * `fullRelease`
-
-
 
 To select which build variant to build and run, go to **Build** > **Select Build Variant** and select a build variant from the menu. To start customizing each build variant with its own features and resources, you'll need to create and manage source sets, as described on this page. 
 
@@ -406,8 +396,6 @@ For example,
     Build variant: `minApi24DemoDebug`
     Corresponding APK: `app-minApi24-demo-debug.apk`
 
-
-
 In addition to the source set directories you can create for each individual product flavor and build variant, you can also create source set directories for each _combination_ of product flavors. For example, you can create and add Java sources to the `src/demoMinApi24/java/` directory, and Gradle uses those sources only when building a variant that combines those two product flavors.
 
 Source sets you create for product flavor combinations have a higher priority than source sets that belong to each individual product flavor. To learn more about source sets and how Gradle merges resources, read the section about how to create source sets. 
@@ -519,8 +507,6 @@ To see the **Tasks** folder, you must let Gradle build the task list during sync
 
   3. After Gradle executes the task, the **Run** window opens to display the output.
 
-
-
 **Note:** The task output also shows you how to organize source sets for files you want to use to run tests for your app, such as the `test/` and `androidTest/` [testing source sets](/studio/test/advanced-test-setup#create-instrumented-test-for-build-variant). 
 
 When you create a new build variant, Android Studio doesn't create the source set directories for you, but it does give you a few options to help you. For example, to create just the `java/` directory for your "debug" build type: 
@@ -531,8 +517,6 @@ When you create a new build variant, Android Studio doesn't create the source se
   4. From the menu under **Gradle Source Sets** , select **full/java**. 
   5. Press `Enter`. 
 
-
-
 Android Studio creates a source set directory for your debug build type and then creates the `java/` directory inside it. Alternatively, Android Studio can create the directories for you when you add a new file to your project for a specific build variant.
 
 For example, to create a values XML file for your "debug" build type: 
@@ -541,8 +525,6 @@ For example, to create a values XML file for your "debug" build type:
   2. Enter the name for the XML file or keep the default name. 
   3. From the menu next to **Target Source Set** , select **debug**. 
   4. Click **Finish**. 
-
-
 
 Because the "debug" build type was specified as the target source set, Android Studio automatically creates the necessary directories when it creates the XML file. The resulting directory structure looks like figure 1. 
 
@@ -664,8 +646,6 @@ You can use source set directories to contain the code and resources you want pa
   3. `src/demo/` (product flavor source set) 
   4. `src/main/` (main source set) 
 
-
-
 Source sets created for combinations of product flavors must include all flavor dimensions. For example, the build variant source set must be the combination of the build type and all flavor dimensions. Merging code and resources involving folders that cover multiple but not all flavor dimensions is not supported. 
 
 If you combine multiple product flavors, priority between the product flavors is determined by the flavor dimension they belong to. When listing flavor dimensions with the [ `android.flavorDimensions`](/reference/tools/gradle-api/current/com/android/build/api/dsl/ProductFlavor#dimension) property, product flavors that belong to the first flavor dimension you list have a higher priority than those belonging to the second flavor dimension, and so on. Additionally, source sets you create for combinations of product flavors have a higher priority than source sets that belong to an individual product flavor. 
@@ -680,8 +660,6 @@ The priority order determines which source set has a higher priority when Gradle
   * Files in the `values/` directories are merged together. If two files have the same name, such as two `strings.xml` files, priority is given in the same order as the list in the previous example. That is, values defined in a file in the build type source set override the values defined in the same file in a product flavor, and so on. 
   * Resources in the `res/` and `asset/` directories are packaged together. If there are resources with the same name defined in two or more source sets, priority is given in the same order as the list in the previous example. 
   * Gradle gives resources and manifests included with library module dependencies the lowest priority when building the app. 
-
-
 
 ##  Declare dependencies 
 
@@ -911,9 +889,6 @@ Use `missingDimensionStrategy` in the `defaultConfig` block to specify the defau
             }
         }
 
-
-
-
 For more information, see [`matchingFallbacks`](/reference/tools/gradle-api/7.0/com/android/build/api/dsl/ProductFlavor#matchingfallbacks) and [`missingDimensionStrategy`](/reference/tools/gradle-api/7.0/com/android/build/api/dsl/BaseFlavor#missingdimensionstrategy_1) in the Android Gradle plugin DSL reference. 
 
 ##  Configure signing settings 
@@ -969,9 +944,6 @@ To manually configure the signing configurations for your release build type usi
                  }
              }
          }
-
-
-
 
 **Note:** Including the passwords for your release key and keystore inside the build file is not a good security practice. Instead, configure the build file to obtain these passwords from environment variables or have the build process prompt you for these passwords. 
 

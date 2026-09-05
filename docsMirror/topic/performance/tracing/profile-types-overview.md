@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Profile types and when each is helpful Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Profile types and when each is helpful
 You can record several types of performance profiles in Android. Collecting a profile helps you debug issues related to how fast your app runs, how much memory it uses, how much power it consumes, and more.
 
 This document describes the most useful types of profiles and when to use each to debug common performance issues.
@@ -30,8 +22,6 @@ System traces contain the following code-driven events that can be either system
   * Trace slices: represent the time between different points in your code. They can be added with [`Trace.beginSection`](/reference/kotlin/androidx/tracing/Trace#beginSection\(java.lang.String\)) and [`Trace.endSection`](/reference/kotlin/androidx/tracing/Trace#endSection\(\)) APIs.
   * Trace counters: numeric values that represent metrics, for example heap size. They can be added with [`Trace.setCounter`](/reference/androidx/tracing/Trace#setCounter\(kotlin.String,kotlin.Int\)) API.
 
-
-
 System traces also contain metrics which can be created from PerfettoSQL queries and can be used to perform analyses or compare traces.
 
 We recommend using system traces to perform the following tasks:
@@ -45,9 +35,6 @@ We recommend using system traces to perform the following tasks:
   * **Understand multi-threading in your app.** Traces offer a view of multiple threads, showing each thread's state and any trace slices added by the system or your app. This multi-thread view helps you understand which threads are active, sleeping, or what they are running and how they interact.
 
   * **Perform complex performance analyses.** The powerful user interface and the ability to display various types of information make system traces useful for debugging a wide range of performance issues, including latency, memory, and battery usage.
-
-
-
 
 System traces also support querying using [PerfettoSQL](https://perfetto.dev/docs/analysis/perfetto-sql-getting-started). This powerful feature lets you:
 
@@ -71,8 +58,6 @@ We recommend using stack samples to do the following:
   * **Understand code execution.** Stack samples can help you understand the overall behavior of your codebase.
   * **Identify code that should not run.** You might find call stacks that weren't supposed to run at all, which points to immediate opportunities for optimization.
 
-
-
 ## Heap dumps
 
 ![Heap dump example](/static/topic/performance/images/tracing/heap-dump-overview.png) **Figure 3.** : Heap dump example.
@@ -85,8 +70,6 @@ We recommend collecting heap dumps to do the following:
   * **Find memory leaks.** Heap dumps can reveal memory that should no longer be in use when the dump was taken, indicating potential memory leaks.
   * **Identify objects that could be optimized.** By showing objects that use a lot of memory and their counts, heap dumps help identify inefficient memory usage patterns.
 
-
-
 ## Heap profiles
 
 ![Heap profile example](/static/topic/performance/images/tracing/heap-profile-overview.png) **Figure 4.** : Heap profile example.
@@ -98,8 +81,6 @@ We recommend using heap profiles to accomplish the following:
   * **Reduce memory churn.** Heap profiles provide samples with code locations for memory allocations. This helps you identify areas that create many temporary objects, which can contribute to frequent Garbage Collections (GCs) in your app.
   * **Uncover memory leaks.** Heap profiles can be used with other memory profiles to diagnose and fix memory leaks. They help you pinpoint locations that are allocating significantly more memory than expected.
 
-
-
 ## Combine profiles
 
 Often, you will analyze performance using a single profile. However, collecting multiple profiles or a single combined profile can often provide a more complete picture and help diagnose complex issues that a single profile alone cannot.
@@ -109,9 +90,6 @@ Consider these scenarios where combining profiles is beneficial:
   * **Scenario 1: Investigating uninstrumented code.** A system trace might show latency for operations you've already instrumented. However, you might need more information about uninstrumented parts of your code running during those times. To investigate, take a call stack profile to understand the executed code. This information can then help you improve your tracing by adding more trace slices.
 
   * **Scenario 2: Analyzing memory leaks and garbage collections.** Imagine a system trace shows a constant increase in Java heap memory due to allocations, triggering frequent garbage collections (GCs). To understand the allocated objects, take a heap profile or a heap dump. This combined approach helps you identify ways to reduce memory usage. For example, reducing wasteful or optimizable allocations using caching might prevent GCs from occurring.
-
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

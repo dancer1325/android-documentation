@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Performance class Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Performance class
 _Performance class_ is a standard first introduced in Android 12. A performance class defines a set of device capabilities that goes beyond Android's baseline requirements.
 
 Each version of Android has its own corresponding performance class, which is defined in that version's [Android Compatibility Definition Document (CDD)](https://source.android.com/compatibility/cdd). The [Android Compatibility Test Suite (CTS)](https://source.android.com/compatibility/cts) verifies the CDD requirements.
@@ -154,21 +146,15 @@ MPC 35 was introduced in Android 15 and builds on the requirements introduced in
   * Dynamic color aspects
   * Portrait aspect ratio
 
-
-
 ### Camera
 
   * JPEG_R
   * Preview stabilization
 
-
-
 ### Graphics
 
   * EGL extensions
   * Vulkan structures
-
-
 
 ## Media Performance Class 34
 
@@ -185,22 +171,16 @@ MPC 34 was introduced in Android 14 and builds on the requirements introduced in
   * Video encoding quality
   * Multichannel audio mixing
 
-
-
 ### Camera
 
   * Night mode extension
   * HDR-capable primary camera
   * Face detection scene mode
 
-
-
 ### General
 
   * Hardware overlays
   * HDR display
-
-
 
 ## Media Performance Class 33
 
@@ -215,8 +195,6 @@ MPC 33 was introduced in Android 13 and builds on the requirements introduced in
   * Wired headsets and USB audio devices
   * MIDI devices
   * Hardware-backed trusted execution environment
-
-
 
 ### Camera
 
@@ -240,8 +218,6 @@ MPC 31 was introduced in Android 12. The specific MPC 31 requirements are publis
   * Decoder frame drops
   * Encoding quality
 
-
-
 ### Camera
 
   * Resolution and frame rate
@@ -250,16 +226,12 @@ MPC 31 was introduced in Android 12. The specific MPC 31 requirements are publis
   * Timestamp source is realtime
   * RAW capability
 
-
-
 ### General
 
   * Memory
   * Read and write performance
   * Screen resolution
   * Screen density
-
-
 
 ## Media Performance Class 30
 
@@ -271,8 +243,6 @@ MPC 30 includes a subset of the requirements for MPC 31, letting developers prov
 
   * Note: link text is displayed when JavaScript is off
   * [App startup time](/topic/performance/vitals/launch-time)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

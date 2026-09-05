@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/social-and-messaging](https://developer.android.com/social-and-messaging)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Essentials ](https://developer.android.com/get-started)
-  * [ Social & Messaging Dev Center ](https://developer.android.com/social-and-messaging)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](https://developer.android.com/static/images/social-and-messaging/samples/social-messaging-hero_dt.svg)
 
 ![](https://developer.android.com/static/images/dev-center/icons/media.svg)Developer center 

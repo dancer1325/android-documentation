@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Overview of measuring app performance Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Overview of measuring app performance
 This document helps you identify and fix key performance issues in your app.
 
 ## Key performance issues
@@ -29,8 +21,6 @@ Aim for the following startup goals in your apps:
   * **Cold start in less than 500ms.** A _cold start_ happens when the app being launched isn't present in the system's memory. This happens when it is the app's first launch since reboot or since the app process was stopped by either the user or the system. A cold start requires the most work from the system, as it has to load everything from storage and initialize the app. Try to make cold starts take 500ms or less.
   * **Warm start in less than 200ms and hot start in less than 150ms.** A warm start occurs when the application's process is already running in the background, but the system needs to re-initialize the UI or bring the activity back to the foreground, such as when a user exits the app and re-opens it shortly after. A _hot start_ is even faster because the app's activity is already cached in memory and only needs to be brought to the foreground, without the need to re-create the view hierarchy. Aim to keep warm starts under 200ms and hot starts under 150ms.
   * **P95 and P99 latencies very close to the median latency.** P95 and P99 represent the 95th and 99th percentiles of startup times, while the median is the 50th percentile. When the app takes a long time to start, it makes a poor user experience. Interprocess communications (IPCs) and unnecessary I/O during the critical path of app startup can experience lock contention and introduce inconsistencies.
-
-
 
 [Scroll jank](/topic/performance/vitals/render#scrollable_lists)
     
@@ -66,15 +56,11 @@ To remedy performance issues, identify and inspect the following critical user j
   * Transitions between screens.
   * Long-running flows, like navigation or music playback.
 
-
-
 For each of these flows, inspect what is happening using the following debugging tools:
 
   * [Perfetto](https://perfetto.dev/): lets you see what is happening across the entire device with precise timing data.
   * [Memory Profiler](/studio/profile/record-java-kotlin-allocations): lets you see what memory allocations are happening on the heap.
   * [Simpleperf](/ndk/guides/simpleperf): shows a flamegraph of what function calls are using the most CPU during a certain period of time. When you identify something that's taking a long time in Systrace, but you don't know why, Simpleperf can provide additional information.
-
-
 
 To understand and debug these performance issues, it's critical to manually debug individual test runs. You can't replace the preceding steps by analyzing aggregated data. However, to understand what users are actually seeing and identify when regressions might occur, it's important to set up metrics collection in automated testing and in the field:
 
@@ -89,8 +75,6 @@ To understand and debug these performance issues, it's critical to manually debu
       * [Scrolling with Macrobenchmark](/topic/performance/benchmarking/macrobenchmark-control-app).
       * Macrobenchmark collects frame timing using `dumpsys gfxinfo` commands that bracket a single user journey. This is a way to understand variation in jank over a specific user journey. The `RenderTime` metrics, which highlight how long frames are taking to draw, are more important than the count of janky frames for identifying regressions or improvements.
 
-
-
 ### App Links verification issues
 
 [App Links](/training/app-links) are deep links based on your website URL that are verified to belong to your website. App Link verifications can fail for the following reasons:
@@ -99,8 +83,6 @@ To understand and debug these performance issues, it's critical to manually debu
   * **Unverified protocol switches:** unverified server-side and subdomain redirects are considered security risks and fail verification. They cause all `autoVerify` links to fail. For example, redirecting links from HTTP to HTTPS, such as example.com to www.example.com, without verifying the HTTPS links can cause fail verification. Make sure to [verify App Links](/training/app-links/verify-android-applinks) by adding intent filters.
   * **Non-verifiable links:** adding non-verifiable links for testing purposes can cause the system to not verify App Links for your app.
   * **Unreliable servers:** make sure your servers can connect to your client apps.
-
-
 
 ## Set up your app for performance analysis
 
@@ -149,8 +131,6 @@ On rooted devices, consider using a [`lockClocks` script](/studio/profile/benchm
   * Place CPUs at a fixed frequency.
   * Disable small cores and configure the GPU.
   * Disable thermal throttling.
-
-
 
 We don't recommend using a `lockClocks` script for user-experience focused tests such as app launch, DoU testing, and jank testing, but it can be essential for reducing noise in Microbenchmark tests.
 
@@ -222,8 +202,6 @@ You can disambiguate startup types in the following stages:
   * Warm startup: either recreates the activity while reusing the process or recreates the process with the saved state.
   * Hot startup: restarts the activity and starts at inflation.
 
-
-
 We recommend capturing Systraces with the [System Tracing app on the device](/topic/performance/tracing/on-device). For Android 10 and higher, use [Perfetto](http://perfetto.dev/docs). For Android 9 and lower, use [Systrace](/topic/performance/tracing). We also recommend viewing trace files with the [web-based Perfetto trace viewer](http://ui.perfetto.dev). For more information, see [Overview of system tracing](/topic/performance/tracing).
 
 Some things to look for include the following:
@@ -237,9 +215,6 @@ Some things to look for include the following:
   * I/O: check for I/O performed during startup, and look for long stalls.
 
   * Significant activity on other threads: these can interfere with the UI thread, so watch out for background work during startup.
-
-
-
 
 We recommend you call [`reportFullyDrawn`](/reference/kotlin/android/app/Activity#reportfullydrawn) when startup is completed from the app's perspective for improved app startup metric reporting. See the [Time to full display](/topic/performance/vitals/launch-time#time-full) section for more information about using `reportFullyDrawn`. You can extract RFD-defined start times through the Perfetto trace processor, and a user-visible trace event is emitted.
 
@@ -297,16 +272,12 @@ The ultimate impacts of memory improvements are the following:
      * Out-of-memory shutdowns are likely reduced if the app doesn't constantly hit memory pressure.
      * Having fewer GCs improves jank metrics, especially in the P99. This is because GCs cause CPU contention, which can lead to rendering tasks being deferred while GC is happening.
 
-
-
 ## Recommended for you
 
   * Note: link text is displayed when JavaScript is off
   * [App startup analysis and optimization {:#app-startup-analysis-optimization}](/topic/performance/appstartup/analysis-optimization)
   * [Frozen frames](/topic/performance/vitals/frozen)
   * [Write a Macrobenchmark](/topic/performance/benchmarking/macrobenchmark-overview)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

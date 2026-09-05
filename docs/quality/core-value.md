@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Core value ](https://developer.android.com/quality/core-value)
-
-
-
-#  What great core value looks like Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  What great core value looks like
 ![](/static/images/quality/hero-images/core_value_highlighted.svg)
 
 The ultimate purpose of any app or game is to deliver value to users by being useful or fun, both on first use and over time. An app or game can't be considered high quality if it doesn't achieve this goal, no matter what else it does well.

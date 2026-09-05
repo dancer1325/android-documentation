@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Apply custom build logic Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Apply custom build logic
 This section describes advanced topics that are useful when you want to extend the Android Gradle plugin or write your own plugin.
 
 ## Publish variant dependencies to custom logic
@@ -23,8 +15,6 @@ There are two separate configurations that hold the transitive dependencies of e
 
   * `variant_nameApiElements`: This configuration holds the transitive dependencies that are available to consumers at compile time.
   * `variant_nameRuntimeElements`: This configuration holds the transitive dependencies that are available to consumers at runtime.
-
-
 
 To learn more about the relationships between the different configurations, go to [The Java Library plugin configurations](https://docs.gradle.org/current/userguide/java_library_plugin.html#sec:java_library_configurations_graph).
 
@@ -38,8 +28,6 @@ However, this strategy might not always work as you intend. To customize the dep
 
   * `variant_nameCompileClasspath`: This configuration contains the resolution strategy for a given variant’s compile classpath.
   * `variant_nameRuntimeClasspath`: This configuration contains the resolution strategy for a given variant’s runtime classpath.
-
-
 
 The Android Gradle plugin includes getters that you can use to access the configuration objects of each variant. Thus, you can use the variant API to query the dependency resolution as shown in the example below:
 

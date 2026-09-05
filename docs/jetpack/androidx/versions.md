@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Get started ](https://developer.android.com/get-started/overview)
-  * [ Jetpack ](https://developer.android.com/jetpack)
-  * [ Libraries ](https://developer.android.com/jetpack/androidx/explorer)
-
-
-
-#  AndroidX releases Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  AndroidX releases
 * * *
 
 Overview |[All](/jetpack/androidx/versions/all-channel) |[Stable](/jetpack/androidx/versions/stable-channel) |[RC](/jetpack/androidx/versions/rc-channel) |[Beta](/jetpack/androidx/versions/beta-channel) |[Alpha](/jetpack/androidx/versions/alpha-channel)
@@ -30,8 +22,6 @@ Every version of a library moves through three pre-release stages on its way to 
   * Alpha releases are functionally stable, but may not be feature-complete.
   * While a release is in alpha, APIs may be added, removed, or changed.
 
-
-
 **Beta**
 
   * Beta releases are functionally stable and have a feature-complete API surface.
@@ -39,16 +29,12 @@ Every version of a library moves through three pre-release stages on its way to 
   * A beta release cannot use experimental compiler features (such as `@UseExperimental`).
   * Dependencies on other libraries must be beta, rc, or stable versions. No alpha dependencies are allowed.
 
-
-
 **Release Candidate (RC)**
 
   * A release candidate is a prospective stable release.
   * It may contain critical last-minute fixes.
   * Its API surface is final.
   * Dependencies on other libraries must be rc or stable versions only.
-
-
 
 A library can have multiple versions at the same time. Each version has a different release stage. For example, while the stable release of `androidx.activity` could be `1.0.0`, there might also be a `1.1.0-beta02` release as well as a `2.0.0-alpha01` release.
 

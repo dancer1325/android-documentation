@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  UI/Application Exerciser Monkey Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  UI/Application Exerciser Monkey
 The Monkey is a program that runs on your [emulator](/tools/help/emulator) or device and generates pseudo-random streams of user events such as clicks, touches, or gestures, as well as a number of system-level events. You can use the Monkey to stress-test applications that you are developing, in a random yet repeatable manner.
 
 ## Overview
@@ -26,15 +18,11 @@ The Monkey includes a number of options, but they break down into four primary c
   * Event types and frequencies.
   * Debugging options.
 
-
-
 When the Monkey runs, it generates events and sends them to the system. It also _watches_ the system under test and looks for three conditions, which it treats specially:
 
   * If you have constrained the Monkey to run in one or more specific packages, it watches for attempts to navigate to any other packages, and blocks them.
   * If your application crashes or receives any sort of unhandled exception, the Monkey will stop and report the error.
   * If your application generates an _application not responding_ error, the Monkey will stop and report the error.
-
-
 
 Depending on the verbosity level you have selected, you will also see reports on the progress of the Monkey and the events being generated.
 

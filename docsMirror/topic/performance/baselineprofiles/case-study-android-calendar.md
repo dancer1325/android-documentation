@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  How the Android Calendar team improved app startup and jank with Baseline Profiles Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  How the Android Calendar team improved app startup and jank with Baseline Profiles
 Baseline Profiles improve code execution speed by up to 30% by avoiding interpreter and just-in-time (JIT) [compilation steps](https://source.android.com/docs/core/runtime/jit-compiler#architectural-overview) for common user journeys. Baseline Profiles let you choose the user journeys you want to optimize and can help improve app startup, reduce jank, and more—which in turn result in improved business metrics, such as user retention and ratings. [Learn more about Baseline Profiles](/topic/performance/baselineprofiles/overview).
 
 The Android Calendar team implemented Baseline Profiles and observed ~20% app startup time improvement and ~50% reduction in slow or frozen frames. Here's what they did end-to-end to achieve these performance wins, from why they decided to use Baseline Profiles to how they measured impact.
@@ -38,8 +30,6 @@ The Android Calendar team chose to include two CUJs in their Baseline Profiles:
 
   * Opening the app in schedule view: initially the default view, so important to optimize for users using the app for the first time or who don't change the default settings.
   * Opening the app in month view: the chosen view for many users, based on user data. To track how users are using your app, you can use tools such as [Firebase](https://firebase.google.com/docs/analytics).
-
-
 
 Generally, you should add the CUJs that are profitable for the business (if applicable) and CUJs that are most common. To learn more about how to choose CUJs to optimize, see [What to include](/topic/performance/baselineprofiles/overview#what-to-include).
 
@@ -71,8 +61,6 @@ Replace the following:
 
   * PACKAGE_NAME: The package name of the app for which you want to generate Baseline Profiles.
 
-
-
 ## Measure impact using controlled releases
 
 Since Baseline Profiles are tightly coupled with the APK they're shipped with and incorporated before your app runs, it's not possible to run a standard A/B experiment to understand their impact. However, the Android Calendar team was able to get an accurate measure of impact using _controlled releases_ , where you essentially release the new app version to only a subset of users and compare them to users who are on a version similar to the previous release.
@@ -84,16 +72,12 @@ With Baseline Profiles, they saw the following immediate, significant improvemen
   * Median warm start latency decreased from 453ms to 378ms (17%)
   * Median janky frame rate decreased by 42-60% in schedule and month views
 
-
-
 Keep in mind that if you use Cloud Profiles in conjunction with Baseline Profiles you'll likely see the improvements decrease slightly over the course of the first week, as Cloud Profiles are generated. However, you should still observe significant performance gains with Baseline Profiles on top of other optimizations you have in place.
 
 To learn more about the tools and features, see the following resources:
 
   * [About Baseline Profiles](/topic/performance/baselineprofiles/overview)
   * [Benchmark Baseline Profiles with Macrobenchmark library](/topic/performance/baselineprofiles/measure-baselineprofile)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

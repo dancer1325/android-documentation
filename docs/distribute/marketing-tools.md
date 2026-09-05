@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/distribute/marketing-tools](https://developer.android.com/distribute/marketing-tools)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Google Play ](https://developer.android.com/distribute)
-  * [ Branding & Marketing ](https://developer.android.com/distribute/marketing-tools)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ###  Brand & marketing resources 
 
 Tools and resources to help you prepare promotional assets for use in your marketing efforts. 

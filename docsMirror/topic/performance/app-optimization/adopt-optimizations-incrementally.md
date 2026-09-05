@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Adopt optimizations incrementally Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Adopt optimizations incrementally
 By default, R8 makes a lot of optimizations to improve performance and size, but the optimizations might not work for your app immediately. If you're turning on R8 (or enabling full mode) in a big app for the first time, try to adopt optimizations incrementally: temporarily turn off obfuscation and enable R8 for portions of code at a time, rather than for all the code in your app. We recommend taking this incremental approach during local development, but you can also use it during internal QA testing or even in production as a gradual rollout. The exact steps you take depend on your desired timeline and confidence in your pre-release testing coverage.
 
 ## Limit the optimizations
@@ -22,8 +14,6 @@ R8 does many types of optimizations including removing code, rewriting code, and
   * Code shrinking (or tree shaking): removes unreferenced code
   * Obfuscation (or identifier minification): shortens the names of classes and methods
   * Optimization: rewrites code, for example inlining
-
-
 
 To reduce the chance of errors, you can start by enabling only some of these optimizations.
 

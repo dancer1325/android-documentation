@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/googlebook](https://developer.android.com/googlebook)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Multidevice ](https://developer.android.com/multidevice)
-  * [ Googlebook ](https://developer.android.com/googlebook)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ##  Create seamless experiences for Googlebook 
 
 Scale your experiences across the Android tech stack. Googlebook provides a high-performance, large-screen canvas for your apps, allowing users to transition seamlessly from quick mobile interactions to deep, focused sessions on a laptop. 

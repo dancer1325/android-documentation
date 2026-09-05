@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Troubleshoot known issues with Android Emulator Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Troubleshoot known issues with Android Emulator
 This page lists known issues, workarounds, and troubleshooting tips for the Android Emulator. If you encounter an issue not listed here or are unable to successfully use a workaround listed here, [report a bug](/studio/report-bugs#emulator-bugs).
 
 **Note:** If the emulator runs but performs poorly in general, you might need to [configure hardware acceleration](/studio/run/emulator-acceleration) for the emulator.
@@ -53,9 +45,6 @@ To lower the likelihood of exceeding the commit limit in various ways:
 
 For more information on commit charges and why a flexible setting works best, read [ this Microsoft article](https://blogs.technet.microsoft.com/markrussinovich/2008/11/17/pushing-the-limits-of-windows-virtual-memory/).
 
-
-
-
 ## Multi-touch does not work in tool window
 
 Multi-touch gestures, including two-finger panning, don't work when the emulator is running in a tool window. To enable multi-touch, [launch the emulator in a separate window](/studio/run/advanced-emulator-usage#standalone-window).
@@ -92,8 +81,6 @@ A number of external factors can cause the Android Emulator to begin running slo
   * If your machine has both an Intel GPU and a discrete GPU, disable the Intel GPU in Device Manager to ensure you are using the discrete GPU.
   * Run the emulator using the `-gpu swiftshader` mode. For more information about configuring graphics acceleration options on the command line, see [Configure hardware acceleration](/studio/run/emulator-acceleration#command-gpu).
   * Ensure that your router is not using IPv6 addresses if you don't have an IPv6 connection.
-
-
 
 If you are still experiencing problems with the Android Emulator running slowly, [report a bug](/studio/report-bugs#emulator-bugs) and include the necessary Android Emulator details so we can investigate.
 

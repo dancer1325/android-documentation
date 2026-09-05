@@ -3,15 +3,6 @@
 **Source:** [https://developer.android.com/ndk](https://developer.android.com/ndk)
 
 ---
-
-  * [ Home ](https://developer.android.com/)
-  * [ NDK ](https://developer.android.com/ndk)
-  * [ Develop ](https://developer.android.com/develop)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ##  Android NDK 
 
 The Android NDK is a toolset that lets you implement parts of your app in native code, using languages such as C and C++. For certain types of apps, this can help you reuse code libraries written in those languages. 

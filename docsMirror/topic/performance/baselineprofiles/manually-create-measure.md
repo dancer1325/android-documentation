@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Manually create and measure Baseline Profiles Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Manually create and measure Baseline Profiles
 We highly recommend automating generation of profile rules using the [Jetpack Macrobenchmark library](/topic/performance/baselineprofiles/measure-baselineprofile) to reduce manual effort and increase general scalability. However, it is possible to manually create and measure profile rules in your app.
 
 ## Define profile rules manually
@@ -172,9 +164,6 @@ Perform the conversion:
   8. Use `adb` to retrieve the dumped profile from the device: 
          
          adb pull /data/misc/profman/$PACKAGE_NAME-primary.prof.txt PATH_TO_APP_MODULE/src/main/
-
-
-
 
 This pulls the generated profile rules and installs them into your app module. The next time you build the app, the Baseline Profile is included. Verify this by following the steps in [Installation issues](/topic/performance/baselineprofiles/debug-baseline-profiles#installation_issues).
 
@@ -441,8 +430,6 @@ An obfuscation map is optional; when provided, it helps remap obfuscated symbols
   * [Best practices for SQLite performance](/topic/performance/sqlite-performance-best-practices)
   * [Baseline Profiles {:#baseline-profiles}](/topic/performance/baselineprofiles/overview)
   * [Stuck partial wake locks](/topic/performance/vitals/wakelock)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

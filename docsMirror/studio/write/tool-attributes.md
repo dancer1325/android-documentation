@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Tools attributes reference Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Tools attributes reference
 While Jetpack Compose handles UI design-time tooling directly in Kotlin, the `tools:` namespace is still essential for project-level configurations. Standard Android XML files, like `AndroidManifest.xml` and `res/raw/keep.xml`, use `tools:` attributes to manage Lint warnings and configure the resource shrinker.
 
 When you build your app, the build tools remove these attributes so that there is no effect on your APK size or runtime behavior.
@@ -131,8 +123,6 @@ This attribute lets you specify whether the build tools should use the following
   * **Safe mode:** Keep all resources that are explicitly cited and that _might_ be referenced dynamically with a call to [`Resources.getIdentifier()`](/reference/android/content/res/Resources#getIdentifier\(java.lang.String,%20java.lang.String,%20java.lang.String\)).
   * **Strict mode:** Keep only the resources that are explicitly cited in code or in other resources.
 
-
-
 The default is to use safe mode (`shrinkMode="safe"`). To instead use strict mode, add `shrinkMode="strict"` to the `<resources>` tag as shown here:
     
     
@@ -190,8 +180,6 @@ For more information, see [Shrink your resources](/studio/build/shrink-code#shri
 ### Views content
 
   * [Tools attributes reference (Views)](/studio/views/tool-attributes-views)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

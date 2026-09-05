@@ -3,14 +3,6 @@
 **Source:** [https://developer.android.com/get-started](https://developer.android.com/get-started)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Essentials ](https://developer.android.com/get-started)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](https://developer.android.com/static/images/cluster-illustrations/launch-app.svg)
 
 ###  Android essentials 

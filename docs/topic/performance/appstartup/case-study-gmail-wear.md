@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Case study: how the Gmail Wear OS team improved their app startup by 50% Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Case study: how the Gmail Wear OS team improved their app startup by 50%
 App startup represents your app's first impression on users. And users don't like to wait, so you need to make sure that your app starts fast. To show you how a real-life app development team found and diagnosed issues with their app startup, here's what the Gmail Wear OS team did.
 
 The Gmail Wear OS team undertook an optimization effort, with particular focus on app startup and runtime rendering performance, to meet their team's app performance criteria. However, even if you don't have specific thresholds to target, there's almost always room to improve app startup if you take some time to investigate it.
@@ -71,9 +63,6 @@ The first binder transaction, usually occurring at the same time as the `Activit
 
   4. Find the system processes that handle the binder reply by finding the slices that include the binder reply thread name, in this case "Binder:687_11 [2542]". Click the relevant system processes to get more information about the binder transaction.
 
-
-
-
 Take a look at this system process associated with the binder transaction of interest that occurs on CPU 0:
 
 ![System process with End State 'Runnable \(Preempted\).](/static/topic/performance/images/gmail-wear-system-process.png) **Figure 6.** The system process is in `Runnable (Preempted)` state, which indicates that it's getting delayed.
@@ -102,14 +91,10 @@ Here are some tips from the team on how to analyze app performance efficiently:
   * Set up an ongoing process that is able to automatically collect traces and results. Consider setting up automated tracing for your app using [benchmarking](/topic/performance/benchmarking/benchmarking-overview).
   * Use A/B testing for changes you think will improve things, and reject them if they don't. You can measure the performance under different scenarios using the [Macrobenchmark](/topic/performance/benchmarking/macrobenchmark-overview) library.
 
-
-
 To learn more, see the following resources:
 
   * [Performance: Using sampling profiling with Systrace - MAD Skills](https://www.youtube.com/watch?v=21lY_MMiD2g)
   * [Performance: Capturing Profiler traces - MAD Skills](https://www.youtube.com/watch?v=QxKerZ8y1S4)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

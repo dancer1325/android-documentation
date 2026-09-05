@@ -4,16 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Core areas ](https://developer.android.com/develop/core-areas)
-  * [ UI ](https://developer.android.com/develop/ui)
-  * [ Docs ](https://developer.android.com/develop/ui/compose/documentation)
-
-
-
-#  Test your Compose layout Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Test your Compose layout
 Test your app's UI to verify that behavior of your Compose code is correct. This lets you catch errors early and improve the quality of your app.
 
 Compose provides a set of testing APIs to find elements, verify their attributes, and perform user actions. The APIs also include advanced features such as time manipulation. Use these APIs to create robust tests that verify your app's behavior.
@@ -34,8 +25,6 @@ The following are some key concepts for testing your Compose code:
   * **[Testing APIs](/develop/ui/compose/testing/apis)** : Testing APIs let you find elements, verify their attributes, and perform user actions.
   * **[Synchronization](/develop/ui/compose/testing/synchronization)** : Synchronization verifies that tests wait for the UI to be idle before performing actions or making assertions.
   * **[Interoperability](/develop/ui/compose/testing/interoperability)** : Interoperability enables tests to work with both Compose and View-based elements in the same app.
-
-
 
 ## Testing cheatsheet
 
@@ -91,8 +80,6 @@ This module includes a [`ComposeTestRule`](/reference/kotlin/androidx/compose/ui
   * **[Test different screen sizes](/training/testing/different-screens):** With some many devices available to users, you should test for different screen sizes.
   * **[Espresso](/training/testing/espresso)** : While intended for View-based UIs, Espresso knowledge can still be helpful for some aspects of Compose testing.
 
-
-
 ## Codelab
 
 To learn more, try the [Jetpack Compose Testing codelab](/codelabs/jetpack-compose-testing).
@@ -105,8 +92,6 @@ To learn more, try the [Jetpack Compose Testing codelab](/codelabs/jetpack-compo
   * [Semantics in Compose](/develop/ui/compose/semantics)
   * [Window insets in Compose](/develop/ui/compose/layouts/insets)
   * [Other considerations](/develop/ui/compose/migrate/other-considerations)
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

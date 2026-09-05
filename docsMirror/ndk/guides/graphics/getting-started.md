@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Home ](https://developer.android.com/)
-  * [ NDK ](https://developer.android.com/ndk)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Guides ](https://developer.android.com/ndk/guides)
-
-
-
-#  Get started with Vulkan Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Get started with Vulkan
 **Note:** Although this page includes [NativeActivity](/reference/android/app/NativeActivity) description, [GameActivity inside AGDK jetpack library](/games/agdk/integrate-game-activity) is an updated and well maintained implementation of `NativeActivity`, with more functionality and fast release cycles. It is highly recommended to use `GameActivity` for your new projects.
 
 This document outlines how to get started with the Vulkan graphics library by downloading, compiling, and running Khronos© sample app.
@@ -31,8 +23,6 @@ Before getting started, you must download several tools and other software. Note
   2. [Install the NDK and CMake](/studio/projects/install-ndk) from within Android Studio or [download and install](/ndk/downloads) them separately.
   3. Build and Run the [Hello JNI sample](https://github.com/android/ndk-samples/tree/main/hello-jni) to ensure Android Studio is working properly.
   4. Install python3 and other components listed in [build.md](https://github.com/KhronosGroup/Vulkan-Samples/blob/main/docs/build.adoc#android) for your host platform.
-
-
 
 ## Import
 
@@ -67,17 +57,12 @@ In this section, you download [the Khronos© Vulkan© sample repository](https:/
 
 **Figure 1.** The sample project inside Android Studio.
 
-
-
-
 ## Compile
 
 All samples in this repo are organized into one Android project. To compile the project, do one of the following:
 
   * To just compile the sources, use menu, **Build** > **Make Project** , or type the **Ctrl-F9** shortcut key.
   * To generate the sample APK, select menu **Build** > **Build Bundle(s)/APK(s)** > **Build APK(s)**.
-
-
 
 You should see the build successful message inside Android Studio's **Build** window. In case there are errors showing up, fix them and re-compile. 
 
@@ -116,9 +101,6 @@ To run the project, do the following:
 
 **Figure 6.** Hello Triange sample.
 
-
-
-
 Your development system is now set up to run samples on your test device.
 
 Vulkan Samples are developed for multiple operating systems, including those for desktop and mobile. Some samples under **Performance** , **Extensions** , and **Tooling** may be unstable and crash on your device. This might be due to various reasons, such as:
@@ -126,8 +108,6 @@ Vulkan Samples are developed for multiple operating systems, including those for
   * The specific Vulkan features weren't designed for Android.
   * Your Android OS version is unsupported.
   * The GPU capability of your hardware platform.
-
-
 
 ## Explore
 
@@ -140,16 +120,12 @@ The Java section of the Vulkan sample derives from the [NativeActivity](/referen
   * Sample framework
   * Individual sub sample’s code
 
-
-
 `android_main` is the bridge between `NativeSampleActivity` and the app code, which can be the starting point for you to follow the sample code. If you just want to focus on the Vulkan specific sources, you can explore the code under `Vulkan_Samples\samples`, which contains the following:
 
   * The “api” category samples.
   * The “performance” category samples.
   * The “extensions” category samples.
   * The “tooling” samples.
-
-
 
 The `Vulkan_Samples\shaders` are the home for all shaders.
 
@@ -168,9 +144,6 @@ The Vulkan API has been through a few versions, so it is maturing. The Vulkan st
   * **Validation Layers.** Validation Layers are essential for application development. See the [Vulkan validation layers on Android](/ndk/guides/graphics/validation-layer) documentation for details.
 
   * **Shaderc.** Shaderc code in the NDK is the downstream of the [Shaderc repo](https://github.com/google/shaderc). For the usage documentation and instructions to get the latest version, see [Shader compilers](/ndk/guides/graphics/shader-compilers).
-
-
-
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

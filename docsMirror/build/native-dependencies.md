@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Native dependencies with the Android Gradle plugin Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Native dependencies with the Android Gradle plugin
 AAR libraries can contain native dependencies that the Android Gradle Plugin can consume. AGP is also capable of producing AARs that expose native libraries to their consumers.
 
 ## Using native dependencies
@@ -21,8 +13,6 @@ Starting with Android Gradle plugin 4.0, C/C++ dependencies can be imported from
 
   * [Creating an Android Library](/studio/projects/android-library) for generic AAR documentation and how to integrate it into your project, especially when you want to use the AAR as a local C/C++ dependency.
   * [Add build dependencies](/studio/build/dependencies) for information on adding dependencies to your `build.gradle` file, especially for the remote dependencies.
-
-
 
 This document focuses on how to configure your native build system and assumes you've already added a C/C++ dependency AAR into your project's Gradle build environment.
 

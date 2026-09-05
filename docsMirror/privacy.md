@@ -3,16 +3,6 @@
 **Source:** [https://developer.android.com/privacy](https://developer.android.com/privacy)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ Security ](https://developer.android.com/security)
-  * [ Privacy ](https://developer.android.com/privacy)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](https://developer.android.com/static/images/cluster-illustrations/identity.svg)
 
 ###  Protect user privacy 
@@ -61,8 +51,6 @@ Learn more about how the Android platform has added features and enhancements to
   * Wi-Fi and storage permissions
   * Photo picker
 
-
-
 [Learn more](https://developer.android.com/about/versions/13/features#privacy-security)
 
 [ ![](https://developer.android.com/static/images/spot-icons/android-14.svg) ](https://developer.android.com/about/versions/14/features)
@@ -71,8 +59,6 @@ Learn more about how the Android platform has added features and enhancements to
 
   * Screenshot detection
   * Partial access to photos and videos
-
-
 
 [Learn more](https://developer.android.com/about/versions/14/features)
 
@@ -84,8 +70,6 @@ Learn more about how the Android platform has added features and enhancements to
   * Expanded IntentFilter capabilities
   * Private space
   * Partial screen sharing
-
-
 
 [Learn more](https://developer.android.com/about/versions/15/features)
 

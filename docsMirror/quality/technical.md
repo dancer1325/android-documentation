@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  What great technical quality looks like Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  What great technical quality looks like
 ![](/static/images/quality/hero-images/technical_quality_highlighted.svg)
 
 Technical quality includes the stability, performance, and resource utilization of your app or game. The technical quality of your app or game can affect the user experience. A high-quality experience not only minimizes technical issues, but also makes the most of capabilities of the Android OS and device hardware.

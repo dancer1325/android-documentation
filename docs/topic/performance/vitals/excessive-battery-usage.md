@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Excessive battery usage Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Excessive battery usage
 **Note:** Excessive battery usage is only available for watch face apps with sufficient usage data.
 
 Excessive battery usage is the percentage of watch face sessions where battery usage exceeds 4.44% per hour. Google Play collects this data when devices aren't charging and no apps are in use.
@@ -37,16 +29,12 @@ An efficient watch face app should have:
   * Contributing factors
   * Breakdowns
 
-
-
 ## Contributing factors
 
 These are key factors affecting your app's battery usage:
 
   * **Excessive CPU usage:** The portion of watch face sessions that use the CPU for 90 seconds or more per hour.
   * **Excessive partial wakelocks:** The portion of watch face sessions use wakelocks for 18.5 seconds or more per hour.
-
-
 
 Use breakdowns and [Battery Historian](/topic/performance/power/battery-historian) to investigate further.
 
@@ -88,8 +76,6 @@ Animating elements makes watch faces visually appealing but uses more battery. T
     * `ArithmeticExpression` updates as frequently as its source data. High frequency sources such as `MILLISECOND` and `ACCELEROMETER` use more battery.
   * Avoid unnecessary animations in AoD mode
 
-
-
 ### Avoid wakelocks
 
 Publish your app using [Watch Face Format](/training/wearables/wff) to avoid wakelocks.
@@ -100,8 +86,6 @@ Publish your app using [Watch Face Format](/training/wearables/wff) to avoid wak
   * [Watch Face Format](/training/wearables/wff)
   * [Power considerations](/design/ui/wear/guides/surfaces/watch-faces#power_considerations)
   * [Battery Historian](/topic/performance/power/battery-historian)
-
-
 
 [ Previous arrow_back  Excessive Background Network Usage  ](/topic/performance/vitals/bg-network-usage)
 

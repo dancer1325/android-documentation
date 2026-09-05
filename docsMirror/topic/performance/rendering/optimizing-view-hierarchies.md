@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Performance and view hierarchies Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Performance and view hierarchies
 The way you manage the hierarchy of your `[View](/reference/android/view/View)` objects can significantly impact your app's performance. This page describes how to assess whether your view hierarchy is slowing your app down, and offers some strategies for addressing issues that might arise.
 
 This page focuses on improving `View`-based layouts. For information about improving Jetpack Compose performance, see [Jetpack Compose performance](/jetpack/compose/performance).
@@ -52,8 +44,6 @@ For example, when you use the `RelativeLayout` container, which lets you positio
   3. Performs a second layout pass to finalize the objects' positions.
   4. Moves to the next stage of the rendering process.
 
-
-
 The more levels your view hierarchy has, the greater the potential for performance penalty.
 
 As mentioned earlier, `ConstraintLayout` is generally more efficient than other layouts except `FrameLayout`. It's less prone to multiple layout passes, and in many cases removes the need to nest layouts.
@@ -63,15 +53,11 @@ Containers other than `RelativeLayout` might also increase double taxation. For 
   * A `LinearLayout` view can result in a double layout-and-measure pass if you make it horizontal. A double layout-and-measure pass might also occur in a vertical orientation if you add `[measureWithLargestChild](/reference/android/widget/LinearLayout#attr_android:measureWithLargestChild)`, in which case the framework might need to do a second pass to resolve the proper sizes of objects. 
   * The `[GridLayout](/reference/android/widget/GridLayout)` also allows relative positioning, but it normally avoids double taxation by pre-processing the positional relationships among child views. However, if the layout uses weights or fill with the `[Gravity](/reference/android/view/Gravity)` class, the benefit of preprocessing is lost, and the framework might have to perform multiple passes if the container is a `RelativeLayout`.
 
-
-
 Multiple layout-and-measure passes aren't necessarily a performance burden. However, they can become a burden if they're in the wrong place. Be careful with situations where one of the following conditions applies to your container:
 
   * It's a root element in your view hierarchy.
   * It has a deep view hierarchy beneath it.
   * There are many instances of it populating the screen, similar to children in a `ListView` object.
-
-
 
 ## Diagnose view hierarchy issues
 

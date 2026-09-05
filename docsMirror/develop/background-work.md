@@ -3,16 +3,6 @@
 **Source:** [https://developer.android.com/develop/background-work](https://developer.android.com/develop/background-work)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Core areas ](https://developer.android.com/develop/core-areas)
-  * [ Background work ](https://developer.android.com/develop/background-work)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](https://developer.android.com/static/images/cluster-illustrations/mad.svg)
 
 ###  Background work 

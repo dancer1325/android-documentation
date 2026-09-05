@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ IDE guides ](https://developer.android.com/studio/intro)
-
-
-
-#  Top down and bottom up charts Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Top down and bottom up charts
 The **Top Down** tab displays a list of calls in which expanding a method or function node displays its callees. Figure 2 shows a top down graph for the following call chart. Each arrow in the graph points from a caller to a callee.
 
 ![](/static/studio/images/profile/call_chart_1-2X.png)
@@ -26,8 +18,6 @@ The **Top Down** tab provides the following information to help describe CPU tim
   * **Self:** the time the method or function call spent executing its own code and not that of its callees, as illustrated in Figure 1 for method D.
   * **Children:** the time the method or function call spent executing its callees and not its own code, as illustrated in Figure 1 for method D.
   * **Total:** the sum of the method's **Self** and **Children** time. This represents the total time the app spent executing a call, as illustrated in Figure 1 for method D.
-
-
 
 ![](/static/studio/images/profile/top_down_tree-2X.png)
 

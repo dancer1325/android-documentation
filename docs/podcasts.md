@@ -3,13 +3,6 @@
 **Source:** [https://developer.android.com/podcasts](https://developer.android.com/podcasts)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ![](https://developer.android.com/static/images/hero-assets/developer-podcasts.svg)
 
 ###  Developer Podcasts 

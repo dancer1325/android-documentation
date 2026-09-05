@@ -3,17 +3,6 @@
 **Source:** [https://developer.android.com/develop/ui/compose/animation/introduction](https://developer.android.com/develop/ui/compose/animation/introduction)
 
 ---
-
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Core areas ](https://developer.android.com/develop/core-areas)
-  * [ UI ](https://developer.android.com/develop/ui)
-  * [ Docs ](https://developer.android.com/develop/ui/compose/documentation)
-
-
-
-Stay organized with collections  Save and categorize content based on your preferences. 
-
 ###  [ Animations in Compose ](https://developer.android.com/develop/ui/compose/animation/quick-guide)
 
 Animations are essential in a modern mobile app in order to realize a smooth and understandable user experience. 

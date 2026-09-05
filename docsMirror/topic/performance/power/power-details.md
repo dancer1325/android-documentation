@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Power management resource limits Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Power management resource limits
 The system prioritizes apps' requests for resources based on the device state, app state and the [app's standby bucket](/topic/performance/appstandby).
 
 The Android system can enforce resource limits in two different ways. One way to optimize resource utilization is to defer the execution of work until the device has left a low power device state such as [doze mode](/training/monitoring-device-state/doze-standby). For example, regular jobs and inexact alarms are deferred so they execute after the device leaves doze mode.
@@ -26,8 +18,6 @@ You can understand the restrictions further by reading:
   1. Resource limits based on device state
   2. Resource limits based on app state
   3. Resource limits based on app standby bucket
-
-
 
 Note that the device state and app state can supersede app standby bucket limits. For example, if the device is charging, the system allows apps in the _rare_ standby bucket to execute jobs for longer than 10 minutes in a rolling 24-hour period.
 
@@ -94,8 +84,6 @@ Android has adjusted regular and expedited job execution runtime quota based on 
   2. If the job starts execution while the app is in a top state
   3. If the job is executing while running a Foreground Service
 
-
-
 ### Android 13
 
 [**High Priority Firebase Cloud Message (FCM) Quotas behavior change**](/about/versions/13/behavior-changes-all#fcm-quotas)
@@ -103,8 +91,6 @@ Android has adjusted regular and expedited job execution runtime quota based on 
   * [App Standby Buckets](/topic/performance/appstandby) no longer determine how many high priority FCMs an app can use.
   * System now downgrades the high priority messages if it detects an app consistently sending high-priority messages that don't result in a notification
   * For current guidelines on high priority messages, refer to [firebase documentation on set and manage message priority](https://firebase.google.com/docs/cloud-messaging/android/message-priority).
-
-
 
 ### Android 9
 

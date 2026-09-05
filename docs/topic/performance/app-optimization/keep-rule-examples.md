@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Keep rule use cases and examples Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Keep rule use cases and examples
 The following examples are based on common scenarios where you use R8 for optimization, but need advanced guidance to draft keep rules.
 
 ## Reflection
@@ -202,8 +194,6 @@ The library should include a consumer keep rules file that automatically preserv
     * **`class *`** : The rule applies to any class.
     * **`@com.example.library.OnEvent<methods>;`**: This preserves any class that has one or more methods (`<methods>`) annotated with `@com.example.library.OnEvent`, and to also preserve the annotated methods themselves.
 
-
-
 ### Reflection based on class annotations
 
 Libraries can use reflection to scan for classes that have a specific annotation. In this case, the task runner class finds all the classes annotated with `ReflectiveExecutor` using reflection and executes the `execute` method.
@@ -327,8 +317,6 @@ When you rely on reflection for non-public APIs, you might encounter the followi
 
   * **Blocked updates:** Changes in the private or protected code can prevent you from updating to higher library versions.
   * **Missed benefits:** You might miss out on new functionality, important crash fixes, or essential security updates.
-
-
 
 ### R8 optimizations and reflection
 
@@ -476,8 +464,6 @@ When using the `kotlin-parcelize` plugin, be aware of the following:
   * The plugin automatically creates `CREATOR` fields during compilation.
   * The `proguard-android-optimize.txt` file contains the necessary `keep` rules to retain these fields for proper functionality.
   * App developers must verify that all required `keep` rules are present, especially for any custom implementations or third-party dependencies.
-
-
 
 ## Popular libraries
 

@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Design & Plan ](https://developer.android.com/design)
-  * [ App quality ](https://developer.android.com/quality)
-  * [ Technical quality ](https://developer.android.com/quality/technical)
-
-
-
-#  Optimize for Doze and App Standby Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Optimize for Doze and App Standby
 Android has two power-saving features that extend battery life for users by managing how apps behave when a device isn't connected to a power source: Doze and App Standby. _Doze_ reduces battery consumption by deferring background CPU and network activity for apps when the device is unused for long periods of time. _App Standby_ defers background network activity for apps with no recent user activity.
 
 While the device is in Doze, apps' access to certain battery-intensive resources is deferred until the maintenance window. The specific restrictions are listed in [Power management restrictions](/topic/performance/power/power-details).
@@ -44,8 +36,6 @@ The system applies the following restrictions to your apps while in Doze:
   * Doesn't let [sync adapters](/training/sync-adapters) run.
   * Doesn't let `[JobScheduler](/reference/android/app/job/JobScheduler)` run. `[WorkManager](/reference/androidx/work/WorkManager)` uses `JobScheduler` internally, so `WorkManager` tasks don't run. 
 
-
-
 #### Doze checklist
 
   * If possible, use Firebase Cloud Messaging (FCM) for [downstream messaging](https://firebase.google.com/docs/cloud-messaging/downstream).
@@ -53,8 +43,6 @@ The system applies the following restrictions to your apps while in Doze:
   * Provide sufficient information within the initial [message payload](https://firebase.google.com/docs/cloud-messaging/concept-options#notifications_and_data_messages), so subsequent network access is unnecessary.
   * Set critical alarms with `setAndAllowWhileIdle()` and `setExactAndAllowWhileIdle()`.
   * Test your app in Doze.
-
-
 
 ### Adapt your app to Doze
 
@@ -75,8 +63,6 @@ App Standby lets the system determine that an app is idle when the user isn't ac
   * The user explicitly launches the app.
   * The app has a process currently in the foreground, either as an activity or foreground service, or in use by another activity or foreground service.  **Note:** Only use a [foreground service](/guide/components/services#Foreground) for tasks the user expects the system to execute immediately or without interruption. Such cases include uploading a photo to social media, or playing music even while the music-player app isn't in the foreground. Don't start a foreground service just to prevent the system from determining that your app is idle. 
   * The app generates a notification that users see on the lock screen or in the notification tray.
-
-
 
 When the user plugs the device into a power supply, the system releases apps from the standby state, letting them freely access the network and execute any pending jobs and syncs. If the device is idle for long periods of time, the system allows idle apps network access about once a day.
 
@@ -133,8 +119,6 @@ You can test Doze mode by doing the following:
 
   7. Observe the behavior of your app after you reactivate the device. Make sure the app recovers gracefully when the device exits Doze.
 
-
-
 ### Test your app with App Standby
 
 To test the App Standby mode with your app, do the following:
@@ -155,8 +139,6 @@ To test the App Standby mode with your app, do the following:
              
 
   6. Observe the behavior of your app after waking it. Make sure the app recovers gracefully from standby mode. In particular, check if your app's notifications and background jobs function as expected.
-
-
 
 ## Acceptable use cases for exemption
 

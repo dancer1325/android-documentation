@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Develop ](https://developer.android.com/develop)
-  * [ Android Studio ](https://developer.android.com/studio)
-  * [ Gradle build guides ](https://developer.android.com/build/gradle-build-overview)
-
-
-
-#  Tool and library interdependencies Stay organized with collections  Save and categorize content based on your preferences. 
-
+#  Tool and library interdependencies
 Build dependencies are external components required to successfully build your project. A build can depend on [libraries, plugins, subprojects](/build/gradle-build-overview#external-dependencies), the Android SDK, tooling such as [Kotlin](http://kotlinlang.org) and [Java](https://www.java.com/) compilers, development environments like [Android Studio](/studio), and [Gradle](https://gradle.org/) itself.
 
 Each dependency can itself require other dependencies. We call these _transitive dependencies_ , and can rapidly increase the overall dependencies used by your application. When you want to upgrade a dependency, whether it's a library, tool, or the Android SDK, that upgrade can cascade, upgrading many other dependencies.

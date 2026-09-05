@@ -4,15 +4,7 @@
 
 ---
 
-  * [ Android Developers ](https://developer.android.com/)
-  * [ Google Play ](https://developer.android.com/distribute)
-  * [ Games dev center ](https://developer.android.com/games)
-  * [ Guides ](https://developer.android.com/games/guides)
-
-
-
-Send feedback  Stay organized with collections  Save and categorize content based on your preferences. 
-
+Send feedback
 ###  Google Play Games Services overview 
 
 The Google Play Games platform is a unified gaming ecosystem encompassing Android, ChromeOS, and [Windows PC](/games/playgames/overview). Developers use the Google Play Games platform to integrate Play Games Services social features into their gaming applications. Play Games Services is the primary interface between the game application and the Play Games platform. Play Games Services also provides a centralized [Gamer Profile](https://play.google.com/games/profile) account that provides consistent player identification across different devices and form factors.
@@ -29,8 +21,6 @@ Integrating Play Games Services unlocks platform capabilities that improve user 
     * **Play Points:** Drives monetization by allowing players to earn and redeem points for in-game purchases.
     * **Social Graph:** Allows players to follow their friends, their activities and build a social gaming community of their own.
   * **Play Games Sidekick (Beta):** Provides an overlay with utilities, real-time Gemini tips, and engagement tools.
-
-
 
 ## Game benefits and program advantages
 
@@ -49,9 +39,6 @@ Because Play Games Services has implemented version 2, you must distinguish betw
   * **Play Games Platform Identity (Managed by Play Games Services):** This is the player's universal gaming persona on Android. It tracks Play Social Progress, such as Player XP, Levels, Streaks, and Achievements. Because it is built into the device, it automatically recognizes the player when the game starts.
 
   * **In-game account identity (Managed by the Developer):** It is important to note that Play Games Services does **not** serve as a primary system for inventory management or game-state preservation. Developers are expected to utilize independent "In-Game Identity" solutions—such as Sign in with Google, Facebook, or custom backend—to manage game progress data.
-
-
-
 
 **Importance of Play Games Services to the Platform:** Play Games Services v2 operates as a platform connector. It maintains persistent authentication with the Play Games platform regardless of the specific login method used by the player. Consequently, this architecture enables the platform to aggregate gameplay statistics and distribute achievements without disrupting the developer's internal logic for saving and restoring game progress.
 
