@@ -1,29 +1,42 @@
-# Android Debug Bridge (adb)  |  Android Studio  |  Android Developers
-
 **Source:** [https://developer.android.com/studio/command-line/adb](https://developer.android.com/studio/command-line/adb)
 
----
-
 #  Android Debug Bridge (adb)
-Android Debug Bridge (`adb`) is a versatile command-line tool that lets you communicate with a device. The `adb` command facilitates a variety of device actions, such as installing and debugging apps. `adb` provides access to a Unix shell that you can use to run a variety of commands on a device. It is a client-server program that includes three components: 
 
-  * **A client** , which sends commands. The client runs on your development machine. You can invoke a client from a command-line terminal by issuing an `adb` command.
-  * **A daemon (adbd)** , which runs commands on a device. The daemon runs as a background process on each device.
-  * **A server** , which manages communication between the client and the daemon. The server runs as a background process on your development machine.
-
-`adb` is included in the Android SDK Platform Tools package. Download this package with the [SDK Manager](/studio/intro/update#sdk-manager), which installs it at `android_sdk/platform-tools/`. If you want the standalone Android SDK Platform Tools package, [download it here](/studio/releases/platform-tools). 
-
-For information on connecting a device for use over `adb`, including how to use the Connection Assistant to troubleshoot common problems, see [Run apps on a hardware device](/studio/run/device).
+* Android Debug Bridge (`adb`)
+  * == CL tool /
+    * built-in | [Android SDK Platform Tools package](../intro/update.md#update-your-tools-with-the-sdk-manager)
+      * -> installed | "android_sdk/platform-tools/"
+    * lets you
+      * communicate -- with -- a device
+      * making easier device actions 
+        * _Examples:_ installing and debugging apps
+  * == client-server program
+    * **A client**
+      * sends commands
+      * runs | your development machine
+      * if you want to invoke it -> | CL terminal, `adb`
+    * **A daemon (adbd)**
+      * runs commands | a device
+      * runs -- as -- a background process | EACH device
+    * **A server**
+      * manages communication BETWEEN the client -- & -- the daemon
+      * runs -- as -- a background process | your development machine
 
 ## How adb works
 
-When you start an `adb` client, the client first checks whether there is an `adb` server process already running. If there isn't, it starts the server process. When the server starts, it binds to local TCP port 5037 and listens for commands sent from `adb` clients.
+TODO: 
+When you start an `adb` client, the client first checks whether there is an `adb` server process already running
+* If there isn't, it starts the server process
+* When the server starts, it binds to local TCP port 5037 and listens for commands sent from `adb` clients.
 
 **Note:** All `adb` clients use port 5037 to communicate with the `adb` server.
 
-The server then sets up connections to all running devices. It locates emulators by scanning odd-numbered ports in the range 5555 to 5585, which is the range used by the first 16 emulators. Where the server finds an `adb` daemon (adbd), it sets up a connection to that port.
+The server then sets up connections to all running devices
+* It locates emulators by scanning odd-numbered ports in the range 5555 to 5585, which is the range used by the first 16 emulators
+* Where the server finds an `adb` daemon (adbd), it sets up a connection to that port.
 
-Each emulator uses a pair of sequential ports — an even-numbered port for console connections and an odd-numbered port for `adb` connections. For example: 
+Each emulator uses a pair of sequential ports — an even-numbered port for console connections and an odd-numbered port for `adb` connections
+* For example: 
 
 Emulator 1, console: 5554  
 Emulator 1, `adb`: 5555  
@@ -33,21 +46,28 @@ and so on.
 
 As shown, the emulator connected to `adb` on port 5555 is the same as the emulator whose console listens on port 5554. 
 
-Once the server has set up connections to all devices, you can use `adb` commands to access those devices. Because the server manages connections to devices and handles commands from multiple `adb` clients, you can control any device from any client or from a script.
+Once the server has set up connections to all devices, you can use `adb` commands to access those devices
+* Because the server manages connections to devices and handles commands from multiple `adb` clients, you can control any device from any client or from a script.
 
 ## Enable adb debugging on your device
 
-To use adb with a device connected over USB, you must enable **USB debugging** in the device system settings, under **Developer options**. On Android 4.2 (API level 17) and higher, the **Developer options** screen is hidden by default. To make it visible, [enable Developer options.](/studio/debug/dev-options#enable)
+To use adb with a device connected over USB, you must enable **USB debugging** in the device system settings, under **Developer options**
+* On Android 4.2 (API level 17) and higher, the **Developer options** screen is hidden by default
+* To make it visible, [enable Developer options.](/studio/debug/dev-options#enable)
 
-You can now connect your device with USB. You can verify that your device is connected by executing `adb devices` from the `android_sdk/platform-tools/` directory. If connected, you'll see the device name listed as a "device."
+You can now connect your device with USB
+* You can verify that your device is connected by executing `adb devices` from the `android_sdk/platform-tools/` directory
+* If connected, you'll see the device name listed as a "device."
 
-**Note:** When you connect a device running Android 4.2.2 (API level 17) or higher, the system shows a dialog asking whether to accept an RSA key that allows debugging through this computer. This security mechanism protects user devices because it ensures that USB debugging and other adb commands cannot be executed unless you're able to unlock the device and acknowledge the dialog.
+**Note:** When you connect a device running Android 4.2.2 (API level 17) or higher, the system shows a dialog asking whether to accept an RSA key that allows debugging through this computer
+* This security mechanism protects user devices because it ensures that USB debugging and other adb commands cannot be executed unless you're able to unlock the device and acknowledge the dialog.
 
 For more information about connecting to a device over USB, read [Run apps on a hardware device](/studio/run/device).
 
 ## Connect to a device over Wi-Fi
 
-**Note:** The instructions below do not apply to Wear devices running Android 11 (API level 30). See the guide to [debugging a Wear OS app](/training/wearables/get-started/debugging#wifi-debugging) for more information.
+**Note:** The instructions below do not apply to Wear devices running Android 11 (API level 30)
+* See the guide to [debugging a Wear OS app](/training/wearables/get-started/debugging#wifi-debugging) for more information.
 
 Android 11 (API level 30) and higher support deploying and debugging your app wirelessly from your workstation using Android Debug Bridge (adb). For example, you can deploy your debuggable app to multiple remote devices without ever needing to physically connect your device via USB. This eliminates the need to deal with common USB connection issues, such as driver installation.
 

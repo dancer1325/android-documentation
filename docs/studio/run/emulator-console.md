@@ -1,25 +1,30 @@
-# Send emulator console commands  |  Android Studio  |  Android Developers
-
 **Source:** [https://developer.android.com/studio/run/emulator-console](https://developer.android.com/studio/run/emulator-console)
 
----
-
 #  Send emulator console commands
-Each running virtual device provides a console that lets you query and control the emulated device environment. For example, you can use the console to manage port redirection, network characteristics, and telephony events while your app is running on the emulator.
 
-The following commands require that you already have an emulator running. For more information about running an emulator, see [Run apps on the Android Emulator](/studio/run/emulator) and [Start the emulator from the command line](/studio/run/emulator-commandline).
+* emulator console
+  * ⚠️requirements⚠️
+    * [running virtual device](device.md)
+  * lets you, about the emulated device environment, 
+    * query
+    * control 
+      * port redirection
+      * network characteristics
+      * telephony events
 
-## Start and stop a console session
+## Start & stop a console session
 
-To access the console and enter commands from a terminal window, use `telnet` to connect to the console port and provide your authentication token. Each time the console displays **OK** , it's ready to accept commands. There isn't a typical prompt.
+* steps to access the console & enter commands | terminal window
+  * `telnet localhost <console-port>`
+    * `<console-port>`
+      * get it -- via -- `adb devices`
 
-To connect to the console of a running virtual device:
+* Each time the console displays **OK** , it's ready to accept commands
 
-  1. Open a terminal window and enter the following command: 
-    
-    telnet localhost console-port
 
-The emulator window title lists the console port number when running in a separate window but not when running in a tool window. For example, the window title for an emulator using console port 5554 could be `Pixel8_API_34:5554`. Also, the `adb devices` command prints a list of running virtual devices and their console port numbers. For more information, see [Query for devices](/studio/command-line/adb#devicestatus). 
+* For example, the window title for an emulator using console port 5554 could be `Pixel8_API_34:5554`
+* Also, the `adb devices` command prints a list of running virtual devices and their console port numbers
+* For more information, see [Query for devices](/studio/command-line/adb#devicestatus). 
 
 **Note:** The emulator listens for connections on ports 5554 to 5585 and accepts connections from `localhost` only.
 
