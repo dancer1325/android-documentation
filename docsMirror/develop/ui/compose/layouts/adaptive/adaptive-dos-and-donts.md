@@ -4,7 +4,8 @@
 
 ---
 
-#  Adaptive do's and don'ts
+#  Adaptive do's and don'ts Save and categorize content based on your preferences. 
+
 **Note:** For apps that target Android 16 (API level 36), the system ignores screen orientation, aspect ratio, and app resizablility restrictions to improve the layout of apps on form factors with smallest width >= 600dp. See [App orientation, aspect ratio, and resizability](/develop/ui/compose/layouts/adaptive/app-orientation-aspect-ratio-resizability).
 
 Adaptive apps support displays of all sizes: the entire device screen, resizable windows in multi‑window mode, portrait and landscape orientations, folded and unfolded displays of foldable devices.
@@ -75,7 +76,7 @@ Optimizing layouts for different display sizes is the central premise of adaptiv
 
 Evaluate your app window size based on window size classes.
 
-To determine the window size class, use the [`currentWindowAdaptiveInfo()`](/reference/kotlin/androidx/compose/material3/adaptive/package-summary#currentWindowAdaptiveInfo\(\)) top‑level function of the Compose Material 3 Adaptive library. For more information, see [Build adaptive apps](/develop/ui/compose/build-adaptive-apps).
+To determine the window size class, use the [`currentWindowAdaptiveInfoV2()`](/reference/kotlin/androidx/compose/material3/adaptive/currentWindowAdaptiveInfoV2.composable#currentWindowAdaptiveInfoV2\(\)) top‑level function of the Compose Material 3 Adaptive library (which replaces the deprecated `currentWindowAdaptiveInfo()` function). For more information, see [Build adaptive apps](/develop/ui/compose/build-adaptive-apps).
 
 ✗ Don't
 
@@ -97,6 +98,8 @@ Don't use the following deprecated [`Display`](/reference/kotlin/android/view/Di
   * [`getMetrics()`](/reference/kotlin/android/view/Display#getmetrics): Deprecated in Android 11 (API level 30)
   * [`getRealSize()`](/reference/kotlin/android/view/Display#getrealsize): Deprecated in Android 12 (API level 31)
   * [`getRealMetrics()`](/reference/kotlin/android/view/Display#getrealmetrics): Deprecated in Android 12 (API level 31)
+
+
 
 ## Compose
 
@@ -121,6 +124,8 @@ Use the following APIs to make your app adaptive:
   * [`NavigationSuiteScaffold`](/reference/kotlin/androidx/compose/material3/adaptive/navigationsuite/NavigationSuiteScaffold.composable): Switches between navigation bar and navigation rail depending on app window size class.
   * [`ListDetailPaneScaffold`](/reference/kotlin/androidx/compose/material3/adaptive/layout/ListDetailPaneScaffold.composable): Implements the list-detail canonical layout. Adapts the layout to the app window size.
   * [`SupportingPaneScaffold`](/reference/kotlin/androidx/compose/material3/adaptive/layout/SupportingPaneScaffold.composable): Implements the supporting pane canonical layout.
+
+
 
 ✗ Don't
 
@@ -173,6 +178,8 @@ Don't make alternative input methods impossible. Don't introduce accessibility i
   * Support input other than touch
   * Avoid deprecated APIs
 
+
+
 ✓ Do what your users expect: optimize your app for the diversity of devices people rely on every day.
 
 ✗ Don't wait. Get started today!
@@ -183,6 +190,6 @@ Don't make alternative input methods impossible. Don't introduce accessibility i
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-12 UTC.
+Last updated 2026-09-29 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-12 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-29 UTC."],[],[]] 

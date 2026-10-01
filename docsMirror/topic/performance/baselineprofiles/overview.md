@@ -4,7 +4,8 @@
 
 ---
 
-#  Baseline Profiles overview
+#  Baseline Profiles overview Save and categorize content based on your preferences. 
+
 Baseline Profiles improve code execution speed by about 30% from the first launch by avoiding interpretation and [just-in-time (JIT)](/about/versions/nougat/android-7.0#jit_aot) compilation steps for included code paths.
 
 By shipping a Baseline Profile in an app or library, [Android Runtime (ART)](https://source.android.com/docs/core/runtime) can optimize specified code paths through Ahead-of-Time (AOT) compilation, providing performance enhancements for every new user and every app update. This Profile Guided Optimization (PGO) lets apps optimize startup, reduce interaction jank, and improve overall runtime performance for users from the first launch.
@@ -35,19 +36,29 @@ It is important to understand the difference in build configurations required wh
 
 **When generating profile files (for example,`benchmark`):**
 
-To make sure the generated profile rules accurately match your code's method signatures, you must turn off obfuscation and optimization (R8) for the build variant used for profile generation. This variant must be different from your release build variant, which has obfuscation and optimization enabled. You achieve this by setting `isMinifyEnabled = false` for the profile generation build variant. If you aren't using the Baseline Profile Gradle plugin, you should also make sure that `-dontobfuscate` and `-dontoptimize` are applied. The [Baseline Profile Gradle Plugin](/topic/performance/baselineprofiles/create-baselineprofile) automatically handles this configuration for you.
+When capturing a Baseline Profile with a test, your app must not be obfuscated. To make sure the generated profile rules accurately match your code's method signatures, you must turn off obfuscation and optimization (R8) for the build variant used for profile generation. This variant must be different from your release build variant, which has obfuscation and optimization enabled. You achieve this by setting `isMinifyEnabled = false` for the profile generation build variant. If you aren't using the Baseline Profile Gradle plugin, you should also make sure that `-dontobfuscate` and `-dontoptimize` are applied. The [Baseline Profile Gradle Plugin](/topic/performance/baselineprofiles/create-baselineprofile) automatically handles this configuration for you.
+
+You can verify that your app wasn't obfuscated during profile generation by opening your generated text profile file (for example, `baseline-prof.txt`) and checking that the class and method names are unobfuscated.
 
 **When building your final release APK:**
 
-Your release build should always have `isMinifyEnabled = true` to benefit from obfuscation, minification, and optimization. R8 automatically rewrites the rules from your unobfuscated profile files to match the obfuscated and optimized code in your release APK. For [DEX layout optimization](/topic/performance/baselineprofiles/dex-layout-optimizations) (driven by Startup Profiles) to be effective, your release app must be obfuscated and use R8 with all optimizations enabled.
+When building your release app, your app should be obfuscated. Your release build must have `isMinifyEnabled = true` to benefit from obfuscation, minification, and optimization. R8 automatically rewrites the rules from your unobfuscated profile files to match the obfuscated and optimized code in your release APK. The build takes advantage of the unobfuscated text file by transforming the rules correctly.
+
+If you want [DEX layout optimization](/topic/performance/baselineprofiles/dex-layout-optimizations) (driven by Startup Profiles) to work, your release app must be obfuscated and use R8 with all optimizations enabled.
+
+**Advanced (non-Gradle) workflows:**
+
+If you use an advanced, non-Gradle workflow (such as Bazel, Buck, or custom CI automation pipelines) to generate your profiles, you must still follow the same principles. Your app must not be obfuscated or optimized when capturing the profile. However, when you build your release app, you must obfuscate it. R8 processes the unobfuscated text rules file and correctly transforms the rules to apply to the obfuscated release app.
 
 ### Minimum recommended stable versions
 
 The dependency chain provides stable and developmental release versions. To generate and install a Baseline Profile, use the following supported versions or higher of Android Gradle plugin, Macrobenchmark library, and Profile Installer. These dependencies are required at different times and work together as a toolchain to enable an optimal Baseline Profile.
 
   * Android Gradle plugin: `com.android.tools.build:8.0.0`
-  * Macrobenchmark library: `androidx.benchmark:benchmark-macro-junit4:1.4.1`
+  * Macrobenchmark library: `androidx.benchmark:benchmark-macro-junit4:1.5.0`
   * Profile Installer: `androidx.profileinstaller:profileinstaller:1.4.1`
+
+
 
 We recommend using the latest version of AGP to create and manage Baseline Profiles. Here are the major functionalities that come with different versions of AGP:
 
@@ -139,6 +150,7 @@ While developing your app or library, consider defining Baseline Profiles to cov
 
   3. This flow cooperates with Cloud Profiles aggregation to fine-tune performance based on actual usage of the app over time.
 
+
 ![](/static/topic/performance/images/benchmark_images/baselineprofile_workflow.png) **Figure 1.** This diagram demonstrates the Baseline Profile workflow from upload through end-user delivery, and how that workflow relates to Cloud Profiles.
 
 ## Compare Baseline Profiles and Startup Profiles
@@ -181,8 +193,6 @@ The following are possible issues and solutions, or issues for which there are o
 
   * Baseline Profile generation might fail due to permission settings on some devices, including OnePlus devices. To work around this, turn off the **Disable permission monitoring** option in the **Developer Options** settings.
 
-  * Baseline Profile generation isn't supported on Firebase Test Lab devices, including Gradle-managed Test Lab devices ([issue #285187547](https://issuetracker.google.com/issues/285187547)).
-
   * To provide Baseline Profiles for libraries successfully, use Baseline Profile Gradle plugin 1.2.3 or AGP 8.3, at minimum ([issue #313992099](https://issuetracker.google.com/313992099)).
 
   * If you generate Baseline Profiles with the command `./gradlew app:generateBaselineProfile`, the benchmarks in the test module also run, and the results are discarded. If this happens, you can generate only the Baseline Profiles by running the command with `-P android.testInstrumentationRunnerArguments.androidx.benchmark.enabledRules=BaselineProfile`. This issue has been fixed in AGP 8.2.
@@ -195,10 +205,15 @@ The following are possible issues and solutions, or issues for which there are o
 
   * Battery optimizations on some devices, such as Huawei devices, can interfere with profile installation. To help ensure that your profiles are installed effectively, disable any battery optimizations in your benchmark devices.
 
+
+
+
 ## Additional resources
 
   * [DEX layout optimizations and startup profiles](/topic/performance/baselineprofiles/dex-layout-optimizations)
   * [Improve app performance with Baseline Profiles](https://codelabs.developers.google.com/android-baseline-profiles-improve)
+
+
 
 ## Recommended for you
 
@@ -207,10 +222,12 @@ The following are possible issues and solutions, or issues for which there are o
   * [Create and measure Baseline Profiles without Macrobenchmark](/topic/performance/baselineprofiles/manually-create-measure)
   * [DEX layout optimizations and startup profiles](/topic/performance/baselineprofiles/dex-layout-optimizations)
 
+
+
 [ Next Create Baseline Profiles  arrow_forward  ](/topic/performance/baselineprofiles/create-baselineprofile)
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-07-01 UTC.
+Last updated 2026-09-16 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-07-01 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-16 UTC."],[],[]] 

@@ -3,9 +3,8 @@
 **Source:** [https://developer.android.com/news](https://developer.android.com/news)
 
 ---
-# News
 
-Keep up to date with what's going on in the Android universe: every source; one place.
+Save and categorize content based on your preferences. 
 
 ###  [ Sign up to our newsletter ](https://developer.android.com/updates)
 

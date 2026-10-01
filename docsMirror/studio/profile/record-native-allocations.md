@@ -4,7 +4,8 @@
 
 ---
 
-#  Record native allocations
+#  Record native allocations Save and categorize content based on your preferences. 
+
 If you're writing native code and concerned about its memory usage, it's helpful to profile your app's native allocations to discover if there's opportunity to optimize.
 
 ## Why you should profile your app memory
@@ -23,6 +24,8 @@ When you run the [**Track Memory Consumption (Native Allocations)**](/studio/pro
   * **Deallocations Size** : The aggregated size in bytes of all freed memory during the selected time period.
   * **Total Count** : The value in the **Allocations** column minus the value in the **Deallocations** column.
   * **Remaining Size** : The value in the **Allocations Size** column minus the value in the **Deallocations Size** column.
+
+
 
 ![](/static/studio/images/profiler-native-allocations-recording.png)
 

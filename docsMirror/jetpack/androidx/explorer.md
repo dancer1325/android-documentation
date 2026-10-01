@@ -4,7 +4,8 @@
 
 ---
 
-#  Explore the Jetpack libraries by type
+#  Explore the Jetpack libraries by type Save and categorize content based on your preferences. 
+
 Select a category:
 
 All Popular Beyond phones Data Graphics   
@@ -17,6 +18,8 @@ UI
 
 Library| Description  
 ---|---  
+[a2ui](/jetpack/androidx/releases/a2ui)| The Jetpack Compose Agent-to-UI (A2UI) renderer provides an implementation of the [A2UI protocol](https://a2ui.org/), enabling AI agents to generate rich, interactive user interfaces that render native Compose components—without executing arbitrary code.  
+[a2ui.compose](/jetpack/androidx/releases/a2ui_compose)| The Jetpack Compose Agent-to-UI (A2UI) renderer provides an implementation of the [A2UI protocol](https://a2ui.org/), enabling AI agents to generate rich, interactive user interfaces that render native Compose components—without executing arbitrary code.  
 [activity *](/jetpack/androidx/releases/activity)| Access composable APIs built on top of Activity.  
 [ads](/jetpack/androidx/releases/ads)| Get an advertising ID with or without Play Services.  
 [annotation](/jetpack/androidx/releases/annotation)| Expose metadata that helps tools and other developers understand your app's code.  
@@ -37,6 +40,7 @@ Library| Description
 [camera.viewfinder](/jetpack/androidx/releases/camera-viewfinder)| Standalone Composable and View based Viewfinder for Camera"  
 [cardview](/jetpack/androidx/releases/cardview)| Implement the Material Design card pattern with round corners and drop shadows.  
 [collection](/jetpack/androidx/releases/collection)| Reduce the memory impact of existing and new collections that are small.  
+[compose.remote.foundation](/jetpack/androidx/releases/compose_remote_foundation)| TODO  
 [compose *](/jetpack/androidx/releases/compose)| Define your UI programmatically with composable functions that describe its shape and data dependencies.  
 [compose.animation](/jetpack/androidx/releases/compose-animation)| Build animations in their Jetpack Compose applications to enrich the user experience.  
 [compose.compiler](/jetpack/androidx/releases/compose-compiler)| Transform @Composable functions and enable optimizations with a Kotlin compiler plugin.  
@@ -71,6 +75,7 @@ Library| Description
 [exifinterface](/jetpack/androidx/releases/exifinterface)| Read and write image file EXIF tags.  
 [fragment *](/jetpack/androidx/releases/fragment)| Segment your app into multiple, independent screens that are hosted within an Activity.  
 [games](/jetpack/androidx/releases/games)| Use the Android Game SDK natively in your app to perform complex games tasks, like Frame Pacing.  
+[glance.adaptive](/jetpack/androidx/releases/glance_adaptive)| TODO  
 [glance](/jetpack/androidx/releases/glance)| Build layouts for remote surfaces using a Jetpack Compose-style API.  
 [glance.wear](/jetpack/androidx/releases/glance-wear)| Glance Wear is a library for building Widgets for Wear OS  
 [graphics](/jetpack/androidx/releases/graphics)| Leverage graphics facilities across multiple Android platform releases  
@@ -127,6 +132,7 @@ Library| Description
 [startup](/jetpack/androidx/releases/startup)| Implement a straightforward, performant way to initialize components at app startup.  
 [sqlite](/jetpack/androidx/releases/sqlite)| Work with local SQLite databases. If possible, use Room instead.  
 [swiperefreshlayout](/jetpack/androidx/releases/swiperefreshlayout)| Implement the swipe-to-refresh UI pattern.  
+[test.backup](/jetpack/androidx/releases/test_backup)| Automated testing framework to verify that user data and account credentials safely survive device upgrades and cloud restores.  
 [test *](/jetpack/androidx/releases/test)| Testing in Android.  
 [test.ext](/jetpack/androidx/releases/test-ext)| TODO  
 [test.uiautomator](/jetpack/androidx/releases/test-uiautomator)| Framework for cross app functional UI testing  
@@ -163,6 +169,6 @@ Library| Description
   
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-07-10 UTC.
+Last updated 2026-09-23 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-07-10 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-23 UTC."],[],[]] 

@@ -3,6 +3,9 @@
 **Source:** [https://developer.android.com/get-started](https://developer.android.com/get-started)
 
 ---
+
+Save and categorize content based on your preferences. 
+
 ![](https://developer.android.com/static/images/cluster-illustrations/launch-app.svg)
 
 ###  Android essentials 
@@ -75,8 +78,6 @@ Enable your apps to understand content, generate text and images, and build enga
 
 [Explore AI on Android](https://developer.android.com/ai)
 
-##  Developer centers 
-
 [ ![](https://developer.android.com/static/images/home/productivity.svg) ](https://developer.android.com/productivity)
 
 ###  [ Productivity ](https://developer.android.com/productivity)
@@ -125,14 +126,6 @@ Build enterprise solutions for managed configurations, single sign-on, and more.
 
 [View guidelines](https://developer.android.com/work)
 
-![](https://developer.android.com/static/images/picto-icons/stars.svg)
-
-##  Latest updates 
-
-Discover what's new across the Android ecosystem. 
-
-[View all Latest updates](https://developer.android.com/latest-updates)
-
 [ ![](https://developer.android.com/static/images/logos/android.svg) ](https://developer.android.com/about/versions)
 
 ###  [ Android releases ](https://developer.android.com/about/versions)
@@ -162,12 +155,6 @@ Get the next version of Wear OS for testing, development, and feedback. Let us k
 ###  [ Privacy Sandbox on Android ](https://developer.android.com/design-for-safety/privacy-sandbox)
 
 Ensure user privacy and enable personalized advertising experiences on mobile apps. 
-
-##  Developer stories 
-
-How developers are finding success with Android. 
-
-[View all stories](https://developer.android.com/stories)
 
 [ ![](https://developer.android.com/static/images/distribute/stories/marvel-strike-force-icon.png) ](https://developer.android.com/stories/instant-apps/marvel-strike-force)
 

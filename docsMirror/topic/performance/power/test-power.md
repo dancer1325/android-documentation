@@ -4,7 +4,8 @@
 
 ---
 
-#  Test power-related issues
+#  Test power-related issues Save and categorize content based on your preferences. 
+
 The power management features released in Android 9 (API level 28) affect all apps running on this version, whether the apps target this version or not. It's important to make sure your app behaves properly on these devices.
 
 Test your app's main use cases under a variety of conditions to see how the power management features interact with each other. You can use [Android Debug Bridge (`adb`)](/studio/command-line/adb) commands to turn some of the features on and off.

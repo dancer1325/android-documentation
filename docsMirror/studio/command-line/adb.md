@@ -4,16 +4,26 @@
 
 ---
 
-#  Android Debug Bridge (adb)
+#  Android Debug Bridge (adb) Save and categorize content based on your preferences. 
+
 Android Debug Bridge (`adb`) is a versatile command-line tool that lets you communicate with a device. The `adb` command facilitates a variety of device actions, such as installing and debugging apps. `adb` provides access to a Unix shell that you can use to run a variety of commands on a device. It is a client-server program that includes three components: 
 
   * **A client** , which sends commands. The client runs on your development machine. You can invoke a client from a command-line terminal by issuing an `adb` command.
   * **A daemon (adbd)** , which runs commands on a device. The daemon runs as a background process on each device.
   * **A server** , which manages communication between the client and the daemon. The server runs as a background process on your development machine.
 
+
+
 `adb` is included in the Android SDK Platform Tools package. Download this package with the [SDK Manager](/studio/intro/update#sdk-manager), which installs it at `android_sdk/platform-tools/`. If you want the standalone Android SDK Platform Tools package, [download it here](/studio/releases/platform-tools). 
 
 For information on connecting a device for use over `adb`, including how to use the Connection Assistant to troubleshoot common problems, see [Run apps on a hardware device](/studio/run/device).
+
+Try [Android CLI](/tools/agents) if you're not using Android Studio or prefer to do things from the command line.  
+  
+For example, use the [`android run`](/tools/agents/android-cli/commands/run) or [`screen capture`](/tools/agents/android-cli/commands/screen_capture) commands when you need to deploy and interact with an app on a device from the command line.
+    
+    
+    android [install|run|screen capture|layout]
 
 ## How adb works
 
@@ -61,6 +71,9 @@ Before you begin using wireless debugging, do the following:
 
   * On your workstation, update to the latest version of the [SDK Platform Tools](/tools/releases/platform-tools).
 
+
+
+
 To use wireless debugging, you must pair your device to your workstation using a QR code or a pairing code. Your workstation and device must be connected to the same wireless network. To pair to your device, follow these steps:
 
 **Note:** You only need to pair your device to your workstation once. The device will remain paired with your workstation until you explicitly forget it or revoke adb debugging authorizations on your device. The device and the workstation will automatically connect when they are on the same network. 
@@ -76,13 +89,13 @@ To use wireless debugging, you must pair your device to your workstation using a
   3. Allow wireless debugging on your network. Note that clicking the **always allow on this network** checkbox makes the network a trusted wireless debugging network. Your device will always allow wireless debugging on this network as soon as the device connects to the network. 
 
 ![Screenshot of
-            a Google Pixel phone showing the Wireless debugging systems setting.](/static/studio/images/run/adb_wifi-wireless_debugging_setting.png)
+              a Google Pixel phone showing the Wireless debugging systems setting.](/static/studio/images/run/adb_wifi-wireless_debugging_setting.png)
 
 **Figure 2.** The **Wireless debugging** setting on a Google Pixel phone.
 
 **Note:** Android Studio users can pair their device with a QR code, select **Pair device with QR code** and scan the QR code obtained from the [Pair devices over Wi-Fi dialog ](/studio/run/device#wireless) in Android Studio.
 
-  4. On your device, select **Pair using pairing code** and take note of the IP address, port number, and pairing code displayed on the device. 
+  4. On your device, select **Pair using pairing code** and take note of the IP address, port number, and pairing code displayed on the device.
 
   5. On your workstation, open a terminal window and navigate to `android_sdk/platform-tools`.
 
@@ -99,12 +112,15 @@ To use wireless debugging, you must pair your device to your workstation using a
 
 To unpair your workstation, navigate to **Wireless debugging** on your device. Tap your workstation name under **Paired devices** and select **Forget**. Alternatively, you can click the **Revoke adb debugging authorizations** on your device Settings page to unapair your workstation and all other previously paired workstations.
 
-  9. If you want to quickly turn on and off wireless debugging, you can utilize the [Quick settings developer tiles](/studio/debug/dev-options#general) for **Wireless debugging** , found in **Developer Options** > **Quick settings developer tiles**.
+  9. If you want to quickly turn on and off wireless debugging, you can use the [Quick settings developer tiles](/studio/debug/dev-options#general) for **Wireless debugging** , found in **Developer Options** > **Quick settings developer tiles**.
 
 ![Screenshot of
             Quick settings developer tiles from a Google Pixel phone.](/static/studio/images/run/adb_wifi-quick_settings.png)
 
 **Figure 4.** The **Quick settings developer tiles** setting lets you quickly turn wireless debugging on and off.
+
+
+
 
 ### Resolve wireless connection issues
 
@@ -121,6 +137,8 @@ To verify that your ADB setup on your workstation is correct, open a terminal on
   * **`version: "37.0.0"` or higher:** If this is not the case, download the latest version of the [SDK Platform Tools](/tools/releases/platform-tools). 
   * **`mdns_enabled: true`** : If this is set to `false`, then adb won't be able to automatically discover devices on your network. To resolve this issue, you must set the `ADB_MDNS` environment variable to `1` and then restart the adb server by running `adb kill-server` and then `adb start-server`. 
   * **`mdns_backend: LIBADBMDNS`** : If this is not the case, then adb is using an obsolete library to automatically discover devices on your network. To resolve this issue, you must set the `ADB_MDNS_OPENSCREEN` environment variable to `0` and then restart the adb server by running `adb kill-server` and then `adb start-server`. 
+
+
 
 #### Check whether your network supports mDNS
 
@@ -149,6 +167,9 @@ adb relies on mDNS to automatically discover and connect to paired devices. To c
          }
                    
 
+
+
+
 #### Check whether your device supports ADB Wi-Fi 2.0
 
 **Note:** ADB Wi-Fi 2.0 is supported on Android 17 and higher. 
@@ -161,6 +182,9 @@ To check whether your device supports ADB Wi-Fi 2.0, do the following:
 
   3. Verify that the output contains `mdns_service_version: "2.0"` or higher. If this is not the case, then your device is not running Android 17 or higher and doesn't support ADB Wi-Fi 2.0. To update to Android 17 or higher, check whether your device has any pending system updates. [Check & update your Android version](https://support.google.com/android/answer/7680439). 
 
+
+
+
 #### Report a new issue
 
 If you are still having issues connecting to your device wirelessly, you can report [a new issue](https://issuetracker.google.com/issues/new?component=192795&template=1310483). Please ensure that you provide the following information in your report: 
@@ -171,6 +195,8 @@ If you are still having issues connecting to your device wirelessly, you can rep
     2. **Restart the adb server** by running `adb kill-server` and then `adb start-server`. 
     3. **Reproduce the issue.**
     4. **Locate the log files:** Run `adb server-status` and attach the log file referenced in the output `log_absolute_path`.
+
+
 
 ## Connect wirelessly with a device after an initial USB connection (only option available on Android 10 and lower)
 
@@ -204,6 +230,9 @@ If you are still having issues connecting to your device wirelessly, you can rep
          device_ip_address:5555 device
          
 
+
+
+
 Your device is now connected to `adb`. 
 
 If the `adb` connection to your device is lost: 
@@ -216,6 +245,9 @@ If the `adb` connection to your device is lost:
         
 
 Then start over from the beginning.
+
+
+
 
 ## Query for devices
 
@@ -233,6 +265,8 @@ In response, `adb` prints this status information for each device:
     * `device`: The device is connected to the `adb` server. Note that this state does not imply that the Android system is fully booted and operational, because the device connects to `adb` while the system is still booting. After boot-up, this is the normal operational state of a device.
     * `no device`: There is no device connected. 
   * **Description:** If you include the `-l` option, the `devices` command tells you what the device is. This information is helpful when you have multiple devices connected so that you can tell them apart.
+
+
 
 The following example shows the `devices` command and its output. There are three devices running. The first two lines in the list are emulators, and the third line is a hardware device that is attached to the computer.
     
@@ -252,6 +286,8 @@ The `adb devices` command has a corner-case command sequence that causes running
   * You use the `emulator` command with the `-port` or `-ports` option with an odd-numbered port value between 5554 and 5584.
   * The odd-numbered port you chose is not busy, so the port connection can be made at the specified port number — or, if it is busy, the emulator switches to another port that meets the requirements in 2.
   * You start the `adb` server after you start the emulator.
+
+
 
 One way to avoid this situation is to let the emulator choose its own ports and to run no more than 16 emulators at once. Another way is to always start the `adb` server before you use the `emulator` command, as explained in the following examples. 
 
@@ -293,6 +329,8 @@ If multiple devices are running, you must specify the target device when you iss
   2. Once you have the serial number, use the `-s` option with the `adb` commands to specify the serial number. 
      1. If you're going to issue a lot of `adb` commands, you can set the `$ANDROID_SERIAL` environment variable to contain the serial number instead.
      2. If you use both `-s` and `$ANDROID_SERIAL`, `-s` overrides `$ANDROID_SERIAL`.
+
+
 
 In the following example, the list of attached devices is obtained, and then the serial number of one of the devices is used to install the `helloWorld.apk` on that device: 
     
@@ -448,6 +486,7 @@ Command | Description
   * `-S`: Force stop the target app before starting the activity. 
   * `--opengl-trace`: Enable tracing of OpenGL functions. 
   * `--user user_id | current`: Specify which user to run as; if not specified, then run as the current user. 
+  * `--debug-link`: (Android 17 and higher) Diagnose URL and intent resolution for app links, printing matched manifest intent filters and Dynamic App Link rules. 
 
   
 ` startservice [options] intent ` | Start the `[Service](/reference/android/app/Service)` specified by `intent`. See the Specification for intent arguments. Options are: 
@@ -660,7 +699,7 @@ Command | Description
   * `1`: Internal: Install on internal device storage. 
   * `2`: External: Install on external media. 
 
-**Note:** This is only intended for debugging. Using this can cause apps to break and other undesireable behavior.  
+**Note:** This is only intended for debugging. Using this can cause apps to break and other undesirable behavior.  
 ` get-install-location ` | Returns the current install location. Return values: 
 
   * `0 [auto]`: Let system decide the best location 
@@ -855,6 +894,8 @@ Limitations of the `screenrecord` utility:
   * Some devices might not be able to record at their native display resolution. If you encounter problems with screen recording, try using a lower screen resolution.
   * Rotation of the screen during recording is not supported. If the screen does rotate during recording, some of the screen is cut off in the recording.
 
+
+
 **Table 4.** `screenrecord` options
 
 Options | Description  
@@ -909,6 +950,8 @@ Additionally, to help make it easier and more secure to keep testing your app, u
   * Other: 
     * Disables preinstalled security apps.
 
+
+
 If your app needs to detect and adapt to the default settings of the `testharness` command, use the [ `ActivityManager.isRunningInUserTestHarness()`](/reference/android/app/ActivityManager#isRunningInUserTestHarness\(\)). 
 
 ### sqlite
@@ -930,7 +973,7 @@ For more information, see the [`sqlite3` command line documentation](http://www.
 
 The adb server can interact with the USB stack through two backends. It can either use the native backend of the OS (Windows, Linux, or macOS) or it can use the `libusb` backend. Some features, such as `attach`, `detach`, and USB speed detection, are only available when using `libusb` backend. 
 
-You can choose a backend by using the `ADB_LIBUSB` environment variable. If it isn't set, adb uses its default backend. The default behavior varies among OS. Starting with [ADB v34](https://developer.android.com/tools/releases/platform-tools#revisions), the `liubusb` backend is used by default on all OS except Windows, where the native backend is used by default. If `ADB_LIBUSB` is set, it determines whether the native backend or `libusb` is used. See the [adb manual page](https://android.googlesource.com/platform/packages/modules/adb/+/refs/heads/master/docs/user/adb.1.md) for more information about adb environment variables. 
+You can choose a backend by using the `ADB_LIBUSB` environment variable. If it isn't set, adb uses its default backend. The default behavior varies among OS. Starting with [ADB v34](https://developer.android.com/tools/releases/platform-tools#revisions), the `libusb` backend is used by default on all OS except Windows, where the native backend is used by default. If `ADB_LIBUSB` is set, it determines whether the native backend or `libusb` is used. See the [adb manual page](https://android.googlesource.com/platform/packages/modules/adb/+/refs/heads/master/docs/user/adb.1.md) for more information about adb environment variables. 
 
 **Experimental:** Support for using the `libusb` backend with Windows is experimental. As of ADB v34, only the macOS and Linux platforms have been tested with the `libusb` library. 
 
@@ -942,15 +985,17 @@ The default and recommended backend is `libadbmdns`. This behavior can be change
 
 ## adb Burst Mode (starting with ADB 36.0.0)
 
-Burst Mode is an experimental feature that lets ADB to keep on sending packets to a device even before the device has responded to the previous packet. This greatly increases the throughput of ADB when transferring large files and also reduces latency while debugging. 
+Burst Mode is an experimental feature that lets ADB keep sending packets to a device even before the device has responded to the previous packet. This greatly increases the throughput of ADB when transferring large files and also reduces latency while debugging. 
 
-Burst Mode is disabled by default. To enable the feature, do one of the following: 
+Burst Mode is disabled by default. To enable the feature, do one of the following:
 
   * Set the environment variable `ADB_BURST_MODE` to `1`.
   * In Android Studio, go to the debugger settings at **File** (or **Android Studio** on macOS) **> Settings > Build, Execution, Deployment > Debugger** and set **ADB Server Burst Mode** to **Enabled**.
 
+
+
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-25 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-25 UTC."],[],[]] 

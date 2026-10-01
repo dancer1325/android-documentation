@@ -4,7 +4,8 @@
 
 ---
 
-#  Microbenchmark
+#  Microbenchmark Save and categorize content based on your preferences. 
+
 The Jetpack Microbenchmark library lets you benchmark your Android native code—Kotlin or Java—from within Android Studio. The library handles warmup, measures your code performance and allocation counts, and outputs benchmarking results to both the [Android Studio console](/studio/profile/microbenchmark-write#benchmark-results) and a [JSON file](/studio/profile/benchmarking-in-ci#benchmark-data-example) with more detail.
 
 We recommend you [profile your code](/studio/profile) before writing a benchmark. This helps you find expensive operations that are worth optimizing. It can also show why the operations are slow by showing what is happening while they run, such as running on a low-priority thread, sleeping due to disk access, or unexpectedly calling into an expensive function, like bitmap decoding.
@@ -51,9 +52,13 @@ See the following samples in the GitHub repository:
   * [PagingWithNetworkSample](https://github.com/android/architecture-components-samples/tree/main/PagingWithNetworkSample/benchmark)
   * [WorkManagerSample](https://github.com/android/architecture-components-samples/tree/main/WorkManagerSample/benchmark)
 
+
+
 ## Additional resources
 
   * [Fighting regressions with Benchmarks in CI](https://medium.com/androiddevelopers/fighting-regressions-with-benchmarks-in-ci-6ea9a14b5c71)
+
+
 
 ## Provide feedback
 
@@ -65,6 +70,8 @@ To report issues or submit feature requests when using benchmarking, see the [pu
   * [Benchmark your app](/topic/performance/benchmarking/benchmarking-overview)
   * [Create Baseline Profiles {:#creating-profile-rules}](/topic/performance/baselineprofiles/create-baselineprofile)
   * [JankStats Library](/topic/performance/jankstats)
+
+
 
 [ Next Write a benchmark  arrow_forward  ](/topic/performance/benchmarking/microbenchmark-write)
 

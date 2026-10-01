@@ -4,7 +4,15 @@
 
 ---
 
-Send feedback
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Google Play ](https://developer.android.com/distribute)
+  * [ Games dev center ](https://developer.android.com/games)
+  * [ Guides ](https://developer.android.com/games/guides)
+
+
+
+Save and categorize content based on your preferences. 
+
 # Frame Pacing library Part of [Android Game Development Kit](/games/agdk/overview).
 
 The Android Frame Pacing library, also known as Swappy, is part of the [AGDK Libraries](/games/agdk#game-libraries). It helps OpenGL and Vulkan games achieve smooth rendering and correct frame pacing on Android. This document defines frame pacing, describes situations where frame pacing is needed, and shows how the library addresses these situations. If you want to jump directly to implementing frame pacing in your game, see Next step.
@@ -16,6 +24,8 @@ _Frame pacing_ is the synchronization of a game’s logic and rendering loop wit
   * Buffers past frames internally
   * Detects late frame submissions
   * Repeats the display of past frames when late frames are detected
+
+
 
 A game informs [SurfaceFlinger](https://source.android.com/devices/graphics/surfaceflinger-windowmanager), the compositor within the display subsystem, that it has submitted all the draw calls needed for a frame (by calling `eglSwapBuffers` or `vkQueuePresentKHR`). SurfaceFlinger signals availability of a frame to the display hardware using a latch. The display hardware then shows the given frame. The display hardware ticks at a constant rate, for example 60 Hz, and if there is no new frame when the hardware needs one, the hardware displays the previous frame again.
 
@@ -87,6 +97,8 @@ You can configure the Frame Pacing library to operate in one of the three follow
   * Auto mode on + Pipeline
   * Auto mode on + Auto pipeline mode (Pipeline/Non-pipeline)
 
+
+
 #### Recommended mode
 
 You can experiment with auto-mode and pipeline modes, but you start by turning them off and including the following after initializing Swappy:
@@ -121,6 +133,8 @@ Most games don’t know how to choose the swap interval, which is the duration f
   * **Automatically select swap intervals** : Games which deliver 30 Hz in some scenes and 60 Hz in others can allow the library to adjust this interval dynamically.
   * **Deactivate pipelining for ultra-fast frames** : Delivers optimal input-screen latency in all cases.
 
+
+
 ### Multiple refresh rates
 
 Devices that support multiple refresh rates provide higher flexibility in choosing a swap interval that looks smooth:
@@ -128,6 +142,8 @@ Devices that support multiple refresh rates provide higher flexibility in choosi
   * **On 60 Hz devices** : 60 FPS / 30 FPS / 20FPS
   * **On 60 Hz + 90 Hz devices** : 90 FPS / 60 FPS / 45 FPS / 30 FPS
   * **On 60 Hz + 90 Hz + 120 Hz devices** : 120 FPS / 90 FPS / 60 FPS / 45 FPS / 40 FPS / 30 FPS
+
+
 
 The library chooses the refresh rate that best matches the actual rendering duration of a game’s frames, giving a better visual experience.
 
@@ -142,6 +158,8 @@ The Frame Pacing library offers the following statistics for debugging and profi
   * A histogram of the number of screen refreshes passed between two consecutive frames.
   * A histogram of the number of screen refreshes passed between the start of CPU work for this frame and the actual present time.
 
+
+
 ## Next step
 
 See either of the following guides to integrate the Android Frame Pacing library into your game:
@@ -155,10 +173,10 @@ See either of the following guides to integrate the Android Frame Pacing library
 
   * [Mir 2 improves rendering performance by using Swappy](/stories/games/swappy), reduces slow session rate from 40% to 10%.
 
-Send feedback 
+
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
 Last updated 2026-02-26 UTC.
 
-Need to tell us more?  [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-02-26 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-02-26 UTC."],[],[]] 

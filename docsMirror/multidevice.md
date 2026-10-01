@@ -3,6 +3,9 @@
 **Source:** [https://developer.android.com/multidevice](https://developer.android.com/multidevice)
 
 ---
+
+Save and categorize content based on your preferences. 
+
 ![](https://developer.android.com/static/multidevice/images/android-everywhere.svg)
 
 ###  Android everywhere 
@@ -10,8 +13,6 @@
 Android is for everyone, everywhere, offering an expansive assortment of devices and configurations, providing unmatched value. From wearable devices to the ubiquitous phone to car infotainment systems to home theater displays and even virtual reality, Android is everywhere. Expand your app's audience by supporting the ever-increasing number and diversity of Android devices. 
 
 [Learn multidevice development](https://developer.android.com/multidevice-development)
-
-##  What's new 
 
 [ ![](https://developer.android.com/static/multidevice/images/whats-new.svg) ](https://developer.android.com/develop/adaptive-apps)
 
@@ -28,10 +29,6 @@ Jetpack Compose multiplies your ROI by creating app layouts that adapt automatic
 Cross-device adaptive development is an integral part of app development today, with integration of new form factors coming tomorrow. 
 
 [Learn more](https://developer.android.com/develop/adaptive-apps) [Get inspired](https://developer.android.com/large-screens/gallery)
-
-##  Device form factors 
-
-Android supports all device sizes and configurations, from wearables to foldables to TVs to XR. 
 
 [ ![](https://developer.android.com/static/multidevice/images/phones-tablets-foldables.svg) ](https://developer.android.com/phones-tablets-foldables)
 
@@ -102,10 +99,6 @@ Featured Device
 Scale your Android apps to a high-performance, large screen canvas designed for focused productivity on a laptop. 
 
 [Learn more](https://developer.android.com/googlebook)
-
-##  Better Together 
-
-Take advantage of Android's extensive ecosystem to interconnect devices and make your app accessible everywhere. 
 
 [ ![](https://developer.android.com/static/images/hero-illustrations/better-together-hero.svg) ](https://developer.android.com/develop/better-together/continue-on)
 

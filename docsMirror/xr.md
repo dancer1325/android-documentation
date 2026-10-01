@@ -3,11 +3,14 @@
 **Source:** [https://developer.android.com/xr](https://developer.android.com/xr)
 
 ---
-##  Create endless possibilities with Android XR 
 
-Build experiences that push boundaries and transform how people create, explore, and enjoy entertainment, powered by Android XR. With trusted tools and incredible immersive and augmented capabilities, the only limit to what you can build is your imagination. 
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Multidevice ](https://developer.android.com/multidevice)
+  * [ Android XR ](https://developer.android.com/xr)
 
-[Develop your app](/develop/xr)
+
+
+Save and categorize content based on your preferences. 
 
 XR headsets | Wired XR glasses
 
@@ -24,10 +27,6 @@ Audio glasses | Display glasses
 Build lightweight, additive experiences that help users in everyday life on the go, at home, or at work. 
 
 [Build augmented](/develop/xr/explore/augmented)
-
-##  Choose your preferred platform 
-
-Create apps for the next generation of computing using [familiar Android development tools](/develop/xr/jetpack-xr-sdk), popular game engines ([Unity](https://unity.com/), [Godot](https://godotengine.org/), and [Unreal Engine](https://www.unrealengine.com)), the open standards of [OpenXR](https://openxr.org/), or the widely-accessible [WebXR](https://immersiveweb.dev/). 
 
 ###  [ Jetpack XR SDK ](https://developer.android.com/develop/xr/jetpack-xr-sdk)
 
@@ -65,8 +64,6 @@ Use the power of web technologies to build XR experiences directly in a browser.
 
 [Develop with WebXR](https://developer.android.com/develop/xr/web)
 
-##  Start designing for Android XR 
-
 [ ![](https://developer.android.com/static/images/xr/design-immersive.png) ](https://developer.android.com/design/ui/xr)
 
 XR headsets | Wired XR glasses
@@ -87,14 +84,6 @@ Audio and display glasses extend the reach of Android apps into a new, highly-pe
 
 [Go design augmented](https://developer.android.com/design/ui/ai-glasses)
 
-![](https://developer.android.com/static/images/cluster-illustrations/samples.svg)
-
-##  Try out samples 
-
-Explore our collection of sample apps and codelabs for Android XR. 
-
-[See all samples](https://developer.android.com/develop/xr/samples)
-
 XR headsets | Wired XR glasses
 
 ###  [ Hello Android XR ](https://github.com/android/xr-samples)
@@ -110,8 +99,6 @@ Audio glasses | Display glasses
 This sample demonstrates how to use the Gemini Live API for real-time, voice-based interactions in a simple to-do app.
 
 Users can add, remove, and update tasks by speaking to the app, showcasing a hands-free, conversational user experience powered by the Gemini API.
-
-##  What's new 
 
 [ ![](https://developer.android.com/static/images/cluster-illustrations/experimental.svg) ](https://android-developers.googleblog.com/2026/05/android-xr-sdk-developer-preview-4-updates.html)
 
@@ -132,8 +119,6 @@ Official support for Unreal Engine and Godot has arrived for Android XR!
 We're also launching new tools to help boost your productivity and enable new XR capabilities.
 
 [Read more](https://android-developers.googleblog.com/2026/05/android-xr-updates-unity-unreal-godot.html)
-
-##  Share your feedback 
 
 [ ![](https://developer.android.com/static/images/picto-icons/bug.svg) ](https://developer.android.com/develop/xr/support#report-issues)
 

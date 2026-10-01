@@ -4,9 +4,28 @@
 
 ---
 
-Android 17 features and changes list
-The following table lists all documented features and behavior changes that might affect app developers. Use this list to find changes that affect you, and then click the corresponding link to read the documentation. Accessibility Connectivity Core functionality Graphics Human input Device form factors Media Privacy Security User experience and system UI New features and APIs Change (all apps) Change (apps targeting 17+) Category | Type | Name  
+#  Android 17 features and changes list Save and categorize content based on your preferences. 
+
+The following table lists all documented features and behavior changes that might affect app developers. Use this list to find changes that affect you, and then click the corresponding link to read the documentation.
+
+Accessibility Connectivity Core functionality Graphics Human input Intelligence Device form factors Media Privacy Security User experience and system UI New features and APIs Change (all apps) Change (apps targeting 17+) Category | Type | Name  
 ---|---|---  
+User experience and system UI | Change (all apps) |  [ New global keyboard navigation shortcuts](/about/versions/17/behavior-changes-all#global-nav-shortcuts)  
+Beginning with Q3, Meta+Back(F1) and Meta+Shift+Back(F1) are global keyboard navigation shortcuts, overriding any app-specific shortcuts.  
+User experience and system UI | Change (all apps) |  [ Restoring default IME visibility after rotation](/about/versions/17/behavior-changes-all#ime-rotate)  
+When the device is rotated or the configuration is changed, the system uses the default visibility mode to determine whether to show the IME.  
+User experience and system UI | Change (apps targeting 17+) |  [ User-agent reduction for WebView](/about/versions/17/behavior-changes-17#user-agent-reduction-webview)  
+Beginning with Android 17, the default user-agent string for WebView is shorter.  
+User experience and system UI | Change (apps targeting 17+) |  [ Memory limit widget](/about/versions/17/behavior-changes-17#memory-limit-widget)  
+Apps targeting Android 17 or higher have a strictly enforced memory limit for bitmaps and icons present in the RemoteViews parcel.  
+User experience and system UI | New features and APIs |  [ Dedicated Assistant volume stream](/about/versions/17/features#assistant-volume)  
+Android 17 introduces a dedicated Assistant volume stream for Assistant apps, enabling independent control from media volume. Assistant apps with access to the new MODE_ASSISTANT_CONVERSATION can enable further volume improvements - control outside of an active playback or via Bluetooth peripherals.  
+User experience and system UI | New features and APIs |  [ MetricStyle template](/about/versions/17/features#metric-style)  
+Android 17 introduces the MetricStyle template to support health and fitness, timers, stopwatch, and travel use cases.  
+User experience and system UI | New features and APIs |  [ Live Update - Semantic color API](/about/versions/17/features#live-update)  
+Live Updates introduces a Semantic color API to support colors with strong associations with safety, danger, and caution.  
+User experience and system UI | New features and APIs |  [ Handoff](/about/versions/17/features#handoff)  
+Handoff allows the user to begin a task on one device then continue it onanother device.  
 Security | Change (all apps) |  [ Block cross profile loopback traffic](/about/versions/17/behavior-changes-all#block-cross-profile-loopback)  
 Cross-profile loopback traffic is no longer permitted by default.  
 Security | Change (all apps) |  [ Per-app keystore limits](/about/versions/17/behavior-changes-all#per-app-keystore-limits)  
@@ -57,18 +76,6 @@ Privacy | New features and APIs |  [ Android contacts picker](/about/versions/17
 Android 17 introduces a new contacts picker as a permission-free way to give apps access to the user's contacts.  
 Human input | Change (all apps) |  [ Touchpads deliver relative events by default during pointer capture](/about/versions/17/behavior-changes-all#touchpad-pointer-capture)  
 Beginning with Android 17, touchpads deliver relative pointer events (like with mouse events), instead of absolute events.  
-User experience and system UI | Change (all apps) |  [ Restoring default IME visibility after rotation](/about/versions/17/behavior-changes-all#ime-rotate)  
-When the device is rotated or the configuration is changed, the system uses the default visibility mode to determine whether to show the IME.  
-User experience and system UI | Change (apps targeting 17+) |  [ User-agent reduction for WebView](/about/versions/17/behavior-changes-17#user-agent-reduction-webview)  
-Beginning with Android 17, the default user-agent string for WebView is shorter.  
-User experience and system UI | New features and APIs |  [ Dedicated Assistant volume stream](/about/versions/17/features#assistant-volume)  
-Android 17 introduces a dedicated Assistant volume stream for Assistant apps, enabling independent control from media volume. Assistant apps with access to the new MODE_ASSISTANT_CONVERSATION can enable further volume improvements - control outside of an active playback or via Bluetooth peripherals.  
-User experience and system UI | New features and APIs |  [ MetricStyle template](/about/versions/17/features#metric-style)  
-Android 17 introduces the MetricStyle template to support health and fitness, timers, stopwatch, and travel use cases.  
-User experience and system UI | New features and APIs |  [ Live Update - Semantic color API](/about/versions/17/features#live-update)  
-Live Updates introduces a Semantic color API to support colors with strong associations with safety, danger, and caution.  
-User experience and system UI | New features and APIs |  [ Handoff](/about/versions/17/features#handoff)  
-Handoff allows the user to begin a task on one device then continue it onanother device.  
 Media | Change (all apps) |  [ Background audio hardening](/about/versions/17/behavior-changes-all#bg-audio)  
 Apps cannot play audio or use other disruptive audio APIs unless they are visible or have a foreground service.  
 Media | New features and APIs |  [ New BYPASS_CONCURRENT_RECORD_AUDIO_RESTRICTION permission to capture sensitive audio](/about/versions/17/features#concurrent-audio-capture)  
@@ -83,6 +90,13 @@ Accessibility | Change (apps targeting 17+) |  [ Accessibility support of comple
 By allowing IMEs to convey more text-change information through the editor to accessibility service, this feature helps screen readers deliver more consistent, natural, and reliable feedback for complex IMEs.  
 Device form factors | Change (apps targeting 17+) |  [ Platform API changes to ignore orientation, resizability and aspect ratio constraints on large screens (sw>=600dp)](/about/versions/17/behavior-changes-17#large-screen-ignore-constraints)  
 Android 16 introduced platform API changes to ignore orientation, resizability, and aspect ratio constraints on large screens (sw >= 600dp). Apps that target Android 17 will no longer be able to opt out of these changes.  
+Intelligence | Change (apps targeting 17+) |  [ Deprecation of setContentCaptureEnabled](/about/versions/17/behavior-changes-17#deprecate-setcontentcaptureenabled)  
+Starting in Android 17, calling setContentCaptureEnabled(false) no longer disables Content Capture for apps that target Android 17 or higher.  
 Graphics | New features and APIs |  [ WebGPU on Android ](/about/versions/17/features#webgpu-android)  
 WebGPU offers idiomatic Kotlin and Java graphics and compute APIs that provide access to Vulkan, part of Android's transition to Vulkan as the primary low-level GPU API.  
-Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates. Last updated 2026-06-19 UTC. [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-19 UTC."],[],[]] 
+  
+Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
+
+Last updated 2026-09-02 UTC.
+
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-02 UTC."],[],[]] 

@@ -4,7 +4,8 @@
 
 ---
 
-#  Preview your UI with composable previews
+#  Preview your UI with composable previews Save and categorize content based on your preferences. 
+
 A composable is defined by a function and annotated with `@Composable`:
     
     
@@ -13,7 +14,7 @@ A composable is defined by a function and annotated with `@Composable`:
         Text("Hello World")
     }
     
-    [AndroidStudioComposeSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/tooling/AndroidStudioComposeSnippets.kt#L35-L38)
+    [AndroidStudioComposeSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/tooling/AndroidStudioComposeSnippets.kt#L35-L38)
 
 ![A simple text element containing the words "Hello
 World"](/static/develop/ui/compose/images/tooling-hello-world.png)
@@ -27,7 +28,7 @@ To enable a preview of this composable, create another composable, annotated wit
         SimpleComposable()
     }
     
-    [AndroidStudioComposeSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/tooling/AndroidStudioComposeSnippets.kt#L42-L46)
+    [AndroidStudioComposeSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/tooling/AndroidStudioComposeSnippets.kt#L42-L46)
 
 The [`@Preview`](/reference/kotlin/androidx/compose/ui/tooling/preview/Preview) annotation tells Android Studio that this composable should be shown in the design view of this file. You can see live updates to your composable preview as you make your edits.
 
@@ -61,7 +62,7 @@ By default, `@Preview` dimensions are chosen automatically to wrap its content. 
         }
     }
     
-    [AndroidStudioComposeSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/tooling/AndroidStudioComposeSnippets.kt#L109-L115)
+    [AndroidStudioComposeSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/tooling/AndroidStudioComposeSnippets.kt#L109-L115)
 
 ![A yellow square with the words "Hello
 World"](/static/develop/ui/compose/images/tooling-square-preview.png)
@@ -105,7 +106,7 @@ To test different user locales, add the `locale` parameter:
         Text(text = stringResource(R.string.greeting))
     }
     
-    [AndroidStudioComposeSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/tooling/AndroidStudioComposeSnippets.kt#L119-L123)
+    [AndroidStudioComposeSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/tooling/AndroidStudioComposeSnippets.kt#L119-L123)
 
 ![A simple text element containing the word "Bonjour" with a French
 flag](/static/develop/ui/compose/images/tooling-locale-preview.png)
@@ -121,7 +122,7 @@ By default, your composable is displayed with a transparent background. To add a
         Text("Hello World")
     }
     
-    [AndroidStudioComposeSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/tooling/AndroidStudioComposeSnippets.kt#L101-L105)
+    [AndroidStudioComposeSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/tooling/AndroidStudioComposeSnippets.kt#L101-L105)
 
 ![A green rectangle with the words "Hello
 World"](/static/develop/ui/compose/images/tooling-background-preview.png)
@@ -137,7 +138,7 @@ If you need to display the status and action bars inside a preview, add the `sho
         Text("Hello World")
     }
     
-    [AndroidStudioComposeSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/tooling/AndroidStudioComposeSnippets.kt#L127-L131)
+    [AndroidStudioComposeSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/tooling/AndroidStudioComposeSnippets.kt#L127-L131)
 
 ![A preview window showing an activity with the status and action bars.](/static/develop/ui/compose/images/tooling-decorated-preview.png)
 
@@ -165,7 +166,7 @@ This way, you can also work around the limitations. For example, showing sample 
         }
     }
     
-    [AndroidStudioComposeSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/tooling/AndroidStudioComposeSnippets.kt#L50-L59)
+    [AndroidStudioComposeSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/tooling/AndroidStudioComposeSnippets.kt#L50-L59)
 
 ## Interact with your `@Preview`
 
@@ -239,7 +240,7 @@ Start by creating your own custom annotation class:
     )
     annotation class FontScalePreviews
     
-    [AndroidStudioComposeSnippets](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/tooling/AndroidStudioComposeSnippets.kt#L63-L73)
+    [AndroidStudioComposeSnippets](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/tooling/AndroidStudioComposeSnippets.kt#L63-L73)
     
     .kt
 
@@ -252,7 +253,7 @@ You can use this custom annotation for your preview composables:
         Text("Hello World")
     }
     
-    [AndroidStudioComposeSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/tooling/AndroidStudioComposeSnippets.kt#L77-L81)
+    [AndroidStudioComposeSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/tooling/AndroidStudioComposeSnippets.kt#L77-L81)
 
 ![Android Studio design tab showing the composable with small and large font](/static/develop/ui/compose/images/tooling/preview-multipreview-1.png)
 
@@ -273,7 +274,7 @@ You can combine multiple multipreview annotations and normal preview annotations
         MaterialTheme { Surface { Text(stringResource(R.string.hello_world)) } }
     }
     
-    [AndroidStudioComposeSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/tooling/AndroidStudioComposeSnippets.kt#L85-L97)
+    [AndroidStudioComposeSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/tooling/AndroidStudioComposeSnippets.kt#L85-L97)
 
 ![Android Studio design tab showing the composable in all configurations](/static/develop/ui/compose/images/tooling/preview-multipreview-2.png)
 
@@ -293,7 +294,7 @@ Very often, a need arises where you must pass a large dataset to your composable
     }
     
     
-    [AndroidStudioComposeSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/tooling/AndroidStudioComposeSnippets.kt#L135-L147)
+    [AndroidStudioComposeSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/tooling/AndroidStudioComposeSnippets.kt#L135-L147)
 
 To provide the sample data, create a class that implements [`PreviewParameterProvider`](/reference/kotlin/androidx/compose/ui/tooling/preview/PreviewParameterProvider) and returns the sample data as a sequence.
     
@@ -306,7 +307,7 @@ To provide the sample data, create a class that implements [`PreviewParameterPro
         )
     }
     
-    [AndroidStudioComposeSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/tooling/AndroidStudioComposeSnippets.kt#L151-L157)
+    [AndroidStudioComposeSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/tooling/AndroidStudioComposeSnippets.kt#L151-L157)
 
 This renders one preview per data element in the sequence:
 
@@ -323,7 +324,7 @@ You can use the same provider class for multiple previews. If necessary, limit t
         UserProfile(user)
     }
     
-    [AndroidStudioComposeSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/tooling/AndroidStudioComposeSnippets.kt#L161-L167)
+    [AndroidStudioComposeSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/tooling/AndroidStudioComposeSnippets.kt#L161-L167)
 
 Previews using `@PreviewParameter` are named by default using the parameter index and property name (user 0, user 1, user 2, and so on), which can make it difficult to tell them apart. To improve preview clarity, you can provide custom display names for each preview by overriding `getDisplayName()` in your `PreviewParameterProvider`. This helps distinguish between different data variations or UI states. For example, you can label previews based on the input data:
     
@@ -345,7 +346,7 @@ Previews using `@PreviewParameter` are named by default using the parameter inde
         }
     }
     
-    [AndroidStudioComposeSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/tooling/AndroidStudioComposeSnippets.kt#L172-L187)
+    [AndroidStudioComposeSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/tooling/AndroidStudioComposeSnippets.kt#L172-L187)
 
 ![Previews with custom display names showing Elise - 30, Frank - 31 and Julia - 40 composables](/static/develop/ui/compose/images/tooling/preview-custom-display-name.png)
 
@@ -378,7 +379,7 @@ You can always 'ctrl or ⌘ + click' the `@Preview` annotation in Android Studio
         @Wallpaper val wallpaper: Int = Wallpapers.NONE,
     )
     
-    [AndroidStudioComposeSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/tooling/AndroidStudioComposeSnippets.kt#L197-L211)
+    [AndroidStudioComposeSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/tooling/AndroidStudioComposeSnippets.kt#L197-L211)
 
 ## Limitations and best practices
 
@@ -391,6 +392,8 @@ Because of the way previews are rendered within Android Studio, they are lightwe
   * No network access
   * No file access
   * Some `Context` APIs may not be fully available
+
+
 
 ### Previews and `ViewModels`
 
@@ -442,6 +445,8 @@ If you want to preview a composable that uses a `ViewModel`, you should create a
   * To read more about how Android Studio promotes `@Preview` ease of use, and learn more tooling tips, check out the blog [Compose Tooling](https://medium.com/androiddevelopers/compose-tooling-42621bd8719b).
   * For the legacy Views guidance, see [Develop a layout with Views](/studio/views/layout-editor).
 
+
+
 ## Recommended for you
 
   * Note: link text is displayed when JavaScript is off
@@ -449,10 +454,12 @@ If you want to preview a composable that uses a `ViewModel`, you should create a
   * [Material Design 2 in Compose](/develop/ui/compose/designsystems/material)
   * [Using Views in Compose](/develop/ui/compose/migrate/interoperability-apis/views-in-compose)
 
+
+
 [ Next Preview and debug animations  arrow_forward  ](/develop/ui/compose/tooling/animation-preview)
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-24 UTC.
+Last updated 2026-09-22 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-24 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-22 UTC."],[],[]] 

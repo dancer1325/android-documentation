@@ -3,6 +3,16 @@
 **Source:** [https://developer.android.com/design/ui/cars](https://developer.android.com/design/ui/cars)
 
 ---
+
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Design & Plan ](https://developer.android.com/design)
+  * [ UI Design ](https://developer.android.com/design/ui)
+  * [ Cars ](https://developer.android.com/design/ui/cars)
+
+
+
+Save and categorize content based on your preferences. 
+
 ![](https://developer.android.com/static/images/design/ui/cars/cars-hero-parallax-cropped.png)
 
 ###  Design for cars 
@@ -12,8 +22,6 @@ Car displays provide drivers and front-seat passengers many ways to engage with 
 Here, you'll find all the tools and guidance you need to bring the best of your app to the car.
 
 [Get started](https://developer.android.com/design/ui/cars/guides/templates/overview)
-
-##  Create inspiring in-car experiences 
 
 [ ![](https://developer.android.com/static/images/design/ui/cars/media.png) ](https://developer.android.com/design/ui/cars/guides/app-types/media-apps)
 
@@ -54,8 +62,6 @@ Enable users to do more with your app in the car, from checking the weather to b
 Keep everyone in the car engaged with parked experiences including web browsing, games like Angry Birds 2 and Farm Heroes Saga, and more. 
 
 [Design for parked experiences](https://developer.android.com/design/ui/cars/guides/app-types/parked-passenger-apps)
-
-##  Get started 
 
 [ ![](https://developer.android.com/static/images/design/ui/cars/principles.svg) ](https://developer.android.com/design/ui/cars/guides/foundations/design-principles)
 
@@ -127,10 +133,6 @@ Browse examples of Android Auto apps to help you get inspired.
 
 [See the design kit](https://developer.android.com/design/ui/cars/samples)
 
-##  Explore our design resources 
-
-Get your app driving-optimized with components and templates to start building your app's in-car UI. 
-
 [ ![](https://developer.android.com/static/images/design/ui/cars/design-kit.png) ](https://figma.com/community/file/1506418622696735515)
 
 ###  [ Car app templates design kit ](https://figma.com/community/file/1506418622696735515)
@@ -153,8 +155,6 @@ Use the checklists below to make sure your app adheres to the quality guidelines
 
 [See app quality](https://developer.android.com/docs/quality-guidelines/car-app-quality)
 
-##  Develop for cars 
-
 [ ![](https://developer.android.com/static/images/design/ui/cars/guides.png) ](https://developer.android.com/training/cars)
 
 ###  [ Developer guides ](https://developer.android.com/training/cars)
@@ -162,7 +162,5 @@ Use the checklists below to make sure your app adheres to the quality guidelines
 Use our developer guides and API reference to learn how to build apps for cars. 
 
 [See developer guides](https://developer.android.com/training/cars)
-
-##  Check out our latest news 
 
 [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]] 

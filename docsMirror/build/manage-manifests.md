@@ -4,7 +4,8 @@
 
 ---
 
-#  Manage manifest files
+#  Manage manifest files Save and categorize content based on your preferences. 
+
 This page describes how manifest merging works and how you can apply merge preferences to resolve merge conflicts. For an introduction to the app manifest file, see the [app manifest overview](/guide/topics/manifest/manifest-intro).
 
 ## Merge multiple manifest files
@@ -38,6 +39,9 @@ If you're using flavor dimensions, the manifest priorities correspond to the ord
 
 If you have multiple libraries, their manifest priorities match the order they appear in your Gradle `dependencies` block.
 
+
+
+
 For example, a library manifest is merged into the main manifest, then the main manifest is merged into the build variant manifest. Note that these are the same merge priorities for all source sets, as described in [Build with source sets](/studio/build/build-variants#sourceset-build).
 
 **Note:** If you're building a library module, the final merged manifest does **not** include content from the manifests of the library's dependencies.
@@ -70,6 +74,8 @@ However, there are a few situations in which the merger tool behaves differently
     * When the lower-priority manifest has a `minSdk` value that's higher, an error occurs unless you apply the  `overrideLibrary` merge rule.
     * When the lower-priority manifest has a `targetSdkVersion` value that's lower, the merger tool uses the value from the higher-priority manifest, and it also adds any system permissions that are necessary to ensure that the imported library continues to function properly (for cases in which the higher Android version has increased permission restrictions). For more information about this behavior, see the section about implicit system permissions.
   * The `<intent-filter>` element is never matched between manifests. Each is treated as unique and is added to the common parent element in the merged manifest.
+
+
 
 For all other conflicts between attributes, you receive an error and you must instruct the merger tool how to resolve it by adding a special attribute in the higher-priority manifest file. See the following section about merge rule markers.
 
@@ -439,6 +445,8 @@ Even before you build your app, you can see a preview of what your merged manife
 
   1. In Android Studio, open your `AndroidManifest.xml` file.
   2. Click the **Merged Manifest** tab at the bottom of the editor.
+
+
 
 The Merged Manifest view shows the results of the merged manifest on the left and information about each merged manifest file on the right, as shown in figure 2.
 

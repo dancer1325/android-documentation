@@ -4,7 +4,8 @@
 
 ---
 
-#  Brand guidelines
+#  Brand guidelines Save and categorize content based on your preferences. 
+
 The "Android" name, the Android logo, the "Google Play" brand, and other Google trademarks, are property of Google LLC and not part of the assets available through the Android Open Source Project.
 
 These guidelines correspond to and complement the marketing materials on the [Partner Marketing Hub](http://partnermarketinghub.withgoogle.com) and [Google Brand Permissions](https://www.google.com/permissions/).
@@ -23,7 +24,7 @@ Use of the "Google Play" name and the Google Play Store icon is allowed only in 
 
 App developers distributing an Android app can find the Google Play badge in the Partner Marketing Hub. These visuals can be used in marketing materials.
 
-[ ![](/static/images/brand/play_prism.svg) Google play badges Badges can be used in marketing campaigns to promote content on Google Play. arrow_forward ](https://play.google.com/intl/en_us/badges/)
+[ ![](/static/images/brand/play_prism.svg) Google play badges Badges can be used in marketing campaigns to promote content on Google Play. arrow_forward ](https://partnermarketinghub.withgoogle.com/brands/google-play/downloads/)
 
 ### Other
 
@@ -153,6 +154,6 @@ Submit a brand request to make any marketing reviews or brand inquires. Typical 
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-02-26 UTC.
+Last updated 2026-08-07 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-02-26 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-08-07 UTC."],[],[]] 

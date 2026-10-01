@@ -4,7 +4,8 @@
 
 ---
 
-#  Improve layout performance
+#  Improve layout performance Save and categorize content based on your preferences. 
+
 Try the Compose way 
 
 Jetpack Compose is the recommended UI toolkit for Android. Learn how to work with layouts in Compose. 

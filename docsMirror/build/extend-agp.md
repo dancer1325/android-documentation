@@ -4,7 +4,8 @@
 
 ---
 
-#  Write Gradle plugins
+#  Write Gradle plugins Save and categorize content based on your preferences. 
+
 The Android Gradle plugin (AGP) is the official build system for Android applications. It includes support for compiling many different types of sources and linking them together into an application that you can run on a physical Android device or an emulator.
 
 AGP contains extension points for plugins to control build inputs and extend its functionality through new steps that can be integrated with standard build tasks. Previous versions of AGP did not have official APIs clearly separated from internal implementations. Starting in version 7.0, AGP has a set of [official, stable APIs](/reference/tools/gradle-api) that you can rely on.
@@ -18,6 +19,8 @@ AGP follows the [Gradle feature lifecycle](https://docs.gradle.org/current/userg
   * **Public** : Available for public use and stable
   * **Deprecated** : No longer supported, and replaced with new APIs
 
+
+
 ## Deprecation policy
 
 AGP is evolving with the deprecation of old APIs and their replacement with new, stable APIs and a new Domain Specific Language (DSL). This evolution will span multiple AGP releases, and you can learn more about it at the [AGP API/DSL migration timeline](/studio/releases/gradle-plugin-roadmap).
@@ -25,6 +28,83 @@ AGP is evolving with the deprecation of old APIs and their replacement with new,
 When AGP APIs are deprecated, for this migration or otherwise, they will continue to be available in the current major release but will generate warnings. Deprecated APIs will be fully removed from AGP in the subsequent major release. For example, if an API is deprecated in AGP 7.0, it will be available in that version and generate warnings. That API will no longer be available in AGP 8.0.
 
 To see examples of new APIs used in common build customizations, take a look at the [Android Gradle plugin recipes](https://github.com/android/gradle-recipes). They provide examples of common build customizations. You can also find more details about the new APIs in our [reference documentation](/reference/tools/gradle-api).
+
+## Compile against the AGP API artifact
+
+To write a custom Gradle plugin or build logic (such as in the `buildSrc` directory, a convention plugin module, or a standalone plugin project) that extends AGP, compile against AGP's `gradle-api` artifact instead of the full plugin implementation artifact.
+
+### Why compile against the `gradle-api` artifact?
+
+AGP publishes two primary artifacts:
+
+  * **`com.android.tools.build:gradle-api`** : Contains official AGP APIs, including stable APIs (such as [`AndroidComponentsExtension`](/reference/tools/gradle-api/9.4/com/android/build/api/variant/AndroidComponentsExtension), [`Variant`](/reference/tools/gradle-api/9.4/com/android/build/api/variant/Variant), and public DSL interfaces), incubating APIs (marked `@Incubating`), and deprecated APIs (marked `@Deprecated`).
+  * **`com.android.tools.build:gradle`** : Contains the full AGP runtime implementation, including internal classes, build tasks, and compiler integrations.
+
+
+
+Compiling against the `gradle-api` artifact provides several key benefits:
+
+  * **Avoid internal APIs** : It ensures that your plugin code only accesses official APIs. This prevents accidental dependencies on internal implementation classes (`com.android.build.gradle.internal.*`) that can change or be removed across AGP versions without warning.
+  * **Faster builds and smaller footprint** : The `gradle-api` artifact has a much smaller dependency tree than the full `gradle` artifact. This reduces download sizes, avoids classpath pollution, and speeds up compilation of your build logic.
+  * **Runtime isolation** : Custom plugins only require API definitions during compilation. At runtime, the full AGP implementation is provided by the Android build when the Android application or library plugin is applied.
+
+
+
+### Add the dependency
+
+Add the `gradle-api` artifact as a dependency in the build file of your plugin project or the `buildSrc` directory. The `gradle-api` artifact is published on [Google's Maven repository](/build/remote-repositories#google-maven). To resolve the artifact, make sure that your build includes the `google()` repository. For example, configure it in the `dependencyResolutionManagement.repositories` block of the `settings.gradle` or `settings.gradle.kts` file or in the `repositories` block of your plugin's build file or the `buildSrc` directory's build file.
+
+#### With a version catalog
+
+If your project uses a [version catalog](/build/migrate-to-catalogs), define the `gradle-api` dependency in the `gradle/libs.versions.toml` file:
+    
+    
+    [versions]
+    androidGradlePlugin = "9.4.0"
+    
+    [libraries]
+    android-gradle-plugin-api = { group = "com.android.tools.build", name = "gradle-api", version.ref = "androidGradlePlugin" }
+    
+
+The `android-gradle-plugin-api` catalog alias generates the type-safe accessor `libs.android.gradle.plugin.api`.
+
+Then, add `libs.android.gradle.plugin.api` to the `dependencies` block of your plugin's build file:
+
+### Kotlin
+    
+    
+    dependencies {
+        compileOnly(libs.android.gradle.plugin.api)
+    }
+
+### Groovy
+    
+    
+    dependencies {
+        compileOnly libs.android.gradle.plugin.api
+    }
+
+#### Without a version catalog
+
+If your project doesn't use a version catalog, declare the dependency directly in your plugin's build file:
+
+### Kotlin
+    
+    
+    dependencies {
+        compileOnly("com.android.tools.build:gradle-api:9.4.0")
+    }
+
+### Groovy
+    
+    
+    dependencies {
+        compileOnly 'com.android.tools.build:gradle-api:9.4.0'
+    }
+
+Use the `compileOnly` configuration option as the default for standalone plugins intended for publication. The consuming project applies AGP and provides its runtime classes on the buildscript classpath. Using the `compileOnly` configuration prevents your published plugin from leaking a runtime dependency on a specific AGP version and avoids version conflicts for consumers. If you develop internal build logic—such as plugins in the `buildSrc` directory or convention plugins in composite builds—use the `implementation` configuration option instead. These plugins run within the build and require AGP on their runtime classpath.
+
+**Important:** The `compileOnly` configuration option doesn't add dependencies to the test classpath. If you write unit or functional tests for your plugin, also declare the dependency using the `testImplementation` configuration option.
 
 ## Gradle build basics
 
@@ -43,11 +123,13 @@ Gradle offers a number of types that behave "lazily," or help defer heavy comput
   * [`flatMap()`](https://docs.gradle.org/current/javadoc/org/gradle/api/provider/Provider.html#flatMap-org.gradle.api.Transformer-): Also accepts a lambda and produces `Provider<S>`, but the lambda takes a value `T` and produces `Provider<S>` (instead of producing the value `S` directly). Use flatMap() when S cannot be determined at configuration time and you can obtain only `Provider<S>`. Practically speaking, if you used `map()` and ended up with a `Provider<Provider<S>>` result type, that probably means you should have used `flatMap()` instead.
   * [`zip()`](https://docs.gradle.org/current/javadoc/org/gradle/api/provider/Provider.html#zip-org.gradle.api.provider.Provider-java.util.function.BiFunction-): Lets you combine two `Provider` instances to produce a new `Provider`, with a value computed using a function that combines the values from the two input `Providers` instances.
 
+
 [`Property<T>`](https://docs.gradle.org/current/javadoc/org/gradle/api/provider/Property.html)
     Implements `Provider<T>`, so it also provides a value of type `T`. Unlike with `Provider<T>`, which is read-only, you can also set a value for the `Property<T>`. There are two ways to do so: 
 
   * Set a value of type `T` directly when it's available, without the need for deferred computations.
   * Set another `Provider<T>` as the source of the value of the `Property<T>`. In this case, the value `T` is materialized only when `Property.get()` is called.
+
 
 [`TaskProvider`](https://docs.gradle.org/current/javadoc/org/gradle/api/tasks/TaskProvider.html)
     Implements `Provider<Task>`. To generate a `TaskProvider`, use [`tasks.register()`](https://docs.gradle.org/current/javadoc/org/gradle/api/tasks/TaskContainer.html#register-java.lang.String-) and not [`tasks.create()`](https://docs.gradle.org/current/javadoc/org/gradle/api/tasks/TaskContainer.html#create-java.lang.String-), to ensure tasks are only instantiated lazily when they're needed. You can use `flatMap()` to access the outputs of a `Task` before the `Task` is created, which can be useful if you want to use the outputs as inputs to other `Task` instances.
@@ -130,6 +212,9 @@ AGP completes the following steps to create and execute its `Task` instances, wh
 
   8. **Tasks created** : `Variant` objects and their `Property` values are used to create the `Task` instances that are necessary to perform the build.
 
+
+
+
 AGP introduces an [`AndroidComponentsExtension`](/reference/tools/gradle-api/7.0/com/android/build/api/extension/AndroidComponentsExtension) that lets you register callbacks for `finalizeDsl()`, `beforeVariants()` and `onVariants()`. The extension is available in build scripts through the `androidComponents` block:
     
     
@@ -144,7 +229,7 @@ AGP introduces an [`AndroidComponentsExtension`](/reference/tools/gradle-api/7.0
     }
     
 
-However, our recommendation is to keep build scripts only for declarative configuration using the android block's DSL and [move any custom imperative logic to `buildSrc`](https://docs.gradle.org/current/userguide/organizing_gradle_projects.html#sec:build_sources) or external plugins. You can also take a look at the [`buildSrc` samples](https://github.com/android/gradle-recipes/tree/agp-7.0/BuildSrc/) in our Gradle recipes GitHub repository to learn how to create a plugin in your project. Here is an example of registering the callbacks from plugin code:
+However, our recommendation is to keep build scripts only for declarative configuration using the android block's DSL and [move any custom imperative logic to the `buildSrc` directory](https://docs.gradle.org/current/userguide/organizing_gradle_projects.html#sec:build_sources) or external plugins. You can also take a look at the [`buildSrc` samples](https://github.com/android/gradle-recipes/tree/agp-7.0/BuildSrc/) in our Gradle recipes GitHub repository to learn how to create a plugin in your project. Make sure your plugin compiles against the `gradle-api` artifact in your build file. Here is an example of registering the callbacks from plugin code:
     
     
     abstract class ExamplePlugin: Plugin<Project> {
@@ -237,6 +322,8 @@ Your plugin can contribute a few types of generated sources, such as:
   * [Java resources](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_project_layout) in the `resources` directory
   * [Android assets](/reference/android/content/res/AssetManager) in the `assets` directory
 
+
+
 For the full list of sources you can add, see the [Sources API](/reference/tools/gradle-api/7.4/com/android/build/api/variant/Sources).
 
 This code snippet shows how to add a custom source folder called `${variant.name}` to the Java source set using the `addStaticSourceDirectory()` function. The Android toolchain then processes this folder.
@@ -304,17 +391,19 @@ Every `Artifact` class can implement any of the following interfaces to indicate
   * [`Appendable`](/reference/tools/gradle-api/7.1/com/android/build/api/artifact/Artifact.Appendable): Applies only to artifacts that are subclasses of `Artifact.Multiple`. It means that the `Artifact` can be appended to, that is, a custom `Task` can create new instances of this `Artifact` type which will be added to the existing list.
   * [`Replaceable`](/reference/tools/gradle-api/4.1/com/android/build/api/artifact/Artifact.Replaceable): Applies only to artifacts that are subclasses of `Artifact.Single`. A replaceable `Artifact` can be replaced by an entirely new instance, produced as an output of a `Task`.
 
+
+
 In addition to the three artifact-modifying operations, every artifact supports a [`get()`](/reference/tools/gradle-api/7.0/com/android/build/api/artifact/Artifacts#get) (or [`getAll()`](/reference/tools/gradle-api/7.0/com/android/build/api/artifact/Artifacts#getall)) operation, which returns a `Provider` with the final version of the artifact (after all operations on it are finished).
 
 Multiple plugins can add any number of operations on artifacts into the pipeline from the `onVariants()` callback, and AGP will ensure they are chained properly so that all tasks run at the right time and artifacts are correctly produced and updated. This means that when an operation changes any outputs by appending, replacing, or transforming them, the next operation will see the updated version of these artifacts as inputs, and so on.
 
 The entry point into registering operations is the `Artifacts` class. The following code snippet shows how you can get access to an instance of `Artifacts` from a property on the `Variant` object in the `onVariants()` callback.
 
-You can then pass in your custom `TaskProvider` to get a [`TaskBasedOperation`](/reference/tools/gradle-%0Aapi/7.1/com/android/build/api/artifact/TaskBasedOperation) object (1), and use it to connect its inputs and outputs using one of the `wiredWith*` methods (2).
+You can then pass in your custom `TaskProvider` to get a [`TaskBasedOperation`](/reference/tools/gradle-api/7.1/com/android/build/api/artifact/TaskBasedOperation) object (1), and use it to connect its inputs and outputs using one of the `wiredWith*` methods (2).
 
 The exact method you need to choose depends on the cardinality and `FileSystemLocation` type implemented by the `Artifact` that you want to transform.
 
-And finally, you pass in the `Artifact` type to a method representing the chosen operation on the `*OperationRequest` object that you get in return, for example, [`toAppendTo()`](/reference/tools/gradle-%0Aapi/7.1/com/android/build/api/artifact/OutOperationRequest#toappendto), [`toTransform()`](/reference/tools/gradle-%0Aapi/7.1/com/android/build/api/artifact/InAndOutFileOperationRequest#totransform) , or [`toCreate()`](/reference/tools/gradle-%0Aapi/7.1/com/android/build/api/artifact/OutOperationRequest#tocreate) (3).
+And finally, you pass in the `Artifact` type to a method representing the chosen operation on the `*OperationRequest` object that you get in return, for example, [`toAppendTo()`](/reference/tools/gradle-api/7.1/com/android/build/api/artifact/OutOperationRequest#toappendto), [`toTransform()`](/reference/tools/gradle-api/7.1/com/android/build/api/artifact/InAndOutFileOperationRequest#totransform) , or [`toCreate()`](/reference/tools/gradle-api/7.1/com/android/build/api/artifact/OutOperationRequest#tocreate) (3).
     
     
     androidComponents.onVariants { variant ->
@@ -343,8 +432,10 @@ To learn more about extending AGP, we recommend reading the following sections f
   * [Lazy Configuration](https://docs.gradle.org/current/userguide/lazy_configuration.html)
   * [Task Configuration Avoidance](https://docs.gradle.org/current/userguide/task_configuration_avoidance.html)
 
+
+
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-16 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-16 UTC."],[],[]] 

@@ -4,14 +4,15 @@
 
 ---
 
-#  Migrate your build configuration from Groovy to Kotlin
+#  Migrate your build configuration from Groovy to Kotlin Save and categorize content based on your preferences. 
+
 Android Gradle plugin 4.0 added support for using Kotlin in your Gradle build configuration as a replacement for Groovy, the programming language traditionally used in Gradle configuration files.
 
 Kotlin is preferred over the Groovy for writing Gradle scripts because Kotlin is more readable and offers better compile-time checking and IDE support.
 
-Although Kotlin currently offers better integration in Android Studio’s code editor when compared to Groovy, builds using Kotlin tend to be slower than builds using Groovy, so consider build performance when deciding whether to migrate.
+Although Kotlin currently offers better integration in Android Studio's code editor when compared to Groovy, builds using Kotlin tend to be slower than builds using Groovy, so consider build performance when deciding whether to migrate.
 
-This page provides basic information about converting your Android app's Gradle build files from Groovy to Kotlin. For a more comprehensive migration guide, see Gradle’s [official documentation](https://guides.gradle.org/migrating-build-logic-from-groovy-to-kotlin/).
+This page provides basic information about converting your Android app's Gradle build files from Groovy to Kotlin. For a more comprehensive migration guide, see Gradle's [official documentation](https://guides.gradle.org/migrating-build-logic-from-groovy-to-kotlin/).
 
 ## Timeline
 
@@ -29,8 +30,10 @@ In this migration guide, "Kotlin" and "Kotlin DSL" are used interchangeably. Lik
 
 Script file extension names are based on the language the build file is written in:
 
-  * Gradle build files written in Groovy use the `.gradle` file name extension.
-  * Gradle build files written in Kotlin use the `.gradle.kts` file name extension.
+  * Gradle build files written in Groovy use the `.gradle` filename extension.
+  * Gradle build files written in Kotlin use the `.gradle.kts` filename extension.
+
+
 
 ## Convert the syntax
 
@@ -40,7 +43,7 @@ There are some general differences in syntax between Groovy and Kotlin, so you n
 
 **Tip:** As a first step, even before changing the file extensions, add parentheses to your Groovy code. This makes the conversion to Kotlin easier.
 
-Groovy lets you to omit parentheses in method calls, while Kotlin requires them. To migrate your configuration, add parentheses to these sorts of method calls. This code shows how to configure a setting in Groovy:
+Groovy lets you omit parentheses in method calls, while Kotlin requires them. To migrate your configuration, add parentheses to these sorts of method calls. This code shows how to configure a setting in Groovy:
     
     
     compileSdkVersion 30
@@ -56,7 +59,7 @@ This is the same code written in Kotlin:
 
 **Tip:** Before changing file extensions, add `=` to your Groovy code. This makes the conversion to Kotlin easier.
 
-The Groovy DSL lets you to omit the assignment operator `=` when assigning properties, whereas Kotlin requires it. This code shows how to assign properties in Groovy:
+The Groovy DSL lets you omit the assignment operator `=` when assigning properties, whereas Kotlin requires it. This code shows how to assign properties in Groovy:
     
     
     java {
@@ -79,17 +82,21 @@ This code shows how to assign properties in Kotlin:
 Here are the string differences between Groovy and Kotlin:
 
   * **Double quotes for strings:** While Groovy allows strings to be defined using single quotes, Kotlin requires double quotes.
+
   * **String interpolation on dotted expressions:** In Groovy, you can use just the `$` prefix for [string interpolations](https://groovy-lang.org/syntax.html#_string_interpolation) on dotted expressions, but Kotlin requires that you wrap the dotted expressions with curly braces. For example, in Groovy you can use `$project.rootDir` as shown in the following snippet:
         
         myRootDirectory = "$project.rootDir/tools/proguard-rules-debug.pro"
-            
+        
 
 In Kotlin, however, the preceding code calls `toString()` on `project`, not on `project.rootDir`. To get the value of the root directory, wrap the `${project.rootDir}` expression with curly braces:
         
         myRootDirectory = "${project.rootDir}/tools/proguard-rules-debug.pro"
-            
+        
 
-To learn more, see [String templates](https://kotlinlang.org/docs/strings.html#string-templates) in the Kotlin documentation. 
+To learn more, see [String templates](https://kotlinlang.org/docs/strings.html#string-templates) in the Kotlin documentation.
+
+
+
 
 ### Rename file extensions
 
@@ -229,6 +236,8 @@ For most plugins, the plugin ID is the string used when you apply them using `ap
   * `com.android.lint`
   * `com.android.test`
 
+
+
 You can find the full plugin list in the [Google Maven repository](https://maven.google.com/web/index.html).
 
 Kotlin plugins can be referenced by multiple plugin IDs. We recommend using the namespaced plugin ID, and refactor from shorthand to namespaced plugin ID by the following table:
@@ -240,7 +249,7 @@ Shorthand plugin IDs | Namespaced plugin IDs
 `kotlin-kapt` | `org.jetbrains.kotlin.kapt`  
 `kotlin-parcelize` | `org.jetbrains.kotlin.plugin.parcelize`  
   
-You can also search for plugins on the [Gradle Plugin Portal](https://plugins.gradle.org/), the [Maven Central Repository](https://central.sonatype.com/) and the [Google Maven repository](https://maven.google.com/web/index.html). Read [Developing Custom Gradle Plugins](https://docs.gradle.org/current/userguide/custom_plugins.html#behind_the_scenes) to learn more about how plugin IDs work.
+You can also search for plugins on the [Gradle Plugin Portal](https://plugins.gradle.org/), the [Maven Central Repository](https://central.sonatype.com/), and the [Google Maven repository](https://maven.google.com/web/index.html). Read [Developing Custom Gradle Plugins](https://docs.gradle.org/current/userguide/custom_plugins.html#behind_the_scenes) to learn more about how plugin IDs work.
 
 ### Perform the refactoring
 
@@ -255,6 +264,9 @@ Once you know the IDs of the plugins you use, perform the following steps:
   4. Apply the plugins by adding them to the `plugins {}` block in the module-level `build.gradle` file. You only need to specify the plugin's ID here because the version is inherited from the root project.
 
   5. Remove the `apply plugin` call for the plugin from the module-level `build.gradle` file.
+
+
+
 
 For example, this setup uses the `buildscript {}` block:
     
@@ -385,7 +397,7 @@ For Kotlin code samples for other functionalities, see the following documentati
 
 ## Known issues
 
-At present, a [known issue](https://github.com/gradle/gradle/issues/15886#issuecomment-1432923669) is that build speed might be slower with Kotlin than with Groovy.
+A [known issue](https://github.com/gradle/gradle/issues/15886#issuecomment-1432923669) is that build speed might be slower with Kotlin than with Groovy.
 
 ## How to report issues
 
@@ -397,6 +409,6 @@ For a working example of Gradle build files written with Kotlin, see the [Now In
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-16 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-16 UTC."],[],[]] 

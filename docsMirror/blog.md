@@ -3,129 +3,158 @@
 **Source:** [https://developer.android.com/blog](https://developer.android.com/blog)
 
 ---
-# The Android Developers' Blog
 
-Tools and resources to help you build faster and easier.
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Android Developers' Blog ](https://developer.android.com/)
+  * [ Blog ](https://developer.android.com/blog)
 
-![](/static/blog/assets/Google_For_Developers_Android_Text_Strapi_2000x1000_2d4221d884_ZtW7eg.webp)
 
-19 May 2026
 
-19 May 2026
+Save and categorize content based on your preferences. 
 
-[ ![View Matthew McCullough's profile](/static/blog/assets/matthew_mccullough_dc22050a18_Z1Fsr5h.webp) ](/blog/authors/matthew-mccullough)
+![](/static/blog/assets/Strapi_2ca09e764b_1JLHid.webp)
+
+11 Aug 2026
+
+11 Aug 2026
+
+3 Authors
 
 ####  [ Product News ](/blog/categories/product-news)
 
-##  [ 17 Things to know for Android developers at Google I/O! ](/blog/posts/17-things-to-know-for-android-developers-at-google-i-o)
+##  [ Enhance your app for the new Pixel lineup: Unveiled at Made by Google ](/blog/posts/enhance-your-app-for-the-new-pixel-lineup-unveiled-at-made-by-google)
 
-[ arrow_forward  ](/blog/posts/17-things-to-know-for-android-developers-at-google-i-o)
+[ arrow_forward  ](/blog/posts/enhance-your-app-for-the-new-pixel-lineup-unveiled-at-made-by-google)
 
-Google I/O '26 features 17 key announcements for Android developers focusing on agent-led productivity, Compose First as our UI standard, and high-performance media and adaptive development for the expanding ecosystem.
+With the introduction of the Pixel 11 Pro Fold, Pixel Watch 5, and the entire Pixel family, users are moving seamlessly across diverse screen sizes, unique postures, and intelligent experiences.
 
-######  [Matthew McCullough](/blog/authors/matthew-mccullough) • 8 min read 
+######  [Fahd Imtiaz](/blog/authors/fahd-imtiaz), [Loryn Hairston](/blog/authors/loryn-hairston), [Tracy Agyemang](/blog/authors/tracy-agyemang) • 4 min read 
 
-  * [ #Google I/O ](/blog/topics/google-i-o)
+  * [ #Wear OS 7 ](/blog/topics/wear-os-7)
+  * [ #made by google ](/blog/topics/made-by-google)
+  * [ #Adaptive development ](/blog/topics/adaptive-development)
+  * [ #Gemini Nano 4 ](/blog/topics/gemini-nano-4)
+  * [ #ML Kit Prompt API ](/blog/topics/ml-kit-prompt-api)
+  * [ #Foldables ](/blog/topics/foldables)
+  * [ #Jetpack Compose ](/blog/topics/jetpack-compose)
+  * +5 ↩
+
+
 
 ## The Latest
 
-  * [ ![View Zoe Lopez-Latorre 's profile](/static/blog/assets/Screenshot_2026_07_07_at_1_15_58_PM_eb87f2f61a_Z1QyLll.webp) ](/blog/authors/zoe-lopez-latorre)
+  * 3 Authors
 
-08 Jul 2026
+17 Sep 2026
 
-08 Jul 2026
+17 Sep 2026
 
-![](/static/blog/assets/Bench_July_releas_V01_Strapi_6ee24bdb6b_1NrCN7.webp)
+![](/static/blog/assets/Android_X_Security_State_Library_Strapi_d3ecf61180_YYwl5.webp)
 
 [ Product News ](/blog/categories/product-news)
 
-##  [ Evolving how LLMs are measured for Android: the next era of Android Bench ](/blog/posts/evolving-how-ll-ms-are-measured-for-android-the-next-era-of-android-bench)
+##  [ Introducing the AndroidX Security State Libraries: A Unified View of Device Security ](/blog/posts/introducing-the-android-x-security-state-libraries-a-unified-view-of-device-security)
 
-Back in March, we introduced Android Bench—our LLM leaderboard for real-world Android development tasks. Since then, we have enhanced the benchmark based on your feedback, including evaluating open-weight models and adding cost and efficiency dimensions to the leaderboard. 
+Today, we're thrilled to announce the stable release of the AndroidX Security State version 1.1.0 and Security State Provider version 1.0.0 libraries.
 
-[Zoe Lopez-Latorre ](/blog/authors/zoe-lopez-latorre) • 3 min read 
+[Maunik Shah](/blog/authors/maunik-shah), [Alec Garcia](/blog/authors/alec-garcia), [Joseph Yong](/blog/authors/joseph-yong) • 4 min read 
+
+  * [ ![View Matthew McCullough's profile](/static/blog/assets/matthew_mccullough_dc22050a18_51Njy.webp) ](/blog/authors/matthew-mccullough)
+
+17 Sep 2026
+
+17 Sep 2026
+
+![](/static/blog/assets/Bench_2_0_Strapi_bench_8767d57564_ZmnAe.webp)
+
+[ Product News ](/blog/categories/product-news)
+
+##  [ Android Bench 2.0: Pushing the frontier with challenging long-horizon tasks ](/blog/posts/android-bench-2-0-pushing-the-frontier-with-challenging-long-horizon-tasks)
+
+Today we’re releasing the first set of long-horizon tasks (LHT), which are tasks of great complexity that take an engineer multiple days or even a week to complete. We are also introducing agentic evaluation, starting with agents from corresponding model providers. 
+
+[Matthew McCullough](/blog/authors/matthew-mccullough) • 3 min read 
     * [ #Agentic Android development ](/blog/topics/agentic-android-development)
-
-  * [ ![View Steph Pio's profile](/static/blog/assets/security_pass_photo_b9ab37d5bf_1fkXBh.webp) ](/blog/authors/steph-pio)
-
-06 Jul 2026
-
-06 Jul 2026
-
-![](/static/blog/assets/IG_Fund26_Strapi_Header_716b75cbab_1E2Dt5.webp)
-
-[ Community ](/blog/categories/community)
-
-##  [ Google Play launches the first Indie Games Fund in Africa ](/blog/posts/google-play-launches-the-first-indie-games-fund-in-africa)
-
-Google Play is launching the first Indie Games Fund in Africa, investing $1 million to empower 10 indie game studios across Sub-Saharan Africa.
-
-[Steph Pio](/blog/authors/steph-pio) • 1 min read 
-    * [ #Google Play ](/blog/topics/google-play)
-
-  * [ ![View Tibian Elsheikh's profile](/static/blog/assets/unnamed_7_643878a583_gdebU.webp) ](/blog/authors/tibian-elsheikh)[ ![View Jeffrey Jose's profile](/static/blog/assets/unnamed_8_3d27b8b0cb_ZRl3Ng.webp) ](/blog/authors/jeffrey-jose)
-
-29 Jun 2026
-
-29 Jun 2026
-
-![](/static/blog/assets/Eclipsa_Video_V01_White_Strapi_10c5296e18_R3bTD.webp)
-
-##  [ Eclipsa Video: HDR That Looks Right on Every Screen ](/blog/posts/eclipsa-video-hdr-that-looks-right-on-every-screen)
-
-We’ve all been there: You’re scrolling through your favorite social media feed in a dim room, and suddenly an HDR video pops up. It’s so intensely bright that you have to squint, or maybe you find yourself turning down your screen brightness just to read the caption.
-
-[Tibian Elsheikh](/blog/authors/tibian-elsheikh), [Jeffrey Jose](/blog/authors/jeffrey-jose) • 2 min read 
-
-  * [ ![View Paul Feng's profile](/static/blog/assets/paul_feng_759ac95845_spvRU.webp) ](/blog/authors/paul-feng)
-
-24 Jun 2026
-
-24 Jun 2026
-
-![](/static/blog/assets/Apps_Experience_Play_Blog_Header_2000x1000_8c3a95404a_lYfpd.webp)
-
-[ Product News ](/blog/categories/product-news)
-
-##  [ Expanded billing choice and lower fees on Google Play ](/blog/posts/expanded-billing-choice-and-lower-fees-on-google-play)
-
-At Google Play, we are committed to delivering the best possible experience to users, while ensuring developers have the tools and adaptability to succeed. 
-
-[Paul Feng](/blog/authors/paul-feng) • 3 min read 
 
   * 3 Authors
 
-22 Jun 2026
+09 Sep 2026
 
-22 Jun 2026
+09 Sep 2026
 
-![](/static/blog/assets/MM_Android_XR_Geospatial_V02_Strapi_5c55395a9c_UkzvN.webp)
-
-##  [ Building a Mixed-Reality Tour Guide with Android XR, the Geospatial API, and Gemini ](/blog/posts/building-a-mixed-reality-tour-guide-with-android-xr-the-geospatial-api-and-gemini)
-
-At this year's Google I/O, we announced an update for spatial experiences: the Geospatial API is now available as a preview in ARCore for Jetpack XR. 
-
-[Coco Fatus](/blog/authors/coco-fatus), [Alon Hetzroni](/blog/authors/alon-hetzroni), [Azin Mehrnoosh](/blog/authors/blog-author-1) • 7 min read 
-
-  * [ ![View Matthew Forsythe's profile](/static/blog/assets/matthew_9c798f0c1d_Z1m5WWD.webp) ](/blog/authors/matthew-forsythe)
-
-18 Jun 2026
-
-18 Jun 2026
-
-![](/static/blog/assets/Strapi_2x_325a484212_1BGPPB.webp)
+![](/static/blog/assets/Introducing_Fast_and_Reliable_Wireless_Debugging_Strapi_cf55ad145b_2vFLdh.webp)
 
 [ Product News ](/blog/categories/product-news)
 
-##  [ Android developer verification: Building a safer ecosystem together ](/blog/posts/android-developer-verification-building-a-safer-ecosystem-together)
+##  [ Introducing Fast and Reliable Wireless Debugging with Android Debug Bridge (ADB) Wi-Fi 2.0 ](/blog/posts/introducing-fast-and-reliable-wireless-debugging-with-android-debug-bridge-adb-wi-fi-2-0)
 
-Last year, we introduced Android developer verification to strengthen ecosystem security and stop malicious actors from hiding behind anonymity to release harmful apps. 
+Wireless debugging on Android is now faster, more reliable, and easier to set up than ever. With ADB Wi-Fi 2.0, we’ve introduced a new server stack and smarter network handling to directly address developer feedback around usability gaps.
 
-[Matthew Forsythe](/blog/authors/matthew-forsythe) • 2 min read 
+[Steven Jenkins](/blog/authors/steven-jenkins), [Sherif Eid](/blog/authors/sherif-eid), [Fabien Sanglard](/blog/authors/fabien-sanglard) • 1 min read 
+    * [ #Wireless Debugging ](/blog/topics/wireless-debugging)
+    * [ #ADB Wi-Fi 2.0 ](/blog/topics/adb-wi-fi-2-0)
+    * [ #Android Studio ](/blog/topics/android-studio)
+    * +1 ↩
+
+  * [ ![View Amman Asfaw's profile](/static/blog/assets/unnamed_11_a00df7e0e8_Z1CHwnO.webp) ](/blog/authors/amman-asfaw)
+
+01 Sep 2026
+
+01 Sep 2026
+
+![](/static/blog/assets/Quail_Blog_Strapi_c8d4ba2105_ZqnmK9.webp)
+
+[ Product News ](/blog/categories/product-news)
+
+##  [ Leverage Android skills and Gemma 4 in Android Studio Quail 4 ](/blog/posts/leverage-android-skills-and-gemma-4-in-android-studio-quail-4)
+
+This is the final stable release for Android Studio Quail. The new features in Android Studio enable you to build premium apps with AI efficiently and effectively.
+
+[Amman Asfaw](/blog/authors/amman-asfaw) • 5 min read 
+    * [ #Android Studio ](/blog/topics/android-studio)
+    * [ #Android Skills ](/blog/topics/android-skills)
+
+  * [ ![View Rob Orgiu's profile](/static/blog/assets/Rob_Orgiu_f45ebe80ce_Z2l461S.webp) ](/blog/authors/rob-orgiu)
+
+31 Aug 2026
+
+31 Aug 2026
+
+![](/static/blog/assets/ABL_123_Streamline_adaptive_testing_with_emulator_commands_Strapi_0d1336f9a2_1recRz.webp)
+
+[ Documentation ](/blog/categories/documentation)
+
+##  [ Emulator control for adaptive app development ](/blog/posts/emulator-control-for-adaptive-app-development)
+
+Adaptive app development is fundamental on Android, but making sure everything looks good and every feature works the way it should require multiple tests on multiple devices. Or does it?
+
+[Rob Orgiu](/blog/authors/rob-orgiu) • 2 min read 
+    * [ #Adaptive apps ](/blog/topics/adaptive-apps)
+    * [ #Adaptive development ](/blog/topics/adaptive-development)
+
+  * 3 Authors
+
+27 Aug 2026
+
+27 Aug 2026
+
+![](/static/blog/assets/ANDDM_Passkeys_Strapi_2fc9df18a8_Z28fFzY.webp)
+
+[ Case Studies ](/blog/categories/case-studies)
+
+##  [ How WhatsApp Upgraded to Secure, Seamless Sign-In for 1 Billion Users with Passkeys ](/blog/posts/how-whats-app-upgraded-to-secure-seamless-sign-in-for-1-billion-users-with-passkeys)
+
+WhatsApp is the world's largest messaging platform, serving billions of users globally. It is the default communication tool for people across diverse regions, connecting users through private, reliable, and secure messaging.
+
+[Niharika Arora](/blog/authors/niharika-arora), [Tracy Agyemang](/blog/authors/tracy-agyemang), [Mayank Jain](/blog/authors/blog-author) • 8 min read 
+    * [ #Passkeys ](/blog/topics/passkeys)
+
+
+
 
 [ arrow_forward  See all latest posts ](/blog/latest)
 
-![](/static/blog/assets/product_news_droid_599a11ad69_d4ee764ece_Z1EpVf1.webp)
+![](/static/blog/assets/product_news_droid_599a11ad69_d4ee764ece_1Ad42c.webp)
 
 # Product News
 
@@ -153,11 +182,14 @@ Android 16 QPR2 is now released and available in AOSP
 
 ######  [Matthew McCullough](/blog/authors/matthew-mccullough) • 4 min read 
 
-[ arrow_forward  More ](/blog/categories/product-news)
+
+
 
 [ arrow_forward  More ](/blog/categories/product-news)
 
-[ Highlighted Author Niharika Arora 5  Posts ![View Niharika Arora's profile](/static/blog/assets/niharika_2910f6d612_C99s1.webp) arrow_forward  Developer Relations Engineer  ](/blog/authors/niharika-arora)
+[ arrow_forward  More ](/blog/categories/product-news)
+
+[ Highlighted Author Caren Chang 6  Posts ![](/static/blog/assets/Caren_Chang_e58d793559_Z7OUJq.webp) arrow_forward  Developer Relations Engineer  ](/blog/authors/caren-chang)
 
 Stay in the loop
 
@@ -165,6 +197,6 @@ Get the latest Android development insights delivered to your inbox weekly.
 
 [ mail  Subscribe ](/subscribe)
 
-![A 3D illustration of the Android mascot, wearing a jetpack that's emitting a large cloud of bubbles](/static/blog/assets/rocket-android.CVJQZOf1_1PnraM.webp)
+![A 3D illustration of the Android mascot, wearing a jetpack that's emitting a large cloud of bubbles](/static/blog/assets/rocket-android.CVJQZOf1_1zVtXW.webp)
 
 [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]] 

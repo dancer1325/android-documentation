@@ -4,7 +4,8 @@
 
 ---
 
-#  Processes and threads overview
+#  Processes and threads overview Save and categorize content based on your preferences. 
+
 When an application component starts and the application doesn't have any other components running, the Android system starts a new Linux process for the application with a single thread of execution. By default, all components of the same application run in the same process and thread, called the _main_ thread.
 
 If an application component starts and there is already a process for that application, because another component from the application already started, then the component starts within that process and uses the same thread of execution. However, you can arrange for different components in your application to run in separate processes, and you can create additional threads for any process.
@@ -23,7 +24,7 @@ The [`<application>`](/guide/topics/manifest/application-element) element also s
 
 Android might decide to shut down a process at some point, when resources are required by other processes that are more immediately serving the user. Application components running in the process that's shut down are consequently destroyed. A process is started again for those components when there's work for them to do.
 
-When deciding which processes to shut down, the Android system weighs their relative importance to the user. For example, it more readily shuts down a process hosting activities that are no longer visible on screen, compared to a process hosting visible activities. The decision of whether to terminate a process, therefore, depends on the state of the components running in that process. 
+When deciding which processes to shut down, the Android system weighs their relative importance to the user. For example, it more readily shuts down a process hosting activities that are no longer visible on screen, compared to a process hosting visible activities. The decision of whether to terminate a process, therefore, depends on the state of the components running in that process.
 
 The details of the process lifecycle and its relationship to application states are discussed in [Processes and app lifecycle](/guide/topics/processes/process-lifecycle). 
 
@@ -33,16 +34,18 @@ When an application is launched, the system creates a thread of execution for th
 
 The system does _not_ create a separate thread for each instance of a component. All components that run in the same process are instantiated in the UI thread, and system calls to each component are dispatched from that thread. Consequently, methods that respond to system callbacks—such as `[onKeyDown()](/reference/android/view/View#onKeyDown\(int, android.view.KeyEvent\))` to report user actions, or a lifecycle callback method—always run in the UI thread of the process.
 
-For instance, when the user touches a button on the screen, your app's UI thread dispatches the touch event to the widget, which in turn sets its pressed state and posts an invalidate request to the event queue. The UI thread dequeues the request and notifies the widget to redraw itself.
+For example, when the user touches a button on the screen, your app's UI thread dispatches the touch event to the widget, which in turn sets its pressed state and posts an invalidate request to the event queue. The UI thread dequeues the request and notifies the widget to redraw itself.
 
 Unless you implement your application properly, this single-thread model can yield poor performance when your app performs intensive work in response to user interaction. Performing long operations in the UI thread, such as network access or database queries, blocks the whole UI. When the thread is blocked, no events can be dispatched, including drawing events.
 
-From the user's perspective, the application appears to hang. Even worse, if the UI thread is blocked for more than a few seconds, the user is presented with the "[application not responding](https://developer.android.com/guide/practices/responsiveness.html)" (ANR) dialog. The user might then decide to quit your application or even uninstall it.
+From the user's perspective, the application appears to stop responding. Even worse, if the UI thread is blocked for more than a few seconds, the user is presented with the "[application not responding](/guide/practices/responsiveness)" (ANR) dialog. The user might then decide to quit your application or even uninstall it.
 
 Bear in mind that the Android UI toolkit is _not_ thread-safe. So, don't manipulate your UI from a worker thread. Do all manipulation to your user interface from the UI thread. There are two rules to Android's single-thread model:
 
-  1. Don't block the UI thread. 
-  2. Don't access the Android UI toolkit from outside the UI thread. 
+  1. Don't block the UI thread.
+  2. Don't access the Android UI toolkit from outside the UI thread.
+
+
 
 ### Worker threads
 
@@ -54,37 +57,39 @@ To help you follow these rules, Android offers several ways to access the UI thr
   * `[View.post(Runnable)](/reference/android/view/View#post\(java.lang.Runnable\))`
   * `[View.postDelayed(Runnable, long)](/reference/android/view/View#postDelayed\(java.lang.Runnable, long\))`
 
-The following example uses `View.post(Runnable)`:
+
+
+The following examples demonstrate how to offload a task to a background thread and update the UI thread once the task is complete:
 
 ### Kotlin
     
     
+    // Kotlin coroutines implementation.
     fun onClick(v: View) {
-        Thread(Runnable {
-            // A potentially time consuming task.
-            val bitmap = processBitMap("image.png")
-            imageView.post {
-                imageView.setImageBitmap(bitmap)
+        // Launch a coroutine in the lifecycle scope (e.g., in an Activity or Fragment).
+        lifecycleScope.launch {
+            // Run the blocking task on the IO dispatcher.
+            val bitmap = withContext(Dispatchers.IO) {
+                BitmapFactory.decodeFile("image.png")
             }
-        }).start()
+            // Back on the main thread, update the UI.
+            imageView.setImageBitmap(bitmap)
+        }
     }
 
 ### Java
     
     
+    // Java Executor implementation.
+    // (executorService is assumed to be defined elsewhere).
     public void onClick(View v) {
-        new Thread(new Runnable() {
-            public void run() {
-                // A potentially time consuming task.
-                final Bitmap bitmap =
-                        processBitMap("image.png");
-                imageView.post(new Runnable() {
-                    public void run() {
-                        imageView.setImageBitmap(bitmap);
-                    }
-                });
-            }
-        }).start();
+        executorService.execute(() -> {
+            // Run the heavy task on a background thread.
+            Bitmap bitmap = BitmapFactory.decodeFile("image.png");
+    
+            // Update the View on the UI thread.
+            imageView.post(() -> imageView.setImageBitmap(bitmap));
+        });
     }
 
 This implementation is thread-safe, because the background operation is done from a separate thread while the `[ImageView](/reference/android/widget/ImageView)` is always manipulated from the UI thread.
@@ -111,6 +116,6 @@ To perform IPC, your application must bind to a service using `[bindService()](/
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2024-01-03 UTC.
+Last updated 2026-08-28 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2024-01-03 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-08-28 UTC."],[],[]] 

@@ -4,7 +4,8 @@
 
 ---
 
-#  Accessibility features
+#  Accessibility features Save and categorize content based on your preferences. 
+
 This document describes accessibility features available in Android Studio, including keyboard navigation.
 
 IntelliJ IDEA updated accessibility features in release 2021.1, which is the basis of Android Studio Bumblebee, so all versions of Android Studio from Bumblebee onward also benefit from these updates. The [IntelliJ documentation](https://www.jetbrains.com/help/idea/2026.1/accessibility.html) contains full details of accessibility features such as setting up screen readers and customizing the IDE for greater accessibility.
@@ -24,12 +25,16 @@ To open the main menu and other top-level menus, use these shortcuts:
   * To open the main menu, press `F10`.
   * To open a top-level menu on a Windows machine, press `Alt+[_mnemonic_]`. For example, to open the File menu, press `Alt+F`.
 
+
+
 ### Navigate between files and tool windows
 
 To navigate between files and tool windows, use these shortcuts:
 
   * To move to a tool window, press `Alt+[_number_]` (on macOS, `Command+[_number_]`). For example, to move to the Project structure tool window, press `Alt+0` (on macOS, `Command+0`).
   * To move between files and tool windows, press `Control+Tab` (on macOS, `Command+Tab`). To move through all entries, keep pressing `Control+Tab`.
+
+
 
 ### Use the navigation bar
 
@@ -38,6 +43,8 @@ The navigation bar lets you move between files in a project using the following 
   * To activate the navigation bar, press Alt+Home (on macOS, `Option+Fn+Left`).
   * To switch between items in the navigation hierarchy, press the left arrow or the right arrow.
   * To open a popup window displaying the contents of the current item, press the spacebar.
+
+
 
 ## Disable code folding
 
@@ -70,6 +77,8 @@ To review errors in the **Messages** window, use these shortcuts:
   * To activate the **Messages** window, press `Alt+0` (on macOS, `Option+0`).
   * To navigate through all messages, press the up and down arrows.
 
+
+
 Alternatively, you can use the text editor to view and navigate through all errors. To use the editor to review errors, press `Control+Alt+Up/Down` (on macOS, `Command+Option+Up/Down`).
 
 ### Review errors and code inspections in a single file
@@ -79,10 +88,14 @@ To review errors in a single file, use these shortcuts:
   * To go to the next or previous error, press `F2` or `Shift+F2` (on macOS, `F2` or `Shift+F2`).
   * To open a tooltip containing the error message, press `Control+F1` (on macOS, `Command+F1`).
 
+
+
 To navigate to all code inspections—not just errors:
 
   1. Click **File > Settings > Editor > General** (on macOS, **Android Studio > Preferences > Editor > General**).
   2. Deselect **'Next error' action goes to high priority problems only**.
+
+
 
 ## Use tab indentation
 
@@ -93,8 +106,10 @@ To change to tab indentation:
   1. Navigate to **File > Settings > Editor > Code Style > Java > Tabs and Indents** (on macOS, **Android Studio > Preferences > Editor > Code Style > Java > Tabs and Indents**).
   2. Select **Use tab character**.
 
+
+
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-16 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-16 UTC."],[],[]] 

@@ -3,6 +3,9 @@
 **Source:** [https://developer.android.com/develop/background-work](https://developer.android.com/develop/background-work)
 
 ---
+
+Save and categorize content based on your preferences. 
+
 ![](https://developer.android.com/static/images/cluster-illustrations/mad.svg)
 
 ###  Background work 
@@ -12,10 +15,6 @@ Background work is any task your app needs to perform when it's not visible in t
 Navigating the complexities of background execution is key to building apps that are "good citizens"—that is, resilient, responsive, and efficient applications that work well on all devices. 
 
 [About background tasks](https://developer.android.com/develop/background-work/background-tasks)
-
-##  Get started with background work 
-
-View the guide on choosing the right background work API for your use case, and consider it in the context of Android's process and app lifecycle. 
 
 [ ![](https://developer.android.com/static/images/cluster-illustrations/apis.svg) ](https://developer.android.com/develop/background-work/background-tasks#choose-right-option)
 
@@ -36,12 +35,6 @@ Guide
 Explore the fundamental concepts of the Android process lifecycle and how it impacts your app's behavior and resource management. Learn how the system manages app processes based on activity state, enabling you to design resilient and efficient applications that respond gracefully to system-initiated terminations. 
 
 [View the guide](https://developer.android.com/guide/components/activities/process-lifecycle)
-
-![](https://developer.android.com/static/images/picto-icons/brackets.svg)
-
-##  Key solutions 
-
-Some of the more common APIs and tools for performing work in the background, include WorkManager, foreground services, alarms, and broadcasts. Each solution will have varying implications for the battery life of your users's devices. 
 
 ###  [ WorkManager ](https://developer.android.com/develop/background-work/background-tasks/persistent)
 
@@ -66,14 +59,6 @@ Alarms are a critical tool for scheduling time-based work. This page explains ho
 Learn how to send and receive broadcasts to handle system events and messages from other apps. You'll also learn about context-registered and manifest-declared receivers and the modern system restrictions that apply to them. 
 
 [Learn more](https://developer.android.com/develop/background-work/background-tasks/broadcasts)
-
-![](https://developer.android.com/static/images/picto-icons/professional.svg)
-
-##  Background guidance by use case 
-
-The right solution varies by your use case. Android provides many task-specific APIs, which are optimized for particular scenarios, and will often lead to greater power savings and fewer restrictions than when using WorkManager and Foreground Services. 
-
-This section lists some of the more common use cases, and the recommended solution. 
 
 [ ![](https://developer.android.com/static/images/spot-icons/location.svg) ](https://developers.google.com/location-context/fused-location-provider)
 
@@ -111,12 +96,6 @@ For user-initiated background tasks that involve data transfer (including downlo
 
 Use the Media3 library to support background playback while your app is not visible to the user. 
 
-![](https://developer.android.com/static/images/picto-icons/lightning.svg)
-
-##  Understand power optimizations 
-
-Considering your background work's effects on power is crucial for creating high-quality Android apps. It allows you to build more resilient and battery-efficient apps by understanding how the system manages resources. Optimizing for power reduces battery drain, prevents your app from being terminated by the system, and delivers a smoother user experience. 
-
 Guide
 
 ###  [ Understand Power Management Resource Limits ](https://developer.android.com/topic/performance/power/power-details)
@@ -150,7 +129,5 @@ Guide
 Beginning with Android 9, devices have power-management features that affect all apps. Learn how to test your app to make sure it runs properly on all devices, including with features such as battery saver, App Standby Buckets, and background restrictions. 
 
 [View the guide](https://developer.android.com/topic/performance/power/test-power)
-
-##  Latest news 
 
 [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]] 

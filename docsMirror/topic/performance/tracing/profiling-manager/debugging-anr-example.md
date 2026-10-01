@@ -4,7 +4,8 @@
 
 ---
 
-#  Practical performance debugging example: ANR
+#  Practical performance debugging example: ANR Save and categorize content based on your preferences. 
+
 This section shows how to debug an [Application Not Responding (ANR)](/topic/performance/anrs/keep-your-app-responsive) using `ProfilingManager` with an example trace.
 
 ## Set up app to collect ANRs
@@ -28,7 +29,7 @@ Start by setting up an ANR trigger in your app:
       profilingManager.addProfilingTriggers(triggers);
     }
     
-    [ProfilingManagerJavaSnippets.java](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/misc/src/main/java/com/example/snippets/profiling/ProfilingManagerJavaSnippets.java#L140-L154)
+    [ProfilingManagerJavaSnippets.java](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/misc/src/main/java/com/example/snippets/profiling/ProfilingManagerJavaSnippets.java#L140-L154)
 
 After capturing and uploading an ANR trace, open it in the [Perfetto UI](https://ui.perfetto.dev/).
 
@@ -118,7 +119,7 @@ To verify this, inspect the code associated with the `MyApp:SubmitButton` trace 
       Trace.endSection();
     }
     
-    [ProfilingManagerJavaSnippets.java](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/misc/src/main/java/com/example/snippets/profiling/ProfilingManagerJavaSnippets.java#L158-L220)
+    [ProfilingManagerJavaSnippets.java](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/misc/src/main/java/com/example/snippets/profiling/ProfilingManagerJavaSnippets.java#L158-L220)
 
 The code confirms this hypothesis. The `onClickSubmit` method executes a network request on the UI thread with a hardcoded `NETWORK_TIMEOUT_MILLISECS` of 2000ms. Crucially, it runs inside a `while` loop that retries up to 10 times.
 
@@ -130,6 +131,6 @@ Avoid this type of ANR by putting network-related operations that have varying l
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-07-01 UTC.
+Last updated 2026-09-23 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-07-01 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-23 UTC."],[],[]] 

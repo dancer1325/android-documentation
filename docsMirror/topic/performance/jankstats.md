@@ -4,7 +4,8 @@
 
 ---
 
-#  JankStats Library
+#  JankStats Library Save and categorize content based on your preferences. 
+
 The JankStats library helps you track and analyze performance problems in your applications. Jank refers to application frames that take too long to render, and the JankStats library provides reports on the jank statistics of your app.
 
 ## Capabilities
@@ -29,6 +30,8 @@ To begin using JankStats, instantiate and enable the library for each [`Window`]
   * Duration values
   * Whether or not the frame should be considered jank
   * A set of String pairs containing information about the application state during the frame
+
+
 
 To make JankStats more useful, applications should populate the library with relevant UI state information for reporting in the FrameData. You can do this through the [`PerformanceMetricsState`](/reference/androidx/metrics/performance/PerformanceMetricsState) API (not JankStats directly), where all of the state management logic and APIs live.
 
@@ -118,10 +121,14 @@ The listener provides per-frame information about jank with the [`FrameData`](/r
   * **[`frameStartNanos`](/reference/androidx/metrics/performance/FrameData#frameStartNanos\(\))** : Time at which the frame began (in nanoseconds).
   * **[`states`](/reference/androidx/metrics/performance/FrameData#states\(\))** : State of your app during the frame.
 
+
+
 If you are on Android 12 (API level 31) or higher, you can use the following to expose more data about frame durations:
 
   * [`FrameDataApi24`](/reference/androidx/metrics/performance/FrameDataApi24) provides [`frameDurationCpuNanos`](/reference/androidx/metrics/performance/FrameDataApi24#frameDurationCpuNanos\(\)) to display the time spent in the non-GPU portions of the frame.
   * [`FrameDataApi31`](/reference/androidx/metrics/performance/FrameDataApi31) provides [`frameOverrunNanos`](/reference/androidx/metrics/performance/FrameDataApi31#frameOverrunNanos\(\)) to display the amount of time past the frame deadline that the frame took to complete.
+
+
 
 Use [`StateInfo`](/reference/androidx/metrics/performance/StateInfo) in the listener to store information about the application state.
 
@@ -312,8 +319,10 @@ Share your feedback and ideas with us through these resources:
   * [Microbenchmark Instrumentation Arguments](/topic/performance/benchmarking/microbenchmark-instrumentation-args)
   * [Macrobenchmark Instrumentation Arguments](/topic/performance/benchmarking/macrobenchmark-instrumentation-args)
 
+
+
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-05-19 UTC.
+Last updated 2026-08-12 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-05-19 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-08-12 UTC."],[],[]] 

@@ -4,7 +4,8 @@
 
 ---
 
-#  Additional rule types
+#  Additional rule types Save and categorize content based on your preferences. 
+
 R8 lets you add rules that affect the optimization of your app, apart from keep rules. Add these rules in the same `proguard-rules.pro` file where you maintain your keep rules.
 
 The rules fall into the following categories:
@@ -59,6 +60,8 @@ You can use this rule in the following situations:
 
   * **For libraries** : To ensure that when apps are optimized all the local debugging hooks are removed from public library code.
   * **For apps** : To remove things like debug code from a release app. It's preferable to use build variants and variants of specific source sets or constants, but if variant source sets don't work for your case, or if you need a stronger guarantee that the code paths are fully removed, use `-assumevalues`.
+
+
 
 The following example shows a class where R8 removes debug tools from the optimized version of an app:
     

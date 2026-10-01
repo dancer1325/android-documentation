@@ -4,7 +4,8 @@
 
 ---
 
-#  Set up your environment for performance testing
+#  Set up your environment for performance testing Save and categorize content based on your preferences. 
+
 You can identify potential bottlenecks and improve overall app performance by recording device activity over a short period of time and [collecting traces of your app's startup period](/topic/performance/tracing). This page shows how to set up your environment for performance testing.
 
 ## Use the Macrobenchmark library
@@ -20,6 +21,8 @@ Test performance on each device type you care about. High-end devices with fast 
   * Network: test your apps or processes with strong and stable internet Wi-Fi speeds. If the app startup time includes a network request, note this as a place where variability might occur.
   * RAM usage: don't have any other apps running in the background of your device while testing app startup performance.
   * Battery: ensure your device is charged to avoid any hardware-specific low power performance throttling.
+
+
 
 ## Test on release builds
 

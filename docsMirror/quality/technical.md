@@ -4,7 +4,8 @@
 
 ---
 
-#  What great technical quality looks like
+#  What great technical quality looks like Save and categorize content based on your preferences. 
+
 ![](/static/images/quality/hero-images/technical_quality_highlighted.svg)
 
 Technical quality includes the stability, performance, and resource utilization of your app or game. The technical quality of your app or game can affect the user experience. A high-quality experience not only minimizes technical issues, but also makes the most of capabilities of the Android OS and device hardware.
@@ -19,7 +20,7 @@ If it makes sense for your app or game to support multiple form factors, ensure 
 
 ## Stability
 
-Stability issues cause your app or game to crash or stop responding, which interrupts user journeys and hurts the user experience. There are different types of issues, including [crashes](/topic/performance/vitals/crash), [ANRs](/topic/performance/vitals/anr), and [LMKs](/topic/performance/memory-management#low-memory_killer), but all are equally disruptive to users.
+Stability issues cause your app or game to crash or stop responding, which interrupts user journeys and hurts the user experience. There are different types of issues, including [crashes](/topic/performance/issues/crash), [ANRs](/topic/performance/issues/anr), and [LMKs](/topic/performance/memory-management#low-memory_killer), but all are equally disruptive to users.
 
 App or game stability can vary by device. Monitor your stability metrics regularly across all devices and aim to minimize the proportion of your users and sessions that are affected by stability issues. Ensure your stability metrics are best in class compared to your peers. Monitor user feedback and engagement metrics to ensure that stability issues aren't impacting your users.
 
@@ -31,7 +32,7 @@ If you distribute on Google Play, follow these additional stability guidelines.
 
 **Tools to monitor and improve stability** Use Android vitals in [Play Console](https://play.google.com/console/about/vitals/) or the [reporting API](https://developers.google.com/play/developer/reporting) to monitor the stability metrics that matter most to users and Google Play. Android vitals reports user-perceived crash rate and user-perceived ANR rate daily for all apps and games, and hourly for apps and games if there's sufficient data. Android vitals also helps you compare your stability metrics to your peers, and alerts you to per-device issues.
 
-**Discovery and featuring** The discoverability of your app or game might be limited on devices where your stability metrics exceed Google Play's bad behavior threshold, and a warning might be shown on your store listing on those devices. [Learn more](/topic/performance/vitals#core-vitals)
+**Discovery and featuring** The discoverability of your app or game might be limited on devices where your stability metrics exceed Google Play's bad behavior threshold, and a warning might be shown on your store listing on those devices. [Learn more](/google/play/vitals#core-vitals)
 
 ## Performance
 
@@ -43,7 +44,7 @@ Users want to be able to interact with your app or game as quickly as possible. 
 
 Ensure your metrics are best in class compared to your peers. Monitor user feedback and abandonment rates to ensure you're meeting user expectations, and check that your performance isn't degrading over time.
 
-Leverage Android to optimize [startup time](/topic/performance/vitals/launch-time). Providing a [baseline profile](/topic/performance/baselineprofiles/overview) and declaring [reportFullyDrawn](/topic/performance/vitals/launch-time#retrieve-TTFD) will ensure the most important sections of your code load faster, and adopting the [Game State API](/reference/android/app/GameManager#setGameState\(android.app.GameState\)) (games-only) will help the OS adjust during loading. Reducing the size of your game or app will also improve start-up time for new installations.
+Leverage Android to optimize [startup time](/topic/performance/issues/launch-time). Providing a [baseline profile](/topic/performance/baselineprofiles/overview) and declaring [reportFullyDrawn](/topic/performance/issues/launch-time#retrieve-TTFD) will ensure the most important sections of your code load faster, and adopting the [Game State API](/reference/android/app/GameManager#setGameState\(android.app.GameState\)) (games-only) will help the OS adjust during loading. Reducing the size of your game or app will also improve start-up time for new installations.
 
 ### Rendering (apps)
 
@@ -65,11 +66,11 @@ Follow best practices, such as using the [Android Dynamic Performance Framework]
 
 If you distribute on Google Play, follow these additional performance guidelines.
 
-**Tools to monitor and improve performance** Use Android vitals in [Play Console](https://play.google.com/console/about/vitals/) or the [reporting API](https://developers.google.com/play/developer/reporting) to monitor the performance metrics that matter most to users and Google Play. Android vitals reports startup time, loading time and rendering metrics daily for all apps and games. It also helps you compare your metrics to your peers, and alerts you if you're not meeting [Play's quality bar](/topic/performance/vitals#core-vitals).
+**Tools to monitor and improve performance** Use Android vitals in [Play Console](https://play.google.com/console/about/vitals/) or the [reporting API](https://developers.google.com/play/developer/reporting) to monitor the performance metrics that matter most to users and Google Play. Android vitals reports startup time, loading time and rendering metrics daily for all apps and games. It also helps you compare your metrics to your peers, and alerts you if you're not meeting [Play's quality bar](/google/play/vitals#core-vitals).
 
 [Play as you Download](/games/distribute/play-as-you-download) is a Google Play feature that allows users to get into your game experience while the game is still downloading, reducing the time from launch to gameplay.
 
-**Discovery and featuring** The discoverability of your app or game might be limited on devices where your performance metrics exceed Google Play's bad behavior threshold, and a warning might be shown on your store listing on those devices. [Learn more](/topic/performance/vitals#core-vitals)
+**Discovery and featuring** The discoverability of your app or game might be limited on devices where your performance metrics exceed Google Play's bad behavior threshold, and a warning might be shown on your store listing on those devices. [Learn more](/google/play/vitals#core-vitals)
 
 ## Battery and network usage
 
@@ -117,10 +118,10 @@ If you distribute on Google Play, follow these additional guidelines for ensurin
 
 **Tools to monitor and improve release quality** Play Console provides many features to help you [release with confidence](https://play.google.com/console/about/guides/releasewithconfidence/), and Android vitals reports hourly metrics for apps and games if there's sufficient data, both in [Play Console](https://play.google.com/console/about/vitals/) and the [reporting API](https://developers.google.com/play/developer/reporting).
 
-**Discovery and featuring** Google Play evaluates technical quality across all users of your app regardless of what version they are using. Managing your release quality is therefore not only better for users, it's also better for your Google Play quality metrics. [Learn more](/topic/performance/vitals#core-vitals)
+**Discovery and featuring** Google Play evaluates technical quality across all users of your app regardless of what version they are using. Managing your release quality is therefore not only better for users, it's also better for your Google Play quality metrics. [Learn more](/google/play/vitals#core-vitals)
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-03-06 UTC.
+Last updated 2026-09-21 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-03-06 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-21 UTC."],[],[]] 

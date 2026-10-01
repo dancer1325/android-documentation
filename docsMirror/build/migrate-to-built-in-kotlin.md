@@ -4,7 +4,8 @@
 
 ---
 
-#  Migrate to built-in Kotlin
+#  Migrate to built-in Kotlin Save and categorize content based on your preferences. 
+
 Android Gradle plugin 9.0 introduces built-in Kotlin support and enables it by default. That means you no longer have to apply the `org.jetbrains.kotlin.android` (or `kotlin-android`) plugin in your build files to compile Kotlin source files. With built-in Kotlin, your build files are simpler and you can avoid compatibility issues between AGP and the `kotlin-android` plugin.
 
 **Note:** Built-in Kotlin replaces the `kotlin-android` plugin only. If you are writing a Kotlin Multiplatform (KMP) library module, you still need to apply the `org.jetbrains.kotlin.multiplatform` plugin and the [`com.android.kotlin.multiplatform.library`](/kotlin/multiplatform/plugin) plugin. Also, using the `org.jetbrains.kotlin.multiplatform` plugin together with the `com.android.library` or `com.android.application` plugin is no longer allowed when built-in Kotlin is enabled.
@@ -41,6 +42,8 @@ This error occurs because built-in Kotlin requires some changes to your project.
   2. Migrate the `kotlin-kapt` plugin if necessary
   3. Migrate the `android.kotlinOptions{}` DSL if necessary
   4. Migrate the `kotlin.sourceSets{}` DSL if necessary
+
+
 
 ### 1\. Remove the `kotlin-android` plugin
 
@@ -322,6 +325,9 @@ If migrating all your modules at once is challenging, you can migrate one module
 
   4. Once you've migrated all your modules, remove the `android.builtInKotlin=false` setting in `gradle.properties` and the `com.android.built-in-kotlin` plugin in your build files.
 
+
+
+
 ## Option to selectively disable built-in Kotlin
 
 Android Gradle plugin 9.0 enables built-in Kotlin for all modules where it is applied. We recommend disabling built-in Kotlin selectively for modules that don't have Kotlin sources in large projects. This removes both the Kotlin compilation task, which has a small build performance cost, and the automatic dependency on the Kotlin standard library.
@@ -344,6 +350,6 @@ To disable built-in Kotlin for a module, set `enableKotlin = false` in that modu
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-03-19 UTC.
+Last updated 2026-09-15 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-03-19 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-15 UTC."],[],[]] 

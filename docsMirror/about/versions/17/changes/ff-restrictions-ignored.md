@@ -4,7 +4,8 @@
 
 ---
 
-#  Restrictions on orientation and resizability are ignored
+#  Restrictions on orientation and resizability are ignored Save and categorize content based on your preferences. 
+
 With Android apps now running on a variety of devices (such as phones, tablets, foldables, desktops, cars, and TVs) and windowing modes on large screens (such as split screen and desktop windowing), developers should build Android apps that adapt to any screen and window size, regardless of device orientation. Paradigms like restricting orientation and resizability are too restrictive in today's multidevice world.
 
 ## Ignore orientation, resizability, and aspect ratio restrictions
@@ -30,11 +31,13 @@ Allowing device rotation results in more activity re-creation, which can result 
 The following manifest attributes and runtime APIs are ignored across large screen devices in full-screen and multi-window modes:
 
   * [`screenOrientation`](/guide/topics/manifest/activity-element#screen)
-  * [`resizableActivity`](/guide/topics/manifest/activity-element#resizeableActivity)
+  * [`resizeableActivity`](/guide/topics/manifest/activity-element#resizeableActivity)
   * [`minAspectRatio`](/guide/topics/manifest/activity-element#minaspectratio)
   * [`maxAspectRatio`](/guide/topics/manifest/activity-element#maxaspectratio)
   * [`setRequestedOrientation()`](/reference/android/app/Activity#setRequestedOrientation\(int\))
   * [`getRequestedOrientation()`](/reference/android/app/Activity#getRequestedOrientation\(\))
+
+
 
 The following values for `screenOrientation, setRequestedOrientation()`, and `getRequestedOrientation()` are ignored:
 
@@ -47,6 +50,8 @@ The following values for `screenOrientation, setRequestedOrientation()`, and `ge
   * `sensorLandscape`
   * `userLandscape`
 
+
+
 Regarding display resizability, `android:resizeableActivity="false", android:minAspectRatio`, and `android:maxAspectRatio` have no effect.
 
 ## Exceptions
@@ -57,8 +62,10 @@ The Android 17 orientation, resizability, and aspect ratio restrictions don't ap
   * Users explicitly opting in to the app's default behavior in the device's aspect ratio settings
   * Screens whose smallest width is smaller than `sw600dp`
 
+
+
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-16 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-16 UTC."],[],[]] 

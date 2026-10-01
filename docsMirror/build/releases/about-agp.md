@@ -4,12 +4,11 @@
 
 ---
 
-#  About Android Gradle plugin
+#  About Android Gradle plugin Save and categorize content based on your preferences. 
+
 **Important:** For a detailed log of Android Gradle plugin API deprecations and removals, see the [Android Gradle plugin API updates](/studio/releases/gradle-plugin-api-updates).
 
 The Android Studio build system is based on Gradle, and the Android Gradle plugin adds several features that are specific to build Android apps.
-
-**Important:** You can use an agent skill to help you upgrade your project to AGP version 9.x. If your app doesn't use Kotlin Multiplatform (KMP), try the AGP 9 upgrade skill from the [Android skills repository](https://github.com/android/skills). If your app uses KMP, try the skill from [JetBrains](https://github.com/Kotlin/kotlin-agent-skills/tree/main/skills/kotlin-tooling-agp9-migration).
 
 This page explains how to keep your Gradle tools up to date. For release notes on the Android Gradle plugin, see the [release notes page](/build/releases/gradle-plugin).
 
@@ -22,33 +21,44 @@ For details about how to configure your Android builds with Gradle, see the foll
   * [Gradle DSL reference](https://docs.gradle.org/current/dsl/)
   * [Gradle performance user guide](https://docs.gradle.org/current/userguide/performance.html)
 
+
+
 For more information about the Gradle build system, see the [Gradle user guide](https://docs.gradle.org/current/userguide/userguide.html).
+
+Use the AGP 9 Upgrade [Android skill](/tools/agents/android-skills) to upgrade your project to AGP version 9.x (non-KMP projects).
+
+To install the skill from the [Android CLI](/tools/agents/android-cli), run:
+    
+    
+    android skills add agp-9-upgrade
+
+If your app uses Kotlin Multiplatform (KMP), use the skill from [JetBrains](https://github.com/Kotlin/kotlin-agent-skills/tree/main/skills/kotlin-tooling-agp9-migration).
 
 ## Update the Android Gradle plugin
 
 When you update Android Studio, you may receive a prompt to automatically update the Android Gradle plugin to the latest available version. You can choose to accept the update or manually specify a version based on your project's build requirements. 
 
-You can specify the plugin version in either the **File** > **Project Structure** > **Project** menu in Android Studio, or the top-level `build.gradle.kts` file. The plugin version applies to all modules built in that Android Studio project. The following example sets the plugin to version 9.2.0 from the `build.gradle.kts` file: 
+You can specify the plugin version in either the **File** > **Project Structure** > **Project** menu in Android Studio, or the top-level `build.gradle.kts` file. The plugin version applies to all modules built in that Android Studio project. The following example sets the plugin to version 9.4.0 from the `build.gradle.kts` file: 
 
 ### Kotlin
     
     
     plugins {
-        id("com.android.application") version "9.2.0" apply false
-        id("com.android.library") version "9.2.0" apply false
-        id("org.jetbrains.kotlin.android") version "2.3.21" apply false
+        id("com.android.application") version "9.4.0" apply false
+        id("com.android.library") version "9.4.0" apply false
+        id("org.jetbrains.kotlin.android") version "2.4.10" apply false
     }
 
 ### Groovy
     
     
     plugins {
-        id 'com.android.application' version '9.2.0' apply false
-        id 'com.android.library' version '9.2.0' apply false
-        id 'org.jetbrains.kotlin.android' version '2.3.21' apply false
+        id 'com.android.application' version '9.4.0' apply false
+        id 'com.android.library' version '9.4.0' apply false
+        id 'org.jetbrains.kotlin.android' version '2.4.10' apply false
     }
 
-**Caution:** You should not use dynamic dependencies in version numbers, such as `'com.android.tools.build:gradle:9.2.+'`. Using this feature can cause unexpected version updates and difficulty resolving version differences. 
+**Caution:** You should not use dynamic dependencies in version numbers, such as `'com.android.tools.build:gradle:9.4.+'`. Using this feature can cause unexpected version updates and difficulty resolving version differences. 
 
 If the specified plugin version has not been downloaded, Gradle downloads it the next time you build your project or click **File** > **Sync Project with Gradle Files** from the Android Studio menu bar. 
 
@@ -60,6 +70,8 @@ The following table lists which version of Gradle is required for each version o
 
 Plugin version| Minimum required Gradle version  
 ---|---  
+9.4| 9.6.0  
+9.3| 9.5.0  
 9.2| 9.4.1  
 9.1| 9.3.1  
 9.0| 9.1.0  
@@ -104,17 +116,17 @@ Plugin version| Required Gradle version
 1.2.0 - 1.3.1| 2.2.1 - 2.9  
 1.0.0 - 1.1.3| 2.2.1 - 2.3  
   
-You can specify the Gradle version in either the **File** > **Project Structure** > **Project** menu in Android Studio, or update your Gradle version using the command line. The preferred way is to use the [Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html) command line tool, which updates the `gradlew` scripts. The following example sets the Gradle version to 9.4.1 using the Gradle Wrapper. Note, you need to run this command _twice_ to upgrade both Gradle and the Gradle Wrapper itself (for more information, see [Upgrading the Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html#sec:upgrading_wrapper)). 
+You can specify the Gradle version in either the **File** > **Project Structure** > **Project** menu in Android Studio, or update your Gradle version using the command line. The preferred way is to use the [Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html) command line tool, which updates the `gradlew` scripts. The following example sets the Gradle version to 9.6.0 using the Gradle Wrapper. Note, you need to run this command _twice_ to upgrade both Gradle and the Gradle Wrapper itself (for more information, see [Upgrading the Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html#sec:upgrading_wrapper)). 
     
     
-    gradle wrapper --gradle-version 9.4.1
+    gradle wrapper --gradle-version 9.6.0
     
 
-However this might fail in some cases, for example if you've just updated AGP and it's no longer compliant with the current Gradle version. In this case, you need to edit the Gradle distribution reference in the `gradle/wrapper/gradle-wrapper.properties` file. The following example sets the Gradle version to 9.4.1 in the `gradle-wrapper.properties` file. 
+However this might fail in some cases, for example if you've just updated AGP and it's no longer compliant with the current Gradle version. In this case, you need to edit the Gradle distribution reference in the `gradle/wrapper/gradle-wrapper.properties` file. The following example sets the Gradle version to 9.6.0 in the `gradle-wrapper.properties` file. 
     
     
     ...
-    distributionUrl = https\://services.gradle.org/distributions/gradle-9.4.1-bin.zip
+    distributionUrl = https\://services.gradle.org/distributions/gradle-9.6.0-bin.zip
     ...
     
 
@@ -124,6 +136,9 @@ The Android Studio build system is based on Gradle, and the Android Gradle plugi
 
 There is now a time-based compatibility policy for AGP and Android Studio. Each Android Studio version will support AGP versions released within the previous 3 years. AGP versions older than 3 years will no longer be supported in newer Android Studio versions. If your project's AGP version is incompatible, Android Studio will require you to update AGP.  If your project is not supported by a specific version of Android Studio, you can still open and update your project using an [older version of Android Studio](/studio/archive). Android Studio version | Required AGP version  
 ---|---  
+Quail 4 | 2026.1.4 | 7.1-9.4  
+Quail 3 | 2026.1.3 | 7.1-9.3  
+Quail 2 | 2026.1.2 | 7.1-9.3  
 Quail 1 | 2026.1.1 | 7.1-9.2  
 Panda 4 | 2025.3.4 | 7.1-9.2  
 Panda 3 | 2025.3.3 | 7.0-9.1  
@@ -175,6 +190,6 @@ API level | Minimum Android Studio version | Minimum AGP version | 37.0 | Panda 
   
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-07-10 UTC.
+Last updated 2026-09-24 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-07-10 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-24 UTC."],[],[]] 

@@ -4,10 +4,18 @@
 
 ---
 
-#  Use the Android Gradle plugin Upgrade Assistant
+#  Use the Android Gradle plugin Upgrade Assistant Save and categorize content based on your preferences. 
+
 The Android Gradle plugin (AGP) Upgrade Assistant is a tool in Android Studio that helps you upgrade the version of AGP used by your project.
 
-**Important:** You can use an agent skill to help you upgrade your project to AGP version 9.x. If your app doesn't use Kotlin Multiplatform (KMP), try the AGP 9 upgrade skill from the [Android skills repository](https://github.com/android/skills). If your app uses KMP, try the skill from [JetBrains](https://github.com/Kotlin/kotlin-agent-skills/tree/main/skills/kotlin-tooling-agp9-migration).
+Use the AGP 9 Upgrade [Android skill](https://developer.android.com/tools/agents/android-skills) to upgrade your project to AGP version 9.x (non-KMP projects).
+
+To install the skill from the [Android CLI](https://developer.android.com/tools/agents/android-cli), run:
+    
+    
+    android skills add agp-9-upgrade
+
+If your app uses Kotlin Multiplatform (KMP), use the skill from [JetBrains](https://github.com/Kotlin/kotlin-agent-skills/tree/main/skills/kotlin-tooling-agp9-migration).
 
 There are frequent releases for AGP changes related to new features for configuring your build, new APIs for use by other Gradle plugins, and refinements to the integration of the project build with Android Studio. Upgrading the version of AGP used by your project lets you benefit from the latest features.
 
@@ -22,6 +30,9 @@ The AGP Upgrade Assistant guides you through the changes needed to upgrade AGP v
   * **Compatibility requirements between AGP and Gradle** : The Upgrade Assistant is aware of the [compatibility requirements between AGP and Gradle](/studio/releases/gradle-plugin?buildsystem=ndk-build#updating-gradle) and helps ensure that you are using the version of Gradle required for your version of AGP.
 
   * **Compatibility requirements between AGP and third-party Gradle plugins** : The Upgrade Assistant is aware of the compatibility requirements between AGP and some third-party Gradle plugins and helps ensure that you are using the versions of third-party Gradle plugins that are required for your version of AGP.
+
+
+
 
 In general, the Upgrade Assistant makes it easier to update build files and understand related error messages after an AGP upgrade. The Upgrade Assistant also explains why the proposed changes are necessary.
 
@@ -42,6 +53,8 @@ To get the best use out of the AGP Upgrade Assistant, do the following:
 **Note:** The Upgrade Assistant does not support projects that refer to constants or variables defined in the `buildSrc` directory, projects that use Gradle Version Catalogs defined in settings files, or projects that refer to Gradle Version Catalogs for things other than dependencies and plugins. In general, we don't recommended using `buildSrc` to structure your project, because it can be inefficient. Any change to `buildSrc` constants and variables, no matter how minor, triggers a full rebuild of the project.
 
   * **Use the declarative build domain-specific language** : Gradle build files are expressed in Groovy or Kotlin. However, the more declarative the expression of the project configuration, the more likely that the Upgrade Assistant successfully finds all the places that need adjustment for an upgrade.
+
+
 
 Even if a project conforms to these limitations, the Upgrade Assistant might still fail to perform a clean upgrade. See Troubleshoot errors for guidance on how to resolve or report bugs.
 
@@ -73,6 +86,9 @@ The Upgrade Assistant changes the project build files and attempts to sync the n
 
   6. Once you have verified that your project is in a good state, commit the new version of your project to your version control system.
 
+
+
+
 ## Troubleshoot errors
 
 If the Upgrade Assistant suggests an upgrade but the upgrade fails, this is typically the result of making changes to the build files, resulting in a sync failure. Follow these steps to help isolate and fix the error:
@@ -80,6 +96,9 @@ If the Upgrade Assistant suggests an upgrade but the upgrade fails, this is typi
   * First, inspect the error that led to the sync failure. Sometimes, the error has a clear cause, which you can address in the project's build files.
 
   * If the error message is not clear, or it's not obvious what is causing the problem, then return the project to its original state to break the upgrade down into smaller steps. Restore the original state from version control, or from backups, and make sure the project is in its original state and synced with Android Studio.
+
+
+
 
 Investigate the error by following two kinds of upgrade breakdowns:
 
@@ -89,8 +108,11 @@ Investigate the error by following two kinds of upgrade breakdowns:
 
   * **[Report a bug](/studio/report-bugs).** Sometimes all the preparatory steps and sync succeed but the final upgrade step still fails. In this case, please report a bug. Even if you succeed in fixing the error yourself, [report the original failure](/studio/report-bugs) to the bug tracker, so that the problem can be addressed by the development team.
 
+
+
+
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-04-16 UTC.
+Last updated 2026-09-01 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-16 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-01 UTC."],[],[]] 

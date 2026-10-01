@@ -4,13 +4,16 @@
 
 ---
 
-#  Compose modifiers
+#  Compose modifiers Save and categorize content based on your preferences. 
+
 Modifiers allow you to decorate or augment a composable. Modifiers let you do these sorts of things:
 
   * Change the composable's size, layout, behavior, and appearance
   * Add information, like accessibility labels
   * Process user input
   * Add high-level interactions, like making an element clickable, scrollable, draggable, or zoomable
+
+
 
 Modifiers are standard Kotlin objects. Create a modifier by calling one of the [`Modifier`](/reference/kotlin/androidx/compose/ui/Modifier) class functions:
     
@@ -23,7 +26,7 @@ Modifiers are standard Kotlin objects. Create a modifier by calling one of the [
         }
     }
     
-    [ModifierSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L47-L53)
+    [ModifierSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L47-L53)
 
 ![Two lines of text on a colored background, with padding around the text.](/static/develop/ui/compose/images/modifier-1-modifier.png)
 
@@ -42,7 +45,7 @@ You can chain these functions together to compose them:
         }
     }
     
-    [ModifierSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L59-L69)
+    [ModifierSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L59-L69)
 
 ![The colored background behind the text now extends the full width of the device.](/static/develop/ui/compose/images/modifier-chained.png)
 
@@ -50,6 +53,8 @@ In the code above, notice different modifier functions used together.
 
   * `padding` puts space around an element.
   * `fillMaxWidth` makes the composable fill the maximum width given to it from its parent.
+
+
 
 It's a best practice to have _all_ of your composables accept a `modifier` parameter, and pass that modifier to its first child that emits UI. Doing so makes your code more reusable and makes its behavior more predictable and intuitive. For more information, see the Compose API guidelines, [Elements accept and respect a Modifier parameter](https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/docs/compose-api-guidelines.md#elements-accept-and-respect-a-modifier-parameter).
 
@@ -71,7 +76,7 @@ The order of modifier functions is **significant**. Since each function makes ch
         }
     }
     
-    [ModifierSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L77-L88)
+    [ModifierSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L77-L88)
 
 ![The entire area, including the padding around the edges, responds to clicks](/static/develop/ui/compose/images/layout-padding-clickable.gif)
 
@@ -91,7 +96,7 @@ In the code above the whole area is clickable, including the surrounding padding
         }
     }
     
-    [ModifierSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L96-L107)
+    [ModifierSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L96-L107)
 
 ![The padding around the edge of the layout no longer responds to clicks](/static/develop/ui/compose/images/layout-padding-not-clickable.gif)
 
@@ -118,7 +123,7 @@ By default, layouts provided in Compose wrap their children. However, you can se
         }
     }
     
-    [ModifierSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L113-L121)
+    [ModifierSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L113-L121)
 
 Note that the size you specified might not be respected if it does not satisfy the constraints coming from the layout's parent. If you require the composable size to be fixed regardless of the incoming constraints, use the `requiredSize` modifier:
     
@@ -136,7 +141,7 @@ Note that the size you specified might not be respected if it does not satisfy t
         }
     }
     
-    [ModifierSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L127-L138)
+    [ModifierSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L127-L138)
 
 ![Child image is bigger than the constraints coming from its parent](/static/develop/ui/compose/images/layout-requiredsize-new.png)
 
@@ -160,7 +165,7 @@ If you want a child layout to fill all the available height allowed by the paren
         }
     }
     
-    [ModifierSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L144-L155)
+    [ModifierSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L144-L155)
 
 ![The image height is as big as its parent](/static/develop/ui/compose/images/layout-fillmaxheight.png)
 
@@ -182,7 +187,7 @@ If you want to add padding above a text baseline such that you achieve a specifi
         }
     }
     
-    [ModifierSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L161-L172)
+    [ModifierSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L161-L172)
 
 ![Text with padding above it](/static/develop/ui/compose/images/layout-paddingfrombaseline-new.png)
 
@@ -204,7 +209,7 @@ To position a layout relative to its original position, add the [`offset`](/refe
         }
     }
     
-    [ModifierSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L178-L189)
+    [ModifierSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L178-L189)
 
 ![Text shifted to the right side of its parent container](/static/develop/ui/compose/images/layout-offset-new.png)
 
@@ -245,7 +250,7 @@ In the example below, the child `Spacer` takes its size from its parent `Box`, w
         }
     }
     
-    [ModifierSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L195-L205)
+    [ModifierSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L195-L205)
 
 ![Gray background filling its container](/static/develop/ui/compose/images/layout-matchparentsize-new.png)
 
@@ -277,7 +282,7 @@ Let’s take a `Row` that contains two `Box` composables. The first box is given
         }
     }
     
-    [ModifierSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L211-L226)
+    [ModifierSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L211-L226)
 
 ![The image width is twice text width](/static/develop/ui/compose/images/layout-weight.png)
 
@@ -293,6 +298,8 @@ Sometimes it can be beneficial to reuse the same modifier chain instances in mul
   * Modifier chains could potentially be very long and complex, so reusing the same instance of a chain can alleviate the workload Compose runtime needs to do when comparing them
   * This extraction promotes code cleanliness, consistency and maintainability across the codebase
 
+
+
 ### Best practices for reusing modifiers
 
 Create your own `Modifier` chains and extract them to reuse them on multiple composable components. It is completely fine to just save a modifier, as they are data-like objects:
@@ -303,7 +310,7 @@ Create your own `Modifier` chains and extract them to reuse them on multiple com
         .background(Color.Red)
         .padding(12.dp)
     
-    [ModifierSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L232-L235)
+    [ModifierSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L232-L235)
 
 #### Extracting and reusing modifiers when observing frequently changing state
 
@@ -323,7 +330,7 @@ When observing frequently changing states inside composables, like animation sta
         )
     }
     
-    [ModifierSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L241-L252)
+    [ModifierSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L241-L252)
 
 Instead, you can create, extract and reuse the same instance of the modifier and pass it to the composable like this:
     
@@ -344,7 +351,7 @@ Instead, you can create, extract and reuse the same instance of the modifier and
         )
     }
     
-    [ModifierSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L258-L272)
+    [ModifierSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L258-L272)
 
 #### Extracting and reusing unscoped modifiers
 
@@ -368,7 +375,7 @@ Modifiers can be unscoped or scoped to a specific composable. In the case of uns
         )
     }
     
-    [ModifierSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L278-L293)
+    [ModifierSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L278-L293)
 
 This can be especially beneficial when combined with Lazy layouts. In most cases, you’d want all of your, potentially significant, amount of items to have the exact same modifiers:
     
@@ -390,7 +397,7 @@ This can be especially beneficial when combined with Lazy layouts. In most cases
         }
     }
     
-    [ModifierSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L299-L314)
+    [ModifierSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L299-L314)
 
 #### Extracting and reusing scoped modifiers
 
@@ -414,7 +421,7 @@ When dealing with modifiers that are scoped to certain composables, you can extr
         // ...
     }
     
-    [ModifierSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L321-L336)
+    [ModifierSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L321-L336)
 
 You should only be passing the extracted, scoped modifiers to the same-scoped, direct children. See the section [Scope safety in Compose](/develop/ui/compose/modifiers#scope-safety) for more reference on why this matters:
     
@@ -438,7 +445,7 @@ You should only be passing the extracted, scoped modifiers to the same-scoped, d
         }
     }
     
-    [ModifierSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L343-L360)
+    [ModifierSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L343-L360)
 
 #### Further chaining of extracted modifiers
 
@@ -456,7 +463,7 @@ You can further chain or append your extracted modifier chains by calling the [`
     // Append your reusableModifier
     otherModifier.then(reusableModifier)
     
-    [ModifierSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L372-L381)
+    [ModifierSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/modifiers/ModifierSnippets.kt#L372-L381)
 
 Just keep in mind that [the order of modifiers matters!](/develop/ui/compose/modifiers#order-modifier-matters)
 
@@ -475,12 +482,14 @@ For more information on custom modifiers and how to create them, take a look at 
   * [Editor actions {:#editor-actions}](/develop/ui/compose/tooling/editor-actions)
   * [Custom layouts {:#custom-layouts }](/develop/ui/compose/layouts/custom)
 
+
+
 [ Previous arrow_back  Layout basics  ](/develop/ui/compose/layouts/basics)
 
 [ Next Constraints and modifier order  arrow_forward  ](/develop/ui/compose/layouts/constraints-modifiers)
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-22 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-22 UTC."],[],[]] 

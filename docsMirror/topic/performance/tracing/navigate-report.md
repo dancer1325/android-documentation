@@ -4,7 +4,8 @@
 
 ---
 
-#  Navigate a Systrace report
+#  Navigate a Systrace report Save and categorize content based on your preferences. 
+
 This guide explains how to navigate around and interpret a [Systrace](/topic/performance/tracing) report. To interpret a Perfetto report, see the [Trace Processor](https://perfetto.dev/#/trace-processor.md) documentation.
 
 ## Elements of a typical report
@@ -94,6 +95,8 @@ When navigating around a Systrace report, you can identify performance concerns 
   * Mark or highlight a problem area using the ruler tool.
   * Show each display refresh operation by clicking **View Options > Highlight VSync**.
 
+
+
 ### Inspect UI frames and alerts
 
 **Note:** The content in this section is relevant only to managed code, as Systrace looks at the system's Java-based choreographer to provide frame information. For guidance specific to native code, particularly games, see the discussion on [framerate consistency](/topic/performance/games#framerate-consistency).
@@ -118,6 +121,8 @@ If you see too much work being done on the UI thread, use one of the following a
 
   * If you have an idea as to which methods could be causing bottlenecks, add trace markers to these methods. To learn more, see the guide on how to [define custom events in your code](/topic/performance/tracing/custom-events).
   * If you're unsure as to the source of UI bottlenecks, use the [CPU Profiler](/studio/profile/cpu-profiler) that's available in Android Studio. You can [generate trace logs](/studio/profile/generate-trace-logs), and then import and inspect them using the CPU Profiler.
+
+
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

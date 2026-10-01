@@ -3,6 +3,9 @@
 **Source:** [https://developer.android.com/about/versions](https://developer.android.com/about/versions)
 
 ---
+
+Save and categorize content based on your preferences. 
+
 ###  [ ![Android 16](/static/images/about/versions/16/android-16-wordmark.png) ](https://developer.android.com/about/versions/16)
 
 Android 16 continues our mission of building a private and secure platform that helps improve your productivity while giving you new capabilities to produce beautiful apps, superior media and camera experiences, and an intuitive user experience, particularly on tablets and foldables.
@@ -20,8 +23,6 @@ Android 15 continues our mission of building a private and secure platform that 
 Build richer camera and media experiences with Ultra HDR, more camera extensions, and lossless USB audio. Simplify sign-in using Credential Manager, and provide health and fitness insights securely using Health Connect. Make your app more expressive and personal with predictive back, per-app languages, grammatical inflection, and more. Deliver engaging, differentiated experiences on large screens.
 
 [Home](https://developer.android.com/about/versions/14)
-
-##  Older releases 
 
 ###  [ Android 13 ](https://developer.android.com/about/versions/13)
 

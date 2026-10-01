@@ -4,7 +4,8 @@
 
 ---
 
-#  Set up continuous integration
+#  Set up continuous integration Save and categorize content based on your preferences. 
+
 Continuous integration systems let you automatically build and test your app every time you check in updates to your source control system. You can use any continuous integration tool that can initiate a Gradle build to build your Android Studio projects.
 
 To run tests as part of the build, you need to either configure your continuous integration server to use the [Android Emulator](/studio/run/emulator-commandline) or use [Firebase Test Lab](https://firebase.google.com/docs/test-lab/) to run your tests.

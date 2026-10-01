@@ -3,6 +3,9 @@
 **Source:** [https://developer.android.com/develop/connectivity](https://developer.android.com/develop/connectivity)
 
 ---
+
+Save and categorize content based on your preferences. 
+
 ![](https://developer.android.com/static/images/hero-illustrations/better-together-hero.svg)
 
 ###  Connectivity 
@@ -10,10 +13,6 @@
 Connect your app to the outside world, whether it's through Bluetooth, Wi‑Fi or cellular network, USB, or another standard protocol. 
 
 [Go to the guides](https://developer.android.com/develop/connectivity/overview)
-
-##  Common protocols 
-
-Android supports a variety of standard communication protocols. 
 
 Guide
 
@@ -57,12 +56,6 @@ Guide
 
 Measure precise ranging between devices. 
 
-![](https://developer.android.com/static/images/logos/android.svg)
-
-##  Bluetooth 
-
-Use the Bluetooth protocol that matches your app needs and use cases. 
-
 ###  [ Bluetooth Classic ](https://developer.android.com/develop/connectivity/bluetooth/setup)
 
 Exchange data with other devices. 
@@ -74,12 +67,6 @@ Exchange smaller data chunks using less energy.
 ###  [ BLE Audio ](https://developer.android.com/develop/connectivity/bluetooth/ble-audio/overview)
 
 Receive high-fidelity audio using less energy. 
-
-![](https://developer.android.com/static/images/logos/android.svg)
-
-##  Wi‑Fi 
-
-Use the Wi-Fi protocol that matches your app needs and use cases. 
 
 ###  [ Wi-Fi access ](https://developer.android.com/develop/connectivity/wifi/wifi-scan)
 
@@ -96,10 +83,6 @@ Enable direct connections between Android 8.0+ devices.
 ###  [ Wi-Fi RTT (Round-Trip Time) ](https://developer.android.com/develop/connectivity/wifi/wifi-rtt)
 
 Measure distances between nearby access points and devices. 
-
-##  Optimize your app for connectivity 
-
-Get the most out of using communications technology with your app. 
 
 Guide
 

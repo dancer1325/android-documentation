@@ -4,15 +4,12 @@
 
 ---
 
-**Some Privacy Sandbox technologies are being phased out.**   
-  
-See our [Update on Plans for Privacy Sandbox Technologies](https://privacysandbox.com/news/update-on-plans-for-privacy-sandbox-technologies/).   
-  
-[Privacy Sandbox feature status](/overview/status) provides more information about the status of individual APIs and platform features. 
-
   * [ Privacy Sandbox ](https://privacysandbox.google.com/)
 
-Send feedback
+
+
+Save and categorize content based on your preferences. 
+
 ![](https://privacysandbox.google.com/static/privacy-sandbox-logo.svg)
 
 ###  Privacy Sandbox 
@@ -20,8 +17,6 @@ Send feedback
 Multiple technologies have been developed as part of the Privacy Sandbox initiative.  
   
 We will continue to retain information on this site, even for features that have not been implemented or that are scheduled to be phased out. 
-
-##  Learn more 
 
 [ ![](https://privacysandbox.google.com/static/overview/image/cookie.png) ](https://privacysandbox.google.com/cookies)
 
@@ -43,4 +38,4 @@ Except as otherwise noted, the content of this page is licensed under the [Creat
 
 Last updated 2025-10-17 UTC.
 
-Need to tell us more?  [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-10-17 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-10-17 UTC."],[],[]] 

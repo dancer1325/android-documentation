@@ -4,13 +4,9 @@
 
 ---
 
-#  Android Studio release names
-Each Android Studio release goes through the following stages of development:
+#  Android Studio release names Save and categorize content based on your preferences. 
 
-  * [**Canary**](/studio/preview) \- Leading edge features under active development, lightly tested. While you can use Canary builds for development, be aware that features might be added or changed.
-  * [**Release Candidate (RC)**](/studio/preview) \- The next version of Android Studio that's almost ready for stable release. The feature set for the next version has been stabilized.
-  * [**Stable**](/studio) \- The final version of Android Studio.
-  * [**Patch n**](/studio) \- Updates to a version of Android Studio, typically for bug fixes. Might contain new minor features.
+Each Android Studio release goes through the following stages of development:
 
 There are two types of Android Studio releases:
 
@@ -21,6 +17,9 @@ The first version in each animal cycle (for example, Android Studio Panda 1) is 
   * **Feature Drop** \- Contains new Android Studio features and bug fixes.
 
 Every version after the first one in each animal cycle is a feature drop release (for example, Android Studio Panda 2).
+
+
+
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

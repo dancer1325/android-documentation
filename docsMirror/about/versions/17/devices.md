@@ -3,15 +3,14 @@
 **Source:** [https://developer.android.com/about/versions/17/devices](https://developer.android.com/about/versions/17/devices)
 
 ---
+
+Save and categorize content based on your preferences. 
+
 ![](https://developer.android.com/static/about/versions/17/images/android-17-logo.svg)
 
 ###  Android 17 Beta devices 
 
 Android 17 Beta is available on a range of popular devices from our device-maker partners. Try it today on an eligible device! 
-
-##  Partners and eligible devices 
-
-See the following device-maker partner sites for a list of their devices that are eligible for Android 17 Beta and for details about which Beta builds are available. For updates and support, see the resources that each device-maker has linked on their Android 17 Beta site. Note that each partner will handle their own enrollments and support, and provide the Beta updates to you directly. We will add links to additional device-marker partner sites as they become available. 
 
 [ ![](https://developer.android.com/static/about/versions/17/images/devices/Google-white-bg.png) ](https://www.google.com/android/beta)
 

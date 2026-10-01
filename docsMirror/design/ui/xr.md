@@ -4,7 +4,15 @@
 
 ---
 
-The Android XR SDK is now available in Developer Preview. We want your feedback! Visit our [support page](/develop/xr/support) to reach out.
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Design & Plan ](https://developer.android.com/design)
+  * [ UI Design ](https://developer.android.com/design/ui)
+  * [ XR Headsets & wired XR Glasses ](https://developer.android.com/design/ui/xr)
+
+
+
+Save and categorize content based on your preferences. 
+
 ![](https://developer.android.com/static/images/design/ui/xr/xr-design.png)
 
 ###  Design for Immersive Android XR 
@@ -23,8 +31,6 @@ Android XR is a flexible platform where you can design immersive experiences and
 
 Create a brand new experience from the ground up - or add immersive elements to an existing app using Android Jetpack XR, Unity, OpenXR, or WebXR.
 
-##  Android XR design options 
-
 [ ![](https://developer.android.com/static/images/design/ui/xr/differentiated-apps.png) ](https://developer.android.com/design/ui/xr/guides)
 
 ###  [ Design Android XR differentiated apps ](https://developer.android.com/design/ui/xr/guides)
@@ -40,8 +46,6 @@ Create scenes that delight users with spatial panels, tangible 3D content, dynam
 Build an app that's compatible across platforms with advanced immersive tools. 
 
 [Learn more](https://developer.android.com/design/ui/xr/guides/openxr)
-
-##  Get started 
 
 [ ![](https://developer.android.com/static/images/design/ui/xr/getting-started.svg) ](https://developer.android.com/design/ui/xr/guides/get-started)
 
@@ -130,8 +134,6 @@ Motion can transform your XR app from a static scene into an interactive experie
 Material Design for XR provides components and layouts that adapt for XR. If your large-screen app aligns with Material Design guidelines, its typography, target sizes, and components are compatible with Android XR. 
 
 [Get started with the Material 3 Design Kit](https://www.figma.com/community/file/1035203688168086460)
-
-##  Develop for Android XR 
 
 [ ![](https://developer.android.com/static/images/design/ui/mobile/guides-developer.png) ](https://developer.android.com/develop/xr/get-started)
 

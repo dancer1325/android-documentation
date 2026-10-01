@@ -4,7 +4,8 @@
 
 ---
 
-#  Process Memory (RSS)
+#  Process Memory (RSS) Save and categorize content based on your preferences. 
+
 For apps deployed to devices running Android 9 or higher, the **Process Memory (RSS)** section shows the amount of physical memory in use by the app.
 
 ![](/static/studio/images/profile/system-trace-process-memory.png)
@@ -22,6 +23,9 @@ For Windows developers, Resident Set Size is analogous to the Working Set Size.
   * **File Mappings** : This counter tracks the amount of physical memory the process is using for file mappings—that is, memory mapped from files into a region of memory by the memory manager.
 
   * **Shared** : This counter tracks how much physical memory is being used to share memory between this process and other processes in the system.
+
+
+
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

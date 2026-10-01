@@ -4,7 +4,8 @@
 
 ---
 
-#  Configure how R8 runs
+#  Configure how R8 runs Save and categorize content based on your preferences. 
+
 The settings plugin lets you create execution profiles for the R8 tool, letting you configure how R8 runs so it doesn't slow down your build. Depending on the environment, you can use profiles to run R8 in a separate JVM process and set JVM arguments, such as maximum heap size.
 
 ### Declare an execution profile

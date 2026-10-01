@@ -4,10 +4,11 @@
 
 ---
 
-#  Analyze issues from Firebase Crashlytics and Android Vitals with App Quality Insights
-**Note:** App Quality Insights is only available in the latest stable channel version of Android Studio and major versions (including their patches) released in the previous 10 months. Currently, the oldest supported version is **Narwhal 4 Feature Drop**. If you are using an older version of Android Studio, you will need to update to use App Quality Insights. For more information, see [Android Studio and Cloud services compatibility](/studio/releases#service-compat).**Tip:** To accelerate your debugging process, [analyze crashes with App Quality Insights and Gemini](/studio/gemini/analyze-crashes-with-aqi)
+#  Analyze issues from Firebase Crashlytics and Android Vitals with App Quality Insights Save and categorize content based on your preferences. 
 
-You can see and act on app crash data from [Firebase Crashlytics](https://firebase.google.com/products/crashlytics) and [Android Vitals](/topic/performance/vitals) directly in Android Studio. This integration pulls stack trace data and crash statistics from Crashlytics and Google Play into the **App Quality Insights** tool window in the Studio IDE, so you don't have to jump back and forth between your browser and the IDE. Development teams can benefit from key capabilities including the following:
+**Note:** App Quality Insights is only available in the latest stable channel version of Android Studio and major versions (including their patches) released in the previous 10 months. Currently, the oldest supported version is **Otter 3 Feature Drop**. If you are using an older version of Android Studio, you will need to update to use App Quality Insights. For more information, see [Android Studio and Cloud services compatibility](/studio/releases#service-compat).**Tip:** To accelerate your debugging process, [analyze crashes with App Quality Insights and Gemini](/studio/gemini/analyze-crashes-with-aqi)
+
+You can see and act on app crash data from [Firebase Crashlytics](https://firebase.google.com/products/crashlytics) and [Android Vitals](/google/play/vitals) directly in Android Studio. This integration pulls stack trace data and crash statistics from Crashlytics and Google Play into the **App Quality Insights** tool window in the Studio IDE, so you don't have to jump back and forth between your browser and the IDE. Development teams can benefit from key capabilities including the following:
 
   * See lines in your code highlighted when they have related Crashlytics event data.
   * See the stack trace for top crashes and click on the stack trace to jump to the relevant lines in your code.
@@ -15,6 +16,8 @@ You can see and act on app crash data from [Firebase Crashlytics](https://fireba
   * Filter events by attributes including severity, time, and app version.
   * Get a browser link that opens the Crashlytics dashboard page with more details about the event.
   * Get insights that help you more easily understand and resolve root causes of certain issues.
+
+
 
 Android Vitals reports are available to all apps published to Google Play. If you're not using Crashlytics yet and would like to learn more about its offerings, see [Firebase Crashlytics](https://firebase.google.com/products/crashlytics).
 
@@ -26,7 +29,7 @@ If you've already added Firebase and Crashlytics to your app, sign in to your De
 
 ## Analyze Android vitals
 
-**App Quality Insights** includes [Android vitals](/topic/performance/vitals) data. This lets you more easily access core metrics collected by Google Play and improve your user experience. Use Android vitals to address issues related to app stability to help improve the quality of your app on Google Play.
+**App Quality Insights** includes [Android vitals](/google/play/vitals) data. This lets you more easily access core metrics collected by Google Play and improve your user experience. Use Android vitals to address issues related to app stability to help improve the quality of your app on Google Play.
 
 ![Android vitals data in Android Studio.](/static/studio/images/aqi-vitals.png)
 
@@ -38,6 +41,8 @@ You can view Android vitals issues, filter them, and jump from stack trace to co
   4. Optional: To use version control integration for a debuggable build, add the latest [Firebase Crashlytics SDK](https://firebase.google.com/docs/crashlytics/android/get-started#add-sdk) (or Firebase Android Bill of Materials) to your app. Then add the following code to the module-level `build.gradle.kts` or `build.gradle` file. Release (non-debuggable) builds have the flag enabled by default.
 
 **Note:** App Quality Insights only supports version control using git.
+
+
 
 ### Kotlin
     
@@ -85,6 +90,8 @@ There is also information about the device type affected, its Android version, a
   7. Read and attach notes to issues so that they are visible in the Firebase Console and your teammates. To write a note about an issue, select the issue and open the **Notes** panel. You must have write permission to the Crashlytics project in order to write notes. Issues with notes appear with a "notes" icon ![](/static/studio/preview/features/images/aqi-notes-icon.png) in the **Issues** panel.  ![App Quality Insights Notes panel.](/static/studio/images/aqi-notes-panel.png)
   8. Use the variety of filters to hone in on certain subsets of events. You can select or deselect events that are Fatal ![](/static/studio/images/aqi-fatal-icon.png), Non-Fatal ![](/static/studio/images/aqi-nonfatal-icon.png), and [ANRs](/topic/performance/anrs/keep-your-app-responsive) ![](/static/studio/images/aqi-anr-icon.png), as well as filter by time, app version, [Crashlytics Signal](https://firebase.google.com/support/releases#october_8_2021), device make and model, and Android platform version. Note that for the Crashlytics Signal states, an issue is considered _regressed_ when it's been closed in the past and has occurred again in a new version of the app.
 
+
+
 In addition to being able to navigate from stack trace to code, you can also jump from code to stack trace: Android Studio now annotates lines of code that are related to crashes with a crash gutter icon ![](/static/studio/images/aqi-crash-icon.png) so you can easily spot and debug them.
 
 When you hover over the crash icon, a pop-up appears that shows how many events involve that line of code, and the event frequencies.
@@ -102,6 +109,8 @@ Note that Android vitals and Crashlytics might report different values for the n
   * Play catches crashes starting at boot time, whereas Crashlytics catches crashes that happen after the Crashlytics SDK initializes.
   * If a user opts out of crash reporting when they get a new phone, those crashes aren't reported to Play; however, Crashlytics catches crashes based on an app's own privacy policy.
 
+
+
 ## Investigate with limited functionality when offline
 
 If you make a new request, for example by clicking **Refresh** , and Android Studio is unable to communicate with Crashlytics, the **App Quality Insights** window lets you to enter **Offline Mode**.
@@ -116,6 +125,6 @@ See [service permissions](/studio/services#service-permissions).
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-02 UTC.
+Last updated 2026-09-21 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-02 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-21 UTC."],[],[]] 

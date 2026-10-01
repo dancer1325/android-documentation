@@ -4,12 +4,15 @@
 
 ---
 
-#  Create a Java class or type
+#  Create a Java class or type Save and categorize content based on your preferences. 
+
 With the **Create New Class** dialog and file templates, Android Studio helps you to quickly create the following new classes and types: 
 
   * Java classes 
   * Enumeration and singleton classes 
   * Interface and annotation types
+
+
 
 After you fill in the **Create New Class** dialog fields and click **OK** , Android Studio creates a `.java` file containing skeleton code, including a package statement, any necessary imports, a header, and a class or type declaration. Next, you can add your code to this file. 
 
@@ -37,6 +40,9 @@ In the [template list](https://www.jetbrains.com/help/idea/2026.1/settings-file-
   2. Customize the file templates as needed.
 
 If you want to use the **Create New Class** dialog fields, make sure your changes comply with the Android Studio file template code.
+
+
+
 
 For more information about file templates, including VTL, see [File and Code Templates](https://www.jetbrains.com/help/idea/2026.1/file-and-code-templates.html) and [File and Code Templates Dialog](https://www.jetbrains.com/help/idea/2026.1/settings-file-and-code-templates.html). 
 
@@ -73,6 +79,9 @@ Any fields that don’t apply to the **Kind** are hidden.
   3. Click **OK**.
 
 Android Studio creates a Java file with skeleton code that you can modify. It opens the file in the Code Editor. 
+
+
+
 
 **Note:** You can create a singleton class by selecting **File** > **New** > **Singleton** or **File** > **New** > **Java Class** ; the latter technique offers more options. 
 
@@ -165,8 +174,10 @@ Android Studio replaces file template variables with values in the generated Jav
   * `ABSTRACT` \- Whether the class should be abstract or not. It can have a value of `TRUE` or `FALSE`. 
   * `FINAL` \- Whether the class should be final or not. It can have a value of `TRUE` or `FALSE`.
 
+
+
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-16 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-16 UTC."],[],[]] 

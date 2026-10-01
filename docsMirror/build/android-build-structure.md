@@ -4,7 +4,8 @@
 
 ---
 
-#  Android build structure
+#  Android build structure Save and categorize content based on your preferences. 
+
 Android projects contain many build-related files and directory structures to organize your application source and resources. Before diving into the configuration details, we'll take a look at the overall structure and the basics of what belongs in each part.
 
 This table lists typical files in an Android project. The descriptions of each file or directory include notes on what type of content belongs there. Best practices evolve over time, and these descriptions may not match a project you've inherited or downloaded from the internet.

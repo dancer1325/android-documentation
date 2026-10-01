@@ -4,16 +4,13 @@
 
 ---
 
-#  What a great user experience looks like
+#  What a great user experience looks like Save and categorize content based on your preferences. 
+
 ![](/static/images/quality/hero-images/ux_highlighted.svg)
 
 High-quality apps and games are intuitive and delightful to use, evoking positive sentiment through considered and differentiated design. High-quality apps stand out from the crowd by presenting a strong, unique identity and brand.
 
 To build a high-quality app or game, follow the Android quality guidelines:
-
-  * [Core app quality guidelines](/docs/quality-guidelines/core-app-quality): The minimum quality that all apps should meet
-  * [Adaptive app quality guidelines](/docs/quality-guidelines/adaptive-app-quality): The requirements for a great user experience regardless of device form factor, display size, or device posture
-  * Special cases: See the quality guidelines for [widgets](/docs/quality-guidelines/widget-quality), [Wear OS](/docs/quality-guidelines/wear-app-quality), [cars](/docs/quality-guidelines/car-app-quality), [TV](/docs/quality-guidelines/tv-app-quality), and [XR](/docs/quality-guidelines/android-xr)
 
 ## Usability
 
@@ -22,8 +19,8 @@ Android offers standard components for app layout, interaction patterns, and use
   * Design your app to adapt to a wide variety of device form factors and display sizes
   * Use [edge-to-edge layouts](/develop/ui/views/layout/edge-to-edge) for an [immersive experience](/design/ui/mobile/guides/layout-and-content/immersive-content)
   * If your app has embedded videos, support multitasking with [picture-in-picture](/develop/ui/views/picture-in-picture), including [polished transitions](/design/ui/mobile/guides/home-screen/picture-in-picture)
-  * Enable content sharing with [Android Sharesheets](/training/sharing/send), which has built-in support for share targets
-  * Support [backup and restore](/guide/topics/data/backup) so that user data and settings are preserved if users add a new device, replace an existing device, or reinstall your app
+  * Enable content sharing with [Android Sharesheets](/develop/ui/compose/sharing/send), which has built-in support for share targets
+  * Support [backup and restore](/guide/topics/data/backup) and [Restore Credentials](/identity/sign-in/restore-credentials) so that user sign-in state, data, and settings are preserved if users add a new device, replace an existing device, or reinstall your app
 
 **Note:** Follow the recommended [UX design guidelines](/design/ui) and [adaptive app quality guidelines](/docs/quality-guidelines/adaptive-app-quality) for all the form factors that your app supports.
 
@@ -71,6 +68,6 @@ Google Play considers all aspects of the user experience when evaluating what ti
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-03-06 UTC.
+Last updated 2026-08-21 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-03-06 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-08-21 UTC."],[],[]] 

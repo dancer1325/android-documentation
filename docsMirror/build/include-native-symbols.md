@@ -4,12 +4,13 @@
 
 ---
 
-#  Include native symbols in your release build
+#  Include native symbols in your release build Save and categorize content based on your preferences. 
+
 By default, native code libraries are stripped in release builds of your app. This stripping consists of removing the symbol table and debugging information contained in any native libraries used by your app. Stripping native code libraries results in significant size savings; however, it's impossible to diagnose crashes on the Google Play Console due to the missing information (such as class and function names). To debug crashes, you must include a debug symbols file with your app in Play Console.
 
 ## Upload a symbols file
 
-The Google Play Console reports native crashes under [Android vitals](/topic/performance/vitals/crash#diagnose-crashes). With a few steps, you can generate and upload a native debug symbols file for your app. This file enables symbolicated native crash stack traces (that include class and function names) in Android vitals to help you debug your app in production. These steps vary depending on the version of the Android Gradle plugin used in your project and whether you're using an Android App Bundle (recommended) or APK.
+The Google Play Console reports native crashes under [Android vitals](/topic/performance/issues/crash#diagnose-crashes). With a few steps, you can generate and upload a native debug symbols file for your app. This file enables symbolicated native crash stack traces (that include class and function names) in Android vitals to help you debug your app in production. These steps vary depending on the version of the Android Gradle plugin used in your project and whether you're using an Android App Bundle (recommended) or APK.
 
 **Note:** To restore symbol names in crash reports yourself, use the [ndk-stack tool](/ndk/guides/ndk-stack), which comes packaged with the Android NDK.
 
@@ -68,6 +69,7 @@ As part of the build process, the Android Gradle plugin keeps a copy of the unst
 
   2. Manually [upload the `symbols.zip` file](https://support.google.com/googleplay/android-developer/answer/9848633#upload_file) to the Google Play Console.
 
+
 **Note:** If your file is too big, it's likely because your `.so` files contain a symbol table and also DWARF debugging info, which isn't needed to symbolicate your code. On AGP 4.0 or lower, you can remove the DWARF debugging info by running the following command:   
   
 `$OBJCOPY --strip-debug lib.so lib.so.sym`   
@@ -76,6 +78,6 @@ where `$OBJCOPY` points to the specific version for the ABI you're stripping (fo
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-23 UTC.
+Last updated 2026-09-21 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-23 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-21 UTC."],[],[]] 

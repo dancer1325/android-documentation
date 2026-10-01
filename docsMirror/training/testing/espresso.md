@@ -4,7 +4,8 @@
 
 ---
 
-#  Espresso
+#  Espresso Save and categorize content based on your preferences. 
+
 Use Espresso to write concise, beautiful, and reliable Android UI tests.
 
 The following code snippet shows an example of an Espresso test:
@@ -47,6 +48,8 @@ Each time your test invokes [`onView()`](/reference/androidx/test/espresso/Espre
   * There are no instances of `[AsyncTask](/reference/android/os/AsyncTask)` currently executing a task.
   * All developer-defined [idling resources](/training/testing/espresso/idling-resource) are idle.
 
+
+
 By performing these checks, Espresso substantially increases the likelihood that only one UI action or assertion can occur at any given time. This capability gives you more reliable and dependable test results.
 
 ## Packages
@@ -57,6 +60,8 @@ By performing these checks, Espresso substantially increases the likelihood that
   * `espresso-contrib` \- External contributions that contain `DatePicker`, `RecyclerView` and `Drawer` actions, accessibility checks, and `CountingIdlingResource`.
   * [`espresso-intents`](/training/testing/espresso/intents) \- Extension to validate and stub intents for hermetic testing.
   * `espresso-remote` \- Location of Espresso's [multi-process](/training/testing/espresso/multiprocess) functionality.
+
+
 
 You can learn more about the latest versions by reading the [release notes](/topic/libraries/testing-support-library/release-notes).
 
@@ -69,6 +74,8 @@ For more information about using Espresso in Android tests, consult the followin
   * [Espresso Code Samples](https://github.com/googlesamples/android-testing) includes a full selection of Espresso samples.
   * [BasicSample](https://github.com/android/testing-samples/tree/main/ui/espresso/BasicSample): Basic Espresso sample.
   * [(more...)](/training/testing/espresso/additional-resources#samples)
+
+
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

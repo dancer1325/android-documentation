@@ -3,122 +3,126 @@
 **Source:** [https://developer.android.com/blog/categories/product-news](https://developer.android.com/blog/categories/product-news)
 
 ---
-![](/static/blog/assets/product_news_droid_599a11ad69_d4ee764ece_Z1EpVf1.webp)
 
-# Product News
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Android Developers' Blog ](https://developer.android.com/)
+  * [ Blog ](https://developer.android.com/blog)
 
-Stay in the loop with the latest updates, feature releases, and behind-the-scenes looks at how we’re evolving.
 
-  * [ ![View Zoe Lopez-Latorre 's profile](/static/blog/assets/Screenshot_2026_07_07_at_1_15_58_PM_eb87f2f61a_Z1QyLll.webp) ](/blog/authors/zoe-lopez-latorre)
 
-08 Jul 2026
+Save and categorize content based on your preferences. 
 
-08 Jul 2026
+  * 3 Authors
 
-![](/static/blog/assets/Bench_July_releas_V01_Strapi_6ee24bdb6b_1NrCN7.webp)
+17 Sep 2026
 
-##  [ Evolving how LLMs are measured for Android: the next era of Android Bench ](/blog/posts/evolving-how-ll-ms-are-measured-for-android-the-next-era-of-android-bench)
+17 Sep 2026
 
-[ arrow_forward  ](/blog/posts/evolving-how-ll-ms-are-measured-for-android-the-next-era-of-android-bench)
+![](/static/blog/assets/Android_X_Security_State_Library_Strapi_d3ecf61180_YYwl5.webp)
 
-Back in March, we introduced Android Bench—our LLM leaderboard for real-world Android development tasks. Since then, we have enhanced the benchmark based on your feedback, including evaluating open-weight models and adding cost and efficiency dimensions to the leaderboard. 
+##  [ Introducing the AndroidX Security State Libraries: A Unified View of Device Security ](/blog/posts/introducing-the-android-x-security-state-libraries-a-unified-view-of-device-security)
 
-[Zoe Lopez-Latorre ](/blog/authors/zoe-lopez-latorre) • 3 min read 
+[ arrow_forward  ](/blog/posts/introducing-the-android-x-security-state-libraries-a-unified-view-of-device-security)
+
+Today, we're thrilled to announce the stable release of the AndroidX Security State version 1.1.0 and Security State Provider version 1.0.0 libraries.
+
+[Maunik Shah](/blog/authors/maunik-shah), [Alec Garcia](/blog/authors/alec-garcia), [Joseph Yong](/blog/authors/joseph-yong) • 4 min read 
+
+  * [ ![View Matthew McCullough's profile](/static/blog/assets/matthew_mccullough_dc22050a18_51Njy.webp) ](/blog/authors/matthew-mccullough)
+
+17 Sep 2026
+
+17 Sep 2026
+
+![](/static/blog/assets/Bench_2_0_Strapi_bench_8767d57564_ZmnAe.webp)
+
+##  [ Android Bench 2.0: Pushing the frontier with challenging long-horizon tasks ](/blog/posts/android-bench-2-0-pushing-the-frontier-with-challenging-long-horizon-tasks)
+
+[ arrow_forward  ](/blog/posts/android-bench-2-0-pushing-the-frontier-with-challenging-long-horizon-tasks)
+
+Today we’re releasing the first set of long-horizon tasks (LHT), which are tasks of great complexity that take an engineer multiple days or even a week to complete. We are also introducing agentic evaluation, starting with agents from corresponding model providers. 
+
+[Matthew McCullough](/blog/authors/matthew-mccullough) • 3 min read 
     * [ #Agentic Android development ](/blog/topics/agentic-android-development)
 
-  * [ ![View Paul Feng's profile](/static/blog/assets/paul_feng_759ac95845_spvRU.webp) ](/blog/authors/paul-feng)
+  * 3 Authors
 
-24 Jun 2026
+09 Sep 2026
 
-24 Jun 2026
+09 Sep 2026
 
-![](/static/blog/assets/Apps_Experience_Play_Blog_Header_2000x1000_8c3a95404a_lYfpd.webp)
+![](/static/blog/assets/Introducing_Fast_and_Reliable_Wireless_Debugging_Strapi_cf55ad145b_2vFLdh.webp)
 
-##  [ Expanded billing choice and lower fees on Google Play ](/blog/posts/expanded-billing-choice-and-lower-fees-on-google-play)
+##  [ Introducing Fast and Reliable Wireless Debugging with Android Debug Bridge (ADB) Wi-Fi 2.0 ](/blog/posts/introducing-fast-and-reliable-wireless-debugging-with-android-debug-bridge-adb-wi-fi-2-0)
 
-[ arrow_forward  ](/blog/posts/expanded-billing-choice-and-lower-fees-on-google-play)
+[ arrow_forward  ](/blog/posts/introducing-fast-and-reliable-wireless-debugging-with-android-debug-bridge-adb-wi-fi-2-0)
 
-At Google Play, we are committed to delivering the best possible experience to users, while ensuring developers have the tools and adaptability to succeed. 
+Wireless debugging on Android is now faster, more reliable, and easier to set up than ever. With ADB Wi-Fi 2.0, we’ve introduced a new server stack and smarter network handling to directly address developer feedback around usability gaps.
 
-[Paul Feng](/blog/authors/paul-feng) • 3 min read 
+[Steven Jenkins](/blog/authors/steven-jenkins), [Sherif Eid](/blog/authors/sherif-eid), [Fabien Sanglard](/blog/authors/fabien-sanglard) • 1 min read 
+    * [ #Wireless Debugging ](/blog/topics/wireless-debugging)
+    * [ #ADB Wi-Fi 2.0 ](/blog/topics/adb-wi-fi-2-0)
+    * [ #Android Studio ](/blog/topics/android-studio)
+    * +1 ↩
 
-  * [ ![View Matthew Forsythe's profile](/static/blog/assets/matthew_9c798f0c1d_Z1m5WWD.webp) ](/blog/authors/matthew-forsythe)
+  * [ ![View Amman Asfaw's profile](/static/blog/assets/unnamed_11_a00df7e0e8_Z1CHwnO.webp) ](/blog/authors/amman-asfaw)
 
-18 Jun 2026
+01 Sep 2026
 
-18 Jun 2026
+01 Sep 2026
 
-![](/static/blog/assets/Strapi_2x_325a484212_1BGPPB.webp)
+![](/static/blog/assets/Quail_Blog_Strapi_c8d4ba2105_ZqnmK9.webp)
 
-##  [ Android developer verification: Building a safer ecosystem together ](/blog/posts/android-developer-verification-building-a-safer-ecosystem-together)
+##  [ Leverage Android skills and Gemma 4 in Android Studio Quail 4 ](/blog/posts/leverage-android-skills-and-gemma-4-in-android-studio-quail-4)
 
-[ arrow_forward  ](/blog/posts/android-developer-verification-building-a-safer-ecosystem-together)
+[ arrow_forward  ](/blog/posts/leverage-android-skills-and-gemma-4-in-android-studio-quail-4)
 
-Last year, we introduced Android developer verification to strengthen ecosystem security and stop malicious actors from hiding behind anonymity to release harmful apps. 
+This is the final stable release for Android Studio Quail. The new features in Android Studio enable you to build premium apps with AI efficiently and effectively.
 
-[Matthew Forsythe](/blog/authors/matthew-forsythe) • 2 min read 
+[Amman Asfaw](/blog/authors/amman-asfaw) • 5 min read 
+    * [ #Android Studio ](/blog/topics/android-studio)
+    * [ #Android Skills ](/blog/topics/android-skills)
 
-  * [ ![View Stevan Silva's profile](/static/blog/assets/Stevan_Silva_7661118077_V4WGm.webp) ](/blog/authors/stevan-silva)[ ![View Vinny DaSilva's profile](/static/blog/assets/unnamed_5_cdab7ecfba_2kh65s.webp) ](/blog/authors/vinny-da-silva)
+  * [ ![View Raghavendra Hareesh Pottamsetty's profile](/static/blog/assets/Raghavendra_Hareesh_Pottamsetty_72fdb063a0_HTSBv.webp) ](/blog/authors/raghavendra-hareesh-pottamsetty)
 
-15 Jun 2026
+26 Aug 2026
 
-15 Jun 2026
+26 Aug 2026
 
-![](/static/blog/assets/MM_Android_XR_Meta_a489e757ed_Z1R62M0.webp)
+![](/static/blog/assets/Raising_the_bar_Google_Play_Strapi_2_a80695bf12_ZCNvdc.webp)
 
-##  [ What’s New in Android XR: Tooling, Engine Support, and Ecosystem Updates ](/blog/posts/what-s-new-in-android-xr-tooling-engine-support-and-ecosystem-updates)
+##  [ Elevating app quality: Reducing memory usage and improving device migration ](/blog/posts/elevating-app-quality-reducing-memory-usage-and-improving-device-migration)
 
-[ arrow_forward  ](/blog/posts/what-s-new-in-android-xr-tooling-engine-support-and-ecosystem-updates)
+[ arrow_forward  ](/blog/posts/elevating-app-quality-reducing-memory-usage-and-improving-device-migration)
 
-From augmented overlays to fully immersive environments, the Android XR ecosystem is expanding rapidly, with the Samsung Galaxy XR already available today. 
+Maintaining a healthy Android ecosystem is a shared commitment where every app and game has a role to play. 
 
-[Stevan Silva](/blog/authors/stevan-silva), [Vinny DaSilva](/blog/authors/vinny-da-silva) • 3 min read 
-    * [ #Android XR ](/blog/topics/android-xr)
-    * [ #Developer Preview 4 ](/blog/topics/developer-preview-4)
+[Raghavendra Hareesh Pottamsetty](/blog/authors/raghavendra-hareesh-pottamsetty) • 4 min read 
 
-  * [ ![View Simona Milanovic's profile](/static/blog/assets/Screenshot_2026_05_19_at_9_30_31_AM_4ebf3b750d_ZDTMlF.webp) ](/blog/authors/simona-milanovic)
+  * [ ![View Ron Aquino's profile](/static/blog/assets/unnamed_18_8bd07de9bd_ZRiq2s.webp) ](/blog/authors/ron-aquino)
 
-09 Jun 2026
+25 Aug 2026
 
-09 Jun 2026
+25 Aug 2026
 
-![](/static/blog/assets/MM_Dev_Productivity_Strapi_b7e79722e6_45umk.webp)
+![](/static/blog/assets/Ensuring_a_safe_Gen_AI_ecosystem_on_Google_Play_Scrapi_a8fa6da415_1HFCG4.webp)
 
-##  [ Top 3 updates for Android developer productivity ](/blog/posts/top-3-updates-for-android-developer-productivity)
+##  [ Ensuring Safety in the Generative AI Ecosystem: Protecting Users from Non-Consensual Intimate Content ](/blog/posts/ensuring-safety-in-the-generative-ai-ecosystem-protecting-users-from-non-consensual-intimate-content)
 
-[ arrow_forward  ](/blog/posts/top-3-updates-for-android-developer-productivity)
+[ arrow_forward  ](/blog/posts/ensuring-safety-in-the-generative-ai-ecosystem-protecting-users-from-non-consensual-intimate-content)
 
-Every year, Google I/O brings new announcements and resources across ecosystems and products, including Android development. As development shifts toward AI and agent-assisted tooling, we’ve expanded our offerings to better support you, however you decide to build for Android.
+At Google Play, user safety and developer success go hand in hand. We continue to see growth in apps with AI generated features, and indeed, adding generative AI into your apps is a great way to unlock incredible creative possibilities. 
 
-[Simona Milanovic](/blog/authors/simona-milanovic) • 2 min read 
+[Ron Aquino](/blog/authors/ron-aquino) • 4 min read 
 
-  * [ ![View Ataul Munim's profile](/static/blog/assets/Ataul_Munim_cf0796f68c_r1HY2.webp) ](/blog/authors/ataul-munim)
 
-02 Jun 2026
 
-02 Jun 2026
-
-![](/static/blog/assets/MM_Differentiated_Experiences_Strapi_bbe8e7618b_19k3ww.webp)
-
-##  [ Building Premium Android Experiences at Google I/O ‘26 ](/blog/posts/building-premium-android-experiences-at-google-i-o-26)
-
-[ arrow_forward  ](/blog/posts/building-premium-android-experiences-at-google-i-o-26)
-
-At Google I/O ‘26, we showcased how the latest advancements in the Android ecosystem can help you elevate your app's quality while maximizing development efficiency.
-
-[Ataul Munim](/blog/authors/ataul-munim) • 3 min read 
-    * [ #Performance ](/blog/topics/performance)
-    * [ #Memory ](/blog/topics/memory)
-    * [ #R8 ](/blog/topics/r8)
-    * [ #Wear OS ](/blog/topics/wear-os)
-    * [ #Automotive OS ](/blog/topics/automotive-os)
-    * +3 ↩
 
 arrow_back 
 
 #### Page 1
 
-###### of 17
+###### of 20
 
 [ arrow_forward  ](/blog/categories/product-news/2)
 
@@ -128,6 +132,6 @@ Get the latest Android development insights delivered to your inbox weekly.
 
 [ mail  Subscribe ](/subscribe)
 
-![A 3D illustration of the Android mascot, wearing a jetpack that's emitting a large cloud of bubbles](/static/blog/assets/rocket-android.CVJQZOf1_1PnraM.webp)
+![A 3D illustration of the Android mascot, wearing a jetpack that's emitting a large cloud of bubbles](/static/blog/assets/rocket-android.CVJQZOf1_1zVtXW.webp)
 
 [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]] 

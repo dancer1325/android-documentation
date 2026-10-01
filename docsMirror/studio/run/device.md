@@ -4,7 +4,8 @@
 
 ---
 
-#  Run apps on a hardware device
+#  Run apps on a hardware device Save and categorize content based on your preferences. 
+
 Always test your Android app on a real device before releasing it to users. This page describes how to set up your development environment and Android device for testing and debugging over an Android Debug Bridge (ADB) connection.
 
 **Note:** Use the [Android Emulator](/studio/run/emulator) to test your app on different versions of the Android platform and different screen sizes. Consider using [Firebase Test Lab](https://firebase.google.com/docs/test-lab/) to run your app on a wide variety of real devices hosted in a cloud-based infrastructure.
@@ -35,6 +36,9 @@ Groups only update on login, so you must log out for this change to take effect.
     apt-get install android-sdk-platform-tools-common
     
 
+
+
+
 ## Connect to your device using USB
 
 When you're set up and plugged in over USB, click **Run** ![](/static/studio/images/buttons/toolbar-run.png) in Android Studio to [build and run your app](/studio/run) on the device.
@@ -43,6 +47,8 @@ You can also use [`adb`](/studio/command-line/adb) to issue commands, as follows
 
   * Verify that your device is connected by running the `adb devices` command from your `android_sdk/platform-tools/` directory. If connected, you'll see the device listed.
   * Issue any [`adb` command](/studio/command-line/adb#issuingcommands) with the `-d` flag to target your device.
+
+
 
 ## Connect to your device using Wi-Fi
 
@@ -56,6 +62,8 @@ To use wireless debugging, you need to pair your device to your workstation usin
   2. Ensure that your device is running Android 11 or higher. For more information, see [Check & update your Android version](https://support.google.com/android/answer/7680439).
   3. Ensure that you have the latest version of Android Studio installed. [Download it here](/studio).
   4. On your workstation, update to the latest version of the [SDK Platform Tools](/tools/releases/platform-tools).
+
+
 
 To pair to your device, follow these steps:
 
@@ -74,6 +82,7 @@ To pair to your device, follow these steps:
 
 ![Run configurations drop down](/static/studio/images/run/adb_wifi-pair_device.png) **Figure 3.** Run configurations menu.   
 
+
   5. The **Pair devices over Wi-Fi** dialog appears, as shown in figure 4. 
 
 ![Pair devices over Wi-Fi popup window](/static/studio/images/run/adb_wifi-pairing_dialog.png) **Figure 4.** Dialog to pair devices over Wi-Fi.
@@ -81,6 +90,7 @@ To pair to your device, follow these steps:
 Alternatively, you can pair the device from **Device Manager**. For example `My Pixel`. 
 
 ![Device Manager with device available for Wi-Fi pairing](/static/studio/images/run/adb_wifi-device_manager_entry.png) **Figure 5.** Device Manager with device available for Wi-Fi pairing.   
+
 
   6. Click `Pair` on the device you want to pair. The device pairing dialog appears.
 
@@ -93,6 +103,9 @@ Alternatively, you can pair the device from **Device Manager**. For example `My 
 ![Example pairing code entry](/static/studio/images/run/adb_wifi-pin_code.png) **Figure 7.** Example of six-digit pairing code entry.
 
   7. After pairing, you can attempt to deploy your app to your device.
+
+
+
 
 To unpair your workstation, navigate to **Wireless debugging** on your device. Tap your workstation name under **Paired devices** and select **Forget**. Alternatively, you can click the **Revoke adb debugging authorizations** on your device Settings page to unpair your workstation and all other previously paired workstations.
 
@@ -147,6 +160,8 @@ The Connection Assistant provides instructions, in-context controls, and a list 
   * **Enable USB debugging** : The Connection Assistant then tells you how to enable USB debugging in the on-device developer options.
   * **Restart the ADB server** : If you still don't see your device on the list of available devices, use the **Restart ADB server** button on the last page of the Connection Assistant. Restarting the ADB server also causes ADB to scan for devices again. If you still don't see your device on the list of available devices, try the troubleshooting steps in the following section.
 
+
+
 ### Resolve USB connection issues
 
 If the Connection Assistant doesn't detect your device over USB, try the following troubleshooting steps to resolve the issue:
@@ -162,6 +177,8 @@ To check whether the issue is being caused by a connection problem between Andro
      * If Android Studio can't connect to the emulator, download the latest [SDK Platform Tools](/studio/releases/platform-tools) and then try again.
      * If the emulator starts successfully, check the USB cable as described in the following section.
 
+
+
 #### Check the USB cable
 
 To check whether the issue is being caused by a faulty USB cable, follow the steps in this section.
@@ -173,6 +190,8 @@ If you have another USB cable:
   3. If the device is not detected, try the primary cable again.
   4. If the device still isn't detected, assume that the problem is with the device, and check whether the device is set up for development as described in the following section.
 
+
+
 If you don't have another USB cable but you do have another Android device:
 
   1. Connect the secondary device to your computer.
@@ -180,12 +199,17 @@ If you don't have another USB cable but you do have another Android device:
 
 If the secondary device is not detected, the problem might be with the USB cable.
 
+
+
+
 #### Check whether the device is set up for development
 
 To check whether the issue is being caused by settings on the device, follow these steps:
 
   1. Follow the steps in the Set up a device for development section.
   2. If this doesn't resolve the problem, contact the device OEM's customer support for help. Tell the customer support representative that the device doesn't connect to Android Studio using ADB.
+
+
 
 ### Resolve wireless connection issues
 
@@ -205,6 +229,6 @@ When you connect a device running Android 4.2.2 (API level 17) or higher to your
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-16 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-16 UTC."],[],[]] 

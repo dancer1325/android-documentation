@@ -4,7 +4,8 @@
 
 ---
 
-#  Benchmark Baseline Profiles with Macrobenchmark library
+#  Benchmark Baseline Profiles with Macrobenchmark library Save and categorize content based on your preferences. 
+
 We recommend using [Jetpack Macrobenchmark](/topic/performance/benchmarking/macrobenchmark-overview) to test how an app performs when Baseline Profiles are enabled, and then compare those results to a benchmark with Baseline Profiles disabled. With this approach, you can measure app startup time—both time to initial and full display—or runtime rendering performance to see if the frames produced can cause jank.
 
 Macrobenchmarks let you control pre-measurement compilation using the [`CompilationMode`](/reference/androidx/benchmark/macro/CompilationMode) API. Use different `CompilationMode` values to compare performance with different compilation states. The following code snippet shows how to use the `CompilationMode` parameter to measure the benefit of Baseline Profiles:
@@ -70,7 +71,7 @@ While the previous example shows app startup results captured with [`StartupTimi
 
 ## Time to full display
 
-The previous example measures the [time to initial display](/topic/performance/vitals/launch-time#time-initial) (TTID), which is the time taken by the app to produce its first frame. However, this doesn't necessarily reflect the time until the user can start interacting with your app. The [time to full display](/topic/performance/vitals/launch-time#time-full) (TTFD) metric is more useful in measuring and optimizing the code paths necessary to have a fully useable app state.
+The previous example measures the [time to initial display](/topic/performance/issues/launch-time#time-initial) (TTID), which is the time taken by the app to produce its first frame. However, this doesn't necessarily reflect the time until the user can start interacting with your app. The [time to full display](/topic/performance/issues/launch-time#time-full) (TTFD) metric is more useful in measuring and optimizing the code paths necessary to have a fully useable app state.
 
 We recommend optimizing for both TTID and TTFD, as both are important. A low TTID helps the user see that the app is actually launching. Keeping the TTFD short is important to help ensure that the user can interact with the app quickly.
 
@@ -84,10 +85,12 @@ For strategies on reporting when the app UI is fully drawn, see [Improve startup
   * [Write automated tests with UI Automator](/training/testing/other-components/ui-automator)
   * [App startup analysis and optimization {:#app-startup-analysis-optimization}][14]
 
+
+
 [ Previous arrow_back  Configure Baseline Profile generation  ](/topic/performance/baselineprofiles/configure-baselineprofiles)
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-21 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-21 UTC."],[],[]] 

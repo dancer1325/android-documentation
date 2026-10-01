@@ -4,7 +4,8 @@
 
 ---
 
-#  Add code from a template
+#  Add code from a template Save and categorize content based on your preferences. 
+
 Android Studio provides code templates that follow the Android design and development best practices to get you on the right track to creating beautiful, functional apps. You can use templates to create new app modules, individual activities, or other specific Android project components.
 
 Some templates provide starter code for common usage contexts, such as navigation drawers or login screens. You can choose from these app module and activity templates when you first [create your project](/studio/projects/create-project), when you [add a new app module within an existing project](/studio/projects/add-app-module), or when you add a new activity within an app module.

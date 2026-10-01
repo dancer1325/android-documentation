@@ -1,168 +1,96 @@
-# Large Screens | UI Design  |  Android Developers
+# Desktop experiences | UI Design  |  Android Developers
 
 **Source:** [https://developer.android.com/design/ui/large-screens](https://developer.android.com/design/ui/large-screens)
 
 ---
-![](https://developer.android.com/static/images/design/ui/large-screens/ls-hero.png)
 
-###  Design for large screens 
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Design & Plan ](https://developer.android.com/design)
+  * [ UI Design ](https://developer.android.com/design/ui)
+  * [ Desktop experience ](https://developer.android.com/design/ui/desktop)
 
-Create a high quality, engaging user experience on tablets, foldables, and ChromeOS devices. 
 
-[Go to large screen foundations](https://developer.android.com/guide/topics/large-screens/get-started-with-large-screens)
 
-##  Get inspired 
+Save and categorize content based on your preferences. 
 
-[ ![](https://developer.android.com/static/images/design/ui/large-screens/get-inspired-ls.jpg) ](https://developer.android.com/large-screens/gallery)
+![](https://developer.android.com/static/images/design/ui/desktop/desktop_header.webp)
+
+###  Design for desktop 
+
+Leverage a larger display to maximize productivity with higher information density, multi-tasking through multi-window capabilities, precise tasks with pointer-based interactions, and physical keyboard support for accessibility and efficient typing. 
+
+[Go to desktop foundations](https://developer.android.com/design/ui/desktop/guides/foundations/design-principles)
+
+[ ![](https://developer.android.com/static/images/design/ui/wear/surfaces.svg) ](https://developer.android.com/design/ui/desktop/guides/foundations/design-principles)
+
+Guides
+
+###  [ Principles ](https://developer.android.com/design/ui/desktop/guides/foundations/design-principles)
+
+Fundamental concepts and principles to get started designing for desktop. 
+
+[Go to foundations](https://developer.android.com/design/ui/desktop/guides/foundations/design-principles)
+
+[ ![](https://developer.android.com/static/images/design/ui/mobile/get-started-patterns.svg) ](https://developer.android.com/design/ui/desktop/guides/interaction/pointer-interactions)
+
+Guides
+
+###  [ Pointer interaction ](https://developer.android.com/design/ui/desktop/guides/interaction/pointer-interactions)
+
+Optimize your app for pointer interaction. 
+
+[Go to guidance](https://developer.android.com/design/ui/desktop/guides/interaction/pointer-interactions)
+
+[ ![](https://developer.android.com/static/images/design/ui/mobile/get-started-components.svg) ](https://developer.android.com/design/ui/desktop/guides/system/system-bars)
+
+Guides
+
+###  [ System bars ](https://developer.android.com/design/ui/desktop/guides/system/system-bars)
+
+Bars provided by the system that give users information and controls for interacting with apps. 
+
+[Go to guidance](https://developer.android.com/design/ui/desktop/guides/system/system-bars)
+
+[ ![](https://developer.android.com/static/images/design/ui/desktop/desktop_landing_windowed.webp) ](https://developer.android.com/design/ui/desktop/guides/system/multi-task)
+
+###  [ Multi-tasking apps ](https://developer.android.com/design/ui/desktop/guides/system/multi-task)
+
+Desktop apps open in side-by-side free-form windows. A default taskbar enables quick switching between tasks. Users can also organize work by creating multiple desktops. 
+
+[Go to multi-tasking guidance](https://developer.android.com/design/ui/desktop/guides/system/multi-task)
+
+[ ![](https://developer.android.com/static/images/design/ui/desktop/desktop_landing_inputs.webp) ](https://developer.android.com/design/ui/desktop/guides/interaction/pointer-interactions)
+
+###  [ More input options ](https://developer.android.com/design/ui/desktop/guides/interaction/pointer-interactions)
+
+Since desktop users rely on pointers like mice or touchpads, optimize your app for these inputs. Read more on pointer interaction. 
+
+[Go to pointer interaction guidance](https://developer.android.com/design/ui/desktop/guides/interaction/pointer-interactions)
+
+[ ![](https://developer.android.com/static/images/design/ui/large-screens/get-inspired-ls.jpg) ](https://developer.android.com/design/ui/gallery)
 
 Gallery
 
-###  [ Tour the large screen gallery ](https://developer.android.com/large-screens/gallery)
+###  [ Tour the Android design gallery ](https://developer.android.com/design/ui/gallery)
 
-Explore inspiring, optimized designs for large screen devices. Browse UI/UX templates for popular app categories, including media, creativity, games, and more. 
+Explore inspiring, optimized designs for all screen sizes and devices. Browse UI/UX templates for popular app categories, including media, creativity, games, and more. 
 
-[View the gallery](https://developer.android.com/large-screens/gallery)
+[View the gallery](https://developer.android.com/design/ui/gallery)
 
-##  Use proven patterns 
+[ ![](https://developer.android.com/static/images/design/ui/mobile/kits-android-ui.png) ](https://goo.gle/android-ui-kit)
 
-Canonical layouts ensure an optimal user experience for all large screen form factors— tablets, foldables, and ChromeOS devices—as well as supporting all phone sizes. Navigation rail and drawer components provide out-of-the way navigation for UI convenience and control. 
+###  [ Android UI kit ](https://goo.gle/android-ui-kit)
 
-[ ![](https://developer.android.com/static/images/design/ui/large-screens/list-detail.svg) ](https://developer.android.com/guide/topics/large-screens/large-screen-canonical-layouts#list-detail)
+Get started designing for Android faster and easier with an introductory guide, styles, components, and system templates. 
 
-Canonical
+[Go to Android UI kit](https://goo.gle/android-ui-kit)
 
-###  [ List-detail ](https://developer.android.com/guide/topics/large-screens/large-screen-canonical-layouts#list-detail)
+[ ![](https://developer.android.com/static/images/design/ui/mobile/androidDesign_Card.png) ](https://www.figma.com/@androiddesign)
 
-Enables one-click access to descriptive, explanatory, or other supplementary information for content organized in lists. 
+###  [ Android Design community ](https://www.figma.com/@androiddesign)
 
-[Learn about list-detail](https://developer.android.com/guide/topics/large-screens/large-screen-canonical-layouts#list-detail)
+Explore the Android Design Figma community page with the latest templates, labs, and kits. 
 
-[ ![](https://developer.android.com/static/images/design/ui/large-screens/feed.svg) ](https://developer.android.com/guide/topics/large-screens/large-screen-canonical-layouts#feed)
-
-Canonical
-
-###  [ Feed ](https://developer.android.com/guide/topics/large-screens/large-screen-canonical-layouts#feed)
-
-Arranges content elements in an expansive grid, associating elements by size and placement, drawing attention to elements using proportion and scale. 
-
-[Learn about feed](https://developer.android.com/guide/topics/large-screens/large-screen-canonical-layouts#feed)
-
-[ ![](https://developer.android.com/static/images/design/ui/large-screens/supporting-panel.svg) ](https://developer.android.com/guide/topics/large-screens/large-screen-canonical-layouts#supporting_pane)
-
-Canonical
-
-###  [ Supporting pane ](https://developer.android.com/guide/topics/large-screens/large-screen-canonical-layouts#supporting_pane)
-
-Organizes apps into primary and secondary display areas to make tools, options, and settings readily accessible and applicable to the main content. 
-
-[Learn about supporting pane](https://developer.android.com/guide/topics/large-screens/large-screen-canonical-layouts#supporting_pane)
-
-[ ![](https://developer.android.com/static/images/design/ui/large-screens/navigation.svg) ](https://developer.android.com/guide/topics/large-screens/navigation-for-responsive-uis)
-
-Canonical
-
-###  [ Navigation rail and drawer ](https://developer.android.com/guide/topics/large-screens/navigation-for-responsive-uis)
-
-Complements the canonical layouts by positioning primary navigation destinations within easy reach while occupying a minimum of screen space. 
-
-[Learn about navigation elements](https://developer.android.com/guide/topics/large-screens/navigation-for-responsive-uis)
-
-#### Compact
-
-< 600 dp
-
-#### Medium
-
-≥ 600 - < 840 dp
-
-#### Expanded
-
-≥ 840 dp
-
-###  [ Use window size classes ](/develop/ui/compose/layouts/adaptive/window-size-classes)
-
-Use compact, medium, and expanded window size classes to support different form factors for an optimal user experience. 
-
-[ Discover more about window size classes ](/develop/ui/compose/layouts/adaptive/window-size-classes)
-
-##  Use a proven design system 
-
-[ ![](https://developer.android.com/static/images/design/ui/mobile/material-design-3.png) ](https://m3.material.io)
-
-###  [ Try Material Design 3 ](https://m3.material.io)
-
-Material Design 3 is an open source, adaptable system of guidelines, components, and tools that support the best practices of user interface design. 
-
-[Go to the Material Design website](https://m3.material.io)
-
-##  Develop for large screens 
-
-[ ![](https://developer.android.com/static/images/design/ui/mobile/guides-developer.png) ](https://developer.android.com/guide/topics/large-screens/get-started-with-large-screens)
-
-###  [ Developer guides ](https://developer.android.com/guide/topics/large-screens/get-started-with-large-screens)
-
-Use our developer guides and reference to build your app design. 
-
-[See developer guides](https://developer.android.com/guide/topics/large-screens/get-started-with-large-screens)
-
-[ ![](https://developer.android.com/static/images/design/ui/mobile/guides-quality.png) ](https://developer.android.com/docs/quality-guidelines/large-screen-app-quality)
-
-###  [ Quality guides ](https://developer.android.com/docs/quality-guidelines/large-screen-app-quality)
-
-Lay out your designs following Android best practices. 
-
-[See large screen app quality](https://developer.android.com/docs/quality-guidelines/large-screen-app-quality)
-
-##  Articles & reading 
-
-[ ![](https://developer.android.com/static/images/design/ui/large-screens/understanding_layout.png) ](https://m3.material.io/foundations/layout/understanding-layout/overview)
-
-Material Design
-
-###  [ Understanding layout ](https://m3.material.io/foundations/layout/understanding-layout/overview)
-
-Layout is the visual arrangement of elements. It directs attention to the most important information on the screen and makes it easy for users to take action. 
-
-[ ![](https://developer.android.com/static/images/design/ui/large-screens/applying_layout.png) ](https://m3.material.io/foundations/layout/applying-layout/window-size-classes)
-
-Material Design
-
-###  [ Applying layout ](https://m3.material.io/foundations/layout/applying-layout/window-size-classes)
-
-Window size classes help you to create layouts that scale across devices and form factors. 
-
-[ ![](https://developer.android.com/static/images/design/ui/large-screens/using_canonical_layouts.png) ](https://m3.material.io/foundations/layout/canonical-layouts/overview)
-
-Material Design
-
-###  [ Using canonical layouts ](https://m3.material.io/foundations/layout/canonical-layouts/overview)
-
-Canonical layouts are ready-to-use compositions that help layouts adapt for common use cases and screen sizes. 
-
-##  Check out our latest videos 
-
-[ ![](https://developer.android.com/static/images/design/ui/large-screens/canonical_layouts.png) ](https://www.youtube.com/watch?v=FrkIa9vZjCI)
-
-YouTube video
-
-###  [ Canonical layouts and visual hierarchy: Designing for larger screens ](https://www.youtube.com/watch?v=FrkIa9vZjCI)
-
-**November 10, 2022**
-
-[ ![](https://developer.android.com/static/images/design/ui/large-screens/dos_don_t.png) ](https://www.youtube.com/watch?v=m7OL-mVh1E8)
-
-YouTube video
-
-###  [ Do’s and don’ts: Mindset for optimizing apps for larger screens ](https://www.youtube.com/watch?v=m7OL-mVh1E8)
-
-**November 10, 2022**
-
-[ ![](https://developer.android.com/static/images/design/ui/large-screens/three_tiers.png) ](https://www.youtube.com/watch?v=FCi6Nld4kz4)
-
-YouTube video
-
-###  [ Three tiers of large screen quality on Google Play ](https://www.youtube.com/watch?v=FCi6Nld4kz4)
-
-**November 09, 2022**
+[Go to Android Figma community](https://www.figma.com/@androiddesign)
 
 [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]] 

@@ -4,7 +4,8 @@
 
 ---
 
-#  Rendering
+#  Rendering Save and categorize content based on your preferences. 
+
 A key aspect of your app that influences your users' perception of quality is the smoothness with which it renders images and text to the screen. It's important to avoid jank and sluggish responsiveness when your app is drawing to the screen.
 
 This section shows several ways to optimize your app's rendering performance: reducing overdraw, optimizing view hierarchies, and taking advantage of the Profile GPU tool. See [Jetpack Compose performance](/jetpack/compose/performance) to learn about rendering in Jetpack Compose.

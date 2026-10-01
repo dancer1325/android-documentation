@@ -4,7 +4,8 @@
 
 ---
 
-#  Camera support
+#  Camera support Save and categorize content based on your preferences. 
+
 The emulator supports the use of basic camera functionality on your virtual device for earlier Android versions. Android 11 and higher supports the following additional Android Emulator camera capabilities:
 
   * RAW capture
@@ -15,6 +16,8 @@ The emulator supports the use of basic camera functionality on your virtual devi
   * Applying video stabilization by reducing handshake frequency
   * Applying edge enhancement by removing the upscaling usually done in the YUV pipeline
   * Concurrent cameras
+
+
 
 ## Virtual scene camera and ARCore
 
@@ -35,6 +38,9 @@ Before using macros, follow the steps in [Run AR apps in Android Emulator](https
   3. Choose a macro that you want to use, then click **Play**.
 
 During playback, you can interrupt a macro by clicking **Stop**.
+
+
+
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

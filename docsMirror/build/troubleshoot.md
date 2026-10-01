@@ -4,11 +4,9 @@
 
 ---
 
-#  Troubleshoot the Android Gradle plugin
-If you encounter issues with the Android Gradle plugin, try the following actions:
+#  Troubleshoot the Android Gradle plugin Save and categorize content based on your preferences. 
 
-  * Check whether your issue is listed in the [Android Studio troubleshooting guide](/studio/troubleshoot) or the [known issues](/studio/known-issues). Those pages list known issues and workarounds.
-  * If your issue persists, [file a bug](/studio/report-bugs).
+If you encounter issues with the Android Gradle plugin, try the following actions:
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

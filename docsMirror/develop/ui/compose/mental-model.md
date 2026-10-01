@@ -4,7 +4,8 @@
 
 ---
 
-#  Thinking in Compose
+#  Thinking in Compose Save and categorize content based on your preferences. 
+
 Jetpack Compose is a modern declarative UI Toolkit for Android. Compose simplifies writing and maintaining your app UI by providing a _declarative API_ that lets you render your app UI without imperatively mutating frontend views. This terminology needs some explanation, but the implications are important for your app design.
 
 ## The declarative programming paradigm
@@ -13,7 +14,9 @@ Historically, an Android view hierarchy has been representable as a tree of UI w
 
 Manipulating views manually increases the likelihood of errors. If a piece of data is rendered in multiple places, you might forget to update one of the views that shows it. This can also lead to illegal states, when two updates conflict in an unexpected way. For example, an update might try to set a value of a node that was just removed from the UI. In general, the software maintenance complexity grows with the number of views that require updating.
 
-Over the last several years, the entire industry has started shifting to a declarative UI model. This model simplifies the engineering associated with building and updating user interfaces. The technique works by conceptually regenerating the entire screen from scratch, then applying only the necessary changes. This approach avoids the complexity of manually updating a stateful view hierarchy. Compose is a declarative UI framework.
+Over the last several years, the entire industry has started shifting to a declarative UI model, which simplifies building and updating user interfaces.
+
+The technique works by conceptually regenerating the entire screen from scratch, then applying only the necessary changes. This approach avoids the complexity of manually updating a stateful view hierarchy. Compose is a declarative UI framework.
 
 One challenge with regenerating the entire screen is that it is potentially expensive, in terms of time, computing power, and battery usage. To mitigate this cost, Compose intelligently chooses which parts of the UI need to be redrawn at any given time. This does have some implications for how you design your UI components, as discussed in Recomposition.
 
@@ -36,6 +39,9 @@ A few noteworthy things about this function:
     * The function describes the UI without any side-effects, such as modifying properties or global variables.
 
 In general, all composable functions must be written with these properties, for reasons discussed in Recomposition.
+
+
+
 
 ## The declarative paradigm shift
 
@@ -63,7 +69,7 @@ Because composable functions are written in Kotlin instead of XML, they can be a
         }
     }
     
-    [ThinkingInComposeSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/mentalmodel/ThinkingInComposeSnippets.kt#L37-L42)
+    [ThinkingInComposeSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/mentalmodel/ThinkingInComposeSnippets.kt#L37-L42)
 
 This function takes in a list of names and generates a greeting for each user. Composable functions can be quite sophisticated. You can use `if` statements to decide if you want to show a particular UI element. You can use loops. You can call helper functions. You have the full flexibility of the underlying language. This power and flexibility is one of the key advantages of Jetpack Compose.
 
@@ -81,7 +87,7 @@ For example, consider this composable function which displays a button:
         }
     }
     
-    [ThinkingInComposeSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/mentalmodel/ThinkingInComposeSnippets.kt#L46-L51)
+    [ThinkingInComposeSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/mentalmodel/ThinkingInComposeSnippets.kt#L46-L51)
 
 Every time the button is clicked, the caller updates the value of `clicks`. Compose calls the lambda with the `Text` function again to show the new value; this process is called _recomposition_. Other functions that don't depend on the value are not recomposed.
 
@@ -94,6 +100,8 @@ Never depend on side-effects from executing composable functions, since a functi
   * Writing to a property of a shared object
   * Updating an observable in `ViewModel`
   * Updating shared preferences
+
+
 
 Composable functions might be re-executed as often as every frame, such as when an animation is being rendered. Composable functions should be fast to avoid jank during animations. If you need to do expensive operations, such as reading from shared preferences, do it in a background coroutine and pass the value result to the composable function as a parameter.
 
@@ -112,7 +120,7 @@ As an example, this code creates a composable to update a value in `SharedPrefer
         }
     }
     
-    [ThinkingInComposeSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/mentalmodel/ThinkingInComposeSnippets.kt#L55-L65)
+    [ThinkingInComposeSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/mentalmodel/ThinkingInComposeSnippets.kt#L55-L65)
 
 This document discusses a number of things to be aware of when you use Compose:
 
@@ -121,6 +129,8 @@ This document discusses a number of things to be aware of when you use Compose:
   * A composable function might be run quite frequently, as often as every frame of an animation.
   * Composable functions can execute in parallel.
   * Composable functions can execute in any order.
+
+
 
 The following sections will cover how to build composable functions to support recomposition. In every case, the best practice is to keep your composable functions fast, idempotent, and side-effect free.
 
@@ -165,7 +175,7 @@ Every composable function and lambda might recompose by itself. The following ex
         Text(name, Modifier.clickable(onClick = { onClicked(name) }))
     }
     
-    [ThinkingInComposeSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/mentalmodel/ThinkingInComposeSnippets.kt#L130-L162)
+    [ThinkingInComposeSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/mentalmodel/ThinkingInComposeSnippets.kt#L130-L162)
 
 Each of these scopes might be the only thing to execute during a recomposition. Compose might skip to the `Column` lambda without executing any of its parents when the `header` changes. And when executing `Column`, Compose might choose to skip the `LazyColumn`'s items if `names` didn't change.
 
@@ -214,7 +224,7 @@ Here's an example showing a composable that displays a list and its count:
         }
     }
     
-    [ThinkingInComposeSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/mentalmodel/ThinkingInComposeSnippets.kt#L97-L107)
+    [ThinkingInComposeSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/mentalmodel/ThinkingInComposeSnippets.kt#L97-L107)
 
 This code is side-effect free, and transforms the input list to UI. This is great code for displaying a small list. However, if the function writes to a local variable, this code won't be thread-safe or correct:
     
@@ -236,7 +246,7 @@ This code is side-effect free, and transforms the input list to UI. This is grea
         }
     }
     
-    [ThinkingInComposeSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/mentalmodel/ThinkingInComposeSnippets.kt#L111-L126)
+    [ThinkingInComposeSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/mentalmodel/ThinkingInComposeSnippets.kt#L111-L126)
 
 In this example, `items` is modified with every recomposition. That could be every frame of an animation, or when the list updates. Either way, the UI will display the wrong count. Because of this, writes like this are not supported in Compose; by prohibiting those writes, we allow the framework to change threads to execute composable lambdas.
 
@@ -244,7 +254,7 @@ In this example, `items` is modified with every recomposition. That could be eve
 
 **Note:** Compose operates on the main thread, but it has been designed from the start with multithreading in mind, and we don't guarantee a single threaded model will remain in the future. Because of this, you should always write your composables as if they can be run on multiple threads.
 
-If you look at the code for a composable function, you might assume that the code is run in the order it appears. But this isn't guaranteed to be true. If a composable function contains calls to other composable functions, those functions might run in any order. Compose has the option of recognizing that some UI elements are higher priority than others, and drawing them first.
+If you look at the code for a composable function, you might assume that the code is run in the order it appears. But this isn't necessarily true. If a composable function contains calls to other composable functions, those functions might run in any order. Compose has the option of recognizing that some UI elements are higher priority than others, and drawing them first.
 
 For example, suppose you have code like this to draw three screens in a tab layout:
     
@@ -258,7 +268,7 @@ For example, suppose you have code like this to draw three screens in a tab layo
         }
     }
     
-    [ThinkingInComposeSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/mentalmodel/ThinkingInComposeSnippets.kt#L86-L93)
+    [ThinkingInComposeSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/mentalmodel/ThinkingInComposeSnippets.kt#L86-L93)
 
 The calls to `StartScreen`, `MiddleScreen`, and `EndScreen` might happen in any order. This means you can't, for example, have `StartScreen()` set some global variable (a side-effect) and have `MiddleScreen()` take advantage of that change. Instead, each of those functions needs to be self-contained.
 
@@ -270,6 +280,8 @@ To learn more about how to think in Compose and composable functions, see the fo
 
   * [Composable functions - MAD Skills](https://www.youtube.com/watch?v=fFLBCgoHHys)
 
+
+
 ## Recommended for you
 
   * Note: link text is displayed when JavaScript is off
@@ -277,8 +289,10 @@ To learn more about how to think in Compose and composable functions, see the fo
   * [State and Jetpack Compose](/develop/ui/compose/state)
   * [Jetpack Compose architectural layering](/develop/ui/compose/layering)
 
+
+
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-22 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-22 UTC."],[],[]] 

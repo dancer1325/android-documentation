@@ -4,12 +4,20 @@
 
 ---
 
-#  Improve your code with lint checks
-In addition to [building tests](/studio/test/test-in-android-studio) to make sure your app meets its functional requirements, it's important that you also run the code through the lint tool to help ensure your code has no structural problems. The lint tool helps find poorly structured code that can impact the reliability and efficiency of your Android apps and make your code harder to maintain. It is strongly recommended that you correct any errors that lint detects before publishing your app.
+#  Improve your code with lint checks Save and categorize content based on your preferences. 
+
+In addition to [building tests](/studio/test/test-in-android-studio) to make sure your app meets its functional requirements, it's important that you also run the code through the lint tool to help ensure your code has no structural problems. The lint tool helps find poorly structured code that can impact the reliability and efficiency of your Android apps and make your code harder to maintain. It's strongly recommended that you correct any errors that lint detects before publishing your app.
 
 For example, if your XML resource files contain unused namespaces, this takes up space and requires unnecessary processing. Other structural issues, such as use of deprecated elements or API calls that are not supported by the target API versions, might lead to code failing to run correctly. Lint can help you clean up these issues.
 
 To improve linting performance, you can also [add annotations to your code](/studio/write/annotations).
+
+Try [Android CLI](/tools/agents) if you're not using Android Studio or prefer to do things from the command line.  
+  
+For example, use the [`android studio analyze-file`](/tools/agents/android-cli/commands/studio_analyze-file) command when you need to analyze your file for errors, warnings, and lint issues.
+    
+    
+    android studio analyze-file <path>
 
 ## Overview
 
@@ -21,6 +29,8 @@ The built-in lint tool checks your code while you're using Android Studio. You c
 
   * As pop-up text in the editor window. When lint finds a problem, it highlights the problematic code in yellow. For more serious issues, it underlines the code in red.
   * In the lint **Inspection Results** window when you click **Code > Inspect Code**.
+
+
 
 **Note:** When your code is compiled in Android Studio, additional [IntelliJ code inspections](https://www.jetbrains.com/help/idea/2026.1/code-inspection.html) run to streamline code review. Keep [Android Studio](/studio) as up-to-date as possible to ensure the latest lint rules and inspections are available.
 
@@ -52,6 +62,9 @@ If you're using Android Studio or Gradle, use the [Gradle wrapper](https://docs.
         
         ./gradlew lint
         
+
+
+
 
 You should see output similar to the following:
     
@@ -119,6 +132,8 @@ Two warnings relate to the project's `AndroidManifest.xml` file:
   * `ManifestOrder`
   * `UsesMinSdkAttributes`
 
+
+
 One warning relates to the `res` directory: `IconMissingDensityFolder`.
 
 ## Configure lint to suppress warnings
@@ -134,6 +149,8 @@ The severity levels are:
   * `error`
   * `fatal`
 
+
+
 You can configure lint checking for different levels:
 
   * Globally (entire project)
@@ -143,6 +160,8 @@ You can configure lint checking for different levels:
   * Open files
   * Class hierarchy
   * Version Control System (VCS) scopes
+
+
 
 ### Configure the lint file
 
@@ -194,6 +213,8 @@ You can turn off lint checking for your Kotlin and XML source files in the **Pre
   1. Select **File > Settings** (on Windows) or **Android Studio > Preferences** (on macOS or Linux).
   2. Select **Editor > Inspections**.
   3. To disable, deselect the appropriate source file.
+
+
 
 You can set these either for the IDE or for individual projects by selecting the appropriate profile.
 
@@ -438,6 +459,8 @@ Depending on the context, you can:
      * Manage inspection alerts.
      * Rerun an inspection.
 
+
+
 For descriptions of the toolbar buttons, context menu items, and inspection report fields, see [ Inspection Results tool window](https://www.jetbrains.com/help/idea/2026.1/inspection-tool-window.html). 
 
 ### Use a custom scope
@@ -462,6 +485,8 @@ Use one of the custom scopes provided in Android Studio as follows:
 If you have a VCS configured for the project, there are also options to restrict the search to only files that have been modified.
 
   3. Click **OK.**
+
+
 
 ### Create a custom scope
 
@@ -506,6 +531,8 @@ Figure 10 shows that the **main** folder is included, and that the **java** and 
      * If you select the green-highlighted **MainActivity.kt** file and click **Exclude** , **MainActivity.kt** is no longer highlighted green, but everything else under the **java** folder remains green.
   8. Click **OK**. The custom scope appears at the bottom of the list.
 
+
+
 ### Review and edit inspection profiles
 
 Android Studio has a selection of lint and other inspection profiles that are updated through Android updates. You can use these profiles as they are or edit their names, descriptions, severities, and scopes. You can also activate and deactivate entire groups of profiles or individual profiles within a group. 
@@ -528,8 +555,10 @@ When you select a profile category, you can edit all the inspections in that cat
   6. Select the **Show Schema Actions** ![Show Schema Actions icon](/static/studio/images/buttons/device-settings-icon.png) list to copy, rename, add descriptions to, export, and import inspections.
   7. When you're done, click **OK**.
 
+
+
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-25 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-25 UTC."],[],[]] 

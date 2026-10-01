@@ -3,12 +3,16 @@
 **Source:** [https://developer.android.com/jetpack/androidx/releases/compose](https://developer.android.com/jetpack/androidx/releases/compose)
 
 ---
+
+Save and categorize content based on your preferences. 
+
 # Compose
 
 [User Guide](/jetpack/compose/tutorial) [Code Sample](https://github.com/android/compose-samples)
 
 API Reference  
 [androidx.compose](/reference/kotlin/androidx/compose/animation/package-summary)  
+
 
 Define your UI programmatically with composable functions that describe its shape and data dependencies. 
 
@@ -32,13 +36,13 @@ This table lists the current versions of each group.
 
 Maven Group ID | Latest Update | Stable Release | Release Candidate | Beta Release | Alpha Release  
 ---|---|---|---|---|---  
-[compose.animation](/jetpack/androidx/releases/compose-animation) | July 01, 2026 | [1.11.4](/jetpack/androidx/releases/compose-animation#1.11.4) | - | [1.12.0-beta02](/jetpack/androidx/releases/compose-animation#1.12.0-beta02) | -  
+[compose.animation](/jetpack/androidx/releases/compose-animation) | September 09, 2026 | [1.12.1](/jetpack/androidx/releases/compose-animation#1.12.1) | - | - | [1.13.0-alpha03](/jetpack/androidx/releases/compose-animation#1.13.0-alpha03)  
 [compose.compiler](/jetpack/androidx/releases/compose-compiler) | August 7, 2024 | [1.5.15](/jetpack/androidx/releases/compose-compiler#1.5.15) | - | - | -  
-[compose.foundation](/jetpack/androidx/releases/compose-foundation) | July 01, 2026 | [1.11.4](/jetpack/androidx/releases/compose-foundation#1.11.4) | - | [1.12.0-beta02](/jetpack/androidx/releases/compose-foundation#1.12.0-beta02) | -  
-[compose.material](/jetpack/androidx/releases/compose-material) | July 01, 2026 | [1.11.4](/jetpack/androidx/releases/compose-material#1.11.4) | - | [1.12.0-beta02](/jetpack/androidx/releases/compose-material#1.12.0-beta02) | -  
-[compose.material3](/jetpack/androidx/releases/compose-material3) | July 01, 2026 | [1.4.0](/jetpack/androidx/releases/compose-material3#1.4.0) | - | - | [1.5.0-alpha23](/jetpack/androidx/releases/compose-material3#1.5.0-alpha23)  
-[compose.runtime](/jetpack/androidx/releases/compose-runtime) | July 01, 2026 | [1.11.4](/jetpack/androidx/releases/compose-runtime#1.11.4) | - | [1.12.0-beta02](/jetpack/androidx/releases/compose-runtime#1.12.0-beta02) | -  
-[compose.ui](/jetpack/androidx/releases/compose-ui) | July 01, 2026 | [1.11.4](/jetpack/androidx/releases/compose-ui#1.11.4) | - | [1.12.0-beta02](/jetpack/androidx/releases/compose-ui#1.12.0-beta02) | -  
+[compose.foundation](/jetpack/androidx/releases/compose-foundation) | September 09, 2026 | [1.12.1](/jetpack/androidx/releases/compose-foundation#1.12.1) | - | - | [1.13.0-alpha03](/jetpack/androidx/releases/compose-foundation#1.13.0-alpha03)  
+[compose.material](/jetpack/androidx/releases/compose-material) | September 09, 2026 | [1.12.1](/jetpack/androidx/releases/compose-material#1.12.1) | - | - | [1.13.0-alpha03](/jetpack/androidx/releases/compose-material#1.13.0-alpha03)  
+[compose.material3](/jetpack/androidx/releases/compose-material3) | September 23, 2026 | [1.4.0](/jetpack/androidx/releases/compose-material3#1.4.0) | - | - | [1.5.0-alpha29](/jetpack/androidx/releases/compose-material3#1.5.0-alpha29)  
+[compose.runtime](/jetpack/androidx/releases/compose-runtime) | September 09, 2026 | [1.12.1](/jetpack/androidx/releases/compose-runtime#1.12.1) | - | - | [1.13.0-alpha03](/jetpack/androidx/releases/compose-runtime#1.13.0-alpha03)  
+[compose.ui](/jetpack/androidx/releases/compose-ui) | September 09, 2026 | [1.12.1](/jetpack/androidx/releases/compose-ui#1.12.1) | - | - | [1.13.0-alpha03](/jetpack/androidx/releases/compose-ui#1.13.0-alpha03)  
   
 ## Declaring dependencies
 
@@ -106,6 +110,6 @@ June 26, 2023 |  Since Compose 1.5.0-beta01 release, Compose aar are located und
   
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-07-06 UTC.
+Last updated 2026-09-23 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-07-06 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-23 UTC."],[],[]] 

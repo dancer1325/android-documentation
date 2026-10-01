@@ -4,14 +4,22 @@
 
 ---
 
-#  Create a project
+#  Create a project Save and categorize content based on your preferences. 
+
 Android Studio makes it easy to create Android apps for various form factors, such as phones, tablets, TVs, and Wear devices. This page explains how to start a new Android app project or import an existing project.
 
-If you don't have a project opened, create a new project by clicking **New Project** on the Android Studio Welcome screen.
+If you don't have a project open, create a new project by clicking **New Project** on the Android Studio Welcome screen.
 
-If you do have a project opened, create a new project by selecting **File > New > New Project** from the main menu.
+If you have a project open, create a new project by selecting **File > New > New Project** from the main menu.
 
-**Note:** To use a generative AI agent to create a project, read [Create a project with AI](/studio/gemini/create-a-new-project-with-ai).
+**Note:** To use a generative AI agent to create a project, see [Create a project with AI](/studio/gemini/create-a-new-project-with-ai).
+
+Try [Android CLI](/tools/agents) if you're not using Android Studio or prefer to do things from the command line.  
+  
+For example, use the [`android create`](/tools/agents/android-cli/commands/create) command when you need to create a new project.
+    
+    
+    android create empty-activity --name=MyApp
 
 ## Choose your project type
 
@@ -21,13 +29,13 @@ In the **New Project** screen that appears, you can select the type of project y
 
 Selecting the type of project you want to create lets Android Studio include sample code and resources in your project to help you get started.
 
-For Compose projects, **Empty Activity** is the recommended starting point for all new projects. It includes Compose dependencies and Material Design setup, providing a modern, declarative foundation. Use the other templates only if you are maintaining or migrating a legacy codebase.
+For Compose projects, **Empty Activity** is the recommended starting point for all new projects. It includes Compose dependencies and Material Design setup, providing a modern, declarative foundation. Use the other templates only if you're maintaining or migrating a legacy codebase.
 
-Once you select your project type, click **Next**.
+After selecting your project type, click **Next**.
 
 ## Configure your project
 
-The next step in creating your project is to configure some settings, as shown in figure 2. If you're creating a **Native C++** project, read [Create a new project with C/C++ support](/studio/projects/add-native-code#new-project) to learn more about the options you need to configure.
+The next step in creating your project is to configure some settings, as shown in figure 2. If you're creating a **Native C++** project, see [Create a new project with C/C++ support](/studio/projects/add-native-code#new-project) to learn more about the options you need to configure.
 
 ![Configure your new project with a few settings.](/static/studio/images/projects/new-project-wizard-configure-2x.png) **Figure 2.** Configure your new project with a few settings.
 
@@ -43,13 +51,16 @@ The next step in creating your project is to configure some settings, as shown i
 If you want to see more data to help you decide, click **Help me choose**. This displays a dialog showing the cumulative distribution for the API level you have selected and lets you see the impact of using different minimum API levels.
 
 ![A helper that shows cumulative distribution of different API levels.](/static/studio/images/projects/new-project-wizard-choose-api-level_2x.png) **Figure 3.** A help screen that shows the cumulative distribution of different API levels.
-  6. Your project is configured to use AndroidX libraries by default, which replace the Android Support libraries. To use the legacy support libraries instead, select **Use legacy android.support libraries**. However, this is not recommended, as the legacy support libraries are no longer supported. To learn more, read the [AndroidX overview](/jetpack/androidx).
+  6. Your project is configured to use AndroidX libraries by default, which replace the Android Support libraries. To use the legacy support libraries instead, select **Use legacy android.support libraries**. However, this is not recommended, as the legacy support libraries are no longer supported. To learn more, see the [AndroidX overview](/jetpack/androidx).
 
   7. When you're ready to create your project, click **Finish**.
 
+
+
+
 Android Studio creates your new project with some basic code and resources to get you started. If you decide to add support for a different device form factor later, you can [add a module](/studio/projects/add-app-module) to your project. And if you want to share code and resources between modules, you can do so by creating an [Android library](/studio/projects/android-library).
 
-For more information about the Android project structure and module types, read the [Projects overview](/studio/projects). If you're new to Android development altogether, see [Get started with Android](/training).
+For more information about the Android project structure and module types, see the [Projects overview](/studio/projects). If you're new to Android development altogether, see [Get started with Android](/training).
 
 ## Import an existing project
 
@@ -59,9 +70,11 @@ To import an existing local project into Android Studio, proceed as follows:
   2. In the window that appears, navigate to the root directory of the project you want to import.
   3. Click **OK**.
 
+
+
 Android Studio opens the project in a new IDE window and indexes its contents.
 
-If you are importing a project from version control, select **File** > **New** > **Project from Version Control**. For more information about importing projects from version control, read IntelliJ's information about [version control](https://www.jetbrains.com/help/idea/version-control-integration.html).
+If you're importing a project from version control, select **File** > **New** > **Project from Version Control**. For more information about importing projects from version control, see IntelliJ's information about [version control](https://www.jetbrains.com/help/idea/version-control-integration.html).
 
 ## Build and run your app
 
@@ -71,6 +84,6 @@ To learn more, see [Build and run your app](/studio/run) and the guides that cov
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-05-15 UTC.
+Last updated 2026-09-25 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-05-15 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-25 UTC."],[],[]] 

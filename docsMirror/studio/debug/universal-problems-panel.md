@@ -4,7 +4,8 @@
 
 ---
 
-#  View issues for your design tools in the Problems panel
+#  View issues for your design tools in the Problems panel Save and categorize content based on your preferences. 
+
 The **Problems** panel in Android Studio is a centralized and shared issue panel for all design tools, such as Compose Preview, Layout Editor, and Layout Validation. To view the tool window, navigate to **View** > **Tool Windows** > **Problems**.
 
 ![Panel UI](/static/studio/images/debug/upp.png) **Figure 1.** You can view all the issues for your design tools in a shared issue panel.

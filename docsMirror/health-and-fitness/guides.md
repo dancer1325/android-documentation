@@ -4,7 +4,14 @@
 
 ---
 
-Google Fit APIs will be supported until the end of 2026. To learn about the recommended migration paths, see [Migration guide](/health-and-fitness/health-connect/migration/fit).
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Essentials ](https://developer.android.com/get-started)
+  * [ Health & fitness dev center ](https://developer.android.com/health-and-fitness)
+
+
+
+Save and categorize content based on your preferences. 
+
 ![](https://developer.android.com/static/images/health-and-fitness/hero-2.png)
 
 ![](https://developer.android.com/static/images/dev-center/icons/health-and-fitness.svg)Developer center 
@@ -15,21 +22,13 @@ Build a seamless and unified health and fitness data experience. Connect data ac
 
 [ ![](/static/images/spot-icons/fitbit.svg) Looking for Fitbit Web APIs? You can find them on Fitbit Developer arrow_forward ](https://dev.fitbit.com/build/reference/web-api/)
 
-##  Building the Future of Health 
-
-Join us in shaping a connected health ecosystem. Our vision is to break down data silos, enhance data quality and acquisition, and improve the developer experience to unlock the full potential of health and fitness data. 
-
   * [ ![](/static/images/picto-icons/health-connect-logo.svg) Access health data  
 with Health Connect ](/health-and-fitness/guides/health-connect)
   * [ ![](/static/images/picto-icons/health-services-logo.svg) Access Wear OS sensors  
 with Health Services ](/health-and-fitness/guides/health-services)
   * [ ![](/static/images/picto-icons/vitals.svg) Migrate from Google Fit ](/health-and-fitness/guides/health-connect/migrate/migration-guide)
 
-![](https://developer.android.com/static/images/logos/android-jetpack.svg)
 
-##  Core platforms 
-
-Already know what Health platform you want to develop on? Go straight to the docs that you need here. 
 
 ###  [ Health and fitness data ](https://developer.android.com/health-and-fitness/guides/health-connect/develop/get-started)
 
@@ -49,19 +48,7 @@ Learn how to supplement your Wear OS app with high-quality sensor data in a powe
 
 [Get started](https://developer.android.com/health-and-fitness/guides/health-services)
 
-##  Health Connect Jetpack Library 1.1.0 is now stable 
-
-We are excited to announce that the Health Connect Jetpack library has reached its 1.1.0 stable release. This milestone provides developers with the confidence and reliability needed to build production-ready health and fitness experiences at scale. 
-
-[View release notes](https://developer.android.com/jetpack/androidx/releases/health-connect)
-
-##  Featured guides and resources 
-
-A selection of the most-frequented content in the Health & Fitness Developer Center. 
-
 Codelab Guide Video Health Connect Health Services Google Fit
-
-##  Case studies 
 
 [ ![](https://developer.android.com/static/images/health-and-fitness/developer-stories/peloton.jpg) ](https://www.youtube.com/watch?v=mSejMEIbAzU)
 

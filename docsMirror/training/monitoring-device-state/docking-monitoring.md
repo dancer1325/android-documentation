@@ -4,7 +4,8 @@
 
 ---
 
-#  Determine and monitor the docking state and type
+#  Determine and monitor the docking state and type Save and categorize content based on your preferences. 
+
 Android-powered devices can be docked into different kinds of docks. These include car docks, home docks, and digital or analog docks. The dock state is typically closely linked to the charging state, as many docks provide power to docked devices.
 
 Your app affects the phone's update rate in the dock state. You can increase the update frequency of a sports news app when it's in the desktop dock, or disable your updates completely if the device is car docked. Conversely, you can maximize your updates while car docked if your background service is updating traffic conditions.
@@ -53,6 +54,8 @@ If a device is docked, it can be docked in any of the following four different d
   * Desk
   * Low-End (Analog) desk
   * High-End (Digital) desk
+
+
 
 The latter two options are only introduced in Android API level 11, so it's good practice to check for all three desk types when you are only interested in the type of dock rather than it being digital or analog specifically:
 

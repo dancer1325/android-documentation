@@ -1,72 +1,65 @@
-# Android Studio Panda 4 (April 2026)  |  Android Developers
+# Android Studio Quail 3 (August 2026)  |  Android Developers
 
 **Source:** [https://developer.android.com/studio/releases/past-releases](https://developer.android.com/studio/releases/past-releases)
 
 ---
 
-#  Android Studio Panda 4 (April 2026)
-The following are the release notes for Android Studio Panda 4.
+#  Android Studio Quail 3 (August 2026) Save and categorize content based on your preferences. 
+
+The following are the release notes for Android Studio Quail 3.
 
 ## Patch releases
 
-The following is a list of patch releases in Android Studio Panda 4.
+The following is a list of patch releases for Android Studio Quail 3.
 
-### Android Studio Panda 4 | 2025.3.4 Patch 1 (May 2026)
+### Android Studio Quail 3 | 2026.1.3 Patch 1 (August 2026)
 
-This minor update includes [these bug fixes](/studio/releases/fixed-bugs/studio/2025.3.4#android-studio-panda-4-%7C-2025.3.4-patch-1).
+This minor updates includes [these bug fixes](/studio/releases/fixed-bugs/studio/2026.1.3#android-studio-quail-3-%7C-2026.1.3-patch-1).
 
-The following are new features in Android Studio Panda 4.
+The following are new features in Android Studio Quail 3.
 
-## Gemini API Starter template
+## Improvements to Planning Mode
 
-The Gemini API Starter template provides a straightforward path for Android developers to integrate AI features into their applications. By leveraging Firebase AI Logic, developers can avoid manual configuration and security management.
+[Planning Mode](/studio/releases/past-releases/as-panda-4-release-notes#planning-mode) facilitates a multi-stage reasoning process, giving the agent more space to evaluate its own proposed logic for potential issues before presenting it to you. This is especially useful for complex and long-running tasks which demand a high degree of precision.
 
-![](/static/studio/preview/features/images/GeminiAPIStarter.png) Gemini API Starter new project template
+### How to use Planning Mode
 
-Key Features:
+You can explicitly kick off Planning Mode by including the **`/plan`** command in your prompt, or by asking the agent to generate a plan before it starts implementing code.
 
-  * **No API Key Management** : Eliminates the need to manually provision, embed, or rotate API keys within your client-side code, reducing security risks and setup time.
-  * **Automated Firebase Integration** : Seamlessly connects your Android Studio project to Firebase services. The template handles the backend plumbing required to communicate with Gemini models securely.
-  * **Production-Ready Architecture** : Built on top of Firebase’s managed infrastructure, ensuring that your AI features can scale from a local prototype to a production environment without architectural changes.
+![Ask the agent to come up with a plan or use /plan explicitly.](/static/studio/images/planning-mode-prompt.png) Ask the agent to come up with a plan or use `/plan` explicitly.
 
-To get started, go to **File** > **New** > **New Project** and select the **Gemini API Starter** template from the list of available project types.
+Once the agent examines your request and generates an implementation plan, you can review it. You can iterate on the plan with the agent, going back and forth to fix mistakes or clarify which approaches to use—all before the agent has spent any time or tokens executing actions.
 
-## Generate unit tests with Gemini
+![Open and review the plan.](/static/studio/images/planning-mode-review-plan.png) Open and review the plan.
 
-Gemini in Android Studio can generate comprehensive, compilable unit tests for your Kotlin and Java code. Gemini analyzes your source code to identify constructor dependencies, business logic branches, and edge cases, and then automatically creates a complete test class. This includes the generation of `setUp` methods, mock initialization, and individual test cases tailored to your project's specific architecture and coding style.
+Add your feedback directly to the plan and send it to the agent by clicking **Submit comments**. The agent will use your comments to revise the proposed implementation.
 
-To get started, open a source file, right-click the code you want to test, and select **AI > Generate Unit Tests**. For more details, see [Generate unit tests with Gemini](/studio/gemini/generate-unit-tests#prerequisites).
+![Add comments and submit them. The agent regenerates the plan incorporating the new feedback.](/static/studio/images/planning-mode-submit-comments.png) Add comments and submit them. The agent regenerates the plan incorporating the new feedback.
 
-Unit test generation demo
+When you are completely satisfied with the plan, click **Proceed** to implement the plan.
 
-## Google One integration for Gemini in Android Studio
+![Click on Proceed to approve the plan and kick off the implementation.](/static/studio/images/planning-mode-proceed.png) Click on **Proceed** to approve the plan and kick off the implementation.
 
-Android Studio Panda 4 introduces access to an enhanced Agent Mode experience when you subscribe to the [Google One AI Pro or Ultra plans](https://one.google.com/about/google-ai-plans/). The Google One integration supercharges your Android development with higher rate limits for the default Gemini model. If you are subscribed to a Google One AI Pro or Ultra plan, you can take advantage of these benefits automatically when you sign in to your Google Account in Android Studio. Using Gemini in Android Studio with a Google One AI Pro or Ultra plan doesn't affect your quota for other AI tools, such as Gemini CLI or Antigravity.
+After the work is done, the agent produces a summary of exactly what has been changed, so you can review the updates.
 
-## Next Edit Prediction (NEP)
+![Get a summary of changes once implementation is complete.](/static/studio/images/planning-mode-summary.png) Get a summary of changes once implementation is complete.
 
-Android Studio Panda 4 introduces Next Edit Prediction (NEP), a major evolution of the editor's AI capabilities. While traditional [AI Code Completion](/studio/gemini/code-completion) focuses on suggesting code at your current cursor position, NEP is designed for "away from cursor" updates.
+## MCP Marketplace
 
-By using Gemini to analyze your recent edits across multiple files, NEP anticipates your next logical move. It proactively suggests changes elsewhere in your codebase—helping you maintain consistency and speed up repetitive refactoring tasks.
+Starting in Quail 3, we're making it easier for you to find and add MCP servers. Navigate to **Settings > Tools > AI > MCP Servers** to browse for a server and install it.
 
-## Ask Mode
+![](/static/studio/releases/assistant/2026.1.3/mcp-marketplace.png)
 
-In Android Studio Panda 4, we are removing the _Ask_ tab and replacing it with a dedicated conversation mode, allowing you to ask the agent questions and get answers without prompting it to execute tasks.
+The **Marketplace** tab lists all the servers available on [ModelContextProtocol.io](http://modelcontextprotocol.io/). Click the gear icon to switch to a custom registry or to filter by MCP server type (such as **NPX** , **Docker** , or **Python**).
 
-## Planning Mode
+![](/static/studio/releases/assistant/2026.1.3/mcp-servers.png)
 
-The new Planning Mode prompts the agent to come up with a detailed project plan before it begins executing tasks. Instead of a single pass where the model directly predicts the next token of code, Planning Mode facilitates a multi-stage reasoning process, giving the agent additional space to evaluate its own proposed logic before presenting it to you.
+## Merge Conflicts action
 
-## Developer verification support
-
-To help you meet the upcoming Android developer verification requirements, we are bringing registration checks directly into your workflow. You will now see your app's registration status right in Android Studio when you generate a signed App Bundle or APK. By moving these checks closer to build time, you can catch any issues early and ensure your apps are ready before the [verification requirement](/developer-verification) goes into effect for certified Android devices starting in September 2026.
-
-## Agent Web Search
-
-While Android Studio's agent already leverages the [Android Knowledge Base](/studio/gemini/knowledge-base) for official documentation, modern Android development relies on a vast ecosystem of external libraries. Agent Web Search expands Gemini's reach, allowing it to query Google directly to fetch current reference material from across the web. From checking the latest setup guides for Coil to finding advanced configuration tips for Koin or Moshi, the agent can now pull in the most up-to-date information in real time.
+Quail 3 introduces a new ![](/static/studio/releases/assistant/2026.1.3/resolve-conflicts-icon.svg) **Merge Conflicts with Agent** button into the **Commit** tool window that instructs the agent to automatically merge conflicts. When there are one or more conflicting files in the repositories, you can click this button to launch a new agent session targeting those files.
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-02 UTC.
+Last updated 2026-09-01 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-02 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-01 UTC."],[],[]] 

@@ -1,28 +1,29 @@
-# Publish your app  |  Android Studio  |  Android Developers
-
 **Source:** [https://developer.android.com/studio/publish](https://developer.android.com/studio/publish)
 
----
-
 #  Publish your app
-**Important:** From August 2021, new apps are required to publish with the [Android App Bundle](/guide/app-bundle) on Google Play. New apps larger than 200 MB are now supported by either [Play Feature Delivery](/guide/app-bundle/dynamic-delivery) or [Play Asset Delivery](/guide/app-bundle/asset-delivery). From June 2023, new and existing [TV apps are required to be published as App Bundles](/docs/quality-guidelines/tv-app-quality#SC-E1). 
 
-Publishing is the general process that makes your Android app available to users. When you publish an Android app, you do the following:
+* ⚠️requirements⚠️
+  * | August 2021,
+    * publish NEW apps -- via -- [Android App Bundle | Google Play](../guide/app-bundle) 
+    * NEW apps / 's size > 200 MB -> supported by 
+      * [Play Feature Delivery](../guide/app-bundle/dynamic-delivery) OR
+      * [Play Asset Delivery](../guide/playcore/asset-delivery.md)
+  * | June 2023,
+    * [publish NEW & EXISTING TV apps -- as -- App Bundles](../docs/quality-guidelines/tv-app-quality.md) 
 
-  * **Prepare the app for release.**
-
-During the preparation step, you build a release version of your app.
-
-  * **Release the app to users.**
-
-During the release step, you publicize, sell, and distribute the release version of your app, which users can download and install on their Android-powered devices.
-
-This page provides an overview of the process for preparing to publish your app. If you plan to publish on Google Play, read [Release with confidence](/distribute/best-practices/launch/launch-checklist). 
-
-If you use a Continuous Integration server, you can configure it to automate the steps outlined here. You can also configure it to push builds to your [internal test distribution channel](/studio/publish/upload-bundle#test_with_play). 
+* Publishing
+  * == general process /
+    * makes
+      * your Android app is AVAILABLE -- to -- users
+  * steps
+    * build a release version of your app
+      * [best practices](../distribute/best-practices/launch/launch-checklist)
+    * Release the app -- to -- users
+      * [internal test distribution channel](publish/upload-bundle.md#test-your-app-internally) 
 
 ## Prepare your app for release
 
+TODO: 
 Preparing your app for release is a multistep process involving the following tasks:
 
   * **Configure your app for release.**

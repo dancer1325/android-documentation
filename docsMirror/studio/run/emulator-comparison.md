@@ -4,7 +4,8 @@
 
 ---
 
-#  Comparison of Android Emulator tools
+#  Comparison of Android Emulator tools Save and categorize content based on your preferences. 
+
 The following table compares the tasks you can perform using the [emulator UI](/studio/run/emulator), AVD Manager, commonly used [command-line startup options](/studio/run/emulator-commandline#startup-options), and the [Emulator console](/studio/run/emulator-console).The table compares features between different emulator tools that are similar but not necessarily with identical functionality. In the AVD Manager, you can set [hardware profile](/studio/run/managing-avds#hpproperties) and [AVD](/studio/run/managing-avds#avdproperties) properties.
 
 To use certain features of the emulator with your apps, you need to enable them through various [`<uses-feature>`](/guide/topics/manifest/uses-feature-element) elements and [manifest permission](/reference/android/Manifest.permission) constants, just as you would on a hardware device.

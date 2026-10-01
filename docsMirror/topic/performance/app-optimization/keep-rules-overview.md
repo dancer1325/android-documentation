@@ -4,7 +4,8 @@
 
 ---
 
-#  About keep rules
+#  About keep rules Save and categorize content based on your preferences. 
+
 When you [enable app optimization](/topic/performance/app-optimization/enable-app-optimization) with the default settings, R8 performs extensive optimizations in order to maximize your performance benefits. R8 makes substantial modifications to the code including renaming, moving, and removing classes, fields and methods. If you observe that these modifications cause errors, you need to specify which parts of the code R8 _shouldn't_ modify by declaring those in keep rules.
 
 **Note:** Keep rules that are narrowly scoped allow for maximum optimization. Use keep rules that are as specific as possible if rules are necessary, or consider a change in libraries if usage of a library is causing problems with R8 optimizations.
@@ -16,15 +17,103 @@ R8 identifies and preserves all direct calls in your code. However, R8 cannot se
   * Code accessed by reflection: R8 can't identify when classes, fields or methods are accessed with reflection. For example, R8 cannot identify a method looked up by its name using `Class.getDeclaredMethod()` or an annotation retrieved with `Class.getAnnotation()`. In these cases, R8 might rename these methods and annotations or remove them entirely, leading to a `ClassNotFoundException` or a `NoSuchMethodException` at runtime.
   * Code called from Java Native Interface (JNI): When native (C or C++) code calls a Java or Kotlin method, or Java or Kotlin code calls C++ code with JNI, the call is based on a dynamic string lookup of the method's name. R8 can't see the dynamic string-based method call, and so its optimizations might break your code.
 
+
+
 This is not an exhaustive list of scenarios that require keep rules, but these scenarios cover most of the cases where you might need keep rules.
 
 **Note:** In modern Android development, you should limit the use of reflection and avoid calls from native code into your Java or Kotlin code where possible because these code patterns can impact performance. When selecting dependencies for your app, choose libraries that are compatible with R8 optimization. To learn more, see [Choose libraries wisely](/topic/performance/app-optimization/choose-libraries-wisely).
 
 ## How to add keep rules to your app
 
-You should add your rules to a `proguard-rules.pro` file located in the app module's root directory—the file might already be there, but if it isn't, create it. To apply the rules in the file, you must declare the file in your module-level `build.gradle.kts` (or `build.gradle`) file as shown in the following code:
+Your keep rules configuration depends on the version of AGP you use.
+
+Larger apps typically have code in multiple library modules. In such cases, it's often better to put the keep rules alongside the code they apply to within the specific library module. The crucial difference in maintaining keep rules for libraries lies in how you declare these rules within your library module's `build.gradle.kts` (or `build.gradle`) file. See [Optimization for library authors](/topic/performance/app-optimization/library-optimization) to learn more.
+
+### For AGP versions 9.3 and higher
+
+Add your rules to a file with the suffix `.keep` in the `src/<variant>/keepRules` directory. For example, `src/main/keepRules/custom-rules.keep`. Note that using the updated DSL for AGP 9.3 and higher enables enables both code and resource optimization, and does _not_ require you to explicitly define the default Android keep rules file (`proguard-android-optimize.txt`), because it is included by default, unless explicitly omitted.
 
 ### Kotlin
+    
+    
+    android {
+        buildTypes {
+            release {
+                optimization {
+                    enable = true // Enables code and resource optimizations.
+                }
+            }
+        }
+    }
+    
+
+### Groovy
+    
+    
+    android {
+        buildTypes {
+            release {
+                optimization {
+                    enable = true // Enables code and resource optimizations.
+                }
+            }
+        }
+    }
+    
+
+**Note:** The legacy DSL which required code and resource optimization to be distinctly enabled is still supported with AGP versions 9.3 and higher.
+
+#### Omit the default Android platform keep rules (Advanced)
+
+AGP provides a set of default Android platform rules. To omit these rules from your project's configuration and manage all keep rules yourself, set `optimization.keepRules.includeDefault` to `false`.
+
+### Kotlin
+    
+    
+    android {
+        buildTypes {
+            release {
+                optimization {
+                    enable = true // Enables code and resource optimizations.
+                    keepRules {
+                        includeDefault = false // The file with optimization
+                        // rules for the Android platform is included by
+                        // default. To omit this file, set this option to false.
+                    }
+                }
+            }
+        }
+    }
+    
+
+### Groovy
+    
+    
+    android {
+        buildTypes {
+            release {
+                optimization {
+                    enable = true // Enables code and resource optimizations.
+                    keepRules {
+                        includeDefault = false // The file with optimization
+                        // rules for the Android platform is included by
+                        // default. To omit this file, set this option to false.
+                    }
+                }
+            }
+        }
+    }
+    
+
+### Legacy DSL for AGP versions lower than 9.3
+
+Add your rules to a `proguard-rules.pro` file located in the app module's root directory—the file might already be there, but if it isn't, create it. To apply the rules in the file, you must declare the file in your module-level `build.gradle.kts` (or `build.gradle`) file.
+
+By default, your build file also includes the `proguard-android-optimize.txt` file. This file includes rules that are required for most Android projects, so you should let it remain in the build file. This file is based on, and shares content with, the [`proguard-common.txt`](https://cs.android.com/android-studio/platform/tools/base/+/mirror-goog-studio-main:build-system/gradle-core/src/main/resources/com/android/build/gradle/proguard-common.txt) file.
+
+**Warning:** You might find that older Android projects still use `proguard-android.txt` instead of `proguard-android-optimize.txt` as their default R8 configuration. If your project uses the `proguard-android.txt` file as its default R8 configuration, you should migrate to the `proguard-android-optimize.txt` file. The `proguard-android.txt` file has legacy configurations that prevent most optimizations.
+
+### Legacy DSL (Kotlin)
     
     
     android {
@@ -34,19 +123,16 @@ You should add your rules to a `proguard-rules.pro` file located in the app modu
                 isShrinkResources = true
     
                 proguardFiles(
-                    // File with default rules provided by the Android Gradle Plugin
+                    // Default file with default optimization rules.
                     getDefaultProguardFile("proguard-android-optimize.txt"),
-    
-                    // File with your custom rules
-                    "proguard-rules.pro"
+                    ...
                 )
-               // ...
             }
         }
-        // ...
     }
+    
 
-### Groovy
+### Legacy DSL (Groovy)
     
     
     android {
@@ -55,26 +141,13 @@ You should add your rules to a `proguard-rules.pro` file located in the app modu
                 minifyEnabled = true
                 shrinkResources = true
     
-                proguardFiles(
-                    // File with default rules provided by the Android Gradle Plugin
-                    getDefaultProguardFile('proguard-android-optimize.txt'),
-    
-                    // File with your custom rules.
-                    'proguard-rules.pro'
-                )
-               // ...
+                // Default file with default optimization rules.
+                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')
+                ...
             }
         }
-        // ...
     }
-
-By default, your build file also includes the `proguard-android-optimize.txt` file. This file includes rules that are required for most Android projects, so you should let it remain in the build file. This file is based on, and shares content with, the [`proguard-common.txt`](https://cs.android.com/android-studio/platform/tools/base/+/mirror-goog-studio-main:build-system/gradle-core/src/main/resources/com/android/build/gradle/proguard-common.txt) file.
-
-**Warning:** You might find that older Android projects still use `proguard-android.txt` instead of `proguard-android-optimize.txt` as their default R8 configuration. If your project uses the `proguard-android.txt` file as its default R8 configuration, you should migrate to the `proguard-android-optimize.txt` file. The `proguard-android.txt` file has legacy configurations that prevent most optimizations.
-
-Larger apps typically have code in multiple library modules. In such cases, it's often better to put the keep rules alongside the code they apply to within the specific library module. The crucial difference in maintaining keep rules for libraries lies in how you declare these rules within your library module's `build.gradle.kts` (or `build.gradle`) file. See [Optimization for library authors](/topic/performance/app-optimization/library-optimization) to learn more.
-
-**Note:** To learn how to optimize resources, see [Customize which resources to keep](/topic/performance/app-optimization/customize-which-resources-to-keep).
+    
 
 ## Add a keep rule
 
@@ -84,6 +157,7 @@ When you add keep rules, you can include global options as well as define your o
 
   * **Keep rules** : Keep rules need to be designed carefully, to make sure you get the right balance between maximizing code optimization without inadvertently breaking your app. To learn how to write keep rules, see [Add keep rules](/topic/performance/app-optimization/add-keep-rules).
 
+
 **Note:** Keep rules are additive-they are merged from all sources. You can see which rules are applied to confirm that the consolidated keep rules are having the intended effect. To learn more, see [Check which rules are applied](/topic/performance/app-optimization/test-and-troubleshoot-the-optimization#check-which-rules-are-applied).
 
 ## Keep rules for library authors
@@ -92,6 +166,6 @@ After learning about the global options and syntax for keep rules, see [Optimiza
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-05-19 UTC.
+Last updated 2026-07-15 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-05-19 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-07-15 UTC."],[],[]] 

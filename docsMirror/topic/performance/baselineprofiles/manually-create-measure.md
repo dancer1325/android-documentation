@@ -4,7 +4,8 @@
 
 ---
 
-#  Manually create and measure Baseline Profiles
+#  Manually create and measure Baseline Profiles Save and categorize content based on your preferences. 
+
 We highly recommend automating generation of profile rules using the [Jetpack Macrobenchmark library](/topic/performance/baselineprofiles/measure-baselineprofile) to reduce manual effort and increase general scalability. However, it is possible to manually create and measure profile rules in your app.
 
 ## Define profile rules manually
@@ -165,13 +166,16 @@ Perform the conversion:
          
          adb pull /data/misc/profman/$PACKAGE_NAME-primary.prof.txt PATH_TO_APP_MODULE/src/main/
 
+
+
+
 This pulls the generated profile rules and installs them into your app module. The next time you build the app, the Baseline Profile is included. Verify this by following the steps in [Installation issues](/topic/performance/baselineprofiles/debug-baseline-profiles#installation_issues).
 
 ## Manually measure app improvements
 
 **Note:** For greater stability and accuracy, we recommend using Macrobenchmark to measure performance impact, as it can measure repeatedly in a loop, capture traces for performance debugging, and increase reliability—for example, by clearing the operating system's disk cache.
 
-We highly recommend that you measure app improvements through benchmarking. However, if you'd like to measure improvements manually, you can get started by measuring the unoptimized [app startup](/topic/performance/vitals/launch-time#time-initial) for reference.
+We highly recommend that you measure app improvements through benchmarking. However, if you'd like to measure improvements manually, you can get started by measuring the unoptimized [app startup](/topic/performance/issues/launch-time#time-initial) for reference.
     
     
     PACKAGE_NAME=com.example.app
@@ -429,10 +433,12 @@ An obfuscation map is optional; when provided, it helps remap obfuscated symbols
   * Note: link text is displayed when JavaScript is off
   * [Best practices for SQLite performance](/topic/performance/sqlite-performance-best-practices)
   * [Baseline Profiles {:#baseline-profiles}](/topic/performance/baselineprofiles/overview)
-  * [Stuck partial wake locks](/topic/performance/vitals/wakelock)
+  * [Stuck partial wake locks](/topic/performance/issues/stuck-wakelock)
+
+
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-21 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-21 UTC."],[],[]] 

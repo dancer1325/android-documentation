@@ -3,6 +3,9 @@
 **Source:** [https://developer.android.com/kotlin/multiplatform](https://developer.android.com/kotlin/multiplatform)
 
 ---
+
+Save and categorize content based on your preferences. 
+
 ![](https://developer.android.com/static/images/picto-icons/kmp.svg)
 
 ###  Kotlin Multiplatform 
@@ -34,11 +37,9 @@ We recommend installing the Kotlin Multiplatform Android Studio Plugin developed
   * **Run configurations** : Run, debug, and test applications on both iOS and Android directly from the IDE.
   * **Basic Swift support in the IDE** : Get basic Swift support in the IDE, including cross-language debugging tools, navigation, and quick documentation.
 
+
+
 [Go to JetBrains Marketplace](https://plugins.jetbrains.com/plugin/14936-kotlin-multiplatform)
-
-##  Benefits of Kotlin Multiplatform 
-
-With Kotlin Multiplatform, you can choose what to share across platforms, from just core business logic to the entire application. The following are some of its key benefits: 
 
 check_circle 
 
@@ -64,104 +65,119 @@ Many of our Jetpack libraries have already been migrated to be KMP-ready. The fo
 
 ![Android logo](/static/images/logos/android.svg) **Built by Android** ![JetBrains logo](/static/images/logos/jetbrains.svg) **Built by JetBrains** device_unknown **Not supported**
 
-Library | Latest Release | Android | iOS | JVM | Web |  [ annotation ](/jetpack/androidx/releases/annotation) |  April 08, 2026   
+Library | Latest Release | Android | iOS | JVM | Web |  [ annotation ](/jetpack/androidx/releases/annotation) |  September 23, 2026   
 
-  * [1.10.0](/jetpack/androidx/releases/annotation#1.10.0)
+
+  * [1.11.0](/jetpack/androidx/releases/annotation#1.11.0)
 
 | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg)  
 ---|---|---|---|---|---  
-[ collection ](/jetpack/androidx/releases/collection) |  March 11, 2026   
+[ collection ](/jetpack/androidx/releases/collection) |  September 23, 2026   
+
 
   * [1.6.0](/jetpack/androidx/releases/collection#1.6.0)
+  * [1.7.0-rc01](/jetpack/androidx/releases/collection#1.7.0-rc01)
 
 | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg)  
-[ compose ](/jetpack/androidx/releases/compose-runtime) |  July 01, 2026   
+[ compose ](/jetpack/androidx/releases/compose-runtime) |  September 09, 2026   
 
-  * [1.11.4](/jetpack/androidx/releases/compose-runtime#1.11.4)
-  * [1.12.0-beta02](/jetpack/androidx/releases/compose-runtime#1.12.0-beta02)
+
+  * [1.12.1](/jetpack/androidx/releases/compose-runtime#1.12.1)
+  * [1.13.0-alpha03](/jetpack/androidx/releases/compose-runtime#1.13.0-alpha03)
 
 | ![](/static/images/logos/android.svg) | ![](/static/images/logos/jetbrains.svg) | ![](/static/images/logos/jetbrains.svg) | ![](/static/images/logos/jetbrains.svg)  
 [ datastore ](/jetpack/androidx/releases/datastore)   
   
-[ article Documentation ](/kotlin/multiplatform/datastore) |  May 06, 2026   
+[ article Documentation ](/kotlin/multiplatform/datastore) |  September 09, 2026   
+
 
   * [1.2.1](/jetpack/androidx/releases/datastore#1.2.1)
-  * [1.3.0-alpha09](/jetpack/androidx/releases/datastore#1.3.0-alpha09)
+  * [1.3.0-alpha11](/jetpack/androidx/releases/datastore#1.3.0-alpha11)
 
 | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg)  
 [ lifecycle ](/jetpack/androidx/releases/lifecycle)   
   
-[ article Documentation ](https://kotlinlang.org/docs/multiplatform/compose-lifecycle.html) |  June 17, 2026   
+[ article Documentation ](https://kotlinlang.org/docs/multiplatform/compose-lifecycle.html) |  September 23, 2026   
+
 
   * [2.11.0](/jetpack/androidx/releases/lifecycle#2.11.0)
+  * [2.12.0-alpha04](/jetpack/androidx/releases/lifecycle#2.12.0-alpha04)
 
 | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg)  
 [ viewModel ](/jetpack/androidx/releases/lifecycle)   
   
-[ article Documentation ](/kotlin/multiplatform/viewmodel) |  June 17, 2026   
+[ article Documentation ](/kotlin/multiplatform/viewmodel) |  September 23, 2026   
+
 
   * [2.11.0](/jetpack/androidx/releases/lifecycle#2.11.0)
+  * [2.12.0-alpha04](/jetpack/androidx/releases/lifecycle#2.12.0-alpha04)
 
 | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg)  
 [ viewModel-compose ](/jetpack/androidx/releases/lifecycle)   
   
-[ article Documentation ](https://kotlinlang.org/docs/multiplatform/compose-viewmodel.html) |  June 17, 2026   
+[ article Documentation ](https://kotlinlang.org/docs/multiplatform/compose-viewmodel.html) |  September 23, 2026   
+
 
   * [2.11.0](/jetpack/androidx/releases/lifecycle#2.11.0)
+  * [2.12.0-alpha04](/jetpack/androidx/releases/lifecycle#2.12.0-alpha04)
 
 | ![](/static/images/logos/android.svg) | ![](/static/images/logos/jetbrains.svg) | ![](/static/images/logos/jetbrains.svg) | ![](/static/images/logos/jetbrains.svg)  
 [ navigation ](/jetpack/androidx/releases/navigation)   
   
-[ article Documentation ](https://kotlinlang.org/docs/multiplatform/compose-navigation.html) |  July 01, 2026   
+[ article Documentation ](https://kotlinlang.org/docs/multiplatform/compose-navigation.html) |  September 23, 2026   
 
-  * [2.9.8](/jetpack/androidx/releases/navigation#2.9.8)
-  * [2.10.0-alpha06](/jetpack/androidx/releases/navigation#2.10.0-alpha06)
 
-| ![](/static/images/logos/android.svg) | ![](/static/images/logos/jetbrains.svg) | ![](/static/images/logos/jetbrains.svg) | ![](/static/images/logos/jetbrains.svg)  
-[ navigation3 ](/jetpack/androidx/releases/navigation3) |  July 01, 2026   
-
-  * [1.1.4](/jetpack/androidx/releases/navigation3#1.1.4)
-  * [1.2.0-alpha05](/jetpack/androidx/releases/navigation3#1.2.0-alpha05)
+  * [2.10.2](/jetpack/androidx/releases/navigation#2.10.2)
 
 | ![](/static/images/logos/android.svg) | ![](/static/images/logos/jetbrains.svg) | ![](/static/images/logos/jetbrains.svg) | ![](/static/images/logos/jetbrains.svg)  
-[ navigationevent ](/jetpack/androidx/releases/navigationevent) |  July 01, 2026   
+[ navigation3 ](/jetpack/androidx/releases/navigation3) |  September 23, 2026   
+
+
+  * [1.2.0](/jetpack/androidx/releases/navigation3#1.2.0)
+  * [1.3.0-alpha01](/jetpack/androidx/releases/navigation3#1.3.0-alpha01)
+
+| ![](/static/images/logos/android.svg) | ![](/static/images/logos/jetbrains.svg) | ![](/static/images/logos/jetbrains.svg) | ![](/static/images/logos/jetbrains.svg)  
+[ navigationevent ](/jetpack/androidx/releases/navigationevent) |  September 23, 2026   
+
 
   * [1.1.2](/jetpack/androidx/releases/navigationevent#1.1.2)
-  * [1.2.0-alpha01](/jetpack/androidx/releases/navigationevent#1.2.0-alpha01)
+  * [1.2.0-rc01](/jetpack/androidx/releases/navigationevent#1.2.0-rc01)
 
 | ![](/static/images/logos/android.svg) | ![](/static/images/logos/jetbrains.svg) | ![](/static/images/logos/jetbrains.svg) | ![](/static/images/logos/jetbrains.svg)  
-[ paging ](/jetpack/androidx/releases/paging) |  May 06, 2026   
+[ paging ](/jetpack/androidx/releases/paging) |  August 12, 2026   
 
-  * [3.5.0](/jetpack/androidx/releases/paging#3.5.0)
+
+  * [3.5.1](/jetpack/androidx/releases/paging#3.5.1)
 
 | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg)  
 [ room ](/jetpack/androidx/releases/room)   
   
-[ article Documentation ](/kotlin/multiplatform/room) |  November 19, 2025   
+[ article Documentation ](/kotlin/multiplatform/room) |  September 09, 2026   
 
-  * [2.8.4](/jetpack/androidx/releases/room#2.8.4)
+
+  * [2.8.5](/jetpack/androidx/releases/room#2.8.5)
 
 | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg) |  device_unknown  
-[ savedstate ](/jetpack/androidx/releases/savedstate) |  May 19, 2026   
+[ savedstate ](/jetpack/androidx/releases/savedstate) |  September 23, 2026   
+
 
   * [1.5.0](/jetpack/androidx/releases/savedstate#1.5.0)
+  * [1.6.0-alpha04](/jetpack/androidx/releases/savedstate#1.6.0-alpha04)
 
 | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg)  
 [ sqlite ](/jetpack/androidx/releases/sqlite)   
   
-[ article Documentation ](/kotlin/multiplatform/sqlite) |  July 01, 2026   
+[ article Documentation ](/kotlin/multiplatform/sqlite) |  September 09, 2026   
 
-  * [2.7.0](/jetpack/androidx/releases/sqlite#2.7.0)
+
+  * [2.7.1](/jetpack/androidx/releases/sqlite#2.7.1)
+  * [2.8.0-alpha01](/jetpack/androidx/releases/sqlite#2.8.0-alpha01)
 
 | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg) | ![](/static/images/logos/android.svg)  
   
 If you have feedback on these libraries, share it through the [issue tracker](https://issuetracker.google.com/issues/new?component=1337890&template=1803002).
 
 Libraries published by JetBrains wrap Android artifacts together with artifacts for other platforms so you can seamlessly consume any and all of them in your multiplatform projects. To learn about the underlying publishing process, see [How multiplatform Jetpack libraries are packaged](https://kotlinlang.org/docs/multiplatform/compose-multiplatform-jetpack-libraries.html).
-
-##  Tools support 
-
-You can open, edit, and run multiplatform projects in Android Studio. 
 
 ###  [ KMP module wizard ](https://developer.android.com/kotlin/multiplatform/migrate)
 
@@ -180,10 +196,6 @@ Live Edit works when building on Android Devices editing any code within the pro
 Previews for Jetpack Compose are also available for JetBrains' Compose Multiplatform from the `commonMain` source set. 
 
 [Learn more](https://developer.android.com/develop/ui/compose/tooling/previews)
-
-##  Apps built with Kotlin Multiplatform 
-
-Many apps are already successfully using Kotlin Multiplatform. 
 
 ![](https://developer.android.com/static/images/kotlin/kmp-apps/blinkit.png)
 
@@ -229,10 +241,6 @@ Wrike
 
 Zomato 
 
-##  Supported platforms in Jetpack 
-
-Jetpack library releases for officially supported platforms—Android and iOS—maintain the same quality and compatibility requirements. However, as we work to expand Jetpack's Kotlin Multiplatform support to other platforms, the tooling and infrastructure support may be a work in progress. 
-
 looks_one 
 
 ###  Tier 1 
@@ -243,6 +251,8 @@ Code is fully tested in CI; including both host-side and on-device tests. We're 
   * **JVM**
   * **iOS**
 
+
+
 looks_two 
 
 ###  Tier 2 
@@ -251,6 +261,8 @@ Code is partially tested on CI; limited to host-side tests. We don't track sourc
 
   * **macOS**
   * **Linux**
+
+
 
 looks_3 
 
@@ -264,9 +276,7 @@ Code is untested on CI. No source or binary compatibility tracking.
   * **JavaScript**
   * **WASM**
 
-##  Additional resources 
 
-For further information about the overall multiplatform ecosystem and more advanced configurations, see the official [Kotlin Multiplatform documentation](https://kotlinlang.org/docs/multiplatform-intro.html). 
 
 [ ![](https://developer.android.com/static/images/picto-icons/layout.svg) ](https://github.com/android/kotlin-multiplatform-samples)
 
@@ -306,6 +316,6 @@ Learn what Kotlin Multiplatform is, how it works, and the benefits of using it.
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-07-06 UTC.
+Last updated 2026-09-23 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-07-06 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-23 UTC."],[],[]] 

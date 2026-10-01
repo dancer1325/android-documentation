@@ -4,7 +4,15 @@
 
 ---
 
-#  Get your App Performance Score
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Design & Plan ](https://developer.android.com/design)
+  * [ App quality ](https://developer.android.com/quality)
+  * [ Technical quality ](https://developer.android.com/quality/technical)
+
+
+
+#  Get your App Performance Score Save and categorize content based on your preferences. 
+
 Use the App Performance Score to calculate your overall performance score and discover opportunities for improvement. The App Performance Score provides a standardized framework to measure performance with minimal in-depth technical tasks.
 
 It guides engineering and product teams to assess technical performance of any given Android app. After the assessment is complete, an evaluation and recommended actions help to identify and prioritize the most important areas for performance improvement.
@@ -14,6 +22,8 @@ It guides engineering and product teams to assess technical performance of any g
   * Scoring, evaluation and recommendations are likely to change in the future.
   * Recommendations and guidance provided has curated with performance impact in mind.
   * Tools and guidance in the recommendations are stable and can help to improve app startup and rendering performance.
+
+
 
 * * *
 
@@ -48,7 +58,7 @@ The current dynamic app score categories and assessment criteria are outlined in
 
 Category | Assessment criteria  
 ---|---  
-Application startup | Measured duration between app startup and the app becoming interactive [TTFD](/topic/performance/vitals/launch-time#time-full).  
+Application startup | Measured duration between app startup and the app becoming interactive [TTFD](/topic/performance/issues/launch-time#time-full).  
 Rendering performance | Percentage of slow and frozen frames for scrolling, animating and full screen renders.  
   
 * * *
@@ -114,10 +124,12 @@ Within each segment, the App Performance Score provides actionable steps to impr
   * [Get started with Baseline Profiles](/topic/performance/baselineprofiles/overview)
   * [Create Startup Profiles](/topic/performance/baselineprofiles/dex-layout-optimizations)
   * [Overview of measuring app performance](/topic/performance/measuring-performance)
-  * [Frozen frames](/topic/performance/vitals/frozen)
+  * [Frozen frames](/topic/performance/issues/render#frozen-frames)
+
+
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-05-19 UTC.
+Last updated 2026-09-21 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-05-19 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-21 UTC."],[],[]] 

@@ -4,7 +4,8 @@
 
 ---
 
-#  Projects overview
+#  Projects overview Save and categorize content based on your preferences. 
+
 A _project_ in Android Studio contains everything that defines your workspace for an app, from source code and assets to test code and build configurations.
 
 When you start a new project, Android Studio creates the necessary structure for all your files and makes them visible in the **Project** window in Android Studio. To open the window, select **View > Tool Windows > Project**.
@@ -33,6 +34,8 @@ Android Studio offers the following types of app modules:
   * Wear OS
   * Television
 
+
+
 Each module provides essential files and some code templates that are appropriate for the corresponding app or device type.
 
 For more information on adding a module, read [Add a module for a new device](/studio/projects/add-app-module).
@@ -44,6 +47,8 @@ Android Studio offers the following types of feature modules:
 
   * Dynamic Feature Module
   * Instant Dynamic Feature Library Module
+
+
 
 To learn more, read about [Play Feature Delivery](/studio/projects/dynamic-delivery).
 
@@ -58,6 +63,8 @@ In the **Create New Module** window, Android Studio offers the following types o
   * **Android Native Library:** Contains all file types supported in an Android project, similar to an Android Library. However, Android Native Libraries also can contain native C++ source code. The build result is an Android Archive (AAR) file that you can add as a dependency for your Android app modules.
   * **Java or Kotlin Library:** Contains only Kotlin or Java source files. The build result is a Java Archive (JAR) file that you can add as a dependency for your Android app modules or otherKotlin or Java projects.
   * **Benchmark > Microbenchmark:** Contains files needed to regularly measure code performance and output benchmarking results. Microbenchmark modules are especially helpful for measuring the performance of smaller pieces of code that get used repeatedly. For more information, see [About Microbenchmark](/topic/performance/benchmarking/microbenchmark-overview).
+
+
 
 When you create a library module and want to add it as a dependency to your Android app module, you must declare it as follows:
 
@@ -87,6 +94,8 @@ Android Studio offers the following types of test modules:
   * **Baseline Profile Generator:** [Baseline Profiles](/topic/performance/baselineprofiles) make user interactions, such as navigation and scrolling, smoother the first time they run. Create Baseline Profiles for your critical user journeys to improve app performance and user experience. 
   * **Benchmark > Macrobenchmark:** Contains files needed to regularly measure code performance and output benchmarking results. Macrobenchmark modules are especially helpful for measuring the performance of larger use cases of your app, such as scrolling through a list or other UI manipulations. For more information, see [Write a Macrobenchmark](/topic/performance/benchmarking/macrobenchmark-overview). 
 
+
+
 ## Project files
 
 ![](/static/images/tools/projectview-p1.png)
@@ -98,6 +107,8 @@ Some of the structural differences between the **Android** view and the structur
   * Shows all the project's build-related configuration files in a top-level **Gradle Script** group.
   * Shows all manifest files for each module in a module-level group when you have different manifest files for different product flavors and build types. 
   * Shows all alternative resource files in a single group instead of in separate folders per resource qualifier. For example, all density versions of your launcher icon are visible side by side.
+
+
 
 Within each Android app module, files are shown in the following groups:
 
@@ -176,8 +187,10 @@ For example, you might define one flavor that has a minimum SDK of 21 and a targ
 
     * **Build Types:** Lets you create and modify build configurations, as described in [Configure build variants](/tools/building/configuring-gradle). By default, every module has _debug_ and _release_ build types, and you can define more as needed. 
 
+
+
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-16 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-16 UTC."],[],[]] 

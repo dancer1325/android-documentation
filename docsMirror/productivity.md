@@ -3,6 +3,15 @@
 **Source:** [https://developer.android.com/productivity](https://developer.android.com/productivity)
 
 ---
+
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Essentials ](https://developer.android.com/get-started)
+  * [ Productivity Dev Center ](https://developer.android.com/productivity)
+
+
+
+Save and categorize content based on your preferences. 
+
 ![](https://developer.android.com/static/images/dev-center/heroes/productivity.svg)
 
 settingsDeveloper center
@@ -12,10 +21,6 @@ settingsDeveloper center
 Supercharge your app's productivity features with the best of Android. Learn how to share, print, export, and work with media. Build adaptive apps that make the most of phones, large screens, multiple displays, keyboards, mice, and trackpads to maximize user productivity and creativity. 
 
 [Get started with the docs](https://developer.android.com/productivity/guides) [Level up your app](https://developer.android.com/productivity/guides/basic-better-best)
-
-##  Build adaptive layouts 
-
-Unlock the full potential of your apps to showcase content and facilitate multitasking by using adaptive layouts optimized for phones, tablets, foldables, ChromeOS devices, car displays, and even XR 2D. 
 
 [ ![](https://developer.android.com/static/images/picto-icons/responsive-layout.svg) ](https://developer.android.com/large-screens#get-started-building-responsive-layouts)
 
@@ -46,10 +51,6 @@ Grow
 See how to make your app more engaging and stand out among its peers, including support for premium platform and hardware features. 
 
 [Differentiate your app](https://developer.android.com/productivity/guides/basic-better-best)
-
-##  Support hardware and accessories 
-
-Take advantage of additional hardware such as a physical keyboard, mouse, trackpad, stylus, or display to help make your users more comfortable and productive and your app supportive of accessibility standards. 
 
 Guide
 

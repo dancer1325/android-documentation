@@ -3,6 +3,15 @@
 **Source:** [https://developer.android.com/quality](https://developer.android.com/quality)
 
 ---
+
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Design & Plan ](https://developer.android.com/design)
+  * [ App quality ](https://developer.android.com/quality)
+
+
+
+Save and categorize content based on your preferences. 
+
 ![](https://developer.android.com/static/images/quality/quality-hero.svg)
 
 ###  Build high-quality apps and games 
@@ -41,14 +50,6 @@ Learn to design your apps and games for safety.
 
 [View guidelines](https://developer.android.com/quality/privacy-and-security)
 
-![](https://developer.android.com/static/images/logos/google-play.svg)
-
-##  Getting featured on Google Play 
-
-Great apps deliver unique user value and deliver delightful experiences across all supported form factors. High-quality apps and games are rewarded with increased visibility on Google Play. 
-
-[Learn more](https://g.co/play/featuring) [See examples](https://youtu.be/QaTvA-rDny8)
-
 | Good | Great  
 ---|---|---  
 ![](/static/images/picto-icons/lightbulb.svg) Core value |  ![](/static/images/picto-icons/tick.svg) Fun, useful, or both  
@@ -69,12 +70,6 @@ Great apps deliver unique user value and deliver delightful experiences across a
 ![](/static/images/picto-icons/graph-bar.svg) Technical quality |  ![](/static/images/picto-icons/tick.svg) Make the most of premium devices  
 ![](/static/images/picto-icons/security-2.svg) Privacy and security |  ![](/static/images/picto-icons/tick.svg) Designed for safety  
   
-##  Creating a high-quality store presence 
-
-In addition to the four pillars of app quality, Google Play also considers the quality of marketing assets when selecting which apps and games to feature. 
-
-[Learn more](https://support.google.com/googleplay/android-developer/answer/9866151?_ga=2.266128522.400341247.1677772203-1213579072.1677770813)
-
 ###  Design for different form factors and screen sizes 
 
 Non-mobile form factors like tablets, foldables and watches are the fastest growing segment of Android devices, and many Android users now own more than one device. Follow Android guidelines to deliver high-quality user experiences on these devices. 

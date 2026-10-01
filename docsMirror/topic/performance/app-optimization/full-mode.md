@@ -4,7 +4,8 @@
 
 ---
 
-#  Use R8 in full mode
+#  Use R8 in full mode Save and categorize content based on your preferences. 
+
 R8 provides two modes, compatibility mode and full mode. Full mode gives you powerful optimizations that improve your app performance.
 
 This guide is for Android developers who want to use R8's most powerful optimizations. It explores the key differences between compatibility and full mode and provides the explicit configurations needed to migrate your project safely and avoid common runtime crashes.
@@ -115,6 +116,9 @@ If you are using a Gson version older than 2.11.0, the keep rules necessary to p
   * `-keep,allowobfuscation,allowshrinking,allowoptimization class com.google.gson.reflect.TypeToken`: This rule is necessary because `TypeToken` wraps the type of the object being deserialized. After type erasure, an anonymous inner class is created to retain the generic type information. Without explicitly keeping `com.google.gson.reflect.TypeToken`, R8 in full mode won't include this class type in the `Signature` attribute needed for deserialization.
 
   * `-keep,allowobfuscation,allowshrinking,allowoptimization class * extends com.google.gson.reflect.TypeToken`: This rule retains the type information of anonymous classes that extend `TypeToken`, such as `$GsonRemoteJsonListExample$listType$1` in this example. Without this rule, R8 in full mode strips the necessary type information, causing deserialization to fail.
+
+
+
 
 It is important to understand that the rules shared earlier only solve the problem of discovering the generic type (for example, `List<User>`). R8 also renames the fields of classes. If you don't use `@SerializedName` annotations on your data models, Gson will fail to deserialize JSON because the field names will no longer match the JSON keys.
 

@@ -4,7 +4,8 @@
 
 ---
 
-#  Best practices for app optimization
+#  Best practices for app optimization Save and categorize content based on your preferences. 
+
 The following best practices help optimize your app without sacrificing quality.
 
 ## Use Baseline Profiles
@@ -63,17 +64,19 @@ The [performance API for media playback](/about/versions/12/features/performance
 
 ## Prioritize cold startup traces
 
-A [cold start](/topic/performance/vitals/launch-time#cold) refers to an app starting from scratch, meaning that the system's process doesn't yet create the app's process. Your app typically starts cold if you launch it for the first time since the device booted or since the system force-stopped the app. Cold starts are much slower because the app and system must perform more work that isn't required on other startup types—like warm and hot starts. System tracing cold startups gives you better oversight into app performance.
+A [cold start](/topic/performance/issues/launch-time#cold) refers to an app starting from scratch, meaning that the system's process doesn't yet create the app's process. Your app typically starts cold if you launch it for the first time since the device booted or since the system force-stopped the app. Cold starts are much slower because the app and system must perform more work that isn't required on other startup types—like warm and hot starts. System tracing cold startups gives you better oversight into app performance.
 
 ## Recommended for you
 
   * Note: link text is displayed when JavaScript is off
   * [App startup analysis and optimization](/topic/performance/appstartup/analysis-optimization)
-  * [App startup time](/topic/performance/vitals/launch-time)
-  * [Frozen frames](/topic/performance/vitals/frozen)
+  * [App startup time](/topic/performance/issues/launch-time)
+  * [Frozen frames](/topic/performance/issues/render#frozen-frames)
+
+
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-29 UTC.
+Last updated 2026-09-21 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-29 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-21 UTC."],[],[]] 

@@ -19,8 +19,9 @@ from collections import deque
 BASE_URL = "https://developer.android.com"
 OUTPUT_DIR = "docsMirror"
 RATE_LIMIT_DELAY = 2  # segundos entre requests
-MAX_PAGES = 100  # límite de páginas para evitar scraping masivo
+MAX_PAGES = 0  # 0 = sin límite
 USER_AGENT = "Mozilla/5.0 (Educational/Personal Documentation Mirror)"
+REGISTRY_FILE = "scraped_urls.txt"
 
 class AndroidDocsScraper:
     def __init__(self, output_dir=OUTPUT_DIR, max_pages=MAX_PAGES, delay=RATE_LIMIT_DELAY):
@@ -28,7 +29,8 @@ class AndroidDocsScraper:
         self.output_dir.mkdir(exist_ok=True)
         self.max_pages = max_pages
         self.delay = delay
-        self.visited = set()
+        self.registry_path = Path(REGISTRY_FILE)
+        self.visited = self._load_registry()
         self.to_visit = deque()
         self.html_converter = html2text.HTML2Text()
         self.html_converter.ignore_links = False
@@ -39,6 +41,19 @@ class AndroidDocsScraper:
         self.session.headers.update({
             'User-Agent': USER_AGENT
         })
+
+    def _load_registry(self):
+        """Carga las URLs ya scrapeadas desde el registro"""
+        if self.registry_path.exists():
+            urls = set(self.registry_path.read_text(encoding='utf-8').splitlines())
+            print(f"Registry loaded: {len(urls)} URLs already scraped")
+            return urls
+        return set()
+
+    def _save_url(self, url):
+        """Añade una URL al registro"""
+        with open(self.registry_path, 'a', encoding='utf-8') as f:
+            f.write(url + '\n')
 
     def is_valid_android_url(self, url):
         """Verifica si la URL pertenece a developer.android.com y está en inglés"""
@@ -203,20 +218,21 @@ class AndroidDocsScraper:
     def scrape(self, start_url):
         """Inicia el proceso de scraping"""
         print(f"Starting scraper...")
-        print(f"Max pages: {self.max_pages}")
+        print(f"Max pages: {'unlimited' if self.max_pages == 0 else self.max_pages}")
         print(f"Rate limit delay: {self.delay}s")
         print(f"Output directory: {self.output_dir}")
         print("\n" + "="*50 + "\n")
 
         self.to_visit.append(start_url)
 
-        while self.to_visit and len(self.visited) < self.max_pages:
+        while self.to_visit and (self.max_pages == 0 or len(self.visited) < self.max_pages):
             url = self.to_visit.popleft()
 
             if url in self.visited:
                 continue
 
             self.visited.add(url)
+            self._save_url(url)
 
             # Respetar rate limiting
             time.sleep(self.delay)
@@ -235,7 +251,9 @@ class AndroidDocsScraper:
                 if link not in self.visited:
                     self.to_visit.append(link)
 
-            print(f"Progress: {len(self.visited)}/{self.max_pages} pages scraped, {len(self.to_visit)} in queue\n")
+            pages = len(self.visited)
+            limit = 'unlimited' if self.max_pages == 0 else self.max_pages
+            print(f"Progress: {pages}/{limit} pages scraped, {len(self.to_visit)} in queue\n")
 
         print("\n" + "="*50)
         print(f"Scraping completed. Total pages scraped: {len(self.visited)}")
@@ -271,7 +289,7 @@ Respect Google's terms of service and robots.txt.
         '--max-pages',
         type=int,
         default=MAX_PAGES,
-        help=f'Maximum number of pages to scrape (default: {MAX_PAGES})'
+        help=f'Maximum number of pages to scrape (default: 0 = unlimited)'
     )
 
     parser.add_argument(

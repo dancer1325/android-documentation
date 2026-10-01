@@ -4,12 +4,29 @@
 
 ---
 
-#  Behavior changes: Apps targeting Android 17 or higher
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Essentials ](https://developer.android.com/get-started)
+  * [ Releases ](https://developer.android.com/about/versions)
+
+
+
+#  Behavior changes: Apps targeting Android 17 or higher Save and categorize content based on your preferences. 
+
 Like previous releases, Android 17 includes behavior changes that might affect your app. The following behavior changes apply exclusively to apps that are targeting Android 17 or higher. If your app is targeting Android 17 or higher, you should modify your app to support these behaviors, where applicable.
 
 Be sure to also review the list of [behavior changes that affect all apps running on Android 17](/about/versions/17/behavior-changes-all) regardless of your app's [`targetSdkVersion`](/guide/topics/manifest/uses-sdk-element#target).
 
 **Note:** This page lists some of the more important changes. For more detailed information, see the [Android 17 release notes](/about/versions/17/release-notes).
+
+## User experience and system UI
+
+Android 17 includes the following changes that are intended to create a more consistent, intuitive user experience.
+
+### Memory limit widget
+
+Beginning with Android 17, for apps targeting Android 17 (API level 37) or higher, the system enforces a strict memory limit (1.5 * screen width * screen height * 4) against the combined memory usage of both Bitmaps and Icons present in the RemoteViews parcel. Exceeding these limits throws a fatal `IllegalArgumentException` and crashes the app's process.
+
+For more information, see [UpdateAppWidget](/reference/android/appwidget/AppWidgetManager#updateAppWidget\(int%5B%5D,%20android.widget.RemoteViews\)).
 
 ## Core functionality
 
@@ -40,6 +57,9 @@ This feature introduces new [`AccessibilityEvent`](/reference/android/view/acces
   * **Apps with Edit Fields:** Apps that maintain a custom `InputConnection` can retrieve candidate selection data by calling `TextAttribute.isTextSuggestionSelected()`. These apps should then call `AccessibilityEvent.setTextChangeTypes()` when dispatching `TYPE_VIEW_TEXT_CHANGED` events. Apps targeting Android 17 (API level 37) that use the standard `TextView` will have this feature enabled by default. (That is, `TextView` will handle retrieving data from the IME and setting text change types when sending events to accessibility services).
 
   * **Accessibility Services:** Accessibility services that process `TYPE_VIEW_TEXT_CHANGED` events can call `AccessibilityEvent.getTextChangeTypes()` to identify the nature of the modification and adjust their feedback strategies accordingly.
+
+
+
 
 ## Privacy
 
@@ -94,6 +114,8 @@ Key impacts for developers include:
   * **BAL hardening & improved opt-in:** We are refining Background Activity Launch (BAL) restrictions by extending protections to [`IntentSender`](/reference/android/content/IntentSender). Developers must migrate away from the legacy [`MODE_BACKGROUND_ACTIVITY_START_ALLOWED`](/reference/android/app/ActivityOptions#MODE_BACKGROUND_ACTIVITY_START_ALLOWED) constant. Instead, you should adopt granular controls like [`MODE_BACKGROUND_ACTIVITY_START_ALLOW_IF_VISIBLE`](/reference/android/app/ActivityOptions#MODE_BACKGROUND_ACTIVITY_START_ALLOW_IF_VISIBLE), which restricts activity starts to scenarios where the calling app is visible, significantly reducing the attack surface.
   * **Adoption tools:** Developers should utilize strict mode and updated lint checks to identify legacy patterns and ensure readiness for future target SDK requirements.
 
+
+
 ### Enable CT by default
 
 If an app targets Android 17 (API level 37) or higher, [certificate transparency (CT)](/privacy-and-security/security-config#CertificateTransparencySummary) is enabled by default. (On Android 16, CT is available but apps had to [opt in](/privacy-and-security/security-config#certificateTransparency).)
@@ -114,6 +136,8 @@ For apps targeting Android 17 (API level Android 17 (API level 37)) and higher, 
   * [`ACCOUNT_TYPE`](/reference/android/provider/ContactsContract.SyncColumns#ACCOUNT_TYPE)
   * [`ACCOUNT_TYPE_AND_DATA_SET`](/reference/android/provider/ContactsContract.RawContactsColumns#ACCOUNT_TYPE_AND_DATA_SET)
 
+
+
 Apps that are using these columns from [`ContactsContract.Data`](/reference/android/provider/ContactsContract.Data) can extract them from [`ContactsContract.RawContacts`](/reference/android/provider/ContactsContract.RawContacts) instead, by joining with [`RAW_CONTACT_ID`](/reference/android/provider/ContactsContract.DataColumns#RAW_CONTACT_ID).
 
 ### Enforce strict SQL checks in CP2
@@ -121,6 +145,40 @@ Apps that are using these columns from [`ContactsContract.Data`](/reference/andr
 For apps targeting Android 17 (API level Android 17 (API level 37)) and higher, Contacts Provider 2 (CP2) enforces strict SQL query validation when the [`ContactsContract.Data`](/reference/android/provider/ContactsContract.Data) table is accessed without [`READ_CONTACTS`](/reference/android/Manifest.permission#READ_CONTACTS) permission.
 
 With this change, if an app doesn't have [`READ_CONTACTS`](/reference/android/Manifest.permission#READ_CONTACTS) permission, [`StrictColumns`](/reference/android/database/sqlite/SQLiteQueryBuilder#setStrictColumns\(boolean\)) and [`StrictGrammar`](/reference/android/database/sqlite/SQLiteQueryBuilder#setStrictGrammar\(boolean\)) options are set when querying the [`ContactsContract.Data`](/reference/android/provider/ContactsContract.Data) table. If a query uses a pattern that isn't compatible with these, it will be rejected and cause an exception to be thrown.
+
+## Intelligence
+
+Android 17 includes the following changes to system intelligence.
+
+### Deprecation of setContentCaptureEnabled
+
+Content Capture is enabled by default on certain devices to allow on-device AI features to analyze screen contents for intelligent experiences.
+
+Starting in Android 17, the [`ContentCaptureManager.setContentCaptureEnabled(boolean)`](/reference/android/view/contentcapture/ContentCaptureManager#setContentCaptureEnabled\(boolean\)) API method is deprecated. For apps that target Android 17 (API level 37) or higher, calling `setContentCaptureEnabled(false)` no longer disables Content Capture.
+
+If your app needs to continue disabling Content Capture or restrict screen contents from being captured by the system, you must transition to using the [`FLAG_SECURE`](/reference/android/view/WindowManager.LayoutParams#FLAG_SECURE) window layout parameter.
+
+To disable Content Capture, set the `FLAG_SECURE` flag on your window as shown in the following example:
+
+### Kotlin
+    
+    
+    window.setFlags(
+        WindowManager.LayoutParams.FLAG_SECURE,
+        WindowManager.LayoutParams.FLAG_SECURE
+    )
+    
+
+### Java
+    
+    
+    getWindow().setFlags(
+        WindowManager.LayoutParams.FLAG_SECURE,
+        WindowManager.LayoutParams.FLAG_SECURE
+    );
+    
+
+For more details, see the [`WindowManager.LayoutParams.FLAG_SECURE`](/reference/android/view/WindowManager.LayoutParams#FLAG_SECURE) reference documentation.
 
 ## Media
 
@@ -134,6 +192,8 @@ Some audio restrictions apply to all apps. However, the restrictions are more st
 
   * The foreground service must have while-in-use (WIU) capabilities.
   * The app must have the [exact alarm](/develop/background-work/services/alarms#exact) permission and be interacting with [`USAGE_ALARM`](/reference/android/media/AudioAttributes#USAGE_ALARM) audio streams.
+
+
 
 For more information, including mitigation strategies, see [Background audio hardening](/about/versions/17/changes/bg-audio).
 
@@ -161,6 +221,6 @@ Apps that rely solely on catching an IOException to break out of a read loop may
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-24 UTC.
+Last updated 2026-09-16 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-24 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-16 UTC."],[],[]] 

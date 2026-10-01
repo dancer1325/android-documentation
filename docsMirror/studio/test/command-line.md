@@ -4,7 +4,8 @@
 
 ---
 
-#  Test from the command line
+#  Test from the command line Save and categorize content based on your preferences. 
+
 This document describes how to run tests directly from the command line. This document assumes that you already know how to create an Android app and write tests for your app. For more information on how to build tests for your app, see [Test apps on Android](/training/testing).
 
 The command-line tools and Gradle tasks described on this page are UI-toolkit independent. If you want to write UI tests for Compose, see [Test your Compose layout](/develop/ui/compose/testing). After your tests are written, continue with this guide to run them from your terminal or your remote continuous integration environment.
@@ -68,6 +69,7 @@ The `test` and `connectedAndroidTest` tasks run tests on each [build variant](/s
         
         ./gradlew connected**VariantName** AndroidTest
 
+
 **Note:** To further restrict the tests that run, target a specific build variant within a specific module. For example, use `./gradlew **mylibrary** :connected**VariantName** UnitTest` to run all unit tests for the `VariantName` variant inside the `mylibrary` module.
 
 ### Run specific test methods or classes
@@ -101,6 +103,9 @@ Where `<test_package_name>` is the Android package name of your test application
 The Android test runner class is usually [`AndroidJUnitRunner`](/reference/kotlin/androidx/test/runner/AndroidJUnitRunner):
          
          adb shell am instrument -w com.android.example/androidx.test.runner.AndroidJUnitRunner
+
+
+
 
 Your test results appear in `STDOUT`.
 
@@ -164,6 +169,8 @@ The following sections provide examples of using `am instrument` to run tests. T
     * `TestClass2`, which contains test methods `testMethod2` and `testMethod3`.
   * The test runner is [`AndroidJUnitRunner`](/reference/kotlin/androidx/test/runner/AndroidJUnitRunner).
 
+
+
 #### Run the entire test package
 
 To run all of the test classes in the test package, enter:
@@ -193,23 +200,26 @@ You can find more use cases in the [`AndroidJUnitRunner`](/reference/kotlin/andr
 
 ## View unified test reports
 
-The Android Gradle Plugin provides unified test report tasks, which generate HTML dashboards that merge results from unit and instrumented tests.
+The Android Gradle Plugin provides unified test tasks, which generate HTML dashboards that merge results from unit and instrumented tests.
 
 **Experimental:** This is an experimental feature. To enable this feature, set `android.experimental.reportAggregationSupport=true` in your `gradle.properties` file.
 
-### Prerequisites
+**Prerequisites**
 
-  * Android Gradle Plugin 9.2.0-alpha07 or higher.
+  * Android Gradle Plugin 9.5.0-alpha05 or higher.
 
-To generate unified test reports, run one of the following tasks:
+
+
+To test all test suites, run one of the following tasks:
 
 Report scope | Command | Description | Report location  
 ---|---|---|---  
-Current module | `./gradlew :module_name:createTestReport` | Generates a unified test report for the current module, merging unit and instrumented test results. | `path_to_your_project/module_name/build/reports/tests/test-report/`  
-Current module and dependencies | `./gradlew :module_name:createAggregatedTestReport` | Generates a unified test report for the current app module and its library dependencies. | `path_to_your_project/module_name/build/reports/tests/aggregated-test-report/`  
-  
+Current module | `./gradlew :module_name:testAllSuites` | Generates a unified test report for the current module, merging unit and instrumented test results. | `path_to_your_project/module_name/build/reports/tests/test-report/`  
+Current module and dependencies | `./gradlew :module_name:testAllSuitesWithDependencies` | Generates a unified test report for the current module and its library dependencies, merging unit and instrumented test results. | `path_to_your_project/module_name/build/reports/tests/aggregated-test-report/`  
+**Note:** If you've [enabled coverage support](/studio/test/coverage-report#enable-coverage) in any of your modules, the [unified code coverage report](/studio/test/coverage-report#unified) is also generated.
+
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-25 UTC.
+Last updated 2026-09-25 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-25 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-25 UTC."],[],[]] 

@@ -4,7 +4,8 @@
 
 ---
 
-#  Get Android 17
+#  Get Android 17 Save and categorize content based on your preferences. 
+
 ![Android logo below the word 'Android'](/static/images/lockups/android-stacked.svg)
 
 You can get Android 17 in any of the following ways:
@@ -13,6 +14,8 @@ You can get Android 17 in any of the following ways:
   * Get Android 17 Beta on a partner device
   * Set up the Android Emulator
   * Get a generic system image (GSI)
+
+
 
 ## Get Android 17 on a Google Pixel device
 
@@ -46,6 +49,8 @@ Android 17 OTAs and downloads are available for the following Pixel devices:
   * Pixel 10 Pro Fold
   * Pixel 10a
 
+
+
 ### Flash or manually install a system image
 
 Alternatively, if you'd rather flash your device, we recommend using the [Android Flash Tool](https://flash.android.com/release/17.0.0).
@@ -66,6 +71,8 @@ The following device-maker partners are offering Android 17 Beta for you to try 
   * vivo
   * Xiaomi
 
+
+
 You can learn how to install Android 17 Beta by visiting each partner's site. Each partner provides a system image that you can download and flash. Some partners might also support over-the-air (OTA) delivery. Each partner provides support resources to guide you through the installation process—use the **Get the Beta** link on the [Android 17 Beta devices](/about/versions/17/devices) page to jump to the partner's download and OTA information.
 
 Each Android 17 Beta partner provides its own channel for reporting issues found on their supported Beta devices. We highly recommend using each partner's feedback channel to report bugs and feedback that are specific to their devices.
@@ -80,6 +87,8 @@ Depending on the type of testing you need to do, consider setting up a variety o
 
   * Phone
   * Tablet or large-screen device
+
+
 
 ### Set up a virtual device (phone)
 
@@ -102,6 +111,9 @@ icon](/static/about/versions/17/images/17-studio-download.png) next to the **Rel
   7. Finalize other settings for your virtual device, and then click the **Finish** button.
 
   8. After returning to the list of virtual devices in the **Device Manager** , find your Android 17 virtual device, and then click the **Start** button ![Start button icon](/static/about/versions/17/images/17-launch-avd-icon.png).
+
+
+
 
 ### Set up a virtual device (tablet or large-screen)
 
@@ -126,6 +138,9 @@ icon](/static/about/versions/17/images/17-studio-download.png) next to the **Rel
   8. After returning to the list of virtual devices in the **Device Manager** , find your Android 17 virtual device, and then click the **Start** button ![Start button
 icon](/static/about/versions/17/images/17-launch-avd-icon.png).
 
+
+
+
 Repeat these steps to create large screen device definitions that you can use to test your app in a variety of large screen scenarios.
 
 #### Resizable emulator
@@ -149,10 +164,12 @@ To learn about which changes might affect you, and to learn how to test these ch
   * [Behavior changes that affect all apps](/about/versions/17/behavior-changes-all)
   * [Behavior changes that affect only apps that target Android 17](/about/versions/17/behavior-changes-17)
 
+
+
 To learn more about new APIs and features available in Android 17, read [Android 17 features](/about/versions/17/features).
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-16 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-16 UTC."],[],[]] 

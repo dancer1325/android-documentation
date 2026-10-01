@@ -4,7 +4,8 @@
 
 ---
 
-#  Background audio hardening
+#  Background audio hardening Save and categorize content based on your preferences. 
+
 Starting in Android 17, the audio framework enforces restrictions on background audio interactions including audio playback, [audio focus](/media/optimize/audio-focus) requests, and [volume change](/reference/android/media/AudioManager#adjustStreamVolume\(int,%20int,%20int\)) APIs to ensure that these changes are started intentionally by the user.
 
 All apps running on Android 17 that have these background audio interactions must have a visible activity or must be running a foreground service that is not of type `SHORT_SERVICE`. This applies whether or not the app targets API level 37.
@@ -20,6 +21,8 @@ The intention of introducing these restrictions is to reduce unintentional backg
   * Apps playing audio without a foreground service can be frozen. When the app is eventually unfrozen, it unexpectedly resumes audio playback, potentially hours later.
   * Apps playing audio without a foreground service faced varied run restrictions which result in choppy audio performance.
   * Playback detached from the activity lifecycle, which could result in a leaked playback session or leaked focus events which continue with no way for the user to stop playback.
+
+
 
 We encourage developers to test their apps and provide feedback to the behavior change if there's any intentional audio use cases negatively impacted. Please report any issues using this [Android 17 app compat issue tracker](/about/versions/17/report-issue-appcompat).
 
@@ -63,6 +66,9 @@ Subsequently, if the user explicitly resumes playback for example through your a
 
   * Test audio playback behavior with adb shell commands.
 
+
+
+
 ## Testing changes
 
 You can test your app's compliance on apps running Android 17 or higher (beginning with Beta 3) by running the following ADB command:
@@ -79,6 +85,9 @@ This command has the following options:
 
   * `throw`: Enables all audio hardening restrictions for all apps, like `enable`. In addition, this flag enables loud failures, throwing `IllegalStateException` for volume and focus interactions. For audio playback, the write method persistently returns an error code. For playback modes without explicit writes, the app crashes.
 
+
+
+
 Use `adb dumpsys audio` or `logcat` to identify if the app encountered silent failures due to audio hardening enforcement. If it did, there will be an entry prefixed by `AudioHardening` with your package name. If the message contains `level: full`, your app is running a foreground service, but the service does not have while-in-use capability. If the message contains `level: partial`, your app is not running a foreground service at all.
 
 ## Understanding FGS with while-in-use capability
@@ -93,6 +102,8 @@ Here's a handy reference:
   * Background-Started FGS (BFSL): Most do not grant WIU access. The [primary exceptions](/develop/background-work/services/fgs/restrictions-bg-start#background-start-restriction-exemptions) that grant WIU are interactions involving explicit user intent for example, notification clicks, widget interactions, or media key events from an external device.
   * System started FGS: Foreground services are granted WIU access if they are started by system-server delegation (for example, from the Telecom jetpack library), or by system bindings representing an elevated foreground state to perform dedicated functionality (such as for a [`VoiceInteractionService`](/reference/android/service/voice/VoiceInteractionService)).
 
+
+
 Read more in [Restrictions on starting a foreground service from the background](/develop/background-work/services/fgs/restrictions-bg-start).
 
 ## Full list of Audio APIs impacted
@@ -105,6 +116,6 @@ Volume and ringer mode APIs | No effect on ringer mode or volume (method call is
   
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-16 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-16 UTC."],[],[]] 

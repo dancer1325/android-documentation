@@ -3,6 +3,9 @@
 **Source:** [https://developer.android.com/quality/privacy-and-security](https://developer.android.com/quality/privacy-and-security)
 
 ---
+
+Save and categorize content based on your preferences. 
+
 ![](https://developer.android.com/static/images/quality/hero-images/privacy_security_highlighted.svg)
 
 ###  Design for Safety 
@@ -12,12 +15,6 @@ Android is secure by default and private by design. And Google Play designs poli
 Design for privacy by focusing on minimization. Minimize permission requests, minimize location access, and minimize data visibility across apps.
 
 Design for security by following best practices for encryption, integrity, and authentication.
-
-![](https://developer.android.com/static/images/hero-assets/platform-privacy-cropped.svg)
-
-##  Best practices 
-
-See guidance to help you design, implement, and distribute safe, security, and private apps. 
 
 Guide
 
@@ -45,15 +42,13 @@ Follow best practices for user safety, whether you're developing an app or creat
 
 * * *
 
-##  Android privacy enhancements over time 
-
-As threats to privacy evolve, the Android platform adds features and enhancements to help you protect users. See a timeline of features by release. 
-
 ###  [ ![Android 11](/static/images/quality/privacy-and-security/Android11.svg) ](https://developer.android.com/about/versions/11/privacy)
 
   * Scoped storage enhancements
   * Separate request for background location
   * Data access auditing
+
+
 
 [Learn more](https://developer.android.com/about/versions/11/privacy)
 
@@ -64,6 +59,9 @@ As threats to privacy evolve, the Android platform adds features and enhancement
   * Bluetooth permissions  
   
 
+
+
+
 [Learn more](https://developer.android.com/about/versions/12/behavior-changes-all#security-privacy)
 
 ###  [ ![Android 13](/static/images/quality/privacy-and-security/Android13.svg) ](https://developer.android.com/about/versions/13/features#privacy-security)
@@ -73,19 +71,12 @@ As threats to privacy evolve, the Android platform adds features and enhancement
   * Photo picker  
   
 
+
+
+
 [Learn more](https://developer.android.com/about/versions/13/features#privacy-security)
 
-##  Build apps to be private 
-
-Android is private by design. As the Android platform evolves, it continues to introduce new privacy-preserving capabilities. Because users are becoming more aware of the information that apps can collect, it's important to take proactive steps in your apps to maintain user trust. 
-
 [View cheat sheet](https://developer.android.com/privacy/cheat-sheet) [View codelab](https://developer.android.com/codelabs/android-privacy-codelab)
-
-![](https://developer.android.com/static/images/picto-icons/actionable.svg)
-
-##  Minimize permissions 
-
-Learn how your app can fulfill without requesting runtime permissions, and how to remove permissions your app no longer requires. 
 
 Guide
 
@@ -123,12 +114,6 @@ Guide
 
 If your app targets Android 13 or higher, the self-revoke APIs allow your app to revoke access to already-granted permissions that your app no longer requires. 
 
-![](https://developer.android.com/static/images/picto-icons/location.svg)
-
-##  Minimize location access 
-
-Specifically, minimize the precision and frequency of location access. 
-
 Guide
 
 ###  [ Location accuracy ](https://developer.android.com/training/location/permissions#accuracy)
@@ -153,12 +138,6 @@ Guide
 
 If your app targets Android 13 or higher, many APIs for nearby Wi-Fi devices don't require location access. 
 
-![](https://developer.android.com/static/images/picto-icons/reduce.svg)
-
-##  Minimize data 
-
-In your app, minimize the visibility into the set of other installed apps and your use of non-resettable device identifiers. 
-
 Guide
 
 ###  [ Package visibility ](https://developer.android.com/training/package-visibility/declaring)
@@ -170,12 +149,6 @@ Guide
 ###  [ Device identifiers ](https://developer.android.com/training/articles/user-data-ids#common-use-cases)
 
 Use the appropriate user-resettable identifier for your app's use case. Starting in Android 12, the system restricts the set of device identifiers that apps can use. 
-
-![](https://developer.android.com/static/images/picto-icons/security.svg)
-
-##  Give users control 
-
-Help users understand how your app accesses their data, and give users more control. 
 
 Guide
 
@@ -213,12 +186,6 @@ Policy
 
 In the Google Play Console, declare the types of user data that your app collects and shares. 
 
-![](https://developer.android.com/static/images/picto-icons/personal.svg)
-
-##  Review what your users see 
-
-Be aware of how the system makes users more aware of the information that apps access and collect. 
-
 Feature
 
 ###  [ Camera & microphone indicators ](https://developer.android.com/training/permissions/explaining-access#indicators)
@@ -246,14 +213,6 @@ On all devices running Android 11 or higher, and on many devices that run Androi
 ### Build apps to be secure by default
 
 Android’s goal is to be the safest mobile platform in the world. We consistently invest in technologies that bolster the security of the platform, its apps, and the global Android ecosystem.
-
-![](https://developer.android.com/static/images/picto-icons/security.svg)
-
-##  Design for security 
-
-Learn about best practices for encryption, integrity, and the overall app security lifecycle. 
-
-[Best practices](https://developer.android.com/topic/security/best-practices)
 
 Guide
 
@@ -308,10 +267,6 @@ Featured
 Google Play partners with you to deliver your apps and games safely to billions of people worldwide. Learn the latest policies, timeline, and implications for your apps.
 
 [Learn more](https://developer.android.com/distribute/play-policies)
-
-##  Latest News 
-
-##  Latest Videos 
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

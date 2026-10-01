@@ -4,7 +4,8 @@
 
 ---
 
-#  Widget quality
+#  Widget quality Save and categorize content based on your preferences. 
+
 Widgets are a critical component for customizing a user's home screen. Often, users can achieve a critical user journey for an app with a single tap using widgets or get a quick summary of important updates. Users can also customize widgets to tailor them to individual preferences.
 
 ## Widget compatibility checklists

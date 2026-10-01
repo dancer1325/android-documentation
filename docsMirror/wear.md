@@ -3,9 +3,14 @@
 **Source:** [https://developer.android.com/wear](https://developer.android.com/wear)
 
 ---
-##  Build apps for the wrist with Wear OS 
 
-Write apps that help users live more present, healthy, and productive lives with Wear OS. With major improvements to the core experience and big changes to the platform, there’s a lot to be excited about. 
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Multidevice ](https://developer.android.com/multidevice)
+  * [ Wear OS ](https://developer.android.com/wear)
+
+
+
+Save and categorize content based on your preferences. 
 
 [ ![](https://developer.android.com/static/wear/images/hero/code.svg) ](https://developer.android.com/wear/gallery)
 
@@ -28,8 +33,6 @@ Boost in-app engagement and the business value of your app by bringing your app 
 ###  Streamline development 
 
 Leverage the latest Modern Android APIs and tools, making it easier than ever to create an app for Wear OS. 
-
-##  Get started with Wear OS 
 
 [ ![](https://developer.android.com/static/images/picto-icons/guidelines.svg) ](https://developer.android.com/design/ui/wear)
 
@@ -55,8 +58,6 @@ Learn to build for multiple surfaces for your wear OS app.
 
 Find out how to assess the quality of your app and fulfill the upcoming requirements on Google Play Store. 
 
-##  New features 
-
 [ ![](https://developer.android.com/static/wear/images/callouts/wear-new-features.svg) ](https://developer.android.com/training/wearables/versions/latest)
 
 ###  [ Wear OS 7 ](https://developer.android.com/training/wearables/versions/latest)
@@ -64,8 +65,6 @@ Find out how to assess the quality of your app and fulfill the upcoming requirem
 The latest version of Wear OS—complete with dynamic Wear OS widgets and Live Updates—is here! Test your app using the official emulator in Android Studio. 
 
 [Get your apps ready](https://developer.android.com/training/wearables/versions/latest)
-
-##  Highlighted samples & codelabs 
 
 [ ![](https://developer.android.com/static/wear/images/callouts/compose-gif.gif) ](https://developer.android.com/codelabs/compose-for-wear-os#0)
 
@@ -82,8 +81,6 @@ Compose for Wear OS is a modern declarative UI toolkit and is the recommended ap
 This project provides libraries that aim to supplement Wear OS developers with features that are commonly required by developers but not yet available elsewhere. Including the media toolkit, prebuilt composables, and layouts. 
 
 [Go to GitHub](https://github.com/google/horologist)
-
-##  What developers are saying 
 
 [ ![](https://developer.android.com/static/wear/images/logos/peloton.png) ](https://android-developers.googleblog.com/2023/06/peloton-increased-its-multi-device-support-and-saw-an-uptick-in-user-engagement.html)
 
@@ -102,10 +99,6 @@ This project provides libraries that aim to supplement Wear OS developers with f
 ###  [ Todoist boosts installs by 50% ](https://android-developers.googleblog.com/2022/10/todoist-adopted-compose-for-wear-os-and.html)
 
 [Read more](https://android-developers.googleblog.com/2022/10/todoist-adopted-compose-for-wear-os-and.html)
-
-##  Latest news 
-
-##  Join the Wear OS community 
 
 [ ![](https://developer.android.com/static/images/logos/stack-overflow.svg) ](https://stackoverflow.com/questions/tagged/wear-os)
 

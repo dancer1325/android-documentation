@@ -4,7 +4,8 @@
 
 ---
 
-#  Take a screenshot
+#  Take a screenshot Save and categorize content based on your preferences. 
+
 On many Android devices, you can capture a screenshot by pressing the Power and Volume-down buttons on the device simultaneously. To save a screenshot directly to your workstation, you can capture the screenshot using Android Studio.
 
 To capture a screenshot with Android Studio, follow these steps: 
@@ -29,6 +30,8 @@ The screenshot appears in a **Screenshot Editor** window.
 
   6. Click **Save**. 
   7. Specify the location and filename, and then click **OK**. 
+
+
 
 ## Take a screenshot from the emulator
 

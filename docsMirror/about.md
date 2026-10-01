@@ -3,6 +3,9 @@
 **Source:** [https://developer.android.com/about](https://developer.android.com/about)
 
 ---
+
+Save and categorize content based on your preferences. 
+
 ![](https://developer.android.com/static/courses/images/android-for-developers.svg)
 
 ###  Android platform 
@@ -78,12 +81,6 @@ Modern Android
 Kotlin is beloved by many Android developers for its combination of simplicity and power. Now Kotlin development on Android is a first-class experience. 
 
 [Learn Kotlin](https://developer.android.com/kotlin)
-
-##  Developer stories 
-
-How developers are finding success with Android. 
-
-[View all stories](https://developer.android.com/stories)
 
 [ ![](https://developer.android.com/static/images/distribute/stories/marvel-strike-force-icon.png) ](https://developer.android.com/stories/instant-apps/marvel-strike-force)
 

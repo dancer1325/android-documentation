@@ -3,6 +3,15 @@
 **Source:** [https://developer.android.com/reference/android/app/GameManager](https://developer.android.com/reference/android/app/GameManager)
 
 ---
+
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Develop ](https://developer.android.com/develop)
+  * [ API reference ](https://developer.android.com/reference)
+
+
+
+Save and categorize content based on your preferences. 
+
 Added in [API level 31](/guide/topics/manifest/uses-sdk-element#ApiLevels)
 
 Summary: Constants | Methods | Inherited Methods
@@ -21,6 +30,7 @@ Summary: Constants | Methods | Inherited Methods
 ↳ | android.app.GameManager   
   
 
+
 * * *
 
 The GameManager allows system apps to modify and query the game mode of apps. 
@@ -28,6 +38,8 @@ The GameManager allows system apps to modify and query the game mode of apps.
 **Note:** After `[Build.VERSION_CODES.VANILLA_ICE_CREAM](/reference/android/os/Build.VERSION_CODES#VANILLA_ICE_CREAM)`, some devices that do not support the GameManager features _may_ not publish a GameManager instance. These device types include: 
 
   * Wear devices (`[PackageManager.FEATURE_WATCH](/reference/android/content/pm/PackageManager#FEATURE_WATCH)`) 
+
+
 
 Therefore, you should always do a `null` check on the return value of `[Context.getSystemService(Class)](/reference/android/content/Context#getSystemService\(java.lang.Class<T>\))` and `[Context.getSystemService(String)](/reference/android/content/Context#getSystemService\(java.lang.String\))` when trying to obtain an instance of GameManager on the aforementioned device types.
 
@@ -170,6 +182,6 @@ This value cannot be `null`.
   
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-02-13 UTC.
+Last updated 2026-08-03 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-02-13 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-08-03 UTC."],[],[]] 

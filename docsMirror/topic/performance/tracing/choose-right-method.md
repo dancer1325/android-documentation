@@ -4,11 +4,14 @@
 
 ---
 
-#  Choose the right profiling method
+#  Choose the right profiling method Save and categorize content based on your preferences. 
+
 You can collect profiles using two primary methods: manual profile collection and the `ProfilingManager` API.
 
   * Manual profile collection involves manually running Perfetto on your local device to record profiles. You can do this using commands as described in [Recording system traces with Perfetto](https://perfetto.dev/docs/getting-started/system-tracing) or by using the Quick Settings tile, as explained in [Record using Quick Settings tile](/topic/performance/tracing/on-device#quick-settings).
   * `ProfilingManager` lets apps collect profiles in production.
+
+
 
 We recommend using `ProfilingManager` for collecting and analyzing data from many users or for debugging rare issues. However, for issues that are easier to reproduce, manual profiling might be a better choice.
 
@@ -41,6 +44,9 @@ With `ProfilingManager`, you can gather data from public users to find and fix p
 
   * Manual profile collection produces unredacted traces. When you manually record a system trace, the output might include all processes running on the system. While these unredacted traces offer more complete data for debugging, you can only access them locally due to privacy concerns.
 
+
+
+
 ## Event-based profiling
 
 `ProfilingManager` can also collect profiles when specific events happen, such as an Application Not Responding (ANR) error or app startup. `ProfilingManager` will handle the starting and stopping of profiles for event-based collection.
@@ -55,6 +61,6 @@ Manual profiling provides the most customization, while `ProfilingManager` offer
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-16 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-16 UTC."],[],[]] 

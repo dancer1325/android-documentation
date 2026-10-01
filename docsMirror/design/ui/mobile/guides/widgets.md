@@ -4,7 +4,8 @@
 
 ---
 
-#  Widgets
+#  Widgets Save and categorize content based on your preferences. 
+
 Widgets are customizable home screen elements that display a clear and actionable view of an app's content or actions. This content can periodically refresh.
 
 Widgets help users complete their goals, either by interacting with your app's content directly in the widget or by opening your full app experience.
@@ -21,6 +22,8 @@ When creating your widget, complete the following steps:
   4. Test for multiple screen sizes.
   5. Test your widget on multiple form factors, such as [Android Auto](/design/ui/cars/guides/flows/widgets).
   6. Ensure your widget meets the [Widget quality guides](/docs/quality-guidelines/widget-quality).
+
+
 
 ###  Canonical widget layouts 
 

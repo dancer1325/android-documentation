@@ -4,7 +4,8 @@
 
 ---
 
-#  Android Emulator networking
+#  Android Emulator networking Save and categorize content based on your preferences. 
+
 Network | API Level | Capability  
 ---|---|---  
 Ethernet | 15+ | Internet and host access.  
@@ -17,6 +18,9 @@ UWB | 36+ | Ranging
 * * *
 
   1. Available after Android Emulator version 36.5. ↩
+
+
+
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

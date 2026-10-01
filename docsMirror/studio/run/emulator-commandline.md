@@ -4,10 +4,16 @@
 
 ---
 
-#  Start the emulator from the command line
+#  Start the emulator from the command line Save and categorize content based on your preferences. 
+
 The Android SDK includes an Android device emulator—a virtual device that runs on your computer. The Android Emulator lets you develop and test Android apps without using a physical device.
 
 This page describes command-line features that you can use with the Android Emulator. For information about using the Android Emulator UI, see [Run apps on the Android Emulator](/studio/run/emulator). 
+
+The `emulator` tool is deprecated. Instead, use the Android CLI [`android emulator`](/tools/agents/android-cli/commands/emulator) command to manage the Android emulator from the command line.
+    
+    
+    android emulator [create <profile-name>|start <device-name>|stop <device-serial-number>|list]
 
 ## Start the emulator
 
@@ -51,11 +57,13 @@ In addition to installing an app through Android Studio or the [emulator UI](/st
 
 To use `adb` to install, run, and test your app, follow these general steps: 
 
-  1. Build and package your app into an APK, as described in [Build and run your app](/studio/run). 
-  2. Start the emulator from the command line, as described in the previous section, using any startup options necessary. 
-  3. Install your app using [`adb`](/tools/help/adb#move). 
+  1. Build and package your app into an APK, as described in [Build and run your app](/studio/run).
+  2. Start the emulator from the command line, as described in the previous section, using any startup options necessary.
+  3. Install your app using [`adb`](/tools/help/adb#move).
   4. Run and test your app on the emulator.  
 While the emulator is running, you can use the [Emulator console](/studio/run/emulator-console) to issue commands as needed.
+
+
 
 To uninstall an app, do so as you would on an Android device.
 
@@ -74,13 +82,17 @@ The Android Emulator uses the ([QEMU](http://wiki.qemu.org/)) hypervisor.
 The system directory contains the Android system images that the emulator uses to simulate the operating system. This directory has platform-specific, read-only files shared by all AVDs of the same type, including API level, CPU architecture, and Android variant. The default locations are the following: 
 
   * macOS and Linux - `~/Library/Android/sdk/system-images/android-apiLevel/variant/arch/`
-  * Windows - `C:\Users\user\Library\Android\sdk\system-images\android-apiLevel\variant\arch\`
+  * Windows - `C:\Users\user\Library\Android\sdk\system-images\android-apiLevel\variant\arch\\`
+
+
 
 Where: 
 
-  * `apiLevel` is a numeric API level or a letter for preview releases. For example, `android-V` indicates the Android VanillaIceCream preview. On release, it became API level 35, designated by `android-35`. 
-  * `variant` is a name corresponding to specific features implemented by the system image. For example, `google_apis` or `android-wear`. 
+  * `apiLevel` is a numeric API level or a letter for preview releases. For example, `android-V` indicates the Android VanillaIceCream preview. On release, it became API level 35, designated by `android-35`.
+  * `variant` is a name corresponding to specific features implemented by the system image. For example, `google_apis` or `android-wear`.
   * `arch` is the target CPU architecture. For example, `x86`.
+
+
 
 Use the `-sysdir` option to specify a different system directory for the AVD. 
 
@@ -103,7 +115,9 @@ The AVD data directory, also called the content directory, is specific to a sing
 The default location is the following, where `name` is the AVD name: 
 
   * macOS and Linux - `~/.android/avd/name.avd/`
-  * Windows 10, and higher - `C:\Users\user\.android\name.avd\`
+  * Windows 10, and higher - `C:\Users\user\.android\name.avd\\`
+
+
 
 Use the `-datadir` option to specify a different AVD data directory. 
 
@@ -115,13 +129,13 @@ File | Description | Option to specify a different file
 ---|---|---  
 `userdata-qemu.img` | The content of the data partition, which appears as `data/` in the emulated system. When you create a new AVD or when you use the `-wipe-data` option to reset the AVD to the factory defaults, the emulator copies the `userdata.img` file in the system directory to create this file. Each virtual device instance uses a writable user-data image to store user and session-specific data. For example, it uses the image to store a unique user's installed app data, settings, databases, and files. Each user has a different `ANDROID_SDK_HOME` directory that stores the data directories for the AVDs created by that user. Each AVD has a single `userdata-qemu.img` file. | `-data`  
 `cache.img` | The cache partition image, which appears as `cache/` in the emulated system. It's empty when you first create an AVD or use the `-wipe-data` option. It stores temporary download files and is populated by the download manager and sometimes the system. For example, the browser uses it to cache downloaded web pages and images while the emulator is running. When you power off the virtual device, the file is deleted. You can persist the file by using the `-cache` option.  | `-cache`  
-`sdcard.img` | (Optional) An SD card partition image that lets you simulate an SD card on a virtual device. You can create an SD card image file in the [AVD Manager](/studio/run/managing-avds) or using the `[mksdcard](/studio/command-line/mksdcard)` tool. The file is stored on your development computer and must be loaded at startup. When defining an AVD in the AVD Manager, you can choose to use an automatically managed SD card file or a file that you created with the `mksdcard` tool. You can view the `sdcard.img` file associated with an AVD in the AVD Manager. The `-sdcard` option overrides the SD card file specified in the AVD. Note that this SD Card option will not work on Mac with Apple Silicon. You can browse, send files to, and copy and remove files from a simulated SD card by using the emulator UI or the [`adb`](/studio/command-line/adb#copyfiles) utility while the virtual device is running. You can't remove a simulated SD card from a running virtual device.  To copy files to the SD card file before loading it, mount the image file as a loop device and then copy the files. Or, use a utility, such as the `mtools` package, to copy the files directly to the image. The emulator treats the file as a pool of bytes, so the SD card format doesn't matter.  The `-wipe-data` option doesn't affect this file. If you want to clear the file, delete the file and then re-create it using the AVD Manager or the `mksdcard` tool. Changing the size of the file also deletes the file and creates a new file. | `-sdcard`  
+`sdcard.img` | (Optional) An SD card partition image that lets you simulate an SD card on a virtual device. You can create an SD card image file in the [AVD Manager](/studio/run/managing-avds) or using the `[mksdcard](/studio/command-line/mksdcard)` tool. The file is stored on your development computer and must be loaded at startup. When defining an AVD in the AVD Manager, you can choose to use an automatically managed SD card file or a file that you created with the `mksdcard` tool. You can view the `sdcard.img` file associated with an AVD in the AVD Manager. The `-sdcard` option overrides the SD card file specified in the AVD. Note that this SD Card option will not work on Mac with Apple Silicon. You can browse, send files to, and copy and remove files from a simulated SD card by using the emulator UI or the [`adb`](/studio/command-line/adb#copyfiles) utility while the virtual device is running. You can't remove a simulated SD card from a running virtual device. To copy files to the SD card file before loading it, mount the image file as a loop device and then copy the files. Or, use a utility, such as the `mtools` package, to copy the files directly to the image. The emulator treats the file as a pool of bytes, so the SD card format doesn't matter. The `-wipe-data` option doesn't affect this file. If you want to clear the file, delete the file and then re-create it using the AVD Manager or the `mksdcard` tool. Changing the size of the file also deletes the file and creates a new file. | `-sdcard`  
   
 ### List directories and files used by the emulator
 
 You can discover where files are located in two ways: 
 
-  * Use the `-verbose` or `-debug init` option when you start the emulator from the command line. Look at the output. 
+  * Use the `-verbose` or `-debug init` option when you start the emulator from the command line. Look at the output.
   * Use the `emulator` `-help-option` command to list a default directory. For example: 
         
         **emulator -help-datadir**  
@@ -133,6 +147,9 @@ You can discover where files are located in two ways:
         
           See '-help-disk-images' for more information about disk image files.
         
+
+
+
 
 ## Command-line startup options
 
@@ -150,11 +167,11 @@ Command-line option | Description
 ---|---  
 **Quick Boot**  
 `-no-snapshot-load` |  Performs a cold boot and saves the emulator state on exit.   
-`-no-snapshot-save` |  Performs a quick boot if possible, but does not save the emulator state on exit.   
+`-no-snapshot-save` |  Performs a quick boot if possible, but doesn't save the emulator state on exit.   
 `-no-snapshot` |  Disables the Quick Boot feature completely and doesn't load or save the emulator state.   
 **Device Hardware**  
 `-camera-back mode`  
-`-camera-front mode` |  Sets the emulation mode for a camera facing back or front. This overrides any camera setting in the AVD. `mode` can be any of the following values: 
+`-camera-front mode` |  Sets the emulation mode for a camera facing back or front. This overrides any camera setting in the AVD. `mode` can be any of the following values:
 
   * `emulated` \- The emulator simulates a camera in the software.
   * `environment` \- The emulator uses a virtual scene defined in the environment configuration file of the AVD. 
@@ -164,7 +181,7 @@ Command-line option | Description
   * `image360:filename` \- The emulator uses an equirectangular panoramic image for the camera output. Available in version 36.6.4 and higher. 
   * `none` \- Disables the camera in the virtual device. 
 
-For example: 
+For example:
     
     
     emulator @Pixel8_API_34 -camera-back webcam0  
@@ -186,216 +203,216 @@ In the example, the first `webcam0` is the name you use on the command line. The
     emulator @Pixel8_API_34 -memory 2048
 
 This value overrides the AVD setting.  
-`-sdcard filepath` | Specifies the filename and path to an SD card partition image file. For example: 
+`-sdcard filepath` | Specifies the filename and path to an SD card partition image file. For example:
     
     
     emulator @Pixel8_API_34 -sdcard C:/sd/sdcard.img
 
-If the file isn't found, the emulator still launches, but without an SD card. The command returns a **No SD Card Image** warning.  If you don't specify this option, the default is `sdcard.img` in the data directory unless the AVD specifies something different. For details about emulated SD cards, see AVD data directory.   
-`-wipe-data` | Deletes user data and copies data from the initial data file. This option clears the data for the virtual device and returns it to the same state as when it was first defined. All installed apps and settings are removed. For example: 
+If the file isn't found, the emulator still launches, but without an SD card. The command returns a **No SD Card Image** warning. If you don't specify this option, the default is `sdcard.img` in the data directory unless the AVD specifies something different. For details about emulated SD cards, see AVD data directory.  
+`-wipe-data` | Deletes user data and copies data from the initial data file. This option clears the data for the virtual device and returns it to the same state as when it was first defined. All installed apps and settings are removed. For example:
     
     
     emulator @Pixel8_API_34 -wipe-data
 
-By default, the user data file is `userdata-qemu.img` and the initial data file is `userdata.img`. Both of these files reside in the data directory. The `-wipe-data` option doesn't affect the `sdcard.img` file. For more information about user data, see the section called Understand the default directories and files.   
+By default, the user data file is `userdata-qemu.img` and the initial data file is `userdata.img`. Both of these files reside in the data directory. The `-wipe-data` option doesn't affect the `sdcard.img` file. For more information about user data, see the section called Understand the default directories and files.  
 **Debug**  
-`-debug tags` | Enables or disables the display of debug messages for one or more tags. Separate multiple tags by a space, comma, or column. For example: 
+`-debug tags` | Enables or disables the display of debug messages for one or more tags. Separate multiple tags by a space, comma, or column. For example:
     
     
     $ emulator @Pixel8_API_34 -debug init,metrics
 
-To disable a tag, place a dash (-) in front of it. For example, the following option displays all debug messages, except the ones related to network sockets and metrics:  `-debug all,-socket,-metrics` For a list of tags and descriptions, use the `-help-debug-tags` option. For example: 
+To disable a tag, place a dash (-) in front of it. For example, the following option displays all debug messages, except the ones related to network sockets and metrics: `-debug all,-socket,-metrics` For a list of tags and descriptions, use the `-help-debug-tags` option. For example:
     
     
     emulator -help-debug-tags
 
-You can define the default debug tags in the [`ANDROID_VERBOSE`](/studio/command-line/variables#android_verbose) environment variable. Define the tags you want to use in a comma-delimited list. Here's an example that shows how to specify the `socket` and `gles` tags: 
+You can define the default debug tags in the [`ANDROID_VERBOSE`](/studio/command-line/variables#android_verbose) environment variable. Define the tags you want to use in a comma-delimited list. Here's an example that shows how to specify the `socket` and `gles` tags:
     
     
     ANDROID_VERBOSE=socket,gles
 
-It's equivalent to using:  `-debug-socket -debug-gles` or `-debug socket,gles`  
+It's equivalent to using: `-debug-socket -debug-gles` or `-debug socket,gles`  
 `-debug-tag`  
-`-debug-no-tag` | Enables a specific debug message type. Use the `no` form to disable a debug message type. For example: 
+`-debug-no-tag` | Enables a specific debug message type. Use the `no` form to disable a debug message type. For example:
     
     
     emulator @Pixel8_API_34 -debug-all -debug-no-metrics
 
-For a list of tags, use the `emulator -help-debug-tags` command.   
-`-logcat logtags` | Enables the display of Logcat messages for one or more tags and writes them to the terminal window. For example, the following command enables error messages from all components: 
+For a list of tags, use the `emulator -help-debug-tags` command.  
+`-logcat logtags` | Enables the display of Logcat messages for one or more tags and writes them to the terminal window. For example, the following command enables error messages from all components:
     
     
     emulator @Pixel8_API_34 -logcat *:e
 
 `logtags` uses the same format as the `adb logcat logtags` command. Enter `adb logcat -help` for more information. It's a list of space- or comma-separated log filters of the format `componentName:logLevel`. `componentName` is either a wildcard asterisk (`*`) or a component name, such as `ActivityManager`, `SystemServer`, `InputManager`, or `WindowManager`. `logLevel` is one of these values:
 
-  * `v` \- verbose 
-  * `d` \- debug 
-  * `i` \- informative 
-  * `w` \- warning log level 
-  * `e` \- error 
+  * `v` \- verbose
+  * `d` \- debug
+  * `i` \- informative
+  * `w` \- warning log level
+  * `e` \- error
   * `s` \- silent
 
-The following example displays GSM component messages at the informative log level: 
+The following example displays GSM component messages at the informative log level:
     
     
     emulator @Pixel8_API_34 -logcat '*:s GSM:i'
 
 If you don't supply the `-logcat` option on the command line, the emulator looks for the [`ANDROID_LOG_TAGS`](/studio/command-line/variables#android_log_tags) environment variable. If `ANDROID_LOG_TAGS` is defined with a valid `logtags` value and isn't empty, the emulator uses its value to enable Logcat output to the terminal by default. You can also redirect the same or other log messages to the terminal through `adb`. For more information about Logcat and `adb`, see [Logcat command-line tool](/studio/command-line/logcat), [View and write logs with Logcat](/studio/debug/am-logcat), [`Log`](/reference/android/util/Log) class, and [Issue adb commands](/studio/command-line/adb#issuingcommands).  
-`-show-kernel` | Displays kernel debug messages in the terminal window. For example: 
+`-show-kernel` | Displays kernel debug messages in the terminal window. For example:
     
     
     emulator @Pixel8_API_34 -show-kernel
 
-One use of this option is to check that the boot process works correctly.   
-`-verbose` | Prints emulator initialization messages to the terminal window. For example: 
+One use of this option is to check that the boot process works correctly.  
+`-verbose` | Prints emulator initialization messages to the terminal window. For example:
     
     
     emulator @Pixel8_API_34 -verbose
 
-It displays which files and settings are actually selected when starting a virtual device defined in an AVD. This option is the same as specifying `-debug-init`.   
+It displays which files and settings are actually selected when starting a virtual device defined in an AVD. This option is the same as specifying `-debug-init`.  
 **Network**  
-`-dns-server servers` | Uses the specified DNS servers. `servers` is a comma-separated list of up to four DNS server names or IP addresses. For example: 
+`-dns-server servers` | Uses the specified DNS servers. `servers` is a comma-separated list of up to four DNS server names or IP addresses. For example:
     
     
     emulator @Pixel8_API_34 -dns-server 192.0.2.0,  
     192.0.2.255
 
-By default, the emulator tries to detect the DNS servers you're using and sets up special aliases in the emulated firewall network to allow the Android system to connect directly to the servers. Use the `-dns-server` option to specify a different list of DNS servers.   
-`-http-proxy proxy` | Makes all TCP connections through a specified HTTP/HTTPS proxy. If your emulator must access the internet through a proxy server, you can use this option or the `http_proxy` environment variable to set up the appropriate redirection. For example: 
+By default, the emulator tries to detect the DNS servers you're using and sets up special aliases in the emulated firewall network to allow the Android system to connect directly to the servers. Use the `-dns-server` option to specify a different list of DNS servers.  
+`-http-proxy proxy` | Makes all TCP connections through a specified HTTP/HTTPS proxy. If your emulator must access the internet through a proxy server, you can use this option or the `http_proxy` environment variable to set up the appropriate redirection. For example:
     
     
     emulator @Pixel8_API_34 -http-proxy myserver:1981
 
 `proxy` can be one of the following: `http://server:port`  
-`http://username:password@server:port` The `http://` prefix can be omitted. If this option isn't supplied, the emulator looks up the `http_proxy` environment variable and automatically uses any value matching the `proxy` format. For more information, see [Using the emulator with a proxy](/studio/run/emulator-networking#proxy). **Note:** When running multiple emulators, this flag should be set on the first launch.   
+`http://username:password@server:port` The `http://` prefix can be omitted. If this option isn't supplied, the emulator looks up the `http_proxy` environment variable and automatically uses any value matching the `proxy` format. For more information, see [Using the emulator with a proxy](/studio/run/emulator-networking#proxy). **Note:** When running multiple emulators, this flag should be set on the first launch.  
 `-netdelay delay` | Sets network latency emulation to one of the following `delay` values in milliseconds:
 
-  * `gsm` \- GSM/CSD (min 150, max 550). 
-  * `hscsd` \- HSCSD (min 80, max 400). 
-  * `gprs` \- GPRS (min 35, max 200). 
-  * `edge` \- EDGE/EGPRS (min 80, max 400). 
-  * `umts` \- UMTS/3G (min 35, max 200). 
-  * `hsdpa` \- HSDPA (min 0, max 0). 
-  * `lte` \- LTE (min 0, max 0). 
-  * `evdo` \- EVDO (min 0, max 0). 
-  * `none` \- No latency, the default (min 0, max 0). 
-  * `num` \- Specifies exact latency. 
-  * `min:max` \- Specifies individual minimum and maximum latencies. 
+  * `gsm` \- GSM/CSD (min 150, max 550).
+  * `hscsd` \- HSCSD (min 80, max 400).
+  * `gprs` \- GPRS (min 35, max 200).
+  * `edge` \- EDGE/EGPRS (min 80, max 400).
+  * `umts` \- UMTS/3G (min 35, max 200).
+  * `hsdpa` \- HSDPA (min 0, max 0).
+  * `lte` \- LTE (min 0, max 0).
+  * `evdo` \- EVDO (min 0, max 0).
+  * `none` \- No latency, the default (min 0, max 0).
+  * `num` \- Specifies exact latency.
+  * `min:max` \- Specifies individual minimum and maximum latencies.
 
-For example: 
+For example:
     
     
     emulator @Pixel8_API_34 -netdelay gsm
 
-The emulator supports network throttling as well as higher connection latencies. You can define it either through the skin configuration or with the `‑netspeed` and `-netdelay` options. **Note:** This setting applies to Ethernet and Cellular.   
-`-netfast` | Disables network throttling. For example: 
+The emulator supports network throttling as well as higher connection latencies. You can define it either through the skin configuration or with the `‑netspeed` and `-netdelay` options. **Note:** This setting applies to Ethernet and Cellular.  
+`-netfast` | Disables network throttling. For example:
     
     
     emulator @Pixel8_API_34 -netfast
 
-This option is the same as specifying `-netspeed full -netdelay none`. These are the default values for these options. **Note:** This setting applies to Ethernet and Cellular.   
+This option is the same as specifying `-netspeed full -netdelay none`. These are the default values for these options. **Note:** This setting applies to Ethernet and Cellular.  
 `-netspeed speed` | Sets the network speed emulation. Specifies the maximum network upload and download speeds with one of the following `speed` values in kbps:
 
-  * `gsm` \- GSM/CSD (up: 14.4, down: 14.4). 
-  * `hscsd` \- HSCSD (up: 14.4, down: 57.6). 
-  * `gprs` \- GPRS (up: 28.8, down: 57.6). 
-  * `edge` \- EDGE/EGPRS (up: 473.6, down: 473.6). 
-  * `umts` \- UMTS/3G (up: 384.0, down: 384.0). 
-  * `hsdpa` \- HSDPA (up: 5760.0, down: 13,980.0). 
-  * `lte` \- LTE (up: 58,000, down: 173,000). 
-  * `evdo` \- EVDO (up: 75,000, down: 280,000). 
-  * `full` \- No limit, the default (up: 0.0, down: 0.0). 
-  * `num` \- Specifies both upload and download speed. 
-  * `up:down` \- Specifies individual up and down speeds. 
+  * `gsm` \- GSM/CSD (up: 14.4, down: 14.4).
+  * `hscsd` \- HSCSD (up: 14.4, down: 57.6).
+  * `gprs` \- GPRS (up: 28.8, down: 57.6).
+  * `edge` \- EDGE/EGPRS (up: 473.6, down: 473.6).
+  * `umts` \- UMTS/3G (up: 384.0, down: 384.0).
+  * `hsdpa` \- HSDPA (up: 5760.0, down: 13,980.0).
+  * `lte` \- LTE (up: 58,000, down: 173,000).
+  * `evdo` \- EVDO (up: 75,000, down: 280,000).
+  * `full` \- No limit, the default (up: 0.0, down: 0.0).
+  * `num` \- Specifies both upload and download speed.
+  * `up:down` \- Specifies individual up and down speeds.
 
-For example: 
+For example:
     
     
     emulator @Pixel8_API_34 -netspeed edge
 
-The emulator supports network throttling as well as higher connection latencies. You can define it either through the skin configuration or with the `‑netspeed` and `-netdelay` options. **Note:** This setting applies to Ethernet and Cellular.   
-`-netsim-args arguments` | Passes additional arguments to the network simulator (`netsim`). `arguments` is a space-separated list of flags.  For example to enable packet capture and redirect logging to stderr: 
+The emulator supports network throttling as well as higher connection latencies. You can define it either through the skin configuration or with the `‑netspeed` and `-netdelay` options. **Note:** This setting applies to Ethernet and Cellular.  
+`-netsim-args arguments` | Passes additional arguments to the network simulator (`netsim`). `arguments` is a space-separated list of flags. For example to enable packet capture and redirect logging to stderr:
     
     
     emulator @Pixel8_API_34 -netsim-args="--pcap --logtostderr"
 
-For more information, see [Advanced emulator networking features](/studio/run/emulator-networking-advanced).   
-`-port port` | Sets the TCP port number that's used for the console and `adb`. For example: 
+For more information, see [Advanced emulator networking features](/studio/run/emulator-networking-advanced).  
+`-port port` | Sets the TCP port number that's used for the console and `adb`. For example:
     
     
     emulator @Pixel8_API_34 -port 5556
 
-The default value is 5554 for the first virtual device instance running on the your machine. A virtual device normally occupies a pair of adjacent ports: a console port and an `adb` port. The console of the first virtual device running on a particular machine uses console port 5554 and `adb` port 5555. Subsequent instances use port numbers increasing by two. For example, 5556/5557, 5558/5559, and so on. The range is 5554 to 5682, allowing for 64 concurrent virtual devices.  The port assignments are often the same as specifying `-ports port,{port + 1}`. `{port + 1}` must be free and is reserved for `adb`. If any of the console or `adb` ports are already in use, the emulator won't start. The `‑port` option reports which ports and serial number the virtual device is using and warns if there are any issues with the values you provided. In the emulator UI, you can see the console port number in the window title and view the `adb` port number by selecting **Help** > **About**.  Note that if the `port` value is not even and is in the range 5554 to 5584, the virtual device will start but not be visible when you use the `adb devices` command, if the `adb server` starts after the emulator. For this reason, we recommend using an even console port number.   
+The default value is 5554 for the first virtual device instance running on the your machine. A virtual device normally occupies a pair of adjacent ports: a console port and an `adb` port. The console of the first virtual device running on a particular machine uses console port 5554 and `adb` port 5555. Subsequent instances use port numbers increasing by two. For example, 5556/5557, 5558/5559, and so on. The range is 5554 to 5682, allowing for 64 concurrent virtual devices. The port assignments are often the same as specifying `-ports port,{port + 1}`. `{port + 1}` must be free and is reserved for `adb`. If any of the console or `adb` ports are already in use, the emulator won't start. The `‑port` option reports which ports and serial number the virtual device is using and warns if there are any issues with the values you provided. In the emulator UI, you can see the console port number in the window title and view the `adb` port number by selecting **Help** > **About**. Note that if the `port` value is not even and is in the range 5554 to 5584, the virtual device will start but not be visible when you use the `adb devices` command, if the `adb server` starts after the emulator. For this reason, we recommend using an even console port number.  
 `-ports   
-console-port,adb-port` | Sets the TCP ports used for the console and `adb`. For example: 
+console-port,adb-port` | Sets the TCP ports used for the console and `adb`. For example:
     
     
     emulator @Pixel8_API_34 -ports 5556,5559
 
-The valid ports range is 5554 to 5682, allowing for 64 concurrent virtual devices. The `-ports` option reports which ports and serial number the emulator instance is using and warns if there are any issues with the values you provided.  We recommend using the `-port` option instead, where possible. The `-ports` option is available for network configurations that require special settings.  For more information about setting console and `adb` ports, see the `-port` option.   
-`-tcpdump filepath` | Captures network packets and stores them in a file. For example: 
+The valid ports range is 5554 to 5682, allowing for 64 concurrent virtual devices. The `-ports` option reports which ports and serial number the emulator instance is using and warns if there are any issues with the values you provided. We recommend using the `-port` option instead, where possible. The `-ports` option is available for network configurations that require special settings. For more information about setting console and `adb` ports, see the `-port` option.  
+`-tcpdump filepath` | Captures network packets and stores them in a file. For example:
     
     
     emulator @Pixel8_API_34 -tcpdump /path/dumpfile.cap
 
-Use this option to begin capturing all network packets that are sent through the virtual Ethernet LAN of the emulator. Afterward, you can use a tool like Wireshark to analyze the traffic.  Note that this option captures all ethernet packets and isn't limited to TCP connections.   
+Use this option to begin capturing all network packets that are sent through the virtual Ethernet LAN of the emulator. Afterward, you can use a tool like Wireshark to analyze the traffic. Note that this option captures all ethernet packets and isn't limited to TCP connections.  
 **System**  
-`-accel mode` | Configures emulator VM acceleration. For example: 
+`-accel mode` | Configures emulator VM acceleration. For example:
     
     
     emulator @Pixel8_API_34 -accel auto
 
-Accelerated emulation works for x86 and x86_64 system images only. On Linux, it relies on KVM. On Windows and Mac, it relies on an Intel CPU and Intel HAXM driver. This option is ignored if you're not emulating an x86 or x86_64 device.  Valid values for `mode` are:
+Accelerated emulation works for x86 and x86_64 system images only. On Linux, it relies on KVM. On Windows and Mac, it relies on an Intel CPU and Intel HAXM driver. This option is ignored if you're not emulating an x86 or x86_64 device. Valid values for `mode` are:
 
-  * `auto` \- Determines automatically if acceleration is supported and uses it when possible (default). 
-  * `off` \- Disables acceleration entirely, which is primarily useful for debugging. 
+  * `auto` \- Determines automatically if acceleration is supported and uses it when possible (default).
+  * `off` \- Disables acceleration entirely, which is primarily useful for debugging.
   * `on` \- Forces acceleration. If KVM or HAXM isn't installed or usable, the emulator won't start and prints an error message.
 
-For more information, see [Configure hardware acceleration for the Android Emulator](/studio/run/emulator-acceleration).   
-`-accel-check` | Checks whether a required hypervisor for emulator VM acceleration is installed (HAXM or KVM). For example: 
+For more information, see [Configure hardware acceleration for the Android Emulator](/studio/run/emulator-acceleration).  
+`-accel-check` | Checks whether a required hypervisor for emulator VM acceleration is installed (HAXM or KVM). For example:
     
     
     emulator -accel-check
 
-For more information, see [Check if a hypervisor is installed](/studio/run/emulator-acceleration#accel-check).   
+For more information, see [Check if a hypervisor is installed](/studio/run/emulator-acceleration#accel-check).  
 `-engine engine` | Specifies the emulator engine:
 
-  * `auto` \- Automatically selects an engine (default). 
-  * `classic` \- Uses the older QEMU 1 engine (deprecated). 
+  * `auto` \- Automatically selects an engine (default).
+  * `classic` \- Uses the older QEMU 1 engine (deprecated).
   * `qemu2` \- Uses the newer QEMU 2 engine.
 
-For example: 
+For example:
     
     
     emulator @Pixel8_API_34 -engine auto
 
-Auto-detection should choose the value that provides the best performance when emulating a particular AVD. Use the `-engine` option for debugging and comparison purposes only.   
-`-gpu mode` | Selects the GPU emulation mode. For example: 
+Auto-detection should choose the value that provides the best performance when emulating a particular AVD. Use the `-engine` option for debugging and comparison purposes only.  
+`-gpu mode` | Selects the GPU emulation mode. For example:
     
     
     emulator @Pixel8_API_34 -gpu swiftshader_indirect
 
-For more information, see [Configure graphics acceleration](/studio/run/emulator-acceleration#accel-graphics).   
-`-no-accel ` | Disables emulator VM acceleration when using an x86 or x86_64 system image. It's useful for debugging only and is the same as specifying `-accel off`. For example: 
+For more information, see [Configure graphics acceleration](/studio/run/emulator-acceleration#accel-graphics).  
+`-no-accel ` | Disables emulator VM acceleration when using an x86 or x86_64 system image. It's useful for debugging only and is the same as specifying `-accel off`. For example:
     
     
     emulator @Pixel8_API_34 -no-accel
 
-For more information, see [Configure hardware acceleration for the Android Emulator](/studio/run/emulator-acceleration).   
+For more information, see [Configure hardware acceleration for the Android Emulator](/studio/run/emulator-acceleration).  
 `-nojni`   
-`-no-jni` | Disables extended Java Native Interface (JNI) checks in the Android Dalvik or ART runtime. For example: 
+`-no-jni` | Disables extended Java Native Interface (JNI) checks in the Android Dalvik or ART runtime. For example:
     
     
     emulator @Pixel8_API_34 -nojni
 
-When you start a virtual device, extended JNI checks are enabled by default. For more information, see [JNI tips](/training/articles/perf-jni).   
-`-selinux {disabled|permissive}` | Sets the Security-Enhanced Linux ([SELinux](https://en.wikipedia.org/wiki/Security-Enhanced_Linux)) security module to either `disabled` or `permissive` mode on a Linux operating system. For example: 
+When you start a virtual device, extended JNI checks are enabled by default. For more information, see [JNI tips](/training/articles/perf-jni).  
+`-selinux {disabled|permissive}` | Sets the Security-Enhanced Linux ([SELinux](https://en.wikipedia.org/wiki/Security-Enhanced_Linux)) security module to either `disabled` or `permissive` mode on a Linux operating system. For example:
     
     
     me-linux$ emulator @Pixel8_API_34 -selinux permissive
 
-By default, SELinux is in `enforcing` mode, meaning the security policy is enforced. `permissive` mode loads the SELinux policy but doesn't enforce it. This option only logs policy violations. `disabled` mode disables kernel support for SELinux.   
+By default, SELinux is in `enforcing` mode, meaning the security policy is enforced. `permissive` mode loads the SELinux policy but doesn't enforce it. This option only logs policy violations. `disabled` mode disables kernel support for SELinux.  
 `-timezone timezone` | Sets the time zone for the virtual device to `timezone` instead of the host time zone. For example:
     
     
@@ -407,33 +424,33 @@ By default, the emulator uses the time zone of your development computer. Use th
   * `Europe/Paris`
   * `America/Argentina/Buenos_Aires`
 
-The specified time zone must be in the [zoneinfo database](https://www.iana.org/time-zones).   
-`-version` | Displays the emulator version number. For example: 
+The specified time zone must be in the [zoneinfo database](https://www.iana.org/time-zones).  
+`-version` | Displays the emulator version number. For example:
     
     
     emulator @Pixel8_API_34 -version
 
-Or 
+Or
     
     
     emulator -version  
   
 **UI**  
-`-no-boot-anim` | Disables the boot animation during emulator startup for faster booting. For example: 
+`-no-boot-anim` | Disables the boot animation during emulator startup for faster booting. For example:
     
     
     emulator @Pixel8_API_34 -no-boot-anim
 
-On slower computers, this option can significantly speed up the boot sequence.   
-`-screen mode` | Sets emulated touch screen mode. For example: 
+On slower computers, this option can significantly speed up the boot sequence.  
+`-screen mode` | Sets emulated touch screen mode. For example:
     
     
     emulator @Pixel8_API_34 -screen no-touch
 
 `mode` can be any of the following values:
 
-  * `touch` \- Emulates a touch screen (default). 
-  * `multi-touch` \- Emulates a multi-touch screen. 
+  * `touch` \- Emulates a touch screen (default).
+  * `multi-touch` \- Emulates a multi-touch screen.
   * `no-touch` \- Disables touch and multi-touch screen emulation.
 
   
@@ -487,7 +504,7 @@ If you don't use this option, the default is a file named `userdata-qemu.img`. F
     
     emulator @Pixel8_API_34 -force-32bit  
   
-`-help-disk-images` | Gets help about about disk images. This option provides information relevant to both app and platform developers. For example: 
+`-help-disk-images` | Gets help about disk images. This option provides information relevant to both app and platform developers. For example: 
     
     
     emulator -help-disk-images  
@@ -516,17 +533,14 @@ If you don't use this option, the default is a file named `userdata-qemu.img`. F
        google_apis/x86_64/userdata-test.img
 
 If you don't specify a path, it places the file in the system directory. For more information, see AVD system directory.  
-`-kernel filepath` | Uses a specific emulated kernel. If you don't specify a path, the emulator looks in the system directory. Use the `‑show‑kernel` option to view kernel debug messages.  
-  
-For example: 
+`-kernel filepath` | Uses a specific emulated kernel. If you don't specify a path, the emulator looks in the system directory. Use the `‑show‑kernel` option to view kernel debug messages. For example: 
     
     
     emulator @Pixel8_API_34 -kernel
        ~/Library/Android/sdk/system-images/android-34/
        google_apis/x86_64/kernel-test.img -show-kernel
 
-If you don't specify this option, the default is `kernel-ranchu`. For more information, see AVD system directory.
-
+If you don't specify this option, the default is `kernel-ranchu`. For more information, see AVD system directory.  
 `-noaudio`   
 `-no-audio` | Disables audio support for this virtual device. Some Linux and Windows computers have faulty audio drivers that cause different symptoms, such as preventing the emulator from starting. In this case, use this option to overcome the issue. Alternatively, you can use the `QEMU_AUDIO_DRV` environment variable to change the audio backend. For example: 
     
@@ -602,8 +616,8 @@ If you don't use this option, the default is the `ramdisk.img` file in the syste
 For more information, use the `-help-report-console` option as described in the section about help for specific options.  
 `-shell` | Creates a root shell console on the current terminal. This option differs from the `[adb shell](/studio/command-line/adb#shellcommands)` command in the following ways:
 
-  * It creates a _root_ shell that lets you modify many parts of the system. 
-  * It works even if the `adb daemon` in the emulated system is broken. 
+  * It creates a _root_ shell that lets you modify many parts of the system.
+  * It works even if the `adb daemon` in the emulated system is broken.
   * Press Control+C (or Command-C, on macOS) to stop the emulator instead of the shell.
 
 For example: 
@@ -688,7 +702,9 @@ The following command-line options are deprecated:
   * `-skin`
   * `-skindir`
   * `-trace`
-  * `-useaudio `
+  * `-useaudio`
+
+
 
 ## Get help about command-line options
 
@@ -748,6 +764,6 @@ The `-debug` options let you enable or disable debug messages from specific emul
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-04-20 UTC.
+Last updated 2026-09-25 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-20 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-25 UTC."],[],[]] 

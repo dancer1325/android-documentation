@@ -4,7 +4,8 @@
 
 ---
 
-#  Record the screen
+#  Record the screen Save and categorize content based on your preferences. 
+
 You can record video and audio from the Android Emulator and save the recording to a WebM or animated GIF file.
 
 The screen recording controls are in the **Record and Playback** tab of the [**Extended Controls**](/studio/run/emulator-extended-controls) window.
@@ -14,11 +15,15 @@ The screen recording controls are in the **Record and Playback** tab of the [**E
   * To begin screen recording, click the **Start recording** button in the **Record and Playback** tab.
   * To stop recording, click **Stop recording**.
 
+
+
 To save the recorded video:
 
   1. Controls for playing and saving the recorded video are at the bottom of the **Record and Playback** tab.
   2. Choose **WebM** or **GIF** from the menu at the bottom of the tab.
   3. Click **Save**.
+
+
 
 You can also record and save a screen recording from the emulator using the following command on the command line:
 

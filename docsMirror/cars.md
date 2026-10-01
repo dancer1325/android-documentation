@@ -3,6 +3,9 @@
 **Source:** [https://developer.android.com/cars](https://developer.android.com/cars)
 
 ---
+
+Save and categorize content based on your preferences. 
+
 ###  Android for Cars 
 
 Build apps that help users connect on the road through Android Automotive OS and Android Auto. Users who have a vehicle with Android Automotive OS can install your app onto their vehicle's infotainment system. Android Auto lets users connect their phone, Android 9 or higher, to a compatible vehicle to display a driver-optimized version of your app directly on the console. 
@@ -44,14 +47,6 @@ Build point of interest, internet of things, weather, and navigation apps for An
 ###  [ Build parked apps ](https://developer.android.com/training/cars/parked)
 
 Port your existing Android video apps, browsers, and games to Android Auto and Android Automotive OS for users to enjoy in their cars while parked. 
-
-##  Latest news 
-
-[More news](https://android-developers.googleblog.com/search/label/Android%20Auto)
-
-##  Latest videos 
-
-[More videos](https://www.youtube.com/user/androiddevelopers/search?query=%23androidauto%2C%23auto)
 
 ###  Building an ecosystem 
 

@@ -4,7 +4,8 @@
 
 ---
 
-#  Capture a system trace on a device
+#  Capture a system trace on a device Save and categorize content based on your preferences. 
+
 Devices running Android 9 (API level 28) or higher include a system-level app called System Tracing. This app is similar to the [`systrace`](/topic/performance/tracing/command-line) command-line utility, but the app lets you record traces directly from a test device itself, without needing to plug in the device and connect to it over `adb`. You can then use the app to share results from these traces with your development team.
 
 Devices running Android 10 and higher record traces in Perfetto format, whereas earlier devices record them in Systrace format. We recommend using the [Perfetto trace viewer](https://ui.perfetto.dev/) to open both formats and then analyze traces.
@@ -34,6 +35,9 @@ If you're using System Tracing for the first time on your test device, or if you
 
 **Note:** By default, the system adds the **System Tracing** tile as the first tile in the **Quick Settings** panel. If you want the tile to appear in a different position, use the panel's edit mode to move the tile.
 
+
+
+
 #### Complete a system trace recording
 
 To record a system trace using the **Quick Settings** panel, complete the following steps:
@@ -51,6 +55,8 @@ The system displays a new notification that contains the message "Saving trace".
 
 ![Notification with the message 'Trace saved. Tap to share your
   trace.'](/static/topic/performance/images/tracing/on-device-systrace-saved.webp) **Figure 4.** Persistent notification that appears after the system finishes saving a recorded trace.
+
+
 
 ### Record using app menu
 
@@ -79,6 +85,9 @@ Alternatively, if you set up the **System Tracing** tile, you can tap and hold t
   8. Stop tracing by disabling the **Record trace** switch.
 
 The system displays a new notification that contains the message "Saving trace". When saving is complete, the system dismisses the notification and displays a third notification, confirming that your trace is saved and that you're ready to share the system trace, as shown in figure 4.
+
+
+
 
 ## Share a system trace
 
@@ -134,8 +143,10 @@ If you don't already have the `systrace` command-line program, you can download 
   * [Benchmark in Continuous Integration](/topic/performance/benchmarking/benchmarking-in-ci)
   * [Capture a system trace on the command line](/topic/performance/tracing/command-line)
 
+
+
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-16 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-16 UTC."],[],[]] 

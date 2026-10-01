@@ -4,20 +4,68 @@
 
 ---
 
-#  Use R8 Configuration Analyzer
+#  Use R8 Configuration Analyzer Save and categorize content based on your preferences. 
+
+Use an Android skill to analyze the R8 Configuration in your app
+
+To install the skill from the Android CLI, run:
+    
+    
+    android skills add r8-analyzer
+
+To activate the skill, try the following prompt:
+    
+    
+    Analyze the R8 configuration
+
 R8 Configuration Analyzer is a tool designed to help you maximize R8's performance benefits by providing detailed insights into your app's configuration quality. It lets you track and improve R8 optimization by monitoring key metrics—specifically shrinking, optimization, and obfuscation scores—which indicate the percentage of your codebase available for optimization. By identifying broad or unnecessary keep rules, including those introduced by third-party libraries, the analyzer helps you refine your configuration to ensure R8 can effectively optimize as many of your classes, fields, and methods as possible.
 
-**Note:** To use the R8 Configuration Analyzer, you need R8 version 9.3.7-dev or later. This version comes pre-bundled with Android Gradle Plugin (AGP) 9.3.0-alpha05 and later. To update your R8 version without updating AGP follow the steps in [Replacing R8 in AGP](https://r8.googlesource.com/r8/+/refs/heads/main/README.md#replacing-r8-in-agp).
+**Note:** To use the R8 Configuration Analyzer, you need AGP version 9.3.0 or R8 version 9.3.7-dev or higher. To update your R8 version without updating AGP, follow the steps in [Replacing R8 in AGP](https://r8.googlesource.com/r8/+/refs/heads/main/README.md#replacing-r8-in-agp).
 
 ## Generate the report
 
-From **AGP 9.3.0-alpha05 and later** , the report is automatically generated in `build/outputs/mapping/release/configanalyzer.html` when running an R8 build. To disable the automatic generation of the outputs, set the following Gradle property:
+With AGP 9.3.0 and higher, you can generate the R8 Configuration Analyzer report using a dedicated standalone Gradle task or automatically during an R8 build.
+
+### Run the standalone Gradle task (Recommended for local use)
+
+When actively iterating on keep rules, use the standalone Gradle task to quickly evaluate the impact of your changes without fully building the APK or Bundle:
+    
+    
+    ./gradlew :app:analyzeReleaseR8Config
+    
+
+Because this task skips APK or Bundle generation, it provides a much shorter feedback loop. This lets you rapidly analyze how your keep rules affect shrinking, optimization, and obfuscation scores and immediately refine them. The HTML report is generated at `app/build/reports/r8/r8-config-analyzer-release.html`.
+
+### Generate automatically during regular builds
+
+When running a full R8 release build (such as `assembleRelease`), the report is automatically generated at `build/outputs/mapping/release/configanalyzer.html`. To disable the automatic generation of the outputs during regular builds, set the following Gradle property:
     
     
     android.experimental.r8.enableR8ConfigurationAnalyzer=false
     
 
-For **AGP 9.2 and earlier** , set the `com.android.tools.r8.dumpkeepradiushtmltodirectory` system property when running a Gradle task with a build enabled with R8.
+### For AGP 9.2 and earlier
+
+For **AGP 9.2 and earlier** , update your local copy of R8 to the latest version by adding it as a classpath dependency to your project's `settings.gradle` or `settings.gradle.kts` file:
+    
+    
+    pluginManagement {
+        repositories {
+            google()
+            mavenCentral()
+        }
+        buildscript {
+            dependencies {
+                // Update to a more recent R8 version.
+                classpath("com.android.tools:r8:9.4.14")
+            }
+        }
+    }
+    
+
+This uses the latest version of R8 including the latest configuration analyzer, and can just be done temporarily when analyzing your R8 configuration.
+
+Now you can set the `com.android.tools.r8.dumpkeepradiushtmltodirectory` system property when running a Gradle task with a build enabled with R8.
     
     
     ./gradlew assembleRelease \
@@ -74,6 +122,8 @@ To refine your keep rules and unlock the full potential of R8 optimizations for 
   3. Reduce the optimization blocked by keep rules by targeting only necessary classes, fields, or methods by [choosing the right keep option](/topic/performance/app-optimization/add-keep-rules#choose-keep) and [following the best practices](/topic/performance/app-optimization/keep-rules-best-practices).
   4. Investigate and run tests that cover the affected classes, fields and methods of the keep rule and refine the keep rules.
 
+
+
 ## Inspect optimization of libraries
 
 When you integrate third-party libraries, they often include their own consumer keep rules to work with R8. Because the library author cannot predict your specific implementation, they sometimes write conservative, wide-reaching rules that prevent optimization in more classes, fields, and methods than necessary. This may prevent R8 from optimizing parts of your app that have nothing to do with the library's actual runtime execution. You can use R8 Configuration Analyzer to identify libraries introducing rules that negatively impact the optimization of your app.
@@ -81,6 +131,8 @@ When you integrate third-party libraries, they often include their own consumer 
 Use the configuration analyzer to inspect the combined effect of all merged consumer keep rules. By analyzing the impact of each keep rule coming from a third-party library, you can identify and trace the specific third-party libraries that prevent a high amount of optimization in your app.
 
 ### How to optimize libraries
+
+To address keep rules introduced by third-party libraries, do the following:
 
   * If a library includes an overly broad rule, we recommend contacting the maintainer of the library with the data from your report to demonstrate how their current rules impact your app's optimization scores. If it's an external library, look for existing bugs in the library before filing issues.
   * If necessary, you can test potential improvements [by filtering out rules from a specific library](/topic/performance/app-optimization/choose-libraries-wisely#filter-rules). You can import the library's rules into your project, exclude the broad ones, and re-run the configuration analyzer to measure the potential gains in size and performance.
@@ -112,6 +164,8 @@ The first keep rule which prevents optimization in the entire package is subsumi
      1. If the narrow rule is written precisely—only keeping the exact members or classes that are reflectively accessed– then remove the broader keep rule. This safely unlocks R8 optimizations for the rest of your package.
      2. If the broad rule is targeting the right classes, keep the broad rule and delete the narrow rule. The narrow rule is just redundant clutter. Make sure to refine the broad rule to target only classes, fields or methods that you have identified.
 
+
+
 **Verify and test your changes** : Re-run the configuration analyzer to ensure the conflict is fixed. Then, compile a release build and test your changes to ensure that the codebase works as expected.
 
 ## Remove unnecessary rules
@@ -121,12 +175,14 @@ Using the configuration analyzer, you can systematically audit your codebase to 
   * **Unused rules** : Rules that match zero classes, methods, or fields in your current build. They often persist after code refactoring, dependency removal, or from copy-paste configurations that are no longer relevant, adding unnecessary configuration complexity.
   * **Identical rules** : Identical keep rules means rules that target the same classes, fields, and methods or duplicate declarations of keep rule in same or across keep rule files.
 
+
+
 Both types of rules add clutter to your configuration, making it harder to maintain and debug. By identifying these, you can clean up your configuration.
 
 **Note:** Prioritize refining keep rules within your local configuration files because you cannot modify or selectively remove the keep rules packaged inside third-party libraries.
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-11 UTC.
+Last updated 2026-09-08 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-11 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-08 UTC."],[],[]] 

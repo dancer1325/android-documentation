@@ -3,15 +3,23 @@
 **Source:** [https://developer.android.com/design/ui/mobile](https://developer.android.com/design/ui/mobile)
 
 ---
+
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Design & Plan ](https://developer.android.com/design)
+  * [ UI Design ](https://developer.android.com/design/ui)
+  * [ Mobile ](https://developer.android.com/design/ui/mobile)
+
+
+
+Save and categorize content based on your preferences. 
+
 ![](https://developer.android.com/static/images/design/ui/mobile/hero-full-v3.png)
 
 ###  Design for mobile 
 
-Create your app design using Android themes and components. Leverage Android’s unique design patterns and offerings to create a beautiful, usable, modern app. 
+Create your app design using Android themes and components. Leverage Android’s unique design patterns and offerings to create a beautiful, usable, modern app on phones, foldables, and tablets. 
 
 [Go to design foundations](https://developer.android.com/design/ui/mobile/guides/foundations/system-bars)
-
-##  Get started 
 
 [ ![](https://developer.android.com/static/images/design/ui/wear/surfaces.svg) ](https://developer.android.com/design/ui/mobile/guides/foundations/system-bars)
 
@@ -103,10 +111,6 @@ Explore inspiring, optimized designs for all screen sizes and devices. Browse UI
 
 [View the gallery](https://developer.android.com/large-screens/gallery)
 
-##  Explore our kits 
-
-Explore our other Figma-based library kits, plugins, and the Material theme builder. Start building your Android app with modern themes, tools and user-generated dynamic color, or check out our [Wear OS kits](/design/ui/wear#explore-our-kits) and [TV kits](/design/ui/tv#explore-our-kits) to build for other devices. 
-
 [ ![](https://developer.android.com/static/images/design/ui/mobile/kits-android-ui.png) ](https://goo.gle/android-ui-kit)
 
 ###  [ Android UI kit ](https://goo.gle/android-ui-kit)
@@ -137,8 +141,6 @@ Use compact, medium, and expanded window size classes to support different form 
 
 [ Discover more about window size classes ](/develop/ui/compose/layouts/adaptive/window-size-classes)
 
-##  Use a proven design system 
-
 [ ![](https://developer.android.com/static/images/design/ui/mobile/material-design-3.png) ](https://m3.material.io)
 
 ###  [ Try Material Design 3 ](https://m3.material.io)
@@ -146,8 +148,6 @@ Use compact, medium, and expanded window size classes to support different form 
 Material Design 3 is an open source, adaptable system of guidelines, components, and tools that support the best practices of user interface design. 
 
 [Go to the Material Design website](https://m3.material.io)
-
-##  Develop for mobile 
 
 [ ![](https://developer.android.com/static/images/design/ui/mobile/guides-developer.png) ](https://developer.android.com/guide)
 

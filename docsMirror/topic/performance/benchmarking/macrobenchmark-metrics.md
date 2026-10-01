@@ -4,91 +4,161 @@
 
 ---
 
-#  Capture Macrobenchmark metrics
+#  Capture Macrobenchmark metrics Save and categorize content based on your preferences. 
+
 Metrics are the main type of information extracted from your benchmarks. They are passed to the [`measureRepeated`](/reference/kotlin/androidx/benchmark/macro/junit4/MacrobenchmarkRule#measureRepeated\(kotlin.String,kotlin.collections.List,androidx.benchmark.macro.CompilationMode,androidx.benchmark.macro.StartupMode,kotlin.Int,kotlin.Function1,kotlin.Function1\)) function as a `List`, which lets you specify multiple measured metrics at once. At least one type of metric is required for the benchmark to run.
 
-The following code snippet captures frame timing and custom trace section metrics:
-
-### Kotlin
+The following code snippet captures frame timing and custom trace section metrics for a Jetpack Compose lazy layout interface:
     
     
-    benchmarkRule.measureRepeated(
-        packageName = TARGET_PACKAGE,
-        **metrics = listOf(
-            FrameTimingMetric(),
-            TraceSectionMetric("RV CreateView"),
-            TraceSectionMetric("RV OnBindView"),
-        ),**
-        iterations = 5,
-        // ...
-    )
+    @OptIn(ExperimentalMetricApi::class)
+        @Test
+        fun scrollComposeList() {
+            benchmarkRule.measureRepeated(
+                // [START_EXCLUDE]
+                packageName = TARGET_PACKAGE,
+                metrics = listOf(
+                    FrameTimingMetric(),
+                    // Measure power usage. This is supported on Pixel 6 and later.
+                    PowerMetric(PowerMetric.Type.Power(
+                        mapOf(
+                            PowerCategory.CPU to PowerCategoryDisplayLevel.TOTAL,
+                            PowerCategory.DISPLAY to PowerCategoryDisplayLevel.TOTAL,
+                            PowerCategory.GPU to PowerCategoryDisplayLevel.TOTAL,
+                            PowerCategory.NETWORK to PowerCategoryDisplayLevel.TOTAL,
+                        )
+                    )),
+                    // Measure custom trace sections by name EntryRow (which is added to the EntryRow composable).
+                    // Mode.Sum measures combined duration and also how many times it occurred in the trace.
+                    // This way, you can estimate whether a composable recomposes more than it should.
+                    TraceSectionMetric("EntryRowCustomTrace", TraceSectionMetric.Mode.Sum),
+                    // This trace section takes into account the SQL wildcard character %,
+                    // which can find trace sections without the full name.
+                    // This way, you can measure composables produced by the composition tracing
+                    // and measure how long they took and how many times they recomposed.
+                    // WARNING: This metric only shows results when running with composition tracing, otherwise it won't be visible in the outputs.
+                    TraceSectionMetric("%EntryRow%", TraceSectionMetric.Mode.Sum),
+                ),
+                // Try switching to different compilation modes to see the effect
+                // it has on frame timing metrics.
+                compilationMode = CompilationMode.None(),
+                startupMode = StartupMode.WARM, // restarts activity each iteration
+                iterations = DEFAULT_ITERATIONS,
+                // [END_EXCLUDE]
+                setupBlock = {
+                    uiAutomator {
+                        // Before starting to measure, navigate to the UI to be measured.
+                        startIntent(Intent("$packageName.COMPOSE_ACTIVITY"))
+                    }
+                }
+            ) {
+                uiAutomator {
+                    onElement { isScrollable }.fling(Direction.DOWN)
+                }
+            }
+        }
+    
 
-### Java
+In the following example, `EntryRowCustomTrace` represents a custom trace section defined inside the composable item layers using the standard Kotlin `trace(sectionName) { ... }` block wrapper. To provide data for `TraceSectionMetric`, you must wrap the target UI components inside your application's production codebase with the standard Jetpack runtime `trace` block wrapper:
     
     
-    benchmarkRule.measureRepeated(
-        TARGET_PACKAGE,     // packageName
-        **Arrays.asList(**      // metrics
-            **new StartupTimingMetric(),
-            new TraceSectionMetric("RV CreateView"),
-            new TraceSectionMetric("RV OnBindView"),
-        ),**
-        5,                  // Iterations
-        // ...
-    );
+    @Composable
+    private fun EntryRow(entry: Entry, modifier: Modifier = Modifier) = trace("EntryRowCustomTrace") {
+        Card(modifier = modifier) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Text(
+                    text = entry.contents,
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .wrapContentSize()
+                )
+    
+                Spacer(modifier = Modifier.weight(1f))
+    
+                Checkbox(
+                    checked = false,
+                    onCheckedChange = {},
+                    modifier = Modifier.padding(16.dp)
+                )
+            }
+        }
+    }
+    
 
-In this example, [`RV CreateView`](https://cs.android.com/search?q=TRACE_CREATE_VIEW_TAG&sq=&ss=androidx%2Fplatform%2Fframeworks%2Fsupport) and [`RV OnBindView`](https://cs.android.com/search?q=TRACE_BIND_VIEW_TAG) are the IDs of traceable blocks that are defined in [`RecyclerView`](/reference/androidx/recyclerview/widget/RecyclerView). The [source code for the `createViewHolder()`](https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:recyclerview/recyclerview/src/main/java/androidx/recyclerview/widget/RecyclerView.java;l=7950-7964) method is an example of how you can define traceable blocks within your own code.
+Benchmark results are output directly to the **Benchmark** terminal tab inside Android Studio, as shown in Figure 1. If multiple metrics are defined, all their computed data points are combined in the summary window.
 
-`StartupTimingMetric`, `TraceSectionMetric`, `FrameTimingMetric`, and `PowerMetric`, are covered in detail later in this document. For a full list of metrics, check out subclasses of [`Metric`](/reference/kotlin/androidx/benchmark/macro/Metric).
+![Results of TraceSectionMetric and FrameTimingMetric.](/static/topic/performance/images/benchmark_images/macrobenchmark_results_frames_tracing_rev.png) **Figure 1.** Combined console results of `TraceSectionMetric` and `FrameTimingMetric` for a modern Compose layout.
 
-Benchmark results are output to Android Studio, as shown in figure 1. If multiple metrics are defined, all of them are combined in the output.
-
-![Results of TraceSectionMetric and FrameTimingMetric.](/static/topic/performance/images/benchmark_images/macrobenchmark_results_frames_tracing.png) **Figure 1.** Results of `TraceSectionMetric` and `FrameTimingMetric`.
+`StartupTimingMetric`, `FrameTimingMetric`, `TraceSectionMetric`, and `PowerMetric` are covered in detail below. For a full list of available benchmark metrics, see the subclasses of [`Metric`](/reference/kotlin/androidx/benchmark/macro/Metric) in the API reference.
 
 ## StartupTimingMetric
 
 [`StartupTimingMetric`](/reference/kotlin/androidx/benchmark/macro/StartupTimingMetric) captures app startup timing metrics with the following values:
 
-  * `timeToInitialDisplayMs`: The amount of time from when the system receives a launch intent to when it renders the first frame of the destination [`Activity`](/reference/android/app/Activity).
-  * `timeToFullDisplayMs`: The amount of time from when the system receives a launch intent to when the app reports fully drawn using the [`reportFullyDrawn()`](/reference/android/app/Activity#reportFullyDrawn\(\)) method. The measurement stops at the completion of rendering the first frame after—or containing—the `reportFullyDrawn()` call. This measurement might not be available on Android 10 (API level 29) and earlier.
+  * `timeToInitialDisplayMs`: The amount of time from when the system receives a launch intent to when it renders the first frame of the destination screen.
+  * `timeToFullDisplayMs`: The amount of time from when the system receives a launch intent to when the app reports fully drawn using the internal platform reporting mechanisms. The measurement stops at the completion of rendering the first frame after—or containing—the fully drawn signal.
 
-`StartupTimingMetric` outputs the min, median, and max values from the startup iterations. To assess startup improvement you should focus on median values, since they provide the best estimate of the typical startup time. For more information about what contributes to app startup time, see [App startup time](/topic/performance/vitals/launch-time).
 
-![StartupTimingMetric results](/static/topic/performance/images/benchmark_images/macrobenchmark_results_fully_drawn_startup.png) **Figure 2.** `StartupTimingMetric` results.
+
+`StartupTimingMetric` outputs the minimum, median, and maximum values from the startup iterations. To assess startup improvement, always focus on median values, since they provide the best estimate of typical user startup times.
+
+In a Compose-first architecture, don't attempt to invoke `activity.reportFullyDrawn` manually. Instead, use the Compose-safe asynchronous utilities [`ReportDrawn`](/reference/kotlin/androidx/activity/compose/ReportDrawn.composable#ReportDrawn\(\)), [`ReportDrawnWhen`](/reference/kotlin/androidx/activity/compose/ReportDrawnWhen.composable), or [`ReportDrawnAfter`](/reference/kotlin/androidx/activity/compose/ReportDrawnAfter.composable) inside your screen composables to automatically signal to Macrobenchmark when your async network data or complex UI states have finished rendering.
+
+For more information about analyzing and optimizing initialization performance, see [App startup time](/topic/performance/issues/launch-time).
 
 ## FrameTimingMetric
 
-[`FrameTimingMetric`](/reference/kotlin/androidx/benchmark/macro/FrameTimingMetric) captures timing information from frames produced by a benchmark, such as a scrolling or animation, and outputs the following values:
+[`FrameTimingMetric`](/reference/kotlin/androidx/benchmark/macro/FrameTimingMetric) captures precise timing information from frames produced by a benchmark journey, such as scrolling a list or a complex UI layout animation, and outputs the following diagnostic values:
 
-  * `frameOverrunMs`: the amount of time a given frame misses its deadline by. Positive numbers indicate a dropped frame and visible jank or stutter. Negative numbers indicate how much faster a frame is than the deadline. Note: This is available only on Android 12 (API level 31) and higher.
-  * `frameDurationCpuMs`: the amount of time the frame takes to be produced on the CPU on both the UI thread and the `RenderThread`.
+  * `frameOverrunMs`: the amount of time a given frame misses its deadline by. Positive numbers indicate a dropped frame accompanied by visible jank or stutter. Negative numbers indicate how much faster a frame completed relative to the subsystem hardware deadline. Note: This metric is available only on Android 12 (API level 31) and later.
+  * `frameDurationCpuMs`: the amount of time the frame spent actively being produced on the CPU across both the main application UI thread and the Compose `RenderThread`.
 
-These measurements are collected in a distribution of 50th, 90th, 95th, and 99th percentile.
 
-For more information on how to identify and improve slow frames, see [Slow rendering](/topic/performance/vitals/render).
 
-![FrameTimingMetric results](/static/topic/performance/images/benchmark_images/macrobenchmark_results_frames.png) **Figure 3.** `FrameTimingMetric` results.
+These measurements are collected in a distribution of 50th, 90th, 95th, and 99th percentiles:
+    
+    
+    frameDurationCpuMs P50 3.5, P90 6.0, P95 6.4, P99 11.0
+    frameOverrunMs P50 -11.6, P90 -7.2, P95 -7.1, P99 -1.2
+    
+
+When optimizing Jetpack Compose layout hierarchies, look at your worst-performing frames (the P95 and P99 bounds). If `frameOverrunMs` spikes into positive integers at the high percentiles, it indicates that recompositions are stalling the main thread during heavy scroll animations.
+
+For deeper insights into identifying and resolving slow frames, see [Jetpack Compose Performance](/develop/ui/compose/performance).
 
 ## TraceSectionMetric
 
 **Experimental:** This class is experimental.
 
-[`TraceSectionMetric`](/reference/kotlin/androidx/benchmark/macro/TraceSectionMetric) captures the number of times a trace section matching the provided `sectionName` occurs and the amount of time it takes. For the time, it outputs the minimum, median, and maximum times in milliseconds. The trace section is defined either by the function call [`trace(sectionName)`](/reference/kotlin/androidx/tracing/package-summary#trace\(kotlin.String,kotlin.Function0\)) or the code between [`Trace.beginSection(sectionName)`](/reference/kotlin/androidx/tracing/Trace#beginSection\(java.lang.String\)) and [`Trace.endSection()`](/reference/kotlin/androidx/tracing/Trace#endSection\(\)) or their async variants. It always selects the first instance of a trace section captured during a measurement. It only outputs trace sections from your package by default; to include processes outside your package, set `targetPackageOnly = false`.
+[`TraceSectionMetric`](/reference/kotlin/androidx/benchmark/macro/TraceSectionMetric) captures the number of times a specific trace section occurs and the absolute amount of time it takes to execute. For time tracking, it outputs the minimum, median, and maximum times in milliseconds. The target trace section is defined either by the function call [`trace(sectionName)`](/reference/kotlin/androidx/tracing/package-summary#trace\(kotlin.String,kotlin.Function0\)) or the lower-level block boundaries between [`Trace.beginSection(sectionName)`](/reference/kotlin/androidx/tracing/Trace#beginSection\(java.lang.String\)) and [`Trace.endSection()`](/reference/kotlin/androidx/tracing/Trace#endSection\(\)) or their async variants.
+    
+    
+    EntryRowCustomTraceCount min 20.0, median 28.0, max 50.0
+    EntryRowCustomTraceSumMs min 34.9, median 44.4, max 66.6
+    
 
-For more information about tracing, see [Overview of system tracing](/topic/performance/tracing) and [Define custom events](/topic/performance/tracing/custom-events).
+By default, the metric only outputs trace sections compiled directly from your own application package binaries. To include processes originating from outside your app's package boundary, set the property `targetPackageOnly = false`.
 
-![TraceSectionMetric](/static/topic/performance/images/benchmark_images/macrobenchmark_results_tracing.png) **Figure 4.** `TraceSectionMetric` results.
+When working on Jetpack Compose Runtime Tracing, you can surface individual composable functions in your system trace graphs without writing manual trace wrappers by enabling [composition tracing](/develop/ui/compose/tooling/tracing).
+
+While adding the `androidx.compose.runtime:runtime-tracing` dependency to your target application is sufficient for manual profiler traces, capturing these traces programmatically within a Macrobenchmark run requires additional configuration inside your benchmark module.
+
+For complete setup instructions, see [Capture a trace with Jetpack Macrobenchmark](/develop/ui/compose/tooling/tracing#macrobenchmark).
 
 ## PowerMetric
 
 **Experimental:** This class is experimental.
 
-[`PowerMetric`](/reference/kotlin/androidx/benchmark/macro/PowerMetric) captures the change in power or energy over the duration of your test for the provided [power categories](/reference/kotlin/androidx/benchmark/macro/PowerCategory). Each selected category is broken down into its measurable subcomponents, and unselected categories are added to the "unselected" metric.
+[`PowerMetric`](/reference/kotlin/androidx/benchmark/macro/PowerMetric) captures the change in power or energy over the duration of your Macrobenchmark run. Each selected category is broken down into its measurable hardware components, while unselected categories are grouped into an "unselected" bucket.
 
-These metrics measure system-wide consumption, not the consumption on a per-app basis, and are limited to Pixel 6, Pixel 6 Pro, and later devices:
+**Hardware Requirement** : These metrics measure system-wide consumption rather than per-app calculations. Consequently, data collection is limited to physical Google Pixel 6, Pixel 6 Pro, and newer physical devices.
 
-  * `power<category>Uw`: the amount of power consumed over the duration of your test in this category.
-  * `energy<category>Uws`: the amount of energy transferred per unit of time for the duration of your test in this category.
+The metric outputs two measurements per category:
+
+  * `power<category>Uw`: the amount of power consumed over the duration of your test in this category (measured in microwatts).
+  * `energy<category>Uws`: the total amount of energy transferred per unit of time for the duration of your test in this category (measured in microwatt-seconds).
+
+
 
 Categories include the following:
 
@@ -101,9 +171,40 @@ Categories include the following:
   * `NETWORK`
   * `UNCATEGORIZED`
 
-With some categories, like `CPU`, it might be difficult to separate work done by other processes from work done by your own app. To minimize the interference, remove or restrict unnecessary apps and accounts.
 
-![PowerMetric results](/static/topic/performance/images/benchmark_images/macrobenchmark_results_power.png) **Figure 5.** `PowerMetric` results.
+
+With some categories, like `CPU`, it might be difficult to separate work done by other processes from work done by your own app. To minimize the interference, remove or restrict unnecessary apps and accounts.
+    
+    
+    powerCategoryCpuUw min 300.2, median 346.1, max 519.6
+    powerCategoryDisplayUw min 319.8, median 325.8, max 329.7
+    powerCategoryGpuUw min 18.8, median 23.3, max 36.9
+    powerCategoryNetworkUw min 97.3, median 123.3, max 681.3
+    powerTotalUw min 1234.8, median 1316.6, max 2112.4
+    powerUnselectedUw       min  483.3,  median  512.6,  max  561.7
+    
+
+## Analyzing core subsystems
+
+[`PowerMetric`](/reference/kotlin/androidx/benchmark/macro/PowerMetric) captures the change in power or energy over the duration of your test for the provided power categories. Each category you select is broken down into its measurable subcomponents, and unselected categories are added to the "unselected" metric.
+
+The terminal outputs map to the configuration you request:
+
+  * **`powerCategoryCpuUw`** : The amount of power consumed by the CPU over the duration of your test.
+  * **`powerCategoryGpuUw`** : The amount of power consumed by the GPU over the duration of your test.
+  * **`powerUnselectedUw`** : The aggregate power consumed by all available hardware categories that were **not** explicitly requested in your initialization map.
+
+
+
+To prevent erratic data spikes on the hardware rails during a run, lock screen brightness to a fixed value, maintain a stable device temperature, and close competing background processes before starting the Macrobenchmark loop.
+
+## Additional resources
+
+### Views content
+
+  * [Capture Macrobenchmark metrics (Views)](/topic/performance/views/benchmarking/macrobenchmark-metrics-views)
+
+
 
 ## Recommended for you
 
@@ -112,12 +213,14 @@ With some categories, like `CPU`, it might be difficult to separate work done by
   * [Writing a Macrobenchmark](/topic/performance/benchmarking/macrobenchmark-overview)
   * [App startup analysis and optimization {:#app-startup-analysis-optimization}](/topic/performance/appstartup/analysis-optimization)
 
+
+
 [ Previous arrow_back  Writing a benchmark  ](/topic/performance/benchmarking/macrobenchmark-overview)
 
 [ Next Control your app  arrow_forward  ](/topic/performance/benchmarking/macrobenchmark-control-app)
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-22 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-22 UTC."],[],[]] 

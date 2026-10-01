@@ -4,20 +4,32 @@
 
 ---
 
-#  Create and manage virtual devices
+#  Create and manage virtual devices Save and categorize content based on your preferences. 
+
 An Android Virtual Device (AVD) is a configuration that defines the characteristics of an Android phone, tablet, Wear OS, Android TV, or Automotive OS device that you want to simulate in the [Android Emulator](/studio/run/emulator). The Device Manager is a tool you can launch from Android Studio that helps you create and manage AVDs.
+
+Try [Android CLI](/tools/agents) if you're not using Android Studio or prefer to do things from the command line.  
+  
+For example, use the [`android emulator`](/tools/agents/android-cli/commands/emulator) command when you need to create, start, and stop an AVD.
+    
+    
+    android emulator [create <profile-name>|start <device-name>|stop <device-serial-number>|list]
 
 To open the new **Device Manager** , do one of the following:
 
   * From the Android Studio Welcome screen, select **More Actions > Virtual Device Manager**.
 
+
+
 ![Opening the Device Manager from the Welcome screen](/static/studio/images/run/device-manager-welcome-screen.png)
 
   * After opening a project, select **View > Tool Windows > Device Manager** from the main menu bar, then click the **+** , and then click **Create Virtual Device**.
 
+
+
 ![New Device Manager window](/static/studio/images/run/tools-new-device-manager.png)
 
-After creating your devices, you will be able to see a list of all the devices on the device manager panel.
+After creating your devices, you can see a list of all the devices on the Device Manager panel.
 
 ![Device Manager list](/static/studio/images/run/device-manager.png)
 
@@ -50,7 +62,7 @@ The **Recommended** tab lists recommended system images. The other tabs include 
 
 If you see a download icon next to a system image, that image isn't currently installed on your development machine. Click the icon to download the system image. You must be connected to the internet to download system images.
 
-The API level of the target device is important, because your app doesn't run on a system image with an API level that's lower than the one required by your app, as specified in the [ `minSdk`](/reference/tools/gradle-api/9.2/com/android/build/api/dsl/BaseFlavor#minSdk\(\)) attribute in the app manifest file. For more information about the relationship between system API level and `minSdk`, see [Version your app](/studio/publish/versioning).
+The API level of the target device is important, because your app doesn't run on a system image with an API level that's lower than the one required by your app, as specified in the [ `minSdk`](/reference/tools/gradle-api/9.4/com/android/build/api/dsl/BaseFlavor#minSdk\(\)) attribute in the app manifest file. For more information about the relationship between system API level and `minSdk`, see [Version your app](/studio/publish/versioning).
 
 If your app declares a [ `<uses-library>`](/guide/topics/manifest/uses-library-element) element in the manifest file, the app requires a system image that includes that external library. To run your app on an emulator, create an AVD that includes the required library. To do so, you might need to use an add-on component for the AVD platform; for example, the Google APIs add-on contains the Google Maps library.
 
@@ -120,6 +132,9 @@ Click **Show Advanced Settings** to show more settings, such as the skin.
 
 The new AVD appears in the **Virtual** tab of the Device Manager and the target device menu.
 
+
+
+
 To create an AVD starting with a copy:
 
   1. From the **Virtual** tab of the Device Manager, click **Menu** ![](/static/images/tools/studio-advmgr-actions-overflow-icon.png) and select **Duplicate**. 
@@ -130,6 +145,9 @@ The **Verify Configuration** window appears.
   3. Make any changes you need, and then click **Finish**. 
 
 The AVD appears in the **Virtual** tab of the Device Manager.
+
+
+
 
 ## Create a hardware profile
 
@@ -147,9 +165,14 @@ To create a new hardware profile from the beginning:
 
 Your new hardware profile appears in the **Select Hardware** window. You can create an AVD that uses the hardware profile by clicking **Next** or click **Cancel** to return to the **Virtual** tab or target device menu.
 
+
+
+
 To create a hardware profile using a copy as a starting point:
 
   1. In the **Select Hardware** window, select a hardware profile and click **Clone Device** or right-click a hardware profile and select **Clone**.
+
+
 
 * In the **Configure Hardware Profile** window, change the hardware profile properties as needed.
 
@@ -166,11 +189,15 @@ You can perform the following operations on an AVD from the Device Manager's **V
   * To show the associated AVD INI and IMG files on disk, click **Menu** ![](/static/images/tools/studio-advmgr-actions-overflow-icon.png) and select **Show on Disk**.
   * To view AVD configuration details that you can include in bug reports to the Android Studio team, click **Menu** ![](/static/images/tools/studio-advmgr-actions-overflow-icon.png) and select **View Details**.
 
+
+
 ## Edit existing hardware profiles
 
 You can't edit or delete the preloaded hardware profiles, but you can perform the following operations on other hardware profiles from the **Select Hardware** window:
 
   * To edit a hardware profile, select it and click **Edit Device**. You can also right-click a hardware profile and select **Edit**. Next, make your changes.
+
+
 
 * To delete a hardware profile, right-click it and select **Delete**. 
 
@@ -182,11 +209,15 @@ From the **Virtual** tab, you can perform the following operations on an emulato
   * To stop a running emulator, click **Menu** ![](/static/images/tools/studio-advmgr-actions-overflow-icon.png) and select **Stop**.
   * To clear the data for an emulator, click **Menu** ![](/static/images/tools/studio-advmgr-actions-overflow-icon.png) and select **Wipe Data**.
 
+
+
 ## Import and export hardware profiles
 
 From the **Select Hardware** window, you can import and export hardware profiles as follows:
 
   * To import a hardware profile, click **Import Hardware Profiles** and select the XML file on your computer containing the definition.
+
+
 
 * To export a hardware profile, right-click it and select **Export**. Specify the location where you want to store the XML file containing the definition.
 
@@ -210,7 +241,7 @@ Startup orientation | Select an option for the initial emulator orientation:
   * **Landscape:** oriented wider than tall
 
 An option is enabled only if it’s supported in the hardware profile. When running the AVD in the emulator, you can change the orientation if both portrait and landscape are supported in the hardware profile.  
-Camera (Advanced) | Select an option for any enabled cameras. The Emulated and VirtualScene settings produce a software-generated image, while the Webcam setting uses your development computer's webcam to take a picture Camera options are available only if a camera is supported in the hardware profile. They are not available for Wear OS, Android TV, or Google TV.  
+Camera (Advanced) | Select an option for any enabled cameras. The Emulated and VirtualScene settings produce a software-generated image, while the Webcam setting uses your development computer's webcam to take a picture Camera options are available only if a camera is supported in the hardware profile. They aren't available for Wear OS, Android TV, or Google TV.  
 Network: Speed (Advanced) | Select a cellular technology to determine the speed of data transfer: 
 
   * **GSM:** Global System for Mobile Communications
@@ -231,16 +262,15 @@ Emulated Performance: Graphics | Select how graphics are rendered in the emulato
   * **Automatic:** let the emulator decide the best option based on your graphics card.
 
   
-Emulated Performance: Boot option (Advanced) | 
+Emulated Performance: Boot option (Advanced) |  Select how the AVD boots:
 
-Select how the AVD boots: 
   * **Cold boot:** the device powers up each time from the device-off state.
-  * **Quick boot:** the device loads the device state from a saved snapshot. 
+  * **Quick boot:** the device loads the device state from a saved snapshot.
 
   
 Emulated Performance: Multi-Core CPU (Advanced) | Select the number of processor cores on your computer that you want to use for the emulator. Using more processor cores speeds up the emulator.   
 Memory and Storage: RAM (Advanced) | Override the amount of RAM on the device set by the hardware manufacturer. Increasing the size uses more resources on your computer but supports faster emulator operation. Enter a RAM size and select the units, one of B (byte), KB (kilobyte), MB (megabyte), GB (gigabyte), or TB (terabyte).  
-Memory and Storage: VM Heap (Advanced) | Override the VM heap size set by the hardware manufacturer. Enter a heap size and select the units, one of B (byte), KB (kilobyte), MB (megabyte), GB (gigabyte), or TB (terabyte).   
+Memory and Storage: VM Heap (Advanced) | Override the VM heap size set by the hardware manufacturer. Enter a heap size and select the units, one of B (byte), KB (kilobyte), MB (megabyte), GB (gigabyte), or TB (terabyte).  
 Memory and Storage: Internal Storage (Advanced) | Override the amount of non-removable memory space available on the device set by the hardware manufacturer. Enter a size and select the units, one of B (byte), KB (kilobyte), MB (megabyte), GB (gigabyte), or TB (terabyte).  
 Memory and Storage: SD Card (Advanced) | Specify the amount of removable memory space available to store data on the device. To use a virtual SD card managed by Android Studio, select **Studio-managed** , enter a size, and select the units, one of B (byte), KB (kilobyte), MB (megabyte), GB (gigabyte), or TB (terabyte). A minimum of 100 MB is recommended to use the camera. To manage the space in a file, select **External file** and click **...** to specify the file and location. For more information, see `[mksdcard](/tools/help/mksdcard)` and [AVD data directory](/studio/run/emulator-commandline#data-filedir).  
 Device Frame: Enable Device Frame | Select to enable a frame around the emulator window that mimics the look of a real device.  
@@ -312,10 +342,13 @@ Each emulator skin contains:
   * Layout files for supported orientations and physical configurations
   * Image files for display elements, such as background, keys, and buttons
 
+
+
 To create and use a custom skin:
 
   1. Create a directory where you can save your skin configuration files. 
   2. Define the visual appearance of the skin in a text file named `layout`. This file defines many characteristics of the skin, such as the size and image assets for specific buttons. For example:
+
 
     
     
@@ -354,6 +387,6 @@ For more detailed information about creating emulator skins, see the [ Android E
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-25 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-25 UTC."],[],[]] 

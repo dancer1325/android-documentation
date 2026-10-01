@@ -4,7 +4,8 @@
 
 ---
 
-#  Configure the NDK for the Android Gradle plugin
+#  Configure the NDK for the Android Gradle plugin Save and categorize content based on your preferences. 
+
 This page shows you how to configure the NDK in your project according to the version of the Android Gradle Plugin (AGP) used by the project.
 
 **Note:** If possible, you should try to update the version of AGP in your project to version 4.1 or later. These AGP versions will auto-download the NDK for you in Android Studio.
@@ -13,6 +14,8 @@ The steps vary according to the version of AGP used in the project. Find the And
 
   * **File > Project Structure > Project** menu in Android Studio
   * The top-level `build.gradle` file in the project
+
+
 
 Select the version below:
 
@@ -40,6 +43,8 @@ You have the following options to configure the NDK:
 
 **Note:** Remove this property before distributing your source code; it should be left outside of your version control system. 
 
+
+
 ### Install the NDK from the command line
 
 To install the NDK from the command line, do the following:
@@ -56,6 +61,9 @@ To install the NDK from the command line, do the following:
                    [--channel=channel_id]
 
 Use the `--channel` option to only install a package if it has been released in a channel _up to and including_ channel_id.
+
+
+
 
 For more information, see [sdkmanager](/studio/command-line/sdkmanager).
 

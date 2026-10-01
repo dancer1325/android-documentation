@@ -3,6 +3,15 @@
 **Source:** [https://developer.android.com/reference/packages](https://developer.android.com/reference/packages)
 
 ---
+
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Develop ](https://developer.android.com/develop)
+  * [ API reference ](https://developer.android.com/reference)
+
+
+
+Save and categorize content based on your preferences. 
+
 # Package Index
 
 * * *
@@ -26,10 +35,12 @@ These are the API packages. See all [API classes](/reference/classes).
 [android.adservices.ondevicepersonalization](/reference/android/adservices/ondevicepersonalization/package-summary) |   
 [android.adservices.signals](/reference/android/adservices/signals/package-summary) |   
 [android.adservices.topics](/reference/android/adservices/topics/package-summary) |   
+[android.agenticon](/reference/android/agenticon/package-summary) |   
 [android.animation](/reference/android/animation/package-summary) |  These classes provide functionality for the property animation system, which allows you to animate object properties of any type. `int`, `float`, and hexadecimal color values are supported by default. You can animate any other type by telling the system how to calculate the values for that given type with a custom `[TypeEvaluator](/reference/android/animation/TypeEvaluator)`.  For more information, see the [Animation](/guide/topics/graphics/prop-animation) guide.  
 [android.annotation](/reference/android/annotation/package-summary) |   
 [android.app](/reference/android/app/package-summary) | Contains high-level classes encapsulating the overall Android application model.  
-[android.app.admin](/reference/android/app/admin/package-summary) | Provides device administration features at the system level, allowing you to create security-aware applications that are useful in enterprise settings, in which IT professionals require rich control over employee devices. For more information, see the [Device Administration](/guide/topics/admin/device-admin) guide.  
+[android.app.admin](/reference/android/app/admin/package-summary) | Provides device administration features at the system level, allowing you to create security-aware applications that are useful in enterprise settings, in which IT professionals require rich control over employee devices. For more information, see the [Device Administration](/guide/topics/admin/device-admin) guide.   
+[android.app.admin.policy](/reference/android/app/admin/policy/package-summary) |   
 [android.app.appfunctions](/reference/android/app/appfunctions/package-summary) | Android App Functions provides APIs for applications to expose functionality to the system for cross-app orchestration, and for system-privileged agents to discover and execute this functionality.  
 [android.app.appsearch](/reference/android/app/appsearch/package-summary) |   
 [android.app.appsearch.exceptions](/reference/android/app/appsearch/exceptions/package-summary) |   
@@ -38,15 +49,22 @@ These are the API packages. See all [API classes](/reference/classes).
 [android.app.assist](/reference/android/app/assist/package-summary) |   
 [android.app.backup](/reference/android/app/backup/package-summary) | Contains the backup and restore functionality available to applications. If a user wipes the data on their device or upgrades to a new Android-powered device, all applications that have enabled backup can restore the user's previous data when the application is reinstalled. For more information, see the [Data Backup](/guide/topics/data/backup) guide.  
 [android.app.blob](/reference/android/app/blob/package-summary) |   
+[android.app.contentsafety](/reference/android/app/contentsafety/package-summary) |   
 [android.app.jank](/reference/android/app/jank/package-summary) |   
 [android.app.job](/reference/android/app/job/package-summary) |   
 [android.app.people](/reference/android/app/people/package-summary) |   
 [android.app.permissionui](/reference/android/app/permissionui/package-summary) |   
+[android.app.personalcontext](/reference/android/app/personalcontext/package-summary) |   
+[android.app.personalcontext.hint](/reference/android/app/personalcontext/hint/package-summary) |   
+[android.app.personalcontext.insight](/reference/android/app/personalcontext/insight/package-summary) |   
+[android.app.personalcontext.insight.interaction](/reference/android/app/personalcontext/insight/interaction/package-summary) |   
+[android.app.personalcontext.understander](/reference/android/app/personalcontext/understander/package-summary) |   
 [android.app.privatecompute](/reference/android/app/privatecompute/package-summary) |   
 [android.app.role](/reference/android/app/role/package-summary) |   
 [android.app.sdksandbox](/reference/android/app/sdksandbox/package-summary) |   
 [android.app.sdksandbox.sdkprovider](/reference/android/app/sdksandbox/sdkprovider/package-summary) |   
 [android.app.slice](/reference/android/app/slice/package-summary) |   
+[android.app.time](/reference/android/app/time/package-summary) |   
 [android.app.usage](/reference/android/app/usage/package-summary) |   
 [android.app.voiceinteraction](/reference/android/app/voiceinteraction/package-summary) |   
 [android.app.wallpaper](/reference/android/app/wallpaper/package-summary) |   
@@ -99,7 +117,7 @@ These are the API packages. See all [API classes](/reference/classes).
 [android.icu.text](/reference/android/icu/text/package-summary) |   
 [android.icu.util](/reference/android/icu/util/package-summary) |   
 [android.inputmethodservice](/reference/android/inputmethodservice/package-summary) | Base classes for writing input methods (such as software keyboards).  
-[android.location](/reference/android/location/package-summary) |   
+[android.location](/reference/android/location/package-summary) | Contains framework API classes for accessing a variety of location related services.  
 [android.location.altitude](/reference/android/location/altitude/package-summary) |   
 [android.location.provider](/reference/android/location/provider/package-summary) |   
 [android.media](/reference/android/media/package-summary) | Provides classes that manage various media interfaces in audio and video.  
@@ -142,6 +160,7 @@ These are the API packages. See all [API classes](/reference/classes).
 [android.os.ext](/reference/android/os/ext/package-summary) |   
 [android.os.flagging](/reference/android/os/flagging/package-summary) |   
 [android.os.health](/reference/android/os/health/package-summary) | The android.os.health package contains a set of classes to provide data to track the system resources of applications.  
+[android.os.multisensory](/reference/android/os/multisensory/package-summary) |   
 [android.os.storage](/reference/android/os/storage/package-summary) |  Contains classes for the system storage service, which manages binary asset filesystems known as Opaque Binary Blobs (OBBs).  
 [android.os.storage.operations](/reference/android/os/storage/operations/package-summary) |   
 [android.os.storage.operations.sources](/reference/android/os/storage/operations/sources/package-summary) |   
@@ -171,12 +190,15 @@ Provides classes for implementing print support in applications and also contain
 [android.se.omapi](/reference/android/se/omapi/package-summary) |   
 [android.security](/reference/android/security/package-summary) | Provides access to a few facilities of the Android security subsystems.  
 [android.security.advancedprotection](/reference/android/security/advancedprotection/package-summary) |   
+[android.security.authenticationpolicy](/reference/android/security/authenticationpolicy/package-summary) |   
 [android.security.identity](/reference/android/security/identity/package-summary) |   
 [android.security.keystore](/reference/android/security/keystore/package-summary) |   
+[android.security.net.config](/reference/android/security/net/config/package-summary) |   
 [android.service.assist.classification](/reference/android/service/assist/classification/package-summary) |   
 [android.service.autofill](/reference/android/service/autofill/package-summary) |   
 [android.service.carrier](/reference/android/service/carrier/package-summary) |   
 [android.service.chooser](/reference/android/service/chooser/package-summary) |   
+[android.service.contentsafety](/reference/android/service/contentsafety/package-summary) |   
 [android.service.controls](/reference/android/service/controls/package-summary) |   
 [android.service.controls.actions](/reference/android/service/controls/actions/package-summary) |   
 [android.service.controls.templates](/reference/android/service/controls/templates/package-summary) |   
@@ -186,6 +208,10 @@ Provides classes for implementing print support in applications and also contain
 [android.service.messaging](/reference/android/service/messaging/package-summary) |   
 [android.service.notification](/reference/android/service/notification/package-summary) |   
 [android.service.persistentdata](/reference/android/service/persistentdata/package-summary) |   
+[android.service.personalcontext.embedded](/reference/android/service/personalcontext/embedded/package-summary) |   
+[android.service.personalcontext.insight](/reference/android/service/personalcontext/insight/package-summary) |   
+[android.service.personalcontext.insight.interaction](/reference/android/service/personalcontext/insight/interaction/package-summary) |   
+[android.service.personalcontext.understander](/reference/android/service/personalcontext/understander/package-summary) |   
 [android.service.quickaccesswallet](/reference/android/service/quickaccesswallet/package-summary) |   
 [android.service.quicksettings](/reference/android/service/quicksettings/package-summary) |   
 [android.service.restrictions](/reference/android/service/restrictions/package-summary) |   
@@ -220,6 +246,7 @@ Provides classes for implementing print support in applications and also contain
 [android.text.util](/reference/android/text/util/package-summary) | Utilities for converting identifiable text strings into clickable links and creating RFC 822-type message (SMTP) tokens.  
 [android.transition](/reference/android/transition/package-summary) | The classes in this package enable "scenes & transitions" functionality for view hiearchies.  
 [android.util](/reference/android/util/package-summary) | Provides common utility methods such as date/time manipulation, base64 encoders and decoders, string and number conversion methods, and XML utilities.  
+[android.util.function](/reference/android/util/function/package-summary) |   
 [android.util.proto](/reference/android/util/proto/package-summary) | Provides utility classes to export protocol buffers from the system.  
 [android.view](/reference/android/view/package-summary) | Provides classes that expose basic user interface classes that handle screen layout and interaction with the user.  
 [android.view.accessibility](/reference/android/view/accessibility/package-summary) |  The classes in this package are used to represent screen content and changes to it as well as APIs for querying the global accessibility state of the system.  
@@ -323,6 +350,6 @@ Provides classes for implementing print support in applications and also contain
   
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-23 UTC.
+Last updated 2026-08-28 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-23 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-08-28 UTC."],[],[]] 

@@ -4,7 +4,8 @@
 
 ---
 
-#  Gradle tips and recipes
+#  Gradle tips and recipes Save and categorize content based on your preferences. 
+
 Gradle and the Android plugin for Gradle provide a flexible way to compile, build, and package your Android app or library. This page collects some useful tips and configurations to help you get the most out of each build. If you want to learn about ways to make your builds faster, read [Optimize Your Build Speed](/studio/build/optimize-your-build). 
 
 If you are new to Gradle, learn the basics by reading [Configure Your Build](/studio/build). You can also inspect the Android plugin's [DSL reference documentation](/reference/tools/gradle-api) to learn more about the properties used in this page. 
@@ -921,6 +922,8 @@ By default, signing configurations are recorded in plain text to the module's `b
 
   4. Click **Sync Now** in the notification bar. 
 
+
+
 To learn more about app signing, read [Sign Your App](/studio/publish/app-signing). 
 
 ##  Simplify app development 
@@ -1077,6 +1080,6 @@ Accessing the `FILES_AUTHORITY` field in your app's code looks something like th
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-16 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-16 UTC."],[],[]] 

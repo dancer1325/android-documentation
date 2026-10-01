@@ -4,16 +4,15 @@
 
 ---
 
-**Your input is important to improve the Android Developer Experience.**   
-Sign up to participate in user research studies and influence how we evolve tools, APIs, and guidance for millions worldwide. Get rewarded if selected. 
+Save and categorize content based on your preferences. 
 
-[ Sign up ](https://google.qualtrics.com/jfe/form/SV_ezBhaM4WC0T7g8d?Q_Language=en&utm_campaign=Q3&campaignDate=July2025&referral_code=UXRZtOZ2325116)
 [ ![](https://developer.android.com/static/images/cluster-illustrations/build-apps.svg) ](https://developer.android.com/get-started/overview)
 
 ###  [ Develop for Android ](https://developer.android.com/get-started/overview)
 
 The code samples, guides, and API reference you need—whether you're building for phones, watches, tablets, laptops, foldables, TVs, cars, or XR. Take advantage of these resources to develop your app faster and with higher quality.  
   
+
 
 [I'm new to Android](https://developer.android.com/get-started/overview)
 
@@ -48,8 +47,6 @@ Find information about the Android APIs you're using.
 Use Google's full suite of AI and ML tools to make your apps more useful and intuitive. 
 
 [Get started with AI on Android](https://developer.android.com/ai)
-
-##  Devices 
 
 [ ![](https://developer.android.com/static/images/hero-illustrations/everything-on-android-hero.svg) ](https://developer.android.com/develop/adaptive-apps)
 
@@ -113,8 +110,6 @@ Build immersive and augmented experiences for ground-breaking devices.
 
 Build AI-powered experiences with Gemini, Google's most capable AI model. 
 
-##  Developer centers 
-
 [ ![](https://developer.android.com/static/images/home/productivity.svg) ](https://developer.android.com/productivity)
 
 New
@@ -164,8 +159,6 @@ Dev center
 Build apps that connect, communicate, and share information. 
 
 [Learn more](https://developer.android.com/social-and-messaging)
-
-##  Core areas 
 
 ![](https://developer.android.com/static/images/cluster-illustrations/ui-guidelines.svg)
 
@@ -265,8 +258,6 @@ Google Play
 
 Publish your app to Google Play. 
 
-##  Build and test 
-
 [ ![](https://developer.android.com/static/images/cluster-illustrations/new-android-studio.svg) ](https://developer.android.com/build)
 
 Configure your build
@@ -282,12 +273,6 @@ Test
 Test your app's correctness, functional behavior, and usability before releasing it publicly. 
 
 [Test](https://developer.android.com/training/testing)
-
-##  Developer stories 
-
-How developers are finding success with Android. 
-
-[View all stories](https://developer.android.com/stories)
 
 [ ![](https://developer.android.com/static/images/develop/googlephotos.png) ](https://developer.android.com/stories/apps/google-photos)
 

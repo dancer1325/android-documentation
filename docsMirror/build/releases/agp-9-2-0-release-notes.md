@@ -4,7 +4,8 @@
 
 ---
 
-#  Android Gradle plugin 9.2.0 (April 2026)
+#  Android Gradle plugin 9.2.0 (April 2026) Save and categorize content based on your preferences. 
+
 Android Gradle plugin 9.2 is a minor release that includes a variety of new features and improvements.
 
 ## Compatibility
@@ -17,6 +18,7 @@ Gradle | 9.4.1 | 9.4.1 | To learn more, see [updating Gradle](/build/releases/gr
 SDK Build Tools | 36.0.0 | 36.0.0 | [Install](/studio/intro/update#sdk-manager) or [configure](/tools/releases/build-tools) SDK Build Tools.  
 NDK | N/A | 28.2.13676358 | [Install](/studio/projects/install-ndk#specific-version) or [configure](/studio/projects/install-ndk#apply-specific-version) a different version of the NDK.  
 JDK | 17 | 17 | To learn more, see [setting the JDK version](/studio/intro/studio-config#jdk).  
+Kotlin Gradle plugin (KGP) | 2.2.10 | 2.2.10 | To learn more, see [Runtime dependency on Kotlin Gradle plugin](/build/releases/agp-9-0-0-release-notes#runtime-dependency-on-kotlin-gradle-plugin).  
   
 ## Unified coverage and test reports
 
@@ -110,6 +112,6 @@ Fixed Issues
   
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-07-10 UTC.
+Last updated 2026-09-24 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-07-10 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-24 UTC."],[],[]] 

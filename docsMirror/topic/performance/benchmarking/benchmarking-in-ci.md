@@ -4,7 +4,8 @@
 
 ---
 
-#  Benchmark in Continuous Integration
+#  Benchmark in Continuous Integration Save and categorize content based on your preferences. 
+
 You can run benchmarks in Continuous Integration (CI) to track performance over time and recognize performance regressions—or improvements—before your app even releases. This page provides basic information about benchmarking in CI.
 
 Before getting started with benchmarking in CI, consider how capturing and evaluating results differs from regular tests.
@@ -166,7 +167,7 @@ The benchmark libraries generate JSON files containing information about the dev
         ]
     }
     
-    [com.example.macrobenchmark-benchmarkData.json](https://github.com/android/performance-samples/blob/cae5530b13ce3adf7bd54ea5bd92fe9b4fb8c585/MacrobenchmarkSample/com.example.macrobenchmark-benchmarkData.json)
+    [com.example.macrobenchmark-benchmarkData.json](https://github.com/android/performance-samples/blob/58c9ccb9e04706ee2a915604eee5720721601af9/MacrobenchmarkSample/com.example.macrobenchmark-benchmarkData.json)
     
     
     
@@ -176,15 +177,19 @@ The benchmark libraries generate JSON files containing information about the dev
   * For guidance in how to detect performance regressions, see [Fighting Regressions with Benchmarks in CI](https://medium.com/androiddevelopers/fighting-regressions-with-benchmarks-in-ci-6ea9a14b5c71).
   * To see how to setup Github Actions with Firebase Test Lab, see [Setting up Jetpack Macrobenchmarks for CI](https://github.com/android/performance-samples/tree/main/MacrobenchmarkSample/ftl)
 
+
+
 ## Recommended for you
 
   * Note: link text is displayed when JavaScript is off
   * [Best practices for SQLite performance](/topic/performance/sqlite-performance-best-practices)
   * [Create and measure Baseline Profiles without Macrobenchmark](/topic/performance/baselineprofiles/manually-create-measure)
-  * [Stuck partial wake locks](/topic/performance/vitals/wakelock)
+  * [Stuck partial wake locks](/topic/performance/issues/stuck-wakelock)
+
+
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-05-19 UTC.
+Last updated 2026-09-21 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-05-19 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-21 UTC."],[],[]] 

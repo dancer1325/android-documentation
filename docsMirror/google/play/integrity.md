@@ -3,6 +3,9 @@
 **Source:** [https://developer.android.com/google/play/integrity](https://developer.android.com/google/play/integrity)
 
 ---
+
+Save and categorize content based on your preferences. 
+
 ![](https://developer.android.com/static/images/google/play/integrity/play-integrity-icon.svg)
 
 ###  Play integrity and signing services 
@@ -35,12 +38,6 @@ Google Play's integrity and signing services help you to ensure that users exper
 
 ![Remini](/static/images/google/play/integrity/partner-logos/Remini.svg)
 
-![](https://developer.android.com/static/images/picto-icons/security-2.svg)
-
-##  Play Integrity API 
-
-Call the Integrity API at important moments in your app to check that user actions and requests are coming from your unmodified app binary, installed by Google Play, running on a genuine Android device. Your app's backend server can decide what to do next to prevent abuse, unauthorized access, and attacks. 
-
 ###  [ Overview of Play Integrity API ](https://developer.android.com/google/play/integrity/overview)
 
 Learn how Play Integrity API works, review security considerations and recommended practices, and get started with your integration. 
@@ -57,12 +54,6 @@ See the Play Integrity API reference.
 
 Test your integration and learn how to generate responses from any device for debugging and troubleshooting. 
 
-![](https://developer.android.com/static/images/picto-icons/lock.svg)
-
-##  Automatic protection 
-
-Google Play’s automatic protection is a service that helps you protect your apps and games against unauthorized redistribution and piracy. When users get your protected app from an unknown distribution channel, they’ll be prompted to get your official app from Google Play. 
-
 ###  [ Overview of automatic protection ](https://support.google.com/googleplay/android-developer/answer/10183279)
 
 View the help center page to learn more about using automatic protection. 
@@ -70,12 +61,6 @@ View the help center page to learn more about using automatic protection.
 ###  [ Turn on automatic protection ](https://play.google.com/console/u/0/developers/app/protect-with-play)
 
 You can turn on protection in your Play Console. 
-
-![](https://developer.android.com/static/images/picto-icons/key.svg)
-
-##  Play App Signing 
-
-Play App Signing manages and protects your app signing key on Google’s secure infrastructure and offers upgrade options to increase security. Google Play uses your app signing key to generate optimized, distribution APKs from your Android App Bundles. 
 
 ###  [ How to sign your app ](https://developer.android.com/studio/publish/app-signing)
 

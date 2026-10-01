@@ -4,7 +4,8 @@
 
 ---
 
-#  Manage remote repositories
+#  Manage remote repositories Save and categorize content based on your preferences. 
+
 When your dependency is something other than a local library or file tree, Gradle looks for the files in whichever online repositories are specified in the `dependencyResolutionManagement { repositories {...} }` block of your `settings.gradle` file. The order in which you list each repository determines the order in which Gradle searches the repositories for each project dependency. For example, if a dependency is available from both repository A and B, and you list A first, Gradle downloads the dependency from repository A.
 
 By default, new Android Studio projects specify Google's Maven repository, and the [Maven central repository](https://search.maven.org/) as repository locations in the project's `settings.gradle` file, as shown below:
@@ -108,6 +109,8 @@ The most recent versions of the following Android libraries are available from G
   * [Google Play Billing Library](/google/play/billing)
   * [Firebase](https://firebase.google.com/docs/android/setup)
 
+
+
 You can see all available artifacts at [Google's Maven repository index](https://maven.google.com) (see below for programmatic access).
 
 To add one of these libraries to your build, include Google's Maven repository in your top-level `build.gradle.kts` file:
@@ -188,6 +191,6 @@ The offline libraries are saved in `android_sdk/extras/`.
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-24 UTC.
+Last updated 2026-09-16 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-24 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-16 UTC."],[],[]] 

@@ -4,7 +4,8 @@
 
 ---
 
-#  Debug dependency resolution errors
+#  Debug dependency resolution errors Save and categorize content based on your preferences. 
+
 When you add a dependency, you might encounter issues with dependencies required by the original dependency, and conflicts among different dependency versions. Here's how to analyze your dependency graph and fix common issues that arise.
 
 For guidance on fixing dependency resolution errors that involve custom build logic, see [Custom dependency resolution strategies](/build/custom-build-logic#custom_dep_resolutions).
@@ -40,6 +41,8 @@ To run the task, proceed as follows:
 
   1. Select **View > Tool Windows > Gradle** (or click **Gradle** ![](/static/studio/images/buttons/window-gradle.png) in the tool windows bar). 
   2. Expand **AppName > Tasks > android** and double-click **androidDependencies**. After Gradle executes the task, the **Run** window should open to display the output. 
+
+
 
 For more information about managing dependencies in Gradle, see [Dependency management basics](http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html) in the Gradle User Guide.
 
@@ -102,6 +105,8 @@ If you can't easily identify the duplicate dependency, try using Android Studio'
   3. Type the name of the class that appears in the build error.
   4. Inspect the results for the dependencies that include the class.
 
+
+
 The following sections describe the different types of dependency resolution errors you may encounter and how to fix them.
 
 ### Fix duplicate class errors
@@ -118,6 +123,8 @@ This error typically occurs due to one of the following circumstances:
     * **To resolve this issue** , remove Library B as a direct dependency.
   * Your app has a local binary dependency and a remote binary dependency on the same library. 
     * **To resolve this issue** , remove one of the binary dependencies.
+
+
 
 ### Fix conflicts between classpaths
 
@@ -144,6 +151,8 @@ To resolve this issue, do one of the following:
 
   * Include the desired version of the dependency as an `api` dependency to your library module. That is, only your library module declares the dependency, but the app module will also have access to its API, transitively.
   * Alternatively, you can declare the dependency in both modules, but you should make sure that each module uses the same version of the dependency. Consider [configuring project-wide properties](/studio/build/gradle-tips#configure-project-wide-properties) to ensure versions of each dependency remain consistent throughout your project.
+
+
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

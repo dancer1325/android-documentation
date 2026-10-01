@@ -3,13 +3,20 @@
 **Source:** [https://developer.android.com/about/versions/17/qpr1/feedback](https://developer.android.com/about/versions/17/qpr1/feedback)
 
 ---
+
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Essentials ](https://developer.android.com/get-started)
+  * [ Releases ](https://developer.android.com/about/versions)
+
+
+
+Save and categorize content based on your preferences. 
+
 ![](https://developer.android.com/static/images/shared/preview-feedback-header.svg)
 
 ###  Feedback and issues 
 
 As you test your apps with Android 17, please let us know of any issues you find or ideas for making Android a better platform.
-
-##  Ways to give feedback 
 
 [ ![](https://developer.android.com/static/images/picto-icons/chat-bubbles-3.svg) ](https://developer.android.com/about/versions/17/feedback#issue_tracker)
 
@@ -48,10 +55,14 @@ To report a new issue, use the links below to go to the issue template that best
   * **[Platform](/about/versions/17/report-issue-platform)** : Issues with Android 17 system software or APIs (platform), NDK (platform), device hardware (Camera, Sensors, CPU, GPU), or Android Runtime (ART). 
   * **[App compatibility](/about/versions/17/report-issue-appcompat): ** Issues that occur with an app running on the latest build. 
 
+
+
 ### Related trackers
 
   * **[Security issue tracker](https://source.android.com/docs/security/overview/updates-resources#report-issues):** For all issues relating to Android security and security updates. 
   * **[Android Studio issue tracker](/studio/report-bugs):** For all issues relating to Android Studio, the Android Emulator, and other dev tools releases. 
+
+
 
 ## Android Beta Feedback app
 
@@ -65,6 +76,6 @@ If your feedback is closed and you're still experiencing the issue on the latest
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-16 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-16 UTC."],[],[]] 

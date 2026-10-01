@@ -4,7 +4,8 @@
 
 ---
 
-#  Profile your app performance
+#  Profile your app performance Save and categorize content based on your preferences. 
+
 An app has poor performance if it responds slowly, shows choppy animations, freezes, or consumes too much power. Fixing performance problems involves _profiling_ your app, or identifying areas in which your app makes inefficient use of resources such as the CPU, memory, graphics, or the device battery. This topic describes the Android Studio tools and techniques to use to fix common performance problems.
 
 To learn how to run standalone profilers without running the entire Android Studio IDE (Windows or Linux only), see [Run the standalone profiler](/studio/profile/standalone-profiler).
@@ -23,6 +24,9 @@ To profile your app, we recommend having the following:
 
   * Android Gradle Plugin 7.3 or higher.
 
+
+
+
 ### Profileable v. debuggable apps
 
 A profileable app lets you do most common profiling tasks, but you should use a [debuggable](/studio/debug) app instead if you need to record Java/Kotlin allocations or capture a heap dump. A debuggable app process and device running API level 26 or higher also lets you see the **Interaction** timeline, which shows user interaction and app lifecycle events, in task views that provide it.
@@ -38,6 +42,8 @@ To build and run a profileable app in Android Studio, follow these steps:
   1. [Create a run/debug configuration](/studio/run/rundebugconfig) if you don't already have one.
   2. Select your release build variant (**Build > Select Build Variant**).
   3. Click **More actions![](/static/studio/images/buttons/profiler-more-actions.png) > Profile 'app' with low overhead** ![](/static/studio/images/buttons/profiler-low-overhead.png) or **Profile 'app' with complete data** ![](/static/studio/images/buttons/profiler-complete-data.png) ("app" is the name of the run configuration, so it might be different for you). To choose between the two options, see Requirements. The app opens on your test device and the **Profiler** pane opens in Android Studio.
+
+
 
 If these instructions don't work for you, see [Build and run a profileable app manually](/studio/profile/build-run-manually).
 
@@ -57,6 +63,9 @@ To start a profiling task, follow these steps:
   5. Interact with your app so activities are triggered.
 
   6. Stop the recording (if applicable), wait for it to parse, and see the results.
+
+
+
 
 ## Compare, export, and import traces
 

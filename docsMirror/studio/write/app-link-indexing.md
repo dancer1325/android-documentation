@@ -4,8 +4,9 @@
 
 ---
 
-#  Add Android App Links
-**Note:** Apps Links Assistant Web Checks is only available in the latest stable channel version of Android Studio and major versions (including their patches) released in the previous 10 months. Currently, the oldest supported version is **Narwhal 4 Feature Drop**. If you are using an older version of Android Studio, you will need to update to access Cloud services. For more information, see [Android Studio and Cloud services compatibility](/studio/releases#service-compat). 
+#  Add Android App Links Save and categorize content based on your preferences. 
+
+**Note:** Apps Links Assistant Web Checks is only available in the latest stable channel version of Android Studio and major versions (including their patches) released in the previous 10 months. Currently, the oldest supported version is **Otter 3 Feature Drop**. If you are using an older version of Android Studio, you will need to update to access Cloud services. For more information, see [Android Studio and Cloud services compatibility](/studio/releases#service-compat). 
 
 Android App Links are HTTP URLs that bring users directly to specific content in your Android app. Android App Links can drive more traffic to your app, help you discover which app content is used most, and make it easier for users to find and share content in an installed app.
 
@@ -14,6 +15,8 @@ To add support for Android App Links:
   1. Create intent filters in your manifest.
   2. Add code to your app's activities to handle incoming links.
   3. Associate your app and your website with Digital Asset Links.
+
+
 
 The App Links Assistant in Android Studio simplifies the process with a step-by-step wizard, as described below. 
 
@@ -53,12 +56,17 @@ The main App Links Assistant tool window also displays all existing deep links i
 
 If it's working correctly, the success message shows that the URL you entered maps to the activity you selected.
 
+
+
+
 ## Handle incoming links
 
 Once you've verified that your URL mapping is working correctly, add logic to handle the intent you created:
 
   1. Click **Select Activity** from the App Links Assistant.
   2. Select an activity from the list and click **Insert Code**.
+
+
 
 The App Links Assistant adds code to your activity, similar to the following: 
 
@@ -174,6 +182,8 @@ Make sure you select the right release config or keystore file for the release b
 
   7. Click **Link and Verify** to confirm that you've uploaded the correct Digital Asset Links file to the correct location.
 
+
+
 The App Link Assistant can validate the Digital Assets Links file that should be published on your website. For each domain that's declared in the manifest file, the Assistant parses the file on your website, performs validation checks, and provides a detailed explanation on how to fix any errors.
 
 Learn more about associating your website with your app through the Digital Asset Links file in [Declare website associations](/training/app-links/verify-android-applinks#web-assoc).
@@ -191,6 +201,8 @@ To verify that your links open the correct activity, follow these steps:
 
   3. Click **Run Test**.
 
+
+
 If the URL mapping isn't set up properly or doesn't exist, an error message appears under the URL in the **Test App Links** dialog. Otherwise, Android Studio launches your app in the device or emulator at the specified activity without showing the disambiguation dialog ("app chooser") and shows a success message in the **App Link Testing** dialog, as shown in figure 3.
 
 If Android Studio can't launch the app, an error message appears in Android Studio's **Run** window.
@@ -199,6 +211,6 @@ To test Android App Links through the App Links Assistant, you must have a devic
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-02 UTC.
+Last updated 2026-09-01 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-02 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-01 UTC."],[],[]] 

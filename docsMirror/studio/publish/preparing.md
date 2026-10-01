@@ -4,10 +4,18 @@
 
 ---
 
-#  Prepare your app for release
-Android developer verification is a new requirement designed to link individuals and organizations to their Android apps. Starting in 2026, Android will require all apps to be registered by verified developers in order to be installed by users on certified Android devices. To learn what you need to do, see [Android developer verification](https://developer.android.com/developer-verification/guides). 
+#  Prepare your app for release Save and categorize content based on your preferences. 
+
+Android developer verification is a new requirement designed to link individuals and organizations to their Android apps. Starting in 2026, Android will require all apps to be registered by verified developers in order to be installed by users on certified Android devices. To learn what you need to do, see [Android developer verification](/developer-verification/guides). 
 
 To prepare your app for release, you need to configure, build, and test a release version of your app. The configuration tasks involve basic code cleanup and code modification tasks that help optimize your app. The build process is similar to the debug build process and can be done using JDK and Android SDK tools.
+
+Use the `play-policy-insights` [Android skill](/tools/agents/android-skills) to audit your app for Google Play Policy compliance.
+
+To install the skill from the [Android CLI](/tools/agents/android-cli), run:
+    
+    
+    android skills add play-policy-insights
 
 Testing tasks serve as a final check, helping ensure that your app performs as expected under real-world conditions. Firebase offers a large set of both physical and virtual test devices through [Firebase Test Lab](https://firebase.google.com/products/test-lab) that you can use to improve your app quality.
 
@@ -33,7 +41,7 @@ The signing and optimization tasks are usually seamless if you are building your
 
 To prepare your app for release, you typically perform five main tasks, as shown in figure 2. Each main task may include one or more smaller tasks, depending on how you are releasing your app. For example, if you are releasing your app through Google Play, you may want to add special filtering rules to your manifest while you are configuring your app for release. Similarly, to meet Google Play publishing guidelines you may have to prepare screenshots and create promotional text while you are gathering materials for release.
 
-You usually perform the tasks listed in figure 2 after you have throroughly debugged and tested your app. The Android SDK contains several tools to help you test and debug your Android apps. For more information, see [Debug your app](/tools/debugging) and [Test your app](/tools/testing).
+You usually perform the tasks listed in figure 2 after you have thoroughly debugged and tested your app. The Android SDK contains several tools to help you test and debug your Android apps. For more information, see [Debug your app](/tools/debugging) and [Test your app](/tools/testing).
 
 ## Gather materials and resources
 
@@ -47,13 +55,13 @@ To learn about certificate requirements, see [Sign your app](/tools/publishing/a
 
 **Important:** Your app must be signed with a cryptographic key that has a validity period ending after October 22, 2033.
 
-You might also have to obtain other release keys if your app accesses a service or uses a third-party library that requires you to use a key that is based on your private key. 
+You might also have to obtain other release keys if your app accesses a service or uses a third-party library that requires you to use a key that is based on your private key.
 
 ### App icon
 
-Your app's icon helps users identify your app on a device's Home screen and in the Launcher window. It also appears in Manage Applications, My Downloads, and elsewhere. In addition, publishing services such as Google Play display your icon to users. Be sure you have an app icon and that it meets the recommended [icon guidelines](https://material.io/design/iconography/product-icons.html#design-principles). 
+Your app's icon helps users identify your app on a device's Home screen and in the Launcher window. It also appears in Manage Applications, My Downloads, and elsewhere. In addition, publishing services such as Google Play display your icon to users. Be sure you have an app icon and that it meets the recommended [icon guidelines](https://material.io/design/iconography/product-icons.html#design-principles).
 
-**Note:** If you are releasing your app on Google Play, you need to create a high-resolution version of your icon. See [Add preview assests to showcase your app](https://www.google.com/support/androidmarket/developer/bin/answer.py?answer=1078870) for more information.
+**Note:** If you are releasing your app on Google Play, you need to create a high-resolution version of your icon. See [Add preview assets to showcase your app](https://www.google.com/support/androidmarket/developer/bin/answer.py?answer=1078870) for more information.
 
 ### End-user license agreement
 
@@ -61,7 +69,7 @@ Consider preparing an end-user license agreement (EULA) for your app. A EULA can
 
 ### Miscellaneous materials
 
-You might also have to prepare promotional and marketing materials to publicize your app. For example, if you are releasing your app on Google Play, you will need to prepare some promotional text and you will need to create screenshots of your app. For more information, see [ Add preview assets to showcase your app](https://www.google.com/support/androidmarket/developer/bin/answer.py?answer=1078870).
+You might also have to prepare promotional and marketing materials to publicize your app. For example, if you are releasing your app on Google Play, you will need to prepare some promotional text and you will need to create screenshots of your app. For more information, see [Add preview assets to showcase your app](https://www.google.com/support/androidmarket/developer/bin/answer.py?answer=1078870).
 
 ## Configure your app for release
 
@@ -75,7 +83,7 @@ Make sure you choose an application ID that is suitable over the life of your ap
 
 ### Turn off debugging
 
-To configure whether the APK is debuggable, use the `debuggable` flag for Groovy or the `isDebuggable` flag for Kotlin script: 
+To configure whether the APK is debuggable, use the `debuggable` flag for Groovy or the `isDebuggable` flag for Kotlin script:
 
 ### Kotlin
     
@@ -116,30 +124,32 @@ To configure whether the APK is debuggable, use the `debuggable` flag for Groovy
 
 ### Enable and configure app shrinking
 
-Many of the following optimizations can be automated by enabling [shrinking](/studio/build/shrink-code) for your release build. For example, you can add ProGuard rules to remove log statements, and the shrinker will identify and remove unused code and resources. The shrinker can also replace class and variable names with shorter names to further reduce DEX size. 
+Many of the following optimizations can be automated by enabling [shrinking](/studio/build/shrink-code) for your release build. For example, you can add ProGuard rules to remove log statements, and the shrinker will identify and remove unused code and resources. The shrinker can also replace class and variable names with shorter names to further reduce DEX size.
 
 ### Turn off logging
 
 Deactivate logging before you build your app for release. You can deactivate logging by removing calls to `[Log](/reference/android/util/Log)` methods in your source files. Also, remove any log files or static test files that were created in your project.
 
-Also, remove all `[Debug](/reference/android/os/Debug)` tracing calls that you added to your code, such as `[startMethodTracing()](/reference/android/os/Debug#startMethodTracing\(\))` and `[stopMethodTracing()](/reference/android/os/Debug#stopMethodTracing\(\))` method calls.
+Also, remove all `[Debug](/reference/android/os/Debug)` tracing calls that you added to your code, such as [`startMethodTracing()`](/reference/android/os/Debug#startMethodTracing\(\)) and [`stopMethodTracing()`](/reference/android/os/Debug#stopMethodTracing\(\)) method calls.
 
-**Important:** Ensure that you disable debugging for your app if using `[WebView](/reference/android/webkit/WebView)` to display paid content or if using JavaScript interfaces, because debugging lets users inject scripts and extract content using Chrome DevTools. To disable debugging, use the `[WebView.setWebContentsDebuggingEnabled()](/reference/android/webkit/WebView#setWebContentsDebuggingEnabled\(boolean\))` method.
+**Important:** Ensure that you disable debugging for your app if using [`WebView`](/reference/android/webkit/WebView) to display paid content or if using JavaScript interfaces, because debugging lets users inject scripts and extract content using Chrome DevTools. To disable debugging, use the [`WebView.setWebContentsDebuggingEnabled()`](/reference/android/webkit/WebView#setWebContentsDebuggingEnabled\(boolean\)) method.
 
 ### Clean up your project directories
 
 Clean up your project and make sure it conforms to the directory structure described in [Projects overview](/tools/projects#ApplicationProjects). Leaving stray or orphaned files in your project can prevent your app from compiling and cause your app to behave unpredictably. At a minimum, perform the following cleanup tasks:
 
-  * Review the contents of your `cpp/`, `lib/`, and `src/` directories. The `cpp/` directory should contain only source files associated with the [Android NDK](/tools/sdk/ndk), such as C or C++ source files, header files, or makefiles. The `lib/` directory should contain only third-party library files or private library files, including prebuilt shared and static libraries. The `src/` directory should contain only the source files for your app (Java, Kotlin, and AIDL files). The `src/` directory should not contain any JAR files.
+  * Review the contents of your `cpp/`, `lib/`, and `src/` directories. The `cpp/` directory should contain only source files associated with the [Android NDK](/tools/sdk/ndk), such as C or C++ source files, header files, or makefiles. The `lib/` directory should contain only third-party library files or private library files, including prebuilt shared and static libraries. The `src/` directory should contain only the source files for your app (Java, Kotlin, and AIDL files). The `src/` directory shouldn't contain any JAR files.
   * Check your project for private or proprietary data files that your app doesn't use and remove them. For example, look in your project's `res/` directory for old drawable files, layout files, and values files that you are no longer using and delete them.
   * Check your `lib/` directory for test libraries and remove them if they are no longer being used by your app.
   * Review the contents of your `assets/` directory and your `res/raw/` directory for raw asset files and static files that you need to update or remove prior to release.
+
+
 
 ### Review and update your manifest and Gradle build settings
 
 Verify that the following manifest and build files items are set correctly:
 
-  * `[ <uses-permission>](/guide/topics/manifest/uses-permission-element)` element 
+  * `[<uses-permission>](/guide/topics/manifest/uses-permission-element)` element 
 
 Specify only those permissions that are relevant and required for your app.
 
@@ -150,6 +160,9 @@ You must specify values for these attributes, which are located in the `[<applic
   * `versionCode` and `versionName` properties 
 
 We recommend that you specify values for these properties, which are located in the app module-level `build.gradle` or `build.gradle.kts` file. For more information, see [Version your app](/tools/publishing/versioning).
+
+
+
 
 There are several additional build file elements that you can set if you are releasing your app on Google Play. For example, the `minSdk` and `targetSdk` attributes, which are located in the app module-level `build.gradle` or `build.gradle.kts` file. For more information about these and other Google Play settings, see [Filters on Google Play](/google/play/filters).
 
@@ -196,10 +209,10 @@ Also, if your app fetches content from a remote server or a real-time service (s
 
 Testing the release version of your app helps ensure that your app runs properly under realistic device and network conditions. Ideally, test your app on at least one handset-sized device and one tablet-sized device to verify that your user interface elements are sized correctly and that your app's performance and battery efficiency are acceptable. [Firebase Test Lab](https://firebase.google.com/docs/test-lab) can also be useful for testing across a variety of different devices and Android OS versions.
 
-As a starting point for testing, see [Core app quality](/tools/testing/what_to_test). When you are done testing and satisfied that the release version of your app behaves correctly, you can release your app to users. For more information, see [Release your app to users](/tools/publishing/publishing_overview#publishing-release). 
+As a starting point for testing, see [Core app quality](/tools/testing/what_to_test). When you are done testing and satisfied that the release version of your app behaves correctly, you can release your app to users. For more information, see [Release your app to users](/tools/publishing/publishing_overview#publishing-release).
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2025-09-16 UTC.
+Last updated 2026-09-02 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-09-16 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-02 UTC."],[],[]] 

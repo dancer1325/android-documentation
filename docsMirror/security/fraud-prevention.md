@@ -3,6 +3,9 @@
 **Source:** [https://developer.android.com/security/fraud-prevention](https://developer.android.com/security/fraud-prevention)
 
 ---
+
+Save and categorize content based on your preferences. 
+
 ![](https://developer.android.com/static/images/security/fraud-prevention/fraud.svg)
 
 ###  Protect users from fraud 
@@ -10,8 +13,6 @@
 In security, no solution or tactic can completely prevent fraud and theft. When a device is stolen, users are in a time race against attackers who will attempt to abuse their apps and extract their personal data before the device is remotely locked. 
 
 Are your users at risk for fraud? Can you mitigate phone theft abuse? 
-
-##  Essential app security questions to consider 
 
 [ ![](https://developer.android.com/static/images/spot-icons/permissions.svg) ](https://developer.android.com/security/fraud-prevention/environment)
 
@@ -39,49 +40,13 @@ Financial apps are a top target for fraud because the transactions are valuable 
 
 [Learn more](https://developer.android.com/security/fraud-prevention/authentication)
 
-##  User protections 
-
-![](https://developer.android.com/static/images/security/fraud-prevention/gppShield.png)
-
-##  Play protect 
-
-Play Protect now recommends a real-time app scan when installing apps that haven't been scanned before. 
-
 ![](https://developer.android.com/static/images/security/fraud-prevention/play-protect.png)
-
-![](https://developer.android.com/static/images/picto-icons/kotlin-friendly-sdk.svg)
-
-##  Safe screen sharing 
-
-As of Android 15, Screen Sharing now defaults to sharing just a single app. Users can adjust this setting to share their whole screen, if needed. 
-
-During screen sharing, the developer-provided public version of the notifications will display, or a private version which has notification content removed. 
 
 ![](https://developer.android.com/static/images/security/fraud-prevention/safe-screen-sharing.png)
 
-![](https://developer.android.com/static/images/picto-icons/private-by-design.svg)
-
-##  Smart masking of confidential data 
-
-Apps that post notifications with one-time passwords and login screens will also be hidden from remote viewers during screen share. 
-
-Starting with Android 15, most apps with the notification listener service will receive notifications with one-time password content removed. 
-
 ![](https://developer.android.com/static/images/security/fraud-prevention/smart-masking.png)
 
-![](https://developer.android.com/static/images/picto-icons/private-by-design.svg)
-
-##  Theft protections 
-
-Finally, Android 15 offers new device theft protections including grab protection and remote quick lock. 
-
-Grab protection locks the screen when someone has grabbed or taken away a user's phone. Remote quick lock enables a user to easily lock their device remotely, even if they don't remember their Google password. 
-
 ![](https://developer.android.com/static/images/security/fraud-prevention/theft-protections.png)
-
-##  Learn more 
-
-For further reading on best practices check out the following resources. 
 
 [ ![](https://developer.android.com/static/images/picto-icons/security.svg) ](https://developer.android.com/privacy-and-security/security-tips)
 

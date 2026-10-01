@@ -3,10 +3,13 @@
 **Source:** [https://developer.android.com/large-screens/stories](https://developer.android.com/large-screens/stories)
 
 ---
-##  Increase your user base...  
-Optimize for all form factors 
 
-Engineering teams around the globe have improved their customer metrics by building adaptive experiences for all screens where your mobile app runs. Learn from the developers themselves about the experiences they built, what they implemented, and why this is important to their businesses. 
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Essentials ](https://developer.android.com/get-started)
+
+
+
+Save and categorize content based on your preferences. 
 
 [Get inspired](https://developer.android.com/large-screens/gallery) [Start building](https://developer.android.com/develop/ui/compose/layouts/adaptive)
 
@@ -52,8 +55,6 @@ Create exceptional experiences across devices
 Optimizing for all screens means meeting your users where they are with experiences that inspire. With foldable devices, users can change device posture, which brings new possibilities for the innovation of productivity apps. Take a look at how the WPS Office team built an excellent foldable screen experience.
 
 * * *
-
-##  Developer voices: Why invest in multiple form factors? 
 
 “YouTube has seen huge growth in tablet users since 2019, so we've spent time making sure the YouTube experience feels at home on tablets and foldables to meet our customers where they are.” 
 
@@ -120,14 +121,6 @@ Dropbox
 ![Sofascore](https://play-lh.googleusercontent.com/vkGTlUuEcu4eYfy9SBoGFgJ99RRkNHNHS32tFPyvlPOV1Rz5YcFHfH6c38FHs0bqph0=s360-rw)
 
 Sofascore
-
-##  News 
-
-![](https://developer.android.com/static/images/picto-icons/launch.svg)
-
-##  Concepts sees 70% more time spent in app on tablets 
-
-[See video](https://www.youtube.com/watch?v=WSnfe3KiXbg)
 
 [Start building for all screens](https://developer.android.com/develop/adaptive-apps)
 

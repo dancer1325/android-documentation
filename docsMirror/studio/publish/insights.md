@@ -4,8 +4,9 @@
 
 ---
 
-#  Play Policy Insights in Android Studio
-**Note:** Play Policy Insights is only available in the latest stable channel version of Android Studio and major versions (including their patches) released in the previous 10 months. Currently, the oldest supported version is **Narwhal 4 Feature Drop**. If you are using an older version of Android Studio, you will need to update to access Play Policy Insights. For more information, see [Android Studio and Cloud services compatibility](/studio/releases#service-compat).
+#  Play Policy Insights in Android Studio Save and categorize content based on your preferences. 
+
+**Note:** Play Policy Insights is only available in the latest stable channel version of Android Studio and major versions (including their patches) released in the previous 10 months. Currently, the oldest supported version is **Otter 3 Feature Drop**. If you are using an older version of Android Studio, you will need to update to access Play Policy Insights. For more information, see [Android Studio and Cloud services compatibility](/studio/releases#service-compat).
 
 Android Studio provides richer insights and guidance on Google Play policies that may impact your app. This information helps you build safer apps from the start, preventing issues that could disrupt your launch process and cost more time and resources to fix later on.
 
@@ -14,6 +15,8 @@ You can see Play Policy Insights as lint checks. These lint checks present the f
   * An overview of the relevant policy.
   * Dos and don'ts to avoid common pitfalls.
   * Links to Play policy pages where you can find details and more helpful information and resources.
+
+
 
 This feature is intended to provide helpful pre-review guidance so you can have smoother app submission experiences. It doesn't cover every policy, nor does it provide final app review decisions. Always review the full policy in the [Policy Center](https://play.google/developer-content-policy/) to ensure compliance.
 
@@ -36,6 +39,8 @@ Unlike traditional lint checks that often suggest specific code changes or quick
   * **Understand** the potential policy implications.
   * **Make necessary changes** to their app's design or implementation to ensure compliance. Some of the insights may not be fully resolvable in Android Studio and may require actions in the Google Play Console.
 
+
+
 These insights are designed to provide early warnings and guide you toward policy-compliant practices from the outset of the development process. Therefore, quick fixes don't exist for Play Policy Insights lint checks in the same way they do for other lint warnings. Instead, these insights should prompt a deeper review of your app's intended behavior and its alignment with Google Play policies.
 
 ## Disable Play Policy Insights lint checks
@@ -50,6 +55,6 @@ We are continuously working to improve the Play Policy Insights feature. Your fe
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-02 UTC.
+Last updated 2026-09-01 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-02 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-01 UTC."],[],[]] 

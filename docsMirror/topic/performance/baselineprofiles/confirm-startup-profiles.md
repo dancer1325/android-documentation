@@ -4,7 +4,8 @@
 
 ---
 
-#  Confirm Startup Profiles optimization
+#  Confirm Startup Profiles optimization Save and categorize content based on your preferences. 
+
 You can check that your Startup Profiles are working using either Android Studio or looking at the R8 build metadata.
 
 ## Confirm with Android Studio
@@ -103,6 +104,9 @@ The output should look something like this:
          
 
 Compare the hash values to the "checksum" values from step 1. If the SHA-256 values don't match, there might be a compilation step interfering with R8's ability to output DEX files.
+
+
+
 
 [ Previous arrow_back  Create Startup Profiles  ](/topic/performance/startupprofiles/dex-layout-optimizations)
 

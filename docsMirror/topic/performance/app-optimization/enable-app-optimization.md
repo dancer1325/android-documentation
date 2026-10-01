@@ -4,7 +4,15 @@
 
 ---
 
-#  Enable app optimization with R8
+#  Enable app optimization with R8 Save and categorize content based on your preferences. 
+
+Use the R8 Analyzer [Android skill](/tools/agents/android-skills) to analyze build files and identify redundant, broad, or subsumed [keep rules](/topic/performance/app-optimization/keep-rules-overview).
+
+To install the skill from the [Android CLI](/tools/agents/android-cli), run:
+    
+    
+    android skills add r8-analyzer
+
 For the best user experience, you should optimize your app to make it as small and fast as possible. Our app optimizer, called R8, streamlines your app by removing unused code and resources, rewriting code to optimize runtime performance, and more. To your users, this means:
 
   * Faster startup time
@@ -12,7 +20,7 @@ For the best user experience, you should optimize your app to make it as small a
   * Improved rendering and runtime performance
   * Fewer [ANRs](/topic/performance/anrs/keep-your-app-responsive)
 
-**Important:** You should always enable optimization for your app's release build; however, you probably don't want to enable it for tests or libraries. For more information about using R8 with tests, see [Test and troubleshoot the optimization](/topic/performance/app-optimization/test-and-troubleshoot-the-optimization). For more information about enabling R8 from libraries, see [Optimization for library authors](/topic/performance/app-optimization/library-optimization).**Important:** We released an agent skill that you can use to improve your app performance with R8. Try out the skill from the [Android skills repository](https://github.com/android/skills).
+**Important:** You should always enable optimization for your app's release build; however, you probably don't want to enable it for tests or libraries. For more information about using R8 with tests, see [Test and troubleshoot the optimization](/topic/performance/app-optimization/test-and-troubleshoot-the-optimization). For more information about enabling R8 from libraries, see [Optimization for library authors](/topic/performance/app-optimization/library-optimization).
 
 ## R8 optimization overview
 
@@ -28,11 +36,23 @@ R8 uses a multi-phase process to optimize your app for size and speed. Key opera
 
   * **Obfuscation (also known as minification)** : To reduce the size of the DEX file, R8 shortens the names of classes, fields, and methods (for example, `com.example.MyActivity` could become `a.b.a`).
 
+
+
+
 Since 8.12.0 version of Android Gradle Plugin (AGP), R8 also optimizes resources as part of its optimization phases. For more information, see Optimized resource shrinking.
 
 ## Enable optimization
 
-To enable app optimization, set `isMinifyEnabled = true` (for code optimization) and `isShrinkResources = true` (for resource optimization) in your [release build's](/studio/publish/preparing#turn-off-debugging) app-level build script as shown in the following code. We recommend that you always enable both settings. We also recommend enabling app optimization only in the final version of your app that you test before publishing—usually your release build—because the optimizations increase the build time of your project and can make debugging harder due to the way it modifies code.
+To enable app optimization for your app use the appropriate DSL based on your project's AGP version. We recommend enabling app optimization only in the final version of your app that you test before publishing—usually your release build—because the optimizations increase the build time of your project and can make debugging harder due to the way it modifies code.
+
+### For AGP versions 9.3 and higher
+
+To enable app optimization for AGP 9.3 and higher:
+
+  * Set `enable = true` in the `optimization` block in your release build's app-level build script.
+  * Add your [keep rules](/topic/performance/app-optimization/add-keep-rules) to a file with the suffix `.keep` in the `src/<variant>/keepRules` source set. For example, `src/main/keepRules/custom-rules.keep`.
+
+**Note:** The updated DSL enables both code and resource optimization. It also includes a set of default keep rules for the Android platform, equivalent to "proguard-android-optimize.txt". To omit the default rules, see [Omit default rules](/topic/performance/app-optimization/keep-rules-overview#omit-default).
 
 ### Kotlin
     
@@ -40,8 +60,40 @@ To enable app optimization, set `isMinifyEnabled = true` (for code optimization)
     android {
         buildTypes {
             release {
+                optimization {
+                    enable = true // Enables code and resource optimizations.
+                }
+            }
+        }
+    }
     
-                // Enables code-related app optimization.
+
+### Groovy
+    
+    
+    android {
+        buildTypes {
+            release {
+                optimization {
+                    enable = true // Enables code and resource optimizations.
+                }
+            }
+        }
+    }
+    
+
+### Legacy DSL for AGP versions lower than 9.3
+
+To enable app optimization, set `isMinifyEnabled = true` (for code optimization) and `isShrinkResources = true` (for resource optimization) in your [release build's](/studio/publish/preparing#turn-off-debugging) app-level build script. We recommend that you always enable both settings.
+
+### Legacy DSL (Kotlin)
+    
+    
+    android {
+        buildTypes {
+            release {
+    
+                // Enables code optimizations.
                 isMinifyEnabled = true
     
                 // Enables resource shrinking.
@@ -58,15 +110,16 @@ To enable app optimization, set `isMinifyEnabled = true` (for code optimization)
         }
         ...
     }
+    
 
-### Groovy
+### Legacy DSL (Groovy)
     
     
     android {
         buildTypes {
             release {
     
-                // Enables code-related app optimization.
+                // Enables code optimizations.
                 minifyEnabled = true
     
                 // Enables resource shrinking.
@@ -79,6 +132,7 @@ To enable app optimization, set `isMinifyEnabled = true` (for code optimization)
             }
         }
     }
+    
 
 ## Improve R8 optimization
 
@@ -89,6 +143,8 @@ The performance benefits of R8 are directly correlated to how much of your codeb
   * Enable resource shrinking and optimized resource shrinking
   * [Refine keep rules](/topic/performance/app-optimization/keep-rules-best-practices) to allow maximum optimization of classes, fields and methods.
 
+
+
 To help you refine keep rules, use the [R8 Configuration Analyzer](/topic/performance/app-optimization/r8-configuration-analyzer).
 
 The R8 Configuration Analyzer lets you do the following:
@@ -97,13 +153,13 @@ The R8 Configuration Analyzer lets you do the following:
   * Find the broadest keep rules - those which prevent the most optimization
   * and understand what optimization they prevent to refine them.
 
+
+
 The R8 Configuration Analyzer is available in AGP version 9.3.0-alpha05 or from R8 version 9.3.7-dev. For more information, see [Analyze R8 configuration](/topic/performance/app-optimization/r8-configuration-analyzer).
 
 ## Optimize resource shrinking for even smaller apps
 
-The 8.12.0 version of Android Gradle Plugin (AGP) introduces optimized resource shrinking, which aims to integrate resource and code optimization to create even smaller and faster apps.
-
-Before optimized resource shrinking, Android Asset Packaging Tool (AAPT2) generated keep rules that effectively treating resource shrinking separately from code, often retaining inaccessible code or resources that referenced each other.
+The 8.12.0 version of AGP introduces optimized resource shrinking, which aims to integrate resource and code optimization to create even smaller and faster apps. Before optimized resource shrinking, Android Asset Packaging Tool (AAPT2) generated keep rules that effectively treating resource shrinking separately from code, often retaining inaccessible code or resources that referenced each other.
 
 With optimized resource shrinking, resources are considered like a part of program code, forming the reference graph. When a collection of code or resources is not referenced, it is not protected by a keep rule, and can be removed.
 
@@ -122,7 +178,7 @@ If you are using AGP 9.0.0 or a newer version, you don't need to set `android.r8
 To enable R8 to use its [full optimization capabilities](/topic/performance/app-optimization/full-mode), remove the following line from your project's `gradle.properties` file, if it exists:
     
     
-    android.enableR8.fullMode=false # Remove this line from your codebase.
+    android.enableR8.fullMode=false
     
 
 Note that enabling app optimization makes stack traces difficult to understand, especially if R8 renames class or method names. To get stack traces that correctly correspond to your source code, see [Recover the original stack trace](/topic/performance/app-optimization/test-and-troubleshoot-the-optimization#recover-original-stack-trace).
@@ -145,6 +201,13 @@ The following table outlines the key features introduced in various versions of 
 
 AGP version | Features introduced  
 ---|---  
+9.3 |  **Simplified DSL:** New `optimization {}` block enables requires less configuration- optimized resource shrinking is always enabled, default Android keep rules are opt-out.   
+  
+**`keepRules` source set:** If you use the new DSL, you must place your keep rules in the `src/<variant>/keepRules` source set, in files with the suffix `.keep`. The source sets are also compatible with the legacy DSL.   
+  
+**KMP (Kotlin MultiPlatform) consumer rules:** KMP no longer requires setting `publish = true`, and supports the `src/<variant>/keepRules` source set with the `.keep` extension.   
+  
+Note that the legacy DSL is still supported.   
 9.1 |  **Classes repackaged by default:** R8 repackages classes (moving them to the unnamed package, at the top level) to compact DEX further, eliminating the need to specify `-repackageclasses` option. For information about how this works and how to opt out, see [global options](/topic/performance/app-optimization/global-options#global-options).   
 9.0 |  **Optimized resource shrinking:** Enabled by default (controlled using `android.r8.optimizedResourceShrinking`). [Optimized resource shrinking](/topic/performance/app-optimization/enable-app-optimization#optimize-resource-shrinking) helps integrate resource shrinking with the code optimization pipeline, leading to smaller, faster apps. By optimizing both code and resource references simultaneously, it identifies and removes resources referenced exclusively from unused code. This is a significant improvement over the previous separate optimization processes.  
   
@@ -166,8 +229,14 @@ Updating R8 helps ensure that stack traces from obfuscated builds are readily an
 8.0 |  **Full mode by default:** [R8 full mode](/topic/performance/app-optimization/full-mode) provides significantly more powerful optimization. It is enabled by default. You can opt out using `android.enableR8.fullMode=false`.   
 7.0 |  **Full mode available:** Introduced as an opt-in feature using `android.enableR8.fullMode=true`. Full mode applies more powerful optimizations by making stricter assumptions about how your code uses reflection and other dynamic features. While it reduces app size and improves performance, it might require additional keep rules to prevent necessary code from being stripped.   
   
+## Use R8 with other build systems
+
+While AGP is the recommended and officially supported build system for Android apps, you might use an alternative build system like [Bazel](https://bazel.build/). If you're using Bazel, you can integrate R8 into your build pipeline to shrink, obfuscate, and optimize your app.
+
+For information about optimizing an Android app using Bazel, see Bazel's [`rules_android` documentation](https://github.com/bazelbuild/rules_android/tree/main/docs/r8-optimization.md). Note that Bazel isn't [officially supported](/build#other-build-systems) for Android app development.
+
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-16 UTC.
+Last updated 2026-08-27 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-16 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-08-27 UTC."],[],[]] 

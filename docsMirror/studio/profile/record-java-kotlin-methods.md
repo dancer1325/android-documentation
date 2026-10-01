@@ -4,17 +4,13 @@
 
 ---
 
-#  Record Java/Kotlin methods
-Recording the Java/Kotlin methods called during your app's code execution lets you see the callstack and CPU usage at a given time, filtered to Java/Kotlin methods. This data is useful for identifying sections of code that take a long time or a lot of system resources to execute. If you want a full view of the callstack including native call frames, use the [callstack sample](/studio/profile/sample-callstack) profiling task.
+#  Record Java/Kotlin methods Save and categorize content based on your preferences. 
 
-When you record Java/Kotlin methods using the Android Studio profiler, you can choose the recording type:
+Recording the Java/Kotlin methods called during your app's code execution lets you see the callstack and CPU usage at a given time. This data is useful for identifying sections of code that take a long time or a lot of system resources to execute. If you want a full view of the callstack including native call frames, use the [callstack sample](/studio/profile/sample-callstack) profiling task.
 
-  * Tracing: Instruments your app at runtime to record a timestamp at the beginning and end of each method call. Timestamps are collected and compared to generate method tracing data, including timing information. You should use tracing when you care about the exact methods being called. Because tracing is an intensive process, if you're using this option it's best to keep your recording around five seconds or less.
+When recording Java or Kotlin methods, the Android Studio Profiler uses runtime instrumentation to inject timestamps at the entry and exit points of each method call. The profiler then aggregates and analyzes these timestamps to generate precise method tracing data and execution timings. Use method recording when you need exact visibility into specific method invocations. We recommend limiting recordings to five seconds or less to avoid performance overhead from runtime instrumentation.
 
 **Note:** The timing information from tracing might deviate from production due to the overhead introduced by the instrumentation itself.
-  * Sampling (legacy): Captures your app's call stack at frequent intervals during your app's Java- or Kotlin-based code execution. The profiler compares sets of captured data to derive timing and resource usage information about your app's Java- or Kotlin-based code execution. You should use sampling if you care more about timing than the exact methods being called.
-
-**Note:** If you're interested in tracing methods with lifecycles so short that they're likely to begin and end in between a sampling interval, and thus get missed by the profiler, you should try tracing instead.
 
 ## Java/Kotlin methods overview
 
@@ -26,10 +22,12 @@ After you [run the **Find CPU Hotspots** task](/studio/profile#start-profiling) 
   * **Interactions** : Shows user interaction and app lifecycle events along a timeline.
   * **Threads** : Shows the threads that your app runs on. In most cases, you'll want to first focus on the topmost thread that represents your app.
 
+
+
 To identify the methods or call stacks that take the most time, use the [flame chart](/studio/profile/chart-glossary/flame-chart) or [top down](/studio/profile/chart-glossary/top-bottom-charts) chart.
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-03-06 UTC.
+Last updated 2026-07-28 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-03-06 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-07-28 UTC."],[],[]] 

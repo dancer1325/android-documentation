@@ -4,12 +4,15 @@
 
 ---
 
-#  Install and configure the NDK and CMake
+#  Install and configure the NDK and CMake Save and categorize content based on your preferences. 
+
 To compile and debug native code for your app, you need the following components:
 
   * The Android Native Development Kit (NDK): a set of tools that allows you to use C and C++ code with Android.
   * CMake: an external build tool that works alongside Gradle to build your native library. You do not need this component if you only plan to use ndk-build.
   * LLDB: the debugger Android Studio uses to debug native code. By default, LLDB will be installed alongside Android Studio.
+
+
 
 This page describes how to install these components automatically, or by using Android Studio or the `sdkmanager` tool to download and install them manually.
 
@@ -45,6 +48,9 @@ A dialog box tells you how much space the NDK package consumes on disk.
   6. When the installation is complete, click **Finish**.
 
   7. Your project automatically syncs the build file and performs a build. Resolve any errors that occur.
+
+
+
 
 ### Configure a specific version of CMake
 
@@ -88,6 +94,9 @@ If you want to use a CMake version that is not included by the SDK Manager, foll
 
   4. If you don't already have the Ninja build system installed on your workstation, go to the [official Ninja website](https://ninja-build.org/), and download and install the latest version of Ninja available for your OS. Make sure to also add the path to the Ninja installation to your `PATH` environment variable.
 
+
+
+
 ## Install a specific version of the NDK
 
 To install a specific version of the NDK, do the following:
@@ -117,6 +126,9 @@ A dialog box tells you how much space the NDK package(s) consumes.
 
   9. Configure each module with the version of the NDK you want it to use. When using Android Studio 3.6 or higher, if you do not specify the version, the Android Gradle plugin chooses a version that it is known to be compatible with.
 
+
+
+
 ## Configure specific versions of the NDK in your project
 
 You may need to configure the version of the NDK in your project if one of the following is true:
@@ -136,12 +148,15 @@ You may need to configure the version of the NDK in your project if one of the f
             ndkVersion = "major.minor.build" // e.g.,  ndkVersion "21.3.6528147"
         }
 
+
+
+
 ### Default NDK version per AGP version
 
 Before release, each AGP version is thoroughly tested with the latest stable NDK release at that time. This NDK version is used to build your projects if you don't specify an NDK version in the `build.gradle` file. The default NDK version for different versions of AGP are documented in the [AGP release notes](/build/releases/gradle-plugin#compatibility) and [AGP past release notes](/build/releases/past-releases).
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-16 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-16 UTC."],[],[]] 

@@ -3,6 +3,9 @@
 **Source:** [https://developer.android.com/privacy](https://developer.android.com/privacy)
 
 ---
+
+Save and categorize content based on your preferences. 
+
 ![](https://developer.android.com/static/images/cluster-illustrations/identity.svg)
 
 ###  Protect user privacy 
@@ -39,10 +42,6 @@ In the Android ecosystem, privacy is a fundamental principle. As the platform ad
 
 [Cheatsheet](https://developer.android.com/privacy/cheat-sheet) [Codelab](https://developer.android.com/codelabs/android-privacy-codelab)
 
-##  Android platform privacy 
-
-Learn more about how the Android platform has added features and enhancements to help you protect the privacy of your users. 
-
 [ ![](https://developer.android.com/static/images/about/versions/13/android-13-hero.png) ](https://developer.android.com/about/versions/13/features#privacy-security)
 
 ###  [ Android 13 ](https://developer.android.com/about/versions/13/features#privacy-security)
@@ -50,6 +49,8 @@ Learn more about how the Android platform has added features and enhancements to
   * Notification permission
   * Wi-Fi and storage permissions
   * Photo picker
+
+
 
 [Learn more](https://developer.android.com/about/versions/13/features#privacy-security)
 
@@ -59,6 +60,8 @@ Learn more about how the Android platform has added features and enhancements to
 
   * Screenshot detection
   * Partial access to photos and videos
+
+
 
 [Learn more](https://developer.android.com/about/versions/14/features)
 
@@ -71,13 +74,9 @@ Learn more about how the Android platform has added features and enhancements to
   * Private space
   * Partial screen sharing
 
+
+
 [Learn more](https://developer.android.com/about/versions/15/features)
-
-![](https://developer.android.com/static/images/picto-icons/user-friendly-integration.svg)
-
-##  App permissions 
-
-Understand how app permissions can be used to protect user privacy by restricting data and actions. 
 
 Guide
 
@@ -127,10 +126,6 @@ Every Android app runs in a limited-access sandbox. If your app needs to use res
 
 [Learn more](https://developer.android.com/training/permissions/requesting)
 
-![](https://developer.android.com/static/images/picto-icons/location.svg)
-
-##  Control location access 
-
 Guide
 
 ###  [ Location permissions ](https://developer.android.com/training/location/permissions)
@@ -147,10 +142,6 @@ Only his background location access when foreground locations services will not 
 
 [Learn more](https://developer.android.com/develop/sensors-and-location/location/background)
 
-![](https://developer.android.com/static/images/picto-icons/private-by-design.svg)
-
-##  Minimize data visibility 
-
 Guide
 
 ###  [ Package visibility ](https://developer.android.com/training/package-visibility/declaring)
@@ -166,10 +157,6 @@ Guide
 Use the appropriate user-resettable identifier for your app's use case. Starting in Android 12, the system restricts the set of device identifiers that apps can use. 
 
 [Learn more](https://developer.android.com/training/articles/user-data-ids#common-use-cases)
-
-![](https://developer.android.com/static/images/picto-icons/toggle.svg)
-
-##  Give users control 
 
 Guide
 

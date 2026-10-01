@@ -3,6 +3,16 @@
 **Source:** [https://developer.android.com/design/ui/tv](https://developer.android.com/design/ui/tv)
 
 ---
+
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Design & Plan ](https://developer.android.com/design)
+  * [ UI Design ](https://developer.android.com/design/ui)
+  * [ TV ](https://developer.android.com/design/ui/tv)
+
+
+
+Save and categorize content based on your preferences. 
+
 ![](https://developer.android.com/static/images/design/ui/tv/hero-full-v2.png)
 
 ###  Design for TV 
@@ -10,8 +20,6 @@
 Explore our guides, patterns, and more to help you learn how to create for Android TV. Start designing for TV today! 
 
 [Foundations guide](https://developer.android.com/design/ui/tv/guides/foundations/design-for-tv)
-
-##  Get started 
 
 [ ![](https://developer.android.com/static/design/ui/tv/images/landing/foundations.svg) ](https://developer.android.com/design/ui/tv/guides/foundations/design-for-tv)
 
@@ -53,10 +61,6 @@ Small repeatedly used UI interactive building blocks. Learn more about using Mat
 
 [Go to components](https://developer.android.com/design/ui/tv/guides/components)
 
-##  Explore our kits 
-
-Use our design components to create a beautiful & functional TV UI. These components and patterns ensure the optimal user experience for TV apps, while maintaining consistency & showing your brand. 
-
 [ ![](https://developer.android.com/static/design/ui/tv/images/landing/explore-kits.svg) ](https://www.figma.com/@tv)
 
 Figma
@@ -67,11 +71,7 @@ Explore our Figma design kits and use our styles, themes, patterns, components, 
 
 [Go to the TV Figma community](https://www.figma.com/@tv)
 
-##  Explore components 
-
 [ ![Buttons](/static/design/ui/tv/images/landing/buttons.svg) Buttons Buttons help users initiate actions or flow. Choose from different types of buttons to inform emphasis. ](/design/ui/tv/guides/components/buttons) [ ![Cards](/static/design/ui/tv/images/landing/cards.svg) Cards Cards contain content and actions about a single subject. ](/design/ui/tv/guides/components/cards) [ ![Featured carousel](/static/design/ui/tv/images/landing/featured-carousel.svg) Featured carousel Featured carousel highlights a set of media in a full-width container. Guide users towards featured content. ](/design/ui/tv/guides/components/featured-carousel) [ ![Immersive list](/static/design/ui/tv/images/landing/immersive-list.svg) Immersive list Immersive list highlights a selected item to show immersive content. Use it to emphasis your content. ](/design/ui/tv/guides/components/immersive-list) [ ![Lists](/static/design/ui/tv/images/landing/lists.svg) Lists Continuous, vertical indexes of text or images. Use lists to help users select from a collection. ](/design/ui/tv/guides/components/lists) [ ![Navigation drawer](/static/design/ui/tv/images/landing/navigation-drawer.svg) Navigation drawer Navigation drawers provide access to destinations in an app. Drawers are always available at the edge of the screen ](/design/ui/tv/guides/components/navigation-drawer) [ ![Tabs](/static/design/ui/tv/images/landing/tabs.svg) Tabs Tabs offer a convenient way to switch between primary destinations in an app. Tabs stick to the top of the display. ](/design/ui/tv/guides/components/tabs)
-
-##  Develop for TV 
 
 [ ![](https://developer.android.com/static/design/ui/tv/images/landing/develop.svg) ](https://developer.android.com/training/tv)
 

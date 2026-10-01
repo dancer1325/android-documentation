@@ -4,7 +4,8 @@
 
 ---
 
-#  Set up a worker for profile uploading
+#  Set up a worker for profile uploading Save and categorize content based on your preferences. 
+
 ProfilingManager saves traces locally on the device. While you can retrieve these files using ADB for local debugging, collecting field data requires uploading them to a server.
 
 Trace files can be large (often several MBs). To avoid negatively affecting the user experience or consuming mobile data, you should schedule uploads to occur in the background, preferably when the device is on an unmetered network (Wi-Fi), charging and idle.
@@ -25,7 +26,7 @@ Besides your existing `ProfilingManager` dependencies, add these Jetpack librari
     
     
        dependencies {
-           implementation("androidx.work:work-runtime:2.11.2")
+           implementation("androidx.work:work-runtime:2.12.0")
        }
        
 
@@ -33,7 +34,7 @@ Besides your existing `ProfilingManager` dependencies, add these Jetpack librari
     
     
        dependencies {
-           implementation 'androidx.work:work-runtime:2.11.2'
+           implementation 'androidx.work:work-runtime:2.12.0'
        }
        
 
@@ -73,7 +74,7 @@ This code shows how to set up a job for uploading traces. The job should be setu
         workMgr.enqueue(workRequestBuilder.build())
     }
     
-    [ProfilingManagerKotlinSnippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/misc/src/main/java/com/example/snippets/profiling/ProfilingManagerKotlinSnippets.kt#L143-L168)
+    [ProfilingManagerKotlinSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/misc/src/main/java/com/example/snippets/profiling/ProfilingManagerKotlinSnippets.kt#L143-L168)
 
 ### Java
     
@@ -114,7 +115,7 @@ This code shows how to set up a job for uploading traces. The job should be setu
       workMgr.enqueue(workRequestBuilder.build());
     }
     
-    [ProfilingManagerJavaSnippets.java](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/misc/src/main/java/com/example/snippets/profiling/ProfilingManagerJavaSnippets.java#L224-L258)
+    [ProfilingManagerJavaSnippets.java](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/misc/src/main/java/com/example/snippets/profiling/ProfilingManagerJavaSnippets.java#L224-L258)
 
 ### Code walkthrough
 
@@ -134,6 +135,9 @@ The code does the following:
 
     * Enqueue: Submit the request to WorkManager by calling `WorkManager#enqueue`.
 
+
+
+
 ## Next Steps
 
 After uploading traces, you can analyze them individually or perform [bulk trace analysis](/topic/performance/tracing/profiling-manager/bulk-trace-analysis). For guidance on setting up a scalable analysis pipeline, refer to [Deploying Bigtrace on Kubernetes](https://perfetto.dev/docs/deployment/deploying-bigtrace-on-kubernetes).
@@ -142,6 +146,6 @@ After uploading traces, you can analyze them individually or perform [bulk trace
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-07-01 UTC.
+Last updated 2026-09-23 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-07-01 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-23 UTC."],[],[]] 

@@ -3,11 +3,14 @@
 **Source:** [https://developer.android.com/topic/performance/overview](https://developer.android.com/topic/performance/overview)
 
 ---
+
+Save and categorize content based on your preferences. 
+
 # App performance guide
 
 This guide provides an overview of libraries, tools, and best practices you can use to inspect, improve, and monitor performance on Android. 
 
-Users want apps to launch quickly, render smoothly, and require little memory and battery usage. This guide's sections provide information and insights into tools, libraries, and best practices that help you achieve better app performance. 
+Users want apps to launch quickly, render smoothly, and use memory efficiently. Optimizing your app's memory footprint is critical to preventing out-of-memory terminations and maintaining high performance across all device tiers. 
 
 [ ![](https://developer.android.com/static/images/picto-icons/speedometer.svg) ](https://developer.android.com/topic/performance/app-score)
 
@@ -31,11 +34,11 @@ Improve app performance where it matters the most—in production.
 
 [Learn more](https://developer.android.com/topic/performance/improving-overview)
 
-###  [ Monitor performance ](https://developer.android.com/topic/performance/monitoring-overview)
+###  [ Monitor performance ](https://developer.android.com/topic/performance/vitals)
 
-Monitor your app's performance in production to learn about potential bottlenecks. 
+Monitor production stability, ANRs, and memory usage thresholds using Android vitals. 
 
-[Learn more](https://developer.android.com/topic/performance/monitoring-overview)
+[Android vitals](https://developer.android.com/topic/performance/vitals)
 
 [ ![](https://developer.android.com/static/images/picto-icons/measurement.svg) ](https://developer.android.com/topic/performance/baselineprofiles/overview)
 
@@ -47,17 +50,25 @@ Implementing Baseline Profiles is the quickest, most efficient way to realize pe
 
 [Learn more](https://developer.android.com/topic/performance/baselineprofiles/overview)
 
-[ ![](https://developer.android.com/static/images/picto-icons/app-optimization-2.svg) ](https://developer.android.com/topic/performance/baselineprofiles/dex-layout-optimizations)
+[ ![](https://developer.android.com/static/images/picto-icons/storage.svg) ](https://developer.android.com/topic/performance/memory)
 
 Featured
 
-###  [ Improve app startup with DEX layout optimizations ](https://developer.android.com/topic/performance/baselineprofiles/dex-layout-optimizations)
+###  [ Optimize app memory ](https://developer.android.com/topic/performance/memory)
 
-With DEX layout optimizations, you can improve the locality of code used during startup, reducing the number of major page faults. 
+Learn core Android memory architecture, lifecycle best practices, and diagnostic workflows to reduce dynamic and bitmap memory usage across all device tiers. 
 
-[Learn more](https://developer.android.com/topic/performance/baselineprofiles/dex-layout-optimizations)
+[Learn more](https://developer.android.com/topic/performance/memory)
 
-##  Featured samples 
+[ ![](https://developer.android.com/static/images/picto-icons/vitals.svg) ](https://android-developers.googleblog.com/2026/08/app-broader-memory-limits.html)
+
+Blog
+
+###  [ Preparing your app for broader memory limits ](https://android-developers.googleblog.com/2026/08/app-broader-memory-limits.html)
+
+Learn how Android is addressing hardware constraints with broader memory limits, and how new Google Play performance thresholds for memory and DEX code optimization help protect ecosystem quality. 
+
+[Read blog post](https://android-developers.googleblog.com/2026/08/app-broader-memory-limits.html)
 
 [ ![](https://developer.android.com/static/images/picto-icons/layout.svg) ](https://github.com/android/performance-samples/tree/main/MacrobenchmarkSample)
 
@@ -83,16 +94,8 @@ Use the JankStats library to monitor performance on your app.
 
 [Sample](https://github.com/android/performance-samples/tree/main/JankStatsSample)
 
-##  Latest news and videos 
-
-[View all news & videos](https://developer.android.com/)
-
-##  More resources 
-
-[View all news & videos](https://developer.android.com/)
-
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-05-19 UTC.
+Last updated 2026-09-23 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-05-19 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-23 UTC."],[],[]] 

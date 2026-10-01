@@ -4,7 +4,15 @@
 
 ---
 
-**Android is now Compose-first.** [Learn more](/develop/ui/compose/first).
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Develop ](https://developer.android.com/develop)
+  * [ Core areas ](https://developer.android.com/develop/core-areas)
+  * [ UI ](https://developer.android.com/develop/ui)
+
+
+
+Save and categorize content based on your preferences. 
+
 ![](https://developer.android.com/static/images/cluster-illustrations/compose-16-9.svg)
 
 ###  Develop UI 
@@ -16,8 +24,6 @@ Compose provides pre-built UI components so you can implement your app's UI with
 To maintain any existing views-based UIs in your app, use the [views-based workflows](/develop/ui/views/layout/declaring-layout). We recommend migrating your views-based UIs to Compose.
 
 [Compose docs](https://developer.android.com/develop/ui/compose/documentation) [Tutorial](https://developer.android.com/jetpack/compose/tutorial)
-
-##  Build UI with Android 
 
 [ ![](https://developer.android.com/static/images/jetpack/compose/want_to_learn_compose.png) ](https://developer.android.com/courses/jetpack-compose/course)
 
@@ -34,8 +40,6 @@ To maintain any existing views-based UIs in your app, use the [views-based workf
 **For developers just getting started with Android:** Learn how to build an Android app using Jetpack Compose, the modern toolkit for building user interfaces on Android. 
 
 [Android Basics with Compose](https://developer.android.com/courses/android-basics-compose/course)
-
-##  Build for mobile form factors 
 
 Guide
 
@@ -75,8 +79,6 @@ Design for everyone. Integrate accessibility features and services into your app
 
 [Develop for accessibility](https://developer.android.com/develop/ui/compose/accessibility)
 
-##  See some samples 
-
 [ ![](https://developer.android.com/static/guide/topics/ui/images/overview-now-in-android.png) ](https://github.com/android/nowinandroid)
 
 ###  [ Now in Android ](https://github.com/android/nowinandroid)
@@ -85,6 +87,8 @@ Now in Android is an Android app built with Kotlin and Jetpack Compose. Now in A
 
   * Android System
   * UI
+
+
 
 Intermediate 
 
@@ -96,9 +100,9 @@ AppWidgets is a collection of samples that demonstrates how to build app widgets
 
   * UI
 
-Intermediate 
 
-##  Optimize your app 
+
+Intermediate 
 
 [ ![](https://developer.android.com/static/images/picto-icons/app-optimization-2.svg) ](https://developer.android.com/develop/ui/compose/performance)
 
@@ -115,7 +119,5 @@ Refine your app's performance to ensure that your user interface runs smoothly a
 Write robust tests to ensure that your app's user interface is reliable, free of jank, and working as intended. 
 
 [Learn more](https://developer.android.com/develop/ui/compose/testing)
-
-##  Latest videos 
 
 [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]] 

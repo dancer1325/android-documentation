@@ -4,7 +4,8 @@
 
 ---
 
-#  Optimize for Doze and App Standby
+#  Optimize for Doze and App Standby Save and categorize content based on your preferences. 
+
 Android has two power-saving features that extend battery life for users by managing how apps behave when a device isn't connected to a power source: Doze and App Standby. _Doze_ reduces battery consumption by deferring background CPU and network activity for apps when the device is unused for long periods of time. _App Standby_ defers background network activity for apps with no recent user activity.
 
 While the device is in Doze, apps' access to certain battery-intensive resources is deferred until the maintenance window. The specific restrictions are listed in [Power management restrictions](/topic/performance/power/power-details).
@@ -36,13 +37,17 @@ The system applies the following restrictions to your apps while in Doze:
   * Doesn't let [sync adapters](/training/sync-adapters) run.
   * Doesn't let `[JobScheduler](/reference/android/app/job/JobScheduler)` run. `[WorkManager](/reference/androidx/work/WorkManager)` uses `JobScheduler` internally, so `WorkManager` tasks don't run. 
 
+
+
 #### Doze checklist
 
   * If possible, use Firebase Cloud Messaging (FCM) for [downstream messaging](https://firebase.google.com/docs/cloud-messaging/downstream).
-  * If your users must see a notification right away, use an [ FCM high priority message](https://firebase.google.com/docs/cloud-messaging/concept-options#setting-the-priority-of-a-message). Only use high priority for messages that result in a notification. For more guidance, refer to [FCM's documentation on message priority for Android](https://firebase.google.com/docs/cloud-messaging/android/message-priority).
+  * If your users must see a notification right away, use an [ FCM high priority message](https://firebase.google.com/docs/cloud-messaging/android-message-priority#high-or-normal-priority-messages). Only use high priority for messages that result in a notification. For more guidance, refer to [FCM's documentation on message priority for Android](https://firebase.google.com/docs/cloud-messaging/android/message-priority).
   * Provide sufficient information within the initial [message payload](https://firebase.google.com/docs/cloud-messaging/concept-options#notifications_and_data_messages), so subsequent network access is unnecessary.
   * Set critical alarms with `setAndAllowWhileIdle()` and `setExactAndAllowWhileIdle()`.
   * Test your app in Doze.
+
+
 
 ### Adapt your app to Doze
 
@@ -63,6 +68,8 @@ App Standby lets the system determine that an app is idle when the user isn't ac
   * The user explicitly launches the app.
   * The app has a process currently in the foreground, either as an activity or foreground service, or in use by another activity or foreground service.  **Note:** Only use a [foreground service](/guide/components/services#Foreground) for tasks the user expects the system to execute immediately or without interruption. Such cases include uploading a photo to social media, or playing music even while the music-player app isn't in the foreground. Don't start a foreground service just to prevent the system from determining that your app is idle. 
   * The app generates a notification that users see on the lock screen or in the notification tray.
+
+
 
 When the user plugs the device into a power supply, the system releases apps from the standby state, letting them freely access the network and execute any pending jobs and syncs. If the device is idle for long periods of time, the system allows idle apps network access about once a day.
 
@@ -119,6 +126,8 @@ You can test Doze mode by doing the following:
 
   7. Observe the behavior of your app after you reactivate the device. Make sure the app recovers gracefully when the device exits Doze.
 
+
+
 ### Test your app with App Standby
 
 To test the App Standby mode with your app, do the following:
@@ -140,6 +149,8 @@ To test the App Standby mode with your app, do the following:
 
   6. Observe the behavior of your app after waking it. Make sure the app recovers gracefully from standby mode. In particular, check if your app's notifications and background jobs function as expected.
 
+
+
 ## Acceptable use cases for exemption
 
 The following table highlights several use cases and whether it's acceptable for apps to use the `ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS` intent action in these situations. In general, your app doesn't meet these exceptions unless Doze or App Standby breaks the core function of the app or there is a technical reason why your app can't use FCM high priority messages.
@@ -158,6 +169,6 @@ App only needs to connect to a peripheral device periodically to sync, or only n
   
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2024-07-28 UTC.
+Last updated 2026-08-18 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2024-07-28 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-08-18 UTC."],[],[]] 

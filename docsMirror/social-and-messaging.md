@@ -3,6 +3,15 @@
 **Source:** [https://developer.android.com/social-and-messaging](https://developer.android.com/social-and-messaging)
 
 ---
+
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Essentials ](https://developer.android.com/get-started)
+  * [ Social & Messaging Dev Center ](https://developer.android.com/social-and-messaging)
+
+
+
+Save and categorize content based on your preferences. 
+
 ![](https://developer.android.com/static/images/social-and-messaging/samples/social-messaging-hero_dt.svg)
 
 ![](https://developer.android.com/static/images/dev-center/icons/media.svg)Developer center 
@@ -42,12 +51,6 @@ Develop
 Display images and play back audio and video, supporting features like HDR, live streaming, and picture-in-picture. Support playback-centered UI features and media controls across devices and accessories. 
 
 [Build to play](https://developer.android.com/social-and-messaging/guides/media-playback)
-
-![](https://developer.android.com/static/images/picto-icons/chat-bubbles.svg)
-
-##  Build modern messaging and social networking use cases 
-
-Build reliable apps that support the latest Android software and hardware features, making the most of form factors in an increasingly multidevice world. 
 
 Guide
 
@@ -124,7 +127,5 @@ Sample
 See best practices in action in our sample app, with coverage of messaging, camera, and media use cases. 
 
 [Go to GitHub](https://github.com/android/socialite)
-
-##  Highlighted content 
 
 [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]] 

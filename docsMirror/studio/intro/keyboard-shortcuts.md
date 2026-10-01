@@ -4,7 +4,8 @@
 
 ---
 
-#  Keyboard shortcuts
+#  Keyboard shortcuts Save and categorize content based on your preferences. 
+
 Keyboard shortcuts are a useful way of quickly navigating around Android Studio and performing common actions. In many cases, using keyboard shortcuts is faster than using the GUI.
 
 This page shows some common keyboard shortcuts. Since Android Studio is based on IntelliJ IDEA, you can find additional shortcuts in the [IntelliJ IDEA keymap reference documentation](https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf).
@@ -54,6 +55,9 @@ Use the following tips to help navigate around Android Studio:
   * Navigate to a method or field by name using the **Navigate to Symbol** action. To bring up the **Navigate to Symbol** action, press `Control+Alt+Shift+N` (`Command+Option+O` on macOS).
 
   * To find all the pieces of code referencing the class, method, field, parameter, or statement at the current cursor position, press `Alt+F7` (`Option+F7` on macOS).
+
+
+
 
 ## Default keymaps
 
@@ -219,6 +223,8 @@ To open the keymap settings, choose **File > Settings** (on macOS, **Android Stu
   4. **Reset button:** Select a keymap from the menu and click **Reset** to revert it to its original configuration. 
   5. **Search box:** Type here to search for a keyboard shortcut by the action name. 
   6. **Search by Shortcut:** Click this button and type a shortcut to search for actions by their assigned shortcut. 
+
+
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

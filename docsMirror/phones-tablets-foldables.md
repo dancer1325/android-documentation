@@ -3,6 +3,9 @@
 **Source:** [https://developer.android.com/phones-tablets-foldables](https://developer.android.com/phones-tablets-foldables)
 
 ---
+
+Save and categorize content based on your preferences. 
+
 ![](https://developer.android.com/static/phones-tablets-foldables/images/phones-tablets-foldables.svg)
 
 ###  Phones, tablets, and foldables 
@@ -10,12 +13,6 @@
 Build for Android mobile devices—phones, tablets, foldables—with Jetpack Compose APIs that automatically optimize your app layouts for different screen sizes and configurations. Support all Android mobile devices with the same engineering and maintenance effort as supporting just mobile phones. 
 
 [Get started](https://developer.android.com/develop/adaptive-apps)
-
-![](https://developer.android.com/static/phones-tablets-foldables/images/jetpack-compose-apis.svg)
-
-##  Jetpack Compose APIs 
-
-Jetpack Compose APIs enable you to build once and publish to multiple form factors and display modes, including split-screen mode and desktop windowing. With Compose, when you develop for phones, you're also developing for tablets and the folded and unfolded screens of foldable devices. 
 
 [ ![](https://developer.android.com/static/phones-tablets-foldables/images/flexbox.svg) ](https://developer.android.com/develop/adaptive-apps/guides/flexbox)
 
@@ -56,21 +53,5 @@ API
 Navigate to and from destinations just by adding and removing items from a list. Fully control the back stack, retain screen state, and display multiple destinations simultaneously. 
 
 [Learn more](https://developer.android.com/guide/navigation/navigation-3)
-
-![](https://developer.android.com/static/images/cluster-illustrations/material-design.svg)
-
-##  Adaptive design 
-
-Design optimized layouts that adapt to phones, tablets, and foldables automatically. 
-
-[Get started](https://developer.android.com/design/ui)
-
-##  Latest news 
-
-[View more news](https://android-developers.googleblog.com/search/label/adaptive)
-
-##  Latest videos 
-
-[View more videos](https://www.youtube.com/user/androiddevelopers/search?query=%23adaptiveapps)
 
 [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]] 

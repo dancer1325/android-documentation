@@ -4,7 +4,14 @@
 
 ---
 
-Send feedback
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Google Play ](https://developer.android.com/distribute)
+  * [ Games dev center ](https://developer.android.com/games)
+
+
+
+Save and categorize content based on your preferences. 
+
 ![](https://developer.android.com/static/images/hero-illustrations/android-games-hero.svg)
 
 ![](https://developer.android.com/static/images/dev-center/icons/games.svg)Developer center 
@@ -15,11 +22,9 @@ Get everything you need to develop and deliver games on Android: tools, download
 
 [Get started](https://developer.android.com/games/guides)
 
-##  What's new 
-
 [ ![](https://developer.android.com/static/images/spot-icons/Level_Up_Logo_Light_Mode.svg) ](https://play.google.com/console/about/levelup/)
 
-Blog
+Level Up
 
 ###  [ Introducing the Revamped Google Play Games Level Up program ](https://play.google.com/console/about/levelup/)
 
@@ -27,7 +32,25 @@ Revamped Google Play Games Level Up, a new way we're elevating the player experi
 
 [Read More](https://play.google.com/console/about/levelup/)
 
-##  2026 GDC Highlights 
+[ ![](https://developer.android.com/static/images/games/Garena_Case_Study.png) ](https://play.google.com/console/about/leagues-freefire-casestudy)
+
+Case study
+
+###  [ Garena reaches 640K new high-value players with Leagues ](https://play.google.com/console/about/leagues-freefire-casestudy)
+
+This Level Up pilot demonstrates how Play's new engagement features can boost player activity by 33%. 
+
+[Read More](https://play.google.com/console/about/leagues-freefire-casestudy)
+
+[ ![](https://developer.android.com/static/images/games/SYBO_Games_Case_Study.png) ](https://play.google.com/console/about/subway-surfers-leagues-casestudy)
+
+Case study
+
+###  [ SYBO Games boosts engagement by 45% with Leagues ](https://play.google.com/console/about/subway-surfers-leagues-casestudy)
+
+Learn how the latest Level Up feature drove a 3% lift in new installs for Subway Surfers. 
+
+[Read More](https://play.google.com/console/about/subway-surfers-leagues-casestudy)
 
 [ ![](https://developer.android.com/static/images/games/gaming-thumbnail-26.png) ](https://www.youtube.com/watch?v=BcyBAzXfItk)
 
@@ -36,8 +59,6 @@ Revamped Google Play Games Level Up, a new way we're elevating the player experi
 **Optimize for Performance.** Join Google's Android team and Emil Kjæhr (Funday Games) to master porting PC titles like Deep Rock Galactic: Survivor to mobile. Get an exclusive first look at our new System and GPU Profiler, explore the state of Vulkan, and learn how 16 KB page size support boosts performance across diverse architectures. Whether you're navigating Unity or Unreal, gain the practical strategies needed to supercharge your high-performance game on Android. 
 
 [See our latest videos](https://www.youtube.com/playlist?list=PLWz5rJ2EKKc8Qh14aWnL5dy8UAnTp8AGV)
-
-##  Priority workstreams 
 
 [ ![](https://developer.android.com/static/images/games/vulkan-logo.png) ](https://developer.android.com/games/develop/vulkan/overview)
 
@@ -62,14 +83,6 @@ React to thermal changes to avoid slow sessions caused by thermal throttling wit
 Make your game run everywhere with multiplatform support and optimizations for large screens. 
 
 [Learn more](https://developer.android.com/games/develop/multiplatform/overview)
-
-##  Developer stories 
-
-How game developers are finding success with Android tools. 
-
-[View more games stories](https://developer.android.com/stories/games)
-
-##  Highlighted resources 
 
 [ ![](https://developer.android.com/static/images/logos/agi-logo.svg) ](https://developer.android.com/agi)
 
@@ -109,8 +122,6 @@ Find sample apps and example code.
 
 Follow guided, step-by-step codelabs to complete game development tasks. 
 
-##  Community resources 
-
 [ ![](https://developer.android.com/static/images/spot-icons/apps-games-insights-2.svg) ](https://games.withgoogle.com/reports/2022-mobile-insights-report/)
 
 ###  [ Mobile Insights Report ](https://games.withgoogle.com/reports/2022-mobile-insights-report/)
@@ -135,4 +146,4 @@ See our latest blogs, videos, programs, community, and support resources.
 
 [Visit the page](https://developer.android.com/games/community)
 
-Need to tell us more?  [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]] 

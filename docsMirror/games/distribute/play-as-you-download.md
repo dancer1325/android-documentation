@@ -4,7 +4,8 @@
 
 ---
 
-#  Play as you Download
+#  Play as you Download Save and categorize content based on your preferences. 
+
 Built into the core of Android 12+, Play as you Download allows your users to get into the experience quickly after a small download while remaining assets are fetched in the background. To make this happen, Google Play analyzes crowdsourced first use file system access patterns and automatically identifies assets to optimize.
 
 ## Prepare your app
@@ -15,6 +16,8 @@ Even with the Play as you Download feature enabled, your users only receive the 
   * App has been updated to the current ads SDKs (if applicable)
   * App has enough crowdsourced information about first use experiences
   * App has first-use experiences that are suitable for the feature
+
+
 
 Learn more about how to [optimize your app for Play as you Download](/google/play/play-as-you-download/best-practices).
 

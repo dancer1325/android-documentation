@@ -4,7 +4,8 @@
 
 ---
 
-#  Trigger-based profiling
+#  Trigger-based profiling Save and categorize content based on your preferences. 
+
 `ProfilingManager` supports capturing profiles based on system triggers. The system manages the recording process and provides the resulting profile to your app.
 
 Triggers are tied to performance-critical events. System-recorded profiles provide detailed debugging information for the critical user journeys (CUJs) associated with these triggers.
@@ -66,7 +67,7 @@ The following code demonstrates how to register for the `TRIGGER_TYPE_APP_FULLY_
     
     }
     
-    [ProfilingManagerKotlinSnippets.kt](https://github.com/android/snippets/blob/5957d98c6b7080ae29c241a75e29ed9ce750834c/misc/src/main/java/com/example/snippets/profiling/ProfilingManagerKotlinSnippets.kt#L103-L139)
+    [ProfilingManagerKotlinSnippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/misc/src/main/java/com/example/snippets/profiling/ProfilingManagerKotlinSnippets.kt#L103-L139)
 
 ### Java
     
@@ -105,7 +106,7 @@ The following code demonstrates how to register for the `TRIGGER_TYPE_APP_FULLY_
     
     }
     
-    [ProfilingManagerJavaSnippets.java](https://github.com/android/snippets/blob/5957d98c6b7080ae29c241a75e29ed9ce750834c/misc/src/main/java/com/example/snippets/profiling/ProfilingManagerJavaSnippets.java#L98-L136)
+    [ProfilingManagerJavaSnippets.java](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/misc/src/main/java/com/example/snippets/profiling/ProfilingManagerJavaSnippets.java#L98-L136)
 
 The code performs these steps:
 
@@ -115,6 +116,8 @@ The code performs these steps:
   4. **Register listener** : Calls `registerForAllProfilingResults` to define the callback that handles the result. This callback receives the path of the saved profile through `getResultFilePath()`.
   5. **Add triggers** : Registers the trigger list with `ProfilingManager` using `addProfilingTriggers`.
   6. **Fire event** : Calls `reportFullyDrawn()`, which emits the `TRIGGER_TYPE_APP_FULLY_DRAWN` event to the system triggering a profile collection assuming a system background trace was running and there is rate limiter quota available. This optional step demonstrates an end-to-end flow because your app must call `reportFullyDrawn()` for this trigger.
+
+
 
 ## Retrieve the trace
 
@@ -166,6 +169,6 @@ You can also enable other debug options, for example, disabling the rate limiter
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-07-01 UTC.
+Last updated 2026-09-23 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-07-01 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-23 UTC."],[],[]] 

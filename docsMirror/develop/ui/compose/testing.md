@@ -4,7 +4,15 @@
 
 ---
 
-#  Test your Compose layout
+#  Test your Compose layout Save and categorize content based on your preferences. 
+
+Use an Android skill to analyze and set up test infrastructure, test harnesses, unit tests, and UI tests for native Android apps.
+
+To install the skill from the [Android CLI](https://developer.android.com/tools/agents/android-cli), run:
+    
+    
+    android skills add testing-setup
+
 Test your app's UI to verify that behavior of your Compose code is correct. This lets you catch errors early and improve the quality of your app.
 
 Compose provides a set of testing APIs to find elements, verify their attributes, and perform user actions. The APIs also include advanced features such as time manipulation. Use these APIs to create robust tests that verify your app's behavior.
@@ -25,6 +33,8 @@ The following are some key concepts for testing your Compose code:
   * **[Testing APIs](/develop/ui/compose/testing/apis)** : Testing APIs let you find elements, verify their attributes, and perform user actions.
   * **[Synchronization](/develop/ui/compose/testing/synchronization)** : Synchronization verifies that tests wait for the UI to be idle before performing actions or making assertions.
   * **[Interoperability](/develop/ui/compose/testing/interoperability)** : Interoperability enables tests to work with both Compose and View-based elements in the same app.
+
+
 
 ## Testing cheatsheet
 
@@ -80,6 +90,8 @@ This module includes a [`ComposeTestRule`](/reference/kotlin/androidx/compose/ui
   * **[Test different screen sizes](/training/testing/different-screens):** With some many devices available to users, you should test for different screen sizes.
   * **[Espresso](/training/testing/espresso)** : While intended for View-based UIs, Espresso knowledge can still be helpful for some aspects of Compose testing.
 
+
+
 ## Codelab
 
 To learn more, try the [Jetpack Compose Testing codelab](/codelabs/jetpack-compose-testing).
@@ -93,8 +105,10 @@ To learn more, try the [Jetpack Compose Testing codelab](/codelabs/jetpack-compo
   * [Window insets in Compose](/develop/ui/compose/layouts/insets)
   * [Other considerations](/develop/ui/compose/migrate/other-considerations)
 
+
+
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-22 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-22 UTC."],[],[]] 

@@ -3,10 +3,8 @@
 **Source:** [https://developer.android.com/adaptive-apps](https://developer.android.com/adaptive-apps)
 
 ---
-##  Build adaptive apps 
 
-Unlock your app's full potential on phones, tablets, foldables, ChromeOS, cars, and XR.  
-Reach more users on more devices. Increase user engagement and retention. 
+Save and categorize content based on your preferences. 
 
 [ ![](https://developer.android.com/static/images/large-screens/adaptive-apps-hero.png) ](https://developer.android.com/develop/adaptive-apps)
 
@@ -28,19 +26,13 @@ Adaptive apps rank higher and are more often selected for [ Editors’ Choice on
 
 ###  Attract and retain users 
 
-Adaptive apps have higher user satisfaction, user engagement, and time-in-app metrics on large screen form factors such as foldables, tablets, and ChromeOS devices, where users spend 9x more in dollar value than users who have only a phone. 
-
-##  Optimize the user experience on all devices 
-
-Build your app to work seamlessly on a wide variety of devices. Support configuration changes to ensure your app looks and works great in every window size, aspect ratio, orientation, and posture. Maintain continuity—enable users to pick up where they left off across different form factors and platforms. Avoid bad user experiences like compatibility modes and letterboxing. 
-
-[Learn more](https://developer.android.com/develop/ui/compose/layouts/adaptive/adaptive-dos-and-donts)
+Adaptive apps have higher user satisfaction, user engagement, and time-in-app metrics on large screen form factors such as foldables, tablets, and Googlebooks, where users spend 9x more in dollar value than users who have only a phone. 
 
 ### Create adaptive layouts
 
 Provide a great user experience on all device form factors, from conventional phones to tablets to cars. Adapt your app's UI to different display sizes and configurations to enhance the user experience, improve accessibility, future-proof your app for new devices, and reduce development and maintenance costs. 
 
-[Learn more](/develop/ui/compose/layouts/adaptive)
+[Learn more](/develop/adaptive-apps/guides/get-started-with-adaptive-apps)
 
 ### Support external input devices
 
@@ -52,55 +44,27 @@ Increase your app's reach and accessibility. Create a truly inclusive user exper
 
 Leverage the latest advancements in the Android ecosystem to create unique user experiences. New form factors, such as foldable devices, offer innovative device configurations, like tabletop posture, which enables users to operate their foldable device without holding it in their hands. Differentiate your app from the ordinary with exceptional capabilities. 
 
-[Learn more](/guide/topics/large-screens/learn-about-foldables)
+[Learn more](/develop/adaptive-apps/guides/foldables/learn-about-foldables)
 
-##  Guarantee reliability with automated testing 
+[ ![](https://developer.android.com/static/adaptive-apps/googlebook-intelligence-hero.png) ](https://blog.google/products-and-platforms/devices/googlebook/)
 
-Automate testing with tools like the [Espresso testing framework](/training/testing/espresso) and [Jetpack Compose testing APIs](/develop/ui/compose/testing/apis). Automated testing speeds up development by providing rapid feedback, eliminating errors caused by human intervention, and improving app stability through comprehensive testing. The result: lower development cost, better resource allocation, and faster release cycles to ultimately enhance the user experience with a more stable and reliable app. 
+NEWS
 
-[Learn more](https://developer.android.com/develop/ui/compose/testing)
+###  [ Introducing Googlebook, designed for Gemini Intelligence ](https://blog.google/products-and-platforms/devices/googlebook/)
 
-##  Get inspired 
+Updated September 23, 2026  
+  
+Introducing Googlebook, a new category of laptops designed for Gemini Intelligence and perfectly in sync with your Android phone... 
 
-[ ![](https://developer.android.com/static/images/large-screens/tour-the-gallery.png) ](https://developer.android.com/large-screens/gallery)
-
-###  [ Tour the large screen gallery ](https://developer.android.com/large-screens/gallery)
-
-Explore inspiring, optimized designs for large screen devices. Browse UI/UX templates for popular app categories, including media, creativity, games, and more. 
-
-[View the gallery](https://developer.android.com/large-screens/gallery)
-
-[ ![](https://developer.android.com/static/images/large-screens/many-apps.png) ](https://developer.android.com/large-screens/stories)
-
-###  [ Check out adaptive app success stories ](https://developer.android.com/large-screens/stories)
-
-Optimize your app for screens of all sizes to provide the best experience for your users and deliver positive business results. More and more apps across all categories have been taking advantage of the opportunities presented by multiple form factors. See the experiences developers have built, learn about the implementations they've created, and find out why adaptive app development is important to their businesses. 
-
-[View developer stories](https://developer.android.com/large-screens/stories)
-
-##  Latest news 
-
-[View all news](https://developer.android.com/news)
-
-[ ![](https://developer.android.com/static/adaptive-apps/connected-displays-hero.png) ](https://developer.android.com/blog/posts/goodbye-mobile-only-hello-adaptive)
+[ ![](https://developer.android.com/static/adaptive-apps/googlebooks-hero.svg) ](https://android-developers.googleblog.com/2026/09/adaptive-development-scale-app-googlebook.html)
 
 BLOG
 
-###  [ Goodbye Mobile Only, Hello Adaptive: Three essential updates ](https://developer.android.com/blog/posts/goodbye-mobile-only-hello-adaptive)
+###  [ Land your apps on Googlebook with adaptive development ](https://android-developers.googleblog.com/2026/09/adaptive-development-scale-app-googlebook.html)
 
-Updated December 19, 2025  
+Updated September 23, 2026  
   
-In 2025 the Android ecosystem has grown far beyond the phone. Today, developers have the opportunity to reach over 500 million active devices, including foldables, tablets, XR, Chromebooks, and... 
-
-[ ![](https://developer.android.com/static/adaptive-apps/unfold-adaptive-layouts-hero.png) ](https://android-developers.googleblog.com/2025/09/unfold-new-possibilities-with-compose-adaptive-layouts-1-2-beta.html)
-
-BLOG
-
-###  [ Unfold new possibilities with Compose Adaptive Layouts 1.2 beta ](https://android-developers.googleblog.com/2025/09/unfold-new-possibilities-with-compose-adaptive-layouts-1-2-beta.html)
-
-Updated September 3, 2025  
-  
-Compose Adaptive Layouts 1.2 is now in beta, introducing powerful new layout strategies like reflow and levitate. Build polished, responsive UIs with less code for the expanding foldable ecosystem... 
+Googlebook introduces a new category of laptops built on a shared Android foundation. High‑performance hardware from top partners... 
 
 [ ![](https://developer.android.com/static/adaptive-apps/pm-guide-scaling-devices-hero.png) ](https://android-developers.googleblog.com/2025/06/a-product-manager-guide-to-scaling-android-apps-across-from-factors.html)
 
@@ -110,10 +74,6 @@ BLOG
 
 Updated June 10, 2025  
   
-Reach users on over 500 million active large screen devices. Explore the ROI of adaptive apps, from increased discoverability in Google Play to significantly higher user engagement and retention... 
-
-##  Latest videos 
-
-[View all videos](https://www.youtube.com/user/androiddevelopers/)
+Reach users on over 500 million active large screen devices. Explore the ROI of adaptive apps, from increased discoverability in Google Play to... 
 
 [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]] 

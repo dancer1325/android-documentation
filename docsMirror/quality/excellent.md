@@ -3,13 +3,17 @@
 **Source:** [https://developer.android.com/quality/excellent](https://developer.android.com/quality/excellent)
 
 ---
-##  Build the best experiences for your best users 
 
-Deliver excellent experiences with delightful, intelligent, and adaptive apps — that are performant and safe. 
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Design & Plan ](https://developer.android.com/design)
+  * [ App quality ](https://developer.android.com/quality)
+  * [ Excellent Experiences ](https://developer.android.com/quality/excellent)
+
+
+
+Save and categorize content based on your preferences. 
 
 Your commitment to building excellent apps, like Max, directly translates to increased visibility and user engagement on Google Play. Learn how developers achieve remarkable success and widespread recognition by delivering superior, high-quality experiences. 
-
-##  Explore the impressive metrics and inspiring stories of developers who built exceptional apps for their most valuable users 
 
 ![](https://developer.android.com/static/images/quality/excellent/reddit-casestudy.png)
 
@@ -51,8 +55,6 @@ X improved **login success rate by 2x** after adopting passkeys.
 
 [Learn more](https://android-developers.googleblog.com/2024/11/x-improved-login-success-rate-after-adopting-passkeys.html)
 
-##  See how we're making Android the best platform for developers to build excellent experiences 
-
 [ ![](https://developer.android.com/static/images/picto-icons/happy-developers.svg) ](https://developer.android.com/quality/excellent/delightful)
 
 ###  [ Delightful ](https://developer.android.com/quality/excellent/delightful)
@@ -82,8 +84,6 @@ Craft consistently exceptional user experiences
 ###  [ Safe ](https://developer.android.com/quality/excellent/safe)
 
 Prioritize user data security by leveraging advanced safety tools 
-
-##  Get started with our guides 
 
 [ ![](https://developer.android.com/static/images/cluster-illustrations/developer-guidance.svg) ](https://developer.android.com/guide)
 

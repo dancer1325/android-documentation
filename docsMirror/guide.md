@@ -3,6 +3,15 @@
 **Source:** [https://developer.android.com/guide](https://developer.android.com/guide)
 
 ---
+
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Essentials ](https://developer.android.com/get-started)
+  * [ Get started ](https://developer.android.com/get-started/overview)
+
+
+
+Save and categorize content based on your preferences. 
+
 ![](https://developer.android.com/static/images/logos/android.svg)
 
 ###  Get started with Android 
@@ -50,8 +59,6 @@ Learn
 Go deep by exploring other training resources, such as learning pathways for more-advanced topics, including Compose, app architecture, and accessibility.
 
 [Go to training resources](https://developer.android.com/courses)
-
-##  Assemble your toolkit 
 
 [ ![](https://developer.android.com/static/images/spot-icons/jetpack-compose.svg) ](https://developer.android.com/compose)
 
@@ -104,14 +111,6 @@ Architecture, testing patterns, and guidance help you build solid, scalable apps
 
 [Learn more](https://developer.android.com/topic/architecture)
 
-![](https://developer.android.com/static/images/picto-icons/actionable.svg)
-
-##  App quality matters 
-
-Build high-quality apps that provide a seamless and consistent user experience. Learn how to ensure your apps work well on all form factors, including phones, tablets, foldables, ChromeOS devices, parked car displays, and 2D XR. 
-
-[Guidelines](https://developer.android.com/docs/quality-guidelines/core-app-quality) [Guides](https://developer.android.com/develop/ui/compose/layouts/adaptive)
-
 | Good | Great  
 ---|---|---  
 ![](/static/images/picto-icons/lightbulb.svg) Core value |  ![](/static/images/picto-tick/tick.svg) Fun, useful, or both  
@@ -132,10 +131,6 @@ Build high-quality apps that provide a seamless and consistent user experience. 
 ![](/static/images/picto-icons/graph-bar.svg) Technical quality |  ![](/static/images/picto-tick/tick.svg) Makes the most of users' devices  
 ![](/static/images/picto-icons/security-2.svg) Privacy and security |  ![](/static/images/picto-tick/tick.svg) Designed for safety  
   
-##  Featured samples 
-
-If you learn best by reading code, we have a wide range of sample apps that you can check out and learn from. 
-
 [ ![](https://developer.android.com/static/guide/topics/ui/images/overview-now-in-android.png) ](https://github.com/android/nowinandroid)
 
 ###  [ Now in Android ](https://github.com/android/nowinandroid)
@@ -153,7 +148,5 @@ This repository contains a set of individual Android Studio projects to help you
 ###  [ Architecture samples ](https://github.com/android/architecture-samples)
 
 These samples showcase different architectural approaches to developing Android apps. In its different branches you'll find the same app (a to-do list app) implemented with small differences.
-
-[**Browse all the samples**](/samples)
 
 [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]] 

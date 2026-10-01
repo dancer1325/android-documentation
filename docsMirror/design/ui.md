@@ -3,75 +3,26 @@
 **Source:** [https://developer.android.com/design/ui](https://developer.android.com/design/ui)
 
 ---
-##  Design for Android 
 
-Design beautiful and modern Android apps that meet your user where they are, whether browsing their phone, reading on their tablet, glancing at their wrist, connected to a display, or watching TV. 
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Design & Plan ](https://developer.android.com/design)
+  * [ UI Design ](https://developer.android.com/design/ui)
 
-[Get inspired by UX designs for a variety of screens →](https://developer.android.com/design/ui/gallery)
 
-##  Design for mobile 
 
-Create a beautiful and usable modern app design using Android themes, components, and adaptive layouts. 
-
-[Explore mobile design →](https://developer.android.com/design/ui/mobile)
+Save and categorize content based on your preferences. 
 
 ![](https://developer.android.com/static/images/design/ui/mobile-promo.png)
 
-##  Enhance your app's productivity 
-
-Make sure your app is prepared with adaptive UI and interactions that support all desktop windowing and input methods. 
-
-[Explore desktop design →](https://developer.android.com/design/ui/desktop) [Get inspired by UX designs for a variety of screens →](https://developer.android.com/design/ui/gallery)
-
 ![](https://developer.android.com/static/images/design/ui/desktop_hero.webp)
-
-##  Boundless creation with XR 
-
-Create groundbreaking immersive experiences with powerful tools that transform how we interact with digital content and the world around us. 
-
-[Design for XR headsets & wired XR glasses →](https://developer.android.com/design/ui/xr)
-
-##  Extend your app for all-day wear 
-
-Create augmented experiences that feel like a natural extension of the user's perception, providing convenient access to information. 
-
-[Design for AI glasses →](https://developer.android.com/design/ui/ai-glasses)
-
-##  Enhance your app with widgets 
-
-Use widgets to help users quickly engage with your app content and features. 
-
-[Explore widget design →](https://developer.android.com/design/ui/widget)
 
 ![](https://developer.android.com/static/images/design/ui/promo-widgets.png)
 
-##  Provide at-a-glance information on Wear OS 
-
-A smartwatch adds a great surface for quick and frequent interactions with your app. Start designing experiences for Wear OS by Google. 
-
-[Explore Wear OS design →](https://developer.android.com/design/ui/wear)
-
 ![](https://developer.android.com/static/wear/images/design/landing-hero.webp)
-
-##  Design for TV 
-
-Start designing your Android TV app experience using our guides and kits. 
-
-[Explore TV design →](https://developer.android.com/design/ui/tv) [Get inspired for TV design →](https://developer.android.com/design/ui/tv/samples/overview)
 
 ![](https://developer.android.com/static/images/design/ui/promo-tv.png)
 
-##  Design for Cars 
-
-Start designing your app experience for Android Auto and Android Automotive OS using our guides and templates. 
-
-[Explore Cars design →](https://developer.android.com/design/ui/cars)
-
 ![](https://developer.android.com/static/images/design/ui/auto-hero.png)
-
-##  Try out a case study or sample 
-
-Start designing for Android devices with one of our Figma-based case studies or app samples. 
 
 [ ![](https://developer.android.com/static/images/design/ui/card-nia.png) ](https://www.figma.com/community/file/1164313362327941158)
 

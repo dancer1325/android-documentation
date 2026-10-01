@@ -4,7 +4,8 @@
 
 ---
 
-#  Best practices for SQLite performance
+#  Best practices for SQLite performance Save and categorize content based on your preferences. 
+
 Android offers [built-in support for SQLite](/training/data-storage/sqlite), an efficient SQL database. Follow these best practices to optimize your app's performance, ensuring it remains fast and predictably fast as your data grows. By using these best practices, you also reduce the possibility of encountering performance issues that are difficult to reproduce and troubleshoot.
 
 To achieve faster performance, follow these performance principles:
@@ -14,6 +15,9 @@ To achieve faster performance, follow these performance principles:
   * **Push work to SQLite engine** : Perform computations, filtering, and sorting operations within the SQL queries. Using SQLite's query engine can significantly improve performance.
 
   * **Modify the database schema** : Design your database schema to help SQLite construct efficient query plans and data representations. Properly index tables and optimize table structures to enhance performance.
+
+
+
 
 Additionally, you can use the available troubleshooting tools to measure the performance of your SQLite database to help identify areas that require optimization.
 
@@ -34,8 +38,6 @@ SQLite implements mutations by appending them to a log, which it occasionally co
 When using WAL, by default every commit issues an `fsync` to help ensure that the data reaches the disk. This improves data durability but slows down your commits.
 
 SQLite has an option to [control synchronous mode](https://sqlite.org/pragma.html#pragma_synchronous). If you enable WAL, set synchronous mode to `NORMAL`:
-
-### Kotlin
     
     
     // When opening the database
@@ -44,16 +46,7 @@ SQLite has an option to [control synchronous mode](https://sqlite.org/pragma.htm
     
     // Or: after having opened the database
     db.execSQL("PRAGMA synchronous = NORMAL");
-
-### Java
     
-    
-    // When opening the database
-    SQLiteDatabase.OpenParams.Builder paramsBuilder = new SQLiteDatabase.OpenParams.Builder();
-    paramsBuilder.setJournalMode(SQLiteDatabase.SYNC_MODE_NORMAL);
-    
-    // Or: after having opened the database
-    db.execSQL("PRAGMA synchronous = NORMAL");
 
 In this setting, a commit can return before the data is stored in a disk. If a device shutdown occurs, such as on loss of power or a kernel panic, the committed data might be lost. However, because of logging, your database isn't corrupted.
 
@@ -141,7 +134,7 @@ Note that the storage cost of the `city` column is now double, because it's now 
 
 If your queries combine multiple columns, you can create [multi-column indexes](https://www.sqlite.org/queryplanner.html#_multi_column_indices) to fully accelerate the query. You can also use an index on an outside column and let the inside search be done as a linear scan.
 
-For instance, given the following query:
+For example, given the following query:
     
     
     SELECT id, name
@@ -169,9 +162,9 @@ For tables that have a primary key other than `INTEGER` or a composite of column
 
 ### Store small data as a `BLOB` and large data as a file
 
-If you want to associate large data with a row, such as a thumbnail of an image or a photo for a contact, you can store the data either in a `BLOB` column or in a file, and then store the file path in the column.
+If you want to associate large data with a row, such as a thumbnail of an image or a photo for a contact, you can store the data either in a `BLOB` column or in a file, and then store the path in the column.
 
-Files are generally rounded up to 4 KB increments. For very small files, where the rounding error is significant, it's more efficient to store them in the database as a `BLOB`. SQLite minimizes filesystem calls and is [faster than the underlying filesystem](https://www.sqlite.org/fasterthanfs.html) in some cases.
+Files are generally rounded up to 4 KB increments. For very small files, where the rounding error is significant, it's more efficient to store them in the database as a `BLOB`. SQLite minimizes file system calls and is [faster than the underlying filesystem](https://www.sqlite.org/fasterthanfs.html) in some cases.
 
 **Note:** On Android, consider using a file for any data that is several multiples of 4 KB.
 
@@ -184,8 +177,6 @@ Follow these best practices to improve query performance in SQLite by minimizing
 ### Read only the rows you need
 
 Filters let you narrow down your results by specifying certain criteria, such as date range, location, or name. Limits let you control the number of results you see:
-
-### Kotlin
     
     
     db.rawQuery("""
@@ -199,27 +190,13 @@ Filters let you narrow down your results by specifying certain criteria, such as
             // Process cursor data
         }
     }
-
-### Java
     
-    
-    try (Cursor cursor = db.rawQuery("""
-        SELECT name
-        FROM Customers
-        LIMIT 10;
-        """, null)) {
-      while (cursor.moveToNext()) {
-        // Process cursor data
-      }
-    }
 
 ### Read only the columns you need
 
 Avoid selecting unneeded columns, which can slow down your queries and waste resources. Instead, only select columns that are used.
 
 In the following example, you select `id`, `name`, and `phone`:
-
-### Kotlin
     
     
     // This is not the most efficient way of doing this.
@@ -237,26 +214,9 @@ In the following example, you select `id`, `name`, and `phone`:
             // Further processing
         }
     }
-
-### Java
     
-    
-    // This is not the most efficient way of doing this.
-    // See the following example for a better approach.
-    
-    try (Cursor cursor = db.rawQuery("""
-        SELECT id, name, phone
-        FROM customers;
-        """, null)) {
-      while (cursor.moveToNext()) {
-        String name = cursor.getString(1);
-        // Further processing
-      }
-    }
 
 However, you only need the `name` column:
-
-### Kotlin
     
     
     db.rawQuery("""
@@ -270,28 +230,14 @@ However, you only need the `name` column:
             // Further processing
         }
     }
-
-### Java
     
-    
-    try (Cursor cursor = db.rawQuery("""
-        SELECT name
-        FROM Customers;
-        """, null)) {
-      while (cursor.moveToNext()) {
-        String name = cursor.getString(0);
-        // Further processing
-      }
-    }
 
 ### Parameterize queries
 
 Your query string might include a parameter that is only known at runtime, such as the following:
-
-### Kotlin
     
     
-    fun getNameById(id: Long): String? 
+    fun getNameById(id: Long): String?
         db.rawQuery(
             "SELECT name FROM customers WHERE id=$id", null
         ).use { cursor ->
@@ -302,25 +248,9 @@ Your query string might include a parameter that is only known at runtime, such 
             }
         }
     }
-
-### Java
     
-    
-    @Nullable
-    public String getNameById(long id) {
-      try (Cursor cursor = db.rawQuery(
-          "SELECT name FROM customers WHERE id=" + id, null)) {
-        if (cursor.moveToFirst()) {
-          return cursor.getString(0);
-        } else {
-          return null;
-        }
-      }
-    }
 
 In the preceding code, every query constructs a different string, and thus doesn't benefit from the statement cache. Each call requires SQLite to compile it before it can execute. Instead, you can replace the `id` argument with a [parameter](https://www.sqlite.org/lang_expr.html#varparam) and bind the value with `selectionArgs`:
-
-### Kotlin
     
     
     fun getNameById(id: Long): String? {
@@ -338,24 +268,7 @@ In the preceding code, every query constructs a different string, and thus doesn
             }
         }
     }
-
-### Java
     
-    
-    @Nullable
-    public String getNameById(long id) {
-      try (Cursor cursor = db.rawQuery("""
-              SELECT name
-              FROM customers
-              WHERE id=?
-          """, new String[] {String.valueOf(id)})) {
-        if (cursor.moveToFirst()) {
-          return cursor.getString(0);
-        } else {
-          return null;
-        }
-      }
-    }
 
 Now the query can be compiled once and cached. The compiled query is reused between different invocations of `getNameById(long)`.
 
@@ -368,8 +281,6 @@ Use a single query that returns all targeted results, instead of a programmatic 
 ### Use `DISTINCT` for unique values
 
 Using the `DISTINCT` keyword can improve the performance of your queries by reducing the amount of data that needs to be processed. For example, if you want to return only the unique values from a column, use `DISTINCT`:
-
-### Kotlin
     
     
     db.rawQuery("""
@@ -383,25 +294,11 @@ Using the `DISTINCT` keyword can improve the performance of your queries by redu
             // Process distinct name
         }
     }
-
-### Java
     
-    
-    try (Cursor cursor = db.rawQuery("""
-        SELECT DISTINCT name
-        FROM Customers;
-        """, null)) {
-      while (cursor.moveToNext()) {
-        // Only iterate over distinct names in Java
-        // Process distinct name
-      }
-    }
 
 ### Use aggregate functions whenever possible
 
 Use aggregate functions for aggregate results without row data. For example, the following code checks whether there is at least one matching row:
-
-### Kotlin
     
     
     // This is not the most efficient way of doing this.
@@ -421,30 +318,9 @@ Use aggregate functions for aggregate results without row data. For example, the
             // No customers from Paris
             // Handle not found
     }
-
-### Java
     
-    
-    // This is not the most efficient way of doing this.
-    // See the following example for a better approach.
-    
-    try (Cursor cursor = db.rawQuery("""
-        SELECT id, name
-        FROM Customers
-        WHERE city = 'Paris';
-        """, null)) {
-      if (cursor.moveToFirst()) {
-        // At least one customer from Paris
-        // Handle found
-      } else {
-        // No customers from Paris
-        // Handle not found
-      }
-    }
 
 To only fetch the first row, you can use `EXISTS()` to return `0` if a matching row does not exist and `1` if one or more rows match:
-
-### Kotlin
     
     
     db.rawQuery("""
@@ -464,25 +340,7 @@ To only fetch the first row, you can use `EXISTS()` to return `0` if a matching 
             // Handle not found
         }
     }
-
-### Java
     
-    
-    try (Cursor cursor = db.rawQuery("""
-        SELECT EXISTS (
-          SELECT null
-          FROM Customers
-          WHERE city = 'Paris'
-        );
-        """, null)) {
-      if (cursor.moveToFirst() && cursor.getInt(0) == 1) {
-        // At least one customer from Paris
-        // Handle found
-      } else {
-        // No customers from Paris
-        // Handle not found
-      }
-    }
 
 Use [SQLite aggregate functions](https://www.sqlite.org/lang_aggfunc.html) in your app code:
 
@@ -492,11 +350,11 @@ Use [SQLite aggregate functions](https://www.sqlite.org/lang_aggfunc.html) in yo
   * `AVG`: finds the average numerical value.
   * `GROUP_CONCAT`: concatenates strings with an optional separator.
 
+
+
 ### Use `COUNT()` instead of `Cursor.getCount()`
 
 In the following example, the [`Cursor.getCount()`](/reference/android/database/Cursor#getCount\(\)) function reads all the rows from the database and returns all the row values:
-
-### Kotlin
     
     
     // This is not the most efficient way of doing this.
@@ -511,24 +369,9 @@ In the following example, the [`Cursor.getCount()`](/reference/android/database/
         val count = cursor.getCount()
         // Use count
     }
-
-### Java
     
-    
-    // This is not the most efficient way of doing this.
-    // See the following example for a better approach.
-    
-    try (Cursor cursor = db.rawQuery("""
-        SELECT id
-        FROM Customers;
-        """, null)) {
-      int count = cursor.getCount();
-      // Use count
-    }
 
 However, by using `COUNT()`, the database returns only the count:
-
-### Kotlin
     
     
     db.rawQuery("""
@@ -541,26 +384,13 @@ However, by using `COUNT()`, the database returns only the count:
         val count = cursor.getInt(0)
         // Use count
     }
-
-### Java
     
-    
-    try (Cursor cursor = db.rawQuery("""
-        SELECT COUNT(*)
-        FROM Customers;
-        """, null)) {
-      cursor.moveToFirst();
-      int count = cursor.getInt(0);
-      // Use count
-    }
 
 ### Nest queries instead of code
 
 SQL is composable and supports subqueries, joins, and foreign key constraints. You can use the result of one query in another query without going through app code. This reduces the need to copy data from SQLite and lets the database engine optimize your query.
 
 In the following example, you can run a query to find which city has the most customers, then use the result in another query to find all the customers from that city:
-
-### Kotlin
     
     
     // This is not the most efficient way of doing this.
@@ -589,37 +419,9 @@ In the following example, you can run a query to find which city has the most cu
             }
         }
     }
-
-### Java
     
-    
-    // This is not the most efficient way of doing this.
-    // See the following example for a better approach.
-    
-    try (Cursor cursor = db.rawQuery("""
-        SELECT city
-        FROM Customers
-        GROUP BY city
-        ORDER BY COUNT(*) DESC
-        LIMIT 1;
-        """, null)) {
-      if (cursor.moveToFirst()) {
-        String topCity = cursor.getString(0);
-        try (Cursor innerCursor = db.rawQuery("""
-            SELECT name, city
-            FROM Customers
-            WHERE city = ?;
-            """, new String[] {topCity})) {
-            while (innerCursor.moveToNext()) {
-              // Process inner cursor data
-            }
-        }
-      }
-    }
 
 To get the result in half the time of the previous example, use a single SQL query with nested statements:
-
-### Kotlin
     
     
     db.rawQuery("""
@@ -639,33 +441,13 @@ To get the result in half the time of the previous example, use a single SQL que
             // Process cursor data
         }
     }
-
-### Java
     
-    
-    try (Cursor cursor = db.rawQuery("""
-        SELECT name, city
-        FROM Customers
-        WHERE city IN (
-          SELECT city
-          FROM Customers
-          GROUP BY city
-          ORDER BY COUNT(*) DESC
-          LIMIT 1
-        );
-        """, null)) {
-      while(cursor.moveToNext()) {
-        // Process cursor data
-      }
-    }
 
 ### Check uniqueness in SQL
 
 If a row must not be inserted unless a particular column value is unique in the table, then it might be more efficient to enforce that uniqueness as a column constraint.
 
 In the following example, one query is run to validate the row to be inserted and another to actually insert:
-
-### Kotlin
     
     
     // This is not the most efficient way of doing this.
@@ -693,33 +475,9 @@ In the following example, one query is run to validate the row to be inserted an
             customer.username
         )
     )
+    
 
-### Java
-    
-    
-    // This is not the most efficient way of doing this.
-    // See the following example for a better approach.
-    
-    try (Cursor cursor = db.rawQuery("""
-        SELECT EXISTS (
-          SELECT null
-          FROM customers
-          WHERE username = ?
-        );
-        """, new String[] { customer.username })) {
-      if (cursor.moveToFirst() && cursor.getInt(0) == 1) {
-        throw new AddCustomerException(customer);
-      }
-    }
-    db.execSQL(
-        "INSERT INTO customers VALUES (?, ?, ?)",
-        new String[] {
-          String.valueOf(customer.id),
-          customer.name,
-          customer.username,
-        });
-
-Instead of checking the unique constraint in Kotlin or Java, you can check it in SQL when you define the table:
+Instead of checking the unique constraint in Kotlin, you can check it in SQL when you define the table:
     
     
     CREATE TABLE Customers(
@@ -739,8 +497,6 @@ SQLite does the same as the following:
 **Note:** An index table is created for `username`, which uses extra storage. For more information about querying an index table, see Accelerate queries with indexes.
 
 Now you can insert a row and let SQLite check the constraint:
-
-### Kotlin
     
     
     try {
@@ -751,21 +507,7 @@ Now you can insert a row and let SQLite check the constraint:
     } catch(e: SQLiteConstraintException) {
         throw AddCustomerException(customer, e)
     }
-
-### Java
     
-    
-    try {
-      db.execSQL(
-          "INSERT INTO Customers VALUES (?, ?, ?)",
-          new String[] {
-            String.valueOf(customer.id),
-            customer.name,
-            customer.username,
-          });
-    } catch (SQLiteConstraintException e) {
-      throw new AddCustomerException(customer, e);
-    }
 
 **Note:** If you define `INTEGER PRIMARY KEY`, then a unique constraint applies to that column and doesn't use an extra index table.
 
@@ -776,13 +518,11 @@ SQLite supports unique indexes with multiple columns:
     CREATE UNIQUE INDEX unique_table ON table(column1, column2, ...);
     
 
-SQLite validates constraints faster and with less overhead than Kotlin or Java code. It is a best practice to use SQLite rather than app code.
+SQLite validates constraints faster and with less overhead than Kotlin code. It is a best practice to use SQLite rather than app code.
 
 ### Batch multiple insertions in a single transaction
 
 A transaction commits multiple operations, which improves not only efficiency but also correctness. To improve data consistency and accelerate performance, you can batch insertions:
-
-### Kotlin
     
     
     db.beginTransaction()
@@ -796,24 +536,7 @@ A transaction commits multiple operations, which improves not only efficiency bu
     } finally {
         db.endTransaction()
     }
-
-### Java
     
-    
-    db.beginTransaction();
-    try {
-      for (customer : Customers) {
-        db.execSQL(
-            "INSERT INTO Customers VALUES (?, ?, ?)",
-            new String[] {
-              String.valueOf(customer.id),
-              customer.name,
-              "customerValue"
-            });
-      }
-    } finally {
-      db.endTransaction()
-    }
 
 **Note:** Only one write transaction can occur at a time. Use `MoreExecutors.newSequentialExecutor(Executor)` to serialize writes.
 
@@ -961,21 +684,35 @@ Under `DATABASES` you'll find:
   * `cache size`: number of pages in the cache (count). To get the size in KB, multiply this number by `pgsz`.
   * `Dbname`: path to DB file. In our example some DBs have `(1)` or another number appended to their name, to indicate that there is more than one connection to the same underlying database. Stats are tracked per connection.
 
+
+
 Under `POOL STATS` you'll find:
 
   * `cache hits`: SQLite caches prepared statements and attempts to reuse them when running queries, to save some effort and memory in compiling SQL statements. This is the number of statement cache hits (count).
   * `cache misses`: number of statement cache misses (count).
   * `cache size`: starting with Android 17, this lists the total number of prepared statements in the cache. In earlier versions, this value is equivalent to the sum of hits and misses listed in the other two columns, and does not represent the cache size.
 
+
+
+## Additional resources
+
+### Views content
+
+  * [Best practices for SQLite performance (Views)](/topic/performance/views/sqlite-performance-best-practices-views)
+
+
+
 ## Recommended for you
 
   * Note: link text is displayed when JavaScript is off
   * [Run benchmarks in Continuous Integration](/topic/performance/benchmarking/benchmarking-in-ci)
-  * [Frozen frames](/topic/performance/vitals/frozen)
+  * [Frozen frames](/topic/performance/issues/render#frozen-frames)
   * [Create and measure Baseline Profiles without Macrobenchmark](/topic/performance/baselineprofiles/manually-create-measure)
+
+
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-05-19 UTC.
+Last updated 2026-09-21 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-05-19 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-21 UTC."],[],[]] 

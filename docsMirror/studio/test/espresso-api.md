@@ -4,10 +4,11 @@
 
 ---
 
-#  Test against screen configuration changes with the Espresso Device API
-Use the Espresso Device API to test your app when the device undergoes common configuration changes, such as rotation and screen unfolding. The Espresso Device API is the recommended tool for simulating device-level actions alongside your Jetpack Compose testing rules. If you're new to writing UI tests for Jetpack Compose, see [Testing your Compose layout](/develop/ui/compose/testing).
+#  Test against screen configuration changes with the Espresso Device API Save and categorize content based on your preferences. 
 
-The Espresso Device API lets you simulate configuration changes on a virtual device and executes your tests synchronously, so only one UI action or assertion happens at a time and your test results are more reliable. If you're new to writing UI tests with Espresso, see its [documentation](/training/testing/espresso).
+Use the Espresso Device API to test your app when the device undergoes common configuration changes, such as rotation and screen unfolding. The Espresso Device API is the recommended tool for performing device-level actions alongside your Jetpack Compose testing rules. If you're new to writing UI tests for Jetpack Compose, see [Testing your Compose layout](/develop/ui/compose/testing).
+
+The Espresso Device API lets you trigger configuration changes on a virtual device and execute your tests synchronously, so only one UI action or assertion happens at a time and your test results are more reliable. If you're new to writing UI tests with Espresso, see its [documentation](/training/testing/espresso).
 
 To use the Espresso Device API, you need the following:
 
@@ -16,14 +17,21 @@ To use the Espresso Device API, you need the following:
   * Android Emulator 33.1.10 or higher
   * Android virtual device that runs API level 24 or higher
 
+
+
 ## Set up your project for the Espresso Device API
 
 To set up your project so it supports the Espresso Device API, do the following:
 
-  1. To let the test pass commands to the test device, add the `INTERNET` and `ACCESS_NETWORK_STATE` permissions to the manifest file in the `androidTest` source set:
+  1. To let the test pass commands to the test device, add the required network permissions to the manifest file in the `androidTest` source set:
          
          <uses-permission android:name="android.permission.INTERNET" />
            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+         
+
+If your test targets **Android 17 (API level 37) or higher** , you must also declare the `ACCESS_LOCAL_NETWORK` permission:
+         
+         <uses-permission android:name="android.permission.ACCESS_LOCAL_NETWORK" />
          
 
   2. Enable the `enableEmulatorControl` experimental flag in the `gradle.properties` file:
@@ -56,24 +64,29 @@ To set up your project so it supports the Espresso Device API, do the following:
 ### Kotlin
          
          dependencies {
-           androidTestImplementation("androidx.test.espresso:espresso-device:1.0.1")
+           androidTestImplementation("androidx.test.espresso:espresso-device:1.1.0")
          }
 
 ### Groovy
          
          dependencies {
-           androidTestImplementation 'androidx.test.espresso:espresso-device:1.0.1'
+           androidTestImplementation 'androidx.test.espresso:espresso-device:1.1.0'
          }
+
+
+
 
 ## Test against common configuration changes
 
-The Espresso Device API has multiple screen orientation and foldable states that you can use to simulate device configuration changes. The following examples show how to trigger these device states and verify the resulting UI changes using Compose test rules.
+The Espresso Device API has multiple screen orientation and foldable states that you can use to trigger device configuration changes. The following examples show how to trigger these device states and verify the resulting UI changes using Compose test rules.
 
 ### Test against screen rotation
 
+To test screen rotation, you can use the `ScreenOrientationRule` class to define the device orientation during your test.
+
 Here's an example of how to test what happens to your app when the device screen rotates:
 
-  1. First, define your Compose test rule and set the device to a consistent starting state (like portrait mode):
+  1. First, define your Compose test rule and use the `ScreenOrientationRule` class to set the device to a consistent starting state (like portrait mode):
          
          import androidx.compose.ui.test.assertIsDisplayed
          import androidx.compose.ui.test.assertDoesNotExist
@@ -94,6 +107,24 @@ Here's an example of how to test what happens to your app when the device screen
              // 2. Define the Espresso Device rule for a consistent starting state
              @get:Rule
              val screenOrientationRule = ScreenOrientationRule(ScreenOrientation.PORTRAIT)
+         }
+         
+
+If your test targets Android 17 (API level 37) or higher, the Espresso Device API requires the `ACCESS_LOCAL_NETWORK` permission. You must ensure this permission is granted before the `ScreenOrientationRule` rule runs. Use JUnit's `RuleChain` to run the `GrantPermissionRule` rule first:
+         
+         import androidx.test.rule.GrantPermissionRule
+         import org.junit.rules.RuleChain
+         
+         class MyConfigurationTest {
+             val grantPermissionRule = GrantPermissionRule.grant(android.Manifest.permission.ACCESS_LOCAL_NETWORK)
+             val composeTestRule = createComposeRule()
+             val screenOrientationRule = ScreenOrientationRule(ScreenOrientation.PORTRAIT)
+         
+             @get:Rule
+             val chain = RuleChain
+                 .outerRule(grantPermissionRule)
+                 .around(composeTestRule)
+                 .around(screenOrientationRule)
          }
          
 
@@ -119,6 +150,9 @@ Here's an example of how to test what happens to your app when the device screen
            composeTestRule.onNodeWithTag("BottomBar").assertDoesNotExist()
          }
          
+
+
+
 
 ### Test against screen unfolding
 
@@ -147,6 +181,9 @@ Here's an example of how to test what happens to your app if it's on a foldable 
          }
          
 
+
+
+
 ## Specify what devices your tests need
 
 If you're running a test that performs folding actions on a device that isn't foldable, the test will likely fail. To execute only the tests that are relevant to the running device, use the `@RequiresDeviceMode` annotation. The test runner automatically skips running tests on devices that don't support the configuration being tested. You can add the device requirement rule to each test or an entire test class.
@@ -163,6 +200,6 @@ For example, to specify that a test should only be run on devices that support u
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-16 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-16 UTC."],[],[]] 

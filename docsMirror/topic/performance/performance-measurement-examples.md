@@ -4,7 +4,8 @@
 
 ---
 
-#  Examples of performance measurement and analysis
+#  Examples of performance measurement and analysis Save and categorize content based on your preferences. 
+
 These examples show how to use system tracing with Macrobenchmark, along with memory profiling, to measure and improve certain kinds of performance problems.
 
 ## Debugging app startup using systrace
@@ -15,7 +16,7 @@ When debugging startup time, we recommend using systrace logs. Systrace is a sys
 
 To learn more about basic systrace usage, see the following video: [Debugging Application Performance](https://www.youtube.com/watch?v=qXVxuLvzKek).
 
-In order to analyze startup time, you must first understand what happens during startup. If you want more information than what is explained on this page, the [documentation on App startup time](/topic/performance/vitals/launch-time) provides an overview of the application startup process.
+In order to analyze startup time, you must first understand what happens during startup. If you want more information than what is explained on this page, the [documentation on App startup time](/topic/performance/issues/launch-time) provides an overview of the application startup process.
 
 The stages of app startup are:
 
@@ -25,13 +26,17 @@ The stages of app startup are:
   * Inflate the layout
   * Draw the first frame
 
+
+
 Startup types have the following stages:
 
   * Cold start: This occurs when the application is being started for the first time since boot, or since the application process was killed, either by the user or by the system. Startup creates a new process with no [saved state](/reference/android/os/Bundle).
   * Warm start: This occurs when the application is already running in the background, but the activity must be recreated and brought to the foreground. The activity is either recreated while reusing the existing process, or the process is recreated with saved state. The Macrobenchmark testing library supports consistent warm startup testing using the first option.
   * Hot start: This occurs when the process and activity are still running and merely need to be brought to the foreground, possibly recreating some objects as necessary, as well as rendering the new foreground activity. This is the shortest startup scenario.
 
-We recommend capturing systraces [using the on-device system tracing app available in Developer Options](/topic/performance/tracing/on-device). If you'd like to use command-line tools, [Perfetto](http://perfetto.dev/docs) is available for use with Android 10 (API level 29) and higher, while devices on earlier versions should use [systrace](/topic/performance/vitals/launch-time).
+
+
+We recommend capturing systraces [using the on-device system tracing app available in Developer Options](/topic/performance/tracing/on-device). If you'd like to use command-line tools, [Perfetto](http://perfetto.dev/docs) is available for use with Android 10 (API level 29) and higher, while devices on earlier versions should use [systrace](/topic/performance/issues/launch-time).
 
 Note that the term “first frame” is a bit of a misnomer since applications can vary significantly in how they handle startup after creating the initial activity. Some applications will continue inflation for several frames, while others will even immediately launch into a secondary activity.
 
@@ -55,7 +60,7 @@ With figure 4, note that other processes performing I/O at the same time can cau
 
 Significant activity on other threads can interfere with the UI thread, so watch out for background work during startup. Note that devices can have different CPU configurations, so the number of threads that can run in parallel can vary across devices.
 
-Also check out the guide on [common sources of jank](/topic/performance/vitals/render#common-jank)
+Also check out the guide on [common sources of jank](/topic/performance/issues/render#common-jank)
 
 ## Use Android Studio memory profiler
 
@@ -119,14 +124,18 @@ The ultimate impact of memory improvements such as these is:
   * The app will be killed less often due to Out of Memory issues if the app does not constantly have memory pressure.
   * Having fewer GCs improves jank metrics. This is because GCs cause CPU contention, which can lead to rendering tasks being deferred while GC is happening.
 
+
+
 ## Recommended for you
 
   * Note: link text is displayed when JavaScript is off
   * [Capture Macrobenchmark metrics](/topic/performance/benchmarking/macrobenchmark-metrics)
   * [App startup analysis and optimization {:#app-startup-analysis-optimization}](/topic/performance/appstartup/analysis-optimization)
 
+
+
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-05-19 UTC.
+Last updated 2026-09-21 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-05-19 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-21 UTC."],[],[]] 

@@ -3,6 +3,16 @@
 **Source:** [https://developer.android.com/design/ui/wear](https://developer.android.com/design/ui/wear)
 
 ---
+
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Design & Plan ](https://developer.android.com/design)
+  * [ UI Design ](https://developer.android.com/design/ui)
+  * [ Wear ](https://developer.android.com/design/ui/wear)
+
+
+
+Save and categorize content based on your preferences. 
+
 ![](https://developer.android.com/static/wear/images/design/landing-hero.png)
 
 ###  Design for Wear OS 
@@ -12,8 +22,6 @@ Watches enable users to get information at a glance and then take action. These 
 Create immersive and engaging user experiences on Wear OS to increase app usage and brand loyalty.
 
 [Getting started guide](https://developer.android.com/design/ui/wear/guides/get-started)
-
-##  Get started 
 
 [ ![](https://developer.android.com/static/images/design/ui/wear/getting-started.svg) ](https://developer.android.com/design/ui/wear/guides/get-started)
 
@@ -38,8 +46,6 @@ Learn fundamentals for designing on Wear OS.
 Optimize for a variety of screen sizes, at high quality. 
 
 [Learn more about designing more adaptive apps](https://developer.android.com/design/ui/wear/guides/foundations/quality-tiers)
-
-##  Design for Wear OS surfaces 
 
 [ ![](https://developer.android.com/static/wear/images/design/landing-apps.png) ](https://developer.android.com/design/ui/wear/guides/surfaces/apps)
 
@@ -89,8 +95,6 @@ Optimize your Wear OS app's experience for kids.
 
 [Learn more](https://developer.android.com/training/wearables/kids/develop)
 
-##  Explore our kits 
-
 [ ![](https://developer.android.com/static/wear/images/design/design-kit-apps.svg) ](https://www.figma.com/community/file/1506418396052412186)
 
 ###  [ Design kit for apps ](https://www.figma.com/community/file/1506418396052412186)
@@ -107,8 +111,6 @@ Use the design kit for tiles to apply our pre-built styles and components. Downl
 
 [Download kit for tiles](https://www.figma.com/community/file/1507852095734722321)
 
-##  Develop for Wear 
-
 [ ![](https://developer.android.com/static/images/design/ui/mobile/guides-developer.png) ](https://developer.android.com/training/wearables/principles)
 
 ###  [ Developer guides ](https://developer.android.com/training/wearables/principles)
@@ -124,8 +126,6 @@ Use our developer guides and API reference to learn how to build Wear OS apps.
 Assess the quality of your app by using our checklist. 
 
 [See app quality](https://developer.android.com/docs/quality-guidelines/wear-app-quality)
-
-##  Check out our latest videos 
 
 [ ![](https://developer.android.com/static/images/design/ui/wear/ux-research-yt.png) ](https://www.youtube.com/watch?v=puGn72d86qw)
 

@@ -4,8 +4,13 @@
 
 ---
 
-Overview of the Google Play Core libraries
-This page describes the Google Play Core libraries and how to add them to your project. **Important:** The Google Play Core Java and Kotlin library have been split into multiple separate libraries, one for each feature. Update to the new libraries to benefit from new product additions. For more information, see the migration guide. The Google Play Core libraries are your app's runtime interface with the Google Play Store. Some of the things you can do include the following:
+#  Overview of the Google Play Core libraries Save and categorize content based on your preferences. 
+
+This page describes the Google Play Core libraries and how to add them to your project.
+
+**Important:** The Google Play Core Java and Kotlin library have been split into multiple separate libraries, one for each feature. Update to the new libraries to benefit from new product additions. For more information, see the migration guide.
+
+The Google Play Core libraries are your app's runtime interface with the Google Play Store. Some of the things you can do include the following:
 
   * [Download additional language resources](/guide/playcore/feature-delivery/on-demand#lang_resources)
   * [Manage delivery of feature modules](/guide/playcore/feature-delivery)
@@ -13,12 +18,28 @@ This page describes the Google Play Core libraries and how to add them to your p
   * [Trigger in-app updates](/guide/playcore/in-app-updates)
   * [Request in-app reviews](/guide/playcore/in-app-review)
 
-The Play Core libraries are available in [Java](/reference/com/google/android/play/core/packages), [native](/reference/native/play/core), and [Unity](/reference/unity). For more information about the latest releases, see the [Release notes](/reference/com/google/android/play/core/release-notes). Migration from the Play Core Java and Kotlin Library The Play Core Java and Kotlin Library has been partitioned into multiple per-feature Android libraries. This reduces the size Play Core libraries add to your app and allows for faster release cycles of the individual features. The behavior of each feature has stayed consistent in this migration, the only notable change is that the new versions have adopted [Google Play Services' Task API](https://developers.google.com/android/reference/com/google/android/gms/tasks/Task). Use the list below to migrate to the new libraries and benefit from new features and bug fixes. If you use multiple Play features, you can simply import multiple libraries in your `build.gradle` file at once. Common migration steps
+
+
+The Play Core libraries are available in [Java](/reference/com/google/android/play/core/packages), [native](/reference/native/play/core), and [Unity](/reference/unity). For more information about the latest releases, see the [Release notes](/reference/com/google/android/play/core/release-notes).
+
+## Migration from the Play Core Java and Kotlin Library
+
+The Play Core Java and Kotlin Library has been partitioned into multiple per-feature Android libraries. This reduces the size Play Core libraries add to your app and allows for faster release cycles of the individual features.
+
+The behavior of each feature has stayed consistent in this migration, the only notable change is that the new versions have adopted [Google Play Services' Task API](https://developers.google.com/android/reference/com/google/android/gms/tasks/Task).
+
+Use the list below to migrate to the new libraries and benefit from new features and bug fixes. If you use multiple Play features, you can simply import multiple libraries in your `build.gradle` file at once.
+
+### Common migration steps
 
   1. Update any existing import statements of Task objects from `import com.google.android.play.core.tasks.*;` to `import com.google.android.gms.tasks.*;`. All class names are unchanged.
   2. Remove any imports of the old Play Core libraries in your `build.gradle` file.
 
-Integrate the Play Asset Delivery Library Groovy
+
+
+### Integrate the Play Asset Delivery Library
+
+### Groovy
     
     
     // In your app's build.gradle file:
@@ -33,7 +54,7 @@ Integrate the Play Asset Delivery Library Groovy
         ...
     }
 
-Kotlin
+### Kotlin
     
     
     // In your app's build.gradle.kts file:
@@ -48,7 +69,9 @@ Kotlin
         ...
     }
 
-Integrate the Play Feature Delivery Library Groovy
+### Integrate the Play Feature Delivery Library
+
+### Groovy
     
     
     // In your app's build.gradle file:
@@ -63,7 +86,7 @@ Integrate the Play Feature Delivery Library Groovy
         ...
     }
 
-Kotlin
+### Kotlin
     
     
     // In your app's build.gradle.kts file:
@@ -78,7 +101,9 @@ Kotlin
         ...
     }
 
-Integrate the Play In-App Review Library Groovy
+### Integrate the Play In-App Review Library
+
+### Groovy
     
     
     // In your app's build.gradle file:
@@ -93,7 +118,7 @@ Integrate the Play In-App Review Library Groovy
         ...
     }
 
-Kotlin
+### Kotlin
     
     
     // In your app's build.gradle.kts file:
@@ -108,7 +133,9 @@ Kotlin
         ...
     }
 
-Integrate the Play In-App Update Library Groovy
+### Integrate the Play In-App Update Library
+
+### Groovy
     
     
     // In your app's build.gradle file:
@@ -123,7 +150,7 @@ Integrate the Play In-App Update Library Groovy
         ...
     }
 
-Kotlin
+### Kotlin
     
     
     // In your app's build.gradle.kts file:
@@ -138,7 +165,9 @@ Kotlin
         ...
     }
 
-Play Core Software Development Kit Terms of Service Last modified: September 24, 2020 
+## Play Core Software Development Kit Terms of Service
+
+Last modified: September 24, 2020 
 
   1. By using the Play Core Software Development Kit, you agree to these terms in addition to the [Google APIs Terms of Service](https://developers.google.com/terms) ("API ToS"). If these terms are ever in conflict, these terms will take precedence over the API ToS. Please read these terms and the API ToS carefully.
   2. For purposes of these terms, "APIs" means Google's APIs, other developer services, and associated software, including any Redistributable Code.
@@ -146,4 +175,10 @@ Play Core Software Development Kit Terms of Service Last modified: September 24,
   4. Subject to these terms and the terms of the API ToS, you may copy and distribute Redistributable Code solely for inclusion as part of your API Client. Google and its licensors own all right, title and interest, including any and all intellectual property and other proprietary rights, in and to Redistributable Code. You will not modify, translate, or create derivative works of Redistributable Code.
   5. Google may make changes to these terms at any time with notice and the opportunity to decline further use of the Play Core Software Development Kit. Google will post notice of modifications to the terms at <https://developer.android.com/guide/playcore/license>. Changes will not be retroactive.
 
-Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates. Last updated 2026-06-18 UTC. [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+
+
+Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
+
+Last updated 2026-09-16 UTC.
+
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-16 UTC."],[],[]] 

@@ -3,6 +3,16 @@
 **Source:** [https://developer.android.com/design/ui/desktop](https://developer.android.com/design/ui/desktop)
 
 ---
+
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Design & Plan ](https://developer.android.com/design)
+  * [ UI Design ](https://developer.android.com/design/ui)
+  * [ Desktop experience ](https://developer.android.com/design/ui/desktop)
+
+
+
+Save and categorize content based on your preferences. 
+
 ![](https://developer.android.com/static/images/design/ui/desktop/desktop_header.webp)
 
 ###  Design for desktop 
@@ -10,8 +20,6 @@
 Leverage a larger display to maximize productivity with higher information density, multi-tasking through multi-window capabilities, precise tasks with pointer-based interactions, and physical keyboard support for accessibility and efficient typing. 
 
 [Go to desktop foundations](https://developer.android.com/design/ui/desktop/guides/foundations/design-principles)
-
-##  Get started 
 
 [ ![](https://developer.android.com/static/images/design/ui/wear/surfaces.svg) ](https://developer.android.com/design/ui/desktop/guides/foundations/design-principles)
 
@@ -43,8 +51,6 @@ Bars provided by the system that give users information and controls for interac
 
 [Go to guidance](https://developer.android.com/design/ui/desktop/guides/system/system-bars)
 
-##  Enhance your app's productivity 
-
 [ ![](https://developer.android.com/static/images/design/ui/desktop/desktop_landing_windowed.webp) ](https://developer.android.com/design/ui/desktop/guides/system/multi-task)
 
 ###  [ Multi-tasking apps ](https://developer.android.com/design/ui/desktop/guides/system/multi-task)
@@ -70,10 +76,6 @@ Gallery
 Explore inspiring, optimized designs for all screen sizes and devices. Browse UI/UX templates for popular app categories, including media, creativity, games, and more. 
 
 [View the gallery](https://developer.android.com/design/ui/gallery)
-
-##  Explore our kits 
-
-Explore our other Figma-based library kits, plugins, and the Material theme builder. Start building your Android app with modern themes, tools and user-generated dynamic color, or check out our [Wear OS kits](/design/ui/wear#explore-our-kits) and [TV kits](/design/ui/tv#explore-our-kits) to build for other devices. 
 
 [ ![](https://developer.android.com/static/images/design/ui/mobile/kits-android-ui.png) ](https://goo.gle/android-ui-kit)
 

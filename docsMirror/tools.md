@@ -4,13 +4,18 @@
 
 ---
 
-#  Command-line tools
+#  Command-line tools Save and categorize content based on your preferences. 
+
+**Note:** For information about Android CLI commands, see the [Android CLI command reference](/tools/agents/android-cli/commands).
+
 The Android SDK is composed of multiple packages that are required for app development. This page lists the most important command-line tools that are available, organized by the packages in which they're delivered.
 
 You can install and update each package using Android Studio's [SDK Manager](/studio/intro/update#sdk-manager) or the [`sdkmanager`](/studio/command-line/sdkmanager) command-line tool. All of the packages are downloaded into your Android SDK directory, which you can locate as follows:
 
   1. In Android Studio, click **File > Project Structure**.
   2. Select **SDK Location** in the left pane. The path is shown under **Android SDK location**.
+
+
 
 ### Set environment variables
 
@@ -19,6 +24,7 @@ We recommend setting the environment variable for [`ANDROID_HOME`](/studio/comma
 ## Android SDK Command-Line Tools
 
 Located in: `android_sdk/cmdline-tools/version/bin/`  
+
 
 Note: The Android SDK Command-Line Tools package, located in `cmdline-tools`, replaces the SDK Tools package, located in `tools`. With the new package, you can select the version of the command line tools you want to install, and you can install multiple versions at a time. With the old package, you can only install the latest version of the tools. Thus, the new package lets you depend on specific versions of the command-line tools without having your code break when new versions are released. For information about the deprecated SDK Tools package, see the [SDK Tools release notes](/studio/releases/sdk-tools). 
 
@@ -89,6 +95,6 @@ This package is required to use the Android Emulator. It includes the following:
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2025-11-19 UTC.
+Last updated 2026-09-25 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-11-19 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-25 UTC."],[],[]] 

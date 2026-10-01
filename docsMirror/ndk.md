@@ -3,7 +3,8 @@
 **Source:** [https://developer.android.com/ndk](https://developer.android.com/ndk)
 
 ---
-##  Android NDK 
+
+Save and categorize content based on your preferences. 
 
 The Android NDK is a toolset that lets you implement parts of your app in native code, using languages such as C and C++. For certain types of apps, this can help you reuse code libraries written in those languages. 
 
@@ -15,9 +16,5 @@ class MyActivity : Activity() {
 */  
 external fun computeFoo()  
 } 
-
-##  Latest news 
-
-##  Optimize your native code 
 
 [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]] 

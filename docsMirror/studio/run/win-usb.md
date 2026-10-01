@@ -4,7 +4,8 @@
 
 ---
 
-#  Get the Google USB Driver
+#  Get the Google USB Driver Save and categorize content based on your preferences. 
+
 The Google USB Driver is required to perform [`adb`](/studio/command-line/adb) debugging on Windows with Google devices. Windows drivers for all other devices are provided by the respective hardware manufacturer, as listed in [Install OEM USB drivers](/tools/extras/oem-usb).
 
 **Note:** If you're developing on macOS or Linux, then you **do not** need to install a USB driver. Instead see [Run apps on a hardware device](/studio/run/device).
@@ -25,6 +26,9 @@ There are two ways to download the Google USB Driver for Windows:
     4. Install the package. When done, the driver files are downloaded into the `android_sdk\extras\google\usb_driver\` directory.
 
 Using the SDK Manager helps you keep the driver up to date by notifying you when your current driver is out of date.
+
+
+
 
 For installation information, read [Install a USB driver](/studio/run/oem-usb#InstallingDriver).
 

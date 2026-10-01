@@ -3,6 +3,9 @@
 **Source:** [https://developer.android.com/tv](https://developer.android.com/tv)
 
 ---
+
+Save and categorize content based on your preferences. 
+
 ###  Android TV 
 
 Build apps that let users experience your app's immersive content on the big screen. Users can discover your content recommendations on the home screen. The Leanback library provides APIs to help you build a great user experience for a remote control. 
@@ -42,14 +45,6 @@ Android on TV
 The Android TV platform user interface provides the launch pad for your app's big screen experience. It's important to understand how your app is presented in the main user interface and how your app can help users get to the content they want quickly. 
 
 [Design for Android TV](https://developer.android.com/design/ui/tv)
-
-##  Latest news 
-
-[View more news](https://android-developers.googleblog.com/search/label/Android%20TV)
-
-##  Latest videos 
-
-[View more videos](https://www.youtube.com/user/androiddevelopers/search?query=%23androidtv%2C%23tv)
 
 [ ![](https://developer.android.com/static/images/blogger.png) ](https://android-developers.googleblog.com/)
 

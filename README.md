@@ -31,11 +31,17 @@ Dependencies:
 ### Usage
 
 ```bash
-# Scrape from the main page (limited to 100 pages by default)
+# Scrape everything starting from the main page (no limit)
 python scrape_android_docs.py
 
-# Scrape a specific section with a custom limit
-python scrape_android_docs.py --url https://developer.android.com/guide --max-pages 50
+# Resume a previous session — already scraped URLs in scraped_urls.txt are skipped automatically
+python scrape_android_docs.py
+
+# Scrape a specific section
+python scrape_android_docs.py --url https://developer.android.com/guide
+
+# Limit the number of pages
+python scrape_android_docs.py --max-pages 50
 
 # Change the delay between requests (default: 2s)
 python scrape_android_docs.py --delay 1
@@ -44,12 +50,21 @@ python scrape_android_docs.py --delay 1
 python scrape_android_docs.py --output my_folder
 ```
 
+### Registry
+
+Each scraped URL is appended to `scraped_urls.txt` immediately after being processed. On the next run, the script loads this file and skips any URL already in it. This means:
+
+- Interrupted runs resume from where they left off
+- Re-running the script only fetches pages not yet scraped
+
+To force a full re-scrape, delete `scraped_urls.txt`.
+
 ### Options
 
 | Argument | Default | Description |
 |-----------|---------|-------------|
 | `--url` | `https://developer.android.com/?hl=en` | Starting URL |
-| `--max-pages` | `100` | Maximum number of pages to download |
+| `--max-pages` | `0` (unlimited) | Maximum number of pages to download |
 | `--delay` | `2` | Seconds to wait between requests |
 | `--output` | `docsMirror` | Output directory |
 

@@ -4,10 +4,12 @@
 
 ---
 
-#  Analyze your build with the APK Analyzer
+#  Analyze your build with the APK Analyzer Save and categorize content based on your preferences. 
+
 Android Studio includes an APK Analyzer that provides immediate insight into the composition of your APK or Android App Bundle after the build process completes. Using the APK Analyzer can reduce the time you spend debugging issues with DEX files and resources within your app and help reduce your APK size. The APK Analyzer is also available from the command line with [`apkanalyzer`](/studio/command-line/apkanalyzer).
 
   
+
 
 With the APK Analyzer, you can:
 
@@ -16,11 +18,22 @@ With the APK Analyzer, you can:
   * Quickly view the final versions of files in the app, such as the `AndroidManifest.xml` file.
   * Perform a side-by-side comparison of two APKs or app bundles.
 
+
+
 There are three ways to access the APK Analyzer when a project is open:
 
   * Drag an APK or app bundle into the **Editor** window of Android Studio.
   * Switch to the **Project** view in the **Project** window, then double-click the APK in the default `build/output/apks/` directory.
   * Select **Build > Analyze APK** in the menu bar, then select your APK or app bundle.
+
+
+
+Use an [Android skill](/tools/agents/android-skills) to optimize your app's size and performance using R8.
+
+To install the skill from the [Android CLI](/tools/agents/android-cli), run:
+    
+    
+    android skills add r8-analyzer
 
 ## View file and size information
 
@@ -34,7 +47,7 @@ The APK Analyzer shows the zipped file size (or "raw file size") and download fi
 
 If your project includes multiple `AndroidManifest.xml` files, such as for product flavors, or includes libraries that also provide a manifest file, they are merged into a single file in your app. This manifest file is normally a binary file within the APK or app bundle, but when selected in the APK Analyzer, the XML form of this entity is reconstructed and presented.
 
-This viewer helps you understand any changes that might have been made to your app during the build. For example, you are able to see how the `AndroidManifest.xml` file from a library your application depends on is merged into the final `AndroidManifest.xml` file.
+This viewer helps you understand any changes that might have been made to your app during the build. For example, you can see how the `AndroidManifest.xml` file from a library your application depends on is merged into the final `AndroidManifest.xml` file.
 
 Additionally, this viewer provides some lint capabilities. Warnings or errors appear in the top-right corner. Figure 2 shows an error being reported for the selected manifest file.
 
@@ -42,7 +55,7 @@ Additionally, this viewer provides some lint capabilities. Warnings or errors ap
 
 ## View DEX files
 
-The APK Analyzer's DEX file viewer gives you immediate access to the underlying information in the DEX file(s) in your app. The viewer provides class, package, total reference, and declaration counts, which can assist in deciding whether to use multidex or how to remove dependencies to get below the [64K DEX limit](/studio/build/multidex).
+The APK Analyzer's DEX file viewer gives you immediate access to the underlying information in the DEX files in your app. The viewer provides class, package, total reference, and declaration counts, which can assist in deciding whether to use multidex or how to remove dependencies to get below the [64K DEX limit](/studio/build/multidex).
 
 Figure 3 shows a medium-size app that is below the 64K DEX limit. Each package, class, and method inside the DEX file has counts listed in the **Defined Methods** and **Referenced Methods** columns.
 
@@ -67,7 +80,10 @@ To use the filters to display all methods and fields inside a class, do the foll
   5. Toggle **Show methods** ![](/static/studio/images/buttons/apk-methods.png) to show or hide the class methods.
   6. Toggle **Show all referenced methods or fields** ![](/static/studio/images/buttons/apk-methods-fields.png) to show or hide referenced packages, classes, methods, and fields.
 
-In the tree view, italicized nodes are references that don't have a definition in the selected DEX file. A DEX file can reference methods and fields that are defined in a different a file. For example `System.out.println()` is a reference to the `println()` method in the Android framework.
+In the tree view, italicized nodes are references that don't have a definition in the selected DEX file. A DEX file can reference methods and fields that are defined in a different file. For example, `System.out.println` is a reference to the `println` method in the Android framework.
+
+
+
 
 ## Load ProGuard mappings
 
@@ -86,6 +102,9 @@ The mapping files are normally in `project/app/build/outputs/mappings/release/`.
 
 First, the file picker checks for filenames that exactly match `mapping.txt`, `seeds.txt`, and `usage.txt`. Next, the file picker checks for filenames that contain the text `mapping`, `usage`, or `seeds` somewhere and end with `.txt`. For example `release-seeds-1.10.15.txt` is a match.
 
+
+
+
 The following list describes the mapping files:
 
   * `seeds.txt`: Nodes that the ProGuard configuration prevents from being removed during shrinking are shown in bold.
@@ -93,6 +112,9 @@ The following list describes the mapping files:
   * `usage.txt`: Enables **Show removed nodes** ![](/static/studio/images/buttons/apk-show-removed-nodes.png) so you can show classes, methods, and fields that were removed by R8 during shrinking. The restored nodes are shown in strikethrough.
 
 For more information about using R8 to obfuscate and minimize your code, see [Shrink, obfuscate, and optimize your app](/studio/build/shrink-code).
+
+
+
 
 ## Show bytecode, find usages, and generate Keep rule
 
@@ -134,12 +156,15 @@ Before you publish an updated app, do the following:
 
 A dialog similar to the one in figure 11 appears to help you assess the impact the update might have on users.
 
+
+
+
 Figure 11 shows the difference between a particular app's debug and release builds. Different build options are in use between these build types, which alter the underlying entities differently.
 
 ![](/static/studio/images/build/apk-compare_2x.png) **Figure 11.** The difference between a debug and release APK.
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-03-06 UTC.
+Last updated 2026-09-02 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-03-06 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-02 UTC."],[],[]] 

@@ -4,8 +4,9 @@
 
 ---
 
-#  Android Device Streaming, powered by Firebase
-**Note:** Android Device Streaming is only available in the latest stable channel version of Android Studio and major versions (including their patches) released in the previous 10 months. Currently, the oldest supported version is **Narwhal 4 Feature Drop**. If you are using an older version of Android Studio, you will need to update to access Cloud services. For more information, see [Android Studio and Cloud services compatibility](/studio/releases#service-compat).
+#  Android Device Streaming, powered by Firebase Save and categorize content based on your preferences. 
+
+**Note:** Android Device Streaming is only available in the latest stable channel version of Android Studio and major versions (including their patches) released in the previous 10 months. Currently, the oldest supported version is **Otter 3 Feature Drop**. If you are using an older version of Android Studio, you will need to update to access Cloud services. For more information, see [Android Studio and Cloud services compatibility](/studio/releases#service-compat).
 
 Android Device Streaming, powered by Firebase, lets you securely connect to remote physical Android devices hosted in Google's secure data centers and Android Partner Device Labs. It's the fastest and easiest way to test your app against physical units of some of the latest Android devices, including the Google Pixel 9, 9a 9 Pro, Pixel Fold, and a diverse set of models from Samsung, OPPO, OnePlus, Xiaomi, vivo, and Transsion.
 
@@ -39,6 +40,8 @@ To get started, follow these steps:
      * If you get an error that you lack the proper permissions to use device streaming with the selected project, follow the [instructions to enable permissions](https://developer.android.com/studio/run/android-device-streaming#permissions).
   6. Click **Confirm**.
 
+
+
 A default set of devices should appear automatically in the Device Manager for you to use. You can connect to a device by either clicking **Start** action next to a device, or by selecting a device from the deploy target drop-down in the main toolbar and deploying your app, like you normally would.
 
 After Android Studio reserves and connects to the device you requested, the **Running Devices** window will appear. To extend a session, click the **Extend Reservation** button from the **Running Devices** window toolbar and select the duration you want to extend your session by.
@@ -56,6 +59,8 @@ If you don't have these permissions for your existing Firebase projects, you can
   5. Click **Add another role** and select **Service Usage Consumer** from the **Select a role** drop-down.
   6. Save the changes by clicking **Save**
 
+
+
 ### Try the full catalog of devices
 
 To browse additional devices and add them to the Device Manager, do the following:
@@ -65,6 +70,8 @@ To browse additional devices and add them to the Device Manager, do the followin
   
 ![](/static/studio/images/device-streaming-configure.png)
   3. Click **Confirm**. The device(s) you selected should now appear in the Device Manager.
+
+
 
 ### End your session
 
@@ -97,6 +104,8 @@ An Editor or Owner of the project is required to enable each partner lab on the 
   2. Click the toggle for the device lab you want to enable and follow the prompts.
   3. After the partner lab is enabled, you and your team can use the devices in Android Studio.
 
+
+
 ## Pricing for Android Device Streaming
 
 For more information, see [Firebase usage levels, quotas, and pricing](https://firebase.google.com/docs/test-lab/usage-quotas-pricing#device-streaming).
@@ -127,6 +136,6 @@ See [service permissions](/studio/services#service-permissions).
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-02 UTC.
+Last updated 2026-09-01 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-02 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-01 UTC."],[],[]] 

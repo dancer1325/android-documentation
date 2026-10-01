@@ -3,6 +3,9 @@
 **Source:** [https://developer.android.com/get-started/codelabs](https://developer.android.com/get-started/codelabs)
 
 ---
+
+Save and categorize content based on your preferences. 
+
 ![](https://developer.android.com/static/images/hero-assets/android-codelabs.svg)
 
 ###  Android codelabs 

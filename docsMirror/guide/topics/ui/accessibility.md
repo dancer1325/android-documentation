@@ -3,6 +3,16 @@
 **Source:** [https://developer.android.com/guide/topics/ui/accessibility](https://developer.android.com/guide/topics/ui/accessibility)
 
 ---
+
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Design & Plan ](https://developer.android.com/design)
+  * [ App quality ](https://developer.android.com/quality)
+  * [ User experience ](https://developer.android.com/quality/user-experience)
+
+
+
+Save and categorize content based on your preferences. 
+
 ![](https://developer.android.com/static/images/guide/topics/ui/accessibility/hero-accessibility.svg)
 
 ###  Build accessible apps 
@@ -76,6 +86,8 @@ Now in Android is a fully functional Android app built entirely with Kotlin and 
   * Android System
   * UI
 
+
+
 Intermediate 
 
 [ ![](https://developer.android.com/static/images/logos/stack-overflow.svg) ](https://stackoverflow.com/questions/tagged/android-a11y)
@@ -93,8 +105,6 @@ Ask Android accessibility related questions on StackOverflow.
 Report an issue related to accessibility development to Google. 
 
 [File accessibility issues](https://issuetracker.google.com/issues/new?component=1161519&template=1662302)
-
-##  Latest news 
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

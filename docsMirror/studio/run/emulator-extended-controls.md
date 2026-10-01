@@ -4,7 +4,8 @@
 
 ---
 
-#  Extended controls, settings, and help
+#  Extended controls, settings, and help Save and categorize content based on your preferences. 
+
 Use the extended controls on the Android Emulator to send data, change device properties, control apps, and more. To open the **Extended controls** window, click **More** ![Emulator extended controls icon](/static/studio/images/buttons/emulator-extended-controls.png) in the emulator panel. Note that some of these extended control options are only available when you run the emulator in a separate window, outside of Android Studio.
 
 You can use keyboard shortcuts to perform many of these tasks. For a complete list of shortcuts in the emulator, press `F1` (`Command`+`/`

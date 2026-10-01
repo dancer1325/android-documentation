@@ -3,6 +3,16 @@
 **Source:** [https://developer.android.com/design/ui/widget](https://developer.android.com/design/ui/widget)
 
 ---
+
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Design & Plan ](https://developer.android.com/design)
+  * [ UI Design ](https://developer.android.com/design/ui)
+  * [ Widgets ](https://developer.android.com/design/ui/widget)
+
+
+
+Save and categorize content based on your preferences. 
+
 ![](https://developer.android.com/static/images/design/ui/widget/widget-hero.png)
 
 ###  Widgets on Android 
@@ -10,8 +20,6 @@
 Add widgets to level up your user experience. Widgets are customizable home screen elements that display a clear and actionable view of an app's content or actions. 
 
 [Go to design foundations](https://developer.android.com/design/ui/mobile/guides/widgets) [Download the Widget Figma kit](https://goo.gle/android-ui-kit)
-
-##  Getting started 
 
 [ ![](https://developer.android.com/static/images/design/ui/widget/layouts.svg) ](https://developer.android.com/design/ui/mobile/guides/widgets/layouts)
 
@@ -53,8 +61,6 @@ Learn to promote your widget on the widget picker by using appropriate sizing an
 
 [See guidance](https://developer.android.com/design/ui/mobile/guides/widgets/discovery-promotion)
 
-##  Adapt
-
 [ ![](https://developer.android.com/static/images/design/ui/widget/cross-form-factor.png) ](https://developer.android.com/design/ui/mobile/guides/widgets)
 
 ###  [ Widgets across form factors ](https://developer.android.com/design/ui/mobile/guides/widgets)
@@ -62,8 +68,6 @@ Learn to promote your widget on the widget picker by using appropriate sizing an
 Design your widget once to transition seamlessly across a variety of form factors, from mobile to auto and wear. Use responsive layout techniques and size-specific definitions to ensure your content automatically adapts for a high-quality experience on every screen. 
 
 [Learn more](https://developer.android.com/design/ui/mobile/guides/widgets)
-
-##  Layouts
 
 [ ![](https://developer.android.com/static/images/design/ui/widget/layouts-content.jpg) ](https://developer.android.com/design/ui/mobile/guides/widgets)
 
@@ -81,8 +85,6 @@ Get up and running with our ready-made, responsive layouts that cater to the mos
 
 [Learn more](https://developer.android.com/design/ui/mobile/guides/widgets/layouts)
 
-##  Sizing
-
 [ ![](https://developer.android.com/static/images/design/ui/widget/sizing-responsive.jpg) ](https://developer.android.com/design/ui/mobile/guides/widgets/sizing)
 
 ###  [ Responsive layouts ](https://developer.android.com/design/ui/mobile/guides/widgets/sizing)
@@ -98,8 +100,6 @@ Make sure your widget is flexible and consider how your widget could be resized.
 Home screen space is precious so it's important to make sure your widget is built to make best use of the space it's been allocated. 
 
 [Learn more](https://developer.android.com/design/ui/mobile/guides/widgets/sizing#fill_the_bounds)
-
-##  Style
 
 [ ![](https://developer.android.com/static/images/design/ui/widget/style-anatomy.jpg) ](https://developer.android.com/design/ui/mobile/guides/widgets/style)
 
@@ -117,8 +117,6 @@ To better fit in with a user's home screen, allow your widget to adapt to system
 
 [Learn more](https://developer.android.com/design/ui/mobile/guides/widgets/style#color)
 
-##  Discovery & promotion
-
 [ ![](https://developer.android.com/static/images/design/ui/widget/discovery-promotion-requirements.jpg) ](https://developer.android.com/design/ui/mobile/guides/widgets/discovery-promotion)
 
 ###  [ Widget picker requirements ](https://developer.android.com/design/ui/mobile/guides/widgets/discovery-promotion)
@@ -134,8 +132,6 @@ From recommended widget sizes to high quality previews, review our guidance to h
 Widget quality affects how users interact with or find your widget. Check out the quality tiers to help your widget stand out and get noticed. 
 
 [Learn more](https://developer.android.com/docs/quality-guidelines/widget-quality)
-
-##  Download the kit 
 
 [ ![](https://developer.android.com/static/images/design/ui/widget/figma-community.jpg) ](https://goo.gle/android-ui-kit)
 

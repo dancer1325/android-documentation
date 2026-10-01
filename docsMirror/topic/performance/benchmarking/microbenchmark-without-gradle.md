@@ -4,7 +4,8 @@
 
 ---
 
-#  Build Microbenchmarks without Gradle
+#  Build Microbenchmarks without Gradle Save and categorize content based on your preferences. 
+
 This page describes configuring a non-Gradle build system when using the Microbenchmark library.
 
 Although the Microbenchmark library ships a Gradle plugin to integrate directly with the Android Gradle plugin, you can also use it in other build systems, such as [Bazel](https://bazel.build) or [Buck](https://buck.build).
@@ -97,6 +98,8 @@ To configure the Microbenchmark library at runtime without Gradle, see [Microben
   * Note: link text is displayed when JavaScript is off
   * [Write a Microbenchmark](/topic/performance/benchmarking/microbenchmark-write)
   * [Create Baseline Profiles {:#creating-profile-rules}](/topic/performance/baselineprofiles/create-baselineprofile)
+
+
 
 [ Previous arrow_back  Microbenchmark and Hilt  ](/topic/performance/benchmarking/microbenchmark-and-hilt)
 

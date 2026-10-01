@@ -4,20 +4,23 @@
 
 ---
 
-#  Write a Macrobenchmark
-Use the Macrobenchmark library for testing larger use cases of your app, including app startup and complex UI manipulations, such as scrolling a [`RecyclerView`](/reference/androidx/recyclerview/widget/RecyclerView) or running animations. If you want to test smaller areas of your code, refer to [Microbenchmark library](/topic/performance/benchmarking/microbenchmark-overview). This page shows how to set up the Macrobenchmark library.
+#  Write a Macrobenchmark Save and categorize content based on your preferences. 
 
-The library outputs benchmarking results to both the Android Studio console and a JSON file with more detail. It also provides trace files that you can load and analyze in Android Studio.
+Use the Macrobenchmark library for testing larger use cases of your app, including app startup and complex UI manipulations, such as scrolling a [`LazyColumn`](/develop/ui/compose/lists) or running animations. If you want to test smaller areas of your code, see [Microbenchmark](/topic/performance/benchmarking/microbenchmark-overview). This page shows how to set up the Macrobenchmark library.
+
+The library outputs benchmarking results to the Android Studio console and to a JSON file with more detail. It also provides trace files that you can load and analyze in Android Studio.
 
 Use the Macrobenchmark library in a continuous integration (CI) environment, as described in [Benchmark in Continuous Integration](/topic/performance/benchmarking/benchmarking-in-ci).
 
 You can use Macrobenchmark to generate Baseline Profiles. First, set up the Macrobenchmark library, then you can [create a Baseline Profile](/topic/performance/baselineprofiles#creating-profile-rules).
 
+Macrobenchmark is the recommended tool for testing UIs created with Jetpack Compose. To learn how to write UI Automator tests that interact with your Compose nodes, see [Interoperability](/develop/ui/compose/testing/interoperability).
+
 ## Project setup
 
-We recommend you use Macrobenchmark with the latest version of Android Studio for features of the IDE that integrate with Macrobenchmark.
+We recommend you use Macrobenchmark with the latest version of Android Studio.
 
-### Setup the Macrobenchmark module
+### Set up the Macrobenchmark module
 
 Macrobenchmarks require a [`com.android.test`](/studio/test#use_separate_test_modules_for_instrumented_tests) module—separate from your app code—that is responsible for running the tests that measure your app.
 
@@ -27,22 +30,20 @@ To use the module template to create a new module, do the following:
 
   1. Right-click your project or module in the **Project** panel in Android Studio, and select **New > Module**.
 
-  2. Select **Benchmark** from the **Templates** pane. You can customize the target app—meaning, the app to be benchmarked—as well as package and module name for the new Macrobenchmark module.
+  2. Select **Benchmark** from the **Templates** pane. You can customize the target app—meaning the app to be benchmarked—as well as the package and module name for the new Macrobenchmark module.
 
   3. Click **Finish**.
 
-![Benchmark Module
-template](/static/topic/performance/images/benchmark_images/macrobenchmark_module_bumblebee.png)
 
-**Figure 1.** Benchmark module template.
+![Benchmark Module template.](/static/topic/performance/images/benchmark_images/macrobenchmark_module_bumblebee-R2.png) **Figure 1.** Benchmark module template.
 
 ### Set up the app
 
 To benchmark an app—known as the _target_ of the Macrobenchmark—the app must be [`profileable`](/studio/profile#profileable-apps), which enables reading detailed trace information without affecting performance. The module wizard adds the [`<profileable>`](/guide/topics/manifest/profileable-element) tag automatically to the app's `AndroidManifest.xml` file.
 
-Make sure that the target app includes [`ProfilerInstaller`](/jetpack/androidx/releases/profileinstaller) 1.3 or higher, which the Macrobenchmark library needs to enable profile capture and reset and shader cache clearing.
+Make sure that the target app includes [`ProfilerInstaller`](/jetpack/androidx/releases/profileinstaller) 1.3 or later, which the Macrobenchmark library needs to enable profile capture and reset and shader cache clearing.
 
-Configure the benchmarked app as close to the release version or production as possible. Set it up as non-debuggable and preferably with minification on, which improves performance. You typically do this by creating a copy of the release variant, which performs the same, but is signed locally with debug keys. Alternatively, you can use `initWith` to instruct Gradle to do it for you:
+Configure the benchmarked app as close to the release version or production as possible. Set it up as non-debuggable and preferably with minification on, which improves performance. You typically do this by creating a copy of the release variant, which performs the same but is signed locally with debug keys. Alternatively, you can use `initWith` to instruct Gradle to do it for you:
 
 ### Kotlin
     
@@ -77,7 +78,7 @@ Configure the benchmarked app as close to the release version or production as p
         }
     }
     
-    [build.gradle.kts](https://github.com/android/performance-samples/blob/cae5530b13ce3adf7bd54ea5bd92fe9b4fb8c585/MacrobenchmarkSample/app/build.gradle.kts#L43-L55)
+    [build.gradle.kts](https://github.com/android/performance-samples/blob/58c9ccb9e04706ee2a915604eee5720721601af9/MacrobenchmarkSample/app/build.gradle.kts#L43-L55)
 
 To help ensure that running the benchmark both builds and tests the correct variant of your app, as shown in figure 2, do the following:
 
@@ -85,16 +86,11 @@ To help ensure that running the benchmark both builds and tests the correct vari
   2. Open the **Build Variants** panel.
   3. Select the benchmark variant of both the app and the Macrobenchmark module.
 
-![Select benchmark
-variant](/static/topic/performance/images/benchmark_images/benchmark_variant.png)
-
-**Figure 2.** Select the benchmark variant.
-
-**Note:** See the [sample Macrobenchmark module](https://github.com/android/performance-samples/tree/main/MacrobenchmarkSample/macrobenchmark) for reference on how to set up your project to be Macrobenchmark-ready.
+![Select benchmark variant.](/static/topic/performance/images/benchmark_images/benchmark_variant-R2.png) **Figure 2.** Select the benchmark variant. **Note:** See the [sample Macrobenchmark module](https://github.com/android/performance-samples/tree/main/MacrobenchmarkSample/macrobenchmark) for reference on how to set up your project to be Macrobenchmark-ready.
 
 ### (Optional) Set up multi-module app
 
-If your app has more than one Gradle module, make sure your build scripts know which build variant to compile. Add`matchingFallbacks` property into the `benchmark` build type of your `:macrobenchmark` and `:app` modules. The rest of your Gradle modules can have the same configuration as before.
+If your app has more than one Gradle module, make sure your build scripts know which build variant to compile. Add the `matchingFallbacks` property into the `benchmark` build type of your `:macrobenchmark` and `:app` modules. The rest of your Gradle modules can have the same configuration as before.
 
 ### Kotlin
     
@@ -126,21 +122,17 @@ Without this, the newly added `benchmark` build type causes the build to fail an
           ...
     
 
-When selecting the build variants in your project, choose `benchmark` for `:app` and `:macrobenchmark` modules, and `release` for any other modules you have in your app, as shown in figure 3:
+When selecting the build variants in your project, choose `benchmark` for the `:app` and `:macrobenchmark` modules and `release` for any other modules you have in your app, as shown in figure 3:
 
-![Benchmark variants for multi-module project with release and benchmark build
-types
-selected](/static/topic/performance/images/benchmark_images/macrobenchmark_variants_multi_modules.jpg)
+![Benchmark variants for multi-module project with release and benchmark build types selected.](/static/topic/performance/images/benchmark_images/macrobenchmark_variants_multi_modules-R2.png) **Figure 3.** Benchmark variants for multi-module project with release and benchmark build types selected.
 
-**Figure 3.** Benchmark variants for multi-module project with release and benchmark build types selected.
-
-For more information, see [Use variant-aware dependency management](/studio/build/build-variants#resolve_matching_errors).
+For more information, see [Resolve build errors related to variant matching](/studio/build/build-variants#resolve_matching_errors).
 
 ### (Optional) Set up product flavors
 
-If you have multiple product flavors set in your app, configure the `:macrobenchmark` module, so that it knows what product flavor of your app to build and benchmark.
+If you have multiple product flavors set in your app, configure the `:macrobenchmark` module so that it knows what product flavor of your app to build and benchmark.
 
-The examples in this page are using the two product flavors in the `:app` module: `demo` and `production`, as shown in the following snippet:
+The examples in this page use the two product flavors in the `:app` module, `demo` and `production`, as shown in the following snippet:
 
 ### Kotlin
     
@@ -173,7 +165,7 @@ The examples in this page are using the two product flavors in the `:app` module
         }
     }
 
-Without this configuration, you might get a build error similar to with multiple Gradle modules:
+Without this configuration, you might get a build error similar to the one caused by multiple Gradle modules:
     
     
     Could not determine the dependencies of task ':macrobenchmark:connectedBenchmarkAndroidTest'.
@@ -189,7 +181,7 @@ Without this configuration, you might get a build error similar to with multiple
                ...
     
 
-The two following sections are ways to configure benchmarking with multiple product flavors.
+The two following sections describe ways to configure benchmarking with multiple product flavors.
 
 #### Use missingDimensionStrategy
 
@@ -244,19 +236,15 @@ If you want to build and benchmark other product flavors, define them in the `:m
 
 After defining and syncing the project, choose the relevant build variant from the **Build Variants** pane, as shown in figure 4:
 
-![Benchmark variants for project with product flavors showing
-productionBenchmark and release
-selected](/static/topic/performance/images/benchmark_images/macrobenchmark_variants_product_flavors.jpg)
-
-**Figure 4.** Benchmark variants for the project with product flavors showing "productionBenchmark" and "release" selected.
+![Benchmark variants for project with product flavors showing productionBenchmark and release selected.](/static/topic/performance/images/benchmark_images/macrobenchmark_variants_product_flavors-R2.png) **Figure 4.** Benchmark variants for the project with product flavors showing "productionBenchmark" and "release" selected.
 
 For more information, see [Resolve build errors related to variant matching](/studio/build/build-variants#resolve_matching_errors).
 
-## Create a macrobenchmark class
+## Create a Macrobenchmark class
 
 Benchmark testing is provided through the [`MacrobenchmarkRule`](/reference/kotlin/androidx/benchmark/macro/junit4/MacrobenchmarkRule) JUnit4 rule API in the Macrobenchmark library. It contains a [`measureRepeated`](/reference/kotlin/androidx/benchmark/macro/junit4/MacrobenchmarkRule#measureRepeated\(kotlin.String,kotlin.collections.List,androidx.benchmark.macro.CompilationMode,androidx.benchmark.macro.StartupMode,kotlin.Int,kotlin.Function1,kotlin.Function1\)) method that lets you specify various conditions on how to run and benchmark the target app.
 
-You need to at least specify the `packageName` of the target app, what `metrics` you want to measure and how many `iterations` the benchmark must run.
+You need to at least specify the `packageName` of the target app, what `metrics` you want to measure, and how many `iterations` the benchmark must run.
 
 ### Kotlin
     
@@ -278,44 +266,54 @@ You need to at least specify the `packageName` of the target app, what `metrics`
         }
     }
     
-    [SampleStartupBenchmark.kt](https://github.com/android/performance-samples/blob/cae5530b13ce3adf7bd54ea5bd92fe9b4fb8c585/MacrobenchmarkSample/macrobenchmark/src/main/kotlin/com/example/macrobenchmark/benchmark/startup/SampleStartupBenchmark.kt#L31-L46)
+    [SampleStartupBenchmark.kt](https://github.com/android/performance-samples/blob/58c9ccb9e04706ee2a915604eee5720721601af9/MacrobenchmarkSample/macrobenchmark/src/main/kotlin/com/example/macrobenchmark/benchmark/startup/SampleStartupBenchmark.kt#L31-L46)
 
-### Java
+For all the options on customizing your benchmark, see the Customize the benchmarks section.
+
+**Note:** If your `measureBlock` requires interacting with UI elements (such as scrolling a list to measure [`FrameTimingMetric`](/reference/kotlin/androidx/benchmark/macro/FrameTimingMetric)), use [UI Automator](/training/testing/other-components/ui-automator). You can enable [`testTagAsResourceId`](/develop/ui/compose/testing/interoperability) to interact with Compose modifiers.
+
+## Benchmark Compose UI interactions
+
+While the previous example measures app startup, you will often want to measure UI performance, such as frame drops ([jank](/studio/profile/jank-detection)) while scrolling.
+
+To benchmark a Jetpack Compose application, such as to measure `FrameTimingMetric` while scrolling a `LazyColumn`, you can use UI Automator to interact directly with your Compose nodes, as shown in the following snippet.
+
+**Tip:** To allow UI Automator to find your Compose elements, enable `testTagAsResourceId = true` on the semantics modifier of your top-level Compose element.
     
     
     @LargeTest
-    @RunWith(AndroidJUnit4.class)
-    public class SampleStartupBenchmark {
-        @Rule
-        public MacrobenchmarkRule benchmarkRule = new MacrobenchmarkRule();
+    @RunWith(AndroidJUnit4::class)
+    class ComposeScrollBenchmark {
+        @get:Rule
+        val benchmarkRule = MacrobenchmarkRule()
     
         @Test
-        public void startup() {
-            benchmarkRule.measureRepeated(
-                /* packageName */ TARGET_PACKAGE,
-                /* metrics */ Arrays.asList(new StartupTimingMetric()),
-                /* iterations */ 5,
-                /* measureBlock */ scope -> {
-                    // starts default launch activity
-                    scope.startActivityAndWait();
-                    return Unit.INSTANCE;
-                }
-            );
+        fun scrollLazyColumn() = benchmarkRule.measureRepeated(
+            packageName = "com.example.compose.app",
+            metrics = listOf(FrameTimingMetric()),
+            iterations = 5,
+            startupMode = StartupMode.WARM,
+            setupBlock = { pressHome() }
+        ) {
+            startActivityAndWait()
+    
+            // Find the Compose node using the testTag defined in your app
+            val lazyColumn = device.findObject(By.res("my_lazy_column"))
+    
+            // Simulate a scroll gesture to measure FrameTimingMetric
+            lazyColumn.setGestureMargin(device.displayWidth / 5)
+            lazyColumn.fling(Direction.DOWN)
         }
     }
-
-For all the options on customizing your benchmark, see Customize the benchmarks section.
+    
 
 ## Run the benchmark
 
-**Note:** Use Android 14 (API level 34) or later to persist state when benchmarking. The Macrobenchmark library fully resets the compilation state for each compile, which on Android versions earlier than 14 require reinstalling the APK. As a workaround, control app compilation separately and skip compilation using `CompilationMode.Ignore`.
+**Note:** Use Android 14 (API level 34) or later to persist state when benchmarking. The Macrobenchmark library fully resets the compilation state for each compile, which on Android versions earlier than 14 requires reinstalling the APK. As a workaround, control app compilation separately and skip compilation using `CompilationMode.Ignore`.
 
 Run the test from within Android Studio to measure the performance of your app on your device. You can run the benchmarks the same way you run any other `@Test` using the gutter action next to your test class or method, as shown in the figure 5.
 
-![Run macrobenchmark with gutter action next to test
-class](/static/topic/performance/images/benchmark_images/macrobenchmark_run.png)
-
-**Figure 5.** Run Macrobenchmark with gutter action next to the test class.
+![Run Macrobenchmark with gutter action next to test class.](/static/topic/performance/images/benchmark_images/macrobenchmark_run-R2.png) **Figure 5.** Run Macrobenchmark with the gutter action next to the test class.
 
 You can also run all benchmarks in a Gradle module from the command line by executing the `connectedCheck` command:
     
@@ -333,26 +331,17 @@ See [Benchmark in Continuous Integration](/topic/performance/benchmarking/benchm
 
 ### Benchmark results
 
-After a successful benchmark run, metrics are displayed directly in Android Studio and are output for CI usage in a [JSON file](/topic/performance/benchmarking/benchmarking-in-ci#benchmark-data-example). Each measured iteration captures a separate system trace. You can open these trace results by clicking on the links in the **Test Results** pane, as shown in the figure 6:
+After a successful benchmark run, metrics are displayed directly in Android Studio and are output for CI usage in a [JSON file](/topic/performance/benchmarking/benchmarking-in-ci#benchmark-data-example). Each measured iteration captures a separate system trace. You can open these trace results by clicking the links in the **Test Results** pane, as shown in the figure 6:
 
-![Macrobenchmark startup
-results](/static/topic/performance/images/benchmark_images/macrobenchmark_results_startup.png)
-
-**Figure 6.** Macrobenchmark startup results.
+![Macrobenchmark startup results.](/static/topic/performance/images/benchmark_images/macrobenchmark_results_startup-R2.png) **Figure 6.** Macrobenchmark startup results.
 
 When the trace is loaded, Android Studio prompts you to select the process to analyze. The selection is pre-populated with the target app process, as shown in figure 7:
 
-![Studio trace process
-selection](/static/topic/performance/images/benchmark_images/studio_process.png)
-
-**Figure 7.** Studio trace process selection.
+![Studio trace process selection.](/static/topic/performance/images/benchmark_images/studio_process-R2.png) **Figure 7.** Studio trace process selection.
 
 After the trace file is loaded, Studio shows the results in the [CPU profiler tool](/studio/profile/cpu-profiler#system-trace):
 
-![Studio
-Trace](/static/topic/performance/images/benchmark_images/macrobenchmark_trace.png)
-
-**Figure 8.** Studio trace.
+![Studio trace.](/static/topic/performance/images/benchmark_images/macrobenchmark_trace-R2.png) **Figure 8.** Studio trace.
 
 JSON reports and any profiling traces are also automatically copied from the device to the host. These are written on the host machine in the following location:
     
@@ -390,6 +379,8 @@ Metrics are the main type of information extracted from your benchmarks. The fol
   * [`FrameTimingMetric`](/reference/kotlin/androidx/benchmark/macro/FrameTimingMetric)
   * [`TraceSectionMetric`](/reference/kotlin/androidx/benchmark/macro/TraceSectionMetric)
 
+
+
 For more information about metrics, see [Capture Macrobenchmark metrics](/topic/performance/benchmarking/macrobenchmark-metrics).
 
 ### Improve trace data with custom events
@@ -412,9 +403,9 @@ This feature is built on [ART compilation commands](https://source.android.com/d
 
 To perform an activity start, you can pass a predefined startup mode: [`COLD`](/reference/kotlin/androidx/benchmark/macro/StartupMode#COLD), [`WARM`](/reference/kotlin/androidx/benchmark/macro/StartupMode#WARM), or [`HOT`](/reference/kotlin/androidx/benchmark/macro/StartupMode#HOT). This parameter changes how the activity launches and the process state at the start of the test.
 
-**Warning:** If `StartupMode.COLD` is used, the app process is killed between the execution of `setupBlock` and `measureBlock` to allow for app preparation without starting the process. If you need the process to remain active, use `StartupMode.WARM`, which restarts activities without restarting the process, or set `startupMode` to `null` and call `killProcess()` within the `setupBlock`.
+**Warning:** If `StartupMode.COLD` is used, the app process is killed between the execution of `setupBlock` and `measureBlock` to allow for app preparation without starting the process. If you need the process to remain active, use `StartupMode.WARM`, which restarts activities without restarting the process, or set `startupMode` to `null` and call `killProcess` within the `setupBlock`.
 
-To learn more about the types of startup, see [App startup time](/topic/performance/vitals/launch-time).
+To learn more about the types of startup, see [App startup time](/topic/performance/issues/launch-time).
 
 ## Samples
 
@@ -431,10 +422,12 @@ To report issues or submit feature requests for Jetpack Macrobenchmark, see the 
   * [Create Baseline Profiles {:#creating-profile-rules}](/topic/performance/baselineprofiles/create-baselineprofile)
   * [Automate measurement with the Macrobenchmark library {:#measuring-optimization}](/topic/performance/baselineprofiles/measure-baselineprofile)
 
+
+
 [ Next Capture the metrics  arrow_forward  ](/topic/performance/benchmarking/macrobenchmark-metrics)
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-21 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-21 UTC."],[],[]] 

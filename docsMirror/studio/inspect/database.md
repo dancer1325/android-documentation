@@ -4,7 +4,8 @@
 
 ---
 
-#  Debug your database with the Database Inspector
+#  Debug your database with the Database Inspector Save and categorize content based on your preferences. 
+
 The Database Inspector lets you inspect, query, and modify your app's databases while your app is running. This is especially useful for database debugging. The Database Inspector works with plain SQLite and with libraries built on top of SQLite, such as [Room](/training/data-storage/room).
 
 **Note:** The Database Inspector only works with the SQLite library included in the Android operating system on API level 26 and higher. It doesn't work with other SQLite libraries that you bundle with your app.
@@ -24,6 +25,9 @@ To open a database in the Database Inspector, do the following:
 
   5. The databases in the currently running app appear in the **Databases** pane. Expand the node for the database that you want to inspect.
 
+
+
+
 ## View and modify data
 
 The **Databases** pane displays a list of the databases in your app and the tables that each database contains. Double-click a table name to display its data in the inspector window to the right, shown in figure 1. Click a column header to sort the data in the inspector window by that column.
@@ -35,6 +39,8 @@ To modify data in a table, follow these steps:
   1. Double-click a cell.
   2. Type a new value.
   3. Press `Enter`.
+
+
 
 If your app uses Room and your UI observes the database, such as with `LiveData` or `Flow`, then any changes you make to the data are immediately visible in your running app. Otherwise, changes are only visible the next time your app reads the modified data from the database.
 
@@ -73,6 +79,9 @@ To query a database, follow these steps:
 
   4. Click **Run**.
 
+
+
+
 Alternatively, use the query history feature to run a query that you used previously:
 
   1. Click the **Show query history** ![Show query history button
@@ -82,6 +91,9 @@ Alternatively, use the query history feature to run a query that you used previo
   2. Click a query in the list to see a preview of the full query in the editor, and press `Enter` to copy it to the editor.
 
   3. Click **Run** to execute the statement.
+
+
+
 
 The query results that are displayed in the **New Query** tab are read-only and can't be modified. However, you can use the custom SQL query field to run modifier statements such as `UPDATE`, `INSERT`, or `DELETE`.
 
@@ -114,6 +126,8 @@ You can export databases, tables, and query results from the Database Inspector 
   * Right-click a database or table in the **Databases** panel and select **Export to file** from the context menu.
   * When inspecting a table or query results in a tab, click **Export to file** above the table or query results.
 
+
+
 After selecting an export action, use the **Export Database** dialog to help you through the final steps, as shown in figure 6.
 
 Depending on whether you are trying to export a database, table, or query results, you have the option of exporting the data in one or more of the following formats: DB, SQL, or CSV.
@@ -129,9 +143,13 @@ To learn more about the Database Inspector, see the following additional resourc
 
   * [Database Inspector: A live database tool we've been waiting for!](https://medium.com/androiddevelopers/database-inspector-9e91aa265316)
 
+
+
 ### Videos
 
   * [Database Inspector](https://www.youtube.com/watch?v=UMc7Tu0nKYQ)
+
+
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

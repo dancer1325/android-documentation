@@ -4,7 +4,8 @@
 
 ---
 
-#  App architecture
+#  App architecture Save and categorize content based on your preferences. 
+
 App architecture design is an important consideration for ensuring that your apps are robust, testable, and maintainable. Android provides a set of libraries and components to help you put together your app according to best practices.
 
 ## Guides
@@ -12,6 +13,8 @@ App architecture design is an important consideration for ensuring that your app
   * Learn the basics of putting together a robust app with the [Guide to app architecture](/jetpack/docs/guide).
   * Improve the user experience by fine-tuning [app navigation](/guide/navigation).
   * Reduce boilerplate and make your code easier to maintain with the [dependency injection guides](/training/dependency-injection).
+
+
 
 ## Latest news and videos
 

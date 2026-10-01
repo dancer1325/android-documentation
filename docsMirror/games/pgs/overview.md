@@ -4,7 +4,8 @@
 
 ---
 
-Send feedback
+Save and categorize content based on your preferences. 
+
 ###  Google Play Games Services overview 
 
 The Google Play Games platform is a unified gaming ecosystem encompassing Android, ChromeOS, and [Windows PC](/games/playgames/overview). Developers use the Google Play Games platform to integrate Play Games Services social features into their gaming applications. Play Games Services is the primary interface between the game application and the Play Games platform. Play Games Services also provides a centralized [Gamer Profile](https://play.google.com/games/profile) account that provides consistent player identification across different devices and form factors.
@@ -20,7 +21,10 @@ Integrating Play Games Services unlocks platform capabilities that improve user 
     * **Achievements and leaderboards:** Recognize accomplishments and foster competition outside the game.
     * **Play Points:** Drives monetization by allowing players to earn and redeem points for in-game purchases.
     * **Social Graph:** Allows players to follow their friends, their activities and build a social gaming community of their own.
-  * **Play Games Sidekick (Beta):** Provides an overlay with utilities, real-time Gemini tips, and engagement tools.
+  * **Play Games Sidekick:** Provides an overlay with utilities, real-time Gemini tips, and engagement tools.
+  * **Game Stats:** cumulative statistics about your game that players can view on their Gamer profile. These stats let players track lifetime progress, see highlight moments, and compare with other players, and power Google Play features such as Quests, Social Challenges and more in the future.
+
+
 
 ## Game benefits and program advantages
 
@@ -40,14 +44,15 @@ Because Play Games Services has implemented version 2, you must distinguish betw
 
   * **In-game account identity (Managed by the Developer):** It is important to note that Play Games Services does **not** serve as a primary system for inventory management or game-state preservation. Developers are expected to utilize independent "In-Game Identity" solutions—such as Sign in with Google, Facebook, or custom backend—to manage game progress data.
 
+
+
+
 **Importance of Play Games Services to the Platform:** Play Games Services v2 operates as a platform connector. It maintains persistent authentication with the Play Games platform regardless of the specific login method used by the player. Consequently, this architecture enables the platform to aggregate gameplay statistics and distribute achievements without disrupting the developer's internal logic for saving and restoring game progress.
 
 **Impact on Games:** Play Games Services v2 SDK is a high-level integration layer for games. Developers don't need to modify existing login flows or systems to implement it.
 
-Send feedback 
-
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-16 UTC.
+Last updated 2026-08-03 UTC.
 
-Need to tell us more?  [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-16 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-08-03 UTC."],[],[]] 

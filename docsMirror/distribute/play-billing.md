@@ -4,9 +4,8 @@
 
 ---
 
-**Reminder:** By Aug 31, 2026, all new apps and updates to existing apps must use Billing Library version 8 or later. If you need more time to update your app, you can request an extension until Nov 1, 2026. Learn about [Play Billing Library version deprecation](/google/play/billing/deprecation-faq). 
+Save and categorize content based on your preferences. 
 
-Send feedback
 ![](https://developer.android.com/static/images/hero-illustrations/play-billing-hero.svg)
 
 ###  Google Play’s   
@@ -17,9 +16,6 @@ Sell digital in-app products and subscriptions in your app. Get started with Goo
 [Learn More](https://developer.android.com/google/play/billing)
 
 * * *
-
-##  Integrate with Google Play’s   
-billing system 
 
 [ ![](https://developer.android.com/static/images/picto-icons/sync.svg) ](https://developer.android.com/google/play/billing/integrate)
 
@@ -36,8 +32,6 @@ Learn how to add the Google Play Billing Library to your app and connect your ap
 This library provides a straightforward and simple interface for sending in-app billing requests and managing in-app billing transactions. 
 
 [See the API reference](https://developer.android.com/reference/com/android/billingclient/classes)
-
-##  Codelabs 
 
 [ ![](https://developer.android.com/static/images/picto-icons/code-2.svg) ](https://codelabs.developers.google.com/maximise-your-play-billing-integration)
 
@@ -71,8 +65,6 @@ Create a one-time product, integrate your app with Play Billing Library (PBL), a
 
 [Start](https://codelabs.developers.google.com/play-billing-analyze-product-purchase-drop-offs#0)
 
-##  Sample Apps 
-
 [ ![](https://developer.android.com/static/images/picto-icons/android-go-edition.svg) ](https://github.com/googlesamples/play-billing-samples/tree/main/managedcatalogue)
 
 ###  [ PBL One Time Products ](https://github.com/googlesamples/play-billing-samples/tree/main/managedcatalogue)
@@ -88,9 +80,6 @@ Fetch one-time products, set regional products, and launch the purchase flow
 Launch purchase flows for consumable and non-consumable products and handle Play Billing responses 
 
 [Go to Github](https://github.com/googlesamples/play-billing-samples/tree/main/purchases)
-
-##  Monetize your app with   
-Google Play Commerce 
 
 [ ![](https://developer.android.com/static/images/picto-icons/grow.svg) ](https://play.google.com/console/about/guides/play-commerce/)
 
@@ -128,4 +117,4 @@ Content and code samples on this page are subject to the licenses described in t
 
 Last updated 2025-11-21 UTC.
 
-Need to tell us more?  [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-11-21 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-11-21 UTC."],[],[]] 

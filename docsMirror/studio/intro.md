@@ -4,7 +4,8 @@
 
 ---
 
-#  Meet Android Studio
+#  Meet Android Studio Save and categorize content based on your preferences. 
+
 Android Studio is the official Integrated Development Environment (IDE) for Android app development. Based on the powerful code editor and developer tools from [IntelliJ IDEA](https://www.jetbrains.com/idea/), Android Studio offers even more features that enhance your productivity when building Android apps, such as:
 
   * A flexible Gradle-based build system
@@ -15,6 +16,8 @@ Android Studio is the official Integrated Development Environment (IDE) for Andr
   * Extensive testing tools and frameworks
   * Lint tools to catch performance, usability, version compatibility, and other problems
   * C++ and NDK support
+
+
 
 This page provides an introduction to basic Android Studio features. For a summary of the latest changes, see the [Android Studio release notes](/studio/releases).
 
@@ -30,6 +33,8 @@ Each project in Android Studio contains one or more modules with source code fil
   * Library modules
   * Google App Engine modules
 
+
+
 By default, Android Studio displays your project files in the **Android** view, as shown in figure 1. This view is organized by modules to provide quick access to your project's key source files. All the build files are visible at the top level, under **Gradle Scripts**.
 
 Each app module contains the following folders:
@@ -37,6 +42,8 @@ Each app module contains the following folders:
   * **manifests** : Contains the `AndroidManifest.xml` file.
   * **kotlin+java** : Contains the Kotlin and Java source code files, including JUnit test code.
   * **res** : Contains all non-code resources such as UI strings and images.
+
+
 
 The Android project structure on disk differs from this flattened representation. To see the actual file structure of the project, select **Project** instead of **Android** from the **Project** menu.
 
@@ -49,6 +56,8 @@ Android Studio uses Gradle as the foundation of the build system, with more Andr
   * Customize, configure, and extend the build process.
   * Create multiple APKs for your app with different features, using the same project and modules.
   * Reuse code and resources across source sets.
+
+
 
 By employing the flexibility of Gradle, you can achieve all of this without modifying your app's core source files.
 
@@ -96,6 +105,8 @@ Inline debug information includes:
   * Lambda and operator expressions
   * Tooltip values
 
+
+
 To enable inline debugging, in the **Debug** window, click **Settings** ![](/static/studio/images/studio-debug-settings-icon.png) and select **Show Variable Values in Editor**.
 
 ### Layout Inspector
@@ -137,6 +148,8 @@ To view the available generated data files:
   3. Right-click any HPROF files to convert them to the standard.
   4. Investigate your RAM usage file format.
 
+
+
 ### Code inspections
 
 Whenever you compile your program, Android Studio automatically runs configured [lint](/studio/write/lint) checks and other [IDE inspections](https://www.jetbrains.com/help/idea/2026.1/code-inspection.html) to help you easily identify and correct problems with the structural quality of your code.
@@ -171,6 +184,6 @@ To sign in to your developer account in Android Studio, click the profile icon !
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-23 UTC.
+Last updated 2026-09-16 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-23 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-16 UTC."],[],[]] 

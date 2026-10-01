@@ -4,7 +4,8 @@
 
 ---
 
-#  Android 17 GSI binaries and release notes
+#  Android 17 GSI binaries and release notes Save and categorize content based on your preferences. 
+
 Android [Generic System Image (GSI)](/topic/generic-system-image) binaries are available to developers for app testing and validation purposes on [supported Treble-compliant devices](/topic/generic-system-image#device-compliance). Developers can use these images to address any compatibility issues with Android 17 as well as discover and report OS and framework issues until Android 17 is officially released.
 
 GSI binaries for Android 17 are built from the same AOSP and GMS sources as the [corresponding Google Pixel builds](/about/versions/17/download). These binaries contain the same API and SDK, have a similar CTS result, and have been validated on the following Pixel devices:
@@ -31,6 +32,8 @@ GSI binaries for Android 17 are built from the same AOSP and GMS sources as the 
   * Pixel 10 Pro Fold
   * Pixel 10a
 
+
+
 See the [GSI documentation](/topic/generic-system-image) for device requirements, flashing instructions, and more information on choosing the right image type for your device.
 
 **Note:** [**File GSI bugs**](https://issuetracker.google.com/issues/new?component=1109161&template=1620756) for any system-related issues you encounter. Make sure to attach a full bug report and **clearly indicate that you are using a GSI build** in your bug description to help the Android team find your issues and address them more quickly. For app-related issues found when using a GSI, we recommend reproducing the issue on a Pixel device before contacting the app developer directly.
@@ -47,6 +50,8 @@ Before you start using a GSI, review the following general advisories:
   * Apps embedded in GSIs are for evaluation usage; some apps might not function as expected.
   * GSI releases aren't [Compatibility Test Suite (CTS)](https://source.android.com/compatibility/cts/)-approved. Apps that depend on CTS-approved builds might not work normally.
 
+
+
 ## Install with Android Flash Tool
 
 **Android Flash Tool** lets you securely flash a system image to your supported Pixel device. Android Flash Tool works with any Web browser that supports WebUSB, such as Chrome or Edge 79+.
@@ -58,12 +63,16 @@ Connect your device over USB, then, depending on the type of system image you wa
   * **ARM64 GSI with GMS** : <https://flash.android.com/preview/cinnamonbun-gsi-gms>
   * **ARM64 GSI** : <https://flash.android.com/preview/cinnamonbun-gsi>
 
+
+
 ## Known issues
 
 Android 17 GSI binaries have the following GSI-specific known issues that might occur with some devices and builds:
 
   * **Power Cycle** : Rebooting GSI might fail on some devices. To work around it, reboot the device into recovery mode, erase user data, perform a factory reset, and then reboot the device.
   * **System partition size** : GSI + GMS file size (images named `_gsi\_gms\_arm64-*_`) might be bigger than the default dynamic system partition size on your device. To work around this issue, you can delete some non-essential dynamic partitions, such as the product partition, and flash the GSI again. For more information, see the [flashing GSIs documentation](https://source.android.com/setup/build/gsi#flashing-gsis).
+
+
 
 ## Downloads
     
@@ -94,6 +103,7 @@ Before downloading, you must agree to the following terms and conditions.
 This is the Early Access Google Mobile Services and Android 17 GSI License Agreement (“License Agreement”). Google Mobile Services and Android 17 GSI (each defined below) are licensed to you subject to the terms of the License Agreement. The License Agreement forms a legally binding contract between you and Google in relation to your use of Google Mobile Services and Android 17 GSI.  
   
 
+
 ### 1\. Definitions
 
 1.1 "Android" means the Android software stack for devices, as made available under the Android Open Source Project, which is located at the following URL: https://source.android.com/, as updated from time to time.  
@@ -107,6 +117,7 @@ This is the Early Access Google Mobile Services and Android 17 GSI License Agree
 1.5 “GMS+GSI” refers to GMS and Android 17 GSI, collectively.  
   
 
+
 ### 2\. Accepting this License Agreement
 
 2.1 In order to use GMS+GSI, you must first agree to the License Agreement. You may not use GMS+GSI if you do not accept the License Agreement.  
@@ -117,6 +128,7 @@ This is the Early Access Google Mobile Services and Android 17 GSI License Agree
   
 2.4 If you are agreeing to be bound by the License Agreement on behalf of your employer or other entity, you represent and warrant that you have full legal authority to bind your employer or such entity to the License Agreement. If you do not have the requisite authority, you may not accept the License Agreement or use GMS+GSI on behalf of your employer or other entity.  
   
+
 
 ### 3\. GMS+GSI License from Google
 
@@ -142,6 +154,7 @@ This is the Early Access Google Mobile Services and Android 17 GSI License Agree
 (e) provide, sell, license, sublicense, lease, lend, or disclose GMS+GSI, or any part of GMS+GSI, to any third party,; or  
 (f) ship, divert, transship, transfer, export, or re-export GMS+GSI, or any component thereof, into any country or use it in any manner prohibited by any applicable export control laws, restrictions, or regulations.  
   
+
 
 ### 4\. Use of GMS+GSI by You
 
@@ -171,6 +184,7 @@ This is the Early Access Google Mobile Services and Android 17 GSI License Agree
 (k) interfere with Google’s over-the-air updates of GMS Applications.  
   
 
+
 ### 5\. Terminating this License Agreement
 
 5.1 The License Agreement will continue to apply until terminated by either you or Google as set out below.  
@@ -189,6 +203,7 @@ This is the Early Access Google Mobile Services and Android 17 GSI License Agree
 (D) any provisions of this License Agreement that under their terms or by implication ought to survive, will survive any termination of this License Agreement. This specifically includes, without limitation, Sections 2.3, 2.4, 3.3, 3.7, 3.8, 4, 5, 6, 7, 8 and 10.  
   
 
+
 ### 6\. DISCLAIMER OF WARRANTIES
 
 6.1 YOU EXPRESSLY UNDERSTAND AND AGREE THAT YOUR USE OF GMS+GSI IS AT YOUR SOLE RISK AND THAT GMS+GSI IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTY OF ANY KIND FROM GOOGLE.  
@@ -197,20 +212,24 @@ This is the Early Access Google Mobile Services and Android 17 GSI License Agree
 6.3 GOOGLE FURTHER EXPRESSLY DISCLAIMS ALL WARRANTIES AND CONDITIONS OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO THE IMPLIED WARRANTIES AND CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.  
   
 
+
 ### 7\. LIMITATION OF LIABILITY
 
 7.1 YOU EXPRESSLY UNDERSTAND AND AGREE THAT GOOGLE, ITS SUBSIDIARIES AND AFFILIATES, AND ITS LICENSORS SHALL NOT BE LIABLE TO YOU UNDER ANY THEORY OF LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY DAMAGES THAT MAY BE INCURRED BY YOU, INCLUDING ANY LOSS OF DATA, WHETHER OR NOT GOOGLE OR ITS REPRESENTATIVES HAVE BEEN ADVISED OF OR SHOULD HAVE BEEN AWARE OF THE POSSIBILITY OF ANY SUCH LOSSES ARISING.  
   
+
 
 ### 8\. Indemnification
 
 8.1 To the maximum extent permitted by law, you agree to defend, indemnify and hold harmless Google, its affiliates and their respective directors, officers, employees and agents from and against any and all claims, actions, suits or proceedings, as well as any and all losses, liabilities, damages, costs and expenses (including reasonable attorneys fees) arising out of or accruing from (a) your use of GMS+GSI, or (b) any non-compliance by you with the License Agreement.  
   
 
+
 ### 9\. Changes to the License Agreement
 
 9.1 Google may make changes to the License Agreement as it distributes new versions of GMS+GSI. When these changes are made, Google will make a new version of the License Agreement available on the website where GMS+GSI is made available.  
   
+
 
 ### 10\. General Legal Terms
 
@@ -228,6 +247,7 @@ This is the Early Access Google Mobile Services and Android 17 GSI License Agree
   
 10.7 The License Agreement, and your relationship with Google under the License Agreement, shall be governed by the laws of the State of California without regard to its conflict of laws provisions. You and Google agree to submit to the exclusive jurisdiction of the courts located within the county of Santa Clara, California to resolve any legal matter arising from the License Agreement. Notwithstanding this, you agree that Google shall still be allowed to apply for injunctive remedies (or an equivalent type of urgent legal relief) in any jurisdiction.  
   
+
 
 I have read and agree with the above terms and conditions
 
@@ -244,6 +264,7 @@ Before downloading, you must agree to the following terms and conditions.
 This is the Early Access Google Mobile Services and Android 17 GSI License Agreement (“License Agreement”). Google Mobile Services and Android 17 GSI (each defined below) are licensed to you subject to the terms of the License Agreement. The License Agreement forms a legally binding contract between you and Google in relation to your use of Google Mobile Services and Android 17 GSI.  
   
 
+
 ### 1\. Definitions
 
 1.1 "Android" means the Android software stack for devices, as made available under the Android Open Source Project, which is located at the following URL: https://source.android.com/, as updated from time to time.  
@@ -257,6 +278,7 @@ This is the Early Access Google Mobile Services and Android 17 GSI License Agree
 1.5 “GMS+GSI” refers to GMS and Android 17 GSI, collectively.  
   
 
+
 ### 2\. Accepting this License Agreement
 
 2.1 In order to use GMS+GSI, you must first agree to the License Agreement. You may not use GMS+GSI if you do not accept the License Agreement.  
@@ -267,6 +289,7 @@ This is the Early Access Google Mobile Services and Android 17 GSI License Agree
   
 2.4 If you are agreeing to be bound by the License Agreement on behalf of your employer or other entity, you represent and warrant that you have full legal authority to bind your employer or such entity to the License Agreement. If you do not have the requisite authority, you may not accept the License Agreement or use GMS+GSI on behalf of your employer or other entity.  
   
+
 
 ### 3\. GMS+GSI License from Google
 
@@ -292,6 +315,7 @@ This is the Early Access Google Mobile Services and Android 17 GSI License Agree
 (e) provide, sell, license, sublicense, lease, lend, or disclose GMS+GSI, or any part of GMS+GSI, to any third party,; or  
 (f) ship, divert, transship, transfer, export, or re-export GMS+GSI, or any component thereof, into any country or use it in any manner prohibited by any applicable export control laws, restrictions, or regulations.  
   
+
 
 ### 4\. Use of GMS+GSI by You
 
@@ -321,6 +345,7 @@ This is the Early Access Google Mobile Services and Android 17 GSI License Agree
 (k) interfere with Google’s over-the-air updates of GMS Applications.  
   
 
+
 ### 5\. Terminating this License Agreement
 
 5.1 The License Agreement will continue to apply until terminated by either you or Google as set out below.  
@@ -339,6 +364,7 @@ This is the Early Access Google Mobile Services and Android 17 GSI License Agree
 (D) any provisions of this License Agreement that under their terms or by implication ought to survive, will survive any termination of this License Agreement. This specifically includes, without limitation, Sections 2.3, 2.4, 3.3, 3.7, 3.8, 4, 5, 6, 7, 8 and 10.  
   
 
+
 ### 6\. DISCLAIMER OF WARRANTIES
 
 6.1 YOU EXPRESSLY UNDERSTAND AND AGREE THAT YOUR USE OF GMS+GSI IS AT YOUR SOLE RISK AND THAT GMS+GSI IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTY OF ANY KIND FROM GOOGLE.  
@@ -347,20 +373,24 @@ This is the Early Access Google Mobile Services and Android 17 GSI License Agree
 6.3 GOOGLE FURTHER EXPRESSLY DISCLAIMS ALL WARRANTIES AND CONDITIONS OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO THE IMPLIED WARRANTIES AND CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.  
   
 
+
 ### 7\. LIMITATION OF LIABILITY
 
 7.1 YOU EXPRESSLY UNDERSTAND AND AGREE THAT GOOGLE, ITS SUBSIDIARIES AND AFFILIATES, AND ITS LICENSORS SHALL NOT BE LIABLE TO YOU UNDER ANY THEORY OF LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY DAMAGES THAT MAY BE INCURRED BY YOU, INCLUDING ANY LOSS OF DATA, WHETHER OR NOT GOOGLE OR ITS REPRESENTATIVES HAVE BEEN ADVISED OF OR SHOULD HAVE BEEN AWARE OF THE POSSIBILITY OF ANY SUCH LOSSES ARISING.  
   
+
 
 ### 8\. Indemnification
 
 8.1 To the maximum extent permitted by law, you agree to defend, indemnify and hold harmless Google, its affiliates and their respective directors, officers, employees and agents from and against any and all claims, actions, suits or proceedings, as well as any and all losses, liabilities, damages, costs and expenses (including reasonable attorneys fees) arising out of or accruing from (a) your use of GMS+GSI, or (b) any non-compliance by you with the License Agreement.  
   
 
+
 ### 9\. Changes to the License Agreement
 
 9.1 Google may make changes to the License Agreement as it distributes new versions of GMS+GSI. When these changes are made, Google will make a new version of the License Agreement available on the website where GMS+GSI is made available.  
   
+
 
 ### 10\. General Legal Terms
 
@@ -378,6 +408,7 @@ This is the Early Access Google Mobile Services and Android 17 GSI License Agree
   
 10.7 The License Agreement, and your relationship with Google under the License Agreement, shall be governed by the laws of the State of California without regard to its conflict of laws provisions. You and Google agree to submit to the exclusive jurisdiction of the courts located within the county of Santa Clara, California to resolve any legal matter arising from the License Agreement. Notwithstanding this, you agree that Google shall still be allowed to apply for injunctive remedies (or an equivalent type of urgent legal relief) in any jurisdiction.  
   
+
 
 I have read and agree with the above terms and conditions
 
@@ -394,6 +425,7 @@ Before downloading, you must agree to the following terms and conditions.
 This is the Early Access Google Mobile Services and Android 17 GSI License Agreement (“License Agreement”). Google Mobile Services and Android 17 GSI (each defined below) are licensed to you subject to the terms of the License Agreement. The License Agreement forms a legally binding contract between you and Google in relation to your use of Google Mobile Services and Android 17 GSI.  
   
 
+
 ### 1\. Definitions
 
 1.1 "Android" means the Android software stack for devices, as made available under the Android Open Source Project, which is located at the following URL: https://source.android.com/, as updated from time to time.  
@@ -407,6 +439,7 @@ This is the Early Access Google Mobile Services and Android 17 GSI License Agree
 1.5 “GMS+GSI” refers to GMS and Android 17 GSI, collectively.  
   
 
+
 ### 2\. Accepting this License Agreement
 
 2.1 In order to use GMS+GSI, you must first agree to the License Agreement. You may not use GMS+GSI if you do not accept the License Agreement.  
@@ -417,6 +450,7 @@ This is the Early Access Google Mobile Services and Android 17 GSI License Agree
   
 2.4 If you are agreeing to be bound by the License Agreement on behalf of your employer or other entity, you represent and warrant that you have full legal authority to bind your employer or such entity to the License Agreement. If you do not have the requisite authority, you may not accept the License Agreement or use GMS+GSI on behalf of your employer or other entity.  
   
+
 
 ### 3\. GMS+GSI License from Google
 
@@ -442,6 +476,7 @@ This is the Early Access Google Mobile Services and Android 17 GSI License Agree
 (e) provide, sell, license, sublicense, lease, lend, or disclose GMS+GSI, or any part of GMS+GSI, to any third party,; or  
 (f) ship, divert, transship, transfer, export, or re-export GMS+GSI, or any component thereof, into any country or use it in any manner prohibited by any applicable export control laws, restrictions, or regulations.  
   
+
 
 ### 4\. Use of GMS+GSI by You
 
@@ -471,6 +506,7 @@ This is the Early Access Google Mobile Services and Android 17 GSI License Agree
 (k) interfere with Google’s over-the-air updates of GMS Applications.  
   
 
+
 ### 5\. Terminating this License Agreement
 
 5.1 The License Agreement will continue to apply until terminated by either you or Google as set out below.  
@@ -489,6 +525,7 @@ This is the Early Access Google Mobile Services and Android 17 GSI License Agree
 (D) any provisions of this License Agreement that under their terms or by implication ought to survive, will survive any termination of this License Agreement. This specifically includes, without limitation, Sections 2.3, 2.4, 3.3, 3.7, 3.8, 4, 5, 6, 7, 8 and 10.  
   
 
+
 ### 6\. DISCLAIMER OF WARRANTIES
 
 6.1 YOU EXPRESSLY UNDERSTAND AND AGREE THAT YOUR USE OF GMS+GSI IS AT YOUR SOLE RISK AND THAT GMS+GSI IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTY OF ANY KIND FROM GOOGLE.  
@@ -497,20 +534,24 @@ This is the Early Access Google Mobile Services and Android 17 GSI License Agree
 6.3 GOOGLE FURTHER EXPRESSLY DISCLAIMS ALL WARRANTIES AND CONDITIONS OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO THE IMPLIED WARRANTIES AND CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.  
   
 
+
 ### 7\. LIMITATION OF LIABILITY
 
 7.1 YOU EXPRESSLY UNDERSTAND AND AGREE THAT GOOGLE, ITS SUBSIDIARIES AND AFFILIATES, AND ITS LICENSORS SHALL NOT BE LIABLE TO YOU UNDER ANY THEORY OF LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY DAMAGES THAT MAY BE INCURRED BY YOU, INCLUDING ANY LOSS OF DATA, WHETHER OR NOT GOOGLE OR ITS REPRESENTATIVES HAVE BEEN ADVISED OF OR SHOULD HAVE BEEN AWARE OF THE POSSIBILITY OF ANY SUCH LOSSES ARISING.  
   
+
 
 ### 8\. Indemnification
 
 8.1 To the maximum extent permitted by law, you agree to defend, indemnify and hold harmless Google, its affiliates and their respective directors, officers, employees and agents from and against any and all claims, actions, suits or proceedings, as well as any and all losses, liabilities, damages, costs and expenses (including reasonable attorneys fees) arising out of or accruing from (a) your use of GMS+GSI, or (b) any non-compliance by you with the License Agreement.  
   
 
+
 ### 9\. Changes to the License Agreement
 
 9.1 Google may make changes to the License Agreement as it distributes new versions of GMS+GSI. When these changes are made, Google will make a new version of the License Agreement available on the website where GMS+GSI is made available.  
   
+
 
 ### 10\. General Legal Terms
 
@@ -528,6 +569,7 @@ This is the Early Access Google Mobile Services and Android 17 GSI License Agree
   
 10.7 The License Agreement, and your relationship with Google under the License Agreement, shall be governed by the laws of the State of California without regard to its conflict of laws provisions. You and Google agree to submit to the exclusive jurisdiction of the courts located within the county of Santa Clara, California to resolve any legal matter arising from the License Agreement. Notwithstanding this, you agree that Google shall still be allowed to apply for injunctive remedies (or an equivalent type of urgent legal relief) in any jurisdiction.  
   
+
 
 I have read and agree with the above terms and conditions
 
@@ -544,6 +586,7 @@ Before downloading, you must agree to the following terms and conditions.
 This is the Early Access Google Mobile Services and Android 17 GSI License Agreement (“License Agreement”). Google Mobile Services and Android 17 GSI (each defined below) are licensed to you subject to the terms of the License Agreement. The License Agreement forms a legally binding contract between you and Google in relation to your use of Google Mobile Services and Android 17 GSI.  
   
 
+
 ### 1\. Definitions
 
 1.1 "Android" means the Android software stack for devices, as made available under the Android Open Source Project, which is located at the following URL: https://source.android.com/, as updated from time to time.  
@@ -557,6 +600,7 @@ This is the Early Access Google Mobile Services and Android 17 GSI License Agree
 1.5 “GMS+GSI” refers to GMS and Android 17 GSI, collectively.  
   
 
+
 ### 2\. Accepting this License Agreement
 
 2.1 In order to use GMS+GSI, you must first agree to the License Agreement. You may not use GMS+GSI if you do not accept the License Agreement.  
@@ -567,6 +611,7 @@ This is the Early Access Google Mobile Services and Android 17 GSI License Agree
   
 2.4 If you are agreeing to be bound by the License Agreement on behalf of your employer or other entity, you represent and warrant that you have full legal authority to bind your employer or such entity to the License Agreement. If you do not have the requisite authority, you may not accept the License Agreement or use GMS+GSI on behalf of your employer or other entity.  
   
+
 
 ### 3\. GMS+GSI License from Google
 
@@ -592,6 +637,7 @@ This is the Early Access Google Mobile Services and Android 17 GSI License Agree
 (e) provide, sell, license, sublicense, lease, lend, or disclose GMS+GSI, or any part of GMS+GSI, to any third party,; or  
 (f) ship, divert, transship, transfer, export, or re-export GMS+GSI, or any component thereof, into any country or use it in any manner prohibited by any applicable export control laws, restrictions, or regulations.  
   
+
 
 ### 4\. Use of GMS+GSI by You
 
@@ -621,6 +667,7 @@ This is the Early Access Google Mobile Services and Android 17 GSI License Agree
 (k) interfere with Google’s over-the-air updates of GMS Applications.  
   
 
+
 ### 5\. Terminating this License Agreement
 
 5.1 The License Agreement will continue to apply until terminated by either you or Google as set out below.  
@@ -639,6 +686,7 @@ This is the Early Access Google Mobile Services and Android 17 GSI License Agree
 (D) any provisions of this License Agreement that under their terms or by implication ought to survive, will survive any termination of this License Agreement. This specifically includes, without limitation, Sections 2.3, 2.4, 3.3, 3.7, 3.8, 4, 5, 6, 7, 8 and 10.  
   
 
+
 ### 6\. DISCLAIMER OF WARRANTIES
 
 6.1 YOU EXPRESSLY UNDERSTAND AND AGREE THAT YOUR USE OF GMS+GSI IS AT YOUR SOLE RISK AND THAT GMS+GSI IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTY OF ANY KIND FROM GOOGLE.  
@@ -647,20 +695,24 @@ This is the Early Access Google Mobile Services and Android 17 GSI License Agree
 6.3 GOOGLE FURTHER EXPRESSLY DISCLAIMS ALL WARRANTIES AND CONDITIONS OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO THE IMPLIED WARRANTIES AND CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.  
   
 
+
 ### 7\. LIMITATION OF LIABILITY
 
 7.1 YOU EXPRESSLY UNDERSTAND AND AGREE THAT GOOGLE, ITS SUBSIDIARIES AND AFFILIATES, AND ITS LICENSORS SHALL NOT BE LIABLE TO YOU UNDER ANY THEORY OF LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY DAMAGES THAT MAY BE INCURRED BY YOU, INCLUDING ANY LOSS OF DATA, WHETHER OR NOT GOOGLE OR ITS REPRESENTATIVES HAVE BEEN ADVISED OF OR SHOULD HAVE BEEN AWARE OF THE POSSIBILITY OF ANY SUCH LOSSES ARISING.  
   
+
 
 ### 8\. Indemnification
 
 8.1 To the maximum extent permitted by law, you agree to defend, indemnify and hold harmless Google, its affiliates and their respective directors, officers, employees and agents from and against any and all claims, actions, suits or proceedings, as well as any and all losses, liabilities, damages, costs and expenses (including reasonable attorneys fees) arising out of or accruing from (a) your use of GMS+GSI, or (b) any non-compliance by you with the License Agreement.  
   
 
+
 ### 9\. Changes to the License Agreement
 
 9.1 Google may make changes to the License Agreement as it distributes new versions of GMS+GSI. When these changes are made, Google will make a new version of the License Agreement available on the website where GMS+GSI is made available.  
   
+
 
 ### 10\. General Legal Terms
 
@@ -679,6 +731,7 @@ This is the Early Access Google Mobile Services and Android 17 GSI License Agree
 10.7 The License Agreement, and your relationship with Google under the License Agreement, shall be governed by the laws of the State of California without regard to its conflict of laws provisions. You and Google agree to submit to the exclusive jurisdiction of the courts located within the county of Santa Clara, California to resolve any legal matter arising from the License Agreement. Notwithstanding this, you agree that Google shall still be allowed to apply for injunctive remedies (or an equivalent type of urgent legal relief) in any jurisdiction.  
   
 
+
 I have read and agree with the above terms and conditions
 
 Download Android 17 GSI Release [Download Android 17 GSI Release](https://dl.google.com/developers/android/cinnamonbun/images/gsi/aosp_x86_64-exp-CP2A.260605.012-15430684-3da2ca55.zip)
@@ -687,6 +740,6 @@ _aosp_x86_64-exp-CP2A.260605.012-15430684-3da2ca55.zip_
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-07-07 UTC.
+Last updated 2026-09-24 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-07-07 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-24 UTC."],[],[]] 

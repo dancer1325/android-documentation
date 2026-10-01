@@ -4,7 +4,8 @@
 
 ---
 
-#  Prepare your library for release
+#  Prepare your library for release Save and categorize content based on your preferences. 
+
 This page describes the properties and options needed to prepare your [Android library](/studio/projects/android-library) project for publication using the [Android Gradle plugin (AGP)](/studio/releases/gradle-plugin). Even if you set some of these properties at the outset of creating your library, review the following guidance to optimize your settings.
 
 ## Choose a namespace
@@ -54,6 +55,9 @@ Because the manifest merger prevents app projects from including libraries with 
   * **Choosing a high`minSdkVersion` might be necessary in special cases where a library’s manifest includes a broadcast receiver or some other mechanism by which its code is triggered automatically.**
 
 In these cases, choosing a high `minSdkVersion` ensures that code can run. Alternatively, you can disable the automated behavior so that the app can opt in to executing the library after doing the right checks.
+
+
+
 
 To allow embedding in apps, use the [`RequiresApi`](/reference/androidx/annotation/RequiresApi) annotation in your library to indicate to its callers that they need to do runtime checks. Android Lint uses the `RequiresApi` information for its inspections. For more resources on using annotations to improve your API code and APIs, see [Improve code inspection with annotations](/studio/write/annotations).
 
@@ -115,13 +119,16 @@ If you set `minCompileSdk` in multiple places, Gradle prioritizes the settings l
 
   3. `defaultConfig{}`
 
+
+
+
 In the preceding example, where `minCompileSdk` is defined in both `defaultConfig{}` and `productFlavors{}`, `productFlavors{}` is prioritized and `minCompileSdk` is set to 30.
 
 To learn more about how Gradle prioritizes settings when combining code and resources, see [Build with source sets](/studio/build/build-variants#sourceset-build).
 
 ## Enable test fixtures
 
-[Test fixtures](/reference/tools/gradle-api/9.2/com/android/build/api/dsl/TestFixtures) are commonly used to set up the code being tested or facilitate the tests of a component. Starting with version 7.1, AGP can create test fixtures for library projects in addition to application and dynamic-feature projects.
+[Test fixtures](/reference/tools/gradle-api/9.4/com/android/build/api/dsl/TestFixtures) are commonly used to set up the code being tested or facilitate the tests of a component. Starting with version 7.1, AGP can create test fixtures for library projects in addition to application and dynamic-feature projects.
 
 When publishing a library for others to consume, consider creating test fixtures for your API. Test fixtures can be turned on in the module-level `build.gradle` file:
 
@@ -149,6 +156,6 @@ For more information, refer to Gradle’s documentation about [using test fixtur
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-16 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-16 UTC."],[],[]] 

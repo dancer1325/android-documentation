@@ -4,7 +4,8 @@
 
 ---
 
-#  GWP-ASan
+#  GWP-ASan Save and categorize content based on your preferences. 
+
 **Important:** GWP-Asan is one of many tools available for memory debugging and mitigation. See [Memory error debugging and mitigation](/ndk/guides/memory-debug) for an overview of all the tools.**Important:** On devices that run Android 14 (API level 34) or higher, all apps use Recoverable GWP-ASan by default.
 
 GWP-ASan is a native memory allocator feature that helps find [use-after-free](https://cwe.mitre.org/data/definitions/416.html) and [heap-buffer-overflow](https://cwe.mitre.org/data/definitions/122.html) bugs. Its informal name is a recursive acronym,"**G** WP-ASan **W** ill **P** rovide **A** llocation **SAN** ity". Unlike [HWASan](https://source.android.com/devices/tech/debug/hwasan) or [Malloc Debug](https://android.googlesource.com/platform/bionic/+/master/libc/malloc_debug/README.md), GWP-ASan does not require source or recompilation (that is, works with prebuilts), and works on both 32- and 64-bit processes (although 32-bit crashes have less debugging information). This topic outlines the actions you need to take to enable this feature in your app. GWP-ASan is available on apps that target Android 11 (API level 30) or higher.
@@ -36,6 +37,9 @@ GWP-ASan may be enabled by apps on a per-process level by using the `android:gwp
     3. When a memory safety violation occurs in the special region, GWP-ASan terminates the process.
 
     4. GWP-ASan provides additional information about the fault in the crash report.
+
+
+
 
 To enable GWP-ASan globally for your app, add the following to your `AndroidManifest.xml` file:
     
@@ -81,6 +85,8 @@ Recoverable GWP-ASan differs from the base GWP-ASan in the following ways:
   3. Instead of exiting after dumping the crash report, Recoverable GWP-ASan allows memory corruption to occur, and the app continues running. While the process may continue as usual, the app's behavior is no longer specified. Due to the memory corruption, the app may crash at some arbitrary point in the future, or it may continue without any user-visible impact.
   4. Recoverable GWP-ASan is disabled after the crash report is dumped. Therefore, an app can get only a single Recoverable GWP-ASan report per app launch.
   5. If a custom signal handler is installed in the app, it's never called for a SIGSEGV signal that's indicative of a Recoverable GWP-ASan fault.
+
+
 
 Because Recoverable GWP-ASan crashes indicate real instances of memory corruption on end-user devices, we highly recommend triaging and fixing bugs identified by Recoverable GWP-ASan with a high priority.
 
@@ -189,6 +195,6 @@ To learn more about the implementation details of GWP-ASan, see the [LLVM docume
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-16 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-16 UTC."],[],[]] 

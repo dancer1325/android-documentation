@@ -3,6 +3,9 @@
 **Source:** [https://developer.android.com/develop/adaptive-apps](https://developer.android.com/develop/adaptive-apps)
 
 ---
+
+Save and categorize content based on your preferences. 
+
 [ ![](https://developer.android.com/static/develop/adaptive-apps/images/adaptive-apps-hub-hero.svg) ](https://developer.android.com/develop/adaptive-apps/guides/get-started-with-adaptive-apps)
 
 ###  [ Build adaptive apps ](https://developer.android.com/develop/adaptive-apps/guides/get-started-with-adaptive-apps)
@@ -10,12 +13,6 @@
 Optimize the user experience on phones, tablets, foldables, desktops, cars, and XR 2D with Jetpack Compose. Lay the foundation for deployment of your app on Android TV, immersive XR, and future device form factors. 
 
 [Get started](https://developer.android.com/develop/adaptive-apps/guides/get-started-with-adaptive-apps)
-
-![](https://developer.android.com/static/develop/adaptive-apps/images/multidevice-world.svg)
-
-##  Multidevice world 
-
-Build versatile apps that scale across the entire Android ecosystem. Leverage modern tools and APIs to reach more users with a single, maintainable codebase. 
 
 ![](https://developer.android.com/static/develop/adaptive-apps/images/adaptive-everywhere.svg)
 
@@ -40,18 +37,6 @@ Accelerate your adaptive app development with AI assistance in [Android Studio](
 ###  Quality at every level 
 
 Build quality into your app from the ground up with the [adaptive app quality guidelines](/develop/adaptive-apps/quality-guidelines/adaptive-app-quality). Achieve Tier 2 (Adaptive optimized) for a top‑quality app on all form factors, or Tier 1 (Adaptive differentiated) for unique device features and a compelling user experience. 
-
-![](https://developer.android.com/static/develop/adaptive-apps/images/maximized-roi.svg)
-
-##  Maximized ROI 
-
-Reach more users on more devices. Capture the attention of more than 580 million large screen device users. Cash in on the 14x in‑app spending of foldable users. Connect with Chromebook users in 93% of U.S. school districts. Be seen by millions of Android Auto and Android TV users. 
-
-![](https://developer.android.com/static/develop/adaptive-apps/images/differentiated-experiences-icon.svg)
-
-##  Differentiated experiences 
-
-Support the unique features of different form factors and device configurations for the ultimate user experience on every device. 
 
 [ ![](https://developer.android.com/static/develop/adaptive-apps/images/desktops.svg) ](https://developer.android.com/develop/adaptive-apps/guides/support-connected-displays)
 
@@ -89,10 +74,6 @@ The user experience on TVs requires layouts viewable from 10 feet away and a dir
 
 Extended reality apps enhance the user experience with spatial layouts, 3D models, and immersive environments. 
 
-##  Adaptive APIs 
-
-Jetpack Compose adaptive APIs enable you to build for any form factor, window size, or display mode, including split-screen mode and desktop windowing, with a single codebase. 
-
 [ ![](https://developer.android.com/static/develop/adaptive-apps/images/flexbox.svg) ](https://developer.android.com/develop/adaptive-apps/guides/flexbox)
 
 ###  [ Flexbox ](https://developer.android.com/develop/adaptive-apps/guides/flexbox)
@@ -118,11 +99,6 @@ Query window dimensions, device posture, hardware capabilities, and system featu
 [Learn about MediaQuery](https://developer.android.com/develop/adaptive-apps/guides/mediaquery)
 
 * * *
-
-##  Proven design patterns 
-
-Canonical layouts ensure an optimal user experience for all form factors.  
-Navigation scenes enable your app to adapt to multiple form factors seamlessly. 
 
 [ ![](https://developer.android.com/static/develop/adaptive-apps/images/list-detail.svg) ](https://developer.android.com/develop/adaptive-apps/guides/canonical-layouts#list-detail)
 
@@ -155,13 +131,5 @@ Organize content into primary and secondary display areas to make tools, options
 Define your app's UI flow with scenes. Create customized layouts, adapt your UI to different screen sizes, manage complex multi-pane experiences. 
 
 [Learn about navigation scenes](https://developer.android.com/guide/navigation/navigation-3/scenes)
-
-![](https://developer.android.com/static/develop/adaptive-apps/images/adaptive-design.svg)
-
-##  Adaptive design 
-
-Create layouts for multiple form factors with Material Design and Jetpack Compose components. 
-
-[Get started](https://developer.android.com/design/ui/large-screens)
 
 [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]] 

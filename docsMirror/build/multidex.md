@@ -4,7 +4,8 @@
 
 ---
 
-#  Enable multidex for apps with over 64K methods
+#  Enable multidex for apps with over 64K methods Save and categorize content based on your preferences. 
+
 If your app has a  `minSdk` of API 20 or lower and your app and the libraries it references exceed 65,536 methods, you encounter the following build error that indicates your app has reached the limit of the Android build architecture: 
     
     
@@ -159,6 +160,9 @@ If your `minSdkVersion` is set to 20 or lower, then you must use the [multidex l
 
 **Caution:** Don't execute `MultiDex.install()` or any other code through reflection or JNI before `MultiDex.install()` is complete. Multidex tracing will not follow those calls, causing `ClassNotFoundException` or verify errors due to a bad class partition between DEX files.
 
+
+
+
 Now when you build your app, the Android build tools construct a primary DEX file (`classes.dex`) and supporting DEX files (`classes2.dex`, `classes3.dex`, and so on) as needed. The build system then packages all DEX files into your APK. 
 
 At runtime, instead of searching only in the main `classes.dex` file, the multidex APIs use a special class loader to search all of the available DEX files for your methods.
@@ -174,13 +178,16 @@ On versions lower than Android 4.0, you might reach the linearalloc limit before
 
 [Code shrinking](/studio/build/shrink-code) can reduce or possibly eliminate these issues.
 
+
+
+
 ## Declare classes required in the primary DEX file
 
 When building each DEX file for a multidex app, the build tools perform complex decision-making to determine which classes are needed in the primary DEX file so that your app can start successfully. If any class that's required during startup is not provided in the primary DEX file, then your app crashes with the error `java.lang.NoClassDefFoundError`.
 
 The build tools recognize the code paths for code that's accessed directly from your app code. However, this problem can occur when the code paths are less visible, such as when a library you use has complex dependencies. For example, if the code uses introspection or invocation of Java methods from native code, then those classes might not be recognized as required in the primary DEX file.
 
-If you receive `java.lang.NoClassDefFoundError`, you must manually specify the additional classes required in the primary DEX file by declaring them with the [`multiDexKeepProguard`](/reference/tools/gradle-api/9.2/com/android/build/api/dsl/VariantDimension#multiDexKeepProguard\(\)) property in your build type. If a class is matched in the `multiDexKeepProguard` file, then that class is added to the primary DEX file. 
+If you receive `java.lang.NoClassDefFoundError`, you must manually specify the additional classes required in the primary DEX file by declaring them with the [`multiDexKeepProguard`](/reference/tools/gradle-api/9.4/com/android/build/api/dsl/VariantDimension#multiDexKeepProguard\(\)) property in your build type. If a class is matched in the `multiDexKeepProguard` file, then that class is added to the primary DEX file. 
 
 ### multiDexKeepProguard property
 
@@ -340,6 +347,6 @@ When you write instrumentation tests for multidex apps, no additional configurat
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-16 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-16 UTC."],[],[]] 

@@ -3,106 +3,64 @@
 **Source:** [https://developer.android.com/developer-verification](https://developer.android.com/developer-verification)
 
 ---
-##  Elevating Android security to keep it open and safe 
 
-By making Android safer, we're protecting the open environment that allows developers and users to confidently create and connect. Android's new developer verification is an extra layer of security that deters bad actors and makes it harder for them to repeatedly spread harm. Starting in September 2026, apps in select regions must be registered by a verified developer to be installed on [ certified Android devices](https://www.android.com/certified/partners/). 
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Essentials ](https://developer.android.com/get-started)
+  * [ Android developer verification ](https://developer.android.com/developer-verification)
 
-![](https://developer.android.com/static/images/developer-verification/developer-identity-hero.png)
 
-![](https://developer.android.com/static/images/picto-icons/asterisk.svg)
 
-##  To get verified, you'll need to complete two main steps 
+Save and categorize content based on your preferences. 
 
-![](https://developer.android.com/static/images/cluster-illustrations/video-chat-2.svg)
+###  Android developer verification 
 
-Step 1
+By making Android safer, we're protecting an environment for developers and users to confidently create and connect. This extra layer of security helps deter bad actors and makes it harder for them to repeatedly spread harm. 
 
-###  Verify your identity 
+**Next milestone: September 30, 2026**
 
-  * You will need to provide and verify your personal details, like your legal name, address, email address, and phone number. 
-  * If you're registering as an organization, you'll also need to provide a D-U-N-S number and verify your organization's website. 
-  * You may also need to upload official government ID. 
+These protections begin for users installing apps from [participating stores](https://developer.android.com/developer-verification/guides) (Google Play, HONOR App Market, OPPO App Market, Galaxy Store, Palm Store, V-Appstore, GetApps) in Brazil, Indonesia, Singapore, and Thailand, on certified devices running Android 7+. In 2027, we'll expand this globally to all apps on certified devices. 
 
-![](https://developer.android.com/static/images/cluster-illustrations/policy.svg)
+[ ![](https://developer.android.com/static/images/logos/android.svg) ](https://developer.android.com/developer-verification/guides/android-developer-console)
 
-Step 2
+Android Developer Console
 
-###  Register your package names 
+###  [ Distribute exclusively outside Google Play ](https://developer.android.com/developer-verification/guides/android-developer-console)
 
-  * Prove ownership of your apps by providing the APK signed with your private key to connect the APK with your developer account. 
+For developers distributing apps exclusively outside of Google Play. 
 
-##  What type of distribution do I need? 
+[Guide](https://developer.android.com/developer-verification/guides/android-developer-console) [Console](https://android.google.com/developerconsole)
 
-![](https://developer.android.com/static/images/picto-icons/chevron-complex.svg)
+[ ![](https://developer.android.com/static/images/logos/google-play.svg) ](https://developer.android.com/developer-verification/guides/google-play-console)
 
-###  Full distribution 
+Google Play Console
 
-Best for organizations and professional developers with wide distribution. This account offers unlimited apps and installs. If you publish apps only outside of Google Play, create an [Android Developer Console](https://android.google.com/developerconsole/developers) account to verify your identity and register package names.   
-  
-Need a quick refresher? [Read our Android Developer Console PDF](/static/developer-verification/guides/pdf-guides/adc-guide.pdf) or [web guide](/developer-verification/guides/android-developer-console). 
+###  [ Distribute on and outside Google Play ](https://developer.android.com/developer-verification/guides/google-play-console)
 
-![](https://developer.android.com/static/images/picto-icons/chevron-simple.svg)
+Google Play automatically registers 99% of apps. Use Play Console to manually register remaining apps or those distributed outside Google Play. 
 
-###  Limited distribution 
+[Guide](https://developer.android.com/developer-verification/guides/google-play-console) [Console](https://play.google.com/console/signup)
 
-We're committed to keeping Android an open platform for you to learn, experiment, and build for fun. If you are a developer who doesn't distribute apps widely, we recognize that your needs may be different from commercial developers and have provided this free account for you. To maintain ecosystem security, apps can be installed on up to 20 devices that end-users have explicitly authorized.  
-[Learn more](/developer-verification/guides/limited-distribution) and [sign up for early access](https://google.qualtrics.com/jfe/form/SV_4N7NGE06NjJJdl4). 
+###  [ Guides ](https://developer.android.com/developer-verification/guides)
 
-![](https://developer.android.com/static/images/logos/google-play.svg)
+Explore technical documentation and video guides. 
 
-##  For Google Play developers 
+###  [ FAQ ](https://developer.android.com/developer-verification/guides/faq)
 
-If you distribute apps through Google Play, you've likely already completed these steps. Play will use the information you've already shared to automatically register your apps. If you distribute apps outside of Google Play, you can manually register them through the Play Console. 
+Find quick answers about registration fees, requirements, and signing keys. 
 
-[Learn more](http://developer.android.com/developer-verification/guides/google-play-console)
+###  Help Center 
 
-We’ll share more information in the coming months.
+Visit the [Android Developer Console Help Center](https://support.google.com/android-developer-console) or [Play Console Help Center](https://support.google.com/googleplay/android-developer#topic=16689288) for account troubleshooting and support. 
 
-![](https://developer.android.com/static/images/picto-icons/help.svg)
+**Advanced Flow:** [Explore](https://android-developers.googleblog.com/2026/03/android-developer-verification.html) how we'll serve power users who want the ability to download unverified apps.
 
-##  Get ready 
-
-We're providing as much guidance as possible to help you prepare. 
+[ ![](https://developer.android.com/static/developer-verification/assets/latestnewsheadericon.png) ](https://developer.android.com/developer-verification/guides/limited-distribution)
 
 Guide
 
-###  [ Read the Android developer verification guide ](https://developer.android.com/developer-verification/guides)
+###  [ Limited distribution accounts are now available ](https://developer.android.com/developer-verification/guides/limited-distribution)
 
-to understand the basics of identity verification 
-
-[Learn more](https://developer.android.com/developer-verification/guides)
-
-Interest form
-
-###  [ For students and hobbyists ](https://developer.android.com/developer-verification/guides/limited-distribution)
-
-Sign up for early access to experiment with free, limited distribution accounts. 
-
-[Learn more](https://developer.android.com/developer-verification/guides/limited-distribution)
-
-Advanced flow
-
-###  [ For developers who don't want to verify ](https://android-developers.googleblog.com/2026/03/android-developer-verification.html)
-
-Preview the advanced flow to see how we'll serve power users who want the ability to download unverified apps. 
-
-[Learn more](https://android-developers.googleblog.com/2026/03/android-developer-verification.html)
-
-Contact us
-
-###  [ Get support and submit feedback ](https://docs.google.com/forms/d/e/1FAIpQLSeN8qv6GRTztqsXy6P8P2_Q93BOIIkT2X7sOQKesQD_LCvnKw/viewform)
-
-for Android developer verification. 
-
-[Learn more](https://docs.google.com/forms/d/e/1FAIpQLSeN8qv6GRTztqsXy6P8P2_Q93BOIIkT2X7sOQKesQD_LCvnKw/viewform)
-
-##  Timeline 
-
-We’re announcing the changes early and proactively getting developer feedback to ensure our solutions are balanced. 
-
-![](https://developer.android.com/static/developer-verification/assets/adv-timeline.svg)
-
-##  Latest News 
+Learn how students, teachers, and hobbyists can share apps with up to 20 devices without a government-issued ID or registration fee. 
 
 [ ![](https://developer.android.com/static/developer-verification/assets/blogicon.png) ](http://android-developers.googleblog.com/2026/06/android-developer-verification.html)
 

@@ -4,44 +4,127 @@
 
 ---
 
-Release notes
-Beta 6 **Release date** | July 1, 2026  
+#  Release notes Save and categorize content based on your preferences. 
+
+### Beta 9
+
+**Release date** | August 17, 2026  
+---|---  
+**Builds** | CP31.260623.012  
+**Emulator support** | x86 (64-bit), ARM (v8-A)  
+**Security patch level** | 2026-07-05  
+**Google Play services** | 26.22.36  
+  
+### Beta 8
+
+**Release date** | July 31, 2026  
+---|---  
+**Builds** | CP31.260623.010  
+**Emulator support** | x86 (64-bit), ARM (v8-A)  
+**Security patch level** | 2026-07-05  
+**Google Play services** | 26.22.36  
+  
+### Beta 7
+
+**Release date** | July 15, 2026  
+---|---  
+**Builds** | CP31.260623.005  
+**Emulator support** | x86 (64-bit), ARM (v8-A)  
+**Security patch level** | 2026-07-05  
+**Google Play services** | 26.20.31  
+  
+### Beta 6
+
+**Release date** | July 1, 2026  
 ---|---  
 **Builds** | CP31.260618.005  
 **Emulator support** | x86 (64-bit), ARM (v8-A)  
 **Security patch level** | 2026-06-05  
 **Google Play services** | 26.20.31  
-Beta 5 **Release date** | June 23, 2026  
+  
+### Beta 5
+
+**Release date** | June 23, 2026  
 ---|---  
 **Builds** | CP31.260608.007  
 **Emulator support** | x86 (64-bit), ARM (v8-A)  
 **Security patch level** | 2026-06-05  
 **Google Play services** | 26.18.35  
-Beta 4 **Release date** | June 10, 2026  
+  
+### Beta 4
+
+**Release date** | June 10, 2026  
 ---|---  
 **Builds** | CP31.260522.006  
 **Emulator support** | x86 (64-bit), ARM (v8-A)  
 **Security patch level** | 2026-05-05  
 **Google Play services** | 26.18.35  
-Beta 3 **Release date** | May 19, 2026  
+  
+### Beta 3
+
+**Release date** | May 19, 2026  
 ---|---  
 **Builds** | CP31.260508.005  
 **Emulator support** | x86 (64-bit), ARM (v8-A)  
 **Security patch level** | 2026-05-05  
 **Google Play services** | 26.15.33  
-Beta 2 **Release date** | May 6, 2026  
+  
+### Beta 2
+
+**Release date** | May 6, 2026  
 ---|---  
 **Builds** | CP31.260423.012.A1  
 **Emulator support** | x86 (64-bit), ARM (v8-A)  
 **Security patch level** | 2026-04-05  
 **Google Play services** | 26.15.32  
-Beta 1 **Release date** | April 22, 2026  
+  
+### Beta 1
+
+**Release date** | April 22, 2026  
 ---|---  
 **Builds** | CP31.260403.005.A1  
 **Emulator support** | x86 (64-bit), ARM (v8-A)  
 **Security patch level** | 2026-04-05  
 **Google Play services** | 26.11.36  
-Android 17 QPR 1 Beta 6 (July 2026) Building on the [initial release of Android 17](/about/versions/17), we continue to update the platform with fixes and improvements that are then rolled out to supported devices. These releases happen on a quarterly cadence through _Quarterly Platform Releases_ (QPRs), which are delivered both to AOSP and to Google Pixel devices as part of _Feature Drops_. Although these updates don't include app-impacting API changes, we provide images of the latest QPR beta builds so you can test your app with these builds as needed (for example, if there are upcoming features that might impact the user experience of your app). Unlike developer previews and betas for unreleased, major versions of Android, these builds are suitable for general use.  Android 17 QPR1 has reached Platform Stability as of Beta 6. The API surface is locked, the [API diff report](/sdk/api_diff/37.1/changes) reflects the final changes, and you can now incorporate new Android 17 QPR1 capabilities into your apps. Top Issues fixed in Beta 6 (July 2026)
+  
+### Android 17 QPR 1 Beta 9 (August 2026)
+
+Building on the [initial release of Android 17](/about/versions/17), we continue to update the platform with fixes and improvements that are then rolled out to supported devices. These releases happen on a quarterly cadence through _Quarterly Platform Releases_ (QPRs), which are delivered both to AOSP and to Google Pixel devices as part of _Feature Drops_.
+
+Although these updates don't include app-impacting API changes, we provide images of the latest QPR beta builds so you can test your app with these builds as needed (for example, if there are upcoming features that might impact the user experience of your app).
+
+Unlike developer previews and betas for unreleased, major versions of Android, these builds are suitable for general use. 
+
+Android 17 QPR1 reached Platform Stability as of Beta 6. The API surface is locked, the [API diff report](/sdk/api_diff/37.1/changes) reflects the final changes, and you can now incorporate new Android 17 QPR1 capabilities into your apps.
+
+### Top Issues fixed in Beta 9 (August 2026)
+
+  * _Swiping the bottom gesture bar to switch between apps failed after invoking Circle to Search by updating system gesture handling to properly reset navigation focus. ([**Issue #529422135**](https://issuetracker.google.com/issues/529422135))_
+  * _Unexpected loud noise plays during media playback and notification interactions. ([**Issue #509007703**](https://issuetracker.google.com/issues/509007703), [**Issue #508456570**](https://issuetracker.google.com/issues/508456570), [**Issue #512158576**](https://issuetracker.google.com/issues/512158576), [**Issue #514265107**](https://issuetracker.google.com/issues/514265107), [**Issue #520904833**](https://issuetracker.google.com/issues/520904833), [**Issue #519636478**](https://issuetracker.google.com/issues/519636478), [**Issue #517242741**](https://issuetracker.google.com/issues/517242741), [**Issue #519578674**](https://issuetracker.google.com/issues/519578674), [**Issue #519191172**](https://issuetracker.google.com/issues/519191172), [**Issue #507873728**](https://issuetracker.google.com/issues/507873728), [**Issue #519418933**](https://issuetracker.google.com/issues/519418933), [**Issue #517194839**](https://issuetracker.google.com/issues/517194839), [**Issue #516440003**](https://issuetracker.google.com/issues/516440003), [**Issue #514606256**](https://issuetracker.google.com/issues/514606256), [**Issue #514047990**](https://issuetracker.google.com/issues/514047990), [**Issue #513681197**](https://issuetracker.google.com/issues/513681197), [**Issue #512813456**](https://issuetracker.google.com/issues/512813456), [**Issue #512212036**](https://issuetracker.google.com/issues/512212036), [**Issue #500342049**](https://issuetracker.google.com/issues/500342049), [**Issue #498147587**](https://issuetracker.google.com/issues/498147587), [**Issue #505780177**](https://issuetracker.google.com/issues/505780177), [**Issue #523640480**](https://issuetracker.google.com/issues/523640480), [**Issue #524719397**](https://issuetracker.google.com/issues/524719397), [**Issue #523304213**](https://issuetracker.google.com/issues/523304213), [**Issue #531669961**](https://issuetracker.google.com/issues/531669961), [**Issue #534620345**](https://issuetracker.google.com/issues/534620345), [**Issue #536625907**](https://issuetracker.google.com/issues/536625907), [**Issue #536292570**](https://issuetracker.google.com/issues/536292570), [**Issue #538400224**](https://issuetracker.google.com/issues/538400224), [**Issue #541204384**](https://issuetracker.google.com/issues/541204384), [**Issue #541243460**](https://issuetracker.google.com/issues/541243460), [**Issue #541257484**](https://issuetracker.google.com/issues/541257484), [**Issue #539706747**](https://issuetracker.google.com/issues/539706747), [**Issue #540327575**](https://issuetracker.google.com/issues/540327575), [**Issue #539563805**](https://issuetracker.google.com/issues/539563805))_
+  * _Devices can enter a continuous reboot loop every 20 to 30 seconds. ([**Issue #507915695**](https://issuetracker.google.com/issues/507915695))_
+  * _Taskbar icons unexpectedly disappeared when launching apps or entering bubble mode on foldable devices. ([**Issue #535467363**](https://issuetracker.google.com/issues/535467363))_
+  * _An issue causing intermittent battery drain. ([**Issue #536626112**](https://issuetracker.google.com/issues/536626112))_
+
+
+
+### Top Issues fixed in Beta 8 (July 2026)
+
+  * _An audio framework buffer management issue that caused unexpected, loud audio corruption and static during media playback and notification interactions. ([**Issue #509007703**](https://issuetracker.google.com/issues/509007703), [**Issue #508456570**](https://issuetracker.google.com/issues/508456570), [**Issue #512158576**](https://issuetracker.google.com/issues/512158576), [**Issue #514265107**](https://issuetracker.google.com/issues/514265107), [**Issue #520904833**](https://issuetracker.google.com/issues/520904833), [**Issue #519636478**](https://issuetracker.google.com/issues/519636478), [**Issue #517242741**](https://issuetracker.google.com/issues/517242741), [**Issue #519578674**](https://issuetracker.google.com/issues/519578674), [**Issue #519191172**](https://issuetracker.google.com/issues/519191172), [**Issue #507873728**](https://issuetracker.google.com/issues/507873728), [**Issue #519418933**](https://issuetracker.google.com/issues/519418933), [**Issue #517194839**](https://issuetracker.google.com/issues/517194839), [**Issue #516440003**](https://issuetracker.google.com/issues/516440003), [**Issue #514606256**](https://issuetracker.google.com/issues/514606256), [**Issue #514047990**](https://issuetracker.google.com/issues/514047990), [**Issue #513681197**](https://issuetracker.google.com/issues/513681197), [**Issue #512813456**](https://issuetracker.google.com/issues/512813456), [**Issue #512212036**](https://issuetracker.google.com/issues/512212036), [**Issue #500342049**](https://issuetracker.google.com/issues/500342049), [**Issue #498147587**](https://issuetracker.google.com/issues/498147587), [**Issue #505780177**](https://issuetracker.google.com/issues/505780177), [**Issue #523640480**](https://issuetracker.google.com/issues/523640480), [**Issue #524719397**](https://issuetracker.google.com/issues/524719397), [**Issue #523304213**](https://issuetracker.google.com/issues/523304213), [**Issue #531669961**](https://issuetracker.google.com/issues/531669961), [**Issue #534620345**](https://issuetracker.google.com/issues/534620345), [**Issue #536625907**](https://issuetracker.google.com/issues/536625907), [**Issue #536292570**](https://issuetracker.google.com/issues/536292570), [**Issue #538400224**](https://issuetracker.google.com/issues/538400224), [**Issue #541204384**](https://issuetracker.google.com/issues/541204384), [**Issue #541243460**](https://issuetracker.google.com/issues/541243460), [**Issue #541257484**](https://issuetracker.google.com/issues/541257484))_
+  * _An issue where the Pixel Tablet Speaker Dock would frequently go offline or fail to connect when attached. ([**Issue #530716719**](https://issuetracker.google.com/issues/530716719))_
+  * _An NFC service regression that causes affected NFC tags to fail to read data or open URLs. ([**Issue #523935317**](https://issuetracker.google.com/issues/523935317))_
+  * _An issue where fingerprint authentication is not triggered when attempting to unlock the device. ([**Issue #523276531**](https://issuetracker.google.com/issues/523276531), [**Issue #526923270**](https://issuetracker.google.com/issues/526923270))_
+
+
+
+### Top Issues fixed in Beta 7 (July 2026)
+
+  * _Battery Share from Quick Settings failed to start charging or repeatedly displayed the charging animation. ([**Issue #476443126**](https://issuetracker.google.com/issues/476443126), [**Issue #477627747**](https://issuetracker.google.com/issues/477627747), [**Issue #480701245**](https://issuetracker.google.com/issues/480701245), [**Issue #484322291**](https://issuetracker.google.com/issues/484322291), [**Issue #488473799**](https://issuetracker.google.com/issues/488473799), [**Issue #501729379**](https://issuetracker.google.com/issues/501729379), [**Issue #500638463**](https://issuetracker.google.com/issues/500638463))_
+  * _Turning off Wi-Fi created an empty gap between the battery and mobile data icons in the Quick Settings status bar. ([**Issue #517178332**](https://issuetracker.google.com/issues/517178332))_
+  * _A crash in the Quick Settings font size controller that prevented users from adjusting their text size from the quick access panel. ([**Issue #531915405**](https://issuetracker.google.com/issues/531915405), [**Issue #530312544**](https://issuetracker.google.com/issues/530312544))_
+
+
+
+### Top Issues fixed in Beta 6 (July 2026)
 
   * _Users were unable to select multiple spell checker languages. ([**Issue #147312111**](https://issuetracker.google.com/issues/147312111))_
   * _Pressing the device volume buttons within the Clock app failed to trigger the expected user interface actions. ([**Issue #527400457**](https://issuetracker.google.com/issues/527400457), [**Issue #527395501**](https://issuetracker.google.com/issues/527395501), [**Issue #524895625**](https://issuetracker.google.com/issues/524895625))_
@@ -49,7 +132,9 @@ Android 17 QPR 1 Beta 6 (July 2026) Building on the [initial release of Android 
   * _An issue in WindowManagerGlobal that resulted in app crashes. ([**Issue #516639947**](https://issuetracker.google.com/issues/516639947))_
   * _Enabling the Wi-Fi hotspot displayed a generic default SSID instead of the user's saved custom name. ([**Issue #485168823**](https://issuetracker.google.com/issues/485168823))_
 
-Top Issues fixed in Beta 5 (June 2026)
+
+
+### Top Issues fixed in Beta 5 (June 2026)
 
   * _An issue in the Game Dashboard where users were unable to stop screen recordings or save video files. ([**Issue #296368569**](https://issuetracker.google.com/issues/296368569), [**Issue #328539170**](https://issuetracker.google.com/issues/328539170))_
   * _An issue where the camera app temporarily freezes or stutters shortly after being opened from an idle state. ([**Issue #330488811**](https://issuetracker.google.com/issues/330488811))_
@@ -62,7 +147,9 @@ Top Issues fixed in Beta 5 (June 2026)
   * _A system-level WebView rendering regression that caused Monopoly Go to freeze and crash when attempting to open mini-games. ([**Issue #516576731**](https://issuetracker.google.com/issues/516576731))_
   * _Home screen widgets would disappear or become unavailable in the widget picker after a device reboot. ([**Issue #488125748**](https://issuetracker.google.com/issues/488125748), [**Issue #505117543**](https://issuetracker.google.com/issues/505117543), [**Issue #505671079**](https://issuetracker.google.com/issues/505671079), [**Issue #497140330**](https://issuetracker.google.com/issues/497140330), [**Issue #506685943**](https://issuetracker.google.com/issues/506685943), [**Issue #510967059**](https://issuetracker.google.com/issues/510967059))_
 
-Top Issues fixed in Beta 4 (June 2026)
+
+
+### Top Issues fixed in Beta 4 (June 2026)
 
   * _An issue where the mouse pointer becomes invisible on external displays when Work profile or FLAG_SECURE applications are active. ([**Issue #446715557**](https://issuetracker.google.com/issues/446715557))_
   * _A Settings app crash occurring when launching credential provider settings from a Private Space. ([**Issue #499908921**](https://issuetracker.google.com/issues/499908921))_
@@ -72,7 +159,9 @@ Top Issues fixed in Beta 4 (June 2026)
   * _A graphics driver regression that caused severe 3D performance drops in OpenGL ES applications on newer hardware. ([**Issue #476585209**](https://issuetracker.google.com/issues/476585209))_
   * _A regression where Wireless ADB and local network-dependent apps failed to connect. ([**Issue #506418219**](https://issuetracker.google.com/issues/506418219))_
 
-Top Issues fixed in Beta 3 (May 2026)
+
+
+### Top Issues fixed in Beta 3 (May 2026)
 
   * _A recurring system error in ContextHubClientManager that caused excessive logcat noise when attempting to send messages to unregistered clients. ([**Issue #289721806**](https://issuetracker.google.com/issues/289721806))_
   * _Clicking on the_ date on at a glance prompts to open the terminal _([**Issue #506101970**](https://issuetracker.google.com/issues/506101970))_
@@ -82,7 +171,9 @@ Top Issues fixed in Beta 3 (May 2026)
   * _Home screen widgets would disappear or become unavailable in the widget picker after a device reboot. ([**Issue #488125748**](https://issuetracker.google.com/issues/488125748), [**Issue #505117543**](https://issuetracker.google.com/issues/505117543), [**Issue #505671079**](https://issuetracker.google.com/issues/505671079), [**Issue #497140330**](https://issuetracker.google.com/issues/497140330), [**Issue #506685943**](https://issuetracker.google.com/issues/506685943), [**Issue #510967059**](https://issuetracker.google.com/issues/510967059))_
   * _The mobile data icon incorrectly remains active in the Quick Settings panel after Airplane Mode is enabled. ([**Issue #501368569**](https://issuetracker.google.com/issues/501368569), [**Issue #505757076**](https://issuetracker.google.com/issues/505757076))_
 
-Top Issues fixed in Beta 2 (May 2026)
+
+
+### Top Issues fixed in Beta 2 (May 2026)
 
   * _Resolved an issue where the Terminal app fails to launch, resulting in an unresolvable error pop-up and infinite loading. ([**Issue #501751748**](https://issuetracker.google.com/issues/501751748))_
   * _Fixed a display issue where date and weather information overlapped the fingerprint sensor area on the lock screen. ([**Issue #498106709**](https://issuetracker.google.com/issues/498106709))_
@@ -94,11 +185,19 @@ Top Issues fixed in Beta 2 (May 2026)
   * _Fixed an issue where navigation bar swipe gestures failed to switch between recent apps. ([**Issue #494847234**](https://issuetracker.google.com/issues/494847234))_
   * _Resolved an issue where the Bluetooth tethering toggle would reset to off after device restarts or Bluetooth cycles, requiring users to manually re-enable internet sharing for connected devices. ([**Issue #371660785**](https://issuetracker.google.com/issues/371660785))_
 
-Top Issues fixed in Beta 1 (April 2026)
+
+
+### Top Issues fixed in Beta 1 (April 2026)
 
   * _Fixed a crash in the Default Print Service occurring during low ink conditions that prevents users from completing print jobs. ([**Issue #487545419**](https://issuetracker.google.com/issues/487545419))_
   * _The Terminal app triggers an Application Not Responding (ANR) error that results in the application and device becoming unresponsive. ([**Issue #497465940**](https://issuetracker.google.com/issues/497465940))_
   * _Resolved an issue where uncontrollable hardware audio processing on the voice communication path caused distortion and phase cancellation in VoIP applications. ([**Issue #494843726**](https://issuetracker.google.com/issues/494843726))_
   * _Direct audio output may fail to open on devices using the AIDL audio HAL when playing audio streams longer than five seconds. ([**Issue #372064012**](https://issuetracker.google.com/issues/372064012))_
 
-Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates. Last updated 2026-07-01 UTC. [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-07-01 UTC."],[],[]] 
+
+
+Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
+
+Last updated 2026-09-16 UTC.
+
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-16 UTC."],[],[]] 

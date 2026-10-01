@@ -1,57 +1,47 @@
 # Distribute Your Apps & Games on Google Play  |  Android Developers
 
-**Source:** [https://developer.android.com/distribute](https://developer.android.com/distribute)
+**Source:** [https://developer.android.com/distribute/](https://developer.android.com/distribute/)
 
 ---
-![](https://developer.android.com/static/distribute/images/heroes/google-play-hero.svg)
 
-###  Google Play 
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Google Play ](https://developer.android.com/distribute)
+
+
+
+Save and categorize content based on your preferences. 
+
+[ ![](https://developer.android.com/static/distribute/images/heroes/google-play-hero.svg) ](https://play.google.com/console)
+
+###  [ Distribute on Google Play ](https://play.google.com/console)
 
 With the ability to publish rapidly to over 2.5 billion active Android devices, Google Play helps you grow a global audience for your apps and games and earn revenue. 
 
-![](https://developer.android.com/static/images/spot-icons/tools-update.svg)
+[Go to Play Console](https://play.google.com/console)
 
-###  Reach 
+[ ![](https://developer.android.com/static/images/picto-icons/monetize.svg) ](https://developer.android.com/distribute/play-billing)
 
-Google Play helps you reach over 2.5 billion active Android devices, including phones, tablets, watches, cars, and TVs. 
+###  [ Monetization ](https://developer.android.com/distribute/play-billing)
 
-[Sign in to Play Console](https://play.google.com/console)
+[ Sell digital subscriptions and in-app content in 135 countries with hundreds of payment methods on our safe and trusted commerce platform. ](https://developer.android.com/distribute/play-billing)
 
-![](https://developer.android.com/static/images/picto-icons/security.svg)
+[Explore monetization](https://developer.android.com/distribute/play-billing)
 
-###  Monetization 
+[ ![](https://developer.android.com/static/images/picto-icons/security.svg) ](https://developer.android.com/google/play/integrity)
 
-Sell digital subscriptions and in-app content in 135 countries with hundreds of payment methods on our safe and trusted commerce platform. 
+###  [ Security ](https://developer.android.com/google/play/integrity)
 
-[Monetize your apps and games](https://developer.android.com/distribute/play-billing)
+[ Detect potential threats to your apps and games and protect your users with the Play Integrity API. Prevent unauthorized access with Google Play's automatic protection. ](https://developer.android.com/google/play/integrity)
 
-![](https://developer.android.com/static/images/picto-icons/quality.svg)
+[Enhance app security](https://developer.android.com/google/play/integrity)
 
-###  Security 
+[ ![](https://developer.android.com/static/images/picto-icons/quality.svg) ](https://developer.android.com/quality)
 
-Detect potential threats to your apps and games and protect your users with the Play Integrity API. Prevent unauthorized access with Google Play's automatic protection. 
+###  [ Quality ](https://developer.android.com/quality)
 
-[Protect your apps and games](https://developer.android.com/google/play/integrity)
+[ High-quality apps and games deliver value to users, are delightful to use, make the most of premium devices, and are designed for safety. ](https://developer.android.com/quality)
 
-![](https://developer.android.com/static/images/picto-icons/monetize.svg)
-
-###  Quality 
-
-High-quality apps and games deliver value to users, are delightful to use, make the most of premium devices, and are designed for safety. 
-
-[Build high-quality apps and games](https://developer.android.com/quality)
-
-##  Latest news 
-
-[View all news](https://android-developers.googleblog.com/search/label/Google%20Play)
-
-![](https://developer.android.com/static/images/picto-icons/guidelines.svg)
-
-##  Build, release & update 
-
-![](https://developer.android.com/static/images/picto-icons/pencil.svg)
-
-##  Guides 
+[Improve app quality](https://developer.android.com/quality)
 
 Guides
 
@@ -95,10 +85,6 @@ Guides
 
 Reward users and boost retention 
 
-![](https://developer.android.com/static/images/picto-icons/core-library.svg)
-
-##  API reference 
-
 API Reference
 
 ###  [ Play Feature Delivery library ](https://developer.android.com/reference/com/google/android/play/core/classes-feature_delivery)
@@ -116,14 +102,6 @@ API Reference
 ###  [ Play in-app updates library ](https://developer.android.com/reference/com/google/android/play/core/classes-in_app_updates)
 
 Prompt users to update your app 
-
-![](https://developer.android.com/static/images/picto-icons/engagement.svg)
-
-##  Acquire & engage users 
-
-![](https://developer.android.com/static/images/picto-icons/pencil.svg)
-
-##  Guides 
 
 Guides
 
@@ -161,10 +139,6 @@ Guides
 
 Seamless cross-platform gameplay on PC 
 
-![](https://developer.android.com/static/images/picto-icons/core-library.svg)
-
-##  API reference 
-
 API Reference
 
 ###  [ Play Games Services ](https://developer.android.com/games/reference)
@@ -195,14 +169,6 @@ API Reference
 
 Customize delivery of assets for games 
 
-![](https://developer.android.com/static/images/picto-icons/monetize.svg)
-
-##  Monetization 
-
-![](https://developer.android.com/static/images/picto-icons/pencil.svg)
-
-##  Guides 
-
 Guides
 
 ###  [ Play Billing ](https://developer.android.com/distribute/play-billing)
@@ -215,19 +181,11 @@ Guides
 
 Test your Play Billing Library integration 
 
-![](https://developer.android.com/static/images/picto-icons/core-library.svg)
-
-##  API reference 
-
 API Reference
 
 ###  [ Play Billing Library ](https://developer.android.com/reference/com/android/billingclient/classes)
 
 Sell digital in-app products and subscriptions 
-
-![](https://developer.android.com/static/images/picto-icons/code-2.svg)
-
-##  Codelabs 
 
 Codelabs
 
@@ -252,14 +210,6 @@ Codelabs
 ###  [ Add pre-order offers for one-time products ](https://codelabs.developers.google.com/codelabs/play-billing-create-preorder-offers#0)
 
 Codelab for adding pre-order offers for one-time products 
-
-![](https://developer.android.com/static/images/picto-icons/play-protect.svg)
-
-##  Privacy, security, and compliance 
-
-![](https://developer.android.com/static/images/picto-icons/pencil.svg)
-
-##  Guides 
 
 Guides
 
@@ -297,10 +247,6 @@ Guides
 
 Retrieve age-related signals for users 
 
-![](https://developer.android.com/static/images/picto-icons/core-library.svg)
-
-##  API reference 
-
 API Reference
 
 ###  [ Play Integrity API reference ](https://developer.android.com/google/play/integrity/reference/com/google/android/play/core/packages)
@@ -312,14 +258,6 @@ API Reference
 ###  [ Play Age Signals API reference ](https://developer.android.com/google/play/age-signals/release-notes)
 
 Retrieve age-related signals for users 
-
-![](https://developer.android.com/static/images/picto-icons/tools.svg)
-
-##  Tools and resources 
-
-![](https://developer.android.com/static/images/picto-icons/pencil.svg)
-
-##  Guides 
 
 Guides
 
@@ -344,10 +282,6 @@ Guides
 ###  [ Play Services ](https://developer.android.com/distribute/play-services)
 
 Build your Android app with Google SDKs 
-
-![](https://developer.android.com/static/images/picto-icons/core-library.svg)
-
-##  API reference 
 
 API Reference
 

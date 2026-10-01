@@ -4,137 +4,118 @@
 
 ---
 
-#  Control your app from Macrobenchmark
+#  Control your app from Macrobenchmark Save and categorize content based on your preferences. 
+
 Unlike most Android UI tests, Macrobenchmark tests run in a separate process from the app itself. This is necessary to enable things like stopping the app process and compiling from DEX bytecode to machine code.
 
-You can drive your app's state using the [UIAutomator library](/training/testing/ui-automator) or other mechanisms that can control the target app from the test process. You can't use [Espresso](/training/testing/espresso) or [`ActivityScenario`](/reference/androidx/test/core/app/ActivityScenario) for Macrobenchmark because they expect to run in a shared process with the app.
+You can drive your app's state using the [UIAutomator library](/training/testing/ui-automator) or other mechanisms that can control the target app from the test process. To expose Compose elements to UI Automator, use `Modifier.testTag`.
 
-The following example finds a [`RecyclerView`](/reference/androidx/recyclerview/widget/RecyclerView) using its resource ID and scrolls down several times:
+**Note:** To let UI Automator map these tags to resource IDs, you must also set the `testTagsAsResourceId` semantics property to `true` on a parent composable.
 
-### Kotlin
+The following example uses a `LazyColumn` with a `testTag`:
+    
+    
+    @Composable
+    fun ProductListScreen() {
+        LazyColumn(
+            modifier = Modifier
+                .fillMaxSize()
+                .testTag("my_lazy_column")    ) {
+            items(100) { index ->
+                ProductItem(index)
+            }
+        }
+    }
+    
+
+The test uses the `testTag` to find the `LazyColumn` and fling it:
     
     
     @Test
     fun scrollList() {
         benchmarkRule.measureRepeated(
-            // ...
+            packageName = "com.example.myapp",
+            metrics = listOf(FrameTimingMetric()),
+            iterations = 5,
             setupBlock = {
                 uiAutomator {
-                    // Before starting to measure, navigate to the UI to be measured
-                    startIntent(Intent("$packageName.RECYCLER_VIEW_ACTIVITY"))
+                    pressHome()
+                    startApp("com.example.myapp")
                 }
             }
         ) {
             uiAutomator {
-                val recycler = onElement { className == "androidx.recyclerview.widget.RecyclerView" }
-                // Scroll down several times
-                repeat(3) { recycler.fling(Direction.DOWN) }
-            }
+                // Find the Composable using its testTag mapped as a viewIdResourceName
+                val lazyColumn = onElement { viewIdResourceName == "my_lazy_column" }
     
+                // Fling the Compose list down
+                repeat(3) {
+                    lazyColumn.fling(Direction.DOWN)
+                }
+            }
         }
     }
     
-    [FrameTimingBenchmark.kt](https://github.com/android/performance-samples/blob/cae5530b13ce3adf7bd54ea5bd92fe9b4fb8c585/MacrobenchmarkSample/macrobenchmark/src/main/kotlin/com/example/macrobenchmark/benchmark/frames/FrameTimingBenchmark.kt#L43-L69)
 
-### Java
-    
-    
-    @Test
-    public void scrollList() {
-        benchmarkRule.measureRepeated(
-            // ...
-            /* setupBlock */ scope -> {
-                // Before measuring, navigate to the UI to be measured.
-                val intent = Intent("$packageName.RECYCLER_VIEW_ACTIVITY")
-                scope.startActivityAndWait();
-                return Unit.INSTANCE;
-            },
-            /* measureBlock */ scope -> {
-                UiDevice device = scope.getDevice();
-                UiObject2 recycler = device.findObject(By.res(scope.getPackageName(), "recycler"));
-    
-                // Set gesture margin to avoid triggering gesture navigation
-                // with input events from automation.
-                recycler.setGestureMargin(device.getDisplayWidth() / 5);
-    
-                // Fling the recycler several times.
-                for (int i = 0; i < 3; i++) {
-                    recycler.fling(Direction.DOWN);
-                }
-    
-                return Unit.INSTANCE;
-            }
-        );
-    }
-
-Your benchmark doesn't have to scroll the UI. Instead, it can run an animation, for example. It also doesn't need to use UI Automator specifically. It collects performance metrics as long as frames are being produced by the view system, including frames produced by [Jetpack Compose](/jetpack/compose).
+Your benchmark doesn't have to scroll the UI. Instead, it can run an animation, for example. It also doesn't need to use UI Automator specifically. It collects performance metrics as long as frames are being produced.
 
 **Note:** When accessing UI objects, specify the `packageName`, because the tests run in a separate process.
 
-## Navigate to internal parts of the app
+## Navigate to deep composable destinations
 
-Sometimes you want to benchmark parts of your app that aren't directly accessible from outside. This might be, for example, accessing inner Activities that are marked with [`exported=false`](/guide/topics/manifest/activity-element#exported), navigating to a [`Fragment`](/reference/android/app/Fragment), or swiping some part of your UI away. The benchmarks need to manually navigate to these parts of the app like a user.
+Sometimes you might want to benchmark a specific screen that isn't immediately visible when the app starts, like a details screen or a checkout page deep within your Jetpack Navigation graph.
 
-To manually navigate, change the code inside `setupBlock{}` to contain the effect you want, such as button tap or swipe. Your `measureBlock{}` contains only the UI manipulation you want to actually benchmark:
+Because Macrobenchmark runs out-of-process, you can't interact directly with your `NavController` to swap screens. Instead, your benchmark must simulate a user navigating to that part of the app.
 
-### Kotlin
+Use the `setupBlock` to handle the preparation steps, like clicking through an onboarding flow or a menu button. This way, your `measureBlock` captures the performance metrics of only the target screen.
     
     
     @Test
-    fun nonExportedActivityScrollList() {
+    fun deepScreenScrollList() {
         benchmarkRule.measureRepeated(
-            // ...
-            setupBlock = setupBenchmark()
-        ) {
-            // ...
-        }
-    }
+            packageName = "com.example.myapp",
+            metrics = listOf(FrameTimingMetric()),
+            iterations = 5,
+            setupBlock = {
+                uiAutomator {
+                    // 1. Start the app on the home screen
+                    startApp("com.example.myapp")
     
-    private fun setupBenchmark(): MacrobenchmarkScope.() -> Unit = {
-        uiAutomator {
-            // Before starting to measure, navigate to the UI to be measured
-            startApp(TARGET_PACKAGE)
-            // click a button to launch the target activity.
-            onElement { textAsString() == "RecyclerView" }.click()
-            // wait until the activity is shown
-            waitForStableInActiveWindow()
-        }
-    }
+                    // 2. Navigate to the internal screen by clicking a Compose component
+                    // (e.g., a card that opens the target list view)
+                    val settingsButton = onElement { viewIdResourceName == "go_to_list_button" }
+                    settingsButton.click()
     
-    [NonExportedActivityBenchmark.kt](https://github.com/android/performance-samples/blob/cae5530b13ce3adf7bd54ea5bd92fe9b4fb8c585/MacrobenchmarkSample/macrobenchmark/src/main/kotlin/com/example/macrobenchmark/benchmark/frames/NonExportedActivityBenchmark.kt#L46-L79)
-
-### Java
-    
-    
-    @Test
-    public void scrollList() {
-        benchmarkRule.measureRepeated(
-            // ...
-            /* setupBlock */ scope -> {
-                // Before measuring, navigate to the default activity.
-                scope.startActivityAndWait();
-    
-                // Click a button to launch the target activity.
-                // While you use resourceId here to find the button, you can also
-                // use accessibility info or button text content.
-                UiObject2 launchRecyclerActivity = scope.getDevice().findObject(
-                    By.res(packageName, "launchRecyclerActivity")
-                )
-                launchRecyclerActivity.click();
-    
-                // Wait until activity is shown.
-                scope.getDevice().wait(
-                    Until.hasObject(By.clazz("$packageName.NonExportedRecyclerActivity")),
-                    10000L
-                )
-    
-                return Unit.INSTANCE;
-            },
-            /* measureBlock */ scope -> {
-                // ...
+                    // 3. Wait until the target screen settles and is fully rendered
+                    waitForStableInActiveWindow()
+                }
             }
-        );
+        ) {
+            uiAutomator {
+                // The actual benchmark measurement starts here on the target screen
+                val lazyColumn = onElement { viewIdResourceName == "my_lazy_column" }
+                lazyColumn.fling(Direction.DOWN)
+            }
+        }
     }
+    
+
+## Additional resources
+
+For more information about testing, see the following resources.
+
+### Documentation
+
+  * [Test your Compose layout](/develop/ui/compose/testing)
+  * [Interoperability with UiAutomator](/develop/ui/compose/testing/interoperability#uiautomator-interop)
+
+
+
+### Views content
+
+  * [Control your app from Macrobenchmark (Views)](/topic/performance/views/benchmarking/macrobenchmark-control-app-views)
+
+
 
 ## Recommended for you
 
@@ -143,12 +124,14 @@ To manually navigate, change the code inside `setupBlock{}` to contain the effec
   * [Capture Macrobenchmark metrics](/topic/performance/benchmarking/macrobenchmark-metrics)
   * [Microbenchmark](/topic/performance/benchmarking/microbenchmark-overview)
 
+
+
 [ Previous arrow_back  Capture the metrics  ](/topic/performance/benchmarking/macrobenchmark-metrics)
 
 [ Next Adding instrumentation arguments  arrow_forward  ](/topic/performance/benchmarking/macrobenchmark-instrumentation-args)
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-05-19 UTC.
+Last updated 2026-07-24 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-05-19 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-07-24 UTC."],[],[]] 

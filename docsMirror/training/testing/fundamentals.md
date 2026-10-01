@@ -4,8 +4,16 @@
 
 ---
 
-#  Fundamentals of testing Android apps
+#  Fundamentals of testing Android apps Save and categorize content based on your preferences. 
+
 This page outlines the core tenets of testing Android apps, including the central best practices and their benefits.
+
+Use the Testing setup [Android skill](/tools/agents/android-skills) to analyze and create a testing strategy for native Android apps.
+
+To install the skill from the [Android CLI](/tools/agents/android-cli), run:
+    
+    
+    android skills add testing-setup
 
 ## Benefits of testing
 
@@ -27,6 +35,8 @@ For example, there are different types of tests depending on the _subject_ :
   * **Performance testing** : does it do it quickly and efficiently?
   * **Accessibility testing** : does it work well with accessibility services?
   * **Compatibility testing** : does it work well on every device and API level?
+
+
 
 ### Scope
 
@@ -53,6 +63,8 @@ Not all unit tests are local, and not all end-to-end tests run on a device. For 
 
   * **Big local test** : You can use an Android simulator that runs locally, such as [Robolectric](/training/testing/local-tests/robolectric).
   * **Small instrumented test** : You can verify that your code works well with a framework feature, such as a SQLite database. You might run this test on multiple devices to check the integration with multiple versions of SQLite.
+
+
 
 ### Examples
 
@@ -102,6 +114,8 @@ An architecture that is _not testable_ produces the following:
   * Bigger, slower, more flaky tests. Classes that can't be unit-tested might have to be covered by bigger integration tests or UI tests.
   * Fewer opportunities for testing different scenarios. Bigger tests are slower, so testing all possible states of an app might be unrealistic.
 
+
+
 To learn more about architecture guidelines, see the [guide to app architecture](/jetpack/guide).
 
 ### Approaches to decoupling
@@ -115,6 +129,8 @@ Common decoupling techniques include the following:
   * Avoid direct _framework dependencies_ in classes containing business logic. For example, [don't use Android Contexts in ViewModels](https://medium.com/androiddevelopers/locale-changes-and-the-androidviewmodel-antipattern-84eb677660d9).
   * Make dependencies easy to _replace_. For example, use [interfaces](https://en.wikipedia.org/wiki/Interface_segregation_principle) instead of concrete implementations. Use [Dependency injection](/training/dependency-injection) even if you don't use a DI framework.
 
+
+
 ## Next steps
 
 Now that you know why you should test and the two main types of tests, you can read [What to test](/training/testing/fundamentals/what-to-test) or learn about [Testing strategies](/training/testing/fundamentals/strategies)
@@ -123,6 +139,6 @@ Alternatively, if you want to create your first test and learn by doing, check o
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-24 UTC.
+Last updated 2026-09-01 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-24 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-01 UTC."],[],[]] 

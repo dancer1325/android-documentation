@@ -3,6 +3,9 @@
 **Source:** [https://developer.android.com/identity](https://developer.android.com/identity)
 
 ---
+
+Save and categorize content based on your preferences. 
+
 ![](https://developer.android.com/static/images/cluster-illustrations/identity.svg)
 
 ###  Identity 
@@ -45,15 +48,6 @@ Users can save and store passwords in Google Password Manager to use safely on a
 
 [Learn more](https://developer.android.com/design/ui/mobile/guides/patterns/passkeys#unified_sign-in)
 
-##  Passkeys improve the authentication user experience on Android 
-
-Sign-in can be a major source of confusion and app abandonment. 
-
-Passkeys, available through Credential Manager, improve user experience by making sign-in easier and more secure; they are phishing-resistant and cannot be reused. Users can sign in by unlocking their device with their fingerprint, face recognition, or a local PIN, rather than having to remember and type in a password. 
-
-  
-![](/static/images/identity/identity-passkeys.png)
-
 [Read more](https://developer.android.com/design/ui/mobile/guides/patterns/passkeys)
 
 [ ![](https://developer.android.com/static/images/identity/quick-account-creation.png) ](https://developer.android.com/identity/sign-in/credential-manager-siwg#enable-sign-up)
@@ -77,12 +71,6 @@ Credential Manager is a Jetpack API that supports multiple sign-in methods, such
 Users can sign in to your app with a single click, without worrying about the right option to pick. Credential Manager unifies the sign-in interface across authentication methods, making it clearer and easier for users to sign into apps, regardless of the method they choose. 
 
 [Read more](https://developer.android.com/identity/sign-in/credential-manager)
-
-![](https://developer.android.com/static/images/picto-icons/launch.svg)
-
-##  Get started with authentication 
-
-A collection of guides to you get started with implementing authentication into your app. 
 
 Getting started
 
@@ -124,10 +112,6 @@ Learn how to implement Sign in with Google using the Firebase Authentication lib
 
 [launchView the guide](https://firebase.google.com/docs/auth/android/google-signin)
 
-##  Latest news and videos 
-
-##  Migrate from legacy APIs to Credential Manager 
-
 [ ![](https://developer.android.com/static/images/identity/g-round.svg) ](https://developer.android.com/identity/sign-in/legacy-gsi-migration)
 
 ###  [ Migrate from legacy Google Sign-In ](https://developer.android.com/identity/sign-in/legacy-gsi-migration)
@@ -153,8 +137,6 @@ Upgrade your Android app to keep password saving working and support third-party
 Learn how to migrate your Android apps from local FIDO2 credentials to Credential Manager. 
 
 [View the guide](https://developer.android.com/identity/sign-in/fido2-migration)
-
-##  Resources for credential providers 
 
 [ ![](https://developer.android.com/static/images/picto-icons/sync-2.svg) ](https://developer.android.com/identity/sign-in/credential-provider)
 

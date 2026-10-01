@@ -3,13 +3,22 @@
 **Source:** [https://developer.android.com/develop/ui/compose/animation/introduction](https://developer.android.com/develop/ui/compose/animation/introduction)
 
 ---
+
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Develop ](https://developer.android.com/develop)
+  * [ Core areas ](https://developer.android.com/develop/core-areas)
+  * [ UI ](https://developer.android.com/develop/ui)
+  * [ Docs ](https://developer.android.com/develop/ui/compose/documentation)
+
+
+
+Save and categorize content based on your preferences. 
+
 ###  [ Animations in Compose ](https://developer.android.com/develop/ui/compose/animation/quick-guide)
 
 Animations are essential in a modern mobile app in order to realize a smooth and understandable user experience. 
 
 [Quick guide](https://developer.android.com/develop/ui/compose/animation/quick-guide)
-
-##  Animation modifiers and composables 
 
 [ ![](https://developer.android.com/static/develop/ui/compose/images/animations/animated_visibility_column.gif) ](https://developer.android.com/develop/ui/compose/animation/composables-modifiers#animatedvisibility)
 
@@ -34,8 +43,6 @@ Use `animateContentSize()` to achieve automatic size change animations.
 Use `AnimatedContent` to animate between composables that have different content. 
 
 [Learn more](https://developer.android.com/develop/ui/compose/animation/composables-modifiers#animatedcontent)
-
-##  Value-based animations 
 
 [ ![](https://developer.android.com/static/develop/ui/compose/images/animations/animated_padding.gif) ](https://developer.android.com/develop/ui/compose/animation/value-based#animate-as-state)
 

@@ -4,7 +4,8 @@
 
 ---
 
-#  Troubleshoot known issues with Android Emulator
+#  Troubleshoot known issues with Android Emulator Save and categorize content based on your preferences. 
+
 This page lists known issues, workarounds, and troubleshooting tips for the Android Emulator. If you encounter an issue not listed here or are unable to successfully use a workaround listed here, [report a bug](/studio/report-bugs#emulator-bugs).
 
 **Note:** If the emulator runs but performs poorly in general, you might need to [configure hardware acceleration](/studio/run/emulator-acceleration) for the emulator.
@@ -12,6 +13,14 @@ This page lists known issues, workarounds, and troubleshooting tips for the Andr
 ## General issues
 
 * * *
+
+## "This device isn't Play Protect certified" failures on API 37 Android Virtual Devices
+
+When running API 37 system images on the Android Emulator, you may experience workflow disruptions with Google services and applications. As of June 16, 2026, unpatched Android 17 virtual devices may fail to log into Google Accounts and experience crashes or authentication blocks when launching Google first-party apps or calling GMSCore APIs.
+
+**Workaround** : Update your system image to API 37 revision 5 or higher, or update to the latest Canary Preview system image, using the [SDK Manager](/studio/intro/update#sdk-manager).
+
+![SDK Manager](/static/studio/images/sdk-manager-platforms.png) SDK Manager
 
 ## Google maps not showing in Android Emulator extended controls
 
@@ -44,6 +53,9 @@ To lower the likelihood of exceeding the commit limit in various ways:
   * Use a _system managed size_ for the Windows pagefile, which can more flexibly and dynamically increase the pagefile size, and therefore the commit limit, in response to increased demand from the emulator and other applications.
 
 For more information on commit charges and why a flexible setting works best, read [ this Microsoft article](https://blogs.technet.microsoft.com/markrussinovich/2008/11/17/pushing-the-limits-of-windows-virtual-memory/).
+
+
+
 
 ## Multi-touch does not work in tool window
 
@@ -81,6 +93,8 @@ A number of external factors can cause the Android Emulator to begin running slo
   * If your machine has both an Intel GPU and a discrete GPU, disable the Intel GPU in Device Manager to ensure you are using the discrete GPU.
   * Run the emulator using the `-gpu swiftshader` mode. For more information about configuring graphics acceleration options on the command line, see [Configure hardware acceleration](/studio/run/emulator-acceleration#command-gpu).
   * Ensure that your router is not using IPv6 addresses if you don't have an IPv6 connection.
+
+
 
 If you are still experiencing problems with the Android Emulator running slowly, [report a bug](/studio/report-bugs#emulator-bugs) and include the necessary Android Emulator details so we can investigate.
 
@@ -182,6 +196,6 @@ Hypervisors generally cannot emulate certain CPU features, such as [Streaming SI
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-07-30 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-07-30 UTC."],[],[]] 

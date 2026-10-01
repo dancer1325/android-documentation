@@ -1,10 +1,11 @@
-# Android Gradle plugin 9.3.0  |  Android Studio  |  Android Developers
+# Android Gradle plugin 9.3.0 (July 2026)  |  Android Studio  |  Android Developers
 
 **Source:** [https://developer.android.com/build/releases/agp-9-3-0-release-notes](https://developer.android.com/build/releases/agp-9-3-0-release-notes)
 
 ---
 
-#  Android Gradle plugin 9.3.0
+#  Android Gradle plugin 9.3.0 (July 2026) Save and categorize content based on your preferences. 
+
 Android Gradle plugin 9.3 is a minor release that includes a variety of new features and improvements.
 
 ## Compatibility
@@ -18,8 +19,52 @@ SDK Build Tools | 36.0.0 | 36.0.0 | [Install](/studio/intro/update#sdk-manager) 
 NDK | N/A | 28.2.13676358 | [Install](/studio/projects/install-ndk#specific-version) or [configure](/studio/projects/install-ndk#apply-specific-version) a different version of the NDK.  
 JDK | 17 | 17 | To learn more, see [setting the JDK version](/studio/intro/studio-config#jdk).  
   
+## Standalone R8 Configuration Analyzer Gradle task
+
+Android Gradle plugin 9.3 introduces a dedicated Gradle task for running the [R8 Configuration Analyzer](/topic/performance/app-optimization/r8-configuration-analyzer) in isolation. The R8 Configuration Analyzer helps you optimize your app's code shrinking and obfuscation rules.
+    
+    
+    ./gradlew :app:analyzeReleaseR8Config
+    
+
+The `:app:analyzeReleaseR8Config` task generates the report without completing the APK or Bundle compilation pipeline. This provides a shorter feedback loop, which speeds up developer iteration when refining keep rules. Alternatively, you can generate the report automatically by running an R8 release build (such as `assembleRelease` or `bundleRelease`).
+
+For more information, see [Run the standalone Gradle task for generating report](/topic/performance/app-optimization/r8-configuration-analyzer#run-standalone-task).
+
 ## Fixed issues
 
+### Android Gradle plugin 9.3.3
+
+Fixed Issues  
+---  
+**Android Gradle Plugin** |  |  [Issue #556343682](https://issuetracker.google.com/issues/556343682) AGP 9.3.0's new optimization { enable = true } DSL does not set isMinifyEnabled in the ApplicationVariant object  
+---  
+**Dexer (D8)** |  |  [Issue #558810278](https://issuetracker.google.com/issues/558810278) D8 9.2.14 is ~38% slower than 8.13.6 in `mergeProjectDexDebug` on identical input/output  
+---  
+**Shrinker (R8)** |  |  [Issue #545349635](https://issuetracker.google.com/issues/545349635) D8 debug mode: ArrayIndexOutOfBoundsException: Index -1 out of bounds for length 31 — regression between R8 8.8.34 and 8.9.27  
+---  
+[Issue #551348855](https://issuetracker.google.com/issues/551348855) VerifyError: Outliner incorrectly extends try-catch region, causing uninitialized register  
+[Issue #543685256](https://issuetracker.google.com/issues/543685256) R8 writes `.kotlin_module` file with `:` in its name, producing a filename invalid on Windows  
+[Issue #554586985](https://issuetracker.google.com/issues/554586985) R8 build non-determinism: identical input produces different dex/mapping (regression from "Retain Assume instructions in LIR")  
+[Issue #522844908](https://issuetracker.google.com/issues/522844908) Duplicate mapping with R8 9.1  
+[Issue #485558707](https://issuetracker.google.com/issues/485558707) AGP intermittently produces dex files that fail verification and crash app on launch  
+[Issue #514117718](https://issuetracker.google.com/issues/514117718) NullPointerException: Cannot invoke Position.getOutermostCaller() because entryPosition is null  
+[Issue #539672118](https://issuetracker.google.com/issues/539672118) High per-rule memory consumption  
+[Issue #506912893](https://issuetracker.google.com/issues/506912893) R8: VerifyError on Android 4.4  
+  
+### Android Gradle plugin 9.3.2
+
+Fixed Issues  
+---  
+**Lint** |  |  [Issue #522845800](https://issuetracker.google.com/issues/522845800) AGP 9.3 lint crashes on JDK 17 — NoSuchMethodError: java.util.List.removeLast() in bundled intellij-core JavaDocParser  
+---  
+  
+### Android Gradle plugin 9.3.1
+
+Fixed Issues  
+---  
+No public issues were marked as fixed in AGP 9.3.1   
+  
 ### Android Gradle plugin 9.3.0-rc02
 
 Fixed Issues  
@@ -121,8 +166,29 @@ Fixed Issues
 **Lint** |  |  [Issue #492246721](https://issuetracker.google.com/issues/492246721) Lint false positive with UseKtx  
 ---  
   
+### Android Gradle plugin 9.3.0
+
+Fixed Issues  
+---  
+No public issues were marked as fixed in AGP 9.3.0   
+  
+## Updated optimization DSL to configure R8 keep rules
+
+Introduces an [updated optimization DSL](/topic/performance/app-optimization/enable-app-optimization#optimization-dsl) to configure keep rules for R8 optimization, supported by app modules and library module tests. To configure optimization with the updated DSL, use the new `optimization` block. For apps, configure the `optimization` block within a build type (such as `release` or `debug`) in the app-level build script. The updated optimization DSL makes R8 configuration simpler:
+
+  * Turning on optimization enables both code optimization and optimized resource shrinking.
+  * You no longer need to specify the default Android keep rules file.
+
+
+
+Note that the [legacy DSL](/topic/performance/app-optimization/enable-app-optimization#legacy-optimization-dsl) continues to be supported.
+
+## Introduction of source sets to define keep rules
+
+Place keep rules in the `src/<variant>/keepRules/` source set, with the file-suffix `.keep`. Source sets for keep rules are supported by the updated optimization DSL and the legacy DSL. Using source sets for keep rules is supported in app modules, library modules, and as a way to define consumer rules in Kotlin Multiplatform (KMP) modules.
+
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-07-10 UTC.
+Last updated 2026-09-24 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-07-10 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-24 UTC."],[],[]] 

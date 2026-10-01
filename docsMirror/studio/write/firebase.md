@@ -4,7 +4,8 @@
 
 ---
 
-#  Connect to Firebase
+#  Connect to Firebase Save and categorize content based on your preferences. 
+
 ![](/static/studio/images/write/assistant-window_2-2_2x.png)
 
 **Figure 1.** The Assistant tool window in Android Studio.
@@ -18,6 +19,8 @@ You can open and use the **Assistant** window in Android Studio by following the
   1. Select **Tools > Firebase** to open the **Assistant** window.
   2. Click to expand one of the listed features.
   3. Click **Get Started with Firebase Analytics** to open a tutorial that connects you to Firebase and adds the necessary code to your app.
+
+
 
 For more information about using Firebase services, see the [Firebase documentation](https://firebase.google.com/docs/).
 

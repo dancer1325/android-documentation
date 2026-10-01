@@ -4,7 +4,8 @@
 
 ---
 
-#  Advanced emulator networking features
+#  Advanced emulator networking features Save and categorize content based on your preferences. 
+
 The Android Emulator includes a network simulator that lets you develop and test Android apps without using physical radios.
 
 This page describes command-line options for controlling features of the network simulator.
@@ -28,6 +29,8 @@ These flags control the general behavior and setup of the netsim daemon.
   * `-l, --logtostderr`: Set whether log messages go to stderr instead of log files. Useful for seeing logs directly in the emulator output.
   * `-v, --verbose`: Enable verbose mode. This mode prints more detailed logs, which is useful for debugging complex issues.
   * `--hci-port <HCI_PORT>`: Set a custom HCI port. Useful for running multiple emulators or connecting to a specific HCI port.
+
+
 
 ## Specify the directory for artifacts
 
@@ -62,6 +65,8 @@ To configure a Wi-Fi access point, use the `--wifi` argument with the emulator. 
   * `SSID`: The network name.
   * `PASSWORD`: The network password is optional and must be 8 or more characters; when set, the access point will be encrypted with WPA2 (CCMP).
 
+
+
 ## Set Received Signal Strength (RSSI)
 
 The network simulator supports setting specific RSSI values for a specific radio with the `--rssi` flag.
@@ -74,6 +79,8 @@ The network simulator supports setting specific RSSI values for a specific radio
 
   * `PHY_KIND`: The type of Bluetooth radio (e.g., `ble`, `bt_classic`). This parameter supports case-insensitive aliases.
   * `RSSI_VALUE`: The RSSI value, an i8 (integer).
+
+
 
 For example, the following command sets the RSSI for BLE traffic to -65 dBm:
     

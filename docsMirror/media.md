@@ -3,6 +3,9 @@
 **Source:** [https://developer.android.com/media](https://developer.android.com/media)
 
 ---
+
+Save and categorize content based on your preferences. 
+
 ![](https://developer.android.com/static/images/media/media-hero.svg)
 
 ![](https://developer.android.com/static/images/dev-center/icons/media.svg)Developer center 
@@ -12,10 +15,6 @@
 Your first stop for content on developing camera and media apps. Explore resources on building playback and editing apps with Jetpack Media3. Learn how to extend engaging media experiences to users across Android's multidevice ecosystem. 
 
 [Get started with the docs](https://developer.android.com/media/guides) [Get started with a codelab](https://developer.android.com/codelabs/exoplayer-intro)
-
-##  Build modern camera and media use cases 
-
-Users are moving from doing everything on phones to an increasingly multidevice world. Android is evolving to help you reach users where they are with the features they want, on phones, tablets, watches, TVs and even in cars. 
 
 Guide
 
@@ -40,8 +39,6 @@ Guide
 ###  [ The Watch Next channel ](https://developer.android.com/tv)
 
 Recommend TV content that you know your users care about. 
-
-##  Find inspiration in device galleries 
 
 [ ![](https://developer.android.com/static/images/picto-icons/dual-screen-devices.svg) ](https://developer.android.com/large-screens/gallery/media)
 
@@ -131,17 +128,11 @@ Using older APIs like the standalone ExoPlayer library, MediaCompat, or Jetpack 
   * Editing with the new Transformer API
   * Backwards-compatible with MediaCompat APIs
 
+
+
 [See the Media3 Migration Guide](https://developer.android.com/guide/topics/media/media3/getting-started/migration-guide)
 
-##  Highlighted content 
-
 ###  Connect with us 
-
-emoji_people 
-
-##  Meet us at events 
-
-Members of the Android Developer Relations Camera & Media team will be at these events, and we'd love to meet you in person! 
 
 Android Insiders
 

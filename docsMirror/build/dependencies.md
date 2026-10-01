@@ -4,12 +4,13 @@
 
 ---
 
-#  Add build dependencies
+#  Add build dependencies Save and categorize content based on your preferences. 
+
 **Note:** When adding dependencies, consider enabling [Dependency verification](/build/dependency-verification) to help ensure the dependencies you download and include in your project are what you expect.
 
 The Gradle build system in Android Studio lets you include external binaries or other library modules to your build as dependencies. The dependencies can be located on your machine or in a remote repository, and any transitive dependencies they declare are automatically included as well. This page describes how to use dependencies with your Android project, including details about behaviors and configurations that are specific to the Android Gradle plugin (AGP). For a deeper conceptual guide to Gradle dependencies, see the [Gradle guide for dependency management](https://docs.gradle.org/current/userguide/getting_started_dep_man.html), but remember that your Android project must use only the dependency configurations defined on this page.
 
-**Caution:** When specifying dependencies, you should not use dynamic version numbers, such as `'com.android.tools.build:gradle:3.+'`. Using this feature can cause unexpected version updates, difficulty resolving version differences, and poor performance.
+**Caution:** When specifying dependencies, you shouldn't use dynamic version numbers, such as `'com.android.tools.build:gradle:3.+'`. Using this feature can cause unexpected version updates, difficulty resolving version differences, and poor performance.
 
 ## Add a library or plugin dependency
 
@@ -17,7 +18,7 @@ The best way to add and manage build dependencies is to use version catalogs, th
 
 For guidance on adding and managing native dependencies (not common), see [Native dependencies](/build/native-dependencies).
 
-In the following example, we add a [remote binary dependency](/build/remote-repositories) (the [Jetpack Macrobenchmark library](/jetpack/androidx/releases/benchmark)), [local library module dependency](/studio/projects/android-library) (`myLibrary`), and a plugin dependency (the Android Gradle plugin) to our project. Here are the general steps to add these dependencies to your project:
+In the following example, a [remote binary dependency](/build/remote-repositories) (the [Jetpack Macrobenchmark library](/jetpack/androidx/releases/benchmark)), [local library module dependency](/studio/projects/android-library) (`myLibrary`), and a plugin dependency (the Android Gradle plugin) are added to the project. Here are the general steps to add these dependencies to your project:
 
 **Note:** It's possible to [declare version catalogs in the settings file](https://docs.gradle.org/current/userguide/platforms.html#sub:version-catalog-declaration), but we recommend using a separate `toml` file to get more support with code suggestions and highlighting from Android Studio.
 
@@ -78,20 +79,23 @@ Some libraries are available in a published Bill of Materials (BOM) that groups 
 
 Plugin references include `plugins` after the catalog name, and version references include `versions` after the catalog name (version references are uncommon; see [Dependencies with same version numbers](https://docs.gradle.org/current/userguide/platforms.html#sec:common-version-numbers) for examples of version references.) Library references don't include a `libraries` qualifier, so you can't use `versions` or `plugins` at the start of a library alias.
 
+
+
+
 ## Configure dependencies
 
 Inside the `dependencies` block, you can declare a library dependency using one of several different _dependency configurations_ (such as `implementation` shown earlier). Each dependency configuration provides Gradle with different instructions about how to use the dependency. The following table describes each of the configurations you can use for a dependency in your Android project.  Configuration | Behavior  
 ---|---  
 `implementation` | Gradle adds the dependency to the compile classpath and packages the dependency to the build output. When your module configures an `implementation` dependency, it's letting Gradle know that you don't want the module to leak the dependency to other modules at compile time. That is, the dependency isn't made available to other modules that depend on the current module. Using this dependency configuration instead of `api` can result in significant build time improvements because it reduces the number of modules that the build system needs to recompile. For example, if an `implementation` dependency changes its API, Gradle recompiles only that dependency and the modules that directly depend on it. Most app and test modules should use this configuration.  
 `api` | Gradle adds the dependency to the compile classpath and build output. When a module includes an `api` dependency, it's letting Gradle know that the module wants to transitively export that dependency to other modules, so that it's available to them at both runtime and compile time. Use this configuration with caution and only with dependencies that you need to transitively export to other upstream consumers. If an `api` dependency changes its external API, Gradle recompiles all modules that have access to that dependency at compile time. Having a large number of `api` dependencies can significantly increase build time. Unless you want to expose a dependency's API to a separate module, library modules should instead use `implementation` dependencies.  
-`compileOnly` | Gradle adds the dependency to the compile classpath only (that is, it's not added to the build output). This is useful when you're creating an Android module and you need the dependency during compilation, but it's optional to have it present at runtime. For example, if you depend on a library that only includes compile-time annotations—typically used to generate code but often not included in the build output—you could mark that library `compileOnly`.  If you use this configuration, then your library module must include a runtime condition to check whether the dependency is available, and then gracefully change its behavior so it can still function if it's not provided. This helps reduce the size of the final app by not adding transient dependencies that aren't critical.  **Note:** You can't use the `compileOnly` configuration with Android Archive (AAR) dependencies.   
+`compileOnly` | Gradle adds the dependency to the compile classpath only (that is, it's not added to the build output). This is useful when you're creating an Android module and you need the dependency during compilation, but it's optional to have it present at runtime. For example, if you depend on a library that only includes compile-time annotations—typically used to generate code but often not included in the build output—you could mark that library `compileOnly`.  If you use this configuration, then your library module must include a runtime condition to check whether the dependency is available, and then gracefully change its behavior so it can still function if it's not provided. This helps reduce the size of the final app by not adding transient dependencies that aren't critical. **Note:** You can't use the `compileOnly` configuration with Android Archive (AAR) dependencies.   
 `runtimeOnly` | Gradle adds the dependency to the build output only, for use during runtime. That is, it isn't added to the compile classpath. This is rarely used on Android, but commonly used in server applications to provide logging implementations. For example, a library could use a logging API that doesn't include an implementation. Consumers of that library could add it as an `implementation` dependency and include a `runtimeOnly` dependency for the actual logging implementation to use.   
 `ksp  
 kapt  
 annotationProcessor` | These configurations supply libraries that process annotations and other symbols in your code before it is compiled. They typically validate your code or generate additional code, reducing the code you need to write. To add such a dependency, you must add it to the annotation processor classpath using the `ksp`, `kapt`, or `annotationProcessor` configurations. Using these configurations improves build performance by separating the compile classpath from the annotation processor classpath. If Gradle finds annotation processors on the compile classpath, it deactivates [ compile avoidance](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_compile_avoidance), which negatively impacts build time (Gradle 5.0 and higher ignore annotation processors found on the compile classpath). The Android Gradle plugin assumes a dependency is an annotation processor if its JAR file contains the following file: `META-INF/services/javax.annotation.processing.Processor` If the plugin detects an annotation processor that's on the compile classpath, it produces a build error. `ksp` is a Kotlin Symbol Processor, and is run by the Kotlin compiler. `kapt` and `apt` are separate tools that process annotations before Kotlin or Java compilers execute. When deciding which configuration to use, consider the following:
 
   * If a processor is available as a Kotlin Symbol Processor, use it as a `ksp` dependency. See [Migrate from kapt to ksp](/build/migrate-to-ksp) for details on using Kotlin Symbol Processors.
-  * If the processor isn’t available as a Kotlin Symbol Processor: 
+  * If the processor isn't available as a Kotlin Symbol Processor: 
     * If your project includes Kotlin source (but can also include Java source), [use `kapt`](https://kotlinlang.org/docs/reference/kapt.html) to include it.
     * If your project only uses Java source, use `annotationProcessor` to include it.
 
@@ -198,13 +202,15 @@ However, certain configurations don't make sense in this situation. For example,
 
 ## Dependency order
 
-The order in which you list your dependencies indicates the priority for each: the first library is higher priority than the second, the second is higher priority than the third, and so on. This order is important in the event that [resources are merged](/studio/write/add-resources#resource_merging) or [manifest elements are merged](/studio/build/manage-manifests#merge-manifests) into your app from the libraries.
+The order in which you list your dependencies indicates the priority for each. For example, the first library is higher priority than the second, and the second is higher priority than the third. This order is important in the event that [resources are merged](/studio/write/add-resources#resource_merging) or [manifest elements are merged](/studio/build/manage-manifests#merge-manifests) into your app from the libraries.
 
 For example, if your project declares the following:
 
   * Dependency on `LIB_A` and `LIB_B` (in that order)
   * And `LIB_A` depends on `LIB_C` and `LIB_D` (in that order)
   * And `LIB_B` also depends on `LIB_C`
+
+
 
 Then, the flat dependency order will be as follows:
 
@@ -213,9 +219,11 @@ Then, the flat dependency order will be as follows:
   3. `LIB_B`
   4. `LIB_C`
 
+
+
 This ensures that both `LIB_A` and `LIB_B` can override `LIB_C`; and `LIB_D` is still higher priority than `LIB_B` because `LIB_A` (which depends on it) has higher priority than `LIB_B`.
 
-For more information about how manifests from different project sources/dependencies are merged, see [Merge multiple manifest files](/studio/build/manage-manifests#merge-manifests).
+For more information about how manifests from different project sources or dependencies are merged, see [Merge multiple manifest files](/studio/build/manage-manifests#merge-manifests).
 
 ## Dependency information for Play Console
 
@@ -244,6 +252,8 @@ Android Studio shows lint warnings in the version catalog file and the **Project
   * The SDKs violate Play policies.
   * The SDKs have known security vulnerabilities.
   * The SDKs have been deprecated by their authors.
+
+
 
 The warnings are signals that you should update those dependencies, because using outdated versions could prevent you from publishing to the Google Play Console in the future.
 
@@ -310,7 +320,7 @@ The build file also declares a dependency on the Android Gradle plugin (`com.app
     
     
     plugins {
-        id ‘com.android.application’ version ‘8.3.0-rc02’ apply false
+        id 'com.android.application' version '8.3.0-rc02' apply false
     }
 
 If you have a single-module project you can specify the version explicitly in the module-level build script and leave the project-level build script empty:
@@ -331,6 +341,6 @@ If you have a single-module project you can specify the version explicitly in th
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-16 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-16 UTC."],[],[]] 

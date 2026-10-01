@@ -4,8 +4,16 @@
 
 ---
 
-#  Debug your layout with Layout Inspector
+#  Debug your layout with Layout Inspector Save and categorize content based on your preferences. 
+
 The Layout Inspector in Android Studio lets you inspect and debug the layout inside a running app in an emulator or physical device. You can inspect the attributes of each component, compare your app layout with design mockups, and display a magnified view of your app.
+
+Try [Android CLI](/tools/agents) if you're not using Android Studio or prefer to do things from the command line.  
+  
+For example, use the [`android layout`](/tools/agents/android-cli/commands/layout) command when you need to inspect and debug your layout.
+    
+    
+    android layout
 
 You can also use the Layout Inspector to check how often a composable is recomposed or skipped, which can help identify issues with your app. For example, some coding errors might force your UI to recompose excessively, which can cause poor performance. Some coding errors can prevent your UI from recomposing and, therefore, can prevent your UI changes from appearing on the screen.
 
@@ -23,11 +31,13 @@ Here's how to do some common tasks:
 
   * To view hierarchy and inspect the attributes of each component, use the **Component Tree** and **Attributes** tool windows. Layout Inspector might require an activity restart to access the attributes.
   * To select components, first enable **Toggle Deep Inspect** ![Toggle deep
-inspect button](/static/studio/images/design/deep-inspect.png), then click the components. Alternatively, navigate to your code by double-clicking the components.
+inspect button](/static/studio/images/design/deep-inspect.png), and then click the components. Alternatively, navigate to your code by double-clicking the components.
   * To interact with the app, disable **Toggle Deep Inspect** ![Toggle deep
 inspect button](/static/studio/images/design/deep-inspect.png).
   * To inspect physical devices, enable [device mirroring](/studio/run/device#device-mirroring).
   * To enable live updates as you update your app's UI, check that [Live Edit](/develop/ui/compose/tooling/iterative-development#live-edit) is enabled.
+
+
 
 ## Select or isolate a component
 
@@ -52,7 +62,7 @@ Layout Inspector lets you save snapshots of your running app's layout hierarchy,
 Snapshots capture the data you would typically see when using the Layout Inspector, including a detailed rendering of your layout, the component tree of your Compose, View, or hybrid layout, and detailed attributes for each component of your UI. To save a snapshot, click **Snapshot Export/Import** ![Snapshot
 Export/Import](/static/studio/images/design/li-snapshot.png) and then **Export Snapshot**.
 
-Load a previously saved Layout Inspector snapshot by clicking **Import Snapshot**.
+To load a previously saved Layout Inspector snapshot, click **Import Snapshot**.
 
 ## Compare app layout to a reference image overlay
 
@@ -62,9 +72,11 @@ To compare your app layout with a reference image, such as a UI mockup, you can 
   * To adjust the transparency of the overlay, use the **Overlay Alpha** slider.
   * To remove the overlay, click **Clear Overlay**. ![](/static/studio/images/buttons/live-layout-inspector-remove-overlay-icon.png)
 
+
+
 ## Standalone Layout Inspector
 
-For optimal performance, we recommend using the Layout Inspector in its default embedded mode. If you want to un-embed the Layout Inspector, go to **File** (**Android Studio** on macOS)> **Settings** > **Tools** > **Layout Inspector** and clear the **Enable embedded Layout Inspector** checkbox.
+For optimal performance, we recommend using the Layout Inspector in its default embedded mode. If you want to un-embed the Layout Inspector, go to **File** (**Android Studio** on macOS) > **Settings** > **Tools** > **Layout Inspector** and clear the **Enable embedded Layout Inspector** checkbox.
 
 In standalone mode, enable live updates by clicking the **Live Updates** ![](/static/studio/images/buttons/layout-inspector-live-updates-button.png) option from the **Layout Inspector** toolbar.
 
@@ -74,8 +86,10 @@ In standalone mode, enable live updates by clicking the **Live Updates** ![](/st
 
   * [Debug your layout with Layout Inspector (Views)](/studio/views/layout-inspector-views)
 
+
+
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-25 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-25 UTC."],[],[]] 

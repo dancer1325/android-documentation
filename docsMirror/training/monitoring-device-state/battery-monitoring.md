@@ -4,7 +4,8 @@
 
 ---
 
-#  Monitor the Battery Level and Charging State
+#  Monitor the Battery Level and Charging State Save and categorize content based on your preferences. 
+
 When you're altering the frequency of your background updates to reduce the effect of those updates on battery life, checking the current battery level and charging state is a good place to start.
 
 The battery-life impact of performing application updates depends on the battery level and charging state of the device. The impact of performing updates while the device is charging over AC is negligible, so in most cases you can maximize your refresh rate whenever the device is connected to a wall charger. Conversely, if the device is discharging, reducing your update rate helps prolong the battery life.

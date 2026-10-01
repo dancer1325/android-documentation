@@ -3,19 +3,20 @@
 **Source:** [https://developer.android.com/ml](https://developer.android.com/ml)
 
 ---
-##  Integrate your app with the Android intelligence system 
 
-Android is evolving into an intelligence system, powered by AI. Integrate your app through a self-service model, and become part of the next generation of intelligent experiences on Android. 
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Develop ](https://developer.android.com/develop)
+  * [ Overview ](https://developer.android.com/ai)
+
+
+
+Save and categorize content based on your preferences. 
 
 ![AI on Android](/static/ai/assets/images/ai-hero.png)
 
-##  Find your Android AI pathway 
+[ ![](https://developer.android.com/static/images/picto-icons/android-ktx.svg) ](https://developer.android.com/ai/intelligence-system)
 
-Select from Google's cutting-edge AI/ML solutions to empower and enlighten your Android app users. 
-
-[ ![](https://developer.android.com/static/images/picto-icons/android-ktx.svg) ](https://developer.android.com/ai/appfunctions)
-
-###  [ Prepare and connect your app to the intelligence system ](https://developer.android.com/ai/appfunctions)
+###  [ Prepare and connect your app to the intelligence system ](https://developer.android.com/ai/intelligence-system)
 
 Make your app's capabilities available to qualified agents using AppFunctions or rely on UI automation on supported devices as a fall back. 
 
@@ -34,10 +35,6 @@ Leverage agentic tools for Android development, including Gemini in Android Stud
 [Download Android CLI download ](https://developer.android.com/tools/agents)
 
 [Get started with AI on Android arrow_right_alt ](https://developer.android.com/ai/overview)
-
-![](https://developer.android.com/static/images/picto-icons/stars.svg)
-
-##  New Android intelligent features 
 
 New feature
 
@@ -73,15 +70,19 @@ Join the AICore Developer Preview to prototype with on-device Gemini Nano models
 
 New feature
 
+###  [ Jetpack Compose A2UI Renderer ](https://developer.android.com/develop/ui/compose/agentic)
+
+Use AI agents to dynamically render UIs in your Android app that are built with native Jetpack Compose and Material 3 components. 
+
+[Learn more](https://developer.android.com/develop/ui/compose/agentic)
+
+New feature
+
 ###  [ Gemma 4 ](https://developer.android.com/blog/posts/gemma-4-the-new-standard-for-local-agentic-intelligence-on-android)
 
 Unlock local agentic intelligence on Android with Gemma 4, our open model featuring advanced reasoning and tool calling. Code with Gemma 4 in Android Studio, and build on-device AI features with ML Kit GenAI APIs today. 
 
 [Learn more](https://developer.android.com/blog/posts/gemma-4-the-new-standard-for-local-agentic-intelligence-on-android)
-
-![](https://developer.android.com/static/images/picto-icons/learning-resources_dt.svg)
-
-##  AI case studies 
 
 ![](https://developer.android.com/static/images/ai/kakao-logo.png)
 
@@ -115,12 +116,6 @@ Google Pixel's voice recorder app leverages Gemini Nano to provide offline and o
 
 [Learn more](https://android-developers.googleblog.com/2024/08/recorder-app-on-pixel-sees-boost-in-engagement-with-gemini-nano.html)
 
-![](https://developer.android.com/static/images/picto-icons/machine-learning.svg)
-
-##  Traditional ML solutions 
-
-Harness the processing capabilities of Android devices for on-device ML detection and classification of images, audio, and text. 
-
 [ ![](https://developer.android.com/static/images/ai/ml-kit.png) ](https://developers.google.com/ml-kit)
 
 ###  [ Common user flows with ML Kit ](https://developers.google.com/ml-kit)
@@ -153,19 +148,13 @@ Deploy and manage your custom ML and GenAI models for on-device AI features effi
 
 [Join the early access program](https://forms.gle/udLiRgA6zFzpfxZy9)
 
-![](https://developer.android.com/static/images/picto-icons/brackets.svg)
+[ ![](https://developer.android.com/static/images/logos/android-studio-round.svg) ](https://developer.android.com/ai-in-android)
 
-##  Accelerate your development 
-
-AI-powered tools can automate repetitive tasks, suggest code, debug errors, and more—which lets you focus on higher-level problem-solving and innovation. 
-
-[ ![](https://developer.android.com/static/images/logos/android-studio-round.svg) ](https://developer.android.com/gemini-in-android)
-
-###  [ Gemini in Android Studio ](https://developer.android.com/gemini-in-android)
+###  [ Gemini in Android Studio ](https://developer.android.com/ai-in-android)
 
 Gemini in Android Studio is your coding companion for Android development. It can generate code, find relevant resources, learn best practices, troubleshoot errors, and save time. 
 
-[Learn more](https://developer.android.com/gemini-in-android)
+[Learn more](https://developer.android.com/ai-in-android)
 
 [ ![](https://developer.android.com/static/images/logos/android.svg) ](https://developer.android.com/tools/agents)
 
@@ -190,15 +179,5 @@ Get early access to the latest Gemini Nano models. Test your prompts, explore on
 The fastest way to start using Gemini is with Google AI Studio, a web-based tool that lets you prototype, run prompts right in your browser, and get started with the Gemini API. 
 
 [Get started](https://aistudio.google.com/app/prompts/new_chat)
-
-##  Latest news and videos 
-
-![](https://developer.android.com/static/images/picto-icons/grow.svg)
-
-##  Community & Support 
-
-If you are building generative AI features, we would love to have a conversation with you! Complete the form to keep in touch, or join an existing community group. 
-
-[Get in touch](https://docs.google.com/forms/d/e/1FAIpQLScE3qCIyJm6FanJP-dDKYutt1nAwmneK-viBrRh5v5UdtXGjw/viewform) [Find a Google Developer Group](https://gdg.community.dev)
 
 [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]] 

@@ -4,7 +4,8 @@
 
 ---
 
-#  Debug your WorkManager workers with Background Task Inspector
+#  Debug your WorkManager workers with Background Task Inspector Save and categorize content based on your preferences. 
+
 The Background Task Inspector helps you visualize, monitor, and debug your app's background workers when using [WorkManager library](/jetpack/androidx/releases/work) 2.5.0 or higher.
 
 ## Get started
@@ -21,6 +22,9 @@ To list workers in the Background Task Inspector, do the following:
 
   5. The workers in the currently running app appear in the **Background Task Inspector** pane. Click on the worker that you want to inspect further.
 
+
+
+
 ## View and inspect workers
 
 When you deploy an app using WorkManager 2.5.0 or higher on a device running API level 26 or higher, the **Background Task Inspector** tab shows active workers. The **Background Task Inspector** (shown in a [later section](/studio/inspect/task#inspect-jobs-alarms-wakelocks) as figure 3) lists the class name, current status, start time, and retries of all jobs, whether they are running, failed, or completed.
@@ -35,6 +39,8 @@ Click a job from the list to open the **Work Details** panel, which displays det
   * **Execution** : This section shows the worker’s constraints (if any), running frequency, and state, as well as which class created and queued the worker.
   * **WorkContinuation** : This section displays where the worker is in the work chain. To check the details of another worker in the work chain, click its UUID.
   * **Results** : This section displays the start time, retry count, and the output data of the selected worker.
+
+
 
 ### Cancel workers
 
@@ -70,11 +76,20 @@ To learn more about the Background Task Inspector, see the following additional 
 
   * [Schedule tasks with WorkManager](/topic/libraries/architecture/workmanager)
 
+
+
 ### Codelabs
+
+  * [Background work with WorkManager](https://developer.android.com/codelabs/android-workmanager)
+  * [Advanced WorkManager](https://developer.android.com/codelabs/android-adv-workmanager)
+
+
 
 ### Blog posts
 
   * [Background Task Inspector](https://medium.com/androiddevelopers/background-task-inspector-30c8706f0380)
+
+
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

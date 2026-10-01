@@ -4,7 +4,8 @@
 
 ---
 
-#  Sizing
+#  Sizing Save and categorize content based on your preferences. 
+
 Design adaptable Android widgets that scale seamlessly. Use our recommended default sizes as a starting point, and test your layouts across different dimensions to ensure optimal readability and user experience.
 
 ## Default sizes

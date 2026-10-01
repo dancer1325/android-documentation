@@ -4,7 +4,8 @@
 
 ---
 
-#  Contact picker
+#  Contact picker Save and categorize content based on your preferences. 
+
 The Android Contact Picker is a standardized, browsable interface for users to share contacts with your app. Available on devices running Android 17 (API level 37) or higher, the picker offers a privacy-preserving alternative to the broad `READ_CONTACTS` permission. Instead of requesting access to the user's entire address book, your app specifies the data fields it needs, such as phone numbers or email addresses, and the user selects specific contacts to share. This grants your app read access to only the selected data, ensuring granular control while providing a consistent user experience with built-in search, profile switching, and multi-selection capabilities without having to build or maintain the UI.
 
 ## Integrate the Contact Picker
@@ -18,6 +19,8 @@ Common MIME types include:
   * `ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE`
   * `ContactsContract.CommonDataKinds.Email.CONTENT_ITEM_TYPE`
   * `ContactsContract.CommonDataKinds.StructuredPostal.CONTENT_ITEM_TYPE`
+
+
 
 ## Launch the picker
 
@@ -36,7 +39,7 @@ Use `registerForActivityResult` with the `StartActivityForResult` contract to la
         }
     }
     
-    [ContactPickerActivity.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/contacts/src/main/java/com/example/contacts/ContactPickerActivity.kt#L90-L100)
+    [ContactPickerActivity.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/contacts/src/main/java/com/example/contacts/ContactPickerActivity.kt#L90-L100)
     
     
     
@@ -70,7 +73,7 @@ In this example, the app requests only phone numbers. The picker will filter the
     // Launch the picker
     pickContact.launch(pickContactIntent)
     
-    [ContactPickerActivity.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/contacts/src/main/java/com/example/contacts/ContactPickerActivity.kt#L113-L129)
+    [ContactPickerActivity.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/contacts/src/main/java/com/example/contacts/ContactPickerActivity.kt#L113-L129)
     
     
     
@@ -104,7 +107,7 @@ To enable multi-selection, add the `Intent.EXTRA_ALLOW_MULTIPLE` extra. You can 
     // Launch the picker
     pickContact.launch(pickContactIntent)
     
-    [ContactPickerActivity.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/contacts/src/main/java/com/example/contacts/ContactPickerActivity.kt#L142-L164)
+    [ContactPickerActivity.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/contacts/src/main/java/com/example/contacts/ContactPickerActivity.kt#L142-L164)
     
     
     
@@ -179,7 +182,7 @@ You can query this URI using a standard `ContentResolver`. The resulting `Cursor
         return@withContext contactsMap.values.toList()
     }
     
-    [ContactPickerActivity.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/contacts/src/main/java/com/example/contacts/ContactPickerActivity.kt#L226-L287)
+    [ContactPickerActivity.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/contacts/src/main/java/com/example/contacts/ContactPickerActivity.kt#L226-L287)
     
     
     
@@ -203,8 +206,10 @@ You can test the new picker behavior on devices running Android 17 and higher ev
   * **Persist data immediately** : The Session URI grants temporary read permission. If you need to access this contact information later (after your app process is killed), your app has to persist the contact data.
   * **Don't rely on Account Data** : To protect user privacy and prevent fingerprinting, account-specific metadata is stripped from the results.
 
+
+
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-16 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-16 UTC."],[],[]] 

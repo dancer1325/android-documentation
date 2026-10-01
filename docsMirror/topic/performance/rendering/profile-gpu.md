@@ -4,30 +4,27 @@
 
 ---
 
-#  Analyze with Profile GPU Rendering
-The [ Profile GPU Rendering](/studio/profile/dev-options-rendering) tool indicates the relative time that each stage of the rendering pipeline takes to render the previous frame. This knowledge can help you identify bottlenecks in the pipeline, so that you can know what to optimize to improve your app's rendering performance. 
+#  Analyze with Profile GPU Rendering Save and categorize content based on your preferences. 
 
-This page briefly explains what happens during each pipeline stage, and discusses issues that can cause bottlenecks there. Before reading this page, you should be familiar with the information presented in [Profile GPU rendering](/topic/performance/rendering/inspect-gpu-rendering#profile_rendering). In addition, to understand how all of the stages fit together, it may be helpful to review [ how the rendering pipeline works.](https://www.youtube.com/watch?v=we6poP0kw6E&index=64&list=PLWz5rJ2EKKc9CBxr3BVjPTPoDPLdPIFCE)
+The [ Profile GPU Rendering](/studio/profile/dev-options-rendering) tool indicates the relative time that each stage of the rendering pipeline takes to render the previous frame. This knowledge can help you identify bottlenecks in the pipeline so that you can optimize to improve your app's rendering performance. 
+
+This page briefly explains what happens during each pipeline stage and discusses issues that can cause bottlenecks. Before reading this page, you should be familiar with the information presented in [Profile GPU rendering speed](/topic/performance/rendering/inspect-gpu-rendering#profile_rendering). In addition, to understand how all of the stages fit together, it may be helpful to review [ how the rendering pipeline works.](https://www.youtube.com/watch?v=we6poP0kw6E&index=64&list=PLWz5rJ2EKKc9CBxr3BVjPTPoDPLdPIFCE)
 
 ## Visual representation
 
 The Profile GPU Rendering tool displays stages and their relative times in the form of a graph: a color-coded histogram. Figure 1 shows an example of such a display. 
 
-![](/static/topic/performance/images/bars.png)
-
-**Figure 1.** Profile GPU Rendering Graph 
+![Profile GPU Rendering Graph](/static/topic/performance/images/bars.png) **Figure 1.** Profile GPU Rendering Graph 
 
 Each segment of each vertical bar displayed in the Profile GPU Rendering graph represents a stage of the pipeline and is highlighted using a specific color in the bar graph. Figure 2 shows a key to the meaning of each displayed color. 
 
-![](/static/topic/performance/images/s-profiler-legend.png)
+![Profile GPU Rendering Graph Legend](/static/topic/performance/images/s-profiler-legend.png) **Figure 2.** Profile GPU Rendering Graph Legend 
 
-**Figure 2.** Profile GPU Rendering Graph Legend 
-
-Once you understand what each color signfiies, you can target specific aspects of your app to try to optimize its rendering performance. 
+Once you understand what each color signifies, you can target specific aspects of your app to try to optimize its rendering performance. 
 
 ## Stages and their meanings
 
-This section explains what happens during each stage corresponding to a color in Figure 2, as well as bottleneck causes to look out for. 
+This section explains what happens during each stage as well as bottleneck causes to look out for. 
 
 ### Input handling
 
@@ -35,125 +32,115 @@ The input handling stage of the pipeline measures how long the app spent handlin
 
 #### When this segment is large
 
-High values in this area are typically a result of too much work, or too-complex work, occurring inside the input-handler event callbacks. Since these callbacks always occur on the main thread, solutions to this problem focus on optimizing the work directly, or offloading the work to a different thread. 
+High values in this area are typically a result of too much work, or too-complex work, occurring inside the input-handler event callbacks. Since these callbacks always occur on the main thread, solutions to this problem focus on optimizing the work directly or offloading the work to a different thread. 
 
-It’s also worth noting that `[RecyclerView](/reference/androidx/recyclerview/widget/RecyclerView)` scrolling can appear in this phase. `[RecyclerView](/reference/androidx/recyclerview/widget/RecyclerView)` scrolls immediately when it consumes the touch event. As a result, it can inflate or populate new item views. For this reason, it’s important to make this operation as fast as possible. Profiling tools like Traceview or Systrace can help you investigate further. 
+Scrolling through a [`LazyColumn`](/reference/kotlin/androidx/compose/foundation/lazy/LazyColumn.composable) or [`LazyRow`](/reference/kotlin/androidx/compose/foundation/lazy/LazyRow.composable) can also appear in this phase. Once a user touch qualifies as a scroll, the lazy list consumes touch events to compose and lay out items dynamically. If your app performs custom work [responding to scroll position](/develop/ui/compose/lists#react-to-scroll-position) changes, it's important to make this operation as fast as possible to prevent frame drops. Profiling tools like CPU Profiler in Android Studio or Perfetto can help you investigate further. See [Overview of system tracing](/topic/performance/tracing) for more information. 
 
-### Animation
+### Animations
 
-The Animations phase shows you just how long it took to evaluate all the animators that were running in that frame. The most common animators are `[ObjectAnimator](/reference/android/animation/ObjectAnimator)`, `[ViewPropertyAnimator](/reference/android/view/ViewPropertyAnimator)`, and [Transitions](/training/transitions/overview). 
+The animations phase shows you how long it took to evaluate all the animation states that were running in that frame. Some common animation APIs in Compose are [`animate*AsState`](/develop/ui/compose/animation/value-based#animate-as-state), [`Transition`](/develop/ui/compose/animation/value-based#updateTransition), and [`Animatable`](/develop/ui/compose/animation/value-based#low-level-apis). In addition, the Recomposer runs during this phase to process snapshot state changes and update compositions. This means recomposition overhead often surfaces directly within the animation stage. 
 
-#### When this segment is large
-
-High values in this area are typically a result of work that’s executing due to some property change of the animation. For example, a fling animation, which scrolls your `[ListView](/reference/android/widget/ListView)` or `[RecyclerView](/reference/androidx/recyclerview/widget/RecyclerView)`, causes large amounts of view inflation and population. 
-
-### Measurement/layout
-
-In order for Android to draw your view items on the screen, it executes two specific operations across layouts and views in your view hierarchy. 
-
-First, the system measures the view items. Every view and layout has specific data that describes the size of the object on the screen. Some views can have a specific size; others have a size that adapts to the size of the parent layout container 
-
-Second, the system lays out the view items. Once the system calculates the sizes of children views, the system can proceed with layout, sizing and positioning the views on the screen. 
-
-The system performs measurement and layout not only for the views to be drawn, but also for the parent hierarchies of those views, all the way up to the root view. 
+For Jetpack Compose UIs, include the [Compose Runtime Tracing](/develop/ui/compose/tooling/tracing) library to see detailed composition traces alongside system events. 
 
 #### When this segment is large
 
-If your app spends a lot of time per frame in this area, it is usually either because of the sheer volume of views that need to be laid out, or problems such as [ double taxation](/topic/performance/optimizing-view-hierarchies#double) at the wrong spot in your hierarchy. In either of these cases, addressing performance involves [improving the performance of your view hierarchies](/topic/performance/optimizing-view-hierarchies). 
+High values in this area are typically a result of work that's executing due to state changes driven by the animation. For example, a fling animation, which scrolls your [`LazyColumn`](/reference/kotlin/androidx/compose/foundation/lazy/LazyColumn.composable) or [`LazyRow`](/reference/kotlin/androidx/compose/foundation/lazy/LazyRow.composable), causes rapid composition, measurement, and allocation of new list items. 
 
-Code that you’ve added to `[onLayout(boolean, int, int, int, int)](/reference/android/view/View#onLayout\(boolean, int, int, int, int\))` or `[onMeasure(int, int)](/reference/android/view/View#onMeasure\(int, int\))` can also cause performance issues. [Traceview](/studio/profile/traceview) and [Systrace](/topic/performance/tracing) can help you examine the callstacks to identify problems your code may have. 
+### Measure
+
+To draw your composables on the screen, Android executes [three phases](/develop/ui/compose/phases#3-phases) across layout nodes in your UI tree. 
+
+First, the system measures the layout nodes. Every composable has specific constraints and modifiers that describe the size limits of the object on the screen. Some composables can have a specific, fixed size; others have a size that adapts to the constraints passed down by the parent layout container. 
+
+Second, the system places the layout nodes. Once Compose calculates the sizes of child nodes during the measurement phase, it can proceed with the placement phase, in which it sizes and positions the layout nodes on the screen. 
+
+The system always performs this [single-pass](/develop/ui/compose/layouts/basics#performance) layout for efficiency. When a composable layout is invalidated, Compose measures that specific node and only propagates layout updates up to parent hierarchies if the child changes its size or constraints. 
+
+#### When this segment is large
+
+A large segment in this area means the app is spending too much time in the [layout](/develop/ui/compose/phases#phase2-layout) phase, which consists of positioning and determining the size of layout nodes. These operations include executing measurement and placement modifiers for composables, which can delay frame preparation if the layout tree is overly complex. In these cases, addressing performance involves benchmarking your Compose app and following [performance best practices](/develop/ui/compose/performance#best-practices). 
+
+Use CPU Profiler in Android Studio or Perfetto to inspect layout passes and identify bottlenecks. See [Overview of system tracing](/topic/performance/tracing) for more information. 
 
 ### Draw
 
-The draw stage translates a view’s rendering operations, such as drawing a background or drawing text, into a sequence of native drawing commands. The system captures these commands into a display list. 
+The draw stage translates rendering operations, such as drawing a background, shape, or text, into a sequence of native drawing commands. The system captures these commands into a display list for GPU execution. 
 
-The Draw bar records how much time it takes to complete capturing the commands into the display list, for all the views that needed to be updated on the screen this frame. The measured time applies to any code that you have added to the UI objects in your app. Examples of such code may be the `[onDraw()](/reference/android/view/View#onDraw\(android.graphics.Canvas\))`, `[dispatchDraw()](/reference/android/view/View#dispatchDraw\(android.graphics.Canvas\))`, and the various `draw ()methods` belonging to the subclasses of the `[Drawable](/reference/android/graphics/drawable/Drawable)` class. 
+The Draw bar records how much time it takes to complete capturing the commands into the display list, for all the layout nodes that needed to be updated on the screen for this frame. The measured time also applies to any [custom drawing logic](/develop/ui/compose/quick-guides/content/video/drawing-in-compose) you may have inside draw modifiers or a Canvas composable. 
 
 #### When this segment is large
 
-In simplified terms, you can understand this metric as showing how long it took to run all of the calls to `[onDraw()](/reference/android/view/View#onDraw\(android.graphics.Canvas\))` for each invalidated view. This measurement includes any time spent dispatching draw commands to children and drawables that may be present. For this reason, when you see this bar spike, the cause could be that a bunch of views suddenly became invalidated. Invalidation makes it necessary to regenerate views' display lists. Alternatively, a lengthy time may be the result of a few custom views that have some extremely complex logic in their `[onDraw()](/reference/android/view/View#onDraw\(android.graphics.Canvas\))` methods. 
+In simplified terms, you can understand this metric as showing how long it took to run all of the drawing commands for each invalidated layout node. This measurement includes any time spent dispatching these commands to child nodes and vector drawables. For this reason, when you see this bar spike, the cause could be that many composables suddenly became invalidated. Invalidation makes it necessary to re-execute drawing commands and regenerate layout nodes' display lists. Alternatively, a lengthy time may be the result of a few custom composables or canvases that have some extremely complex logic in their [`DrawScope`](/reference/kotlin/androidx/compose/ui/graphics/drawscope/DrawScope) implementation. 
 
-### Sync/upload
+Additionally, Compose often handles its internal measure and layout passes within what the platform considers the Draw phase. Consequently, an elevated Draw bar can be caused by expensive or excessive internal measure/layout operations rather than drawing commands alone. When in doubt, capture a Perfetto trace to see whether the overhead stems from drawing routines or Compose measure and layout passes. 
 
-The Sync & Upload metric represents the time it takes to transfer bitmap objects from CPU memory to GPU memory during the current frame. 
+### Upload
 
-As different processors, the CPU and the GPU have different RAM areas dedicated to processing. When you draw a bitmap on Android, the system transfers the bitmap to GPU memory before the GPU can render it to the screen. Then, the GPU caches the bitmap so that the system doesn’t need to transfer the data again unless the texture gets evicted from the GPU texture cache. 
+The upload metric represents the time it takes to transfer bitmap objects from CPU memory to GPU memory during the current frame. 
+
+As different processors, the CPU and the GPU have different RAM areas dedicated to processing. When you draw a bitmap on Android, the system transfers the bitmap to GPU memory before the GPU can render it to the screen. Then, the GPU caches the bitmap so that the system doesn't need to transfer the data again unless the texture gets evicted from the GPU texture cache. 
 
 **Note:** On Lollipop devices, this stage is purple. 
 
 #### When this segment is large
 
-All resources for a frame need to reside in GPU memory before they can be used to draw a frame. This means that a high value for this metric could mean either a large number of small resource loads or a small number of very large resources. A common case is when an app displays a single bitmap that’s close to the size of the screen. Another case is when an app displays a large number of thumbnails. 
+All resources for a frame need to reside in GPU memory before they can be used to draw a frame. This means that a high value for this metric could mean either a large number of small resource loads or a small number of very large resources. A common case is when an app displays a single bitmap that's close to the size of the screen. Another case is when an app displays a large number of thumbnails. 
 
 To shrink this bar, you can employ techniques such as: 
 
-  * Ensuring your bitmap resolutions are not much larger than the size at which they will be displayed. For example, your app should avoid displaying a 1024x1024 image as a 48x48 image. 
-  * Taking advantage of `[prepareToDraw()](/reference/android/graphics/Bitmap#prepareToDraw\(\))` to asynchronously pre-upload a bitmap before the next sync phase. 
+  * Ensuring your bitmap resolutions are not much larger than the size at which they will be displayed. For example, avoid displaying a 1024x1024 image as a 48x48 image. 
+  * Taking advantage of modern libraries like [Coil](https://github.com/coil-kt/coil#jetpack-compose) to asynchronously pre-upload a bitmap before the next sync phase. 
+
+
 
 ### Issue commands
 
-The _Issue Commands_ segment represents the time it takes to issue all of the commands necessary for drawing display lists to the screen. 
+The issue commands segment represents the time it takes to issue all the commands necessary for drawing display lists to the screen. 
 
 For the system to draw display lists to the screen, it sends the necessary commands to the GPU. Typically, it performs this action through the [OpenGL ES](/develop/ui/views/graphics/opengl/about-opengl) API. 
 
-This process takes some time, as the system performs final transformation and clipping for each command before sending the command to the GPU. Additional overhead then arises on the GPU side, which computes the final commands. These commands include final transformations, and additional clipping. 
+This process takes some time, as the system performs final transformation and clipping for each command before sending the command to the GPU. Additional overhead then arises on the GPU side, which computes the final commands. These commands include final transformations and additional clipping. 
 
 #### When this segment is large
 
 The time spent in this stage is a direct measure of the complexity and quantity of display lists that the system renders in a given frame. For example, having many draw operations, especially in cases where there's a small inherent cost to each draw primitive, could inflate this time. For example: 
-
-### Kotlin
     
     
     for (i in 0 until 1000) {
         canvas.drawPoint()
     }
 
-### Java
-    
-    
-    for (int i = 0; i < 1000; i++) {
-        canvas.drawPoint()
-    }
-
 is a lot more expensive to issue than: 
-
-### Kotlin
     
     
     canvas.drawPoints(thousandPointArray)
 
-### Java
-    
-    
-    canvas.drawPoints(thousandPointArray);
+There isn't always a 1:1 correlation between issuing commands and actually drawing display lists. Unlike the issue commands bar, which captures the time it takes to send drawing commands to the GPU, the draw metric represents the time that it took to capture the issued commands into the display list. 
 
-There isn’t always a 1:1 correlation between issuing commands and actually drawing display lists. Unlike _Issue Commands_ , which captures the time it takes to send drawing commands to the GPU, the _Draw_ metric represents the time that it took to capture the issued commands into the display list. 
+This difference arises because the display lists are cached by the system wherever possible. As a result, there are situations where a scroll, transform, or animation requires the system to re-send a display list, but not have to actually rebuild it—recapture the drawing commands—from scratch. As a result, you can see a high issue commands bar without seeing a high draw commands bar. 
 
-This difference arises because the display lists are cached by the system wherever possible. As a result, there are situations where a scroll, transform, or animation requires the system to re-send a display list, but not have to actually rebuild it—recapture the drawing commands—from scratch. As a result, you can see a high “Issue commands” bar without seeing a high _Draw commands_ bar. 
+### Swap buffers
 
-### Process/swap buffers
-
-Once Android finishes submitting all its display list to the GPU, the system issues one final command to tell the graphics driver that it's done with the current frame. At this point, the driver can finally present the updated image to the screen. 
+Once Android finishes submitting its display list to the GPU, the system issues one final command to tell the graphics driver that it's done with the current frame. At this point, the driver can finally present the updated image to the screen. 
 
 #### When this segment is large
 
-It’s important to understand that the GPU executes work in parallel with the CPU. The Android system issues draw commands to the GPU, and then moves on to the next task. The GPU reads those draw commands from a queue and processes them. 
+It's important to understand that the GPU executes work in parallel with the CPU. The Android system issues draw commands to the GPU and then moves on to the next task. The GPU reads those draw commands from a queue and processes them. 
 
-In situations where the CPU issues commands faster than the GPU consumes them, the communications queue between the processors can become full. When this occurs, the CPU blocks, and waits until there is space in the queue to place the next command. This full-queue state arises often during the _Swap Buffers_ stage, because at that point, a whole frame’s worth of commands have been submitted. 
+In situations where the CPU issues commands faster than the GPU consumes them, the communications queue between the processors can become full. When this occurs, the CPU blocks and waits until there is space in the queue to place the next command. This full-queue state arises often during the swap buffers stage, because at that point, a whole frame's worth of commands have been submitted. 
 
-The key to mitigating this problem is to reduce the complexity of work occurring on the GPU, in similar fashion to what you would do for the “Issue Commands” phase. 
+The key to mitigating this problem is to reduce the complexity of work occurring on the GPU, in similar fashion to what you would do for the issue commands phase. 
 
 ### Miscellaneous
 
-In addition to the time it takes the rendering system to perform its work, there’s an additional set of work that occurs on the main thread and has nothing to do with rendering. Time that this work consumes is reported as _misc time_. Misc time generally represents work that might be occurring on the UI thread between two consecutive frames of rendering. 
+In addition to the time it takes the rendering system to perform its work, there's an additional set of work that occurs on the main thread and has nothing to do with rendering. Time that this work consumes is reported as miscellaneous time. Miscellaneous time generally represents work that might be occurring on the UI thread between two consecutive frames of rendering. 
 
 #### When this segment is large
 
-If this value is high, it is likely that your app has callbacks, intents, or other work that should be happening on another thread. Tools such as [Method tracing](/studio/profile/traceview) or [Systrace](/topic/performance/tracing) can provide visibility into the tasks that are running on the main thread. This information can help you target performance improvements. 
+If this value is high, it is likely that your app has callbacks, intents, or other work that should be happening on another thread. Tools such as [CPU Profiler](/studio/profile) in Android Studio or Perfetto can provide visibility into the tasks that are running on the main thread. This information can help you target performance improvements. See [Overview of system tracing](/topic/performance/tracing) for more information. 
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-05-19 UTC.
+Last updated 2026-09-18 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-05-19 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-18 UTC."],[],[]] 

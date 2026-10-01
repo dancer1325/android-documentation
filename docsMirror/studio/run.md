@@ -4,7 +4,8 @@
 
 ---
 
-#  Build and run your app
+#  Build and run your app Save and categorize content based on your preferences. 
+
 **Note:** Android Studio Meerkat updated the labels and ordering of some Build actions. [Learn more](/studio/releases#build-actions-update)
 
 To see how your app looks and behaves on a device, you need to build and run it. Android Studio sets up new projects so that you can deploy your app to a virtual or a physical device with just a few clicks.
@@ -24,6 +25,9 @@ If you don't have any devices configured, you need to either [create an Android 
 
   3. Click **Run** ![](/static/studio/images/buttons/toolbar-run.png).
 
+
+
+
 Android Studio warns you if you attempt to launch your project to a device that has an error or a warning associated with it. Iconography and stylistic changes differentiate between _errors_ (device selections that result in a broken configuration) and _warnings_ (device selections that might result in unexpected behavior but are still runnable).
 
 **Note:** Android Studio includes deployment optimizations for incremental changes on Android 11 or later. If you manually clear app data in between incremental changes, some changes may be discarded without warning. This may result in your app running outdated code. If you need to clear app data in between deployments, check the option to "Always install with package manager" in the Run/Debug configuration. That will bypass these deployment optimizations and ensure the latest version of the app code is deployed every time the app is run.
@@ -40,6 +44,8 @@ To view details about the build process, select **View > Tool Windows > Build** 
   4. **Restart:** Performs the last build action again. If you last ran **Build > Make Selected Module**, it'll build the current module. If you last ran **Build > Make Project**, it'll generate intermediate build files for all modules in your project. 
   5. **Filters:** Filters out warnings, tasks, or both that completed successfully. This can make it easier to find issues in the output.
 
+
+
 If your build variants use product flavors, Gradle also invokes tasks to build those product flavors. To view the list of all available build tasks, click **View > Tool Windows > Gradle** or click **Gradle** ![](/static/studio/images/buttons/toolbar-gradle.png) in the tool window bar. 
 
 If an error occurs during the build process, Gradle may recommend command-line options to help you resolve the issue, such as `--stacktrace` or `--debug`. To use command-line options with your build process: 
@@ -51,6 +57,8 @@ If an error occurs during the build process, Gradle may recommend command-line o
   3. In the text field next to **Command-line Options** , enter your command-line options. 
   4. Click **OK** to save and exit. 
 
+
+
 Gradle applies these command-line options the next time you try building your app. 
 
 ## Build and run using the AI agent
@@ -61,6 +69,8 @@ The AI agent in Android Studio has access to tools that let it build and deploy 
   * **Inspect the screen** and take screenshots to verify UI changes.
   * **Check Logcat** for runtime errors or specific log messages.
   * **Interact with your app** using `adb shell` commands to navigate or enter data.
+
+
 
 Using the AI agent to build and run your app is useful for multi-stage tasks where the agent needs to iteratively make changes and verify that they work as expected.
 
@@ -82,6 +92,9 @@ The default way to build and run your app in Android Studio should be sufficient
 
   * We recommend that you use Android Studio for your development needs, but you can also deploy your app to a virtual or physical device from the command line. For more information, see [Build your app from the command line](/studio/build/building-cmdline).
 
+
+
+
 ### Deploy incrementally with Apply Changes
 
 In Android Studio 3.5 and higher, Apply Changes lets you push code and resource changes to your running app without restarting your app—and, in some cases, without restarting the current activity. This flexibility helps you control how much of your app is restarted when you want to deploy and test small, incremental changes while preserving your device's current state.
@@ -94,6 +107,8 @@ Apply Changes actions are only available when you meet the following conditions:
 
   * You build the APK of your app using a debug build variant.
   * You deploy your app to a target device or emulator that runs Android 8.0 (API level 26) or higher.
+
+
 
 #### Use Apply Changes
 
@@ -125,6 +140,7 @@ If you don't want to be prompted every time this occurs, you can configure Andro
 
   4. Click **OK**.
 
+
 **Note:** Some types of changes don't cause Apply Changes to fail but still require you to restart your app manually before you can see those changes. For example, if you make changes to an activity's [`onCreate()`](/reference/android/app/Activity#onCreate\(android.os.Bundle\)) method, those changes only take effect after the activity is relaunched, so you must restart your app to see those changes.
 
 #### Platform-dependent changes
@@ -149,12 +165,16 @@ Some code and resource changes can't be applied until the app is restarted, incl
   * Changing the app manifest
   * Changing native libraries (SO files)
 
+
+
 ##### Libraries and plugins
 
 Some libraries and plugins automatically make changes to your app's manifest files or to resources that are referenced in the manifest. These automatic updates can interfere with Apply Changes in the following ways:
 
   * If a library or plugin makes changes to your app's manifest, you can't use Apply Changes. You must restart your app to see your changes.
   * If a library or plugin makes changes to your app's resource files, you can't use **Apply Code Changes** ![Apply Code Changes icon](/static/studio/images/buttons/toolbar-apply-code-changes.png). You must use **Apply Changes and Restart Activity** ![Apply Changes and Restart Activity icon](/static/studio/images/buttons/toolbar-apply-changes.png) (or restart your app) to see your changes.
+
+
 
 To avoid these limitations, disable all automatic updates for your debug build variants.
 
@@ -183,6 +203,8 @@ To change the build variant Android Studio uses, do one of the following:
   * Select **View** > **Tool Windows** > **Build Variants** in the menu.
   * Click the **Build Variants** tab on the tool window bar.
 
+
+
 For projects without native/C++ code, the **Build Variants** panel has two columns: **Module** and **Active Build Variant**. The **Active Build Variant** value for the module determines which build variant the IDE deploys to your connected device and is visible in the editor.
 
 ![](/static/studio/images/run/build-variants.png)
@@ -196,6 +218,8 @@ For projects with native/C++ code, the **Build Variants** panel has three column
   * **Module**
   * **Active Build Variant**
   * **Active ABI**
+
+
 
 The **Active Build Variant** value for the module determines the build variant that the IDE deploys to your device and is visible in the editor. For native modules, the **Active ABI** value determines the [ABI](/ndk/guides/abis) that the editor uses, but doesn't impact what is deployed.
 

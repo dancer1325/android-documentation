@@ -4,7 +4,8 @@
 
 ---
 
-#  Build your app for release to users
+#  Build your app for release to users Save and categorize content based on your preferences. 
+
 **Note:** Android Studio Meerkat updated the labels and ordering of some Build actions. [Learn more](/studio/releases#build-actions-update)
 
 The **Run** ![](/static/studio/images/buttons/toolbar-run.png) button builds and deploys your app to a device. However, to build your app to share or upload to Google Play, you'll need to use one of the options in the **Build** menu to compile parts or all of your project. Before you select any of the build options listed in table 1, make sure you first [select the build variant](/studio/run#changing-variant) you want to use. 

@@ -3,6 +3,9 @@
 **Source:** [https://developer.android.com/kotlin](https://developer.android.com/kotlin)
 
 ---
+
+Save and categorize content based on your preferences. 
+
 ![](https://developer.android.com/static/images/cluster-illustrations/kotlin-hero.svg)
 
 ###  Develop Android apps with Kotlin 
@@ -45,10 +48,6 @@ Share code across Android, iOS, and desktop platforms with Kotlin Multiplatform.
 
 * * *
 
-![](https://developer.android.com/static/images/picto-icons/flag.svg)
-
-##  Getting started 
-
 getting started
 
 ###  [ Learning Android & Kotlin from scratch ](https://developer.android.com/courses/android-basics-compose/course)
@@ -72,10 +71,6 @@ getting started
 ###  [ Bringing Kotlin to your team ](https://developer.android.com/kotlin/adopt-for-large-teams)
 
 Learn how writing in Kotlin can boost your team’s productivity, improve app quality, and increase developer satisfaction. 
-
-##  Optimized for Kotlin 
-
-Kotlin is fully supported for Android development with tools and resources to help you succeed. 
 
 ![](https://developer.android.com/static/images/spot-icons/android-studio.svg)
 
@@ -108,8 +103,6 @@ Starting with Android 9 (API level 28), the Android SDK contains nullability ann
 Explore a curated set of resources in various formats to help you jumpstart learning Kotlin. 
 
 [See resources](https://developer.android.com/kotlin/getting-started-resources)
-
-##  What does Kotlin code look like? 
 
 ![Nullable and NonNull types help reduce NullPointerExceptions, lambdas can be used for concise event handling code, template expressions can be used in strings to avoid concatenation and semicolons are optional.](/static/images/kotlin/code-samples/code-sample-newsmall.svg)
 
@@ -155,6 +148,8 @@ Many apps are already built with Kotlin—from the hottest startups to Fortune 5
   * [ ![Headspace](/static/images/kotlin/apps/headspace.png) ](https://play.google.com/store/apps/details?id=com.getsomeheadspace.android)
   * [ ![Adobe Acrobat Reader](/static/images/kotlin/apps/adobe-acrobat-reader.png) ](https://play.google.com/store/apps/details?id=com.adobe.reader)
 
+
+
 Developer story
 
 ###  Zomato uses Kotlin to write safer, more concise code 
@@ -172,8 +167,6 @@ Featured
 Kotlin is an open source project available at no charge under the Apache 2.0 license. The code for the project is developed openly on GitHub primarily by the team employed at JetBrains, with contributions from Google and others. Our choice of Kotlin reaffirms our commitment to an open developer ecosystem as we evolve and grow the Android platform, and we are excited to see the language evolve. 
 
 [See Kotlin on GitHub](https://github.com/JetBrains/kotlin)
-
-##  Featured resources 
 
 [ ![](https://developer.android.com/static/images/kotlin/icons/android-codelabs.svg) ](https://codelabs.developers.google.com/codelabs/kotlin-coroutines/#0)
 
@@ -198,8 +191,6 @@ Technical articles on Kotlin from the Android team.
 For those with no programming experience, learn the basics of the Kotlin programming language and how to build simple Android apps. 
 
 [Start course](https://developer.android.com/courses/android-basics-compose/course)
-
-##  Kotlin language documentation 
 
 [ ![](https://developer.android.com/static/images/picto-icons/playground.svg) ](https://developer.android.com/training/kotlinplayground)
 

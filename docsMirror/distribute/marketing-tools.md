@@ -3,6 +3,9 @@
 **Source:** [https://developer.android.com/distribute/marketing-tools](https://developer.android.com/distribute/marketing-tools)
 
 ---
+
+Save and categorize content based on your preferences. 
+
 ###  Brand & marketing resources 
 
 Tools and resources to help you prepare promotional assets for use in your marketing efforts. 
@@ -23,13 +26,13 @@ Guidelines and downloads for the Android and Google Play brands.
 
 [Review guidelines](https://developer.android.com/distribute/marketing-tools/brand-guidelines)
 
-[ ![](https://developer.android.com/static/images/picto-icons/google-play-badge.svg) ](https://play.google.com/intl/en_us/badges/)
+[ ![](https://developer.android.com/static/images/picto-icons/google-play-badge.svg) ](https://partnermarketinghub.withgoogle.com/brands/google-play/google-play/lockups-icons-badges/)
 
-###  [ Google Play badges ](https://play.google.com/intl/en_us/badges/)
+###  [ Google Play badges ](https://partnermarketinghub.withgoogle.com/brands/google-play/google-play/lockups-icons-badges/)
 
 Build badges for your app in just a few clicks, and download hi-res badge assets localized for a variety of languages. 
 
-[Get started](https://play.google.com/intl/en_us/badges/)
+[Get started](https://partnermarketinghub.withgoogle.com/brands/google-play/google-play/lockups-icons-badges/)
 
 [ ![](https://developer.android.com/static/images/picto-icons/android-go-edition.svg) ](https://developer.android.com/distribute/marketing-tools/device-art-generator)
 
@@ -65,6 +68,6 @@ Distribute apps to users in any way you want, using any store or distribution ap
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2025-07-21 UTC.
+Last updated 2026-08-11 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-07-21 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-08-11 UTC."],[],[]] 

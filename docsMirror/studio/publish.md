@@ -4,7 +4,8 @@
 
 ---
 
-#  Publish your app
+#  Publish your app Save and categorize content based on your preferences. 
+
 **Important:** From August 2021, new apps are required to publish with the [Android App Bundle](/guide/app-bundle) on Google Play. New apps larger than 200 MB are now supported by either [Play Feature Delivery](/guide/app-bundle/dynamic-delivery) or [Play Asset Delivery](/guide/app-bundle/asset-delivery). From June 2023, new and existing [TV apps are required to be published as App Bundles](/docs/quality-guidelines/tv-app-quality#SC-E1). 
 
 Publishing is the general process that makes your Android app available to users. When you publish an Android app, you do the following:
@@ -16,6 +17,9 @@ During the preparation step, you build a release version of your app.
   * **Release the app to users.**
 
 During the release step, you publicize, sell, and distribute the release version of your app, which users can download and install on their Android-powered devices.
+
+
+
 
 This page provides an overview of the process for preparing to publish your app. If you plan to publish on Google Play, read [Release with confidence](/distribute/best-practices/launch/launch-checklist). 
 
@@ -44,6 +48,9 @@ Make sure that all app resources, such as multimedia files and graphics, are upd
   * **Prepare remote servers and services that your app depends on.**
 
 If your app depends on external servers or services, make sure they are secure and production ready.
+
+
+
 
 You might need to perform several other tasks as part of the preparation process. For example, you need to create an account on the app marketplace you want to use, if you don't already have one. You also need to create an icon for your app, and you might want to prepare an End User License Agreement (EULA) to protect yourself, your organization, and your intellectual property.
 
@@ -83,6 +90,9 @@ You can also configure listing details such as the app type, category, and conte
 
 If you are satisfied that your publishing settings are correctly configured and your uploaded app is ready to be released to the public, click **Publish**. Once it has passed Google Play review, your app will be live and available for download around the world.
 
+
+
+
 For more information, see [How Google Play works](/distribute/googleplay).
 
 ## Release through a website
@@ -94,6 +104,8 @@ To release through a website:
   1. [Prepare your app for release](/tools/publishing/preparing).
   2. Host the release-ready APK file on your website.
   3. Provide a download link to users.
+
+
 
 When users browse to the download link from their Android-powered devices, the file is downloaded and the Android system automatically starts installing it on the device. 
 
@@ -112,6 +124,8 @@ Android protects users from inadvertent download and installation of apps from l
 
   * On devices running Android 8.0 (API level 26) and higher, users must navigate to the **Install unknown apps** system settings screen to enable app installations from a particular source. 
   * On devices running Android 7.1.1 (API level 25) and lower, users must either enable the **Unknown sources** system setting or allow a single installation of an unknown app. 
+
+
 
 ### Install unknown apps
 

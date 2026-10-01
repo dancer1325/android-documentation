@@ -4,7 +4,8 @@
 
 ---
 
-#  Diagnose and fix ANRs
+#  Diagnose and fix ANRs Save and categorize content based on your preferences. 
+
 When the UI thread of an Android app is blocked for too long, the system sends an "Application Not Responding" (ANR) error. This page describes the different types of ANRs, how to diagnose them, and suggestions for fixing them. All the default timeout time ranges listed are for AOSP and Pixel devices; these times can vary by OEM.
 
 Keep in mind that when determining the cause of ANRs, it's helpful to distinguish between system and app issues.
@@ -14,11 +15,15 @@ When the system is in a bad state, the following issues can cause ANRs:
   * Transient issues in the system server cause usually fast binder calls to be slow.
   * Issues with the system server and high device load cause app threads to not be scheduled.
 
+
+
 If available to you, a good way to distinguish between system and app issues is to use [Perfetto traces](https://perfetto.dev/docs/):
 
   * See whether the app's main thread is scheduled by looking at the thread state track in Perfetto to see if it's running or runnable.
   * Look at the `system_server` threads for issues such as lock contention.
   * For slow binder calls, look at the reply thread, if present, to see why it's slow.
+
+
 
 ## Input dispatch timeout
 
@@ -33,6 +38,8 @@ To avoid input dispatch ANRs, following these best practices:
   * Don't perform blocking or long-running operations on the main thread. Consider using [`StrictMode`](/reference/android/os/StrictMode) to catch accidental activity on the main thread.
   * Minimize lock contention between main thread and other threads.
   * Minimize non-UI work on the main thread, such as when handling broadcasts or running services.
+
+
 
 ### Common causes
 
@@ -52,9 +59,9 @@ GPU hang | GPU hang is a system or hardware issue that causes rendering to be bl
 
 Start debugging by looking at the ANR cluster signature in [Google Play Console](/distribute/console) or [Firebase Crashlytics](https:///firebase.google.com/docs/crashlytics). The cluster typically contains the top frames suspected of causing the ANR.
 
-**Note:** Ignore input dispatch ANR clusters that say "nativePollOnce" or "main thread idle." These usually correspond to ANRs where the stack dump was taken too late. They're generally not actionable so can be ignored. In general, the actual ANR issues will be present in other clusters, so real issues are not being hidden. See nativePollOnce for more details.
+**Note:** Ignore input dispatch ANR clusters that say "nativePollOnce" or "main thread idle." These usually correspond to ANRs where the stack dump was taken too late or system resource constraints. They're generally not actionable so can be ignored. In general, the actual ANR issues will be present in other clusters, so real issues aren't being hidden. See nativePollOnce for more details.
 
-The following flow chart shows how to determine the cause of an input timeout dispatch ANR.
+The following flowchart shows how to determine the cause of an input timeout dispatch ANR.
 
 ![](/static/topic/performance/images/debug-input-dispatch-anr.png) **Figure 1.** How to debug an input dispatch ANR. 
 
@@ -74,6 +81,8 @@ No-focused-window ANRs are usually caused by either of the following issues:
 
   * The app is doing too much work and is too slow to draw the first frame.
   * The main window is not focusable. If a window is flagged with [`FLAG_NOT_FOCUSABLE`](/reference/android/view/WindowManager.LayoutParams#FLAG_NOT_FOCUSABLE), the user can't send key or button events to it.
+
+
 
 ### Kotlin
     
@@ -104,12 +113,16 @@ Broadcast receiver ANRs often happen in these threads:
   * Thread running broadcast receiver, if the issue is slow `onReceive()` code.
   * Broadcast worker threads, if the issue is slow `goAsync()` broadcast code.
 
+
+
 To avoid broadcast receiver ANRs, follow these best practices:
 
   * Make sure that app startup is fast, since it's counted in the ANR timeout if the app is started to handle the broadcast.
   * If `goAsync()` is used, make sure `PendingResult.finish()` is called quickly. This is subject to the same ANR timeout as synchronous broadcast receivers.
   * If `goAsync()` is used, make sure the worker thread(s) aren't shared with other long-running or blocking operations.
   * Consider using [`registerReceiver()`](/reference/android/content/Context#registerReceiver\(android.content.BroadcastReceiver,%20android.content.IntentFilter,%20java.lang.String,%20android.os.Handler,%20int\)) to run broadcast receivers in a non-main thread, to avoid blocking UI code running in the main thread.
+
+
 
 ### Timeout periods
 
@@ -166,7 +179,7 @@ Forgot to call `PendingResult.finish` | `goAsync()` receivers | Call to `finish(
 
 Based on the cluster signature and ANR report, you can locate the thread that the receiver runs on, and then the specific code that is missing or running slowly.
 
-**Note:** Don't ignore broadcast receiver ANR clusters that say "nativePollOnce" or "main thread idle." The stacks in the ANR signature in Google Play Console and Firebase Crashlytics are usually built from the main thread; however, the broadcast receiver might run on a non-main thread or call `goAsync()`. So, these clusters are still actionable by looking at the relevant threads in the stack dump.
+**Note:** Don't ignore broadcast receiver ANR clusters that say "nativePollOnce" or "main thread idle." The stacks in the ANR signature in Google Play Console and Firebase Crashlytics are usually built from the main thread; however, the broadcast receiver might not be started due to sync barrier leak, run on a non-main thread or call `goAsync()`. So, these clusters are still actionable by looking at the relevant threads in the stack dump or by checking your codebase for view threading violations. See nativePollOnce for more details.
 
 The following flow chart shows how to determine the cause of a broadcast receiver ANR.
 
@@ -178,6 +191,8 @@ Google Play Console shows the receiver class and broadcast intent in the ANR sig
 
   * `cmp=<receiver class>`
   * `act=<broadcast_intent>`
+
+
 
 Here's an example of a broadcast receiver ANR signature:
     
@@ -234,6 +249,8 @@ There are several approaches to fix the issue:
   * Use a dedicated thread pool for `goAsync` worker tasks.
   * Use an unbounded thread pool instead of the bounded BG thread pool
 
+
+
 #### Example: slow app startup
 
 A slow app startup can cause several types of ANRs, especially broadcast receiver and execute service ANRs. The cause of an ANR is likely slow app startup if you see `ActivityThread.handleBindApplication` in the main thread stacks.
@@ -250,6 +267,8 @@ To avoid execute service ANRs, follow these general best practices:
   * Make sure that the service's `onCreate()`, `onStartCommand()`, and `onBind()` methods are fast.
   * Avoid running any slow or blocking operations on the main thread from other components; these operations can prevent a service from starting quickly.
 
+
+
 ### Common causes
 
 The following table lists common causes of execute service ANRs and suggested fixes.
@@ -264,11 +283,11 @@ Not scheduled (main thread blocked before `onStart()`) | The app's main thread i
 
 From the cluster signature and ANR report in Google Play Console or Firebase Crashlytics, you can often determine the cause of the ANR based on what the main thread is doing.
 
-**Note:** Ignore execute service ANR clusters that say "nativePollOnce" or "main thread idle." These usually correspond to ANRs where the stack dump is taken too late, and are generally not actionable. The actual ANR issues are usually present in other clusters, so real issues aren't being hidden. See nativePollOnce for more details.
+**Note:** Don't ignore execute service ANR clusters that say "nativePollOnce" or "main thread idle." These usually correspond to ANRs where the stack dump was taken too late or system resource constraints; however, the service might not be started due to sync barrier leak. So, these clusters are still actionable by checking your codebase for view threading violations. See nativePollOnce for more details.
 
 The following flow chart describes how to debug an execute service ANR.
 
-![](/static/topic/performance/images/debug-execute-service-anr.png) **Figure 6.** How to debug an execute service ANR. 
+![](/static/topic/performance/images/debug-execute-service-anr-updated.png) **Figure 6.** How to debug an execute service ANR. 
 
 If you've determined that the execute service ANR is actionable, follow these steps to help resolve the issue:
 
@@ -306,11 +325,16 @@ If you can't see any of the important function calls, there are a couple other p
      * A different app component is running, such as a broadcast receiver. In this case the main thread is likely blocked in this component, preventing the service from starting.
   3. If you do see a key function call and can determine where the ANR is happening generally, check the rest of the main thread stacks to find the slow operation and optimize it or move it off the critical path.
 
+
+
+
 For more information about services, see the following pages:
 
   * [Services overview](/guide/components/services)
   * [Foreground services](/guide/components/foreground-services)
   * [`Service`](/reference/android/app/Service)
+
+
 
 ## Content provider not responding
 
@@ -323,6 +347,8 @@ To avoid content provider ANRs, follow these best practices:
   * Make sure that app startup is fast, since it's counted in the ANR timeout if the app is started to run the content provider.
   * Make sure that the content provider queries are fast.
   * Don't perform lots of concurrent blocking binder calls that can block all the app's binder threads.
+
+
 
 ### Common causes
 
@@ -387,13 +413,123 @@ A slow job response ANR happens when the app takes too long to respond to `JobSe
 
 If it's an issue with `JobService.onStartJob()` or `JobService.onStopJob()`, check what's happening on the main thread. If it's an issue with `JobService.setNotification()`, make sure to call it as quickly as possible. Don't do a lot of work before providing the notification.
 
-## Mystery ANRs
+## View Threading Violation
 
-Sometimes it's unclear why an ANR is occurring, or there is insufficient information to debug it in the cluster signature and ANR report. In these cases, there are still some steps you can take to determine whether the ANR is actionable.
+Try the Compose way 
 
-### Message queue idle or nativePollOnce
+Jetpack Compose is the recommended UI toolkit for Android. 
 
-If you see the frame `android.os.MessageQueue.nativePollOnce` in the stacks, it often indicates that the suspected unresponsive thread was actually idle and waiting for looper messages. In Google Play Console, the ANR details look like this:
+[ Build UI in Compose → ](https://developer.android.com/jetpack/compose)
+
+![](/static/images/android-compose-ui-logo.png)
+
+If your app modifies a view on a background thread, it can trigger a race condition in the view hierarchy's internal state. This violation can block the main (UI) thread from executing any synchronous messages, leading to critical stability issues:
+
+  * **Silent UI Freezes** : The app's UI stops responding to user input.
+  * **Crashes** : The app may crash with an `illegalStateException`.
+  * **ANRs** : The system may trigger an ANR timeout.
+
+
+
+This threading violation is one of the root causes behind ANR stack traces where the main thread appears idle (e.g. captured in "nativePollOnce" or "main thread idle").
+
+### Sync Barrier Leak
+
+Views can be invalidated either indirectly by mutating their state (for example, calling `TextView.setText`, `View.setVisibility`) or directly by calling `View.invalidate` or `View.requestLayout`. When a view is invalidated, `ViewRootImpl` schedules a traversal to perform measurement, layout, and drawing to update the UI state.
+
+  1. **Scheduling Traversals** : `ViewRootImpl` schedules a traversal—a layout and drawing pass—by posting a synchronization barrier to the UI thread's `MessageQueue`. This barrier pauses normal message processing so that the UI layout can take priority.
+  2. **Race Condition** : When multiple threads attempt to invalidate a view concurrently, they race to schedule this traversal. Both threads may successfully insert a **synchronization barrier** , but the framework only stores the token for one of them.
+  3. **UI Freeze** : When the traversal executes, it removes only the single saved barrier. The secondary, "leaked" barriers remain in the queue indefinitely, permanently blocking the UI thread from processing any synchronous messages.
+
+
+
+As a result, the UI freezes. Since the `MessageQueue` cannot process any synchronous messages past the leaked barriers, the main thread enters an idle state. This issue typically surfaces as an ANR with `nativePollOnce` in the stack trace.
+
+To avoid view threading violations, follow these best practices:
+
+  * Only interact with `View` objects—including reading properties like `width` or `height` or setting properties like a `TextView's text`—on the thread where you created the view hierarchy. This is almost always the main or UI thread.
+  * If you can't guarantee that you're running on the UI thread when accessing views, assume it's unsafe to do so. For example, if you're using `Coroutines` for background work, you must switch to the main dispatcher before manipulating `View` objects.
+
+
+    
+    
+    lifecycleOwner.lifecycleScope.launch(Dispatchers.IO) {
+        val data = myRepository.getData()
+        withContext(Dispatchers.Main) { // Switch context to Main
+            myTextView.text = data.title
+        }
+    }
+    
+    [ViewThreadingViolationSnippet.kt](https://github.com/android/snippets/blob/7f37d8375f9d23eaf4de9102472e212efa7035a5/views/src/main/java/com/example/example/snippet/views/anr/ViewThreadingViolationSnippet.kt#L46-L51)
+
+To help you follow best practices, Android offers several ways to access the UI thread from other threads:
+
+  * [`ContextCompat#getMainExecutor(android.content.Context)`](/reference/androidx/core/content/ContextCompat#getMainExecutor\(android.content.Context\))
+  * [`View.post(Runnable)`](/reference/android/view/View#post\(java.lang.Runnable\))
+  * [`Activity.runOnUiThread(Runnable)`](/reference/android/app/Activity#runOnUiThread\(java.lang.Runnable\))
+
+
+
+Popular image loaders, reactive extensions frameworks, event bus libraries and other threading solutions typically offer ways to observe certain events on the main thread. This is useful for observers and event listeners that need to get and set the state of views.
+
+**Note:** This synchronization barrier leak is fixed in Android 17, meaning apps with view threading violations will no longer cause a leaked sync barrier. However, these apps will still incur the same symptoms on Android 16 and lower. Furthermore, modifying views outside the main thread can lead to other undocumented side effects in your app logic. We strongly recommend testing your app and ensuring all view interactions are strictly confined to the UI thread.
+
+### How to Debug
+
+Android 17 introduces new tools to help you identify, trace, and resolve view threading violations during development.
+
+**1\. Compatibility framework tools**
+
+Compatibility framework tools let app developers turn behavior changes on and off individually using [developer options or ADB](/guide/app-compatibility/test-debug). You can toggle view threading violation behavior changes using the following steps:
+
+  1. Install a debuggable version of your app on a device running Android 17 or higher.
+  2. Open your device's Settings app and navigate to **System > Advanced > Developer options > App Compatibility Changes.**
+  3. Select your app from the list.
+  4. From the list of changes, find and toggle on the `ENFORCE_THREAD_CHECKS_ON_VIEW_ROOT_IMPL_APIS` switch.
+
+
+
+You can also toggle the flag on or off using ADB:
+    
+    
+    $ adb shell am compat enable ENFORCE_THREAD_CHECKS_ON_VIEW_ROOT_IMPL_APIS <your.package.name>
+    $ adb shell am compat disable ENFORCE_THREAD_CHECKS_ON_VIEW_ROOT_IMPL_APIS <your.package.name>
+    
+
+Enabling this flag forces the app to throw an exception and crash whenever a View API is called from the wrong thread, helping you catch and fix view threading violation issues.
+
+**2\. CalledFromWrongThreadListener API**
+
+You can also implement the global [`View#registerCalledFromWrongThreadListener`](/reference/kotlin/android/view/View#registerCalledFromWrongThreadListener\(android.view.View.CalledFromWrongThreadListener\)) API to detect improper thread access programmatically.
+
+  * **Telemetry & Tracking**: This listener allows your app to receive callbacks when a View API is invoked from an incorrect thread, making it easier to log telemetry and track down bugs.
+  * **Inline Execution** : The listener is called inline, allowing you to capture and inspect the exact stack trace at the moment the violation occurs.
+
+
+    
+    
+    android {
+       //...
+       compileSdk = 37
+    }
+    
+    
+    
+    val listener = object : View.CalledFromWrongThreadListener {
+        override fun onCalledFromWrongThread() {
+            // Handle the issue, e.g. crash if this is a dev build, or log an event
+            // e.g. Log.d(TAG, "CalledFromWrongThread: ${Exception().stackTraceToString()}")
+            // Unregister the listener to avoid redundant notifications for the same issue
+            View.unregisterCalledFromWrongThreadListener(this)
+        }
+    }
+    View.registerCalledFromWrongThreadListener(listener)
+    
+    [ViewThreadingViolationSnippet.kt](https://github.com/android/snippets/blob/7f37d8375f9d23eaf4de9102472e212efa7035a5/views/src/main/java/com/example/example/snippet/views/anr/ViewThreadingViolationSnippet.kt#L58-L66)
+
+## nativePollOnce
+
+If you see the frame "nativePollOnce" or "message queue idle" in the ANR stacks, it often indicates that the suspected unresponsive thread was actually idle and waiting for looper messages. In Google Play Console, the ANR details look like this:
     
     
     Native method - android.os.MessageQueue.nativePollOnce
@@ -419,19 +555,49 @@ For example, if the main thread is idle the stacks look like this:
 
 There are several reasons why the suspected unresponsive thread can be idle:
 
-  * **Late stack dump**. The thread recovered during the short period between the ANR triggering and the stacks being dumped. The latency in Pixels on Android 13 is around 100ms, but can exceed 1s. The latency in Pixels on Android 14 is usually under 10ms.
-  * **Thread misattribution**. The thread used to build the ANR signature was not the actual unresponsive thread that caused the ANR. In this case, try to determine if the ANR is one of the following types: 
-    * Broadcast receiver timeout
-    * Content provider not responding
-    * No focused window
   * **System-wide issue**. The process wasn't scheduled due to heavy system load or an issue in the system server.
+  * **Late stack dump**. The thread recovered during the short period between the ANR triggering and the stacks being dumped. The latency in Pixels on Android 13 is around 100ms, but can exceed 1s. The latency in Pixels on Android 14 is usually under 10ms.
+  * **Thread misattribution.** The thread used to build the ANR signature wasn't the actual unresponsive thread that caused the ANR.
+  * **View Threading Violation.** If your app modifies a view on a background thread, it can trigger a race condition in view's internals that blocks UI thread tasks from running
 
-### No stack frames
+
+
+Because the underlying triggers of a "nativePollOnce" ANR vary by ANR type, diagnosing the specific ANR category can help identify actionable steps to resolve the issue within your app.
+
+Category | Cause | Suggested fix  
+---|---|---  
+Input dispatch timeout | System-wide issue   
+Late stack dump | No action required.  
+No focused window | System-wide issue   
+Late stack dump   
+View Threading Violation | Check the codebase for view threading violations.  
+Broadcast receiver timeout | Late stack dump   
+System-wide issue   
+Thread misattribution   
+View Threading Violation | Inspect the relevant threads in the stack dump.   
+Check the codebase for view threading violations.  
+Execute Service timeout | Late stack dump   
+System-wide issue   
+View Threading Violation | Check the codebase for view threading violations.  
+Content provider not responding | Late stack dump   
+System-wide issue   
+Thread misattribution | Inspect the relevant threads in the stack dump.  
+  
+Here are the recommended steps to analyze nativePollOnce ANRs.
+
+  1. **Heavy system load:** Assess overall device resource pressure like system-wide CPU, memory or I/O starvation as the primary cause of the unresponsiveness.
+  2. **Thread misattribution:** Audit worker and binder threads for deadlocks, lock contention affecting the main thread or hanging background threads processing asynchronous components (e.g., `goAsync()`).
+  3. **View Threading Violations:** Scan background threads for unlawful UI view hierarchy modifications, which can orphan a sync barrier in the MessageQueue and permanently block all synchronous messages.
+
+
+
+## No stack frames
 
 Some ANR reports don't include the stacks with the ANR, which means that the stack dumping failed when generating the ANR report. There are a couple of possible reasons for missing stack frames:
 
   * Taking the stack takes too long and times out.
   * The process died or was killed before the stacks were taken.
+
 
     
     
@@ -457,6 +623,6 @@ Keeping a timer in your app's process for the purposes of finishing broadcast ha
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-05-19 UTC.
+Last updated 2026-09-08 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-05-19 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-08 UTC."],[],[]] 

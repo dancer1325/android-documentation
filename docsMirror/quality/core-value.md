@@ -4,7 +4,8 @@
 
 ---
 
-#  What great core value looks like
+#  What great core value looks like Save and categorize content based on your preferences. 
+
 ![](/static/images/quality/hero-images/core_value_highlighted.svg)
 
 The ultimate purpose of any app or game is to deliver value to users by being useful or fun, both on first use and over time. An app or game can't be considered high quality if it doesn't achieve this goal, no matter what else it does well.

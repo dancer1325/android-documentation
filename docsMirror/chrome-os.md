@@ -3,6 +3,9 @@
 **Source:** [https://developer.android.com/chrome-os](https://developer.android.com/chrome-os)
 
 ---
+
+Save and categorize content based on your preferences. 
+
 ###  [ ChromeOS devices ](https://developer.android.com/chrome-os/intro)
 
 ChromeOS is the speedy, simple, and secure operating system that powers every Chromebook. You can distribute your Android apps to Google ChromeOS devices through the Google Play app store. 
@@ -36,14 +39,6 @@ ChromeOS basics
 Android apps have an important role to play in redefining what modern computing looks like on large screens. Just porting a mobile app to Chromebooks doesn't give your users the best experience. Learn some ways that you can tailor your experience towards laptop and convertible form factors. 
 
 [Optimize your app for ChromeOS](https://developer.android.com/develop/devices/chromeos/learn/optimizing)
-
-##  Latest news 
-
-[View more news](https://android-developers.googleblog.com/search/label/chrome)
-
-##  Latest videos 
-
-[View more videos](https://www.youtube.com/user/androiddevelopers/search?query=%23chromeos)
 
 ###  [ Blog Post ](https://android-developers.googleblog.com/)
 

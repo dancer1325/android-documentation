@@ -4,12 +4,14 @@
 
 ---
 
-#  Android Gradle plugin API reference
-Current Release |  [9.2.1](/reference/tools/gradle-api/9.2/classes)  
+#  Android Gradle plugin API reference Save and categorize content based on your preferences. 
+
+Current Release |  [9.4.1](/reference/tools/gradle-api/9.4/classes)  
 ---|---  
-Preview Releases |  [9.3.0-rc02](/reference/tools/gradle-api/9.3/classes)  
-[9.4.0-alpha04](/reference/tools/gradle-api/9.4/classes)  
-Past Releases |  [9.1.1](/reference/tools/gradle-api/9.1/classes)  
+Preview Releases |  [9.5.0-alpha07](/reference/tools/gradle-api/9.5/classes)  
+Past Releases |  [9.3.3](/reference/tools/gradle-api/9.3/classes)  
+[9.2.1](/reference/tools/gradle-api/9.2/classes)  
+[9.1.1](/reference/tools/gradle-api/9.1/classes)  
 [9.0.1](/reference/tools/gradle-api/9.0/classes)  
 [8.13.2](/reference/tools/gradle-api/8.13/classes)  
 [8.12.3](/reference/tools/gradle-api/8.12/classes)  
@@ -37,6 +39,6 @@ The Android Gradle plugin API/DSL is released concurrently with Android Studio, 
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-07-10 UTC.
+Last updated 2026-09-24 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-07-10 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-24 UTC."],[],[]] 

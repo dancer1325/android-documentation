@@ -4,7 +4,8 @@
 
 ---
 
-#  Android API reference
+#  Android API reference Save and categorize content based on your preferences. 
+
 Start building your Android app with the Android Platform APIs. They are available in [Kotlin](/reference/kotlin/packages) and [Java](/reference/packages).
 
 **Note:** Many Kotlin reference topics are derived from Java-based source code. This means that some Kotlin reference topics might contain Java code snippets. 

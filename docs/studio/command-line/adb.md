@@ -24,13 +24,15 @@
 
 ## How adb works
 
+* | run `adb` 
+  * client checks whether there is an `adb` server process ALREADY running
+    * if there is NOT -> it starts the server process
+* | start the server,
+  * it 
+    * binds -- to -- local TCP port 5037
+    * listens for commands / sent -- from -- `adb` clients
+
 TODO: 
-When you start an `adb` client, the client first checks whether there is an `adb` server process already running
-* If there isn't, it starts the server process
-* When the server starts, it binds to local TCP port 5037 and listens for commands sent from `adb` clients.
-
-**Note:** All `adb` clients use port 5037 to communicate with the `adb` server.
-
 The server then sets up connections to all running devices
 * It locates emulators by scanning odd-numbered ports in the range 5555 to 5585, which is the range used by the first 16 emulators
 * Where the server finds an `adb` daemon (adbd), it sets up a connection to that port.
@@ -407,34 +409,37 @@ You can see a detailed list of all supported `adb` commands using the following 
     
     
     adb --help
-    
+
 
 ## Issue shell commands
 
-You can use the `shell` command to issue device commands through `adb` or to start an interactive shell. To issue a single command, use the `shell` command like this: 
+* allows
+  * issue device commands -- through -- `adb`
+  * start an interactive shell 
     
+* `adb [-d |-e | -s serial_number] shell <shell_command>`
+  * issue 1! command
     
-    adb [-d |-e | -s serial_number] shell shell_command
-    
+* `adb [-d | -e | -s serial_number] shell`
+  * start an interactive shell | a device /
+    * provide
+      * MOST of the usual Unix CL tools
+        * if you want to list them -> `adb shell ls /system/bin`
+        * MOST of them are provided -- by -- [toybox](http://landley.net/toybox/)
+          * if you want to get help -> `toybox --help`
+  * ways to exit
+    * press `Control+D`
+    * type `exit`
+ 
+TODO: 
+With Android Platform Tools 23 and higher, `adb` handles arguments the same way that the `ssh(1)` command does
+* This change has fixed a lot of problems with [command injection](https://en.wikipedia.org/wiki/Code_injection#Shell_injection) and makes it possible to safely execute commands that contain shell [metacharacters](https://en.wikipedia.org/wiki/Metacharacter), such as `adb install Let\'sGo.apk`
+* This change means that the interpretation of any command that contains shell metacharacters has also changed.
 
-To start an interactive shell on a device, use the `shell` command like this:
-    
-    
-    adb [-d | -e | -s serial_number] shell
-    
-
-To exit an interactive shell, press `Control+D` or type `exit`.
-
-Android provides most of the usual Unix command-line tools. For a list of available tools, use the following command:
-    
-    
-    adb shell ls /system/bin
-
-Help is available for most of the commands via the `--help` argument. Many of the shell commands are provided by [toybox](http://landley.net/toybox/). General help applicable to all toybox commands is available via `toybox --help`.
-
-With Android Platform Tools 23 and higher, `adb` handles arguments the same way that the `ssh(1)` command does. This change has fixed a lot of problems with [command injection](https://en.wikipedia.org/wiki/Code_injection#Shell_injection) and makes it possible to safely execute commands that contain shell [metacharacters](https://en.wikipedia.org/wiki/Metacharacter), such as `adb install Let\'sGo.apk`. This change means that the interpretation of any command that contains shell metacharacters has also changed.
-
-For example, `adb shell setprop key 'two words'` is now an error, because the quotes are swallowed by the local shell, and the device sees `adb shell setprop key two words`. To make the command work, quote twice, once for the local shell and once for the remote shell, as you do with `ssh(1)`. For example, `adb shell setprop key "'two words'" ` works because the local shell takes the outer level of quoting and the device still sees the inner level of quoting: `setprop key 'two words'`. Escaping is also an option, but quoting twice is usually easier. 
+For example, `adb shell setprop key 'two words'` is now an error, because the quotes are swallowed by the local shell, and the device sees `adb shell setprop key two words`
+* To make the command work, quote twice, once for the local shell and once for the remote shell, as you do with `ssh(1)`
+* For example, `adb shell setprop key "'two words'" ` works because the local shell takes the outer level of quoting and the device still sees the inner level of quoting: `setprop key 'two words'`
+* Escaping is also an option, but quoting twice is usually easier. 
 
 See also [Logcat command-line tool](/studio/command-line/logcat), which is useful for monitoring the system log.
 

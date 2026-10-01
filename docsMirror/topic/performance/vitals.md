@@ -1,31 +1,42 @@
-# Android vitals  |  App quality  |  Android Developers
+# Android vitals  |  Android Developers
 
 **Source:** [https://developer.android.com/topic/performance/vitals](https://developer.android.com/topic/performance/vitals)
 
 ---
 
-#  Android vitals
-![](/static/topic/performance/vitals/images/android-vitals.png)
+#  Android vitals Save and categorize content based on your preferences. 
+
+![](/static/google/play/vitals/images/android-vitals.png)
 
 Android vitals helps Google improve the quality of Android apps on Google Play. When a user allows it, their Android-powered device tracks app quality metrics such as stability, performance, battery use, and permission issues. Google Play collects this data, which can be accessed through the [Android vitals dashboard](https://support.google.com/googleplay/android-developer/answer/9844486?visit_id=637804734146240317-4134883661&rd=1) in the [Play Console](https://play.google.com/console/about/), and through the [Google Play Developer Reporting API](https://developers.google.com/play/developer/reporting).
 
-Developers should monitor Android vitals to improve the user experience, especially the core vitals: **user-perceived crash rate** , **user-perceived ANR rate** , and **excessive partial wake locks**.
+Developers should monitor Android vitals to improve the user experience, especially the core vitals: **user-perceived crash rate** , **user-perceived ANR rate** , **excessive partial wake locks** , **memory usage** , and **bitmap memory usage**.
 
 ## Core vitals and bad behaviors
 
-Your app's core vitals affect your app's visibility on Google Play. User-perceived crash rate and user-perceived ANR rate have an **overall** bad behavior threshold and a **per-device** bad behavior threshold.
+Your app's core vitals affect your app's visibility on Google Play. In addition to core vitals, Android vitals alerts you to items such as DEX Code Optimization that require attention and may also affect your app's visibility on Google Play. User-perceived crash rate and user-perceived ANR rate have an **overall** bad behavior threshold and a **per-device** bad behavior threshold.
 
 Excessive partial wake locks only has an overall bad behavior threshold and excessive battery usage on wear OS has an overall and per watch model threshold.
+
+The memory usage metric has different thresholds for each device RAM tier and app state, and differs for apps and games. Bitmap memory usage is the same across device RAM tiers, but has different thresholds for each app state.
 
 ### FAQs
 
 #### What are core vitals?
 
-Core vitals are the most important metrics in Android vitals, and affect the visibility of your app on Google Play. The core vitals are **user-perceived crash rate** , **user-perceived ANR rate** , and **excessive partial wake locks** for all apps, and **excessive battery usage** for watch face apps.
+Core vitals are the most important metrics in Android vitals, and affect the visibility of your app on Google Play. The core vitals are:
+
+**Stability:** **User-perceived crash rate** and **user-perceived ANR rate** for all apps.
+
+**Battery:** **Excessive partial wake locks** for all apps, and **excessive battery usage** for watch face apps.
+
+**Memory:** **Memory usage (Anonymous RSS + Swap)** and **bitmap memory usage** for all mobile apps.
+
+**Note:** Apps exceeding the thresholds for memory usage, bitmap memory usage, or code optimization may see store visibility impact starting from **February 2027**. For specifics on these metrics, see [Memory usage](/google/play/vitals/memory-usage), [Bitmap memory usage](/google/play/vitals/bitmap-memory-usage), and [Enable app optimization](/google/play/vitals/code-optimization).
 
 #### What are the bad behavior thresholds?
 
-The crash, ANR, and battery usage core vitals have two bad behavior thresholds: one for all sessions across devices and one per device. These thresholds are shown in Android vitals.
+##### Stability & Battery Vitals
 
 BAD BEHAVIOR THRESHOLD  
 To maximize your title's visibility on Google Play, please keep it under these thresholds.   
@@ -35,8 +46,68 @@ User-perceived crash rate | 1.09% | 8% | 4%
 User-perceived ANR rate | 0.47% | 8% | 5%  
 Excessive battery usage | 1% | - | 1%  
 Excessive partial wake locks | 5% | - | -  
-**Note:** Apps with excessive partial wake locks may see store visibility impact **starting from March 1, 2026**. For specifics on what partial wake lock use is considered excessive, see [Excessive partial wake locks](/topic/performance/vitals/excessive-wakelock).
+  
+##### Memory Vitals
 
+**Note:** The Total Memory Range for each tier defines the usable memory available to apps (inclusive of the lowest value). Usable RAM may vary across devices due to hardware carve-outs and discrepancies between advertised physical RAM and actual usable memory available to the Android OS. Query [ActivityManager.MemoryInfo.totalMem](/reference/android/app/ActivityManager.MemoryInfo#totalMem) to log device total memory, and associate the value with the user's device profile in your analytics pipeline.
+
+**Apps**
+
+BAD BEHAVIOR THRESHOLD  
+To maximize your title's visibility on Google Play, please keep it under these thresholds.   
+---  
+| Physical RAM  
+(Total Memory Range) | App State  
+Foreground | User-Perceived Services | Background | Cached  
+Memory usage (Anonymous RSS + Swap) | 0 - 4 GB  
+(0 - 3200 MB) | - | - | - | -  
+4 GB  
+(3200 - 4800 MB) | 2.00 GB | 1.00 GB | 1.00 GB | -  
+6 GB  
+(4800 - 6800 MB) | 2.25 GB | 1.25 GB | 1.25 GB | -  
+8 GB  
+(6800 - 9216 MB) | 2.25 GB | 1.50 GB | 1.50 GB | -  
+12 GB  
+(9216 - 14336 MB) | 3.25 GB | 1.75 GB | 1.75 GB | -  
+16 GB  
+(14336 - 18432 MB) | 4.25 GB | 2.00 GB | 2.00 GB | -  
+16 GB +  
+(Above 18432 MB) | - | - | - | -  
+Bitmap memory usage | - | - | 200 MB | 200 MB | 400 MB  
+  
+**Games**
+
+BAD BEHAVIOR THRESHOLD  
+To maximize your title's visibility on Google Play, please keep it under these thresholds.   
+---  
+| Physical RAM  
+(Total Memory Range) | App State  
+Foreground | User-Perceived Services | Background | Cached  
+Memory usage (Anonymous RSS + Swap) | 0 - 4 GB  
+(0 - 3200 MB) | - | - | - | -  
+4 GB  
+(3200 - 4800 MB) | 2.25 GB | 2.00 GB | 2.00 GB | -  
+6 GB  
+(4800 - 6800 MB) | 2.75 GB | 2.50 GB | 2.50 GB | -  
+8 GB  
+(6800 - 9216 MB) | 3.50 GB | 2.75 GB | 2.75 GB | -  
+12 GB  
+(9216 - 14336 MB) | 4.00 GB | 3.20 GB | 3.20 GB | -  
+16 GB  
+(14336 - 18432 MB) | 5.00 GB | 3.50 GB | 3.50 GB | -  
+16 GB +  
+(Above 18432 MB) | - | - | - | -  
+Bitmap memory usage | - | - | 200 MB | 200 MB | 400 MB  
+  
+##### DEX Code Optimization
+
+**BAD BEHAVIOR THRESHOLD**  
+To maximize your title's visibility on Google Play, please keep it above these thresholds.   
+---  
+Criteria | Requirement | Minimum threshold  
+Apps with > 10 MB DEX code | Optimization, Obfuscation, and Shrinking | 25%  
+Games with > 50 MB DEX code | Optimization, Obfuscation, and Shrinking | 25%  
+  
 #### How do core vitals affect my title's visibility on Play?
 
 If your app or game exceeds a bad behavior threshold, Play may reduce the visibility of your title. Play may also show users a warning on your store listing.
@@ -47,27 +118,32 @@ Yes, all combinations are possible. To improve app quality, fix the crashes and 
 
 #### I need help to fix my technical issues. Where do I start?
 
-The following resources resources are provided to help you diagnose and fix technical issues in your app or game.
+The following resources are provided to help you understand how Android vitals tracks technical issues in your app or game, and you can visit [Address common performance issues](/topic/performance/issues) for general diagnostic and remediation guidance.
 
 ##### Core vitals:
 
-[User-perceived ANR rate](/topic/performance/vitals/anr#android-vitals)  
-[User-perceived crash rate](/topic/performance/vitals/crash#android-vitals)  
-[Excessive battery usage](/topic/performance/vitals/excessive-battery-usage)  
-[Excessive partial wake locks](/topic/performance/vitals/excessive-wakelock)  
+[User-perceived ANR rate](/google/play/vitals/anr)  
+[User-perceived crash rate](/google/play/vitals/crash)  
+[Excessive battery usage](/google/play/vitals/excessive-battery-usage)  
+[Excessive partial wake locks](/google/play/vitals/excessive-wakelock)  
+[Memory usage (Anonymous RSS + swap)](/google/play/vitals/memory-usage)  
+[Bitmap memory usage](/google/play/vitals/bitmap-memory-usage)  
+
 
 ##### All other vitals:
 
-[Excessive wakeups](/topic/performance/vitals/wakeup)  
-[Stuck partial wake locks](/topic/performance/vitals/wakelock)  
-[Excessive background Wi-Fi scans](/topic/performance/vitals/bg-wifi)  
-[Excessive background network usage](/topic/performance/vitals/bg-network-usage)  
-[App startup time](/topic/performance/vitals/launch-time)  
-[Slow rendering](/topic/performance/vitals/render)  
+[Excessive wakeups](/google/play/vitals/wakeup)  
+[Stuck partial wake locks](/google/play/vitals/stuck-wakelock)  
+[Excessive background Wi-Fi scans](/google/play/vitals/bg-wifi)  
+[Excessive background network usage](/google/play/vitals/bg-network-usage)  
+[App startup time](/google/play/vitals/launch-time)  
+[Slow rendering](/google/play/vitals/render)  
 
-[Slow Sessions](/topic/performance/vitals/slow-session)  
-[Low memory killers (LMKs)](/topic/performance/vitals/lmk)  
-[Permission denials](/topic/performance/vitals/permissions)  
+
+[Slow Sessions](/google/play/vitals/slow-session)  
+[Low memory killers (LMKs)](/google/play/vitals/lmk)  
+[Permission denials](/google/play/vitals/permissions)  
+
 
 #### I don't want to be surprised by bad behaviors or store listing warnings. How can I get ahead of this?
 
@@ -76,6 +152,8 @@ Play uses the last 28 days of data to assess your app's quality. Android vitals 
   * Regularly check the UI or use the reporting API to integrate data into your workflow.
   * Set up email alerts in the Play Console for issues.
   * Android vitals flags "emerging issues"—problems affecting devices for over 7 days for crashes and ANRs. This gives you 21 days to address them.
+
+
 
 #### I have a lot of devices with bad behaviors. How do I make sense of the list?
 
@@ -104,6 +182,8 @@ Android vitals is Play's main source for technical app quality. The number of is
   * Issue rates may be calculated differently. Android vitals shows issues per daily active user. 
     * For example, Crashlytics counts the number of issues per app session. If a user played a game three times in one day and experienced one crash, Android vitals would show a 100% crash rate while Crashlytics would show a 33% crash rate.
 
+
+
 For more information on how data is collected, see the [Play Console Help Center](https://support.google.com/googleplay/android-developer/answer/7385505).
 
 #### Can I see my ANR and crashes insights in the IDE?
@@ -116,6 +196,6 @@ A user session is defined as the sum of usage activity that occurs in a 24-hour 
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-05-19 UTC.
+Last updated 2026-09-21 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-05-19 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-21 UTC."],[],[]] 

@@ -4,14 +4,15 @@
 
 ---
 
-#  Overview of measuring app performance
+#  Overview of measuring app performance Save and categorize content based on your preferences. 
+
 This document helps you identify and fix key performance issues in your app.
 
 ## Key performance issues
 
 There are many problems that can contribute to bad performance in an app, but the following are some common issues to look for:
 
-[Startup latency](/topic/performance/vitals/launch-time#time-full)
+[Startup latency](/topic/performance/issues/launch-time#time-full)
     
 
 Startup latency is the amount of time it takes between tapping on the app icon, notification, or other entry point, and the user's data showing on the screen.
@@ -22,7 +23,9 @@ Aim for the following startup goals in your apps:
   * **Warm start in less than 200ms and hot start in less than 150ms.** A warm start occurs when the application's process is already running in the background, but the system needs to re-initialize the UI or bring the activity back to the foreground, such as when a user exits the app and re-opens it shortly after. A _hot start_ is even faster because the app's activity is already cached in memory and only needs to be brought to the foreground, without the need to re-create the view hierarchy. Aim to keep warm starts under 200ms and hot starts under 150ms.
   * **P95 and P99 latencies very close to the median latency.** P95 and P99 represent the 95th and 99th percentiles of startup times, while the median is the 50th percentile. When the app takes a long time to start, it makes a poor user experience. Interprocess communications (IPCs) and unnecessary I/O during the critical path of app startup can experience lock contention and introduce inconsistencies.
 
-[Scroll jank](/topic/performance/vitals/render#scrollable_lists)
+
+
+[Scroll jank](/topic/performance/issues/render#scrollable_lists)
     
 
 _Jank_ is the term that describes the visual hiccup that occurs when the system isn't able to build and provide frames in time to draw them to the screen at the requested cadence of 60hz or higher. Jank is most apparent when scrolling, when instead of smoothly animated flow, there are hiccups. Jank appears when the movement pauses along the way for one or more frames, as the app takes longer to render content than the duration of a frame on the system.
@@ -56,11 +59,15 @@ To remedy performance issues, identify and inspect the following critical user j
   * Transitions between screens.
   * Long-running flows, like navigation or music playback.
 
+
+
 For each of these flows, inspect what is happening using the following debugging tools:
 
   * [Perfetto](https://perfetto.dev/): lets you see what is happening across the entire device with precise timing data.
   * [Memory Profiler](/studio/profile/record-java-kotlin-allocations): lets you see what memory allocations are happening on the heap.
   * [Simpleperf](/ndk/guides/simpleperf): shows a flamegraph of what function calls are using the most CPU during a certain period of time. When you identify something that's taking a long time in Systrace, but you don't know why, Simpleperf can provide additional information.
+
+
 
 To understand and debug these performance issues, it's critical to manually debug individual test runs. You can't replace the preceding steps by analyzing aggregated data. However, to understand what users are actually seeing and identify when regressions might occur, it's important to set up metrics collection in automated testing and in the field:
 
@@ -75,6 +82,8 @@ To understand and debug these performance issues, it's critical to manually debu
       * [Scrolling with Macrobenchmark](/topic/performance/benchmarking/macrobenchmark-control-app).
       * Macrobenchmark collects frame timing using `dumpsys gfxinfo` commands that bracket a single user journey. This is a way to understand variation in jank over a specific user journey. The `RenderTime` metrics, which highlight how long frames are taking to draw, are more important than the count of janky frames for identifying regressions or improvements.
 
+
+
 ### App Links verification issues
 
 [App Links](/training/app-links) are deep links based on your website URL that are verified to belong to your website. App Link verifications can fail for the following reasons:
@@ -83,6 +92,8 @@ To understand and debug these performance issues, it's critical to manually debu
   * **Unverified protocol switches:** unverified server-side and subdomain redirects are considered security risks and fail verification. They cause all `autoVerify` links to fail. For example, redirecting links from HTTP to HTTPS, such as example.com to www.example.com, without verifying the HTTPS links can cause fail verification. Make sure to [verify App Links](/training/app-links/verify-android-applinks) by adding intent filters.
   * **Non-verifiable links:** adding non-verifiable links for testing purposes can cause the system to not verify App Links for your app.
   * **Unreliable servers:** make sure your servers can connect to your client apps.
+
+
 
 ## Set up your app for performance analysis
 
@@ -132,6 +143,8 @@ On rooted devices, consider using a [`lockClocks` script](/studio/profile/benchm
   * Disable small cores and configure the GPU.
   * Disable thermal throttling.
 
+
+
 We don't recommend using a `lockClocks` script for user-experience focused tests such as app launch, DoU testing, and jank testing, but it can be essential for reducing noise in Microbenchmark tests.
 
 When possible, consider using a testing framework like [Macrobenchmark](/studio/profile/macrobenchmark), which can reduce noise in your measurements and prevent measurement inaccuracy.
@@ -176,7 +189,7 @@ When you see a disruption to this regular cadence, it is a janky frame, as shown
 
 In some cases, you need to zoom into a tracepoint for more information about which UI components are being [updated](/develop/ui/compose/performance/phases) by Compose or, as in Figure 6, what a `LazyColumn` is doing. When diagnosing these UI bottlenecks, standard system tracing may not show which composables are the root cause. In these instances, use [Jetpack Compose composition tracing](/develop/ui/compose/tooling/tracing), which surfaces exact composable functions directly within the trace, making it easier to pinpoint unexpected recompositions. Figures 5 and 6 show the results of composition tracing.
 
-For more information about optimizing Compose performance, see [Jetpack Compose Performance](/develop/ui/compose/performance). For more information about identifying janky frames and debugging their causes, see [Slow rendering](/topic/performance/vitals/render).
+For more information about optimizing Compose performance, see [Jetpack Compose Performance](/develop/ui/compose/performance). For more information about identifying janky frames and debugging their causes, see [Slow rendering](/topic/performance/issues/render).
 
 ### Common lazy layout mistakes
 
@@ -194,13 +207,15 @@ The following are methods for debugging your app's performance.
 
 ### Debug app startup with Systrace
 
-See [App startup time](/topic/performance/vitals/launch-time) for an overview of the app startup process, and see the following video for an overview of system tracing and using the Android Studio profiler.
+See [App startup time](/topic/performance/issues/launch-time) for an overview of the app startup process, and see the following video for an overview of system tracing and using the Android Studio profiler.
 
 You can disambiguate startup types in the following stages:
 
   * Cold startup: starts by creating a new process with no [saved state](/reference/kotlin/android/os/Bundle).
   * Warm startup: either recreates the activity while reusing the process or recreates the process with the saved state.
   * Hot startup: restarts the activity and starts at inflation.
+
+
 
 We recommend capturing Systraces with the [System Tracing app on the device](/topic/performance/tracing/on-device). For Android 10 and higher, use [Perfetto](http://perfetto.dev/docs). For Android 9 and lower, use [Systrace](/topic/performance/tracing). We also recommend viewing trace files with the [web-based Perfetto trace viewer](http://ui.perfetto.dev). For more information, see [Overview of system tracing](/topic/performance/tracing).
 
@@ -216,7 +231,10 @@ Some things to look for include the following:
 
   * Significant activity on other threads: these can interfere with the UI thread, so watch out for background work during startup.
 
-We recommend you call [`reportFullyDrawn`](/reference/kotlin/android/app/Activity#reportfullydrawn) when startup is completed from the app's perspective for improved app startup metric reporting. See the [Time to full display](/topic/performance/vitals/launch-time#time-full) section for more information about using `reportFullyDrawn`. You can extract RFD-defined start times through the Perfetto trace processor, and a user-visible trace event is emitted.
+
+
+
+We recommend you call [`reportFullyDrawn`](/reference/kotlin/android/app/Activity#reportfullydrawn) when startup is completed from the app's perspective for improved app startup metric reporting. See the [Time to full display](/topic/performance/issues/launch-time#time-full) section for more information about using `reportFullyDrawn`. You can extract RFD-defined start times through the Perfetto trace processor, and a user-visible trace event is emitted.
 
 ### Use System Tracing on the device
 
@@ -272,15 +290,19 @@ The ultimate impacts of memory improvements are the following:
      * Out-of-memory shutdowns are likely reduced if the app doesn't constantly hit memory pressure.
      * Having fewer GCs improves jank metrics, especially in the P99. This is because GCs cause CPU contention, which can lead to rendering tasks being deferred while GC is happening.
 
+
+
 ## Recommended for you
 
   * Note: link text is displayed when JavaScript is off
   * [App startup analysis and optimization {:#app-startup-analysis-optimization}](/topic/performance/appstartup/analysis-optimization)
-  * [Frozen frames](/topic/performance/vitals/frozen)
+  * [Frozen frames](/topic/performance/issues/render#frozen-frames)
   * [Write a Macrobenchmark](/topic/performance/benchmarking/macrobenchmark-overview)
+
+
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-29 UTC.
+Last updated 2026-09-21 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-29 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-21 UTC."],[],[]] 

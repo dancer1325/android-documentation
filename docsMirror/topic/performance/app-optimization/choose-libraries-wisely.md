@@ -4,7 +4,8 @@
 
 ---
 
-#  Choose libraries wisely
+#  Choose libraries wisely Save and categorize content based on your preferences. 
+
 To enable app optimization, you must use libraries that are compatible with Android optimization. If a library isn't configured for Android optimization—for example, if it uses [reflection](https://en.wikipedia.org/wiki/Reflective_programming) without bundling associated keep rules—it might not be a good fit for an Android app. This page explains why some libraries are better suited for app optimization and provides general tips to help you choose.
 
 **Note:** For a complete list of requirements that libraries built for Android must adhere to, see [Optimization for library authors](/topic/performance/app-optimization/library-optimization).
@@ -33,15 +34,20 @@ You can tell if a library uses reflection by inspecting its code. If the library
         ?.invoke(myObject, data)
         
 
+
+
+
 ### Check for optimization issues
 
 When considering a new library, look through the library's issue tracker and online discussions to check if there are issues related to minification or configuring app optimization. If there are, you should try to look for alternatives to that library. Keep in mind the following:
 
   * The [AndroidX libraries](/jetpack/androidx) and libraries such as [Hilt](/training/dependency-injection/hilt-android) work well with app optimization because they mostly use codegen instead of reflection. When they do use reflection, they provide minimal keep rules to keep only the code that is needed.
-  * Serialization libraries frequently use reflection to avoid boilerplate code when instantiating or serializing objects. Instead of reflection-based approaches (such as Gson for JSON), look for libraries that use codegen to avoid these problems, for example by using [Kotlin Serialization](https://github.com/Kotlin/kotlinx.serialization) {:.external} or [Moshi with codegen](https://github.com/square/moshi#codegen).
+  * Serialization libraries frequently use reflection to avoid boilerplate code when instantiating or serializing objects. Instead of reflection-based approaches (such as Gson for JSON), look for libraries that use codegen to avoid these problems, for example by using [Kotlin Serialization](https://github.com/Kotlin/kotlinx.serialization) or [Moshi with codegen](https://github.com/square/moshi#codegen).
   * If possible, avoid libraries that include package-wide keep rules. Package-wide keep rules can help resolve errors, but broad keep rules should eventually be refined to keep only the code that is needed. For more information, see [Adopt optimizations incrementally](/topic/performance/app-optimization/adopt-optimizations-incrementally).
   * Before publishing an app that uses a third-party library, use the [R8 Configuration Analyzer](/topic/performance/app-optimization/r8-configuration-analyzer) to audit its provided keep rules. By reviewing the report, you can verify if the library's keep rules are overly broad, preventing R8 from performing critical optimizations on your codebase. This check ensures that the libraries you select align with your app's performance goals and don't introduce unnecessary configuration bloat.
   * Libraries shouldn't require you to copy and paste keep rules from documentation into a file in your project, especially not package-wide keep rules. These rules become a maintenance burden on the app developer in the long term, and are difficult to optimize and change over time.
+
+
 
 ## Enable optimization after adding a new library
 
@@ -80,6 +86,7 @@ Gson is a serialization library that often causes issues with app optimization b
   * App class implementing a library, or standard interface or class
   * Code generation plugin like [KSP](https://github.com/google/ksp)
 
+
     
     
     class User(val name: String)
@@ -108,6 +115,6 @@ Note that [Room](/training/data-storage/room), [Hilt](/training/dependency-injec
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-29 UTC.
+Last updated 2026-08-13 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-29 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-08-13 UTC."],[],[]] 

@@ -4,7 +4,8 @@
 
 ---
 
-#  Configure build variants
+#  Configure build variants Save and categorize content based on your preferences. 
+
 This page shows you how you can configure build variants to create different versions of your app from a single project and how to properly manage your dependencies and signing configurations. 
 
 Each _build variant_ represents a different version of your app that you can build. For example, you might want to build one version of your app that's free with a limited set of content, and another paid version that includes more. You can also build different versions of your app that target different devices, based on API level or other device variations. 
@@ -17,7 +18,7 @@ For example, a "demo" _product flavor_ might specify certain features and device
 
 You can create and configure build types inside the `android` block of the module-level `build.gradle.kts` file. When you create a new module, Android Studio automatically creates the debug and release build types. Although the debug build type doesn't appear in the build configuration file, Android Studio configures it with [ `debuggable true`](/guide/topics/manifest/application-element#debug). This lets you debug the app on secure Android devices and configures app signing with a generic debug keystore. 
 
-You can add the debug build type to your configuration if you want to add or change certain settings. The following sample specifies an [ `applicationIdSuffix`](/reference/tools/gradle-api/9.2/com/android/build/api/dsl/ApplicationVariantDimension#applicationIdSuffix\(\)) for the debug build type and configures a "staging" build type that is initialized using settings from the debug build type: 
+You can add the debug build type to your configuration if you want to add or change certain settings. The following sample specifies an [ `applicationIdSuffix`](/reference/tools/gradle-api/9.4/com/android/build/api/dsl/ApplicationVariantDimension#applicationIdSuffix\(\)) for the debug build type and configures a "staging" build type that is initialized using settings from the debug build type: 
 
 ### Kotlin
     
@@ -175,6 +176,8 @@ After you create and configure your product flavors, click **Sync Now** in the n
   * `fullDebug`
   * `fullRelease`
 
+
+
 To select which build variant to build and run, go to **Build** > **Select Build Variant** and select a build variant from the menu. To start customizing each build variant with its own features and resources, you'll need to create and manage source sets, as described on this page. 
 
 ###  Change the application ID for build variants 
@@ -247,7 +250,7 @@ You can also use `applicationIdSuffix` to append a segment based on your [build 
 
 Because Gradle applies the build type configuration after the product flavor, the application ID for the "free debug" build variant is "com.example.myapp.free.debug". This is useful when you want to have both the debug and the release build on the same device, because no two apps can have the same application ID.
 
-If you have a legacy app (created before August 2021) that you distribute using APKs on Google Play, and you want to use the same app listing to distribute multiple APKs that each target a different device configuration, such as the API level, then you must use the same application ID for each build variant but give each APK a different `versionCode`. For more information, read about [Multiple APK support](/google/play/publishing/multiple-apks). Publishing using AABs is unaffected, as it uses a single artifact that uses a single version code and application ID by default. 
+If you have a legacy app (created before August 2021) that you distribute using APKs on Google Play, and you want to use the same app listing to distribute multiple APKs that each target a different device configuration, such as the API level, then you must use the same application ID for each build variant but give each APK a different `versionCode`. For more information, read about [Multiple APK support](/google/play/publishing/multiple-apks). Publishing using AABs is unaffected, as it uses a single artifact that uses a single version code and application ID by default.
 
 **Tip:** If you need to reference the application ID in your manifest file, you can use the `${applicationId}` placeholder in any manifest attribute. During a build, Gradle replaces this tag with the actual application ID. For more information, see [Inject build variables into the manifest](/studio/build/manage-manifests#inject_build_variables_into_the_manifest).
 
@@ -396,6 +399,8 @@ For example,
     Build variant: `minApi24DemoDebug`
     Corresponding APK: `app-minApi24-demo-debug.apk`
 
+
+
 In addition to the source set directories you can create for each individual product flavor and build variant, you can also create source set directories for each _combination_ of product flavors. For example, you can create and add Java sources to the `src/demoMinApi24/java/` directory, and Gradle uses those sources only when building a variant that combines those two product flavors.
 
 Source sets you create for product flavor combinations have a higher priority than source sets that belong to each individual product flavor. To learn more about source sets and how Gradle merges resources, read the section about how to create source sets. 
@@ -501,11 +506,13 @@ To view this output, proceed as follows:
   1. Click **Gradle** in the tool window bar. 
   2. Navigate to **MyApplication > Tasks > android** and double-click **sourceSets**.
 
-To see the **Tasks** folder, you must let Gradle build the task list during sync. To do so, follow these steps: 
+To see the **Tasks** folder, you must let Gradle build the task list during sync. To do so, follow these steps:
+
      1. Click **File > Settings > Experimental** (**Android Studio > Settings > Experimental** on macOS).
      2. Deselect **Do not build Gradle task list during Gradle sync**.
-
   3. After Gradle executes the task, the **Run** window opens to display the output.
+
+
 
 **Note:** The task output also shows you how to organize source sets for files you want to use to run tests for your app, such as the `test/` and `androidTest/` [testing source sets](/studio/test/advanced-test-setup#create-instrumented-test-for-build-variant). 
 
@@ -517,6 +524,8 @@ When you create a new build variant, Android Studio doesn't create the source se
   4. From the menu under **Gradle Source Sets** , select **full/java**. 
   5. Press `Enter`. 
 
+
+
 Android Studio creates a source set directory for your debug build type and then creates the `java/` directory inside it. Alternatively, Android Studio can create the directories for you when you add a new file to your project for a specific build variant.
 
 For example, to create a values XML file for your "debug" build type: 
@@ -525,6 +534,8 @@ For example, to create a values XML file for your "debug" build type:
   2. Enter the name for the XML file or keep the default name. 
   3. From the menu next to **Target Source Set** , select **debug**. 
   4. Click **Finish**. 
+
+
 
 Because the "debug" build type was specified as the target source set, Android Studio automatically creates the necessary directories when it creates the XML file. The resulting directory structure looks like figure 1. 
 
@@ -646,9 +657,11 @@ You can use source set directories to contain the code and resources you want pa
   3. `src/demo/` (product flavor source set) 
   4. `src/main/` (main source set) 
 
+
+
 Source sets created for combinations of product flavors must include all flavor dimensions. For example, the build variant source set must be the combination of the build type and all flavor dimensions. Merging code and resources involving folders that cover multiple but not all flavor dimensions is not supported. 
 
-If you combine multiple product flavors, priority between the product flavors is determined by the flavor dimension they belong to. When listing flavor dimensions with the [ `android.flavorDimensions`](/reference/tools/gradle-api/current/com/android/build/api/dsl/ProductFlavor#dimension) property, product flavors that belong to the first flavor dimension you list have a higher priority than those belonging to the second flavor dimension, and so on. Additionally, source sets you create for combinations of product flavors have a higher priority than source sets that belong to an individual product flavor. 
+If you combine multiple product flavors, priority between the product flavors is determined by the flavor dimension they belong to. When listing flavor dimensions with the [ `android.flavorDimensions`](/reference/tools/gradle-api/current/com/android/build/api/dsl/ProductFlavor#dimension) property, product flavors are prioritized in the order their dimensions are declared, with earlier dimensions taking precedence over subsequent ones. Additionally, source sets you create for combinations of product flavors have a higher priority than source sets that belong to an individual product flavor. 
 
 The priority order determines which source set has a higher priority when Gradle combines code and resources. Because the `demoDebug/` source set directory likely contains files that are specific to that build variant, if `demoDebug/` includes a file that is also defined in `debug/`, Gradle uses the file in the `demoDebug/` source set. Similarly, Gradle gives files in the build type and product flavor source sets a higher priority than the same files in `main/`. Gradle considers this priority order when applying the following build rules: 
 
@@ -656,14 +669,16 @@ The priority order determines which source set has a higher priority when Gradle
 
 **Note:** For a given build variant, Gradle throws a build error if it encounters two or more source set directories that have defined the same Kotlin or Java class. For example, when building a debug app, you can't define both `src/debug/Utility.kt` and `src/main/Utility.kt`, because Gradle looks at both these directories during the build process and throws a "duplicate class" error. If you want different versions of `Utility.kt` for different build types, each build type must define its own version of the file and not include it in the `main/` source set. 
 
-  * Manifests are merged together into a single manifest. Priority is given in the same order as the list in the previous example. That is, manifest settings for a build type override the manifest settings for a product flavor, and so on. To learn more, read about [manifest merging](/studio/build/manage-manifests#merge-manifests). 
-  * Files in the `values/` directories are merged together. If two files have the same name, such as two `strings.xml` files, priority is given in the same order as the list in the previous example. That is, values defined in a file in the build type source set override the values defined in the same file in a product flavor, and so on. 
+  * Manifests are merged together into a single manifest. Priority is given in the same order as the list in the previous example. For example, manifest settings for a build type override the manifest settings for a product flavor. To learn more, read about [manifest merging](/studio/build/manage-manifests#merge-manifests). 
+  * Files in the `values/` directories are merged together. If two files have the same name, such as two `strings.xml` files, priority is given in the same order as the list in the previous example. For example, values defined in a file in the build type source set override the values defined in the same file in a product flavor. 
   * Resources in the `res/` and `asset/` directories are packaged together. If there are resources with the same name defined in two or more source sets, priority is given in the same order as the list in the previous example. 
   * Gradle gives resources and manifests included with library module dependencies the lowest priority when building the app. 
 
+
+
 ##  Declare dependencies 
 
-To configure a dependency for a specific build variant or [testing source set](/studio/test/advanced-test-setup#create-instrumented-test-for-build-variant), prefix the name of the build variant or testing source set before the `Implementation` keyword, as shown in the following example: 
+To configure a dependency for a specific build variant or [testing source set](/studio/test/advanced-test-setup#create-instrumented-test-for-build-variant), prefix the name of the build variant or testing source set before the `Implementation` keyword, as shown in the following example:
 
 ### Kotlin
     
@@ -697,7 +712,7 @@ For more information about configuring dependencies, see [Add build dependencies
 
 ##  Use variant-aware dependency management 
 
-The Android Gradle plugin 3.0.0 and higher includes a new dependency mechanism that automatically matches variants when consuming a library. This means an app's `debug` variant automatically consumes a library's `debug` variant, and so on. It also works when using flavors: an app's `freeDebug` variant will consume a library's `freeDebug` variant. 
+The Android Gradle plugin 3.0.0 and higher includes a new dependency mechanism that automatically matches variants when consuming a library. For example, an app's `debug` variant automatically consumes a library's `debug` variant. It also works when using flavors: an app's `freeDebug` variant will consume a library's `freeDebug` variant. 
 
 For the plugin to accurately match variants, you need to provide matching fallbacks as described in the following section, for instances where a direct match is not possible.
 
@@ -889,6 +904,9 @@ Use `missingDimensionStrategy` in the `defaultConfig` block to specify the defau
             }
         }
 
+
+
+
 For more information, see [`matchingFallbacks`](/reference/tools/gradle-api/7.0/com/android/build/api/dsl/ProductFlavor#matchingfallbacks) and [`missingDimensionStrategy`](/reference/tools/gradle-api/7.0/com/android/build/api/dsl/BaseFlavor#missingdimensionstrategy_1) in the Android Gradle plugin DSL reference. 
 
 ##  Configure signing settings 
@@ -945,6 +963,9 @@ To manually configure the signing configurations for your release build type usi
              }
          }
 
+
+
+
 **Note:** Including the passwords for your release key and keystore inside the build file is not a good security practice. Instead, configure the build file to obtain these passwords from environment variables or have the build process prompt you for these passwords. 
 
 To obtain these passwords from environment variables: 
@@ -965,7 +986,7 @@ Alternatively, you can load the keystore from a local properties file. For secur
 
 After you complete this process, you can distribute your app and publish it on Google Play. 
 
-**Warning:** Keep your keystore and private key in a safe and secure place, and ensure that you have secure backups of them. If you use Play App Signing and you lose your upload key, you can [request a reset](https://support.google.com/googleplay/android-developer/answer/9842756#reset) using the Play Console. If you are publishing an app without Play App Signing (for apps created before August 2021) and you lose your app signing key, you will not be able to publish any updates to your app, since you must always sign all versions of your app with the same key. 
+**Warning:** Keep your keystore and private key in a safe and secure place, and ensure that you have secure backups of them. If you use Play App Signing and you lose your upload key, you can [request a reset](https://support.google.com/googleplay/android-developer/answer/9842756#reset) using the Play Console. If you are publishing an app without Play App Signing (for apps created before August 2021) and you lose your app signing key, you won't be able to publish any updates to your app, since you must always sign all versions of your app with the same key. 
 
 ###  Signing Wear OS apps 
 
@@ -973,6 +994,6 @@ When publishing Wear OS apps, both the watch APK and optional phone APK must be 
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-16 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-16 UTC."],[],[]] 

@@ -4,12 +4,13 @@
 
 ---
 
-#  Monitor performance
+#  Monitor performance Save and categorize content based on your preferences. 
+
 You can track and analyze performance of your app for valuable insight about a user's overall experience. You can monitor performance to identify potential issues and optimize for those paths before they impact more users.
 
 ## Android vitals
 
-Android vitals helps you improve the stability and performance of Google Play apps on Android-powered devices. For the best user experience, we recommend monitoring and prioritizing your app vitals. For more information, see [Android vitals](/topic/performance/vitals).
+Android vitals helps you improve the stability and performance of Google Play apps on Android-powered devices. For the best user experience, we recommend monitoring and prioritizing your app vitals. For more information, see [Android vitals](/google/play/vitals).
 
 ## Firebase Performance Monitoring
 
@@ -25,6 +26,6 @@ Run benchmarks as part of your CI pipeline to track performance over time and re
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-05-19 UTC.
+Last updated 2026-09-21 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-05-19 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-21 UTC."],[],[]] 

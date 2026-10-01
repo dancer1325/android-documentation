@@ -4,8 +4,41 @@
 
 ---
 
-#  Customize which resources to keep
-When you [enable app optimization](/topic/performance/app-optimization/enable-app-optimization), the `isShrinkResources = true` setting instructs the optimizer to remove resources that are unused, which helps reduce the size of your app. Resource shrinking works only in conjunction with code shrinking, so if you're optimizing resources, also set `isMinifyEnabled = true`, for example:
+#  Customize which resources to keep Save and categorize content based on your preferences. 
+
+When you [enable app optimization](/topic/performance/app-optimization/enable-app-optimization), the default behavior of the optimizer is different for different versions of R8.
+
+  * With the updated DSL that is available from **AGP 9.3 and later** , resource shrinking is enabled by default when optimization is enabled. Note that the legacy DSL, which requires code and resource optimization to be distinctly enabled, is still supported.
+  * For versions **prior to AGP 9.3** , the `isShrinkResources = true` setting instructs the optimizer to remove resources that are unused, which helps reduce the size of your app. Resource shrinking works only in conjunction with code shrinking, so if you're optimizing resources, also set `isMinifyEnabled = true`.
+
+
+
+
+### AGP 9.3+ (Kotlin)
+    
+    
+    buildTypes {
+        release {
+            optimization {
+                enable = true // Enables code and resource optimizations.
+            }
+        }
+    }
+    
+
+### AGP 9.3+ (Groovy)
+    
+    
+    buildTypes {
+        release {
+            optimization {
+                enable = true // Enables code and resource optimizations.
+            }
+        }
+    }
+    
+
+### Legacy DSL (Kotlin)
     
     
     buildTypes {
@@ -17,11 +50,25 @@ When you [enable app optimization](/topic/performance/app-optimization/enable-ap
     }
     
 
+### Legacy DSL (Groovy)
+    
+    
+    buildTypes {
+        release {
+            minifyEnabled = true
+            shrinkResources = true
+            ...
+        }
+    }
+    
+
 If you want to keep or discard specific resources, create an XML _keep_ file in your project resources, for example `res/raw/my.package.keep.xml`. The keep file has the following components:
 
   * `<resources>` tag — Contains all child resource elements and keep/discard attributes.
   * `tools:keep` attribute — Accepts a comma-separated list of resource names that identify resources to keep
   * `tools:discard` attribute — Accepts a comma-separated list of resource names that identify resources to discard
+
+
 
 Use the asterisk character as a wildcard to reference multiple resources in the same folder, for example:
     
@@ -37,6 +84,8 @@ Use the asterisk character as a wildcard to reference multiple resources in the 
   * Keep files have global scope. Give your keep files unique filenames that include the file's package name. Unique filenames ensure keep files from different libraries won't conflict, causing potential issues with ignored rules or unneeded kept resources, when different libraries are linked together.
   * The build doesn't package the keep file into your app.
   * You should rarely need to keep resources. The use of [`getIdentifier()`](/reference/android/content/res/Resources#getIdentifier\(java.lang.String,%20java.lang.String,%20java.lang.String\)) is an exception; however, retrieving resources by identifier is more efficient than retrieving them by name with `getIdentifier()`.
+
+
 
 Specifying which resources to discard might seem superfluous when you could instead delete them, but discarding resources can be useful when using build variants.
 
@@ -90,6 +139,8 @@ AGP looks for duplicate resources in the following locations:
   * Variant overlays, from the build type and build flavors
   * Library project dependencies
 
+
+
 AGP merges duplicate resources in the following cascading priority order:
 
 Dependencies → Main → Build flavor → Build type
@@ -108,7 +159,7 @@ When you shrink resources, the **Build** window shows a summary of the resources
     :android:validateDebugSigning
     
 
-Gradle also creates a diagnostic file named `resources.txt` in `<module-name>/build/outputs/mapping/release/` (the same folder as ProGuard's output files). The file includes details such as which resources reference other resources and which resources are used or removed.
+Gradle also creates a diagnostic file named `resources.txt` in `<module-name>/build/outputs/mapping/release/` (the same folder as ProGuard output files). The file includes details such as which resources reference other resources and which resources are used or removed.
 
 For example, to find out why `@drawable/ic_plus_anim_016` is still in your app, open the `resources.txt` file and search for that filename. You might find that it's referenced from another resource:
     
@@ -132,6 +183,6 @@ If you see one of these strings and you are certain that the string is not being
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-05-19 UTC.
+Last updated 2026-07-15 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-05-19 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-07-15 UTC."],[],[]] 

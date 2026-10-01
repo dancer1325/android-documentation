@@ -4,7 +4,8 @@
 
 ---
 
-#  Build your app from the command line
+#  Build your app from the command line Save and categorize content based on your preferences. 
+
 You can execute all the build tasks available to your Android project using the [Gradle wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html) command line tool. It's available as a batch file for Windows (`gradlew.bat`) and a shell script for Linux and Mac (`gradlew.sh`), and it's accessible from the root of each project you create with Android Studio.
 
 To run a task with the wrapper, use one of the following commands from a Terminal window (from Android Studio, select **View > Tool Windows > Terminal**):
@@ -16,6 +17,9 @@ To run a task with the wrapper, use one of the following commands from a Termina
   * On Mac, Linux, or Windows PowerShell: 
         
         ./gradlew task-name
+
+
+
 
 To see a list of all available build tasks for your project, execute `tasks`:
     
@@ -86,6 +90,9 @@ If the APK is built using a developer preview SDK (if the `targetSdkVersion` is 
          
 
 All APKs you build are saved in `project_name/module_name/build/outputs/apk/`. 
+
+
+
 
 For more information, see [Run Apps on the Android Emulator](/studio/run/emulator).
 
@@ -159,6 +166,9 @@ For example, to download version 3.2.0-alpha18-4804415 for Windows, you would us
   4. Navigate to the URL in a browser—AAPT2 should begin downloading shortly.
 
   5. Unpackage the JAR file you just downloaded.
+
+
+
 
 ##### Compile and link your app's resources
 
@@ -296,6 +306,9 @@ The `apksigner` tool supports other signing options, including signing an APK fi
          
          apksigner verify my-app-release.apk
          
+
+
+
 
 ### Configure Gradle to sign your app
 

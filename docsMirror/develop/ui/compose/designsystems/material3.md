@@ -4,7 +4,8 @@
 
 ---
 
-#  Material Design 3 in Compose
+#  Material Design 3 in Compose Save and categorize content based on your preferences. 
+
 Jetpack Compose offers an implementation of Material You and [Material 3 Expressive](https://m3.material.io/), the next evolution of Material Design. M3 Expressive is an expansion of Material Design 3, including research-backed updates to theming, components, motion, typography, and more — all designed to help you make engaging and desirable products that users love. It also supports Material You personalization features like dynamic color. M3 Expressive complements the Android 16 visual style and system UI.
 
 **Note:** The terms “Material Design 3”, “Material 3”, and “M3” are interchangeable.
@@ -35,7 +36,7 @@ Some M3 APIs are considered experimental. In such cases you need to opt in at th
     }
     
     
-    [Material3Snippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L72-L77)
+    [Material3Snippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L72-L77)
 
 ## Material theming
 
@@ -54,7 +55,7 @@ Jetpack Compose implements these concepts with the M3 `MaterialTheme` composable
         // M3 app content
     }
     
-    [Material3Snippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L84-L90)
+    [Material3Snippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L84-L90)
 
 To theme your application content, define the color scheme, typography, and shapes specific to your app.
 
@@ -72,6 +73,7 @@ While you can create a custom `ColorScheme` manually, it’s often easier to gen
 
   * `Color.kt` contains the colors of your theme with all the roles defined for both light and dark theme colors.
 
+
     
     
     val md_theme_light_primary = Color(0xFF476810)
@@ -86,9 +88,10 @@ While you can create a custom `ColorScheme` manually, it’s often easier to gen
     // ..
     // ..
     
-    [Material3Snippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L96-L106)
+    [Material3Snippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L96-L106)
 
   * `Theme.kt` contains a setup for light and dark color schemes and the app theme.
+
 
     
     
@@ -122,7 +125,7 @@ While you can create a custom `ColorScheme` manually, it’s often easier to gen
         )
     }
     
-    [Material3Snippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L110-L138)
+    [Material3Snippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L110-L138)
 
 To support light and dark themes, use `isSystemInDarkTheme()`. Based on the system setting, define which color scheme to use: light or dark.
 
@@ -147,7 +150,7 @@ Dynamic color is available on Android 12 and above. If dynamic color is availabl
         else -> LightColorScheme
     }
     
-    [Material3Snippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L144-L151)
+    [Material3Snippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L144-L151)
 
 #### Color usage
 
@@ -159,13 +162,15 @@ You can access Material theme colors in your app via `MaterialTheme.colorScheme`
         color = MaterialTheme.colorScheme.primary
     )
     
-    [Material3Snippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L158-L161)
+    [Material3Snippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L158-L161)
 
 Each color role can be used in a variety of places depending on the component’s state, prominence, and emphasis.
 
   * Primary is the base color, used for main components like prominent buttons, active states, and the tint of elevated surfaces.
   * The secondary key color is used for less prominent components in the UI, such as filter chips, and expands the opportunity for color expression.
   * The tertiary key color is used to derive the roles of contrasting accents that can be used to balance primary and secondary colors or bring enhanced attention to an element.
+
+
 
 The Reply sample app design uses on-primary-container color on top of primary-container to put emphasis on the selected item.
 
@@ -190,7 +195,7 @@ The Reply sample app design uses on-primary-container color on top of primary-co
     }
     
     
-    [Material3Snippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L171-L187)
+    [Material3Snippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L171-L187)
 
 Here you can see in the Reply Navigation drawer how secondary and tertiary container colors are used in contrast to create emphasis and accent.
 
@@ -241,7 +246,7 @@ Compose provides the M3 [`Typography`](/reference/kotlin/androidx/compose/materi
     )
     // ..
     
-    [Material3Snippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L194-L209)
+    [Material3Snippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L194-L209)
 
 ![Body large, body medium and label medium for different typography usage.](/static/develop/ui/compose/images/m3-body.png) **Figure 8**. Body large, body medium, and label medium for different typography usage.
 
@@ -260,7 +265,7 @@ You can customize your typography by changing default values of [`TextStyle`](/r
         baselineShift = BaselineShift.Subscript
     ),
     
-    [Material3Snippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L214-L222)
+    [Material3Snippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L214-L222)
 
 Once you have defined your `Typography`, pass it to the M3 `MaterialTheme`:
     
@@ -271,7 +276,7 @@ Once you have defined your `Typography`, pass it to the M3 `MaterialTheme`:
         // M3 app Content
     }
     
-    [Material3Snippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L229-L233)
+    [Material3Snippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L229-L233)
 
 #### Use text styles
 
@@ -287,7 +292,7 @@ You can retrieve the typography provided to the M3 `MaterialTheme` composable by
         style = MaterialTheme.typography.bodyMedium
     )
     
-    [Material3Snippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L240-L247)
+    [Material3Snippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L240-L247)
 
 You can read more about the Material guidelines on [applying typography](https://m3.material.io/styles/typography/applying-type).
 
@@ -309,6 +314,8 @@ There are different sizes of shapes:
   * Large
   * Extra Large
 
+
+
 By default, each shape has a default value, but you can override those:
     
     
@@ -320,7 +327,7 @@ By default, each shape has a default value, but you can override those:
         extraLarge = RoundedCornerShape(24.dp)
     )
     
-    [Material3Snippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L254-L260)
+    [Material3Snippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L254-L260)
 
 Once you have defined your `Shapes`, you can pass it to the M3 `MaterialTheme`:
     
@@ -331,7 +338,7 @@ Once you have defined your `Shapes`, you can pass it to the M3 `MaterialTheme`:
         // M3 app Content
     }
     
-    [Material3Snippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L266-L270)
+    [Material3Snippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L266-L270)
 
 #### Use shapes
 
@@ -349,7 +356,7 @@ Apply medium and large shape with default values:
         /* fab content */
     }
     
-    [Material3Snippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L277-L284)
+    [Material3Snippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L277-L284)
 
 ![Medium shape for Card and Large shape for Floating action button in Reply sample app.](/static/develop/ui/compose/images/m3-shape.png) **Figure 9**. Medium shape for Card and Large shape for Floating action button in Reply sample app
 
@@ -359,7 +366,7 @@ There are two other shapes — `RectangleShape` and `CircleShape` — which are 
     Card(shape = RectangleShape) { /* card content */ }
     Card(shape = CircleShape) { /* card content */ }
     
-    [Material3Snippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L290-L291)
+    [Material3Snippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L290-L291)
 
 The examples below demonstrate some of the components with default shape values applied to them:
 
@@ -377,6 +384,7 @@ Emphasis in M3 is provided using variations of color and its on-color combinatio
 
   * Using different font weights for text. Above, you saw that you can provide custom weights to our type scale for providing different emphasis.
 
+
     
     
     bodyLarge = TextStyle(
@@ -386,7 +394,7 @@ Emphasis in M3 is provided using variations of color and its on-color combinatio
         fontWeight = FontWeight.Normal
     )
     
-    [Material3Snippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L299-L304)
+    [Material3Snippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L299-L304)
 
 **Note:** For disabled states in M3, it’s still acceptable to use “on-x” (where x can be primary, secondary, surface etc.) colors with alpha values.
 
@@ -411,7 +419,7 @@ The M3 [Surface](https://developer.android.com/reference/kotlin/androidx/compose
         Column(content = content)
     }
     
-    [Material3Snippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L311-L317)
+    [Material3Snippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L311-L317)
 
 ## Material components
 
@@ -422,13 +430,14 @@ Material Design comes with a rich set of [Material components](https://m3.materi
         Text(text = "My Button")
     }
     
-    [Material3Snippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L325-L327)
+    [Material3Snippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L325-L327)
 
 M3 provides many versions of the same components to be used in different roles according to emphasis and attention.
 
 ![Button emphasis from FAB, Primary down to Text button](/static/develop/ui/compose/images/m3-emphasis2.png) **Figure 14**. Button emphasis from FAB, Primary down to Text button
 
   * An extended floating action button for the highest emphasis action:
+
 
     
     
@@ -445,9 +454,10 @@ M3 provides many versions of the same components to be used in different roles a
         )
     }
     
-    [Material3Snippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L334-L345)
+    [Material3Snippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L334-L345)
 
   * A filled button for a high emphasis action:
+
 
     
     
@@ -455,9 +465,10 @@ M3 provides many versions of the same components to be used in different roles a
         Text(text = stringResource(id = R.string.view_entry))
     }
     
-    [Material3Snippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L351-L353)
+    [Material3Snippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L351-L353)
 
   * A text button for a low emphasis action:
+
 
     
     
@@ -465,7 +476,7 @@ M3 provides many versions of the same components to be used in different roles a
         Text(text = stringResource(id = R.string.replated_articles))
     }
     
-    [Material3Snippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L359-L361)
+    [Material3Snippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L359-L361)
 
 You can read more about Material [buttons and other components](https://m3.material.io/components/all-buttons). Material 3 provides a wide variety of component suites such as Buttons, App bars, Navigation components that are specifically designed for different use cases and screen sizes.
 
@@ -486,7 +497,7 @@ Material also provides several navigation components that help you implement nav
         }
     }
     
-    [Material3Snippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L376-L384)
+    [Material3Snippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L376-L384)
 
 `NavigationRail` is used for small-to-medium size tablets or phones in landscape mode. It provides ergonomics to users and improves the user experience for those devices.
     
@@ -503,7 +514,7 @@ Material also provides several navigation components that help you implement nav
         }
     }
     
-    [Material3Snippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L393-L403)
+    [Material3Snippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L393-L403)
 
 ![Reply Showcase of BottomNavigationBar\(Left\) and NavigationRail\(Right\)](/static/develop/ui/compose/images/m3-showcasebottom.png) **Figure 15**. Reply Showcase of `BottomNavigationBar` (Left) and `NavigationRail` (Right)
 
@@ -524,7 +535,7 @@ Reply using both in default theming to provide immersive user experience for all
     }) {
     }
     
-    [Material3Snippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L412-L422)
+    [Material3Snippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L412-L422)
 
 ![Reply Showcase of Permanent navigation drawer](/static/develop/ui/compose/images/m3-showcasedrawer.png) **Figure 16**. Reply showcase of permanent navigation drawer
 
@@ -555,7 +566,7 @@ Most components, like cards and buttons, provide a default object exposing color
         // m3 card content
     }
     
-    [Material3Snippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L429-L445)
+    [Material3Snippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L429-L445)
 
 You can read more about [customizing Material 3](https://m3.material.io/foundations/customization).
 
@@ -614,7 +625,7 @@ The use of a tertiary container on top of primary gives the user a poor contrast
     ) {
     }
     
-    [Material3Snippets.kt](https://github.com/android/snippets/blob/d93a416ac9d2746d55cd74462878b29b361b0432/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L454-L472)
+    [Material3Snippets.kt](https://github.com/android/snippets/blob/85c642c354df9d3d244b6261a54fe12cfa9d9a79/compose/snippets/src/main/java/com/example/compose/snippets/designsystems/Material3Snippets.kt#L454-L472)
 
 ![Sufficient contrast \(left\) vs Poor contrast \(right\)](/static/develop/ui/compose/images/m3-contrast.png) **Figure 20**. Sufficient contrast (left) versus poor contrast (right)
 
@@ -640,19 +651,27 @@ To learn more about Material Theming in Compose, check out the following resourc
 
   * [Reply M3 sample app](https://github.com/android/compose-samples/tree/main/Reply)
 
+
+
 ### Docs
 
   * [Migrating from Material 2 to Material 3 in Compose](/develop/ui/compose/designsystems/material2-material3)
   * [Material design guidelines](https://m3.material.io/)
+
+
 
 ### API reference and source code
 
   * [Compose Material 3 API reference](/reference/kotlin/androidx/compose/material3/package-summary)
   * [Compose Material 3 samples in source code](https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:compose/material3/material3/samples/src/main/java/androidx/compose/material3/samples/)
 
+
+
 ### Videos
 
   * [Material You in Jetpack Compose](https://www.youtube.com/watch?v=jrfuHyMlehc)
+
+
 
 ## Recommended for you
 
@@ -661,8 +680,10 @@ To learn more about Material Theming in Compose, check out the following resourc
   * [Material Design 2 in Compose](/develop/ui/compose/designsystems/material)
   * [Custom design systems in Compose](/develop/ui/compose/designsystems/custom)
 
+
+
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-22 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-22 UTC."],[],[]] 

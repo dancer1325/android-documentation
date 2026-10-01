@@ -4,7 +4,8 @@
 
 ---
 
-#  Custom trace events in native code
+#  Custom trace events in native code Save and categorize content based on your preferences. 
+
 Android 6.0 (API level 23) and higher support a native tracing API, `trace.h`, to write trace events to the system buffer that you can then analyze using Perfetto or systrace. Common use cases for this API include observing the time that a particular block of code takes to execute and associating a block of code with undesirable system behavior.
 
 **Note:** On devices and emulators running API level 27 and lower, if there isn't enough memory available or the memory is too fragmented, you'll get the following message: `Atrace could not allocate enough memory to record a trace`. If this happens and your capture does not have a complete set of data, then you should close background processes or restart the device or emulator.
@@ -56,6 +57,9 @@ To define custom events that occur in the native code within your app or game, c
 
 Additionally, you cannot call `ATrace_beginSection()` on one thread and end it from another. You must call both functions from the same thread.
 
+
+
+
 # Convenience tips
 
 The following tips are optional but might make it easier to analyze your native code.
@@ -91,6 +95,9 @@ To create a macro for tracing an entire function, complete the following steps:
            // Code that you want to trace.
          }
 
+
+
+
 ## Name your threads
 
 You can give a name to each thread in which your events occur, as demonstrated in the following code snippet. This step makes it easier to identify the threads that belong to specific actions within your game.
@@ -121,6 +128,8 @@ You can give a name to each thread in which your events occur, as demonstrated i
   * Note: link text is displayed when JavaScript is off
   * [Best practices for SQLite performance](/topic/performance/sqlite-performance-best-practices)
   * [Create and measure Baseline Profiles without Macrobenchmark](/topic/performance/baselineprofiles/manually-create-measure)
+
+
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

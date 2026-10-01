@@ -3,6 +3,15 @@
 **Source:** [https://developer.android.com/compose](https://developer.android.com/compose)
 
 ---
+
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Get started ](https://developer.android.com/get-started/overview)
+  * [ Compose ](https://developer.android.com/compose)
+
+
+
+Save and categorize content based on your preferences. 
+
 ###  Build better apps faster with   
 Jetpack Compose 
 
@@ -11,8 +20,6 @@ Jetpack Compose is Android’s recommended modern toolkit for building native UI
 ![](/static/develop/ui/compose/images/landing-code-static.svg)
 
 ![](/static/develop/ui/compose/images/landing-preview-animation.gif)
-
-[View tutorial](https://developer.android.com/develop/ui/compose/tutorial) [View docs](https://developer.android.com/develop/ui/compose/documentation)
 
 ###  [ Less code ](https://developer.android.com/jetpack/compose/why-adopt#less-code)
 
@@ -108,10 +115,6 @@ Set up your development environment and get composing.
 
 [Setup environment](https://developer.android.com/develop/ui/compose/setup)
 
-##  Build across devices using Compose 
-
-Jetpack Compose allows you to build beautiful apps on phones, tablets, foldables, ChromeOS, parked car displays, XR 2D, and Wear OS. 
-
 [ ![](https://developer.android.com/static/develop/ui/compose/images/LS_x2.png) ](https://developer.android.com/develop/ui/compose/layouts/adaptive)
 
 ###  [ Compose Material 3 Adaptive ](https://developer.android.com/develop/ui/compose/layouts/adaptive)
@@ -127,8 +130,6 @@ Your app's UI should adapt to different device form factors, display sizes, and 
 Compose for Wear OS makes building apps for the wrist easier, faster, and more intuitive. This guide walks you through the similarities and differences between Compose and Compose for Wear OS. 
 
 [Compose for Wear OS](https://developer.android.com/training/wearables/compose)
-
-##  Featured resources 
 
 [ ![](https://developer.android.com/static/develop/ui/compose/images/compose-view-interlop-code-snippet.svg) ](https://developer.android.com/develop/ui/compose/migrate/interoperability-apis)
 
@@ -178,11 +179,7 @@ Explore even more resources to help you jumpstart learning Compose.
 
 [See all resources](https://developer.android.com/develop/ui/compose/documentation)
 
-##  What’s next for Jetpack Compose 
-
 ![](https://developer.android.com/static/develop/ui/compose/images/compose-roadmap.png)
-
-[View roadmap](https://developer.android.com/jetpack/androidx/compose-roadmap)
 
 ###  Apps built with Compose 
 
@@ -297,12 +294,6 @@ Cuvva
 [![Shoppee](/static/develop/ui/compose/images/shoppee-logo.png)](https://shopee.com/)
 
 Shoppee
-
-##  Latest news and videos 
-
-[View all news & videos](https://developer.android.com/)
-
-##  Join the Compose community 
 
 [ ![](https://developer.android.com/static/images/logos/stack-overflow.svg) ](https://stackoverflow.com/questions/tagged/android-jetpack-compose)
 

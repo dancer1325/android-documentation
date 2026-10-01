@@ -4,13 +4,11 @@
 
 ---
 
-#  Background optimization
+#  Background optimization Save and categorize content based on your preferences. 
+
 Background processes can be memory- and battery-intensive. For example, an implicit broadcast may start many background processes that have registered to listen for it, even if those processes may not do much work. This can have a substantial impact on both device performance and user experience. 
 
 To alleviate this issue, Android 7.0 (API level 24) applies the following restrictions: 
-
-  * Apps targeting Android 7.0 (API level 24) and higher do not receive `[CONNECTIVITY_ACTION](/reference/android/net/ConnectivityManager#CONNECTIVITY_ACTION)` broadcasts if they declare their broadcast receiver in the manifest. Apps will still receive `[CONNECTIVITY_ACTION](/reference/android/net/ConnectivityManager#CONNECTIVITY_ACTION)` broadcasts if they register their `[BroadcastReceiver](/reference/android/content/BroadcastReceiver)` with `[Context.registerReceiver()](/reference/android/content/Context#registerReceiver\(android.content.BroadcastReceiver, android.content.IntentFilter\))` and that context is still valid. 
-  * Apps cannot send or receive `[ACTION_NEW_PICTURE](/reference/android/hardware/Camera#ACTION_NEW_PICTURE)` or `[ACTION_NEW_VIDEO](/reference/android/hardware/Camera#ACTION_NEW_VIDEO)` broadcasts. This optimization affects all apps, not only those targeting Android 7.0 (API level 24). 
 
 If your app uses any of these intents, you should remove dependencies on them as soon as possible so that you can properly target devices running Android 7.0 or higher. The Android framework provides several solutions to mitigate the need for these implicit broadcasts. For example, `[JobScheduler](/reference/android/app/job/JobScheduler)` and the new [WorkManager](/arch/work) provide robust mechanisms to schedule network operations when specified conditions, such as a connection to an unmetered network, are met. You can now also use `[JobScheduler](/reference/android/app/job/JobScheduler)` to react to changes to content providers. `[JobInfo](/reference/android/app/job/JobInfo)` objects encapsulate the parameters that `[JobScheduler](/reference/android/app/job/JobScheduler)` uses to schedule your job. When the conditions of the job are met, the system executes this job on your app's `[JobService](/reference/android/app/job/JobService)`. 
 
@@ -26,12 +24,14 @@ On the [**Battery usage** page within system settings](https://support.google.co
 
 **Note:** When a user places your app in the "restricted" state but later launches your app, the system temporarily treats your app as if it were in the "unrestricted" state. When the user stops interacting with your app and begins interacting with another app, the system places your app back in the "restricted" state.
 
-If an app exhibits some of the bad behaviors described in [Android vitals](/topic/performance/vitals), the system might prompt the user to restrict that app's access to system resources.
+If an app exhibits some of the bad behaviors described in [Android vitals](/google/play/vitals), the system might prompt the user to restrict that app's access to system resources.
 
 If the system notices that an app is consuming excessive resources, it notifies the user, and gives the user the option of restricting the app's actions. Behaviors that can trigger the notice include: 
 
   * Excessive wake locks: 1 partial wake lock held for an hour when screen is off
   * Excessive background services: If app targets API levels lower than 26 and has excessive background services
+
+
 
 The precise restrictions imposed are determined by the device manufacturer. For example, on AOSP builds that run Android 9 (API level 28) or higher, apps running in the background that are in the "restricted" state have the following limitations:
 
@@ -39,6 +39,8 @@ The precise restrictions imposed are determined by the device manufacturer. For 
   * Existing foreground services are removed from the foreground
   * Alarms aren't triggered
   * Jobs aren't executed
+
+
 
 Also, if an app targets Android 13 (API level 33) or higher and is in the "restricted" state, the system doesn't deliver the `BOOT_COMPLETED` broadcast or the `LOCKED_BOOT_COMPLETED` broadcast until the app is started for other reasons.
 
@@ -234,8 +236,11 @@ The following [Android Debug Bridge (ADB)](/tools/help/adb) commands can help yo
   * $ adb shell cmd appops set <PACKAGE_NAME> RUN_ANY_IN_BACKGROUND deny
         
 
+
+
+
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-21 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-21 UTC."],[],[]] 

@@ -4,7 +4,8 @@
 
 ---
 
-#  Configure project-wide build properties with the settings plugin
+#  Configure project-wide build properties with the settings plugin Save and categorize content based on your preferences. 
+
 The settings plugin lets you centralize common build properties that apply to all modules in one place so you don't need to copy and paste the configurations across multiple modules.
 
 ### Apply the settings plugin
@@ -17,7 +18,7 @@ Apply the settings plugin in the `settings.gradle` file. The version must be the
     pluginManagement {
         // Add the following.
         plugins {
-           id("com.android.settings") version "9.2.0" apply false
+           id("com.android.settings") version "9.4.0" apply false
         }
     }
     
@@ -31,7 +32,7 @@ Apply the settings plugin in the `settings.gradle` file. The version must be the
     pluginManagement {
         // Add the following.
         plugins {
-           id("com.android.settings") version "9.2.0" apply false
+           id("com.android.settings") version "9.4.0" apply false
         }
     }
     
@@ -81,6 +82,6 @@ You should remove these build properties from the module-level `build.gradle` fi
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-18 UTC.
+Last updated 2026-09-16 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-18 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-16 UTC."],[],[]] 

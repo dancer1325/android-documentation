@@ -4,7 +4,8 @@
 
 ---
 
-#  Take screenshots
+#  Take screenshots Save and categorize content based on your preferences. 
+
 To take a screenshot of the Android Emulator, click the **Take screenshot** ![Take Screenshot icon](/static/images/tools/e-itakescreenshot.png) button.
 
 In the **Take Screenshot** dialog that appears, you can recapture, edit, or copy the captured image. Once you're satisfied with the image, click **Save**. The emulator creates a PNG file with the name `Screenshot_yyyymmdd-hhmmss.png`, using the year, month, day, hour, minute, and second of the capture. You can change the name, if you prefer, and choose where to save the file.
@@ -17,6 +18,8 @@ You can also take screenshots from the command line with either of the following
 
   * `screenrecord screenshot [destination-directory]`
   * `adb emu screenrecord screenshot [destination-directory]`
+
+
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 

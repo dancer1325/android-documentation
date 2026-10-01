@@ -4,7 +4,8 @@
 
 ---
 
-#  Emulator release notes
+#  Emulator release notes Save and categorize content based on your preferences. 
+
 [Android Emulator](/studio/run/emulator) is included with Android Studio.
 
 Versions of the emulator prior to 25.3.0 were distributed as part of the Android SDK Tools.
@@ -15,9 +16,28 @@ To download previous versions of Android Emulator, see the [Emulator download ar
 
 For release notes for Emulator versions prior to 25.3.0, see the [Android SDK Tools release notes](/studio/releases/sdk-tools).
 
-To see what issues have been fixed in the most recent versions of Android Emulator, see the [closed issues](/studio/releases/fixed-bugs/emulator/36).
+To see what issues have been fixed in the most recent versions of Android Emulator, see the [closed issues](/studio/releases/fixed-bugs/emulator/37).
 
 For known issues and troubleshooting, please see [Emulator Troubleshooting](/studio/run/emulator-troubleshooting).
+
+## 37.1.11 Stable (Jul 30, 2026)
+
+  * The Android Emulator hypervisor driver (AEHD) will sunset on December 31, 2026. To assist with the transition, Android Studio now helps Windows users convert from AEHD to the Windows Hypervisor Platform (WHPX). See [Configure VM acceleration using WHPX](https://developer.android.com/studio/run/emulator-acceleration#vm-windows-whpx) for information on configuring VM acceleration using WHPX.
+
+![Popup for updating to WHPX](/static/studio/images/releases/WHPX.png)
+
+  * Pixel 10a AVD added
+
+  * Added support for new Vulkan extensions required for running API 37 system images
+
+  * [Bug Fix][Issue #324465986](https://issuetracker.google.com/324465986) No out of storage error when taking a snapshot on an emulator with no space
+
+  * [Bug Fix][Issue #526671872](https://issuetracker.google.com/526671872) Support unit suffixes (e.g., "6G", "32M") for AVD RAM and VM Heap size configurations in config.ini
+
+  * [Bug Fix][Issue #325814592](https://issuetracker.google.com/325814592) Issue introduced in macOS 14 where the emulator starts to freeze and work very slowly after starting the camera
+
+
+
 
 ## 36.6.11 Stable (Jun 2, 2026)
 
@@ -33,9 +53,14 @@ To support the higher memory demands of Android 17 (API 37), Phone's Android Vir
 
   * [Bug Fix][Issue #516455370](https://issuetracker.google.com/516455370) Fixed a significant memory leak on macOS 26.3 when closing the emulator, related to the cleanup of resources used by Hypervisor.framework APIs.
 
+
+
+
 ## 36.5.11 Patch (Apr 23, 2026)
 
   * [Bug Fix][Issue #492228020](https://issuetracker.google.com/492228020) Android Emulator displays black screen when using Hardware/Auto Graphics Rendering on Intel GPU
+
+
 
 ## 36.5.10 Stable (Apr 2, 2026)
 
@@ -51,6 +76,8 @@ This new networking stack offers several key advantages for developers:
   * **Seamless Peer-to-Peer** : Critical protocols like Wi-Fi Direct and Network Service Discovery work out of the box between emulators.
   * **Improved Stability** : Resolves long-standing stability issues, such as data loss ([Issue #150758736](https://issuetracker.google.com/150758736)) and connection drops ([Issue #449817856](https://issuetracker.google.com/449817856)) found in the legacy stack.
 
+
+
 To get started, update to the latest Android Emulator version in Android Studio SDK Manager. For more information, documentation is [here](https://developer.android.com/studio/run/emulator-networking).
 
 ### Additional Features and Bug Fixes
@@ -61,9 +88,14 @@ To get started, update to the latest Android Emulator version in Android Studio 
 
   * [Bug Fix][Issue #333628462](https://issuetracker.google.com/333628462) crashpad_handler process consumes excessive CPU on macOS
 
+
+
+
 ## 36.4.10 Patch (Mar 9, 2026)
 
   * [Bug Fix][Issue #489369080](https://issuetracker.google.com/489369080) Fix crash on TV Emulator when hovering after updating to Panda 2
+
+
 
 ## 36.4.9 Stable (Feb 10, 2026)
 
@@ -78,6 +110,9 @@ To get started, update to the latest Android Emulator version in Android Studio 
     * Added support for using SkiaVk on systemui with graphics queue emulation on new system images
     * Added support for Vulkan composition to disable GL usages on the host. This is enabled by default for XR images and can be enabled with '-feature VulkanNativeSwapchain' command line option.
   * [Bug Fix][Issue #471008659](https://issuetracker.google.com/471008659) Memory leak on the Host side of the emulator when opening/closing activities
+
+
+
 
 ## 36.4.3 Canary (Dec 8, 2025)
 
@@ -99,6 +134,9 @@ The XR Glasses emulator and AI Glasses emulator are experimental tools. Expect i
 
   * [AI Glasses issues](https://issuetracker.google.com/issues?q=componentid:1970526)
 
+
+
+
 Your feedback will help us to improve and guide future feature prioritization. See [Report a bug](/studio/report-bugs) for information on reporting bugs related to Android Studio or Android Emulator.
 
 ## 36.3.10 Stable (Dec 4, 2025)
@@ -109,15 +147,22 @@ Your feedback will help us to improve and guide future feature prioritization. S
 
   * Fix Emulator crashes on touchscreen event when running with -debug-events.
 
+
+
+
 ## 36.2.12 Patch (Oct 13, 2025)
 
   * Fix crash on Windows that occurred when launching a vulkan app in software rendering mode
+
+
 
 ## 36.2.11 Stable (Oct 9, 2025)
 
   * HAXM support is removed from the Emulator. If you try to create an AVD with HAXM, will see a banner reporting missing a hypervisor and an action link to install AEHD.
 
-![Banner displayed when user tries to create a new AVD with HAXM](https://screenshot.googleplex.com/7W8674ZekzyfpH3.png) For information on uninstalling HAXM, see [HAXM Uninstall](https://developer.android.com/studio/run/emulator-acceleration#haxm-uninstall).
+![Banner displayed when user tries to create a new AVD with HAXM](/static/studio/images/releases/HAXM.png)
+
+For information on uninstalling HAXM, see [HAXM Uninstall](https://developer.android.com/studio/run/emulator-acceleration#haxm-uninstall).
 
   * Fix to ensure Intel GPU uses OpenGL ES 3.0 to avoid driver crash
 
@@ -127,6 +172,9 @@ Your feedback will help us to improve and guide future feature prioritization. S
 
   * [Bug Fix][Issue #434774381](https://issuetracker.google.com/434774381) Guest kernel crashed after quick boot for API 36 and 35 (maybe more) on Windows 11 using WHPX on i7-11850H
 
+
+
+
 ## 36.1.9 Stable (Jul 31, 2025)
 
   * [Bug Fix][Issue #419157428](https://issuetracker.google.com/419157428) UTF-8 characters in the username or in the AVD path could prevent the emulator to start
@@ -134,6 +182,9 @@ Your feedback will help us to improve and guide future feature prioritization. S
   * [Bug Fix][Issue #423670833](https://issuetracker.google.com/423670833) Android Emulator crashes on btrfs file system
 
   * **Note:** If you are experiencing issues with launching the emulator on X11, then consider using software rendering. See [Configure graphics acceleration](/studio/run/emulator-acceleration#avd-gpu) for how to configure software rendering.
+
+
+
 
 ## 35.6.11 Stable (Jun 24, 2025)
 
@@ -147,6 +198,9 @@ Your feedback will help us to improve and guide future feature prioritization. S
 
   * [Bug Fix][Issue #388718417](https://issuetracker.google.com/388718417) libndk_translation.so aborts and causes a crash in Arm64AesEncode
 
+
+
+
 ## 35.5.10 Stable (May 6, 2025)
 
   * Added additional CPU compatibility checks with error messages (ex: insufficient disk space)
@@ -159,6 +213,9 @@ Your feedback will help us to improve and guide future feature prioritization. S
 
   * Pixel 9a AVD added
 
+
+
+
 ## 35.4.9 Stable (Feb 25, 2025)
 
   * Added a drop-down menu in extended controls for Guest GLES driver preferences
@@ -169,6 +226,9 @@ Your feedback will help us to improve and guide future feature prioritization. S
 
   * **Note:** Android XR Emulator are only available in Canary versions of Studio
 
+
+
+
 ## 35.3.11 Stable (Jan 9, 2025)
 
   * [Bug Fix][Issue #368059211](https://issuetracker.google.com/368059211) Android Auto OS programmatic access to VHAL not working using Car Service API
@@ -176,6 +236,9 @@ Your feedback will help us to improve and guide future feature prioritization. S
   * [Bug Fix][Issue #348598513](https://issuetracker.google.com/348598513) Emulator has unnecessary thread-unsafe public method in a multi-threaded lock
 
   * [Bug Fix][Issue #356896486](https://issuetracker.google.com/356896486) Really disable Vulkan API calls when running with -feature -Vulkan
+
+
+
 
 ## 35.4.4 Canary (Dec 12, 2024)
 
@@ -193,6 +256,8 @@ So far, the Android XR emulator has been tested on the following HW configuratio
   * 16 GB of RAM or more
   * 8 Cores or more
 
+
+
 **Known Issues**
 
 Emulator - Stability and performance:
@@ -201,6 +266,8 @@ Emulator - Stability and performance:
   * Issues such as non-responsive AVD or UI elements on laptops after a suspend-resume cycle (such as closing a laptop and opening it).
   * Occasional crashes when switching applications from "home screen mode" to "full screen mode"
   * Gemini APIs are not yet available; the Gemini API starter template App will crash.
+
+
 
 Emulator - Simulating input and output:
 
@@ -227,6 +294,9 @@ Emulator - Simulating input and output:
 
   * Blurry text,UI, and other glitches in Chrome on some Windows system configurations. Likely workaround: [Enabling WHP](/studio/run/emulator-acceleration#vm-windows-whpx).
 
+
+
+
 Emulator - Simulating planes and anchors:
 
   * Anchors sometimes don't respawn near the same location
@@ -236,6 +306,8 @@ Emulator - Simulating planes and anchors:
   * Small visible artifact in the passthrough view on Windows
   * In some cases, placing anchors can crash the App
   * Black lines may appear on top of Apps when moving Apps close to the ground on Windows
+
+
 
 Emulator - Others:
 
@@ -252,16 +324,22 @@ Emulator - Others:
   * In some cases, building may err when using the "Baseline Profile" module as part of an XR template project
   * "XR Talkback" accessibility is so far only partially integrated into emulator
 
+
+
 Scene Viewer App:
 
   * Moving elements within Scene Viewer may cause it to crash. To work around this issue, move the head position away from its initial position slightly (e.g. by using pan, dolly, WASD, etc.) before attempting to move the element.
   * The 1:1 real size feature won't work correctly if the real size of the 3D model is less than or greater than the scale min and max limits (currently set to 20 cm and 70 m respectively)
   * The 3D model could jump on the first frame after loading
 
+
+
 ## 35.2.10 (Oct 1, 2024)
 
   * New Pixel AVDs added including Pixel 9, Pixel 9 Pro, Pixel 9 Pro XL, and Pixel 9 Pro Fold
   * Added new Tablet system image for Vanilla Ice Cream (API 35)
+
+
 
 ## 35.1.20 (Aug 29, 2024)
 
@@ -270,15 +348,21 @@ Scene Viewer App:
   * Qt update and fixes to qt related crashes and hangs
   * [Bug Fix] Fix to crashes and freeze on Windows with applications using Vulkan
 
+
+
 ## 34.2.16 (July 9, 2024)
 
   * [Bug Fix] UI freezes that occur on Pixel Fold during fold/unfold
   * [Bug Fix] Incorrect display of Android version as Android Vanilla Ice Cream Preview instead of API 35 on Mac M1.
   * [Bug Fix] [Issue #296162661](https://issuetracker.google.com/296162661): HasSystemFeature FEATURE_SENSOR_HINGE_ANGLE returns true on Pixel C tablet emulator
 
+
+
 ## 34.2.15 (May 31, 2024)
 
   * Various crash fixes related to swangle mode and advertiser cleanup
+
+
 
 ## 34.2.14 (May 20, 2024)
 
@@ -290,6 +374,8 @@ Tested with Android Studio Jellyfish Stable Patch 1.
   * [Bug Fix] Fixed the issue seen on Windows preventing the emulator to start in some conditions when using GPU modes with ANGLE, and returning the error message “Failed to initialize GL emulation” in the log. Note that starting the emulator by command line with the option `-gpu swangle_indirect` might still generate this error with this version. If you still want to start the emulator using a command line on Windows with Software graphics rendering with this version, please use `-gpu swiftshader_indirect`
   * [Bug Fix] Location shortcut on keyboard loads an unusable map
   * [Bug Fix] While setting location, the "save route" dialog is missing
+
+
 
 ## 34.2.13 (April 30, 2024)
 
@@ -303,17 +389,23 @@ Tested with Android Studio Jellyfish Stable.
   * [Bug Fix][Issue 225541819](https://issuetracker.google.com/225541819) Starting Chrome crashes Emulator on x86_64 
   * [Bug Fix][Issue 314614435](https://issuetracker.google.com/issues/314614435) `-http-proxy` switch is parsed incorrectly
 
+
+
 ## 34.1.20 (April 1, 2024)
 
 Tested with Android Studio Iguana Stable.
 
   * [Bug Fix] [Issue #314614435](https://issuetracker.google.com/314614435): Fix issue where `-http-proxy` switch is parsed incorrectly
 
+
+
 ## 34.1.19 (March 7, 2024)
 
 Tested with Android Studio Iguana Stable.
 
   * [Bug Fix] [Issue #312677259](https://issuetracker.google.com/312677259): Fixed screen freeze in embedded emulator after resizing window.
+
+
 
 ## 34.1.18 (Feb 29, 2024)
 
@@ -331,6 +423,8 @@ Tested with Android Studio Iguana Stable.
     * [Bug Fix](https://issuetracker.google.com/155427725): Adjust the position of the Emulator after rotation
     * Crash fixes
 
+
+
 ## 33.1.24 (Dec 28, 2023)
 
 Tested with Android Studio Hedgehog Stable and Iguana Beta 1.
@@ -340,6 +434,8 @@ Tested with Android Studio Hedgehog Stable and Iguana Beta 1.
   * Fix issue where Pixel Fold shows a different phone skin with a detached keyboard and is unusable (fixed on Windows, Mac Intel, and Linux)
   * Fix glitch in appearance in Virtual sensors in Standalone mode (fixed on Windows, Mac Intel, and Linux)
   * Provide fixes for some crashes, especially while closing the emulator, were fixed
+
+
 
 ## 33.1.23 (Nov 30, 2023)
 
@@ -353,6 +449,8 @@ Tested with Android Studio Giraffe Patch 4 and Hedgehog Stable.
   * [Bug Fix] [Issue #270386314](https://issuetracker.google.com/270386314) Fix animation error where sidebar stays open once the AVD screen minimized
   * [Bug Fix] [Issue #154896775](https://issuetracker.google.com/154896775) Fix bug submission tool
 
+
+
 ## 32.1.15 (Aug 29, 2023)
 
 Tested with Android Studio Giraffe Patch 1 and Hedgehog Canary 16.
@@ -362,6 +460,8 @@ Tested with Android Studio Giraffe Patch 1 and Hedgehog Canary 16.
   * [Bug Fix] [Issue #257097404](https://issuetracker.google.com/257097404) Emulator doesn't show correct time after the host is waken up on API 29 and 30
   * [Bug Fix] [Issue #228201899](https://issuetracker.google.com/228201899) Can't see google maps inside Android Emulator Extended Controls
 
+
+
 ## 32.1.14 (June 27, 2023)
 
 Tested with Android Studio Hedgehog Canary 8, Giraffe Beta 5, and Flamingo Stable.
@@ -369,6 +469,8 @@ Tested with Android Studio Hedgehog Canary 8, Giraffe Beta 5, and Flamingo Stabl
   * Fix emulator camera orientations & distortions.
   * [Bug Fix] [Issue #257097404](https://issuetracker.google.com/257097404) "Emulator doesn't show correct time after the host is waken up". This bug is still reproducible for API 29 and API 30.
   * [Bug Fix] [Issue #243456582](https://issuetracker.google.com/243456582) "Android releases after API 30 might not start correctly in emulator on Mac M1 machines"
+
+
 
 ## 32.1.13 (May 22, 2023)
 
@@ -380,6 +482,8 @@ Tested with Android Studio Hedgehog Canary 2, Giraffe Beta 1, and Flamingo Stabl
   * [Bug Fix] [Issue #275397905](https://issuetracker.google.com/275397905) Highlevel of crash on Android Emulator M1 when moving cursor focus in and out of the emulator repeatedly.
   * Known issue with AVD launch when a crash report of a newer emulator exists. See [Emulator Troubleshooting](/studio/run/emulator-troubleshooting) for more information.
 
+
+
 ## 32.1.12 (March 21, 2023)
 
 Tested with Android Studio Giraffe Canary 10, Flamingo RC, and Electric Eel Patch 2.
@@ -390,6 +494,8 @@ Tested with Android Studio Giraffe Canary 10, Flamingo RC, and Electric Eel Patc
   * [Bug Fix] [Issue #225541819](https://issuetracker.google.com/225541819) Starting Chrome crashes Emulator on x86_64
   * [Bug Fix] [Issue #257097404](https://issuetracker.google.com/257097404) Emulator doesn't show correct time after the host is waken up
   * Add crash reporting for Apple M1 devices
+
+
 
 ## 32.1.11 (February 8, 2023)
 
@@ -403,11 +509,15 @@ Tested with Android Studio Giraffe Canary 2, Flamingo Beta 1, and Electric Eel P
   * Disable the usage of symlinks while unzipping the Android Emulator during installation
   * Fix crash in emulator-check
 
+
+
 ## 31.3.14 (December 13, 2022)
 
 Tested with Android Studio Dolphin, Electric Eel RC1, and Flamingo Canary 9.
 
   * [Bug Fix] Fix AVD crashes that occur when logging in to Play Store.
+
+
 
 ## 31.3.13 (October 27, 2022)
 
@@ -415,6 +525,8 @@ Tested with Android Studio Dolphin, Electric Eel Beta 2, and Flamingo Canary 5.
 
   * [Bug Fix] [Issue #249948338:](https://issuetracker.google.com/249948338) Time zone parameter not functioning
   * [Bug Fix] [Issue #249366543:](https://issuetracker.google.com/249366543) Emulator -dns-server option does not work after API 31
+
+
 
 ## 31.3.12 (October 10, 2022)
 
@@ -424,6 +536,8 @@ This update includes the following improvements and fixes:
 
   * [Bug Fix] [Issue #247843000:](https://issuetracker.google.com/247843000) AVD relative path handling error
   * Increase disk size for API 24 and later
+
+
 
 ## 31.3.11 (September 23, 2022)
 
@@ -440,6 +554,8 @@ This update includes the following improvements and fixes:
   * [Bug Fix] [Issue #232971796:](https://issuetracker.google.com/232971796) Nonfunctioning “call device” button on the Extended Controls > Phone page
   * Update Android Emulator to minigbm
   * Migration of build scripts to Python3
+
+
 
 ## 31.3.10 (August 18, 2022)
 
@@ -458,6 +574,8 @@ This update includes the following improvements and fixes:
   * Chrome Fix for API 31
   * [Bug Fix] Google Account Auth Failed with GmsCore v21.42.18
 
+
+
 ## 31.2.10 (April 20, 2022)
 
 Tested with Android Studio Dolphin Canary 8 and Chipmunk RC 1.
@@ -467,6 +585,8 @@ This update includes the following improvements and fixes:
   * Add utility to load Vulkan functions with fallbacks
   * [Bug Fix] Fix gcc8 build error
 
+
+
 ## 31.2.9 (March 23, 2022)
 
 Tested with Android Studio Dolphin Canary 7.
@@ -474,6 +594,8 @@ Tested with Android Studio Dolphin Canary 7.
 This update includes the following fix:
 
   * [Bug Fix] Ignore memory pressure when saving snapshot on M1
+
+
 
 ## 31.2.8 (February 7, 2022)
 
@@ -484,6 +606,8 @@ This update includes the following improvements and fixes:
   * [Bug Fix] Unable to sign in to the apps
   * [Bug Fix] [Issue #215368358:](https://issuetracker.google.com/issues/215368358) "adb reboot" on Intel platform will crash avd with "vcpu shutdown request"
 
+
+
 ## 31.2.7 (February 1, 2022)
 
 Tested with Android Studio Bumblebee Patch 1 and Chipmunk Canary 6.
@@ -491,6 +615,8 @@ Tested with Android Studio Bumblebee Patch 1 and Chipmunk Canary 6.
 This update includes the following fix:
 
   * [Bug fix] Emulator hanging error on M1 machines.
+
+
 
 ## 31.2.6 (January 20, 2022)
 
@@ -505,6 +631,8 @@ This update includes the following improvements and fixes:
   * [Bug Fix] Event mouse console command didn't work.
   * Added KVM check for local AVD creation.
 
+
+
 ## 31.1.3 (January 18, 2022)
 
 This update includes the following improvements and fixes:
@@ -513,6 +641,8 @@ This update includes the following improvements and fixes:
   * When resizing a multi-display window, orientation is ignored.
   * Wi-Fi: Added support for filtering out unicast packets based on MAT mac address.
   * Wi-Fi: Fixed crash when vmnet is in use.
+
+
 
 ## 30.9.5 (December 15, 2021)
 
@@ -525,6 +655,8 @@ This update includes the following improvements and fixes:
   * Fixed the gRPC audio configuration issue.
   * Updated SensorReplay Emulator Playback to support standard Android sensors.
   * Connected the emulator to peripherals and devices using USB with USB pass through.
+
+
 
 ## 30.4.5 (February 23, 2021)
 
@@ -542,6 +674,8 @@ This update includes the following improvements and fixes:
   * Added support for a heart rate sensor to Wear emulators.
   * Removed libportability Vulkan backend.
   * Added support for more features in modem simulator.
+
+
 
 ## 30.0.26 (August 16, 2020)
 
@@ -570,6 +704,9 @@ This update includes several new features, improvements to existing features, an
 
 ![](/static/studio/images/releases/emu-hinge-angle.gif)
 
+
+
+
 ### Emulator for ARM64 hosts
 
   * Linux emulator source code now supports cross compilation from x86_64 to arm64 hosts, enabling running arm64 system images with KVM virtualization. Currently, only `-gpu swiftshader_indirect` (Swiftshader arm64 host rendering) is supported, but a compatible set of host GPU libEGL/libGLESv2 libraries may also be used by replacing lib64/gles_swiftshader with them and then relaunching with `-gpu swiftshader_indirect`. Snapshots may also not be working (add `-no-snapshot` to the command line). Instructions:
@@ -587,11 +724,16 @@ This update includes several new features, improvements to existing features, an
 
   * Support for Apple Silicon is in progress.
 
+
+
+
 ### virtio-gpu support
 
   * Added support on the host side for upcoming virtio-gpu host coherent blob resources.
   * Due to how emulator rendering works, we now process virtio-gpu virtqueue in the vcpu thread (because rendering is offloaded to other threads anyway). virtio-gpu rendering will be enabled in a future system image and emulator version.
   * In a future system image the emulator will be able to run all graphics with a virtio-gpu based stack.
+
+
 
 ### Other new features and enhancements
 
@@ -620,6 +762,9 @@ This update includes several new features, improvements to existing features, an
     * Also added console command for the same purpose: `gsm meter on|off`
   * Upgraded toolchain / build to C++17.
 
+
+
+
 ### Fixes: embedded emulator
 
   * Clipboard should now work.
@@ -634,6 +779,9 @@ As a workaround, the emulator now falls back to using discovery files in a possi
   * Embedded emulator: Devices with rounded corners/notches now properly change their layout to make room for the corners and notch. This requires a cold boot of those emulators.
 
   * gRPC endpoint now supports sending SMS to the device.
+
+
+
 
 ### General fixes
 
@@ -659,6 +807,8 @@ As a workaround, the emulator now falls back to using discovery files in a possi
   * Emulator icons updated to reflect Studio 4.1 branding.
   * Added better support for detecting remote sessions on Windows.
 
+
+
 ### Fixes: graphics and video decode
 
   * Fixed an issue where latest Asphalt 9 game rendered with a black screen.
@@ -682,6 +832,8 @@ As a workaround, the emulator now falls back to using discovery files in a possi
   * Added more debug logging for when OpenGLES emulation fails to initialize.
   * Fixed an issue with Youtube videos flickering or not showing up on snapshot load.
   * Switched back to software decode for libvpx for now as we've seen issues with CUDA hardware decode of libvpx. If you have a supported CUDA hardware decode implementation on the host side, hardware decode of libvpx can be re-enabled via the environment variable `ANDROID_EMU_MEDIA_DECODER_CUDA_VPX=1`.
+
+
 
 ## 30.0.10 (April 30, 2020)
 
@@ -710,6 +862,8 @@ You can now create an AVD that runs Android 11 by selecting either of the availa
   * **x86** : Includes both x86 and ARMv7 ABIs.
   * **x86_64** : Includes x86, x86_64, ARMv7 and ARM64 ABIs.
 
+
+
 ### Support for ARM binaries on Android 9 and 11 system images
 
 If you were previously unable to use the Android Emulator because your app depended on ARM binaries, you can now use the Android 9 x86 system image or any Android 11 system image to run your app – it is no longer necessary to download a specific system image to run ARM binaries. These Android 9 and Android 11 system images support ARM by default and provide dramatically improved performance when compared to those with full ARM emulation.
@@ -717,6 +871,8 @@ If you were previously unable to use the Android Emulator because your app depen
 ### Known issues
 
   * Some ARMv7 binaries fail to run on Android 11 x86 and x86_64 system images. Consider building for ARM64 when targeting Android 11.
+
+
 
 ## 29.0.11 (May 29, 2019)
 
@@ -731,11 +887,15 @@ This update includes the following improvements and fixes:
   * Fixed an issue with an unnecessary pipeline barrier in emulated compressed textures in Vulkan.
   * Fixed an error that occurred with http proxy requests when chunked transfer encoding was used. For more information, see the [commit details](https://android.googlesource.com/platform/external/qemu/+/1a15692cded92d66dea1a51389a3c4b9e3b3631a).
 
+
+
 ## 29.0.9 (May 7, 2019)
 
 This update includes the following fix:
 
   * Windows: Fixed an issue where the virtual scene camera and webcam would not work on the emulator.
+
+
 
 ## 29.0.8 (May 6, 2019)
 
@@ -747,9 +907,13 @@ This update includes the following improvements and fixes:
   * Fixed some issues with stale state when the Android guest reboots.
   * Windows: Fixed issues that prevented the emulator from starting when the Windows username had non-ASCII characters or spaces.
 
+
+
 ### Known issues
 
   * The Snapshots UI is disabled for Automotive system images because snapshots aren't currently supported for these system images.
+
+
 
 ## 29.0.6 (May 1, 2019)
 
@@ -782,6 +946,8 @@ If you are using the command line, you can also enable host audio using the `-al
   * `adb emu avd hostmicon`
   * `adb emu avd hostmicoff`
 
+
+
 #### Improvements for headless emulator builds
 
 Starting with version 28.0.25, the emulator includes a headless build option that can run without the UI. You can use headless builds to help you set up the emulator for Docker and continuous integration (CI) workflows.
@@ -800,6 +966,8 @@ With this update, we’ve made further improvements to allow the emulator to run
   * `Libc.so.6`
   * `ld-linux-x86-64.so.2`
 
+
+
 #### Upgraded Qt UI libraries to 5.12 LTS
 
 This update includes the following improvements from the Qt 5.12 LTS release:
@@ -807,6 +975,8 @@ This update includes the following improvements from the Qt 5.12 LTS release:
   * To avoid crashes in Qt's `libpng` decoding when starting certain system images, the emulator now uses its own copy of `libpng` to decode PNG images.
   * To address issues with some Linux installs containing incompatible versions of some Qt dependent libraries, we now package `libfreetype`, `libsoftokn`, `libsqlite3`, and `libxkbcommon` with the emulator.
   * The emulator now uses the platform’s native windowing libraries to get monitor dimensions, instead of using the Qt libraries that returned unreliable results.
+
+
 
 #### Automatic CPU optimizations after cold boot
 
@@ -858,6 +1028,8 @@ This update also includes the following general improvements that are part of th
   * In the emulator extended controls UI, divider lines in the keyboard shortcuts table have been restored.
   * Users can now opt-in to provide our team with CPU and RAM usage metrics in a 10 second interval. We use these metrics to enrich our data about emulator resource usage with different use cases from our users, which allows us to make the emulator more efficient and responsive.
 
+
+
 #### General Project Marble fixes
 
 This update also includes the following general fixes that are part of the Project Marble initiative:
@@ -882,6 +1054,8 @@ This update also includes the following general fixes that are part of the Proje
   * Fixed [an issue](https://issuetracker.google.com/127956599) where the rotate buttons would appear on TV AVDs.
   * Fixed [an issue](https://issuetracker.google.com/128455869) where if emulator was set always on top, the extended controls window appeared every time the emulator was rotated.
 
+
+
 ### Hardware profiles for foldable devices
 
 The emulator now includes hardware profiles for foldable devices. To use these new hardware profiles, you must be using Android Studio 3.5 Canary 10 or higher.
@@ -891,10 +1065,14 @@ There are two foldable hardware profiles that you can use to create an AVD:
   * 7.3" Foldable: 1536x2152 unfolded, 4.6" 840x1960 folded
   * 8" Foldable: 2200x2480 unfolded, 6.6" 1480x2480 folded
 
+
+
 When you run the emulator using one of these hardware profiles, you can fold and unfold the device using the [fold and unfold actions](/studio/run/emulator#tasks) in the emulator toolbar, [console commands](/studio/run/emulator-console#querycontrol), or the following keyboard shortcuts:
 
   * Fold: `Ctrl + F` (`Command + F` on macOS)
   * Unfold: `Ctrl + U` (`Command + U` on macOS)
+
+
 
 ### AR macros
 
@@ -954,6 +1132,8 @@ macOS support is still experimental, but the emulator already includes the [Swif
   * MoltenVK: `ANDROID_EMU_VK_ICD=moltenvk`
   * libportability: `ANDROID_EMU_VK_ICD=portability`
 
+
+
 #### Known issues
 
 HAXM can sometimes fail to map Vulkan coherent memory to the guest and shuts down the emulator. This is addressed in an upcoming HAXM update.
@@ -965,6 +1145,8 @@ We’re always trying to make the emulator as versatile as possible by allowing 
   * Programmatically sending input commands to the emulator involves either running adb shell commands that can experience high overhead, or using the telnet console, which is faster, but might not work with certain network configurations.
   * CI users often run emulators headless, which can make it difficult to notice issues that require the screen to be visible or interactive.
   * Remote desktop users often can’t interact with the emulator when using host GPU rendering because GPU rendering is often tied to the host’s non-virtual displays.
+
+
 
 To address this, when running on a Linux machine, the emulator now serves a gRPC service. [gRPC ](https://grpc.io/) is a general framework for RPC that works over HTTP.
 
@@ -984,6 +1166,8 @@ Once the service is started, gRPC commands can then be issued from clients. The 
   * Screenshot commands can be sent to query the current screen, even if the emulator is running headless. For interactivity, input events can also be sent back to the emulator.
   * Remote desktop users can run the emulator headless on the main display with GPU accelerated rendering while using gRPC to get screenshots and send input events in order to interact with the emulator.
 
+
+
 For a complete list of the commands that are available, see [this protobuf](https://android.googlesource.com/platform/external/qemu/+/refs/heads/emu-master-dev/android/android-grpc/android/emulation/control/emulator_controller.proto).
 
 To help you get started with gRPC, we’ve provided some [sample clients](https://android.googlesource.com/platform/external/qemu/+/refs/heads/emu-master-dev/android/android-grpc/docs/grpc-samples) that you can refer to.
@@ -993,6 +1177,8 @@ Currently, this includes the following samples:
   * A Go-based service that can be used to query emulator states.
   * A React app that demonstrates remote interactivity via screenshot and input RPCs. This sample requires protobuf version 3.7.0 or higher.
   * A Python sample that queries the emulator’s VM configuration and then sends a series of commands.
+
+
 
 ## 28.0.25 (March 29, 2019)
 
@@ -1018,6 +1204,8 @@ To use the headless emulator, run the emulator from the command line as usual, b
     5. Wipe the AVD data.
     6. Relaunch the emulator.
 
+
+
 ## 28.0.23 (January 29, 2019)
 
 This update includes the following improvements and fixes:
@@ -1030,6 +1218,8 @@ To address this, we've made the following changes:
 
   * Actual host audio data is now squelched by default. When the guest uses the microphone, silence is passed over instead of the host's audio.
   * If you want to use the host audio data, you can now enable that option by going to **Extended Controls > Microphone** and enabling **Virtual microphone uses host audio input**. This option is automatically disabled whenever the emulator is restarted.
+
+
 
 ### Updates on CPU usage investigations
 
@@ -1054,6 +1244,8 @@ This update includes the following improvements and fixes:
   * Fixed a long-standing issue where in some settings, the Mac emulator would reboot or kernel panic on Quickboot save. ([Issue 120951634](https://issuetracker.google.com/issues/120951634))
   * When using a mapped file as the RAM snapshot, the emulator now unmaps the file mapping explicitly on exit.
 
+
+
 ## 28.0.20 (December 11, 2018)
 
 This update includes the following improvements and fixes:
@@ -1069,6 +1261,8 @@ This update includes the following improvements and fixes:
     * `emulator @<server-avd-name> -wifi-server-port 9999`
     * `emulator @<client-avd-name>-wifi-client-port 9999`
   * Added support for more webcams on Windows by taking any incompatible frame sizes and dynamically resizing them to fit the camera setting in the Android guest.
+
+
 
 ## 28.0.16 (November 2018)
 
@@ -1133,6 +1327,8 @@ We have rebased our variant of QEMU from QEMU 2.9 to QEMU 2.12. This update incl
   * <https://wiki.qemu.org/ChangeLog/2.11>
   * <https://wiki.qemu.org/ChangeLog/2.12>
 
+
+
 Here are some of the notable changes that impact the Android Emulator:
 
   * x86: `gdbstub` now provides access to SSE registers.
@@ -1140,10 +1336,14 @@ Here are some of the notable changes that impact the Android Emulator:
   * `qemu-img: qemu-img resize` supports preallocation of the new parts of the image.
   * QCOW2 shrinking now supported in `qemu` and `qemu-img`.
 
+
+
 ### Accessibility
 
   * Fixed issues with screen readers and added better support for these tools in the Screen Record and Snapshot UI.
   * Made the Quick Boot notification icons more accessible to users who are color blind.
+
+
 
 ### Graphics
 
@@ -1158,6 +1358,8 @@ Here are some of the notable changes that impact the Android Emulator:
   * `-gpu guest` (software rendering in the guest) has been deprecated. System images for API level 28 or higher now automatically switch to using Swiftshader instead (`-gpu swiftshader_indirect`).
   * If the emulator is launched from the command line using the `-no-window` flag, the default renderer is now Swiftshader.
 
+
+
 ### Location
 
   * The emulator can now update bearing along with latitude and longitude position. The magnetometer virtual sensor adjusts itself dynamically to magnetic north by inferring motion when playing back a GPX or KML file.
@@ -1165,6 +1367,8 @@ Here are some of the notable changes that impact the Android Emulator:
   * When playing back a GPX or KML file, the speed is set automatically, and is set to zero when the playback ends.
   * The altitude is no longer restricted to being between -1,000 and +10,000 meters.
   * Fixed an issue where the virtual GPS location would not be updated periodically unless the Extended Controls window was opened at least once.
+
+
 
 ### Camera
 
@@ -1204,6 +1408,8 @@ To address issues with running out of disk space on Play Store images, the emula
 
 This creates new snapshots in a folder where copy-on-write is disabled.
 
+
+
 ### HAXM 7.3.2
 
 We would like to mention HAXM 7.3.2 again because it must be installed in order for recent system images to run properly on the emulator. HAXM 7.3.2 should already be available in the Stable channel, and can also be installed manually from <https://github.com/intel/haxm/releases>.
@@ -1212,6 +1418,8 @@ Here are a couple of the issues that this version of HAXM resolved:
 
   * Fixed random crashes of guest OSes that use a recent Linux kernel (>= 4.6). For example, Ubuntu 18.04 ([#39](https://github.com/intel/haxm/issues/39), [#74](https://github.com/intel/haxm/issues/74)).
   * Fixed an x86 instruction emulator bug that could lead to a host crash ([#93](https://github.com/intel/haxm/issues/93)).
+
+
 
 ### 32-bit Windows deprecation
 
@@ -1244,6 +1452,8 @@ Some users were having difficulty diagnosing why the Windows Hypervisor Platform
 ### General fixes
 
   * Fixed OpenGL errors that occur when loading a snapshot in the camera app.
+
+
 
 ## 27.3.8 (July 2018)
 
@@ -1295,6 +1505,8 @@ You can take screenshots from the command line with either of the following comm
 
   * `screenrecord screenshot [destination-directory]`
   * `adb emu screenrecord screenshot [destination-directory]`
+
+
 
 Screenshots are saved in PNG format.
 
@@ -1361,6 +1573,8 @@ You can now use alphanumeric SMS addresses.
   * Fixed issues with blank screens when switching into zoomed mode while a frameless emulator was active.
   * Fixed an issue that caused the device skin and emulator contents to scroll out of sync when zoomed in.
 
+
+
 If you are still experiencing hangs or other instabilities, please [file an issue](https://issuetracker.google.com/issues?q=componentid:192727).
 
 ## 27.1.12 (March 2018)
@@ -1370,6 +1584,8 @@ This update includes fixes for the following issues:
   * Bluetooth audio quality degraded after starting the emulator. ([Issue 37095756](https://issuetracker.google.com/issues/37095756))
   * Locations sent to one emulator were sent to all of them. ([Issue 73450633](https://issuetracker.google.com/issues/73450633))
   * GPS location set using the console was overridden by values set using **Extended Controls > Location** in the graphical user interface. ([Issue 73471760](https://issuetracker.google.com/issues/73471760))
+
+
 
 If you are still experiencing hangs or other instabilities, please [file an issue](https://issuetracker.google.com/issues?q=componentid:192727).
 
@@ -1387,6 +1603,8 @@ To work with Android 8.1 (API level 27) and higher system images, any attached w
 
     * Fixed an issue that caused webcam capture to sometimes output a distorted or all-green image.
     * Fixed an issue that made it possible to see the following message even when there was no actual hang: "emulator: ERROR: detected a hanging thread 'Qt event loop'. No response for 15000 ms".
+
+
 
 If you are still experiencing hangs or other instabilities, please [file an issue](https://issuetracker.google.com/issues?q=componentid:192727).
 
@@ -1422,6 +1640,8 @@ The emulator's Swiftshader renderer now conforms fully with OpenGL ES 3.0. For d
     * Fixed an issue where clipboard sharing was not working unless the **Enable clipboard sharing** option was toggled off and on.
     * Fixed a hang when using the Swiftshader rendering back end with low-resolution AVDs.
 
+
+
 ## 27.0.5 (January 2018)
 
   * ANGLE for rendering on Windows is now disabled by default.
@@ -1429,6 +1649,9 @@ The emulator's Swiftshader renderer now conforms fully with OpenGL ES 3.0. For d
 If ANGLE works better for you, you can re-enable it with command line flag `-gpu angle_indirect`. Or, open the Extended controls window, navigate to **Settings > Advanced**, and select **ANGLE D3D11** for the OpenGL ES renderer setting.
 
   * Fixed an issue where Shift+B does not type a capital B character.
+
+
+
 
 ## 27.0.2 (December 2017)
 
@@ -1459,12 +1682,17 @@ The older `-gpu swiftshader` and `-gpu angle` options are now deprecated. In the
 
   * Various other bug fixes.
 
+
+
+
 ## 26.1.4 (August 2017)
 
 This is a minor release with bug fixes and the following improvements to GPU configuration:
 
   * Enable boot animation when running on ANGLE renderer
   * Disable GLES3 when running on ANGLE renderer
+
+
 
 ## 26.1.3 (August 2017)
 
@@ -1494,6 +1722,8 @@ This is a minor release with bug fixes, performance improvements, and small feat
   * Fixed an issue where if an older CPU with Intel x86 EPT but without UG was used, the emulator would fail to boot if more than one core was configured.
   * Fixed an issue where HyperV would be improperly detected if the emulator was itself running in a Xen hypervisor.
   * Fixed an issue where the emulator would crash on start in some Linux configurations.
+
+
 
 ## 26.1.2 (July 2017)
 
@@ -1532,6 +1762,9 @@ Android O is not currently supported for VNC mode.
 
   * After collecting data on sudden emulator slowdown issues, we have determined that the problem may have to do with some interaction between older Intel OpenGL drivers and Windows updates. As such, users with Intel HD 4000, 3000, 2000 (and related GPUs) now have rendering set by default to either a D3D renderer (ANGLE) or Swiftshader (software renderer).
 
+
+
+
 ## 26.0.0 (March 2017)
 
 This release is compatible with API level 26. It also includes a number of performance improvements and bug fixes.
@@ -1550,6 +1783,8 @@ This release is compatible with API level 26. It also includes a number of perfo
   * Fixes an issue where the emulator takes 300% of the CPU and holds it after resuming the host computer from sleep or when the emulator has been running for a long time. 
   * Fixes a crash when the emulator is shutting down. 
 
+
+
 **Updates with HAXM v6.1.1 (March 2017)**
 
 **Note:** HAXM v6.1.1 is available for Mac users through the [SDK Manager](/studio/intro/update#sdk-manager) as of March 30th, and will be available for Windows users soon.
@@ -1561,10 +1796,14 @@ Version 26.0.0 of the Android Emulator supports HAXM v6.1.1, which includes the 
   * Revises the installation error message displayed when the installer fails to detect Intel VT-x on Windows, usually because Hyper-V is enabled.
   * Adds support for accelerating the Android Emulator in a Hyper-V-based Windows VM. This update requires that the host Hyper-V instance (the one that manages the Windows VM/guest) use the latest version of Hyper-V with nested virtualization enabled. Hyper-V must be _disabled_ in the guest Hyper-V instance (the Windows VM).
 
+
+
 ### Dependencies
 
   * Android SDK Platform-Tools revision 25.0.4 or later. 
   * Android SDK Tools revision 26.0.0 or later. 
+
+
 
 ### New features and bug fixes
 
@@ -1574,6 +1813,8 @@ Version 26.0.0 of the Android Emulator supports HAXM v6.1.1, which includes the 
   * The emulator now correctly unregisters itself from the `adb devices` list on exit and closes open TCP ports on Linux machines.
   * adb connections are now more reliable. A running emulator is detected faster and doesn’t go into “offline” or “unauthorized” status anymore.
 
+
+
 ## 25.3.0 (March 2017)
 
 As of this release, the Android Emulator will be released separately from the SDK Tools. This release contains a variety of performance improvements, new features, and bug fixes.
@@ -1582,10 +1823,14 @@ As of this release, the Android Emulator will be released separately from the SD
 
   * Fixed a crash occurring on some GPU configurations by disabling GLAsyncSwap by default. This feature was added in 25.3.0 to improve frame timing and frames per second for games and video, but causes the emulator to fail on some unknown machine configurations. You can manually enable it by opening the `android_sdk/emulator/lib/advancedFeatures.ini` file and setting `GLAsyncSwap = on`. 
 
+
+
 ### Dependencies
 
   * Android SDK Platform-Tools revision 24 or later. 
   * Android SDK Tools revision 25.3.0. 
+
+
 
 ### New features and bug fixes
 
@@ -1606,12 +1851,14 @@ As of this release, the Android Emulator will be released separately from the SD
     * UI initialization no longer attempts to load all emulator executables as Qt plugins, so it's dramatically shorter, especially on HDDs. 
     * UI interactions are now faster and smoother, including rotation, window resizing, and extended controls window loading and closing. 
 
+
+
 * * *
 
 OpenXR™ and the OpenXR logo are trademarks owned by The Khronos Group Inc. and are registered as a trademark in China, the European Union, Japan and the United Kingdom.
 
 Content and code samples on this page are subject to the licenses described in the [Content License](/license). Java and OpenJDK are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-Last updated 2026-06-03 UTC.
+Last updated 2026-08-31 UTC.
 
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-06-03 UTC."],[],[]] 
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-08-31 UTC."],[],[]] 

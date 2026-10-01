@@ -3,6 +3,16 @@
 **Source:** [https://developer.android.com/design/ui/ai-glasses](https://developer.android.com/design/ui/ai-glasses)
 
 ---
+
+  * [ Android Developers ](https://developer.android.com/)
+  * [ Design & Plan ](https://developer.android.com/design)
+  * [ UI Design ](https://developer.android.com/design/ui)
+  * [ AI Glasses ](https://developer.android.com/design/ui/ai-glasses)
+
+
+
+Save and categorize content based on your preferences. 
+
 ![](https://developer.android.com/static/images/design/ui/glasses/hero-full-v2.png)
 
 ###  Design for AI Glasses 
@@ -10,8 +20,6 @@
 AI Glasses are designed for all-day wear, providing convenient, hands-free access to information. Design intelligent augmented experiences that enhance a user’s focus and presence in the real world. Extend your app to AI Glasses with design guidance and UI kits. 
 
 [Foundations guide](https://developer.android.com/design/ui/ai-glasses/guides/foundations/design-principles)
-
-##  Get started 
 
 [ ![](https://developer.android.com/static/images/design/ui/wear/surfaces.svg) ](https://developer.android.com/design/ui/ai-glasses/guides/foundations/design-principles)
 
@@ -53,10 +61,6 @@ Learn about Jetpack Compose Glimmer's design language, a simplified theme for op
 
 [Go to style](https://developer.android.com/design/ui/ai-glasses/guides/styles/overview)
 
-##  Bring augmented experiences to your users 
-
-AI glasses extend the reach of Android apps into a new, highly personal form factor. Apps designed for glasses should enrich daily life, providing hands-free utility and discreet access to digital services. 
-
 ![](https://developer.android.com/static/images/design/ui/glasses/glasses_landing_sensing.png)
 
 ###  World sensing 
@@ -81,8 +85,6 @@ Give your users superpowers
 
 Users can stay in the moment 
 
-##  Explore AI glasses 
-
 ![](https://developer.android.com/static/images/design/ui/glasses/glasses_landing_audio.png)
 
 ###  Audio AI Glasses 
@@ -94,10 +96,6 @@ Use AI agents for hands-free, natural language interactions, offering proactive 
 ###  Display AI Glasses 
 
 With a display, combine audio with subtle, glanceable visuals. These high-contrast, minimal visuals provide information like navigation or notifications, appearing only when relevant to enhance, not obstruct, the user's view. You can create your app on display AI glasses with unique interactions for the display. 
-
-##  Explore our kits 
-
-Explore our Figma-based library kits. Start building your AI Glasses experience with modern components, styles, and layouts. 
 
 [ ![](https://developer.android.com/static/images/design/ui/glasses/glasses_landing_figma.png) ](https://www.figma.com/@androiddesign)
 
@@ -118,8 +116,6 @@ After Effects
 Introduce users to audio and display glasses with ready-to-use animations with the user education After Effects file. 
 
 [Download the After Effects file](https://developer.android.com/design/ui/ai-glasses/guides/interaction/Glasses_userEdu_motion.aep)
-
-##  Develop for AI Glasses 
 
 [ ![](https://developer.android.com/static/design/ui/tv/images/landing/develop.svg) ](https://developer.android.com/develop/xr/jetpack-xr-sdk/ai-glasses/build)
 
